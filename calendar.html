@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Seldovia community calendar — a smooth, scrollable agenda of upcoming events, with an optional month view.">
+<meta name="theme-color" content="#F8E6DD">
+<title>Community Calendar — Seldovia.com</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="calendar">
+<a class="skip-link" href="#main">Skip to content</a>
+<main id="main">
+  <div class="page-hero"><div class="wrap"><span class="eyebrow">Community Calendar</span><h1>What’s happening around town</h1><p>Scroll the whole agenda freely — no clicking date by date. Prefer a grid? Toggle Month anytime.</p></div></div>
+
+  <section class="section wrap">
+    <div class="cal-toolbar">
+      <div class="seg" role="group" aria-label="Calendar view">
+        <button id="viewAgenda" aria-pressed="true">Agenda</button>
+        <button id="viewMonth" aria-pressed="false">Month</button>
+      </div>
+      <span class="cal-hint" id="calHint">Upcoming events · <span class="sample-flag">sample feed</span></span>
+    </div>
+    <div class="agenda" id="agenda" aria-label="Upcoming events agenda"><div class="agenda-scroll" id="agendaScroll" tabindex="0"></div></div>
+    <div class="monthgrid" id="monthgrid" aria-label="Month view">
+      <div class="mg-head"><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span></div>
+      <div class="mg-body" id="mgBody"></div>
+    </div>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

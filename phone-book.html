@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Seldovia community phone book — searchable directory of local businesses and services.">
+<meta name="theme-color" content="#F8E6DD">
+<title>Phone Book — Seldovia Businesses &amp; Services</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="phonebook">
+<a class="skip-link" href="#main">Skip to content</a>
+<main id="main">
+  <div class="page-hero"><div class="wrap"><span class="eyebrow">Community Phone Book</span><h1>Local businesses &amp; services</h1><p>Search or filter by category. <span class="sample-flag">Sample directory — connects to the community database in production</span></p></div></div>
+
+  <section class="section wrap">
+    <div class="dir-controls">
+      <div class="navsearch" role="search">
+        <span class="s-icon" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span>
+        <input type="search" id="dirSearch" placeholder="Search the directory…" aria-label="Search the phone book" autocomplete="off">
+      </div>
+      <div class="chips" id="dirChips" role="group" aria-label="Filter by category"></div>
+    </div>
+    <div class="dir-list" id="dirList"></div>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

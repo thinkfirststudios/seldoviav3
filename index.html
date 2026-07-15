@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Seldovia.com — discover everything about the little town of Seldovia, Alaska, on Kachemak Bay. Directory, events, gallery, news, and real estate.">
+<meta name="theme-color" content="#F8E6DD">
+<title>Seldovia.com — Discover Everything Seldovia, Alaska</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="home">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<main id="main">
+  <!-- HERO — real Seldovia harbor photo set as .hero-media background in styles.css -->
+  <section class="hero" aria-label="Discover Seldovia">
+    <div class="hero-media">
+      <div class="hero-text">
+        <span class="hero-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 20.5l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+          Curated by Jenny — your Seldovia Connection
+        </span>
+        <h1>Discover Everything Seldovia</h1>
+        <p class="lede">Find the best places, events, and stories on Kachemak Bay — all in one warm, friendly guide.</p>
+        <div class="hero-search" role="search">
+          <div class="hero-search-card">
+            <div class="hs-field">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+              <input type="search" id="heroSearch" placeholder="What are you looking for?" aria-label="Search everything on Seldovia.com" autocomplete="off">
+            </div>
+            <div class="hs-field">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.3-7-11a7 7 0 0 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <input type="search" id="heroWhere" placeholder="Seldovia, AK" aria-label="Where" autocomplete="off">
+            </div>
+            <button class="btn btn-primary" id="heroSearchBtn" type="button">Search</button>
+          </div>
+          <div class="hero-results results" id="heroResults" role="listbox" aria-label="Search results"></div>
+        </div>
+      </div>
+      <div class="quickcats" id="quickcats" aria-label="Popular categories"></div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="section wrap">
+    <div class="section-head">
+      <span class="eyebrow">Discover Seldovia</span>
+      <h2 class="title">What are you interested in?</h2>
+      <p>From fresh halibut to quiet trails — pick a category and start exploring our little town.</p>
+    </div>
+    <div class="cat-grid" id="catGrid"></div>
+    <div class="center-link"><a href="explore.html">Explore the full directory →</a></div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section wrap">
+    <div class="howband">
+      <span class="eyebrow">Find Out</span>
+      <h2>See how it works</h2>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.2 1 2h6c0-.8.4-1.5 1-2A7 7 0 0 0 12 2z"/></svg></div>
+          <h4>Pick what to do</h4><p>Choose a category that suits you — dining, lodging, trails, charters, or an event tonight.</p>
+        </div>
+        <div class="how-step">
+          <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.3-7-11a7 7 0 0 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+          <h4>Find where to look</h4><p>Search across listings, guides, the Gazette, and the calendar to land exactly where you want.</p>
+        </div>
+        <div class="how-step">
+          <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.7 1.4 6.8L12 17.8 5.9 20.5l1.4-6.8L2.2 9l6.9-.7z"/></svg></div>
+          <h4>Explore Seldovia</h4><p>Save your favorites, add events to your calendar, and discover why we love it here.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section wrap">
+    <div class="section-head"><span class="eyebrow">Kind Words</span><h2 class="title">What locals &amp; visitors say</h2></div>
+    <div class="quote-grid" id="quoteGrid"></div>
+  </section>
+
+  <!-- SPONSORS -->
+  <section class="section wrap" id="sponsors">
+    <div class="section-head" style="max-width:none; text-align:left; display:flex; justify-content:space-between; align-items:flex-end; gap:1rem; flex-wrap:wrap; margin-bottom:1.4rem">
+      <div><span class="eyebrow">Our Sponsors</span><h2 class="title" style="text-align:left">Local friends who make this possible</h2></div>
+      <a class="btn btn-ghost" href="contact.html">Become a sponsor</a>
+    </div>
+    <div class="sponsor-strip" aria-label="Sponsors (auto-rotating)"><div class="sponsor-track" id="sponsorTrack"></div></div>
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
