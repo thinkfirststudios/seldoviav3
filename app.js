@@ -94,6 +94,7 @@ function stars(r){const full=Math.round(r); return "★★★★★".slice(0,ful
 const flickr=(w,h,tags,lock)=>`https://loremflickr.com/${w}/${h}/${tags}?lock=${lock}`;
 const TAGS_BY_KEY={lodging:"cabin,forest,alaska",dining:"seafood,harbor,alaska",charters:"boat,ocean,alaska",arts:"art,gallery,coast",outdoors:"trail,forest,mountains",wellness:"spa,forest,nature",events:"festival,outdoor,community"};
 const GAL_TAGS=["harbor,fog,alaska","boardwalk,coast,alaska","seaplane,bay,alaska","berries,forest,trail","otter,sea,wildlife","wildflowers,mountains,alaska","fishing,dock,harbor","sunset,coast,alaska","kayak,water,alaska"];
+const LISTING_TAGS=["house,cabin,waterfront","house,cabin,forest","house,home,historic","house,home,hillside","house,cabin,cottage","house,building,harbor"];
 
 // hero quick-cats
 if($("#quickcats")) $("#quickcats").innerHTML=[["Restaurants","dining"],["Lodging","lodging"],["Charters","charters"],["Trails","outdoors"],["Arts","arts"],["Events","events"]].map(([label,key])=>
@@ -152,7 +153,7 @@ if($("#masonry")) $("#masonry").innerHTML=GALLERY.map((im,i)=>{
 
 // real estate listings
 if($("#reGrid")) $("#reGrid").innerHTML=LISTINGS.map((l,i)=>`
-  <a class="place" href="real-estate.html"><div class="place-media place-media-blank"><span class="ph-label"><span class="ph-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></span><span class="ph-txt">Photo placeholder</span></span><span class="badge-open">${l.open?'Available':'Pending'}</span></div>
+  <a class="place" href="real-estate.html"><div class="place-media"><img class="place-photo" src="${flickr(600,400,LISTING_TAGS[i%LISTING_TAGS.length],i+41)}" alt="" loading="lazy" width="600" height="400"><span class="badge-open">${l.open?'Available':'Pending'}</span></div>
   <div class="place-body">
     <div class="rating"><span class="cat" style="font-weight:800;color:var(--accent-ink)">${esc(l.cat)}</span></div>
     <h4>${esc(l.name)}</h4>
