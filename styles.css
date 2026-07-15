@@ -275,7 +275,6 @@ nav.mainnav a.active{background:#fff; color:var(--accent-ink);}
 .board{columns:3 250px; column-gap:16px;}
 @media (max-width:600px){ .board{columns:1;} }
 .note{break-inside:avoid; margin:0 0 16px; background:var(--sheet); border:1px solid var(--line); border-radius:var(--radius-s); padding:1.1rem; box-shadow:var(--shadow); position:relative;}
-.note::before{content:""; position:absolute; top:-7px; left:50%; transform:translateX(-50%); width:13px; height:13px; border-radius:50%; background:var(--accent); box-shadow:0 2px 4px rgba(0,0,0,.2);}
 .note .n-cat{font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; font-weight:800; color:var(--sage);}
 .note h4{margin:.35rem 0 .4rem; font-size:1.1rem;}
 .note p{font-size:.9rem; color:var(--text-soft);}
