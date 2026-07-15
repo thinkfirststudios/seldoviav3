@@ -230,7 +230,8 @@ nav.mainnav a.active{background:#fff; color:var(--accent-ink);}
 @media (max-width:560px){ .event{grid-template-columns:60px 1fr;} .event .col-right{grid-column:2; justify-self:start; flex-direction:row;} }
 .monthgrid{display:none; background:var(--sheet); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); overflow:clip; max-width:900px; margin-inline:auto;}
 .monthgrid.show{display:block;} .agenda.hide{display:none;}
-.mg-head,.mg-body{display:grid; grid-template-columns:repeat(7,1fr);}
+.mg-head,.mg-body{display:grid; grid-template-columns:repeat(7,minmax(0,1fr));}
+.mg-cell{min-width:0;}
 .mg-head span{padding:.6rem; text-align:center; font-size:.7rem; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--text-soft); border-bottom:1px solid var(--line);}
 .mg-cell{min-height:88px; border-left:1px solid var(--line); border-bottom:1px solid var(--line); padding:.4rem; font-size:.8rem;}
 .mg-cell:nth-child(7n+1){border-left:0;}
