@@ -189,6 +189,9 @@ if($("#quoteGrid")) $("#quoteGrid").innerHTML=TESTIMONIALS.map(t=>`<div class="q
 // sponsors
 if($("#sponsorTrack")){const spHTML=SPONSORS.map(s=>`<a class="sponsor" href="contact.html" aria-label="${esc(s.name)} — ${esc(s.cat)}"><span class="logo" style="background:${s.c}">${esc(s.name[0])}</span><span class="s-name">${esc(s.name)}</span><span class="s-cat">${esc(s.cat)}</span></a>`).join(""); $("#sponsorTrack").innerHTML=spHTML+spHTML;}
 
+// home photo gallery (auto-scroll) — PROD: swap picsum placeholders for real Seldovia photos
+if($("#galleryTrack")){const gHTML=GALLERY.map((g,i)=>`<figure class="gallery-photo"><img src="https://picsum.photos/seed/seldovia-gallery-${i}/600/450" alt="${esc(g.cap)}" loading="lazy" width="600" height="450"><figcaption>${esc(g.cap)}</figcaption></figure>`).join(""); $("#galleryTrack").innerHTML=gHTML+gHTML;}
+
 /* ============================================================ CALENDAR ============================================================ */
 const MONTHS=["January","February","March","April","May","June","July","August","September","October","November","December"];
 const DOW=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
