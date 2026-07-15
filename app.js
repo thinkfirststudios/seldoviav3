@@ -76,16 +76,6 @@ document.body.insertAdjacentHTML("afterbegin", HEADER);
 document.body.insertAdjacentHTML("beforeend", FOOTER);
 
 /* ============================================================ MOCK DATA ============================================================ */
-function scene(a,b,c,id){return `<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Seldovia scene">
-  <defs><linearGradient id="s${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${a}"/><stop offset="1" stop-color="${b}"/></linearGradient></defs>
-  <rect width="400" height="300" fill="url(#s${id})"/><circle cx="312" cy="66" r="26" fill="#fff" opacity=".32"/>
-  <path d="M0 200 L80 130 L150 190 L220 120 L300 195 L400 140 V300 H0Z" fill="${c}" opacity=".55"/>
-  <path d="M0 235 L110 175 L210 235 L320 170 L400 230 V300 H0Z" fill="${c}"/>
-  <rect y="250" width="400" height="50" fill="#000" opacity=".08"/>
-  <g fill="#2f3824"><path d="M40 262 l12 0 -6 -34z"/><path d="M360 264 l14 0 -7 -38z"/></g></svg>`;}
-const PAL=[["#cbd6cf","#9fb0a4","#6f8069"],["#e7d3c6","#d3a98c","#a6784f"],["#c9d2da","#9aa8b3","#6d7c88"],["#e8dcc2","#cdb98d","#93794b"],["#d8cdd6","#b39bb0","#7f647b"],["#d3ddd0","#a9bba1","#748a67"]];
-const pick=i=>PAL[i%PAL.length];
-
 const CATEGORIES=[{b:"Stay",s:"Lodges & cabins",key:"lodging"},{b:"Eat & Drink",s:"Dining & cafés",key:"dining"},{b:"Charters & Tours",s:"On the water",key:"charters"},{b:"Cafés",s:"Coffee & bakery",key:"dining"},{b:"Arts & Galleries",s:"Local makers",key:"arts"},{b:"Outdoors & Trails",s:"Hikes & beaches",key:"outdoors"},{b:"Beauty & Wellness",s:"Spa & self-care",key:"wellness"},{b:"Events",s:"What's on",key:"events"}];
 const PLACES=[{name:"Seldovia Boardwalk Hotel",cat:"Lodging",key:"lodging",rate:4.9,rev:212,open:true},{name:"Tide Pool Café",cat:"Café",key:"dining",rate:4.8,rev:176,open:true},{name:"Kachemak Bay Charters",cat:"Charters",key:"charters",rate:4.9,rev:143,open:true},{name:"Salmonberry Bakery",cat:"Bakery",key:"dining",rate:4.7,rev:98,open:true},{name:"Slough Arts Gallery",cat:"Arts",key:"arts",rate:4.6,rev:64,open:false},{name:"Otterbahn Trail",cat:"Outdoors",key:"outdoors",rate:4.9,rev:230,open:true},{name:"Otter Cove Lodge",cat:"Lodging",key:"lodging",rate:4.8,rev:151,open:true},{name:"Linwood Bar & Grill",cat:"Dining",key:"dining",rate:4.5,rev:120,open:true},{name:"Outside Beach Park",cat:"Outdoors",key:"outdoors",rate:4.7,rev:88,open:true}];
 const GAZETTE=[{title:"Halibut derby returns to the harbor",excerpt:"The summer classic is back, with daily weigh-ins on the city dock and a fish fry to close it out.",date:"Jul 9, 2026",read:"3 min",cat:"Community"},{title:"Restoring the historic boardwalk",excerpt:"Volunteers spent the weekend replacing planks and repainting rails along the slough.",date:"Jul 2, 2026",read:"4 min",cat:"Heritage"},{title:"A record year for the berry pickers",excerpt:"Salmonberries came early and heavy this summer. Locals share their favorite spots (sort of).",date:"Jun 24, 2026",read:"2 min",cat:"Outdoors"},{title:"New mural brightens the ferry terminal",excerpt:"Students and local artists turned a grey wall into a bay-blue welcome for visitors.",date:"Jun 15, 2026",read:"3 min",cat:"Arts"},{title:"Barging your building materials",excerpt:"A practical guide to getting lumber and appliances across the bay without the headache.",date:"Jun 6, 2026",read:"5 min",cat:"Living Here"},{title:"Meet the Village Tribe garden",excerpt:"Fresh greens grow at the edge of town — and everyone's invited to help and harvest.",date:"May 28, 2026",read:"3 min",cat:"Community"}];
@@ -99,19 +89,24 @@ const SPONSORS=[{name:"Boardwalk Hotel",cat:"Lodging",c:"#663015"},{name:"Kachem
 
 /* ============================================================ RENDER (each guarded — runs only if its container exists on this page) ============================================================ */
 function stars(r){const full=Math.round(r); return "★★★★★".slice(0,full)+"☆☆☆☆☆".slice(0,5-full);}
-function placeMedia(i){const[a,b,c]=pick(i); return scene(a,b,c,'p'+i);}
+// ---- On-theme placeholder photos (LoremFlickr, keyworded per item) ----
+// PROD: replace these keyworded placeholders with real Seldovia photography.
+const flickr=(w,h,tags,lock)=>`https://loremflickr.com/${w}/${h}/${tags}?lock=${lock}`;
+const TAGS_BY_KEY={lodging:"cabin,forest,alaska",dining:"seafood,harbor,alaska",charters:"boat,ocean,alaska",arts:"art,gallery,coast",outdoors:"trail,forest,mountains",wellness:"spa,forest,nature",events:"festival,outdoor,community"};
+const GAL_TAGS=["harbor,fog,alaska","boardwalk,coast,alaska","seaplane,bay,alaska","berries,forest,trail","otter,sea,wildlife","wildflowers,mountains,alaska","fishing,dock,harbor","sunset,coast,alaska","kayak,water,alaska"];
+const LISTING_TAGS=["cabin,waterfront,alaska","forest,land,alaska","boardwalk,house,coast","house,bay,mountains","cabin,forest,cottage","harbor,building,coast"];
 
 // hero quick-cats
 if($("#quickcats")) $("#quickcats").innerHTML=[["Restaurants","dining"],["Lodging","lodging"],["Charters","charters"],["Trails","outdoors"],["Arts","arts"],["Events","events"]].map(([label,key])=>
   `<a class="quickcat" href="explore.html?cat=${key}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/></svg>${esc(label)}</a>`).join("");
 
-// category tiles — PROD: swap picsum placeholders for real category photos
+// category tiles
 if($("#catGrid")) $("#catGrid").innerHTML=CATEGORIES.map((c,i)=>{
-  const img=`https://picsum.photos/seed/seldovia-${c.key}-${i}/600/600`;
+  const img=flickr(600,600,TAGS_BY_KEY[c.key]||"coast,alaska,nature",i+1);
   return `<a class="cat-tile" href="explore.html?cat=${c.key}" aria-label="${esc(c.b)}"><img class="cat-photo" src="${img}" alt="" loading="lazy" width="600" height="600"><span class="cap"><b>${esc(c.b)}</b><span>${esc(c.s)}</span></span></a>`;}).join("");
 
 // feature media
-if($("#featureMedia")){const[a,b,c]=pick(1); $("#featureMedia").innerHTML=scene(a,b,c,'feat');}
+if($("#featureMedia")) $("#featureMedia").innerHTML=`<img class="feature-photo" src="${flickr(900,700,"harbor,mountains,alaska",7)}" alt="" loading="lazy" width="900" height="700">`;
 
 // places (directory highlights) with tabs — reads ?cat= from URL for deep-links
 const PLACE_TABS=[["all","All"],["dining","Dining"],["lodging","Lodging"],["charters","Charters"],["outdoors","Outdoors"],["arts","Arts"]];
@@ -122,7 +117,7 @@ function renderPlaces(){
   const rows=PLACES.filter(p=>placeTab==="all"||p.key===placeTab);
   $("#placeGrid").innerHTML=rows.map(p=>`
     <a class="place" href="explore.html">
-      <div class="place-media">${placeMedia(PLACES.indexOf(p))}
+      <div class="place-media"><img class="place-photo" src="${flickr(600,400,TAGS_BY_KEY[p.key]||'coast,alaska,nature',PLACES.indexOf(p)+1)}" alt="" loading="lazy" width="600" height="400">
         <span class="badge-open" style="${p.open?'':'background:#efe6e2;color:#9a877f'}">${p.open?'Open':'Closed'}</span>
         <button class="heart" aria-label="Save ${esc(p.name)}" aria-pressed="false" onclick="event.preventDefault();event.stopPropagation();this.setAttribute('aria-pressed', this.getAttribute('aria-pressed')==='true'?'false':'true')">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.5-9.5-9A5 5 0 0 1 12 6a5 5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z"/></svg>
@@ -147,22 +142,18 @@ renderPlaces();
 const GAZ_TAGS=["harbor,fishing,alaska","boardwalk,coast,alaska","berries,forest,alaska","coast,ocean,alaska","harbor,boat,alaska","garden,vegetables,green"];
 if($("#gazetteGrid")) $("#gazetteGrid").innerHTML=GAZETTE.map((g,i)=>{
   const tags=GAZ_TAGS[i%GAZ_TAGS.length];
-  return `<a class="post" href="gazette.html"><div class="post-media"><img class="post-photo" src="https://loremflickr.com/640/400/${tags}?lock=${i+1}" alt="" loading="lazy" width="640" height="400"></div>
+  return `<a class="post" href="gazette.html"><div class="post-media"><img class="post-photo" src="${flickr(640,400,tags,i+1)}" alt="" loading="lazy" width="640" height="400"></div>
     <div class="post-body"><span class="kicker">${esc(g.cat)}</span><h4>${esc(g.title)}</h4><p>${esc(g.excerpt)}</p>
     <div class="post-meta"><span>${esc(g.date)}</span><span>·</span><span>${esc(g.read)} read</span></div></div></a>`;}).join("");
 
 // gallery
-if($("#masonry")) $("#masonry").innerHTML=GALLERY.map((im,i)=>{const[a,b,c]=pick(i);
-  const svg=`<svg viewBox="0 0 300 ${im.h}" preserveAspectRatio="xMidYMid slice" role="img" aria-label="${esc(im.cap)}">
-    <defs><linearGradient id="ga${i}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${a}"/><stop offset="1" stop-color="${b}"/></linearGradient></defs>
-    <rect width="300" height="${im.h}" fill="url(#ga${i})"/><circle cx="230" cy="${im.h*.25}" r="22" fill="#fff" opacity=".3"/>
-    <path d="M0 ${im.h*.62} L70 ${im.h*.45} L140 ${im.h*.6} L210 ${im.h*.42} L300 ${im.h*.58} V${im.h} H0Z" fill="${c}" opacity=".6"/>
-    <path d="M0 ${im.h*.75} L90 ${im.h*.6} L180 ${im.h*.76} L300 ${im.h*.62} V${im.h} H0Z" fill="${c}"/></svg>`;
-  return `<figure tabindex="0">${svg}<figcaption>${esc(im.cap)}</figcaption></figure>`;}).join("");
+if($("#masonry")) $("#masonry").innerHTML=GALLERY.map((im,i)=>{
+  const img=`<img src="${flickr(300,im.h,GAL_TAGS[i%GAL_TAGS.length],i+1)}" alt="${esc(im.cap)}" loading="lazy" width="300" height="${im.h}">`;
+  return `<figure tabindex="0">${img}<figcaption>${esc(im.cap)}</figcaption></figure>`;}).join("");
 
 // real estate listings
 if($("#reGrid")) $("#reGrid").innerHTML=LISTINGS.map((l,i)=>`
-  <a class="place" href="real-estate.html"><div class="place-media">${placeMedia(i+1)}<span class="badge-open">${l.open?'Available':'Pending'}</span></div>
+  <a class="place" href="real-estate.html"><div class="place-media"><img class="place-photo" src="${flickr(600,400,LISTING_TAGS[i%LISTING_TAGS.length],i+41)}" alt="" loading="lazy" width="600" height="400"><span class="badge-open">${l.open?'Available':'Pending'}</span></div>
   <div class="place-body">
     <div class="rating"><span class="cat" style="font-weight:800;color:var(--accent-ink)">${esc(l.cat)}</span></div>
     <h4>${esc(l.name)}</h4>
@@ -193,10 +184,10 @@ if($("#quoteGrid")) $("#quoteGrid").innerHTML=TESTIMONIALS.map(t=>`<div class="q
 // sponsors
 if($("#sponsorTrack")){const spHTML=SPONSORS.map(s=>`<a class="sponsor" href="contact.html" aria-label="${esc(s.name)} — ${esc(s.cat)}"><span class="logo" style="background:${s.c}">${esc(s.name[0])}</span><span class="s-name">${esc(s.name)}</span><span class="s-cat">${esc(s.cat)}</span></a>`).join(""); $("#sponsorTrack").innerHTML=spHTML+spHTML;}
 
-// home photo gallery (auto-scroll) — PROD: swap picsum placeholders for real Seldovia photos
-const galFig=(g,seed)=>`<figure class="gallery-photo"><img src="https://picsum.photos/seed/${seed}/600/450" alt="${esc(g.cap)}" loading="lazy" width="600" height="450"><figcaption>${esc(g.cap)}</figcaption></figure>`;
-if($("#galleryTrack")){const gHTML=GALLERY.map((g,i)=>galFig(g,`seldovia-gallery-${i}`)).join(""); $("#galleryTrack").innerHTML=gHTML+gHTML;}
-if($("#galleryTrack2")){const gHTML=GALLERY.slice().reverse().map((g,i)=>galFig(g,`seldovia-gallery2-${i}`)).join(""); $("#galleryTrack2").innerHTML=gHTML+gHTML;}
+// home photo gallery (auto-scroll)
+const galFig=(g,tags,lock)=>`<figure class="gallery-photo"><img src="${flickr(600,450,tags,lock)}" alt="${esc(g.cap)}" loading="lazy" width="600" height="450"><figcaption>${esc(g.cap)}</figcaption></figure>`;
+if($("#galleryTrack")){const gHTML=GALLERY.map((g,i)=>galFig(g,GAL_TAGS[i%GAL_TAGS.length],i+1)).join(""); $("#galleryTrack").innerHTML=gHTML+gHTML;}
+if($("#galleryTrack2")){const gHTML=GALLERY.map((g,i)=>({g,t:GAL_TAGS[i%GAL_TAGS.length],l:i+30})).reverse().map(o=>galFig(o.g,o.t,o.l)).join(""); $("#galleryTrack2").innerHTML=gHTML+gHTML;}
 
 /* ============================================================ CALENDAR ============================================================ */
 const MONTHS=["January","February","March","April","May","June","July","August","September","October","November","December"];
