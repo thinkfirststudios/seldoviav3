@@ -94,7 +94,6 @@ function stars(r){const full=Math.round(r); return "★★★★★".slice(0,ful
 const flickr=(w,h,tags,lock)=>`https://loremflickr.com/${w}/${h}/${tags}?lock=${lock}`;
 const TAGS_BY_KEY={lodging:"cabin,forest,alaska",dining:"seafood,harbor,alaska",charters:"boat,ocean,alaska",arts:"art,gallery,coast",outdoors:"trail,forest,mountains",wellness:"spa,forest,nature",events:"festival,outdoor,community"};
 const GAL_TAGS=["harbor,fog,alaska","boardwalk,coast,alaska","seaplane,bay,alaska","berries,forest,trail","otter,sea,wildlife","wildflowers,mountains,alaska","fishing,dock,harbor","sunset,coast,alaska","kayak,water,alaska"];
-const LISTING_TAGS=["cabin,waterfront,alaska","forest,land,alaska","boardwalk,house,coast","house,bay,mountains","cabin,forest,cottage","harbor,building,coast"];
 
 // hero quick-cats
 if($("#quickcats")) $("#quickcats").innerHTML=[["Restaurants","dining"],["Lodging","lodging"],["Charters","charters"],["Trails","outdoors"],["Arts","arts"],["Events","events"]].map(([label,key])=>
@@ -153,7 +152,7 @@ if($("#masonry")) $("#masonry").innerHTML=GALLERY.map((im,i)=>{
 
 // real estate listings
 if($("#reGrid")) $("#reGrid").innerHTML=LISTINGS.map((l,i)=>`
-  <a class="place" href="real-estate.html"><div class="place-media"><img class="place-photo" src="${flickr(600,400,LISTING_TAGS[i%LISTING_TAGS.length],i+41)}" alt="" loading="lazy" width="600" height="400"><span class="badge-open">${l.open?'Available':'Pending'}</span></div>
+  <a class="place" href="real-estate.html"><div class="place-media place-media-blank"><span class="badge-open">${l.open?'Available':'Pending'}</span></div>
   <div class="place-body">
     <div class="rating"><span class="cat" style="font-weight:800;color:var(--accent-ink)">${esc(l.cat)}</span></div>
     <h4>${esc(l.name)}</h4>
