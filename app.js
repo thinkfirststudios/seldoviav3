@@ -152,7 +152,7 @@ if($("#masonry")) $("#masonry").innerHTML=GALLERY.map((im,i)=>{
 
 // real estate listings
 if($("#reGrid")) $("#reGrid").innerHTML=LISTINGS.map((l,i)=>`
-  <a class="place" href="real-estate.html"><div class="place-media place-media-blank"><span class="badge-open">${l.open?'Available':'Pending'}</span></div>
+  <a class="place" href="real-estate.html"><div class="place-media place-media-blank"><span class="ph-label"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>Photo placeholder</span><span class="badge-open">${l.open?'Available':'Pending'}</span></div>
   <div class="place-body">
     <div class="rating"><span class="cat" style="font-weight:800;color:var(--accent-ink)">${esc(l.cat)}</span></div>
     <h4>${esc(l.name)}</h4>
