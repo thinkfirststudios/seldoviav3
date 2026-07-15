@@ -106,7 +106,7 @@ nav.mainnav a.active{background:#fff; color:var(--accent-ink);}
 
 /* ============================================================ HOME HERO (real Seldovia photo) */
 .hero{position:relative; padding:clamp(14px,2.4vw,24px) clamp(14px,2.4vw,24px) 0;}
-.hero-media{position:relative; border-radius:clamp(16px,2.4vw,26px); overflow:clip; min-height:clamp(440px,56vw,600px); display:grid; place-items:center; isolation:isolate;
+.hero-media{position:relative; border-radius:clamp(16px,2.4vw,26px); overflow:clip; min-height:clamp(440px,56vw,600px); display:grid; place-items:center; isolation:isolate; padding-bottom:clamp(8px,2vw,16px);
   background:#54636e url("images/hero-seldovia.jpg") center 42%/cover no-repeat;}
 .hero-media::after{content:""; position:absolute; inset:0; z-index:0; background:linear-gradient(180deg, rgba(19,2,11,.42) 0%, rgba(19,2,11,.18) 38%, rgba(19,2,11,.6) 100%);}
 .hero-text{position:relative; z-index:1; text-align:center; color:#fff; padding:clamp(30px,6vw,64px) clamp(18px,4vw,40px) 0; max-width:820px; margin-inline:auto;}
@@ -126,7 +126,7 @@ nav.mainnav a.active{background:#fff; color:var(--accent-ink);}
 .hero-results{position:absolute; top:calc(100% + 10px); left:0; right:0; background:var(--sheet); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-lg); max-height:min(58vh,420px); overflow:auto; display:none; text-align:left;}
 .hero-results.show{display:block;}
 @media (max-width:680px){ .hero-search-card{grid-template-columns:1fr;} .hs-field + .hs-field{border-left:0; border-top:1px solid var(--line);} .hero-search .btn-primary{width:100%;} }
-.quickcats{position:relative; z-index:1; display:flex; flex-wrap:wrap; justify-content:center; gap:.5rem; margin:clamp(46px,6vw,64px) auto 0; max-width:900px; padding-top:clamp(8px,2vw,14px);}
+.quickcats{position:relative; z-index:1; display:flex; flex-wrap:wrap; justify-content:center; gap:.5rem; margin:clamp(46px,6vw,64px) auto clamp(18px,5vw,28px); max-width:900px; padding-top:clamp(8px,2vw,14px);}
 .quickcat{display:inline-flex; align-items:center; gap:.5rem; background:var(--accent); border:1px solid var(--accent); border-radius:var(--radius-pill); padding:.6rem 1rem; font-size:.9rem; font-weight:600; color:#fff; text-decoration:none; box-shadow:0 8px 18px -8px rgba(223,18,132,.65); cursor:pointer; transition:background .15s,box-shadow .2s,transform .12s;}
 .quickcat:hover{background:var(--accent-ink); border-color:var(--accent-ink); color:#fff; transform:translateY(-1px);}
 .quickcat svg{color:#fff;}
