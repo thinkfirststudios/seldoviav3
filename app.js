@@ -108,9 +108,10 @@ function placeMedia(i){const[a,b,c]=pick(i); return scene(a,b,c,'p'+i);}
 if($("#quickcats")) $("#quickcats").innerHTML=[["Restaurants","dining"],["Lodging","lodging"],["Charters","charters"],["Trails","outdoors"],["Arts","arts"],["Events","events"]].map(([label,key])=>
   `<a class="quickcat" href="explore.html?cat=${key}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/></svg>${esc(label)}</a>`).join("");
 
-// category tiles
-if($("#catGrid")) $("#catGrid").innerHTML=CATEGORIES.map((c,i)=>{const[a,b,cc]=pick(i);
-  return `<a class="cat-tile" href="explore.html?cat=${c.key}" aria-label="${esc(c.b)}">${scene(a,b,cc,'c'+i)}<span class="cap"><b>${esc(c.b)}</b><span>${esc(c.s)}</span></span></a>`;}).join("");
+// category tiles — PROD: swap picsum placeholders for real category photos
+if($("#catGrid")) $("#catGrid").innerHTML=CATEGORIES.map((c,i)=>{
+  const img=`https://picsum.photos/seed/seldovia-${c.key}-${i}/600/600`;
+  return `<a class="cat-tile" href="explore.html?cat=${c.key}" aria-label="${esc(c.b)}"><img class="cat-photo" src="${img}" alt="" loading="lazy" width="600" height="600"><span class="cap"><b>${esc(c.b)}</b><span>${esc(c.s)}</span></span></a>`;}).join("");
 
 // feature media
 if($("#featureMedia")){const[a,b,c]=pick(1); $("#featureMedia").innerHTML=scene(a,b,c,'feat');}
