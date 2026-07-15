@@ -142,9 +142,12 @@ if($("#placeTabs")){
 renderPlaces();
 
 // gazette
-// PROD: swap picsum placeholders for real Gazette article photos
+// PROD: swap these keyworded placeholders for real Gazette article photos
+// On-theme nature/coastal placeholders via LoremFlickr, tagged per article.
+const GAZ_TAGS=["harbor,fishing,alaska","boardwalk,coast,alaska","berries,forest,alaska","coast,ocean,alaska","harbor,boat,alaska","garden,vegetables,green"];
 if($("#gazetteGrid")) $("#gazetteGrid").innerHTML=GAZETTE.map((g,i)=>{
-  return `<a class="post" href="gazette.html"><div class="post-media"><img class="post-photo" src="https://picsum.photos/seed/seldovia-gazette-${i}/640/400" alt="" loading="lazy" width="640" height="400"></div>
+  const tags=GAZ_TAGS[i%GAZ_TAGS.length];
+  return `<a class="post" href="gazette.html"><div class="post-media"><img class="post-photo" src="https://loremflickr.com/640/400/${tags}?lock=${i+1}" alt="" loading="lazy" width="640" height="400"></div>
     <div class="post-body"><span class="kicker">${esc(g.cat)}</span><h4>${esc(g.title)}</h4><p>${esc(g.excerpt)}</p>
     <div class="post-meta"><span>${esc(g.date)}</span><span>·</span><span>${esc(g.read)} read</span></div></div></a>`;}).join("");
 
