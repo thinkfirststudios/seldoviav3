@@ -186,14 +186,14 @@ nav.mainnav a.active{background:#f2b3d5; color:var(--accent-ink);}
 .place-loc{display:flex; align-items:center; gap:.35rem; font-size:.85rem; color:var(--muted);}
 .place-loc svg{color:var(--sage);}
 
-.howband{background:var(--band); color:#fbe9de; border-radius:clamp(18px,2.6vw,26px); padding:clamp(30px,5vw,60px) clamp(20px,4vw,52px); text-align:center; background-image:radial-gradient(circle at 20% 20%, rgba(255,255,255,.05) 0 8px, transparent 9px); background-size:34px 34px;}
+.howband{background:#c00d70; color:#ffe3f2; border-radius:clamp(18px,2.6vw,26px); padding:clamp(30px,5vw,60px) clamp(20px,4vw,52px); text-align:center; background-image:radial-gradient(circle at 20% 20%, rgba(255,255,255,.07) 0 8px, transparent 9px); background-size:34px 34px;}
 .howband .eyebrow{color:#ffb9dd;} .howband .eyebrow::before,.howband .eyebrow::after{background:rgba(255,255,255,.3);}
 .howband h2{color:#fff; font-size:clamp(1.6rem,3.2vw,2.3rem);}
 .how-steps{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(20px,3vw,40px); margin-top:clamp(28px,4vw,44px);}
 @media (max-width:760px){ .how-steps{grid-template-columns:1fr;} }
 .how-step .ico{width:64px; height:64px; border-radius:50%; margin:0 auto .9rem; display:grid; place-items:center; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2); color:#ffd6ec;}
 .how-step h4{color:#fff; font-size:1.2rem;}
-.how-step p{color:#e8c8b9; font-size:.92rem; margin-top:.5rem; max-width:32ch; margin-inline:auto;}
+.how-step p{color:#ffd0e8; font-size:.92rem; margin-top:.5rem; max-width:32ch; margin-inline:auto;}
 
 /* ============================================================ MEET JENNY (real photos) */
 .jenny-card{display:grid; grid-template-columns:minmax(200px,300px) 1fr; gap:clamp(20px,3vw,40px); align-items:center; background:var(--surface-2); border:1px solid var(--line); border-radius:clamp(18px,2.6vw,26px); overflow:clip; padding:clamp(18px,3vw,32px);}
