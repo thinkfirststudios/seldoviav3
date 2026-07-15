@@ -6,9 +6,9 @@
    ============================================================ */
 :root{
   --champagne:#F8E6DD; --white:#FFFFFF; --seal:#663015; --sage:#989572; --barbie:#DF1284; --ink:#13020B;
-  --page:#FFFFFF; --sheet:#FFFFFF; --surface-2:#FBF2EC; --peach:#F8E6DD;
+  --page:#FFFFFF; --sheet:#FFFFFF; --surface-2:#FCEDF3; --peach:#FADEEB;
   --text:#241318; --text-soft:#6f5c54; --muted:#9a877f; --heading:#1b0a10;
-  --line:#eddfd6; --line-2:#e2cec2; --accent:#DF1284; --accent-ink:#c00d70; --accent-soft:#fbe1f0;
+  --line:#f2dde8; --line-2:#ecc8db; --accent:#DF1284; --accent-ink:#c00d70; --accent-soft:#fbe1f0;
   --open:#6f7d55; --open-bg:#eef1e6; --star:#e6a417; --band:#5a2a12;
   --radius:18px; --radius-s:12px; --radius-pill:999px;
   --shadow:0 1px 2px rgba(102,48,21,.04), 0 10px 30px -14px rgba(102,48,21,.20);
@@ -19,9 +19,9 @@
 /* Default to the white ground regardless of OS setting.
    Dark mode is available only via the manual toggle ([data-theme="dark"]). */
 :root[data-theme="light"]{
-  --page:#FFFFFF; --sheet:#fff; --surface-2:#FBF2EC; --peach:#F8E6DD;
+  --page:#FFFFFF; --sheet:#fff; --surface-2:#FCEDF3; --peach:#FADEEB;
   --text:#241318; --text-soft:#6f5c54; --muted:#9a877f; --heading:#1b0a10;
-  --line:#eddfd6; --line-2:#e2cec2; --accent:#DF1284; --accent-ink:#c00d70; --accent-soft:#fbe1f0;
+  --line:#f2dde8; --line-2:#ecc8db; --accent:#DF1284; --accent-ink:#c00d70; --accent-soft:#fbe1f0;
   --open:#6f7d55; --open-bg:#eef1e6; --star:#e6a417; --band:#5a2a12;
   --shadow:0 1px 2px rgba(102,48,21,.04),0 10px 30px -14px rgba(102,48,21,.20);
   --shadow-lg:0 2px 8px rgba(102,48,21,.08),0 26px 60px -24px rgba(102,48,21,.34);
