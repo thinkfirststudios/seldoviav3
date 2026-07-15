@@ -142,8 +142,9 @@ if($("#placeTabs")){
 renderPlaces();
 
 // gazette
-if($("#gazetteGrid")) $("#gazetteGrid").innerHTML=GAZETTE.map((g,i)=>{const[a,b,c]=pick(i+2);
-  return `<a class="post" href="gazette.html"><div class="post-media">${scene(a,b,c,'g'+i)}</div>
+// PROD: swap picsum placeholders for real Gazette article photos
+if($("#gazetteGrid")) $("#gazetteGrid").innerHTML=GAZETTE.map((g,i)=>{
+  return `<a class="post" href="gazette.html"><div class="post-media"><img class="post-photo" src="https://picsum.photos/seed/seldovia-gazette-${i}/640/400" alt="" loading="lazy" width="640" height="400"></div>
     <div class="post-body"><span class="kicker">${esc(g.cat)}</span><h4>${esc(g.title)}</h4><p>${esc(g.excerpt)}</p>
     <div class="post-meta"><span>${esc(g.date)}</span><span>·</span><span>${esc(g.read)} read</span></div></div></a>`;}).join("");
 
