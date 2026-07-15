@@ -36,9 +36,6 @@ const HEADER=`
         <div class="results" id="navResults" role="listbox" style="left:0; right:0; top:calc(100% + 8px);"></div>
       </div>
       <a class="btn btn-primary add-listing" href="contact.html">+ Add a Listing</a>
-      <button class="icon-btn" id="themeBtn" aria-label="Switch color theme" title="Switch theme">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-      </button>
       <button class="icon-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
@@ -254,7 +251,6 @@ wireSearch("heroSearch","heroResults");
 if($("#heroSearchBtn")) $("#heroSearchBtn").addEventListener("click",()=>{const v=$("#heroSearch").value; if(v)renderResults($("#heroResults"),v); else $("#heroSearch").focus();});
 
 /* ============================================================ MISC UI ============================================================ */
-$("#themeBtn").addEventListener("click",()=>{const cur=document.documentElement.getAttribute("data-theme"); const sysDark=window.matchMedia("(prefers-color-scheme: dark)").matches; const now=cur||(sysDark?"dark":"light"); document.documentElement.setAttribute("data-theme",now==="dark"?"light":"dark");});
 const drawer=$("#drawer"),menuBtn=$("#menuBtn");
 function setDrawer(o){drawer.classList.toggle("open",o); menuBtn.setAttribute("aria-expanded",o); drawer.setAttribute("aria-hidden",!o);}
 menuBtn.addEventListener("click",()=>setDrawer(true));
