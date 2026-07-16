@@ -9,6 +9,15 @@ const $=(s,el=document)=>el.querySelector(s), $$=(s,el=document)=>[...el.querySe
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const PAGE=document.body.dataset.page||"home";
 
+/* ============================================================ PWA (installable, offline-capable) ============================================================ */
+(function(){
+  const head=document.head;
+  const add=(rel,href,extra)=>{const l=document.createElement("link"); l.rel=rel; l.href=href; if(extra)Object.assign(l,extra); head.appendChild(l);};
+  if(!document.querySelector('link[rel="manifest"]')) add("manifest","manifest.json");
+  add("apple-touch-icon","images/icon-180.png");
+  if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
+})();
+
 /* ============================================================ SHARED CHROME (header / drawer / footer) ============================================================ */
 const NAV=[
   ["explore.html","Explore","explore"],
@@ -78,7 +87,19 @@ document.body.insertAdjacentHTML("beforeend", FOOTER);
 /* ============================================================ MOCK DATA ============================================================ */
 const CATEGORIES=[{b:"Stay",s:"Lodges & cabins",key:"lodging"},{b:"Eat & Drink",s:"Dining & cafés",key:"dining"},{b:"Charters & Tours",s:"On the water",key:"charters"},{b:"Cafés",s:"Coffee & bakery",key:"dining"},{b:"Arts & Galleries",s:"Local makers",key:"arts"},{b:"Outdoors & Trails",s:"Hikes & beaches",key:"outdoors"},{b:"Beauty & Wellness",s:"Spa & self-care",key:"wellness"},{b:"Events",s:"What's on",key:"events"}];
 const PLACES=[{name:"Seldovia Boardwalk Hotel",cat:"Lodging",key:"lodging",rate:4.9,rev:212,open:true},{name:"Tide Pool Café",cat:"Café",key:"dining",rate:4.8,rev:176,open:true},{name:"Kachemak Bay Charters",cat:"Charters",key:"charters",rate:4.9,rev:143,open:true},{name:"Salmonberry Bakery",cat:"Bakery",key:"dining",rate:4.7,rev:98,open:true},{name:"Slough Arts Gallery",cat:"Arts",key:"arts",rate:4.6,rev:64,open:false},{name:"Otterbahn Trail",cat:"Outdoors",key:"outdoors",rate:4.9,rev:230,open:true},{name:"Otter Cove Lodge",cat:"Lodging",key:"lodging",rate:4.8,rev:151,open:true},{name:"Linwood Bar & Grill",cat:"Dining",key:"dining",rate:4.5,rev:120,open:true},{name:"Outside Beach Park",cat:"Outdoors",key:"outdoors",rate:4.7,rev:88,open:true}];
-const GAZETTE=[{title:"Halibut derby returns to the harbor",excerpt:"The summer classic is back, with daily weigh-ins on the city dock and a fish fry to close it out.",date:"Jul 9, 2026",read:"3 min",cat:"Community"},{title:"Restoring the historic boardwalk",excerpt:"Volunteers spent the weekend replacing planks and repainting rails along the slough.",date:"Jul 2, 2026",read:"4 min",cat:"Heritage"},{title:"A record year for the berry pickers",excerpt:"Salmonberries came early and heavy this summer. Locals share their favorite spots (sort of).",date:"Jun 24, 2026",read:"2 min",cat:"Outdoors"},{title:"New mural brightens the ferry terminal",excerpt:"Students and local artists turned a grey wall into a bay-blue welcome for visitors.",date:"Jun 15, 2026",read:"3 min",cat:"Arts"},{title:"Barging your building materials",excerpt:"A practical guide to getting lumber and appliances across the bay without the headache.",date:"Jun 6, 2026",read:"5 min",cat:"Living Here"},{title:"Meet the Village Tribe garden",excerpt:"Fresh greens grow at the edge of town — and everyone's invited to help and harvest.",date:"May 28, 2026",read:"3 min",cat:"Community"}];
+// Jenny's Seldovia Blog — recovered posts (original titles, dates, images preserved). PROD: managed via admin.
+const GAZETTE=[
+ {title:"In Seldovia, working moms wear many hats and often all in the same day.",excerpt:"It’s early mornings with the tide schedule in mind, kids bundled up before school boats or boardwalk walks, and workdays shaped by weather, community needs, and family life all at once.",date:"Mar 12, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/post-0.jpg"},
+ {title:"Author Event – “My Heart is Good” with Josh Wisniewski",excerpt:"We love celebrating local talent, and Seldovia is full of it.",date:"Mar 11, 2026",read:"1 min",cat:"Events",img:"images/gazette/post-1.jpg"},
+ {title:"New Library Hours – Thank You Volunteers!",excerpt:"We’re so grateful for the volunteers who keep our library open and thriving.",date:"Mar 10, 2026",read:"1 min",cat:"Community",img:"images/gazette/post-2.jpg"},
+ {title:"National Napping Day is a reminder that slowing down is just as important as showing up.",excerpt:"Sometimes the best way to reset isn’t coffee… it’s a blanket, a window view of the harbor, and a few peaceful minutes of doing nothing at all.",date:"Mar 9, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/post-3.jpg"},
+ {title:"March 8 marks the start of Daylight Saving Time.",excerpt:"At 2:00 A.M., the clocks jump ahead one hour so don’t forget to spring forward.",date:"Mar 8, 2026",read:"1 min",cat:"Community",img:"images/gazette/post-4.jpg"},
+ {title:"Living here means learning from the water, the weather, and the quiet strength of a coastal town that stands beautifully against the elements.",excerpt:"From this view on the Homer Spit, looking across the bay toward Seldovia, you can almost feel the character of the place calling you home.",date:"Mar 7, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/post-5.jpg"},
+ {title:"Week 10 of 2026 in Seldovia carries the feeling of a season gently beginning to turn.",excerpt:"Winter still shapes the landscape, but the light feels brighter and the days a little longer, hinting at the quiet approach of change.",date:"Mar 6, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/post-6.jpg"},
+ {title:"A big thank you to Seldovia Village Tribe for providing such a beautiful fitness center for our community.",excerpt:"Having a warm, welcoming place to walk on the treadmill, lift weights, or stretch it out on the mats makes all the difference during these long, cold winter days.",date:"Mar 6, 2026",read:"1 min",cat:"Community",img:"images/gazette/post-7.jpg"},
+ {title:"Did you know your name often has a special meaning or history behind it?",excerpt:"Some names come from nature, some from family traditions, and others from different cultures around the world.",date:"Mar 5, 2026",read:"1 min",cat:"Community",img:"images/gazette/post-8.jpg"},
+ {title:"March 2026 Photo Contest – “Color in Motion”",excerpt:"March is here, and with it comes longer days, warmer temps (fingers crossed), and all the vibrant energy of early spring in Seldovia!",date:"Mar 5, 2026",read:"1 min",cat:"Events",img:"images/gazette/post-9.jpg"}
+];
 const GALLERY=[{h:240,cap:"Morning fog over the harbor"},{h:320,cap:"Boardwalk homes at high tide"},{h:200,cap:"Floatplane off the bay"},{h:300,cap:"Salmonberries on the Otterbahn"},{h:220,cap:"Sea otters near the breakwater"},{h:280,cap:"Fireweed and the far range"},{h:210,cap:"Fresh halibut on the dock"},{h:300,cap:"Midnight-gold summer light"},{h:230,cap:"Kayaks on a glassy morning"}];
 const EVENTS=[{d:"2026-07-15",t:"09:00",title:"Farmers & Makers Market",where:"Seldovia Bay Pavilion",cat:"Market",dur:"til 1 PM"},{d:"2026-07-15",t:"18:30",title:"Open Mic on the Boardwalk",where:"Linwood Bar & Grill",cat:"Music",dur:"til late"},{d:"2026-07-17",t:"10:00",title:"Otterbahn Trail Cleanup",where:"Trailhead by the school",cat:"Volunteer",dur:"2 hrs"},{d:"2026-07-18",t:"08:00",title:"Halibut Derby — Weigh-in",where:"City Dock",cat:"Fishing",dur:"daily"},{d:"2026-07-19",t:"19:00",title:"Community Potluck & Bonfire",where:"Outside Beach",cat:"Community",dur:"til dusk"},{d:"2026-07-21",t:"17:30",title:"City Council Meeting",where:"Seldovia City Hall",cat:"Civic",dur:"1.5 hrs"},{d:"2026-07-22",t:"11:00",title:"Kids' Tide-Pool Walk",where:"Outside Beach",cat:"Family",dur:"90 min"},{d:"2026-07-24",t:"18:00",title:"Gallery Night — Local Artists",where:"Seldovia Arts Council",cat:"Arts",dur:"til 9 PM"},{d:"2026-07-26",t:"09:30",title:"Sunday Kayak Paddle",where:"Small-Boat Harbor",cat:"Outdoors",dur:"3 hrs"},{d:"2026-07-28",t:"12:00",title:"Senior Lunch & Cards",where:"SVT Community Room",cat:"Community",dur:"2 hrs"},{d:"2026-07-31",t:"18:00",title:"End-of-Month Fish Fry",where:"Harbor Pavilion",cat:"Food",dur:"til 8 PM"},{d:"2026-08-01",t:"09:00",title:"Farmers & Makers Market",where:"Seldovia Bay Pavilion",cat:"Market",dur:"til 1 PM"}];
 const LISTINGS=[{name:"Waterfront cabin on the slough",cat:"Waterfront · Cabin",beds:2,baths:1,acre:"0.4 ac",open:true},{name:"Spruce-edge buildable parcel",cat:"Parcel · Off-grid",beds:"—",baths:"—",acre:"2.1 ac",open:true},{name:"Boardwalk historic home",cat:"Historic · In-town",beds:3,baths:2,acre:"0.2 ac",open:true},{name:"Hilltop home, bay panorama",cat:"View · Home",beds:3,baths:2,acre:"1.0 ac",open:true},{name:"Cozy off-grid retreat",cat:"Cabin · Off-grid",beds:1,baths:1,acre:"5.0 ac",open:true},{name:"Harbor-view commercial space",cat:"Commercial · In-town",beds:"—",baths:1,acre:"0.15 ac",open:false}];
@@ -165,12 +186,9 @@ if($("#placeTabs")){
 renderPlaces();
 
 // gazette
-// PROD: swap these keyworded placeholders for real Gazette article photos
-// On-theme nature/coastal placeholders via LoremFlickr, tagged per article.
-const GAZ_TAGS=["harbor,fishing,alaska","boardwalk,coast,alaska","berries,forest,alaska","coast,ocean,alaska","harbor,boat,alaska","garden,vegetables,green"];
+// Gazette — real recovered posts with their own optimized images.
 if($("#gazetteGrid")) $("#gazetteGrid").innerHTML=GAZETTE.map((g,i)=>{
-  const tags=GAZ_TAGS[i%GAZ_TAGS.length];
-  return `<a class="post" href="gazette.html"><div class="post-media"><img class="post-photo" src="${flickr(640,400,tags,i+1)}" alt="" loading="lazy" width="640" height="400"></div>
+  return `<a class="post" href="gazette.html"><div class="post-media"><img class="post-photo" src="${g.img}" alt="${esc(g.title)}" loading="lazy" width="880" height="550"></div>
     <div class="post-body"><span class="kicker">${esc(g.cat)}</span><h4>${esc(g.title)}</h4><p>${esc(g.excerpt)}</p>
     <div class="post-meta"><span>${esc(g.date)}</span><span>·</span><span>${esc(g.read)} read</span></div></div></a>`;}).join("");
 
