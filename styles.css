@@ -377,6 +377,19 @@ form.stack{display:grid; gap:.85rem;}
 .dir-note{text-align:center; color:var(--text-soft); font-size:.92rem; margin-top:1.4rem;}
 .dir-note a{color:var(--accent-ink); font-weight:700;}
 
+/* community celebrations */
+.celebrations:empty{display:none;}
+.celebrations{margin-bottom:1.6rem;}
+.cel-head{display:flex; align-items:baseline; gap:.7rem; flex-wrap:wrap; margin-bottom:.8rem;}
+.cel-head h3{font-size:1.15rem;}
+.cel-sub{font-size:.85rem; color:var(--text-soft);}
+.cel-row{display:flex; gap:.7rem; overflow-x:auto; padding-bottom:.3rem;}
+.cel-card{flex:0 0 auto; min-width:190px; display:flex; align-items:center; gap:.6rem; background:var(--sheet); border:1px solid var(--line); border-radius:var(--radius-s); padding:.7rem .85rem; box-shadow:var(--shadow);}
+.cel-card.cel-now{border-color:color-mix(in srgb,var(--accent) 50%, var(--line)); background:color-mix(in srgb,var(--accent) 6%, var(--sheet));}
+.cel-emoji{font-size:1.4rem; line-height:1;}
+.cel-name{font-weight:800; color:var(--heading); font-size:.95rem;}
+.cel-date{font-size:.78rem; color:var(--text-soft);}
+
 /* Community phone book — signup form */
 .signup-form{max-width:600px; margin-inline:auto; display:grid; gap:1.1rem; background:var(--sheet); border:1px solid var(--line); border-radius:var(--radius); padding:clamp(1.2rem,3vw,2rem); box-shadow:var(--shadow);}
 .signup-form .form-note{background:var(--accent-soft); color:var(--accent-ink); border-radius:var(--radius-s); padding:.7rem .9rem; font-size:.9rem; font-weight:600;}

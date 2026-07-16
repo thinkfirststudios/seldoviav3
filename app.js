@@ -265,6 +265,24 @@ if($("#listingDetail")){
     <div class="re-cta" style="margin-top:2.2rem"><div><h3>Interested in ${esc(l.addr)}?</h3><p>Reach out to Jenny for a showing, more photos, or the full disclosure packet.</p></div><a class="btn btn-primary" href="contact.html">Contact Jenny</a></div>`;
 }
 
+// community celebrations — from neighbors who chose to share a birthday/anniversary
+if($("#celebrations")){
+  const MO=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  let nowMonth=-1; try{nowMonth=new Date().getMonth();}catch(e){}
+  const items=[];
+  MEMBERS.forEach(m=>{
+    if(m.bday)items.push({name:m.name,label:m.bday,icon:"🎂",kind:"Birthday",mo:MO.indexOf(m.bday.split(" ")[0])});
+    if(m.anniv)items.push({name:m.name,label:m.anniv,icon:"💍",kind:"Anniversary",mo:MO.indexOf(m.anniv.split(" ")[0])});
+  });
+  items.sort((a,b)=>a.mo-b.mo);
+  if(items.length){
+    const thisMonth=items.filter(i=>i.mo===nowMonth);
+    const sub=thisMonth.length?`${MO[nowMonth]} has ${thisMonth.length} to celebrate`:"Birthdays & anniversaries neighbors chose to share";
+    $("#celebrations").innerHTML=`<div class="cel-head"><h3>🎉 Community celebrations</h3><span class="cel-sub">${esc(sub)}</span></div>
+      <div class="cel-row">${items.map(i=>`<div class="cel-card ${i.mo===nowMonth?'cel-now':''}"><span class="cel-emoji">${i.icon}</span><div class="d-main"><div class="cel-name">${esc(i.name)}</div><div class="cel-date">${esc(i.kind)} · ${esc(i.label)}</div></div></div>`).join("")}</div>`;
+  }
+}
+
 // directory / phone book — community members + businesses, privacy-first
 if($("#dirList")){
   const PEOPLE=MEMBERS.map(m=>({...m,type:"person"}));
