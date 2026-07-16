@@ -44,7 +44,6 @@ const HEADER=`
         <input type="search" id="navSearch" placeholder="Search…" aria-label="Search the whole site" autocomplete="off">
         <div class="results" id="navResults" role="listbox" style="left:0; right:0; top:calc(100% + 8px);"></div>
       </div>
-      <a class="btn btn-primary add-listing" href="contact.html">+ Add a Listing</a>
       <button class="icon-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
@@ -56,7 +55,6 @@ const HEADER=`
   <nav class="drawer-panel" aria-label="Mobile">
     <a class="${PAGE==='home'?'active':''}" href="index.html" data-close>Home</a>
     ${navLinks("").replace(/<a /g,'<a data-close ')}
-    <a class="btn btn-primary" href="contact.html" data-close>+ Add a Listing</a>
   </nav>
 </div>`;
 
