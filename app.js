@@ -207,7 +207,22 @@ The surrounding lush lawn — Seldovia's only large lawn on the harbor front —
 
 Upstairs, a private oasis awaits with expansive harbor, mountain, and waterfront views from a large deck. The bright, open-concept living room flows into a chef's kitchen with solid-surface counters, new appliances, and a grand island with a bar sink. An open dining area under vaulted ceilings, a cozy fireplace, two spacious bedrooms (including a water-side master with a fully remodeled ensuite, 2023–2025), a guest bath, and a large pantry complete the retreat.
 
-The rare single-car garage and high-ceiling workshop is a game-changer — secure storage for kayaks, bikes, a vehicle, ATVs, or canoes, or space for creative projects. Some upstairs furnishings are negotiable (seller's personal items, artwork, gift-shop merchandise, and the golf-cart rental business are not included). Surrounded by a gorgeous grass yard and zoned for commercial success, this is a launchpad for your entrepreneurial dreams in Seldovia's coastal heart.`}
+The rare single-car garage and high-ceiling workshop is a game-changer — secure storage for kayaks, bikes, a vehicle, ATVs, or canoes, or space for creative projects. Some upstairs furnishings are negotiable (seller's personal items, artwork, gift-shop merchandise, and the golf-cart rental business are not included). Surrounded by a gorgeous grass yard and zoned for commercial success, this is a launchpad for your entrepreneurial dreams in Seldovia's coastal heart.`},
+ {slug:"57739-kachemak-bay", addr:"57739 Kachemak Bay", city:"Seldovia, AK 99663", price:"$450,000", beds:"3", baths:"1", sqft:"1,399", status:"For Sale", img:"images/listings/57739-kachemak-bay.jpg",
+  ppsf:"$322", payment:"$2,538/mo", homeType:"Single Family (leased parcel)", yearBuilt:"1996", lot:"1.68 acres — bluff, steep/hilly, fronts the bay; 600+ ft of beachfront", zoning:"UNZ — Not Zoned", parking:"EV charger",
+  highlights:["Bay front","Off-grid","Vaulted ceiling","Heated spa","Bluff lot","Fireplace"],
+  design:["Cabin","Pillar/Post/Pier foundation","Wood-frame construction","Metal roof","Vaulted ceiling","Fireplace","Washer & dryer"],
+  features:["600+ ft of bay beachfront plus 600+ ft along the inside lagoon","Fully off-grid — solar arrays + dual generators","Turnkey main cabin, sold mostly furnished","Two guest cabins (12x16 & 12x20) sleeping ~10 total","Three sea kayaks + a 2003 Jetcraft jet boat included","Complete tool & equipment package conveys","SNA 55-yr lease, renewable through 2103"],
+  schools:["Susan B. English Elementary & Middle School","Susan B. English High School"],
+  desc:`Gorgeous turn-key off-grid cabin perched high above Kachemak Bay with unobstructed views of the water and mountains. Completely self-sufficient — powered by robust solar arrays and dual generators — with all the modern conveniences and none of the utility bills. A true modern-day pioneer paradise.
+
+Over 600 feet of bay beachfront plus another 600+ feet along the tranquil inside lagoon. Cast a line from the pebbled beach, comb the tide lines for sea glass and driftwood, or launch one of the three included sea kayaks to glide the bay among sea otters and eagles. Bear-trodden trails lead to summer blueberries and salmonberries.
+
+The main cabin is your headquarters — cozy, fully equipped, and sold turn-key with most of the furniture. Cook fresh salmon on the gas barbecue or smoke it to perfection, then seal your bounty in the chest freezer and vacuum packer. Two charming guest cabins — a 12×16 and a roomier 12×20 with a queen below and a loft queen — host your fellow adventurers, sleeping around ten in all.
+
+Built for resilience and made to be shared, the property conveys with a full arsenal of tools and equipment — chainsaw, table saw, brush cutter, log splitter, generators, a track transport vehicle — and even a 2003 Jetcraft jet boat for quick runs to Seldovia for supplies.
+
+The parcel is secured by a 55-year lease through the Seldovia Native Association, renewable for another 55 years through October 1, 2103. Off-grid means no electric, water, or sewer bill; two annual fees apply (2025 SNA lease ~$2,520; 2025 taxes ~$1,286). This isn't just a property — it's a multi-generational legacy of off-grid mastery and boundless exploration. Your Alaskan odyssey awaits.`}
 ];
 // Community members — opt-in, privacy-first: each person shares only what they want,
 // so fields are intentionally uneven. PROD: populated from approved Netlify Form submissions.
