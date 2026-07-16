@@ -1,7 +1,7 @@
 /* Seldovia.com service worker — network-first so live updates always win,
    with a cache fallback for offline / installable-app behavior.
    Bump CACHE when you want to guarantee old caches are cleared. */
-const CACHE = "seldovia-v2-2";
+const CACHE = "seldovia-v2-3";
 const SHELL = [
   "index.html", "styles.css", "app.js",
   "explore.html", "calendar.html", "gazette.html", "gallery.html",

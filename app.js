@@ -22,7 +22,7 @@ const PAGE=document.body.dataset.page||"home";
 const NAV=[
   ["explore.html","Explore","explore"],
   ["calendar.html","Calendar","calendar"],
-  ["gazette.html","Gazette","gazette"],
+  ["gazette.html","Jenny's Blog","gazette"],
   ["gallery.html","Gallery","gallery"],
   ["real-estate.html","Real Estate","realestate"],
   ["phone-book.html","Phone Book","phonebook"],
@@ -69,7 +69,7 @@ const FOOTER=`
         <p>A warm, community-first guide to our little town on Kachemak Bay. Made as a gift to Seldovia.</p>
         <div class="foot-util"><span>Tide: High 14.2 ft</span><span>Ferry: 3:15 PM</span><span>54&deg;F</span><span id="footTime">&mdash;:&mdash;</span></div>
       </div>
-      <div class="foot-col"><h4>Explore</h4><ul><li><a href="explore.html">Directory</a></li><li><a href="gazette.html">The Gazette</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="calendar.html">Calendar</a></li></ul></div>
+      <div class="foot-col"><h4>Explore</h4><ul><li><a href="explore.html">Directory</a></li><li><a href="gazette.html">Jenny's Blog</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="calendar.html">Calendar</a></li></ul></div>
       <div class="foot-col"><h4>Community</h4><ul><li><a href="phone-book.html">Phone Book</a></li><li><a href="bulletin.html">Bulletin Board</a></li><li><a href="index.html#sponsors">Sponsors</a></li><li><a href="contact.html">Contact</a></li></ul></div>
       <div class="foot-col"><h4>Real Estate</h4><ul><li><a href="real-estate.html">Featured listings</a></li><li><a href="real-estate.html">Buying guide</a></li><li><a href="real-estate.html">Selling guide</a></li><li><a href="contact.html">Home valuation</a></li></ul></div>
     </div>
@@ -133,28 +133,6 @@ const TAGS_BY_KEY={lodging:"cabin,forest,alaska",dining:"seafood,harbor,alaska",
 // are unreliable, so each was previewed and locked to a good image).
 const CAT_TAGS=[{t:"log-cabin,alaska",l:1},{t:"seafood,dinner,plate",l:3},{t:"fishing-boat,harbor",l:1},{t:"latte,coffee",l:2},{t:"mural,streetart",l:1},{t:"mountains,hiking",l:1},{t:"spa,wellness",l:1},{t:"fireworks,night",l:2}];
 const GAL_TAGS=["harbor,fog,alaska","boardwalk,coast,alaska","seaplane,bay,alaska","berries,forest,trail","otter,sea,wildlife","wildflowers,mountains,alaska","fishing,dock,harbor","sunset,coast,alaska","kayak,water,alaska"];
-
-// Seldovia essentials strip — PROD: replace sample values with live feeds
-// (AMHS ferry, NOAA tide station, NWS marine/weather, harbor webcams).
-if($("#essentials")){
-  const I={
-    ferry:'<path d="M3 17c1.5 1 3 1 4.5 0S10.5 16 12 17s3 1 4.5 0S19.5 16 21 17"/><path d="M4 14l1-4h14l1 4"/><path d="M12 6V4M8 10V7h8v3"/>',
-    tide:'<path d="M2 12c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 17c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M12 3v5"/>',
-    marine:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19"/>',
-    clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>'
-  };
-  const svg=p=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;
-  const cards=[
-    {k:"Ferry",v:"3:15 PM",s:"Next sailing · Homer ⇄ Seldovia",ic:I.ferry,href:"calendar.html"},
-    {k:"Tides",v:"High 14.2 ft",s:"2:40 PM · Low 1.1 ft 8:55 PM",ic:I.tide},
-    {k:"Marine & weather",v:"54°F",s:"Wind 8 kt SW · Seas 1 ft · Clear",ic:I.marine},
-    {k:"Local time",v:'<span id="akClock">—</span>',s:"Seldovia, Alaska",ic:I.clock}
-  ];
-  $("#essentials").innerHTML=cards.map(c=>{const inner=`<span class="es-ico">${svg(c.ic)}</span><span class="es-txt"><span class="es-k">${esc(c.k)}</span><span class="es-v">${c.v}</span><span class="es-s">${esc(c.s)}</span></span>`;
-    return c.href?`<a class="es-card" href="${c.href}">${inner}</a>`:`<div class="es-card">${inner}</div>`;}).join("");
-  const tick=()=>{const el=$("#akClock"); if(!el)return; try{el.textContent=new Date().toLocaleTimeString('en-US',{timeZone:'America/Anchorage',hour:'numeric',minute:'2-digit'});}catch(e){el.textContent=new Date().toLocaleTimeString([], {hour:'numeric',minute:'2-digit'});}};
-  tick(); setInterval(tick,15000);
-}
 
 // hero quick-cats
 if($("#quickcats")) $("#quickcats").innerHTML=[["Restaurants","dining"],["Lodging","lodging"],["Charters","charters"],["Trails","outdoors"],["Arts","arts"],["Events","events"]].map(([label,key])=>
@@ -298,7 +276,7 @@ const INDEX=[
   ...PLACES.map(p=>({type:"Place",title:p.name,desc:`${p.cat} · ${p.rate}★`,href:"explore.html",kw:p.cat+" "+p.key})),
   ...LISTINGS.map(l=>({type:"Real Estate",title:l.name,desc:l.cat,href:"real-estate.html",kw:l.cat})),
   ...CATEGORIES.map(c=>({type:"Category",title:c.b,desc:c.s,href:"explore.html?cat="+c.key,kw:c.key})),
-  ...GAZETTE.map(g=>({type:"Gazette",title:g.title,desc:g.excerpt,href:"gazette.html",kw:g.cat})),
+  ...GAZETTE.map(g=>({type:"Jenny's Blog",title:g.title,desc:g.excerpt,href:"gazette.html",kw:g.cat})),
   ...EVENTS.map(e=>({type:"Event",title:e.title,desc:`${fmtDayLabel(e.d)} · ${e.where}`,href:"calendar.html",kw:e.cat+" "+e.where})),
   ...DIRECTORY.map(d=>({type:"Directory",title:d.name,desc:`${d.cat} · ${d.phone}`,href:"phone-book.html",kw:d.cat})),
   ...NOTES.map(n=>({type:"Bulletin",title:n.title,desc:n.body,href:"bulletin.html",kw:n.cat})),

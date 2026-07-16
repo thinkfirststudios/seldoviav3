@@ -71,8 +71,8 @@ h2.title{font-size:clamp(1.7rem,3.6vw,2.6rem);}
 .sample-flag::before{content:""; width:6px; height:6px; border-radius:50%; background:var(--sage);}
 
 .btn{display:inline-flex; align-items:center; justify-content:center; gap:.5rem; font-weight:700; font-size:.95rem; padding:.72rem 1.3rem; border-radius:var(--radius-pill); border:1.5px solid transparent; cursor:pointer; text-decoration:none; min-height:46px; transition:transform .12s, box-shadow .2s, background .2s, color .2s;}
-.btn-primary{background:var(--accent); color:#fff; box-shadow:0 8px 18px -8px rgba(223,18,132,.65);}
-.btn-primary:hover{transform:translateY(-1px); box-shadow:0 12px 24px -8px rgba(223,18,132,.75);}
+.btn-primary{background:var(--accent); color:#fff; box-shadow:0 6px 16px -10px rgba(20,12,6,.45);}
+.btn-primary:hover{transform:translateY(-1px); box-shadow:0 10px 22px -10px rgba(20,12,6,.5);}
 .btn-ghost{background:transparent; color:var(--heading); border-color:var(--line-2);}
 .btn-ghost:hover{border-color:var(--accent); color:var(--accent-ink);}
 @media (prefers-reduced-motion: reduce){ .btn:hover{transform:none;} }
@@ -146,20 +146,6 @@ body[data-page="realestate"] .page-hero{background:linear-gradient(160deg, #fde6
 .quickcat svg{color:var(--accent);}
 .quickcat:hover svg{color:#fff;}
 
-/* Seldovia essentials strip */
-.essentials-section{padding-block:clamp(26px,4vw,40px);}
-.essentials-head{display:flex; align-items:baseline; justify-content:space-between; gap:1rem; flex-wrap:wrap; margin-bottom:1rem;}
-.essentials-head .eyebrow{margin-bottom:0;}
-.essentials{display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(10px,1.4vw,16px);}
-.es-card{display:flex; align-items:center; gap:.7rem; background:var(--sheet); border:1px solid var(--line); border-radius:var(--radius-s); padding:.85rem .9rem; box-shadow:var(--shadow); text-decoration:none; color:inherit; transition:border-color .15s, transform .12s, box-shadow .2s;}
-a.es-card:hover{border-color:var(--accent); transform:translateY(-2px); box-shadow:var(--shadow-lg);}
-.es-ico{flex:none; width:40px; height:40px; border-radius:11px; display:grid; place-items:center; background:var(--accent-soft); color:var(--accent);}
-.es-ico svg{width:21px; height:21px;}
-.es-txt{display:flex; flex-direction:column; min-width:0;}
-.es-k{font-size:.68rem; text-transform:uppercase; letter-spacing:.06em; font-weight:800; color:var(--muted);}
-.es-v{font-weight:800; color:var(--heading); font-size:1.02rem; line-height:1.2; font-variant-numeric:tabular-nums;}
-.es-s{font-size:.76rem; color:var(--text-soft); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
-@media (max-width:900px){ .essentials{grid-auto-flow:column; grid-template-columns:none; grid-auto-columns:minmax(210px,1fr); overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:.4rem; margin-inline:calc(-1*clamp(18px,4vw,40px)); padding-inline:clamp(18px,4vw,40px);} .es-card{scroll-snap-align:start;} }
 
 .results{position:absolute; z-index:70; background:var(--sheet); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-lg); max-height:min(60vh,440px); overflow:auto; display:none;}
 .results.show{display:block;}
