@@ -274,9 +274,6 @@ function renderPlaces(){
     <a class="place" href="explore.html">
       <div class="place-media"><img class="place-photo" src="${flickr(600,400,TAGS_BY_KEY[p.key]||'coast,alaska,nature',PLACES.indexOf(p)+1)}" alt="" loading="lazy" width="600" height="400">
         <span class="badge-open" style="${p.open?'':'background:#efe6e2;color:#9a877f'}">${p.open?'Open':'Closed'}</span>
-        <button class="heart" aria-label="Save ${esc(p.name)}" aria-pressed="false" onclick="event.preventDefault();event.stopPropagation();this.setAttribute('aria-pressed', this.getAttribute('aria-pressed')==='true'?'false':'true')">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.5-9.5-9A5 5 0 0 1 12 6a5 5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z"/></svg>
-        </button>
       </div>
       <div class="place-body">
         <div class="rating"><span class="stars">${stars(p.rate)}</span> <b>${p.rate.toFixed(1)}</b><span>(${p.rev})</span> <span class="cat">· ${esc(p.cat)}</span></div>
