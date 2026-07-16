@@ -143,7 +143,41 @@ The main level features a bright, sunny new kitchen, cozy living area, and bathr
 
 Set on three private acres, there's plenty of room to garden, explore, or simply soak in the peace and quiet. Recent tree clearing has opened the property to even more sunshine and enhanced the views. A spacious 448 sq ft heated shop and garage offers excellent space for projects, vehicles, or Alaska gear, and an additional insulated outbuilding is already wired and ready to become a workshop, bunkhouse, studio, or storage.
 
-The cabin is served by a water catchment system, with the tank tucked beneath the home and insulated from the weather. And yes — even the outhouse comes with a view. As an added bonus, more than four cords of firewood have already been cut, split, and stacked, ready to keep the fire crackling from the day you arrive.`}
+The cabin is served by a water catchment system, with the tank tucked beneath the home and insulated from the weather. And yes — even the outhouse comes with a view. As an added bonus, more than four cords of firewood have already been cut, split, and stacked, ready to keep the fire crackling from the day you arrive.`},
+ {slug:"175-augustine-north-ave", addr:"175 Augustine North Ave", city:"Seldovia, AK 99663", price:"$895,000", beds:"7", baths:"6", sqft:"4,040", status:"For Sale", img:"images/listings/175-augustine-north-ave.jpg",
+  ppsf:"$222", payment:"$5,729/mo", homeType:"Single Family", yearBuilt:"1979", lot:"16,553 sq ft — fronts a lagoon/estuary & inlet, ~90 ft of slough frontage", zoning:"WCR — Waterfront Commercial Residential", parking:"2-car attached garage + carport",
+  highlights:["Very popular","Turnkey B&B","Bay view","Vaulted ceiling","~90 ft waterfront","Mud room"],
+  design:["Cabin","Pillar/Post/Pier foundation","Wood-frame construction","Metal roof","Vaulted ceiling","Fireplace","Tile flooring","Quartz & laminate counters","Dishwasher","Basement"],
+  features:["Turnkey Bed & Breakfast — 3 furnished guest suites, each with a private 3/4 bath","Iconic guest cabin built over the water with ~180° slough views","Oversized 668 sq ft garage & shop","Two-story greenhouse with 540+ sq ft of growing space","Smokehouse with hot & cold smokers","Dedicated fish-processing room with freezers","~90 ft of slough frontage — room to expand","Three lots from the Slough Bridge; walk to harbor, shops & airport","Most furniture & equipment convey"],
+  schools:["Susan B. English Elementary & Middle School","Susan B. English High School"],
+  desc:`A rare opportunity in the heart of Seldovia: a 3,500+ sq ft home and iconic waterfront cabin with 7 bedrooms, 6 baths, a successful turnkey Bed & Breakfast, an oversized garage/shop, a huge two-story greenhouse, a smokehouse, and nearly 90 feet of slough frontage. Breathtaking slough, bay, mountain, and sunset views — with endless residential or business potential.
+
+Waterfront land along the slough is limited, and it's rare to find this much usable space. A large driveway leaves plenty of room for guests, boats, trailers, or RVs, plus the garage, greenhouse, and smokehouse. You're just three lots from the Seldovia Slough Bridge — an easy walk to the harbor, restaurants, shops, and airport.
+
+The views are part of everyday life. From the windows and decks you'll look across the slough toward Seldovia Bay, the surrounding mountains, colorful waterfront homes, and spectacular sunsets. Eagles visit regularly, boats and kayaks drift by, and the changing tides bring a new view every few hours.
+
+Designed with guests in mind while still warm as a full-time home. Upstairs are three beautifully furnished guest suites, each with a private 3/4 bath and sitting area — most with their own decks. Fully furnished and ready to welcome visitors from day one: a true turnkey B&B.
+
+The main level gathers everyone around a vaulted two-story living room, a kitchen and dining nook, and a bright sunroom/formal dining area that opens to a grand deck tucked among mature spruce. Downstairs adds a large bedroom, a family room over the water, laundry, storage, and a dedicated fish-processing room with freezers — this is Alaska, after all.
+
+Just outside: a smokehouse with hot and cold smokers, an oversized 668 sq ft garage/shop, and an impressive two-story greenhouse. And the guest cabin — built on pilings over the water with a wraparound deck and nearly 180° slough views — is the perfect spot for Songs on the Slough in July. Zoned Waterfront Commercial Residential, it can keep welcoming guests, become a family retreat, or simply be enjoyed as one of Seldovia's one-of-a-kind waterfront homes. Much of the furniture and equipment conveys.`},
+ {slug:"60187-chesloknu-lease", addr:"60187 Chesloknu Lease", city:"Seldovia, AK 99663", price:"$425,000", beds:"2", baths:"0.5", sqft:"1,631", status:"For Sale", img:"images/listings/60187-chesloknu-lease.jpg",
+  ppsf:"$261", payment:"$2,410/mo", homeType:"Single Family (leased parcel)", yearBuilt:"1988", lot:"3.18 acres — fronts a bay/harbor, bluff, steep slope", zoning:"UNZ — Not Zoned", parking:"Private road access",
+  highlights:["Bay/harbor front","Rare road access","Log cabin","Vaulted ceiling","Heated spa","Off-grid"],
+  design:["Log cabin","Pillar/Post/Pier foundation","Metal roof","Log siding","Vaulted ceiling","Fireplace","Wood countertops"],
+  features:["Rare private road access on the Seldovia side of the bay (~8,500 ft road through Native lands)","Custom hand-built log home (1988)","Wraparound deck with ~180° bay & mountain views","~585 sq ft loft with a bright artist's atelier","Off-grid — propane appliances, water hauled to two tanks","Beach access; salmon runs, eagles, otters & bears","Offered fully furnished (excluding personal items)","Seldovia Native Association 55-yr lease to 2042, renewable to 2097"],
+  schools:["Susan B. English Elementary & Middle School","Susan B. English High School"],
+  desc:`Rare waterfront opportunity on Seldovia Bay. This custom-built log home offers stunning bay, mountain, sunrise, and sunset views from a wraparound deck — and something almost unheard of on the Seldovia side of the bay: private road access, so you can drive right to your door. A spacious open-concept living area, large kitchen, beach access, and authentic off-grid Alaska living.
+
+Built in 1988 by a local log craftsman, the home sits on the shoreline overlooking the head of the Seldovia River, catching both morning and afternoon sun. What truly sets it apart is private road access through Native lands — no other leased properties on this side of the bay offer this. The roughly 8,500-ft access road makes travel from Seldovia easy in the accessible seasons; in winter it's unmaintained, so owners plow or arrive by snow machine, making every trip part of the adventure.
+
+Inside, the home embraces classic Alaska living: a spacious kitchen with a generous pantry and propane appliances. Since electricity isn't available here, the home operates off-grid, with water hauled to two storage tanks. The open-concept living and dining area is highlighted by vaulted ceilings and large windows framing the bay, and the main-floor primary bedroom has large southwest-facing windows for panoramic water and mountain views.
+
+Above is an expansive ~585 sq ft loft running the full length of the cabin — abundant room for guests and hobbies, plus a bright artist's atelier tucked alongside the windows: a peaceful place to paint, write, or simply be inspired by the tides and wildlife. This is the second bedroom.
+
+Life here is defined by the wildlife just outside your door — bald eagles overhead, sea otters in the calm water, and black bears along the shoreline. During the summer pink-salmon run, thousands of fish make their way toward the Seldovia River. Because the property sits at the back of the bay, the water is remarkably quiet, with low tides naturally limiting boat traffic and creating a rare sense of peace and solitude.
+
+Offered fully furnished (excluding personal items and select artwork), it's ready to enjoy from day one — just bring groceries, a fishing pole, and your sense of adventure. The parcel is leased through the Seldovia Native Association on a 55-year lease expiring in 2042, with an option to renew to 2097. (2025 lease ~$3,588; 2025 taxes ~$1,363.)`}
 ];
 // Community members — opt-in, privacy-first: each person shares only what they want,
 // so fields are intentionally uneven. PROD: populated from approved Netlify Form submissions.
