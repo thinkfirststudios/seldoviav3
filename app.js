@@ -127,7 +127,6 @@ if($("#essentials")){
     ferry:'<path d="M3 17c1.5 1 3 1 4.5 0S10.5 16 12 17s3 1 4.5 0S19.5 16 21 17"/><path d="M4 14l1-4h14l1 4"/><path d="M12 6V4M8 10V7h8v3"/>',
     tide:'<path d="M2 12c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 17c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M12 3v5"/>',
     marine:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19"/>',
-    cam:'<rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-3v10l-6-3z"/>',
     clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>'
   };
   const svg=p=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;
@@ -135,7 +134,6 @@ if($("#essentials")){
     {k:"Ferry",v:"3:15 PM",s:"Next sailing · Homer ⇄ Seldovia",ic:I.ferry,href:"calendar.html"},
     {k:"Tides",v:"High 14.2 ft",s:"2:40 PM · Low 1.1 ft 8:55 PM",ic:I.tide},
     {k:"Marine & weather",v:"54°F",s:"Wind 8 kt SW · Seas 1 ft · Clear",ic:I.marine},
-    {k:"Webcams",v:"Harbor cam",s:"Live view of the small-boat harbor",ic:I.cam,href:"#"},
     {k:"Local time",v:'<span id="akClock">—</span>',s:"Seldovia, Alaska",ic:I.clock}
   ];
   $("#essentials").innerHTML=cards.map(c=>{const inner=`<span class="es-ico">${svg(c.ic)}</span><span class="es-txt"><span class="es-k">${esc(c.k)}</span><span class="es-v">${c.v}</span><span class="es-s">${esc(c.s)}</span></span>`;
