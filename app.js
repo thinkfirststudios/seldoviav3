@@ -108,6 +108,16 @@ const LISTINGS=[
  {addr:"195 Lookout Aly", price:"$345,000", beds:"2", baths:"1.5", sqft:"1,376", status:"For Sale", img:"images/listings/195-lookout-aly.jpg"},
  {addr:"3108 Jakolof Bay Rd", price:"$219,900", beds:"1", baths:"1", sqft:"768", status:"For Sale", img:"images/listings/3108-jakolof-bay-rd.jpg"}
 ];
+// Community members — opt-in, privacy-first: each person shares only what they want,
+// so fields are intentionally uneven. PROD: populated from approved Netlify Form submissions.
+const MEMBERS=[
+ {name:"The Chissus Family",addr:"Main Street",phone:"(907) 555-0148",bday:"",anniv:"Jun 14",photo:"",featured:true},
+ {name:"Mara & Jo Hendrickson",addr:"Boardwalk",phone:"",bday:"Mar 3",anniv:"Aug 22",photo:""},
+ {name:"Tom Reyes",addr:"",phone:"(907) 555-0163",bday:"Nov 9",anniv:"",photo:""},
+ {name:"Susan English",addr:"Winifred Ave",phone:"",bday:"",anniv:"",photo:""},
+ {name:"D. Whitfield",addr:"",phone:"(907) 555-0129",bday:"Jul 30",anniv:"",photo:""},
+ {name:"The Hansen Household",addr:"Jakolof Bay Rd",phone:"(907) 555-0175",bday:"",anniv:"Sep 5",photo:""}
+];
 const DIRECTORY=[{name:"Seldovia Boardwalk Hotel",cat:"Lodging",phone:"(907) 555-0142",spon:true},{name:"Tide Pool Café",cat:"Food & Drink",phone:"(907) 555-0198",spon:false},{name:"Kachemak Bay Charters",cat:"Charters",phone:"(907) 555-0170",spon:true},{name:"Seldovia General Store",cat:"Shopping",phone:"(907) 555-0111",spon:false},{name:"Bay Fuel & Marine",cat:"Marine",phone:"(907) 555-0133",spon:false},{name:"Slough Arts Gallery",cat:"Arts",phone:"(907) 555-0165",spon:false},{name:"Susan B. English School",cat:"Public",phone:"(907) 555-0100",spon:false},{name:"Seldovia Medical Clinic",cat:"Health",phone:"(907) 555-0122",spon:false},{name:"Otter Cove Lodge",cat:"Lodging",phone:"(907) 555-0188",spon:true},{name:"Harbor Water Taxi",cat:"Charters",phone:"(907) 555-0155",spon:false},{name:"Salmonberry Bakery",cat:"Food & Drink",phone:"(907) 555-0177",spon:false},{name:"Seldovia Public Library",cat:"Public",phone:"(907) 555-0109",spon:false}];
 const NOTES=[{cat:"Free",title:"Free firewood — you haul",body:"Spruce rounds from a downed tree near Jakolof Bay Rd. First come, first served.",by:"The Hansens",when:"Jul 12"},{cat:"Lost & Found",title:"Found: blue rain jacket",body:"Left at the ferry terminal bench. Describe it and it's yours — check at the General Store.",by:"Terminal staff",when:"Jul 11"},{cat:"Wanted",title:"Ride-share to Homer Sat",body:"Two folks + groceries looking to split the water-taxi Saturday morning. Text the board.",by:"Mara & Jo",when:"Jul 10"},{cat:"For Sale",title:"14' aluminum skiff",body:"Solid little boat, 9.9 hp, trailer included. Great for calm-day crossings.",by:"D. Whitfield",when:"Jul 9"},{cat:"Volunteer",title:"Trail crew needs hands",body:"Otterbahn cleanup Friday at 10. Gloves and cocoa provided — kids welcome!",by:"Trails Committee",when:"Jul 8"},{cat:"Announcement",title:"Library summer hours",body:"Open Tue–Sat, 11–5 through August. New books in from the Homer exchange.",by:"Seldovia Library",when:"Jul 7"}];
 const TESTIMONIALS=[{name:"Richard Duffy",role:"Visitor from Anchorage",c:"#663015",t:"We found the ferry times, a cabin, and a kayak tour all in one afternoon. Coming back every summer now."},{name:"Dana Sanders",role:"Seldovia local",c:"#DF1284",t:"Finally a calendar you can actually scroll. I check the bulletin board every morning with my coffee."},{name:"Marta Ivanoff",role:"Gallery owner",c:"#7f8a6b",t:"Listing my gallery here brought in real foot traffic. It feels like the whole town in one place."},{name:"Tom & Lily Reyes",role:"New homeowners",c:"#a8683a",t:"We bought our first cabin on the bay through the site. Warm, honest, and genuinely helpful."}];
@@ -208,15 +218,35 @@ if($("#reGrid")) $("#reGrid").innerHTML=LISTINGS.map((l,i)=>`
     <div class="place-loc" style="gap:1rem"><span><b style="color:var(--heading)">${esc(l.beds)}</b> bd</span><span><b style="color:var(--heading)">${esc(l.baths)}</b> ba</span><span><b style="color:var(--heading)">${esc(l.sqft)}</b> sqft</span></div>
   </div></a>`).join("");
 
-// directory / phone book
+// directory / phone book — community members + businesses, privacy-first
 if($("#dirList")){
-  const DIR_CATS=["All",...new Set(DIRECTORY.map(d=>d.cat))]; let dirCat="All", dirQuery="";
-  $("#dirChips").innerHTML=DIR_CATS.map((c,i)=>`<button class="chip" aria-pressed="${i===0}" data-cat="${esc(c)}">${esc(c)}</button>`).join("");
+  const PEOPLE=MEMBERS.map(m=>({...m,type:"person"}));
+  const BIZ=DIRECTORY.map(d=>({...d,type:"biz"}));
+  const ALL=[...PEOPLE,...BIZ];
+  const bizCats=[...new Set(DIRECTORY.map(d=>d.cat))];
+  const CHIPS=["All","People","Businesses",...bizCats];
+  let dirCat="All", dirQuery="";
+  $("#dirChips").innerHTML=CHIPS.map((c,i)=>`<button class="chip" aria-pressed="${i===0}" data-cat="${esc(c)}">${esc(c)}</button>`).join("");
+
+  const avatar=r=>r.photo?`<img class="d-photo" src="${r.photo}" alt="${esc(r.name)}" loading="lazy">`:`<div class="d-ico">${esc(r.name[0])}</div>`;
+  const celebrations=r=>{const b=[]; if(r.bday)b.push(`<span class="cel">🎂 ${esc(r.bday)}</span>`); if(r.anniv)b.push(`<span class="cel">💍 ${esc(r.anniv)}</span>`); return b.length?`<div class="d-cel">${b.join("")}</div>`:"";};
+  const personCard=p=>{const feat=p.featured?'featured':''; const bits=[]; if(p.addr)bits.push(esc(p.addr)); if(p.phone)bits.push(esc(p.phone));
+    return `<div class="dir-item person ${feat}">${avatar(p)}
+      <div class="d-main"><div class="d-cat">Neighbor</div><h4>${esc(p.name)}</h4>
+      ${bits.length?`<div class="d-contact">${bits.join(" · ")}</div>`:'<div class="d-contact d-muted">Listed — details private</div>'}
+      ${celebrations(p)}</div>
+      ${p.featured?'<span class="spon-flag">★ Featured</span>':''}</div>`;};
+  const bizCard=d=>`<div class="dir-item ${d.spon?'featured':''}"><div class="d-ico">${esc(d.name[0])}</div>
+      <div class="d-main"><div class="d-cat">${esc(d.cat)}</div><h4>${esc(d.name)}</h4><div class="d-contact">${esc(d.phone)} · Seldovia, AK</div></div>
+      ${d.spon?'<span class="spon-flag">★ Sponsor</span>':''}</div>`;
+
   const renderDir=()=>{const q=dirQuery.trim().toLowerCase();
-    const rows=DIRECTORY.filter(d=>(dirCat==="All"||d.cat===dirCat)&&(!q||d.name.toLowerCase().includes(q)||d.cat.toLowerCase().includes(q)));
-    $("#dirList").innerHTML=rows.length?rows.map(d=>`<div class="dir-item ${d.spon?'sponsored':''}"><div class="d-ico">${esc(d.name[0])}</div>
-      <div><div class="d-cat">${esc(d.cat)}</div><h4>${esc(d.name)}</h4><div class="d-contact">${esc(d.phone)} · Seldovia, AK</div></div>
-      ${d.spon?'<span class="spon-flag">★ Sponsor</span>':''}</div>`).join(""):`<div class="dir-empty">No matches — try another word or category.</div>`;};
+    const rows=ALL.filter(r=>{
+      const inCat = dirCat==="All" || (dirCat==="People"&&r.type==="person") || (dirCat==="Businesses"&&r.type==="biz") || (r.type==="biz"&&r.cat===dirCat);
+      const inQ = !q || r.name.toLowerCase().includes(q) || (r.cat||"").toLowerCase().includes(q) || (r.addr||"").toLowerCase().includes(q);
+      return inCat && inQ;
+    });
+    $("#dirList").innerHTML=rows.length?rows.map(r=>r.type==="person"?personCard(r):bizCard(r)).join(""):`<div class="dir-empty">No matches — try another word or category.</div>`;};
   renderDir();
   $("#dirChips").addEventListener("click",e=>{const b=e.target.closest(".chip"); if(!b)return; dirCat=b.dataset.cat; $$("#dirChips .chip").forEach(c=>c.setAttribute("aria-pressed",c===b)); renderDir();});
   $("#dirSearch").addEventListener("input",e=>{dirQuery=e.target.value; renderDir();});

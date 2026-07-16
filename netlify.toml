@@ -1,0 +1,10 @@
+# Netlify config — static site, no build step. The repo root IS the site.
+# Netlify auto-detects the phone-book signup form (data-netlify="true") on deploy.
+[build]
+  publish = "."
+
+# Friendly URLs (optional): /add -> the phone book signup form
+[[redirects]]
+  from = "/add"
+  to = "/directory-add.html"
+  status = 301

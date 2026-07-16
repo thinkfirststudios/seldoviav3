@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Add yourself to the Seldovia community phone book — share only what you're comfortable with. No login required.">
+<meta name="theme-color" content="#F8E6DD">
+<title>Add Yourself — Seldovia Community Phone Book</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="phonebook">
+<a class="skip-link" href="#main">Skip to content</a>
+<main id="main">
+  <div class="page-hero"><div class="wrap"><span class="eyebrow">Community Phone Book</span><h1>Add yourself to the phone book</h1><p>Share only what you’re comfortable with — anything you leave blank simply won’t show. Jenny reviews every entry before it goes live. No account, no login.</p></div></div>
+
+  <section class="section wrap">
+    <form class="signup-form" name="phonebook-signup" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" action="/thanks.html">
+      <input type="hidden" name="form-name" value="phonebook-signup">
+      <p class="hp" hidden><label>Don’t fill this out if you’re human: <input name="bot-field"></label></p>
+
+      <div class="form-note">Everything here is optional except your name — fill in what you’d like your neighbors to see.</div>
+
+      <div class="field">
+        <label for="f-name">How you’d like to be listed <span class="req">*</span></label>
+        <input id="f-name" name="name" type="text" required placeholder="e.g. The Chissus Family, or Jenny Chissus">
+      </div>
+
+      <div class="field">
+        <label for="f-addr">Address <span class="opt">(optional)</span></label>
+        <input id="f-addr" name="address" type="text" placeholder="e.g. Main Street" autocomplete="off">
+      </div>
+
+      <div class="field">
+        <label for="f-phone">Phone number <span class="opt">(optional)</span></label>
+        <input id="f-phone" name="phone" type="tel" placeholder="(907) 555-0100" autocomplete="off">
+      </div>
+
+      <fieldset class="field">
+        <legend>Birthday <span class="opt">(optional · month &amp; day only — no year)</span></legend>
+        <div class="row-2">
+          <select name="birthday_month" aria-label="Birthday month">
+            <option value="">Month</option>
+            <option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option>
+          </select>
+          <input name="birthday_day" type="number" min="1" max="31" placeholder="Day" aria-label="Birthday day">
+        </div>
+      </fieldset>
+
+      <fieldset class="field">
+        <legend>Anniversary <span class="opt">(optional · month &amp; day only)</span></legend>
+        <div class="row-2">
+          <select name="anniversary_month" aria-label="Anniversary month">
+            <option value="">Month</option>
+            <option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option>
+          </select>
+          <input name="anniversary_day" type="number" min="1" max="31" placeholder="Day" aria-label="Anniversary day">
+        </div>
+      </fieldset>
+
+      <div class="field">
+        <label for="f-photo">Photo <span class="opt">(optional)</span></label>
+        <input id="f-photo" name="photo" type="file" accept="image/*">
+        <span class="hint">A friendly face or family photo — JPG or PNG.</span>
+      </div>
+
+      <div class="field">
+        <label for="f-note">Anything you’d like neighbors to know? <span class="opt">(optional)</span></label>
+        <textarea id="f-note" name="note" rows="3" placeholder="A hobby, your household, a welcome note…"></textarea>
+      </div>
+
+      <label class="consent">
+        <input type="checkbox" name="consent" required>
+        <span>This is my own information (or I have permission to share it), and I’m OK with it appearing in the community phone book once approved.</span>
+      </label>
+
+      <button class="btn btn-primary" type="submit">Submit for review</button>
+      <p class="form-fine">Your submission goes straight to Jenny for review — nothing appears publicly until she approves it.</p>
+    </form>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

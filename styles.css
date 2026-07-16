@@ -357,6 +357,35 @@ form.stack{display:grid; gap:.85rem;}
 .dir-item .d-contact{font-size:.88rem; color:var(--text-soft); margin-top:.3rem; font-variant-numeric:tabular-nums;}
 .dir-item .spon-flag{position:absolute; top:.7rem; right:.8rem; font-size:.62rem; letter-spacing:.08em; text-transform:uppercase; font-weight:800; color:var(--accent-ink);}
 .dir-empty{grid-column:1/-1; text-align:center; color:var(--text-soft); padding:1.5rem;}
+.dir-item.featured{border-color:color-mix(in srgb,var(--accent) 45%, var(--line)); background:color-mix(in srgb,var(--accent) 5%, var(--sheet));}
+.dir-item .d-main{min-width:0;}
+.dir-item.person .d-ico{background:var(--accent-soft); color:var(--accent);}
+.dir-item .d-photo{width:44px; height:44px; flex:none; border-radius:50%; object-fit:cover; border:1px solid var(--line);}
+.dir-item .d-muted{font-style:italic; color:var(--muted);}
+.d-cel{display:flex; flex-wrap:wrap; gap:.35rem; margin-top:.45rem;}
+.d-cel .cel{font-size:.74rem; font-weight:700; color:var(--accent-ink); background:var(--accent-soft); border-radius:var(--radius-pill); padding:.12rem .5rem;}
+.dir-note{text-align:center; color:var(--text-soft); font-size:.92rem; margin-top:1.4rem;}
+.dir-note a{color:var(--accent-ink); font-weight:700;}
+
+/* Community phone book — signup form */
+.signup-form{max-width:600px; margin-inline:auto; display:grid; gap:1.1rem; background:var(--sheet); border:1px solid var(--line); border-radius:var(--radius); padding:clamp(1.2rem,3vw,2rem); box-shadow:var(--shadow);}
+.signup-form .form-note{background:var(--accent-soft); color:var(--accent-ink); border-radius:var(--radius-s); padding:.7rem .9rem; font-size:.9rem; font-weight:600;}
+.signup-form .field{display:grid; gap:.4rem; border:0; padding:0; margin:0;}
+.signup-form label, .signup-form legend{font-weight:700; color:var(--heading); font-size:.95rem;}
+.signup-form .opt{font-weight:500; color:var(--muted); font-size:.82rem;}
+.signup-form .req{color:var(--accent);}
+.signup-form input[type=text],.signup-form input[type=tel],.signup-form input[type=number],.signup-form select,.signup-form textarea{
+  width:100%; border:1.5px solid var(--line-2); background:var(--page); border-radius:var(--radius-s); padding:.7rem .85rem; font-size:1rem; color:var(--text); font-family:inherit; min-height:46px;}
+.signup-form textarea{min-height:auto; resize:vertical;}
+.signup-form input:focus,.signup-form select:focus,.signup-form textarea:focus{outline:none; border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft);}
+.signup-form input[type=file]{width:100%; font-size:.92rem; color:var(--text-soft); padding:.55rem 0;}
+.signup-form .row-2{display:grid; grid-template-columns:1.3fr .7fr; gap:.6rem;}
+.signup-form .hint{font-size:.8rem; color:var(--muted);}
+.signup-form .consent{display:flex; gap:.6rem; align-items:flex-start; font-weight:500; color:var(--text-soft); font-size:.9rem; line-height:1.45;}
+.signup-form .consent input{margin-top:.2rem; width:18px; height:18px; flex:none; accent-color:var(--accent);}
+.signup-form .btn{justify-self:start;}
+.signup-form .form-fine{font-size:.82rem; color:var(--muted); margin:0;}
+.thanks-mark{width:64px; height:64px; margin:0 auto; border-radius:50%; display:grid; place-items:center; background:var(--accent-soft); color:var(--accent);}
 
 footer.site{background:var(--band); color:rgba(255,255,255,.82); margin-top:clamp(24px,4vw,44px); padding:clamp(40px,6vw,64px) 0 1.5rem;}
 footer.site a{color:rgba(255,255,255,.82); text-decoration:none;} footer.site a:hover{color:#fff; text-decoration:underline;}
