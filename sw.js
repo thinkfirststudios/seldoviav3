@@ -1,11 +1,11 @@
 /* Seldovia.com service worker — network-first so live updates always win,
    with a cache fallback for offline / installable-app behavior.
    Bump CACHE when you want to guarantee old caches are cleared. */
-const CACHE = "seldovia-v2-3";
+const CACHE = "seldovia-v2-4";
 const SHELL = [
   "index.html", "styles.css", "app.js",
   "explore.html", "calendar.html", "gazette.html", "gallery.html",
-  "real-estate.html", "phone-book.html", "directory-add.html", "thanks.html",
+  "real-estate.html", "listing.html", "phone-book.html", "directory-add.html", "thanks.html",
   "bulletin.html", "contact.html",
   "images/seldovia-property-logo.jpg", "images/icon-192.png", "images/icon-512.png"
 ];

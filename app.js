@@ -102,11 +102,50 @@ const GAZETTE=[
 ];
 const GALLERY=[{h:240,cap:"Morning fog over the harbor"},{h:320,cap:"Boardwalk homes at high tide"},{h:200,cap:"Floatplane off the bay"},{h:300,cap:"Salmonberries on the Otterbahn"},{h:220,cap:"Sea otters near the breakwater"},{h:280,cap:"Fireweed and the far range"},{h:210,cap:"Fresh halibut on the dock"},{h:300,cap:"Midnight-gold summer light"},{h:230,cap:"Kayaks on a glassy morning"}];
 const EVENTS=[{d:"2026-07-15",t:"09:00",title:"Farmers & Makers Market",where:"Seldovia Bay Pavilion",cat:"Market",dur:"til 1 PM"},{d:"2026-07-15",t:"18:30",title:"Open Mic on the Boardwalk",where:"Linwood Bar & Grill",cat:"Music",dur:"til late"},{d:"2026-07-17",t:"10:00",title:"Otterbahn Trail Cleanup",where:"Trailhead by the school",cat:"Volunteer",dur:"2 hrs"},{d:"2026-07-18",t:"08:00",title:"Halibut Derby — Weigh-in",where:"City Dock",cat:"Fishing",dur:"daily"},{d:"2026-07-19",t:"19:00",title:"Community Potluck & Bonfire",where:"Outside Beach",cat:"Community",dur:"til dusk"},{d:"2026-07-21",t:"17:30",title:"City Council Meeting",where:"Seldovia City Hall",cat:"Civic",dur:"1.5 hrs"},{d:"2026-07-22",t:"11:00",title:"Kids' Tide-Pool Walk",where:"Outside Beach",cat:"Family",dur:"90 min"},{d:"2026-07-24",t:"18:00",title:"Gallery Night — Local Artists",where:"Seldovia Arts Council",cat:"Arts",dur:"til 9 PM"},{d:"2026-07-26",t:"09:30",title:"Sunday Kayak Paddle",where:"Small-Boat Harbor",cat:"Outdoors",dur:"3 hrs"},{d:"2026-07-28",t:"12:00",title:"Senior Lunch & Cards",where:"SVT Community Room",cat:"Community",dur:"2 hrs"},{d:"2026-07-31",t:"18:00",title:"End-of-Month Fish Fry",where:"Harbor Pavilion",cat:"Food",dur:"til 8 PM"},{d:"2026-08-01",t:"09:00",title:"Farmers & Makers Market",where:"Seldovia Bay Pavilion",cat:"Market",dur:"til 1 PM"}];
-// Jenny's active listings (real). Photos live in images/listings/ (optimized).
+// Jenny's active listings (real). Photos in images/listings/ (optimized). Full detail via listing.html?id=slug.
 const LISTINGS=[
- {addr:"230 Kachemak St", price:"$475,000", beds:"3", baths:"1.5", sqft:"1,122", status:"For Sale", img:"images/listings/230-kachemak-st.jpg"},
- {addr:"195 Lookout Aly", price:"$345,000", beds:"2", baths:"1.5", sqft:"1,376", status:"For Sale", img:"images/listings/195-lookout-aly.jpg"},
- {addr:"3108 Jakolof Bay Rd", price:"$219,900", beds:"1", baths:"1", sqft:"768", status:"For Sale", img:"images/listings/3108-jakolof-bay-rd.jpg"}
+ {slug:"230-kachemak-st", addr:"230 Kachemak St", city:"Seldovia, AK 99663", price:"$475,000", beds:"3", baths:"1.5", sqft:"1,122", status:"For Sale", img:"images/listings/230-kachemak-st.jpg",
+  ppsf:"$423", payment:"$2,572/mo", homeType:"Single Family", yearBuilt:"1945", lot:"8,712 sq ft (~0.20 ac) — fronts a lagoon/estuary", zoning:"WCR — Waterfront Commercial Residential",
+  highlights:["Hot Property","Unobstructed views","Waterfront","Cabin","Fronts a lagoon/estuary","Shed"],
+  design:["Cabin","Pillar/Post/Pier foundation","Wood-frame construction","Metal roof","Disposal"],
+  schools:["Susan B. English Elementary & Middle School","Susan B. English High School"],
+  desc:`Rare opportunity to own one of Seldovia's iconic waterfront properties. Set on approximately 0.20 acres — nearly four times the size of many neighboring lots — this historic Waterfront Commercial Residential property offers unmatched potential. This is an older home that has been remodeled. For the right buyer, it's a chance to preserve a piece of Seldovia's history while creating a lasting legacy.
+
+There are properties you purchase for convenience. Then there are properties you purchase because you know you'll never find another one quite like it. Stretching along Seldovia's iconic waterfront, where the tides rise and fall beneath weathered pilings and fishing skiffs, this property has quietly been part of the town's story for decades. Its location alone is something that simply couldn't be recreated today.
+
+It has served as both a family home and a commercial space. Step inside and you'll find spaces designed around the water. Two main-floor bedrooms greet the morning with sunrise views across the slough, while upstairs a private guest retreat sleeps four with its own exterior entrance — ideal for visiting family or guests — with even a half bath in the attic alongside this room.
+
+The spacious kitchen, complete with two refrigerators, was made for gathering. Just beyond, the generous living room opens through French doors to a deck of more than 400 square feet suspended above the slough. Here you'll watch salmon move with the tide, fishermen cast from the bridge, eagles pass overhead, and the seasons unfold from one of the best seats in town.
+
+The owners have invested in meaningful improvements while preserving the property's rustic character, but this is an older waterfront building and it deserves an owner who understands what that means. For the right person, that investment isn't simply maintenance — it's the privilege of preserving a place that has already stood the test of time.`},
+
+ {slug:"195-lookout-aly", addr:"195 Lookout Aly", city:"Seldovia, AK 99663", price:"$345,000", beds:"2", baths:"1.5", sqft:"1,376", status:"For Sale", img:"images/listings/195-lookout-aly.jpg",
+  ppsf:"$251", payment:"$2,209/mo", homeType:"Single Family", yearBuilt:"1963", lot:"10,019 sq ft — level, waterfront, private yard, fronts an inlet", zoning:"WCR — Waterfront Commercial Residential",
+  highlights:["Hot Property","Bay view","Fireplace","Fronts an inlet","Private yard","Handicap accessible"],
+  design:["Lindal Cedar home","Pillar/Post/Pier & block foundation","Wood-frame construction","Metal roof","Ceiling fan","Fireplace","Bay views","Laminate countertops"],
+  features:["Sunny corner lot with slough, Main Street & harbor views","Accessible design with entry ramps","Decks on both sides for sun or shade","Established gardens — salmonberries & raspberries","Rustic 554 sq ft shed/shop","Mature trees for beauty & privacy","Easy walk to harbor, boardwalk, shops, restaurants & airport"],
+  schools:["Susan B. English Elementary & Middle School","Susan B. English High School"],
+  desc:`Wake up to sunshine, slough, and harbor views from this welcoming corner-lot home in the heart of Seldovia. With 2 bedrooms, 1.5 baths, accessible entry ramps, sunny decks, berry gardens, a rustic workshop, and an easy walk to the harbor, shops, and restaurants, this property offers comfort, convenience, and the relaxed Alaska lifestyle you've been looking for.
+
+Perfectly positioned on a sunny corner lot overlooking the Seldovia Slough, Main Street, and the harbor beyond, this welcoming 1,376 sq ft Lindal Cedar Home offers the convenience of in-town living with peaceful views. Designed with accessibility in mind, the home features spacious living and dining areas and ramps for easy access. Large windows invite natural light inside while offering glimpses of the surrounding trees, gardens, and neighborhood.
+
+Step outside and discover a property that's ready to be enjoyed. Relax with morning coffee on the east-facing deck or evening sunshine on the harbor-facing west deck. Enjoy outdoor spaces on both sides of the home, surrounded by established gardens bursting with salmonberries and raspberries throughout the growing season.
+
+A rustic 554 sq ft workshop provides the perfect place for projects, hobbies, storage, or tinkering. Located just a short walk from the harbor, boardwalk, shops, restaurants, airport, post office, and community amenities, this home offers the best of small-town living with everything close at hand.`},
+
+ {slug:"3108-jakolof-bay-rd", addr:"3108 Jakolof Bay Rd", city:"Seldovia, AK 99663", price:"$219,900", beds:"1", baths:"1", sqft:"768", status:"For Sale", img:"images/listings/3108-jakolof-bay-rd.jpg",
+  ppsf:"$286", payment:"$1,250/mo", homeType:"Single Family", yearBuilt:"2000", lot:"3.03 acres — bluff, level, private yard", zoning:"UNZ — Not Zoned", parking:"1-car garage",
+  highlights:["Bay view","Private yard","Fireplace","Bluff lot","Wood countertops","Shed"],
+  design:["Cabin","Pillar/Post/Pier foundation","Wood-frame construction","Metal roof","Fireplace","Bay views","Wood countertops"],
+  features:["3 private acres above Barbara Creek","Sweeping views to Kachemak Bay & the Homer Spit","New kitchen; loft sleeping space","Italian-tile hearth & brand-new Toyo stove","448 sq ft heated shop/garage","Insulated outbuilding — wired for workshop, bunkhouse, or studio","Water catchment system (insulated tank)","4+ cords of firewood cut, split & stacked","Composting toilet (never used) + outhouse with a view"],
+  schools:["Susan B. English Elementary & Middle School","Susan B. English High School"],
+  desc:`Charming cabin overlooking the Barbara Creek area with sweeping views across Kachemak Bay to the Homer Spit and the twinkling lights of Homer. This cozy, open-concept cabin is warm, bright, and freshly updated — the kind of retreat that instantly feels like home.
+
+The main level features a bright, sunny new kitchen, cozy living area, and bathroom, while the loft above provides a peaceful sleeping space tucked beneath the roofline. The hearth is framed with handsome Italian tile, and a brand-new Toyo stove keeps you warm and comfortable through every season.
+
+Set on three private acres, there's plenty of room to garden, explore, or simply soak in the peace and quiet. Recent tree clearing has opened the property to even more sunshine and enhanced the views. A spacious 448 sq ft heated shop and garage offers excellent space for projects, vehicles, or Alaska gear, and an additional insulated outbuilding is already wired and ready to become a workshop, bunkhouse, studio, or storage.
+
+The cabin is served by a water catchment system, with the tank tucked beneath the home and insulated from the weather. And yes — even the outhouse comes with a view. As an added bonus, more than four cords of firewood have already been cut, split, and stacked, ready to keep the fire crackling from the day you arrive.`}
 ];
 // Community members — opt-in, privacy-first: each person shares only what they want,
 // so fields are intentionally uneven. PROD: populated from approved Netlify Form submissions.
@@ -189,12 +228,44 @@ if($("#masonry")) $("#masonry").innerHTML=GALLERY.map((im,i)=>{
 
 // real estate listings
 if($("#reGrid")) $("#reGrid").innerHTML=LISTINGS.map((l,i)=>`
-  <a class="place" href="real-estate.html"><div class="place-media"><img class="place-photo" src="${l.img}" alt="${esc(l.addr)}" loading="lazy" width="600" height="400" onerror="this.closest('.place-media').classList.add('place-media-blank');this.remove()"><span class="badge-open">${esc(l.status)}</span></div>
+  <a class="place" href="listing.html?id=${encodeURIComponent(l.slug)}"><div class="place-media"><img class="place-photo" src="${l.img}" alt="${esc(l.addr)}" loading="lazy" width="600" height="400" onerror="this.closest('.place-media').classList.add('place-media-blank');this.remove()"><span class="badge-open">${esc(l.status)}</span></div>
   <div class="place-body">
     <div style="display:flex;justify-content:space-between;align-items:baseline;gap:.6rem"><span class="price" style="font-size:1.15rem">${esc(l.price)}</span><span style="font-size:.82rem;color:var(--accent-ink);font-weight:700">Details →</span></div>
     <h4>${esc(l.addr)}</h4>
     <div class="place-loc" style="gap:1rem"><span><b style="color:var(--heading)">${esc(l.beds)}</b> bd</span><span><b style="color:var(--heading)">${esc(l.baths)}</b> ba</span><span><b style="color:var(--heading)">${esc(l.sqft)}</b> sqft</span></div>
   </div></a>`).join("");
+
+// single listing detail page (listing.html?id=slug)
+if($("#listingDetail")){
+  const id=new URLSearchParams(location.search).get("id");
+  const l=LISTINGS.find(x=>x.slug===id)||LISTINGS[0];
+  const chips=a=>a&&a.length?`<div class="spec-chips">${a.map(x=>`<span class="spec-chip">${esc(x)}</span>`).join("")}</div>`:"";
+  const dl=(label,val)=>val?`<div class="dl-row"><dt>${esc(label)}</dt><dd>${esc(val)}</dd></div>`:"";
+  const descHtml=(l.desc||"").split(/\n\n+/).map(p=>`<p>${esc(p.trim())}</p>`).join("");
+  document.title=`${l.addr} — Seldovia Property`;
+  $("#listingDetail").innerHTML=`
+    <a class="back-link" href="real-estate.html">← All listings</a>
+    <div class="listing-hero"><img src="${l.img}" alt="${esc(l.addr)}" onerror="this.closest('.listing-hero').classList.add('place-media-blank');this.remove()"><span class="badge-open">${esc(l.status)}</span></div>
+    <div class="listing-top">
+      <div><div class="price" style="font-size:1.9rem">${esc(l.price)}</div><h1 style="margin:.15rem 0 0">${esc(l.addr)}</h1><div class="listing-city">${esc(l.city||"Seldovia, AK")}</div></div>
+      <a class="btn btn-primary" href="contact.html">Ask about this home</a>
+    </div>
+    <div class="listing-stats">
+      <div><b>${esc(l.beds)}</b><span>Beds</span></div>
+      <div><b>${esc(l.baths)}</b><span>Baths</span></div>
+      <div><b>${esc(l.sqft)}</b><span>Sq Ft</span></div>
+      ${l.ppsf?`<div><b>${esc(l.ppsf)}</b><span>Per Sq Ft</span></div>`:""}
+      ${l.payment?`<div><b>${esc(l.payment)}</b><span>Est. payment</span></div>`:""}
+    </div>
+    ${l.highlights?`<h3 class="listing-h">Highlights</h3>${chips(l.highlights)}`:""}
+    ${l.desc?`<h3 class="listing-h">About this home</h3><div class="listing-desc">${descHtml}</div>`:""}
+    ${(l.homeType||l.yearBuilt||l.lot||l.zoning)?`<h3 class="listing-h">Home details</h3>
+      <dl class="listing-dl">${dl("Home type",l.homeType)}${dl("Year built",l.yearBuilt)}${dl("Lot",l.lot)}${dl("Zoning",l.zoning)}${dl("Interior",l.sqft?l.sqft+" sq ft":"")}</dl>
+      ${l.design?chips(l.design):""}`:""}
+    ${l.features?`<h3 class="listing-h">Property features</h3><ul class="listing-schools">${l.features.map(s=>`<li>${esc(s)}</li>`).join("")}</ul>`:""}
+    ${l.schools?`<h3 class="listing-h">Schools</h3><ul class="listing-schools">${l.schools.map(s=>`<li>${esc(s)}</li>`).join("")}</ul>`:""}
+    <div class="re-cta" style="margin-top:2.2rem"><div><h3>Interested in ${esc(l.addr)}?</h3><p>Reach out to Jenny for a showing, more photos, or the full disclosure packet.</p></div><a class="btn btn-primary" href="contact.html">Contact Jenny</a></div>`;
+}
 
 // directory / phone book — community members + businesses, privacy-first
 if($("#dirList")){
