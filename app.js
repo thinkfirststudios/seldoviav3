@@ -177,7 +177,22 @@ Above is an expansive ~585 sq ft loft running the full length of the cabin — a
 
 Life here is defined by the wildlife just outside your door — bald eagles overhead, sea otters in the calm water, and black bears along the shoreline. During the summer pink-salmon run, thousands of fish make their way toward the Seldovia River. Because the property sits at the back of the bay, the water is remarkably quiet, with low tides naturally limiting boat traffic and creating a rare sense of peace and solitude.
 
-Offered fully furnished (excluding personal items and select artwork), it's ready to enjoy from day one — just bring groceries, a fishing pole, and your sense of adventure. The parcel is leased through the Seldovia Native Association on a 55-year lease expiring in 2042, with an option to renew to 2097. (2025 lease ~$3,588; 2025 taxes ~$1,363.)`}
+Offered fully furnished (excluding personal items and select artwork), it's ready to enjoy from day one — just bring groceries, a fishing pole, and your sense of adventure. The parcel is leased through the Seldovia Native Association on a 55-year lease expiring in 2042, with an option to renew to 2097. (2025 lease ~$3,588; 2025 taxes ~$1,363.)`},
+ {slug:"333-anderson-way", addr:"333 Anderson Way", city:"Seldovia, AK 99663", price:"$300,000", beds:"2", baths:"1.5", sqft:"1,120", status:"For Sale", img:"images/listings/333-anderson-way.jpg",
+  ppsf:"$268", payment:"$1,628/mo", homeType:"Single Family", yearBuilt:"1992", lot:"30,056 sq ft (~0.69 ac) — three town lots, level", zoning:"C — Commercial", parking:"2-car garage",
+  highlights:["Town center","Level lot","768 sq ft shop","Sun-filled","Commercial zoning","Shed"],
+  design:["Wood-frame construction","Metal roof","Ceiling fan","Laminate countertops"],
+  features:["Three town lots (~0.69 ac) directly across from Susan B. English School","Sun-filled single-level ranch — 2 bd / 1.5 ba","Spacious 768 sq ft shop + 256 sq ft storage shed","Room for an additional building — city water, sewer & power stubbed out","Zoned Commercial — home-business potential","Walk to harbor, shops, restaurants, boardwalk & the ferry dock"],
+  schools:["Susan B. English Elementary & Middle School","Susan B. English High School"],
+  desc:`Heart-of-town opportunity — three lots (~0.69 acres total) directly across from Susan B. English School. A sun-filled 2-bedroom, 1.5-bath ranch with 1,120 sq ft, a spacious 768 sq ft shop, and a 256 sq ft shed — plus room for an additional building, with city water, sewer, and power already stubbed out. Walk anywhere in minutes.
+
+Imagine living where you can stroll to the harbor, wave to neighbors on the way to the store, and enjoy community events just minutes from your front door — while still having nearly 0.69 acres to call your own. Situated on three town lots, the property is a short walk from downtown shops, restaurants, the harbor, the Alaska Marine Highway dock, and the boardwalk.
+
+The single-level ranch offers comfortable living with two bedrooms and 1.5 baths, and its standout feature is light: from sunrise over the mountains to the evening sun in the west, the home stays bathed in warm, inviting sunshine all day.
+
+The property truly shines with its outbuildings and possibilities. The 768 sq ft shop is ready for woodworking, boat projects, vehicle storage, or a home business, and a 256 sq ft storage building adds even more flexibility. There's also space for an additional building, with utilities already stubbed out.
+
+Large in-town parcels are increasingly rare, and three lots open the door to countless options. Zoned Commercial, there's room to expand gardens, create outdoor entertaining spaces, or pursue a business. Offered as-is, it's an exceptional opportunity to personalize a remarkable in-town setting — as a full-time residence, a seasonal retreat, or an investment in one of Alaska's most charming coastal communities.`}
 ];
 // Community members — opt-in, privacy-first: each person shares only what they want,
 // so fields are intentionally uneven. PROD: populated from approved Netlify Form submissions.
@@ -266,6 +281,20 @@ if($("#reGrid")) $("#reGrid").innerHTML=LISTINGS.map((l,i)=>`
     <h4>${esc(l.addr)}</h4>
     <div class="place-loc" style="gap:1rem"><span><b style="color:var(--heading)">${esc(l.beds)}</b> bd</span><span><b style="color:var(--heading)">${esc(l.baths)}</b> ba</span><span><b style="color:var(--heading)">${esc(l.sqft)}</b> sqft</span></div>
   </div></a>`).join("");
+
+// listings carousel — 3 per view, arrow navigation
+if($("#reGrid")){
+  const track=$("#reGrid"), car=track.closest(".re-carousel");
+  if(car){
+    const prev=car.querySelector(".car-prev"), next=car.querySelector(".car-next");
+    const update=()=>{const max=track.scrollWidth-track.clientWidth-2; prev.hidden=track.scrollLeft<=2; next.hidden=track.scrollLeft>=max;};
+    prev.addEventListener("click",()=>track.scrollBy({left:-track.clientWidth,behavior:"smooth"}));
+    next.addEventListener("click",()=>track.scrollBy({left:track.clientWidth,behavior:"smooth"}));
+    track.addEventListener("scroll",update,{passive:true});
+    window.addEventListener("resize",update);
+    update();
+  }
+}
 
 // single listing detail page (listing.html?id=slug)
 if($("#listingDetail")){

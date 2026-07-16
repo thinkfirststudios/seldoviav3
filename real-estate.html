@@ -15,7 +15,15 @@
 
   <section class="section wrap">
     <!-- PROD: replace with AK MLS/IDX feed; Alaska is non-disclosure → "Price on request". -->
-    <div class="place-grid" id="reGrid"></div>
+    <div class="re-carousel">
+      <button class="car-arrow car-prev" type="button" aria-label="Previous listings" hidden>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div class="re-track" id="reGrid"></div>
+      <button class="car-arrow car-next" type="button" aria-label="More listings">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
 
     <div class="re-info">
       <div class="info-block">
