@@ -103,17 +103,121 @@ const CATEGORIES=[{b:"Stay",s:"Lodges & cabins",key:"lodging"},{b:"Eat & Drink",
 const PLACES=[{name:"Seldovia Boardwalk Hotel",cat:"Lodging",key:"lodging",rate:4.9,rev:212,open:true},{name:"Tide Pool Café",cat:"Café",key:"dining",rate:4.8,rev:176,open:true},{name:"Kachemak Bay Charters",cat:"Charters",key:"charters",rate:4.9,rev:143,open:true},{name:"Salmonberry Bakery",cat:"Bakery",key:"dining",rate:4.7,rev:98,open:true},{name:"Slough Arts Gallery",cat:"Arts",key:"arts",rate:4.6,rev:64,open:false},{name:"Otterbahn Trail",cat:"Outdoors",key:"outdoors",rate:4.9,rev:230,open:true},{name:"Otter Cove Lodge",cat:"Lodging",key:"lodging",rate:4.8,rev:151,open:true},{name:"Linwood Bar & Grill",cat:"Dining",key:"dining",rate:4.5,rev:120,open:true},{name:"Outside Beach Park",cat:"Outdoors",key:"outdoors",rate:4.7,rev:88,open:true}];
 // Jenny's Seldovia Blog — recovered posts (original titles, dates, images preserved). PROD: managed via admin.
 const GAZETTE=[
- {title:"Thank you, Jennifer!",excerpt:"It makes me so happy to hear how pleased you are with your Seldovia investment. I loved sharing coffee together on the boat that morning — and I think a picnic on your beach is definitely in order when you’re back this summer!",date:"Jul 17, 2026",read:"1 min",cat:"Kind Words",img:"images/gazette/2026-07-17.jpg"},
- {title:"Three incredible Seldovia opportunities",excerpt:"Whether you envision a charming boutique, a thriving Bed & Breakfast, a waterfront café, or a one-of-a-kind investment — 251 Main Street, 175 Augustine North Ave, and 230 Kachemak Street offer endless possibilities in the heart of Seldovia.",date:"Jul 16, 2026",read:"1 min",cat:"Real Estate",img:"images/gazette/2026-07-16.jpg"},
- {title:"230 Kachemak Street — a historic waterfront legacy",excerpt:"One of Seldovia's iconic historic waterfront properties — about 0.20 acres (nearly 4× many neighboring lots), Waterfront Commercial Residential zoning, a 400+ sq ft deck over the slough, and a rare chance to own and preserve a piece of Seldovia's history.",date:"Jul 15, 2026",read:"1 min",cat:"Real Estate",img:"images/listings/230-kachemak-st.jpg"},
- {title:"195 Lookout Aly — sunny corner lot with slough & harbor views",excerpt:"A charming 1,376 sq ft Lindal Cedar home on a sunny corner lot overlooking the slough, Main Street, and the harbor. 2 bd / 1.5 ba, accessible ramps, berry gardens, sunny decks, and a 554 sq ft workshop — comfortable Seldovia living with small-town charm.",date:"Jul 14, 2026",read:"1 min",cat:"Real Estate",img:"images/listings/195-lookout-aly.jpg"},
- {title:"Under Contract! 321 Eagle Run Loop",excerpt:"This beautiful, spacious home in the heart of Seldovia is officially pending! Congratulations to the seller and the buyers on reaching this exciting milestone.",date:"Jul 13, 2026",read:"1 min",cat:"Real Estate",img:"images/gazette/2026-07-13.jpg"},
- {title:"The Alaska town that proves you don't need much to live well",excerpt:"In today's fast-paced world it's easy to believe a good life requires more — more space, more possessions, more things competing for our attention. But what if the secret to living well isn't having more… it's needing less?",date:"Jul 12, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-07-12.jpg"},
- {title:"Before you dream of moving to Seldovia, read this",excerpt:"Moving to Seldovia isn't just about changing your address — it's choosing a different way of life. Can you trade convenience for peace and quiet, embrace a slower pace, find entertainment outdoors, and picture yourself calling Seldovia home? If these questions excite you more than they worry you, Seldovia might be exactly what you've been searching for.",date:"Jul 11, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-07-11.jpg"},
- {title:"You don't retire TO Seldovia. You come alive here.",excerpt:"One of the greatest gifts of retirement is time — and in Seldovia, that time is spent fishing for halibut and salmon, exploring beaches by boat, berry picking, gardening, creating art, or taking in unforgettable sunsets. Retirement here isn't the end of the journey; it's the beginning of your greatest adventure.",date:"Jul 10, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-07-10.jpg"},
- {title:"Happy Fourth of July — 250 years of freedom",excerpt:"Today marks 250 years of celebrating the ideals of freedom, independence, and the enduring spirit that unites communities across the nation. From all of us, we wish you a safe, happy, and memorable Independence Day filled with laughter, celebration, and spectacular fireworks!",date:"Jul 4, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-07-04.jpg"},
- {title:"New listing: 3108 Jakolof Bay Road",excerpt:"A cozy open-concept cabin on 3 private acres overlooking Barbara Creek, with breathtaking views of Kachemak Bay, the Homer Spit, and the lights of Homer. New kitchen, brand-new Toyo stove, a heated 448 sq ft shop, water catchment, and over 4 cords of firewood included — a peaceful, move-in-ready Alaska retreat.",date:"Jul 3, 2026",read:"1 min",cat:"Real Estate",img:"images/listings/3108-jakolof-bay-rd.jpg"},
- {title:"A coastal town that never looks the same twice",excerpt:"In Seldovia there's a familiar feeling you can't quite put into words — you think you know a place, and then it quietly changes on you. The same walk down the street or dock never feels identical twice: the tide has shifted, the wind has changed, the light lands differently on the water. And somehow, that's enough to make it feel like a new place again.",date:"Jul 3, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-07-03.jpg"},
+ {title:"Thank you, Jennifer!",excerpt:"Jennifer, thank you so much for your kind words! It makes me so happy to hear how pleased you are with your Seldovia investment and my service.",date:"Jul 17, 2026",read:"1 min",cat:"Kind Words",img:"images/gazette/2026-07-17.jpg",body:`Jennifer, thank you so much for your kind words! It makes me so happy to hear how pleased you are with your Seldovia investment and my service.
+
+Your thoughtful review truly means a lot to me. It is nice getting to know you better with each visit, and I loved sharing coffee together on the boat that morning. Looking forward to seeing your Seldovia getaway come to life! I think a picnic on your beach is definitely in order when you're back this summer! See you both soon!`},
+ {title:"Three incredible Seldovia opportunities",excerpt:"Whether you envision a charming boutique, a thriving Bed & Breakfast, a waterfront café, or a one-of-a-kind investment property, these three incredible listings offer endless possibilities in the heart of Seldovia.",date:"Jul 16, 2026",read:"1 min",cat:"Real Estate",img:"images/gazette/2026-07-16.jpg",body:`Whether you envision a charming boutique, a thriving Bed & Breakfast, a waterfront café, or a one-of-a-kind investment property, these three incredible listings offer endless possibilities in the heart of Seldovia.
+
+📍 251 Main Street
+🌅 Harborfront commercial space
+🏠 2-bedroom home + 1-bedroom apartment
+🛍️ Main Street storefront
+🚗 Garage/shop
+🌿 Seldovia's only large waterfront lawn
+
+📍 175 Augustine North Avenue
+🌊 Nearly 90 feet of waterfront
+🛏️ 7 bedrooms | 6 bathrooms
+🏡 Turnkey Bed & Breakfast
+🚤 Waterfront guest cabin
+🌱 Greenhouse, smokehouse & oversized garage/shop
+
+📍 230 Kachemak Street
+🌊 Iconic historic waterfront property
+🏡 Waterfront Commercial Residential zoning
+📏 Approximately 0.20 acres—nearly 4× the size of many neighboring waterfront lots
+🌅 Expansive waterfront deck overlooking the slough
+✨ A rare opportunity to own and preserve a piece of Seldovia's history
+
+From breathtaking views and walkable downtown locations to established income potential, these properties are ready for your next adventure.
+
+✨ Live where you work. Build your dream. Experience the best of coastal Alaska.
+
+📩 Ready to learn more or schedule a showing? Contact Jenny today and discover which opportunity is the perfect fit for your future!`},
+ {title:"230 Kachemak Street — a historic waterfront legacy",excerpt:"One of Seldovia's iconic historic waterfront properties — approximately 0.20 acres, nearly 4× larger than many neighboring waterfront lots.",date:"Jul 15, 2026",read:"1 min",cat:"Real Estate",img:"images/listings/230-kachemak-st.jpg",body:`📍 230 Kachemak Street, Seldovia, AK 99663
+🏡 One of Seldovia's iconic historic waterfront properties
+🌊 Approximately 0.20 acres—nearly 4× larger than many neighboring waterfront lots
+📍 Prime location along Seldovia's iconic waterfront
+🏠 Waterfront Commercial Residential zoning with endless possibilities
+🛏️ Main-floor bedrooms with beautiful sunrise views over the slough
+🛌 Private upstairs guest retreat with separate exterior entrance
+🏡 Additional unfinished attic sleeping space full of rustic charm
+🍽️ Spacious kitchen with two refrigerators—perfect for gathering family & friends
+🌅 400+ sq. ft. waterfront deck overlooking the slough
+🦅 Watch salmon, eagles, boats, kayakers & fishermen from your own deck
+🏪 Ideal for a private residence, guest accommodations, gallery, boutique, studio, or mixed-use business
+✨ Rich in Seldovia history with incredible potential to preserve a local landmark
+❤️ A rare chance to own a truly one-of-a-kind waterfront legacy property
+
+📞 Call Jenny Chissus with Seldovia Property at (907) 406-0044`},
+ {title:"195 Lookout Aly — sunny corner lot with slough & harbor views",excerpt:"A charming 1,376 sq. ft. Lindal Cedar Home on a sunny corner lot overlooking Seldovia Slough, Main Street & the harbor beyond.",date:"Jul 14, 2026",read:"1 min",cat:"Real Estate",img:"images/listings/195-lookout-aly.jpg",body:`📍 195 Lookout Aly, Seldovia, AK 99663
+☀️ Sunny corner lot with slough & harbor views
+🌊 Overlooks Seldovia Slough, Main Street & the harbor beyond
+🏡 Charming 1,376 sq. ft. Lindal Cedar Home
+🛏️ 2 bedrooms | 1.5 bathrooms
+♿ Accessible entry ramps & easy home access
+🌿 Established salmonberry & raspberry gardens
+🌅 Sunny decks on both sides of the home
+🌲 Mature trees & peaceful surroundings
+🛠️ 554 sq. ft. rustic workshop for projects, hobbies & storage
+🚶 Walkable location near harbor, shops, restaurants & community amenities
+✨ Comfortable Seldovia living with beautiful views and small-town charm
+
+📞 Call Jenny Chissus with Seldovia Property at (907) 406-0044`},
+ {title:"Under Contract! 321 Eagle Run Loop",excerpt:"This beautiful, spacious home in the heart of Seldovia is officially pending! Congratulations to the seller and the buyers on reaching this exciting milestone.",date:"Jul 13, 2026",read:"1 min",cat:"Real Estate",img:"images/gazette/2026-07-13.jpg",body:`Under Contract!
+
+This beautiful, spacious home in the heart of Seldovia is officially pending! Congratulations to the seller and the buyers on reaching this exciting milestone. 😊🙏`},
+ {title:"The Alaska town that proves you don't need much to live well",excerpt:"In today's fast-paced world, it's easy to believe that a good life requires more. But what if the secret to living well isn't having more?",date:"Jul 12, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-07-12.jpg",body:`In today's fast-paced world, it's easy to believe that a good life requires more. More space, more possessions, more appointments, and more things competing for our attention.
+
+But what if the secret to living well isn't having more?
+
+What if it's needing less?`},
+ {title:"Before you dream of moving to Seldovia, read this",excerpt:"Moving to Seldovia isn't just about changing your address, it's about choosing a different way of life. Before you make that decision, ask yourself these questions.",date:"Jul 11, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-07-11.jpg",body:`Moving to Seldovia isn't just about changing your address, it's about choosing a different way of life.
+
+Before you make that decision, ask yourself these questions.
+
+💗 Can you trade convenience for peace and quiet?
+💗 Can you plan ahead instead of making last-minute trips?
+💗 Can you embrace a slower pace?
+💗 Can you handle the unexpected?
+💗 Can you find entertainment outdoors?
+💗 Can you become part of a close-knit community?
+💗 Can you appreciate all four seasons?
+💗 Can you live with less and enjoy life more?
+💗 Can you picture yourself calling Seldovia home?
+
+If these questions excite you more than they worry you, Seldovia might be exactly what you've been searching for.
+
+Because moving here isn't just about finding a new home. It's about discovering a lifestyle that's unlike anywhere else.`},
+ {title:"You don't retire TO Seldovia. You come alive here.",excerpt:"What if retirement wasn't about doing less but living more? One of the greatest gifts of retirement is having time — and in Seldovia, that time can be spent doing what truly brings you joy.",date:"Jul 10, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-07-10.jpg",body:`What if retirement wasn't about doing less but living more?
+
+One of the greatest gifts of retirement is having time. In Seldovia, that time can be spent doing what truly brings you joy.
+
+Many residents spend their days fishing for halibut and salmon, exploring nearby beaches and friends by boat, berry picking in the summer, gardening, creating art, volunteering, or taking in unforgettable sunsets. Others enjoy traveling to nearby communities while always looking forward to returning home.
+
+Retirement here isn't the end of the journey, it's the beginning of your greatest adventure. 😊💕`},
+ {title:"Happy Fourth of July — 250 years of freedom",excerpt:"Today marks 250 years of celebrating the ideals of freedom, independence, and the enduring spirit that unites communities across the nation.",date:"Jul 4, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-07-04.jpg",body:`Today marks 250 years of celebrating the ideals of freedom, independence, and the enduring spirit that unites communities across the nation. As we gather with family, friends, and neighbors, may we take a moment to appreciate the people, places, and traditions that make this day so meaningful.
+
+From all of us, we wish you a safe, happy, and memorable Independence Day filled with laughter, celebration, and spectacular fireworks. Happy Fourth of July!`},
+ {title:"New listing: 3108 Jakolof Bay Road",excerpt:"A cozy open-concept cabin on 3 private acres overlooking the Barbara Creek area, with breathtaking views of Kachemak Bay, the Homer Spit & the lights of Homer.",date:"Jul 3, 2026",read:"1 min",cat:"Real Estate",img:"images/listings/3108-jakolof-bay-rd.jpg",body:`📍 3108 Jakolof Bay Road, Seldovia, AK 99663
+🌲 Cozy open-concept cabin on 3 private acres
+🌅 Overlooks the Barbara Creek area with breathtaking views of Kachemak Bay, the Homer Spit & the lights of Homer
+🛏️ Loft bedroom with living area, new kitchen & bathroom below
+🍳 Bright, updated kitchen with open living space
+🔥 Brand-new Toyo stove & beautiful Italian tile hearth
+🎨 Freshly painted and move-in ready
+🌲 Recent tree clearing for even more sunshine & expanded views
+🛠️ Heated 448 sq. ft. shop/garage for vehicles, projects & Alaska gear
+🧰 Insulated wired outbuilding—ideal for a workshop, bunkhouse, studio or storage
+💧 Water catchment system with insulated tank beneath the cabin
+🪵 Over 4 cords of cut, split & stacked firewood included
+🚽 Even the outhouse comes with a view! 😍
+🌿 Peaceful, private Alaska retreat with room to relax, garden & explore
+
+📞 Call Jenny Chissus with Seldovia Property at (907) 406-0044`},
+ {title:"A coastal town that never looks the same twice",excerpt:"In Seldovia, Alaska, there's a familiar feeling you can't quite put into words — you think you know a place, and then it quietly changes on you.",date:"Jul 3, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-07-03.jpg",body:`In Seldovia, Alaska, there's a familiar feeling you can't quite put into words, you think you know a place, and then it quietly changes on you.
+
+Even the same walk down the street or dock never feels identical twice. The tide has shifted. The wind has changed direction. The light lands differently on the water. And somehow, that's enough to make it feel like a new place again. 🌱✨`},
  {title:"In Seldovia, working moms wear many hats and often all in the same day.",excerpt:"It’s early mornings with the tide schedule in mind, kids bundled up before school boats or boardwalk walks, and workdays shaped by weather, community needs, and family life all at once.",date:"Mar 12, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/post-0.jpg"},
  {title:"Author Event – “My Heart is Good” with Josh Wisniewski",excerpt:"We love celebrating local talent, and Seldovia is full of it.",date:"Mar 11, 2026",read:"1 min",cat:"Events",img:"images/gazette/post-1.jpg"},
  {title:"New Library Hours – Thank You Volunteers!",excerpt:"We’re so grateful for the volunteers who keep our library open and thriving.",date:"Mar 10, 2026",read:"1 min",cat:"Community",img:"images/gazette/post-2.jpg"},
@@ -327,7 +431,7 @@ if($("#postDetail")){
   const want=new URLSearchParams(location.search).get("p");
   const post=GAZETTE.find(g=>slugify(g.title)===want)||GAZETTE[0];
   document.title=`${post.title} — Jenny's Blog`;
-  const bodyHtml=(post.body||post.excerpt||"").split(/\n\n+/).map(x=>`<p>${esc(x.trim())}</p>`).join("");
+  const bodyHtml=(post.body||post.excerpt||"").trim().split(/\n{2,}/).map(x=>`<p>${esc(x.trim()).replace(/\n/g,"<br>")}</p>`).join("");
   $("#postDetail").innerHTML=`
     <a class="back-link" href="gazette.html">← All posts</a>
     <div class="listing-hero" style="aspect-ratio:16/9"><img src="${post.img}" alt="${esc(post.title)}" onerror="this.closest('.listing-hero').classList.add('place-media-blank');this.remove()"></div>
