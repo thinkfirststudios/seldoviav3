@@ -1,10 +1,10 @@
 /* Seldovia.com service worker — network-first so live updates always win,
    with a cache fallback for offline / installable-app behavior.
    Bump CACHE when you want to guarantee old caches are cleared. */
-const CACHE = "seldovia-v2-4";
+const CACHE = "seldovia-v3-1";
 const SHELL = [
   "index.html", "styles.css", "app.js",
-  "explore.html", "calendar.html", "gazette.html", "gallery.html",
+  "explore.html", "calendar.html", "gazette.html", "post.html", "gallery.html",
   "real-estate.html", "listing.html", "phone-book.html", "directory-add.html", "thanks.html",
   "bulletin.html", "contact.html",
   "images/seldovia-property-logo.jpg", "images/icon-192.png", "images/icon-512.png"
@@ -25,9 +25,10 @@ self.addEventListener("activate", e => {
 self.addEventListener("fetch", e => {
   const req = e.request;
   if (req.method !== "GET" || new URL(req.url).origin !== self.location.origin) return;
-  // Network-first: fresh content online, cached fallback offline.
+  // Network-first with revalidation ({cache:"no-cache"} bypasses a stale
+  // browser HTTP cache so updated app.js/HTML/CSS always win); cached fallback offline.
   e.respondWith(
-    fetch(req)
+    fetch(req, { cache: "no-cache" })
       .then(res => {
         const copy = res.clone();
         caches.open(CACHE).then(c => c.put(req, copy)).catch(() => {});
