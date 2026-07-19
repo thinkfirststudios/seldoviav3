@@ -315,12 +315,28 @@ if($("#placeTabs")){
 }
 renderPlaces();
 
-// gazette
-// Gazette — real recovered posts with their own optimized images.
+// gazette — real recovered posts; each card opens a full post page
+const slugify=s=>String(s).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"").slice(0,64);
 if($("#gazetteGrid")) $("#gazetteGrid").innerHTML=GAZETTE.map((g,i)=>{
-  return `<a class="post" href="gazette.html"><div class="post-media"><img class="post-photo" src="${g.img}" alt="${esc(g.title)}" loading="lazy" width="880" height="550"></div>
+  return `<a class="post" href="post.html?p=${slugify(g.title)}"><div class="post-media"><img class="post-photo" src="${g.img}" alt="${esc(g.title)}" loading="lazy" width="880" height="550"></div>
     <div class="post-body"><span class="kicker">${esc(g.cat)}</span><h4>${esc(g.title)}</h4><p>${esc(g.excerpt)}</p>
     <div class="post-meta"><span>${esc(g.date)}</span><span>·</span><span>${esc(g.read)} read</span></div></div></a>`;}).join("");
+
+// single blog post page (post.html?p=slug)
+if($("#postDetail")){
+  const want=new URLSearchParams(location.search).get("p");
+  const post=GAZETTE.find(g=>slugify(g.title)===want)||GAZETTE[0];
+  document.title=`${post.title} — Jenny's Blog`;
+  const bodyHtml=(post.body||post.excerpt||"").split(/\n\n+/).map(x=>`<p>${esc(x.trim())}</p>`).join("");
+  $("#postDetail").innerHTML=`
+    <a class="back-link" href="gazette.html">← All posts</a>
+    <div class="listing-hero" style="aspect-ratio:16/9"><img src="${post.img}" alt="${esc(post.title)}" onerror="this.closest('.listing-hero').classList.add('place-media-blank');this.remove()"></div>
+    <span class="eyebrow" style="margin-top:1.2rem">${esc(post.cat||"Blog")}</span>
+    <h1 style="margin:.15rem 0;font-family:var(--serif)">${esc(post.title)}</h1>
+    <div class="listing-city">${esc(post.date)}</div>
+    <div class="listing-desc" style="margin-top:1.3rem">${bodyHtml}</div>
+    <p style="margin-top:2rem"><a class="btn btn-primary" href="gazette.html">← Back to Jenny's Blog</a></p>`;
+}
 
 // gallery
 if($("#masonry")) $("#masonry").innerHTML=GALLERY.map((im,i)=>{
