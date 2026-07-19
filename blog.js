@@ -7,13 +7,21 @@
   const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
   const MONTHS=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
   const fmt=d=>{ if(!d) return ""; const [y,m,day]=d.split("-"); return `${MONTHS[+m-1]} ${+day}, ${y}`; };
-  const slugify=s=>String(s).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"").slice(0,64);
+  const bodyHtml=t=>"<p>"+esc((t||"").trim()).replace(/\n{2,}/g,"</p><p>").replace(/\n/g,"<br>")+"</p>";
   db.from("posts").select("*").eq("published",true).order("post_date",{ascending:false})
     .then(({data,error})=>{
       if(error || !data || !data.length) return; // keep app.js fallback
-      grid.innerHTML=data.map(p=>`<a class="post" href="post.html?p=${slugify(p.title)}"><div class="post-media"><img class="post-photo" src="${esc(p.image_url||'')}" alt="${esc(p.title)}" loading="lazy" width="880" height="550"></div>
-        <div class="post-body"><span class="kicker">${esc(p.category||'Blog')}</span><h4>${esc(p.title)}</h4><p>${esc(p.excerpt||'')}</p>
-        <div class="post-meta"><span>${esc(fmt(p.post_date))}</span></div></div></a>`).join("");
+      grid.innerHTML=data.map(p=>`<article class="post">
+        <div class="post-media"><img class="post-photo" src="${esc(p.image_url||'')}" alt="${esc(p.title)}" loading="lazy"></div>
+        <div class="post-body"><span class="kicker">${esc(p.category||'Blog')}</span><h4>${esc(p.title)}</h4>
+        <div class="post-meta"><span>${esc(fmt(p.post_date))}</span></div>
+        <div class="post-text clamp">${bodyHtml(p.body||p.excerpt)}</div>
+        <button class="show-more" type="button">Show more</button></div></article>`).join("");
+      grid.querySelectorAll(".post").forEach(card=>{
+        const text=card.querySelector(".post-text"), btn=card.querySelector(".show-more");
+        if(text.scrollHeight<=text.clientHeight+4){ btn.remove(); return; }
+        btn.addEventListener("click",()=>{ const c=text.classList.toggle("clamp"); btn.textContent=c?"Show more":"Show less"; });
+      });
     })
     .catch(()=>{});
 })();

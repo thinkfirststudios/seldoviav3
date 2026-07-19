@@ -421,10 +421,21 @@ renderPlaces();
 
 // gazette — real recovered posts; each card opens a full post page
 const slugify=s=>String(s).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"").slice(0,64);
-if($("#gazetteGrid")) $("#gazetteGrid").innerHTML=GAZETTE.map((g,i)=>{
-  return `<a class="post" href="post.html?p=${slugify(g.title)}"><div class="post-media"><img class="post-photo" src="${g.img}" alt="${esc(g.title)}" loading="lazy" width="880" height="550"></div>
-    <div class="post-body"><span class="kicker">${esc(g.cat)}</span><h4>${esc(g.title)}</h4><p>${esc(g.excerpt)}</p>
-    <div class="post-meta"><span>${esc(g.date)}</span><span>·</span><span>${esc(g.read)} read</span></div></div></a>`;}).join("");
+const postBodyHtml=t=>"<p>"+esc((t||"").trim()).replace(/\n{2,}/g,"</p><p>").replace(/\n/g,"<br>")+"</p>";
+if($("#gazetteGrid")){
+  $("#gazetteGrid").innerHTML=GAZETTE.map(g=>`<article class="post">
+    <div class="post-media"><img class="post-photo" src="${g.img}" alt="${esc(g.title)}" loading="lazy"></div>
+    <div class="post-body"><span class="kicker">${esc(g.cat)}</span><h4>${esc(g.title)}</h4>
+    <div class="post-meta"><span>${esc(g.date)}</span></div>
+    <div class="post-text clamp">${postBodyHtml(g.body||g.excerpt)}</div>
+    <button class="show-more" type="button">Show more</button></div></article>`).join("");
+  // reveal full text inline; hide the button when the text already fits
+  $$("#gazetteGrid .post").forEach(card=>{
+    const text=card.querySelector(".post-text"), btn=card.querySelector(".show-more");
+    if(text.scrollHeight<=text.clientHeight+4){ btn.remove(); return; }
+    btn.addEventListener("click",()=>{ const clamped=text.classList.toggle("clamp"); btn.textContent=clamped?"Show more":"Show less"; });
+  });
+}
 
 // single blog post page (post.html?p=slug)
 if($("#postDetail")){
