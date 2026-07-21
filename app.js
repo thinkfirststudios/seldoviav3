@@ -9,13 +9,20 @@ const $=(s,el=document)=>el.querySelector(s), $$=(s,el=document)=>[...el.querySe
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const PAGE=document.body.dataset.page||"home";
 
-/* ============================================================ PWA (installable, offline-capable) ============================================================ */
+/* ============================================================ PWA + cache
+   Service worker REMOVED for now — its caching kept serving stale files
+   during active development. Unregister any existing worker and clear its
+   caches so every visit loads fresh from the network. (We can re-add a
+   well-behaved SW before launch for offline/installable.) ============ */
 (function(){
   const head=document.head;
-  const add=(rel,href,extra)=>{const l=document.createElement("link"); l.rel=rel; l.href=href; if(extra)Object.assign(l,extra); head.appendChild(l);};
+  const add=(rel,href)=>{const l=document.createElement("link"); l.rel=rel; l.href=href; head.appendChild(l);};
   if(!document.querySelector('link[rel="manifest"]')) add("manifest","manifest.json");
   add("apple-touch-icon","images/icon-180.png");
-  if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
+  if("serviceWorker" in navigator){
+    navigator.serviceWorker.getRegistrations().then(rs=>rs.forEach(r=>r.unregister())).catch(()=>{});
+    if(window.caches) caches.keys().then(ks=>ks.forEach(k=>caches.delete(k))).catch(()=>{});
+  }
 })();
 
 /* ============================================================ SHARED CHROME (header / drawer / footer) ============================================================ */
