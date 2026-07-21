@@ -3,81 +3,147 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Add yourself to the Seldovia community phone book — share only what you're comfortable with. No login required.">
+<meta name="description" content="Add your listing to the Seldovia community directory — people, families, businesses, and organizations. Share only what you're comfortable with.">
 <meta name="theme-color" content="#F8E6DD">
-<title>Add Yourself — Seldovia Community Phone Book</title>
+<title>Add a Listing — Seldovia Community Directory</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body data-page="phonebook">
 <a class="skip-link" href="#main">Skip to content</a>
 <main id="main">
-  <div class="page-hero"><div class="wrap"><span class="eyebrow">Community Phone Book</span><h1>Add yourself to the phone book</h1><p>Share only what you’re comfortable with — anything you leave blank simply won’t show. Jenny reviews every entry before it goes live. No account, no login.</p></div></div>
+  <div class="page-hero"><div class="wrap"><span class="eyebrow">Community Directory</span><h1>Add your listing</h1><p>Individuals, couples, families, businesses, and organizations — all welcome. Choose what to share; each field can be public or kept private. Jenny reviews every listing before it goes live. No account, no login.</p></div></div>
 
   <section class="section wrap">
-    <form class="signup-form" name="phonebook-signup" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" action="/thanks.html">
-      <input type="hidden" name="form-name" value="phonebook-signup">
-      <p class="hp" hidden><label>Don’t fill this out if you’re human: <input name="bot-field"></label></p>
+    <form class="signup-form dir-form" name="directory-listing" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" action="/thanks.html">
+      <input type="hidden" name="form-name" value="directory-listing">
+      <p class="hp" hidden><label>Leave this empty: <input name="bot-field"></label></p>
 
-      <div class="form-note">Everything here is optional except your name — fill in what you’d like your neighbors to see.</div>
+      <div class="form-note">Fields marked <span class="req">*</span> are required. Everything else is optional — and next to personal details you'll see a <strong>Public / Private</strong> switch so you control exactly what neighbors can see.</div>
 
+      <!-- STEP 1: listing type -->
       <div class="field">
-        <label for="f-name">How you’d like to be listed <span class="req">*</span></label>
-        <input id="f-name" name="name" type="text" required placeholder="e.g. The Chissus Family, or Jenny Chissus">
+        <label for="d-type">What are you adding? <span class="req">*</span></label>
+        <select id="d-type" name="listing_type" required>
+          <option value="">Choose one…</option>
+          <option value="individual">Individual</option>
+          <option value="couple">Couple</option>
+          <option value="family">Family</option>
+          <option value="business">Business</option>
+          <option value="organization">Organization</option>
+        </select>
       </div>
 
-      <div class="field">
-        <label for="f-addr">Address <span class="opt">(optional)</span></label>
-        <input id="f-addr" name="address" type="text" placeholder="e.g. Main Street" autocomplete="off">
+      <!-- ===================== INDIVIDUAL ===================== -->
+      <div class="type-group" data-type="individual" hidden>
+        <div class="field"><label>Name <span class="req">*</span></label><input name="name" placeholder="e.g. Jenny Chissus"></div>
+        <div class="field"><label>Nickname <span class="opt">(optional)</span></label><input name="nickname"></div>
+        <div class="field"><label>Occupation <span class="opt">(optional)</span></label><input name="occupation" placeholder="e.g. Real estate broker"></div>
+        <div class="field priv-row"><div><label>Phone <span class="opt">(optional)</span></label><input name="phone" type="tel" placeholder="(907) 555-0100"></div><label class="priv"><span>Show to</span><select name="phone_privacy"><option value="public">Everyone</option><option value="private">Keep private</option></select></label></div>
+        <div class="field priv-row"><div><label>Email <span class="opt">(optional)</span></label><input name="email" type="email"></div><label class="priv"><span>Show to</span><select name="email_privacy"><option value="public">Everyone</option><option value="private">Keep private</option></select></label></div>
+        <div class="field priv-row"><div><label>Address <span class="opt">(optional)</span></label><input name="address"></div><label class="priv"><span>Show to</span><select name="address_privacy"><option value="public">Everyone</option><option value="private">Keep private</option></select></label></div>
+        <div class="field"><label>Website <span class="opt">(optional)</span></label><input name="website" type="url" placeholder="https://"></div>
+        <fieldset class="field"><legend>Birthday <span class="opt">(optional · month &amp; day only)</span></legend><div class="row-2"><select name="birthday_month" aria-label="Birthday month"><option value="">Month</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option></select><input name="birthday_day" type="number" min="1" max="31" placeholder="Day"></div></fieldset>
+        <div class="field"><label>Short bio <span class="opt">(optional)</span></label><textarea name="bio" rows="3" placeholder="A sentence or two about you"></textarea></div>
       </div>
 
-      <div class="field">
-        <label for="f-phone">Phone number <span class="opt">(optional)</span></label>
-        <input id="f-phone" name="phone" type="tel" placeholder="(907) 555-0100" autocomplete="off">
+      <!-- ===================== COUPLE ===================== -->
+      <div class="type-group" data-type="couple" hidden>
+        <div class="field"><label>How you'd like to be listed <span class="req">*</span></label><input name="couple_names" placeholder="e.g. Sonny &amp; Jenny Chissus"></div>
+        <div class="field priv-row"><div><label>Shared phone <span class="opt">(optional)</span></label><input name="couple_phone" type="tel"></div><label class="priv"><span>Show to</span><select name="couple_phone_privacy"><option value="public">Everyone</option><option value="private">Keep private</option></select></label></div>
+        <div class="field priv-row"><div><label>Email <span class="opt">(optional)</span></label><input name="couple_email" type="email"></div><label class="priv"><span>Show to</span><select name="couple_email_privacy"><option value="public">Everyone</option><option value="private">Keep private</option></select></label></div>
+        <div class="field priv-row"><div><label>Address <span class="opt">(optional)</span></label><input name="couple_address"></div><label class="priv"><span>Show to</span><select name="couple_address_privacy"><option value="public">Everyone</option><option value="private">Keep private</option></select></label></div>
+        <fieldset class="field"><legend>Anniversary <span class="opt">(optional · month &amp; day)</span></legend><div class="row-2"><select name="anniversary_month" aria-label="Anniversary month"><option value="">Month</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option></select><input name="anniversary_day" type="number" min="1" max="31" placeholder="Day"></div></fieldset>
       </div>
 
-      <fieldset class="field">
-        <legend>Birthday <span class="opt">(optional · month &amp; day only — no year)</span></legend>
-        <div class="row-2">
-          <select name="birthday_month" aria-label="Birthday month">
-            <option value="">Month</option>
-            <option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option>
+      <!-- ===================== FAMILY ===================== -->
+      <div class="type-group" data-type="family" hidden>
+        <div class="field"><label>Family name <span class="req">*</span></label><input name="family_name" placeholder="e.g. The Johnson Family"></div>
+        <div class="field"><label>Parents / adults <span class="opt">(optional)</span></label><input name="family_parents" placeholder="e.g. Mike &amp; Sarah"></div>
+        <div class="field"><label>Kids' first names <span class="opt">(optional)</span></label><input name="family_kids" placeholder="Only if you'd like — first names or ages"></div>
+        <div class="field priv-row"><div><label>Home phone <span class="opt">(optional)</span></label><input name="family_phone" type="tel"></div><label class="priv"><span>Show to</span><select name="family_phone_privacy"><option value="public">Everyone</option><option value="private">Keep private</option></select></label></div>
+        <div class="field priv-row"><div><label>Address <span class="opt">(optional)</span></label><input name="family_address"></div><label class="priv"><span>Show to</span><select name="family_address_privacy"><option value="public">Everyone</option><option value="private">Keep private</option></select></label></div>
+        <div class="field"><label>In Seldovia since <span class="opt">(optional · year)</span></label><input name="family_since" type="number" min="1900" max="2030" placeholder="e.g. 1998"></div>
+      </div>
+
+      <!-- ===================== BUSINESS ===================== -->
+      <div class="type-group" data-type="business" hidden>
+        <div class="field"><label>Business name <span class="req">*</span></label><input name="business_name"></div>
+        <div class="field"><label>Owner <span class="opt">(optional)</span></label><input name="business_owner"></div>
+        <div class="field"><label>Category <span class="req">*</span></label>
+          <select name="business_category">
+            <option value="">Choose a category…</option>
+            <optgroup label="Food &amp; Drink"><option>Restaurant</option><option>Coffee</option><option>Bakery</option><option>Groceries</option><option>Seafood</option></optgroup>
+            <optgroup label="Lodging"><option>Hotel</option><option>Cabins</option><option>Vacation Rental</option><option>B&amp;B</option></optgroup>
+            <optgroup label="Marine"><option>Boat Repair</option><option>Harbor Services</option><option>Marine Fuel</option><option>Fishing Charter</option><option>Water Taxi</option></optgroup>
+            <optgroup label="Home &amp; Construction"><option>Builder</option><option>Electrician</option><option>Plumber</option><option>Excavation</option><option>Painter</option><option>Cleaning</option><option>Firewood</option><option>Snow Removal</option></optgroup>
+            <optgroup label="Professional"><option>Real Estate</option><option>Attorney</option><option>Accounting</option><option>Insurance</option><option>Photography</option><option>Web Design</option></optgroup>
+            <optgroup label="Health &amp; Beauty"><option>Clinic</option><option>Dental</option><option>Massage</option><option>Hair</option><option>Fitness</option></optgroup>
+            <optgroup label="Shopping &amp; Arts"><option>Gift Shop</option><option>Artist</option><option>Hardware</option><option>Clothing</option></optgroup>
+            <optgroup label="Transportation"><option>Air Taxi</option><option>Freight</option><option>Moving</option></optgroup>
+            <option>Other</option>
           </select>
-          <input name="birthday_day" type="number" min="1" max="31" placeholder="Day" aria-label="Birthday day">
         </div>
-      </fieldset>
-
-      <fieldset class="field">
-        <legend>Anniversary <span class="opt">(optional · month &amp; day only)</span></legend>
-        <div class="row-2">
-          <select name="anniversary_month" aria-label="Anniversary month">
-            <option value="">Month</option>
-            <option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option>
-          </select>
-          <input name="anniversary_day" type="number" min="1" max="31" placeholder="Day" aria-label="Anniversary day">
-        </div>
-      </fieldset>
-
-      <div class="field">
-        <label for="f-photo">Photo <span class="opt">(optional)</span></label>
-        <input id="f-photo" name="photo" type="file" accept="image/*">
-        <span class="hint">A friendly face or family photo — JPG or PNG.</span>
+        <div class="field"><label>Phone <span class="opt">(optional)</span></label><input name="business_phone" type="tel"></div>
+        <div class="field"><label>Email <span class="opt">(optional)</span></label><input name="business_email" type="email"></div>
+        <div class="field"><label>Website <span class="opt">(optional)</span></label><input name="business_website" type="url" placeholder="https://"></div>
+        <div class="row-2"><div class="field"><label>Hours <span class="opt">(optional)</span></label><input name="business_hours" placeholder="e.g. Mon–Fri 9–5"></div><div class="field"><label>Seasonal hours <span class="opt">(optional)</span></label><input name="business_seasonal"></div></div>
+        <div class="field"><label>Location / address <span class="opt">(optional)</span></label><input name="business_address"></div>
+        <div class="field"><label>Description <span class="opt">(optional)</span></label><textarea name="business_desc" rows="3"></textarea></div>
+        <fieldset class="field"><legend>Tags <span class="opt">(check any that apply)</span></legend>
+          <div class="tag-grid">
+            <label><input type="checkbox" name="tags" value="Open Year Round"> Open Year Round</label>
+            <label><input type="checkbox" name="tags" value="Seasonal"> Seasonal</label>
+            <label><input type="checkbox" name="tags" value="Locally Owned"> Locally Owned</label>
+            <label><input type="checkbox" name="tags" value="Family Owned"> Family Owned</label>
+            <label><input type="checkbox" name="tags" value="Women Owned"> Women Owned</label>
+            <label><input type="checkbox" name="tags" value="Veteran Owned"> Veteran Owned</label>
+            <label><input type="checkbox" name="tags" value="Wheelchair Accessible"> Wheelchair Accessible</label>
+            <label><input type="checkbox" name="tags" value="Pet Friendly"> Pet Friendly</label>
+            <label><input type="checkbox" name="tags" value="Free WiFi"> Free WiFi</label>
+            <label><input type="checkbox" name="tags" value="Credit Cards"> Credit Cards</label>
+            <label><input type="checkbox" name="tags" value="Reservations"> Reservations</label>
+            <label><input type="checkbox" name="tags" value="Delivery"> Delivery</label>
+          </div>
+        </fieldset>
       </div>
 
-      <div class="field">
-        <label for="f-note">Anything you’d like neighbors to know? <span class="opt">(optional)</span></label>
-        <textarea id="f-note" name="note" rows="3" placeholder="A hobby, your household, a welcome note…"></textarea>
+      <!-- ===================== ORGANIZATION ===================== -->
+      <div class="type-group" data-type="organization" hidden>
+        <div class="field"><label>Organization name <span class="req">*</span></label><input name="org_name" placeholder="e.g. Seldovia Arts Council"></div>
+        <div class="field"><label>Type <span class="opt">(optional)</span></label><input name="org_type" placeholder="Church, club, school, service, agency…"></div>
+        <div class="field"><label>Mission <span class="opt">(optional)</span></label><textarea name="org_mission" rows="2"></textarea></div>
+        <div class="field"><label>Meeting dates <span class="opt">(optional)</span></label><input name="org_meetings" placeholder="e.g. 2nd Tuesday, 6pm"></div>
+        <div class="field"><label>Contact / officers <span class="opt">(optional)</span></label><input name="org_contact"></div>
+        <div class="field"><label>Website <span class="opt">(optional)</span></label><input name="org_website" type="url" placeholder="https://"></div>
+        <div class="field"><label>Volunteer opportunities <span class="opt">(optional)</span></label><textarea name="org_volunteer" rows="2"></textarea></div>
       </div>
 
-      <label class="consent">
-        <input type="checkbox" name="consent" required>
-        <span>This is my own information (or I have permission to share it), and I’m OK with it appearing in the community phone book once approved.</span>
-      </label>
-
-      <button class="btn btn-primary" type="submit">Submit for review</button>
-      <p class="form-fine">Your submission goes straight to Jenny for review — nothing appears publicly until she approves it.</p>
+      <!-- shared: photo + consent -->
+      <div class="type-group type-any" hidden>
+        <div class="field"><label>Photo / logo <span class="opt">(optional)</span></label><input name="photo" type="file" accept="image/*"><span class="hint">A face, family photo, or business logo. Auto-compressed on upload.</span></div>
+        <label class="consent"><input type="checkbox" name="consent" required><span>This is my own listing (or I have permission), and I'm OK with the fields I marked "Everyone" appearing in the community directory once approved.</span></label>
+        <button class="btn btn-primary" type="submit">Submit for review</button>
+        <p class="form-fine">Your listing goes to Jenny for review — nothing appears publicly until she approves it, and only the fields you marked for "Everyone."</p>
+      </div>
     </form>
   </section>
 </main>
 <script src="app.js"></script>
+<script>
+(function(){
+  const sel=document.getElementById("d-type");
+  const groups=[...document.querySelectorAll(".type-group")];
+  function update(){
+    const v=sel.value;
+    groups.forEach(g=>{
+      const on = g.classList.contains("type-any") ? !!v : g.dataset.type===v;
+      g.hidden=!on;
+      // disabled fields don't submit or validate, so hidden groups stay out of the way
+      g.querySelectorAll("input,select,textarea,button").forEach(f=>{ f.disabled=!on; });
+    });
+  }
+  sel.addEventListener("change",update); update();
+})();
+</script>
 </body>
 </html>

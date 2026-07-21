@@ -494,6 +494,17 @@ form.stack{display:grid; gap:.85rem;}
 .signup-form .consent{display:flex; gap:.6rem; align-items:flex-start; font-weight:500; color:var(--text-soft); font-size:.9rem; line-height:1.45;}
 .signup-form .consent input{margin-top:.2rem; width:18px; height:18px; flex:none; accent-color:var(--accent);}
 .signup-form .btn{justify-self:start;}
+/* community directory form — per-field privacy switch + tag grid */
+.dir-form .type-group{display:grid; gap:1.1rem;}
+.dir-form .priv-row{display:grid; grid-template-columns:1fr auto; gap:.7rem; align-items:end;}
+.dir-form .priv{display:flex; flex-direction:column; gap:.25rem; align-self:end;}
+.dir-form .priv span{font-size:.72rem; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); font-weight:700;}
+.dir-form .priv select{min-height:46px; width:auto; padding-right:2rem;}
+@media (max-width:520px){ .dir-form .priv-row{grid-template-columns:1fr;} }
+.dir-form .tag-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:.4rem .8rem;}
+.dir-form .tag-grid label{display:flex; align-items:center; gap:.5rem; font-weight:500; color:var(--text-soft); font-size:.9rem;}
+.dir-form .tag-grid input{width:17px; height:17px; accent-color:var(--accent);}
+.dir-form optgroup{font-weight:800;}
 .signup-form .form-fine{font-size:.82rem; color:var(--muted); margin:0;}
 .thanks-mark{width:64px; height:64px; margin:0 auto; border-radius:50%; display:grid; place-items:center; background:var(--accent-soft); color:var(--accent);}
 
