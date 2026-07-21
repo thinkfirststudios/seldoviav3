@@ -16,11 +16,11 @@
         <div class="post-body"><span class="kicker">${esc(p.category||'Blog')}</span><h4>${esc(p.title)}</h4>
         <div class="post-meta"><span>${esc(fmt(p.post_date))}</span></div>
         <div class="post-text clamp">${bodyHtml(p.body||p.excerpt)}</div>
-        <button class="show-more" type="button">Show more</button></div></article>`).join("");
+        <button class="show-more" type="button">Read more</button></div></article>`).join("");
       grid.querySelectorAll(".post").forEach(card=>{
         const text=card.querySelector(".post-text"), btn=card.querySelector(".show-more");
         if(text.scrollHeight<=text.clientHeight+4){ btn.remove(); return; }
-        btn.addEventListener("click",()=>{ const c=text.classList.toggle("clamp"); btn.textContent=c?"Show more":"Show less"; });
+        btn.addEventListener("click",()=>{ const c=text.classList.toggle("clamp"); btn.textContent=c?"Read more":"Read less"; });
       });
     })
     .catch(()=>{});

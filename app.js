@@ -428,12 +428,12 @@ if($("#gazetteGrid")){
     <div class="post-body"><span class="kicker">${esc(g.cat)}</span><h4>${esc(g.title)}</h4>
     <div class="post-meta"><span>${esc(g.date)}</span></div>
     <div class="post-text clamp">${postBodyHtml(g.body||g.excerpt)}</div>
-    <button class="show-more" type="button">Show more</button></div></article>`).join("");
+    <button class="show-more" type="button">Read more</button></div></article>`).join("");
   // reveal full text inline; hide the button when the text already fits
   $$("#gazetteGrid .post").forEach(card=>{
     const text=card.querySelector(".post-text"), btn=card.querySelector(".show-more");
     if(text.scrollHeight<=text.clientHeight+4){ btn.remove(); return; }
-    btn.addEventListener("click",()=>{ const clamped=text.classList.toggle("clamp"); btn.textContent=clamped?"Show more":"Show less"; });
+    btn.addEventListener("click",()=>{ const clamped=text.classList.toggle("clamp"); btn.textContent=clamped?"Read more":"Read less"; });
   });
 }
 
