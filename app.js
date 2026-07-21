@@ -34,8 +34,8 @@ const navLinks=(cls="")=>NAV.map(([href,label,key])=>`<a class="${cls} ${key===P
 const HEADER=`
 <header class="masthead">
   <div class="masthead-inner">
-    <a class="brand" href="index.html" aria-label="Seldovia Property home">
-      <img class="brand-logo" src="images/seldovia-property-logo.jpg" alt="Seldovia Property" width="180" height="180">
+    <a class="brand" href="index.html" aria-label="Seldovia.com home">
+      <img class="brand-logo" src="images/seldovia-com-wordmark.png" alt="Seldovia.com — Alaska's Best Kept Secret" width="900" height="216">
     </a>
     <nav class="mainnav" aria-label="Primary">${navLinks()}</nav>
     <div class="head-actions">
