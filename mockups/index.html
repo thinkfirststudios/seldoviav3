@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seldovia.com — Landing font mockups</title>
+<link rel="stylesheet" href="landing.css">
+<style>
+  @font-face{ font-family:"Sephora"; src:url("fonts/sephora-hayden.ttf") format("truetype"); font-display:swap; }
+  @font-face{ font-family:"Swirly"; src:url("fonts/swirly-canalope.otf") format("opentype"); font-display:swap; }
+  @font-face{ font-family:"White"; src:url("fonts/white-dream.otf") format("opentype"); font-display:swap; }
+  @font-face{ font-family:"World"; src:url("fonts/world-discovery.otf") format("opentype"); font-display:swap; }
+  .mk-wrap{max-width:min(760px,92vw); margin:0 auto; padding:clamp(30px,6vw,64px) 0 80px; text-align:center;}
+  .mk-wrap h1{font-family:var(--serif); font-weight:600; color:var(--ink); font-size:clamp(1.8rem,4vw,2.6rem);}
+  .mk-wrap p{color:var(--muted); max-width:52ch; margin:.6rem auto 0;}
+  .mk-card{display:block; text-decoration:none; background:var(--sheet); border-radius:22px; padding:clamp(1.4rem,4vw,2.4rem); margin-top:1.1rem; box-shadow:0 2px 8px rgba(60,50,32,.06), 0 24px 46px -26px rgba(40,42,28,.34); transition:transform .15s, box-shadow .2s;}
+  .mk-card:hover{transform:translateY(-3px); box-shadow:0 30px 60px -26px rgba(40,42,28,.5);}
+  .mk-sample{color:var(--ink); font-size:clamp(2.6rem,8vw,4.4rem); line-height:1.1;}
+  .mk-name{font-family:var(--sans); font-weight:800; color:var(--bay-ink); letter-spacing:.02em; margin-top:.5rem; font-size:.9rem;}
+  .mk-open{font-family:var(--sans); font-weight:700; color:var(--bay); font-size:.85rem;}
+  .mk-note{margin-top:2rem; font-size:.85rem; color:var(--muted);}
+</style>
+</head>
+<body>
+  <div class="mk-wrap">
+    <img src="../images/seldovia-com-logo.png" alt="Seldovia.com" style="width:min(360px,70vw); margin:0 auto 1.4rem;">
+    <h1>Pick the Seldovia.com script</h1>
+    <p>Three landing-page mockups, one font each — click any to open the full page and see it in the hero. (These are personal-use demo fonts; we'd license the winner for production.)</p>
+
+    <a class="mk-card" href="landing-sephora.html"><div class="mk-sample" style="font-family:'Sephora'">Discover Seldovia</div><div class="mk-name">Sephora &amp; Hayden</div><div class="mk-open">Open landing →</div></a>
+    <a class="mk-card" href="landing-swirly.html"><div class="mk-sample" style="font-family:'Swirly'">Discover Seldovia</div><div class="mk-name">Swirly Canalope</div><div class="mk-open">Open landing →</div></a>
+    <a class="mk-card" href="landing-white.html"><div class="mk-sample" style="font-family:'White'">Discover Seldovia</div><div class="mk-name">White Dream</div><div class="mk-open">Open landing →</div></a>
+
+    <p class="mk-note">Bonus preview — <span style="font-family:'World'; font-size:1.8rem; color:var(--ink)">World Discovery</span> is also in the folder. Want a 4th full mockup with it? Just say so.</p>
+  </div>
+</body>
+</html>

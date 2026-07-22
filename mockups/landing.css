@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Nunito+Sans:wght@400;600;700;800&display=swap');
+/* Standalone Seldovia.com landing-page mockup — font comparison.
+   Each page defines --script via @font-face; everything else is shared. */
+:root{
+  --ink:#16324a; --bay:#1d6b78; --bay-ink:#14535e; --spruce:#2c4a3a; --sun:#e0863a;
+  --paper:#F7F3EA; --sheet:#FFFDF7; --text:#40382b; --muted:#8a8071; --line:#e6ddca;
+  --serif:"Fraunces", Georgia, serif;
+  --sans:"Nunito Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --script:"Fraunces", cursive; /* overridden per page */
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0; font-family:var(--sans); color:var(--text); font-size:16px; line-height:1.65; -webkit-font-smoothing:antialiased;
+  background:
+    radial-gradient(60vw 42vw at -8% -6%, color-mix(in srgb,var(--bay) 20%, transparent), transparent 60%),
+    radial-gradient(52vw 40vw at 108% 4%, color-mix(in srgb,var(--spruce) 18%, transparent), transparent 58%),
+    radial-gradient(50vw 40vw at 96% 70%, color-mix(in srgb,var(--bay) 14%, transparent), transparent 60%),
+    radial-gradient(60vw 46vw at 6% 100%, color-mix(in srgb,var(--spruce) 16%, transparent), transparent 60%),
+    var(--paper);
+  background-attachment:fixed;}
+img{max-width:100%; display:block;}
+a{color:var(--bay-ink);}
+.wrap{max-width:min(1180px,92vw); margin-inline:auto;}
+
+/* font-switch bar */
+.fontbar{position:sticky; top:0; z-index:10; background:#16324a; color:#dfeaf0; font-size:.82rem; padding:.55rem 1rem; text-align:center; letter-spacing:.02em;}
+.fontbar b{color:#fff;}
+.fontbar a{color:#9fd0d8; text-decoration:none; margin:0 .35rem; font-weight:700;}
+.fontbar a:hover{color:#fff; text-decoration:underline;}
+
+/* header / logo */
+.lp-head{padding:clamp(20px,4vw,40px) 0 0; text-align:center;}
+.lp-head img{width:min(560px,84vw); margin:0 auto;}
+
+/* hero */
+.lp-hero{text-align:center; padding:clamp(10px,3vw,26px) 0 clamp(40px,6vw,72px);}
+.lp-tagline{font-family:var(--sans); font-size:.8rem; font-weight:800; letter-spacing:.28em; text-transform:uppercase; color:var(--bay-ink); margin-top:1rem;}
+.lp-title{font-family:var(--script); color:var(--ink); font-weight:400; line-height:1.02; font-size:clamp(3.6rem,11vw,7.5rem); margin:.2rem 0 0; letter-spacing:.01em;}
+.lp-lede{font-family:var(--serif); font-size:clamp(1.1rem,2.4vw,1.5rem); color:var(--text); max-width:44ch; margin:1.1rem auto 0; line-height:1.5;}
+.lp-cta{display:flex; gap:.8rem; justify-content:center; flex-wrap:wrap; margin-top:1.8rem;}
+.btn{display:inline-flex; align-items:center; gap:.5rem; font-family:var(--sans); font-weight:800; font-size:.98rem; padding:.85rem 1.6rem; border-radius:999px; border:2px solid transparent; text-decoration:none; cursor:pointer;}
+.btn-primary{background:var(--bay); color:#fff;}
+.btn-primary:hover{background:var(--bay-ink);}
+.btn-ghost{background:transparent; color:var(--ink); border-color:var(--line);}
+.btn-ghost:hover{border-color:var(--bay); color:var(--bay-ink);}
+
+/* four pillars */
+.lp-pillars{padding-bottom:clamp(50px,7vw,90px);}
+.lp-pillars .eyebrow{text-align:center; font-family:var(--script); font-size:clamp(1.8rem,4vw,2.6rem); color:var(--bay-ink); margin-bottom:.2rem;}
+.lp-pillars h2{text-align:center; font-family:var(--serif); font-weight:600; color:var(--ink); font-size:clamp(1.6rem,3.4vw,2.3rem); margin:0 0 clamp(24px,4vw,40px);}
+.pillar-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(14px,2vw,22px);}
+@media (max-width:860px){ .pillar-grid{grid-template-columns:repeat(2,1fr);} }
+@media (max-width:480px){ .pillar-grid{grid-template-columns:1fr;} }
+.pillar{background:var(--sheet); border-radius:20px; padding:clamp(1.2rem,2.4vw,1.7rem); box-shadow:0 2px 8px rgba(60,50,32,.06), 0 24px 46px -26px rgba(40,42,28,.34);}
+.pillar .ic{width:46px; height:46px; border-radius:13px; display:grid; place-items:center; background:color-mix(in srgb,var(--bay) 14%, var(--sheet)); color:var(--bay); margin-bottom:.8rem;}
+.pillar h3{font-family:var(--serif); font-weight:600; color:var(--ink); font-size:1.3rem; margin:0 0 .35rem;}
+.pillar p{margin:0; color:var(--text-soft,#6c6152); font-size:.94rem;}
+
+/* footer */
+.lp-foot{background:var(--spruce); color:#dfeae4; text-align:center; padding:clamp(30px,5vw,54px) 1rem;}
+.lp-foot .word{font-family:var(--serif); font-weight:600; font-size:1.6rem; color:#fff;}
+.lp-foot .tag{font-family:var(--script); font-size:1.5rem; color:#bcd6cf; margin-top:.2rem;}
+.lp-foot small{display:block; margin-top:1rem; color:#9fb5ad; font-size:.8rem;}
