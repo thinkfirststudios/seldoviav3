@@ -143,8 +143,8 @@ h2.title{font-size:clamp(1.9rem,4vw,2.9rem);}
 body[data-page="realestate"] .masthead{background:var(--accent); border-bottom-color:var(--accent-ink); box-shadow:none;}
 .masthead-inner{max-width:var(--maxw); margin-inline:auto; display:flex; align-items:center; gap:1rem; padding:.45rem clamp(16px,4vw,40px); min-height:64px;}
 .brand{display:flex; align-items:center; gap:.55rem; text-decoration:none; flex-shrink:0;}
-.brand .brand-logo{height:44px; width:auto; display:block; object-fit:contain;}
-@media (max-width:520px){ .brand .brand-logo{height:38px;} }
+.brand .brand-logo{height:34px; width:auto; display:block; object-fit:contain;}
+@media (max-width:520px){ .brand .brand-logo{height:28px;} }
 .brand .mark{width:32px; height:32px;}
 .brand .word{font-weight:800; font-size:1.18rem; color:var(--heading); letter-spacing:-.02em; line-height:1;}
 .brand .word b{color:var(--accent-ink);}
