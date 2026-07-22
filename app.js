@@ -25,6 +25,13 @@ const PAGE=document.body.dataset.page||"home";
   }
 })();
 
+/* Graceful image fallback: if any image fails to load (e.g. a flaky external
+   placeholder service), hide it and show a soft wash instead of a broken icon. */
+window.addEventListener("error", e=>{
+  const t=e.target;
+  if(t && t.tagName==="IMG"){ t.style.display="none"; const p=t.closest(".cat-tile,.place-media,.post-media,.gallery-photo,figure")||t.parentElement; if(p) p.classList.add("img-fallback"); }
+}, true);
+
 /* ============================================================ SHARED CHROME (header / drawer / footer) ============================================================ */
 const NAV=[
   ["explore.html","Explore","explore"],
@@ -394,8 +401,7 @@ if($("#quickcats")) $("#quickcats").innerHTML=[["Restaurants","dining"],["Lodgin
 
 // category tiles
 if($("#catGrid")) $("#catGrid").innerHTML=CATEGORIES.map((c,i)=>{
-  const ct=CAT_TAGS[i]||{t:"coast,alaska,nature",l:i+1};
-  const img=flickr(600,600,ct.t,ct.l);
+  const img=`images/categories/cat-${i}.jpg`;
   return `<a class="cat-tile" href="explore.html?cat=${c.key}" aria-label="${esc(c.b)}"><img class="cat-photo" src="${img}" alt="" loading="lazy" width="600" height="600"><span class="cap"><b>${esc(c.b)}</b><span>${esc(c.s)}</span></span></a>`;}).join("");
 
 // feature media

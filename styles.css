@@ -78,6 +78,7 @@ button{font-family:inherit;}
 ::selection{background:var(--accent); color:#fff;}
 
 .wc-defs{position:absolute; width:0; height:0; overflow:hidden;}
+.img-fallback{background:linear-gradient(150deg, color-mix(in srgb,var(--bay) 22%, var(--surface-2)), color-mix(in srgb,var(--sage) 26%, var(--surface-2)));}
 /* ---- Watercolor splashes: soft, irregular washes that bleed around card groups ---- */
 body:not([data-page="realestate"]) .cat-grid,
 body:not([data-page="realestate"]) .grid3,
