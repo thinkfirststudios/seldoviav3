@@ -243,7 +243,8 @@ Even the same walk down the street or dock never feels identical twice. The tide
  {title:"Did you know your name often has a special meaning or history behind it?",excerpt:"Some names come from nature, some from family traditions, and others from different cultures around the world.",date:"Mar 5, 2026",read:"1 min",cat:"Community",img:"images/gazette/post-8.jpg"},
  {title:"March 2026 Photo Contest – “Color in Motion”",excerpt:"March is here, and with it comes longer days, warmer temps (fingers crossed), and all the vibrant energy of early spring in Seldovia!",date:"Mar 5, 2026",read:"1 min",cat:"Events",img:"images/gazette/post-9.jpg"}
 ];
-const GALLERY=[{h:240,cap:"Morning fog over the harbor"},{h:320,cap:"Boardwalk homes at high tide"},{h:200,cap:"Floatplane off the bay"},{h:300,cap:"Salmonberries on the Otterbahn"},{h:220,cap:"Sea otters near the breakwater"},{h:280,cap:"Fireweed and the far range"},{h:210,cap:"Fresh halibut on the dock"},{h:300,cap:"Midnight-gold summer light"},{h:230,cap:"Kayaks on a glassy morning"}];
+// PROD: swap for real Seldovia Days photos (from the Flywheel gallery). Reusing on-hand Seldovia images for now.
+const GALLERY=[{h:240,cap:"Morning fog over the harbor",img:"images/hero-seldovia.jpg"},{h:320,cap:"Boardwalk homes at high tide",img:"images/listings/230-kachemak-st.jpg"},{h:200,cap:"Floatplane off the bay",img:"images/listings/57739-kachemak-bay.jpg"},{h:300,cap:"Salmonberries on the Otterbahn",img:"images/categories/cat-5.jpg"},{h:220,cap:"Sea otters near the breakwater",img:"images/categories/cat-2.jpg"},{h:280,cap:"Fireweed and the far range",img:"images/listings/3108-jakolof-bay-rd.jpg"},{h:210,cap:"Fresh halibut on the dock",img:"images/categories/cat-1.jpg"},{h:300,cap:"Midnight-gold summer light",img:"images/categories/cat-7.jpg"},{h:230,cap:"Kayaks on a glassy morning",img:"images/listings/195-lookout-aly.jpg"}];
 const EVENTS=[{d:"2026-07-15",t:"09:00",title:"Farmers & Makers Market",where:"Seldovia Bay Pavilion",cat:"Market",dur:"til 1 PM"},{d:"2026-07-15",t:"18:30",title:"Open Mic on the Boardwalk",where:"Linwood Bar & Grill",cat:"Music",dur:"til late"},{d:"2026-07-17",t:"10:00",title:"Otterbahn Trail Cleanup",where:"Trailhead by the school",cat:"Volunteer",dur:"2 hrs"},{d:"2026-07-18",t:"08:00",title:"Halibut Derby — Weigh-in",where:"City Dock",cat:"Fishing",dur:"daily"},{d:"2026-07-19",t:"19:00",title:"Community Potluck & Bonfire",where:"Outside Beach",cat:"Community",dur:"til dusk"},{d:"2026-07-21",t:"17:30",title:"City Council Meeting",where:"Seldovia City Hall",cat:"Civic",dur:"1.5 hrs"},{d:"2026-07-22",t:"11:00",title:"Kids' Tide-Pool Walk",where:"Outside Beach",cat:"Family",dur:"90 min"},{d:"2026-07-24",t:"18:00",title:"Gallery Night — Local Artists",where:"Seldovia Arts Council",cat:"Arts",dur:"til 9 PM"},{d:"2026-07-26",t:"09:30",title:"Sunday Kayak Paddle",where:"Small-Boat Harbor",cat:"Outdoors",dur:"3 hrs"},{d:"2026-07-28",t:"12:00",title:"Senior Lunch & Cards",where:"SVT Community Room",cat:"Community",dur:"2 hrs"},{d:"2026-07-31",t:"18:00",title:"End-of-Month Fish Fry",where:"Harbor Pavilion",cat:"Food",dur:"til 8 PM"},{d:"2026-08-01",t:"09:00",title:"Farmers & Makers Market",where:"Seldovia Bay Pavilion",cat:"Market",dur:"til 1 PM"}];
 // Jenny's active listings (real). Photos in images/listings/ (optimized). Full detail via listing.html?id=slug.
 const LISTINGS=[
@@ -390,6 +391,8 @@ function stars(r){const full=Math.round(r); return "★★★★★".slice(0,ful
 // PROD: replace these keyworded placeholders with real Seldovia photography.
 const flickr=(w,h,tags,lock)=>`https://loremflickr.com/${w}/${h}/${tags}?lock=${lock}`;
 const TAGS_BY_KEY={lodging:"cabin,forest,alaska",dining:"seafood,harbor,alaska",charters:"boat,ocean,alaska",arts:"art,gallery,coast",outdoors:"trail,forest,mountains",wellness:"spa,forest,nature",events:"festival,outdoor,community"};
+// self-hosted category photos by place key (PROD: real place photos)
+const PLACE_IMG={lodging:"images/categories/cat-0.jpg",dining:"images/categories/cat-1.jpg",charters:"images/categories/cat-2.jpg",arts:"images/categories/cat-4.jpg",outdoors:"images/categories/cat-5.jpg",wellness:"images/categories/cat-6.jpg",events:"images/categories/cat-7.jpg"};
 // Category tiles use hand-verified tag+lock pairs (specific-concept flickr tags
 // are unreliable, so each was previewed and locked to a good image).
 const CAT_TAGS=[{t:"log-cabin,alaska",l:1},{t:"seafood,dinner,plate",l:3},{t:"fishing-boat,harbor",l:1},{t:"latte,coffee",l:2},{t:"mural,streetart",l:1},{t:"mountains,hiking",l:1},{t:"spa,wellness",l:1},{t:"fireworks,night",l:2}];
@@ -416,7 +419,7 @@ function renderPlaces(){
   const rows=PLACES.filter(p=>placeTab==="all"||p.key===placeTab);
   $("#placeGrid").innerHTML=rows.map(p=>`
     <a class="place" href="explore.html">
-      <div class="place-media"><img class="place-photo" src="${flickr(600,400,TAGS_BY_KEY[p.key]||'coast,alaska,nature',PLACES.indexOf(p)+1)}" alt="" loading="lazy" width="600" height="400">
+      <div class="place-media"><img class="place-photo" src="${PLACE_IMG[p.key]||'images/categories/cat-5.jpg'}" alt="" loading="lazy" width="600" height="400">
         <span class="badge-open" style="${p.open?'':'background:#efe6e2;color:#9a877f'}">${p.open?'Open':'Closed'}</span>
       </div>
       <div class="place-body">
@@ -468,7 +471,7 @@ if($("#postDetail")){
 
 // gallery
 if($("#masonry")) $("#masonry").innerHTML=GALLERY.map((im,i)=>{
-  const img=`<img src="${flickr(300,im.h,GAL_TAGS[i%GAL_TAGS.length],i+1)}" alt="${esc(im.cap)}" loading="lazy" width="300" height="${im.h}">`;
+  const img=`<img src="${im.img}" alt="${esc(im.cap)}" loading="lazy" width="300" height="${im.h}">`;
   return `<figure tabindex="0">${img}<figcaption>${esc(im.cap)}</figcaption></figure>`;}).join("");
 
 // real estate listings
@@ -588,9 +591,9 @@ if($("#quoteGrid")) $("#quoteGrid").innerHTML=TESTIMONIALS.map(t=>`<div class="q
 if($("#sponsorTrack")){const spHTML=SPONSORS.map(s=>`<a class="sponsor" href="contact.html" aria-label="${esc(s.name)} — ${esc(s.cat)}"><span class="logo" style="background:${s.c}">${esc(s.name[0])}</span><span class="s-name">${esc(s.name)}</span><span class="s-cat">${esc(s.cat)}</span></a>`).join(""); $("#sponsorTrack").innerHTML=spHTML+spHTML;}
 
 // home photo gallery (auto-scroll)
-const galFig=(g,tags,lock)=>`<figure class="gallery-photo"><img src="${flickr(600,450,tags,lock)}" alt="${esc(g.cap)}" loading="lazy" width="600" height="450"><figcaption>${esc(g.cap)}</figcaption></figure>`;
-if($("#galleryTrack")){const gHTML=GALLERY.map((g,i)=>galFig(g,GAL_TAGS[i%GAL_TAGS.length],i+1)).join(""); $("#galleryTrack").innerHTML=gHTML+gHTML;}
-if($("#galleryTrack2")){const gHTML=GALLERY.map((g,i)=>({g,t:GAL_TAGS[i%GAL_TAGS.length],l:i+30})).reverse().map(o=>galFig(o.g,o.t,o.l)).join(""); $("#galleryTrack2").innerHTML=gHTML+gHTML;}
+const galFig=(g)=>`<figure class="gallery-photo"><img src="${g.img}" alt="${esc(g.cap)}" loading="lazy" width="600" height="450"><figcaption>${esc(g.cap)}</figcaption></figure>`;
+if($("#galleryTrack")){const gHTML=GALLERY.map(galFig).join(""); $("#galleryTrack").innerHTML=gHTML+gHTML;}
+if($("#galleryTrack2")){const gHTML=GALLERY.slice().reverse().map(galFig).join(""); $("#galleryTrack2").innerHTML=gHTML+gHTML;}
 
 /* ============================================================ CALENDAR ============================================================ */
 const MONTHS=["January","February","March","April","May","June","July","August","September","October","November","December"];
