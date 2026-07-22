@@ -49,7 +49,7 @@ const HEADER=`
 <header class="masthead">
   <div class="masthead-inner">
     <a class="brand" href="index.html" aria-label="Seldovia.com home">
-      <img class="brand-logo" src="images/seldovia-com-wordmark.png" alt="Seldovia.com — Alaska's Best Kept Secret" width="900" height="216">
+      <img class="brand-logo" src="images/logo-header.png" alt="Seldovia.com — Alaska's Best Kept Secret" width="620" height="413">
     </a>
     <nav class="mainnav" aria-label="Primary">${navLinks()}</nav>
     <div class="head-actions">
