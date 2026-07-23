@@ -472,7 +472,7 @@ if($("#postDetail")){
 // gallery
 if($("#masonry")) $("#masonry").innerHTML=GALLERY.map((im,i)=>{
   const img=`<img src="${im.img}" alt="${esc(im.cap)}" loading="lazy" width="300" height="${im.h}">`;
-  return `<figure tabindex="0">${img}<figcaption>${esc(im.cap)}</figcaption></figure>`;}).join("");
+  return `<figure tabindex="0" data-idx="${i}">${img}<figcaption>${esc(im.cap)}</figcaption></figure>`;}).join("");
 
 // real estate listings
 if($("#reGrid")) $("#reGrid").innerHTML=LISTINGS.map((l,i)=>`
@@ -591,9 +591,30 @@ if($("#quoteGrid")) $("#quoteGrid").innerHTML=TESTIMONIALS.map(t=>`<div class="q
 if($("#sponsorTrack")){const spHTML=SPONSORS.map(s=>`<a class="sponsor" href="contact.html" aria-label="${esc(s.name)} — ${esc(s.cat)}"><span class="logo" style="background:${s.c}">${esc(s.name[0])}</span><span class="s-name">${esc(s.name)}</span><span class="s-cat">${esc(s.cat)}</span></a>`).join(""); $("#sponsorTrack").innerHTML=spHTML+spHTML;}
 
 // home photo gallery (auto-scroll)
-const galFig=(g)=>`<figure class="gallery-photo"><img src="${g.img}" alt="${esc(g.cap)}" loading="lazy" width="600" height="450"><figcaption>${esc(g.cap)}</figcaption></figure>`;
-if($("#galleryTrack")){const gHTML=GALLERY.map(galFig).join(""); $("#galleryTrack").innerHTML=gHTML+gHTML;}
-if($("#galleryTrack2")){const gHTML=GALLERY.slice().reverse().map(galFig).join(""); $("#galleryTrack2").innerHTML=gHTML+gHTML;}
+const galFig=(g,i)=>`<figure class="gallery-photo" tabindex="0" data-idx="${i}"><img src="${g.img}" alt="${esc(g.cap)}" loading="lazy" width="600" height="450"><figcaption>${esc(g.cap)}</figcaption></figure>`;
+if($("#galleryTrack")){const gHTML=GALLERY.map((g,i)=>galFig(g,i)).join(""); $("#galleryTrack").innerHTML=gHTML+gHTML;}
+if($("#galleryTrack2")){const gHTML=GALLERY.map((g,i)=>galFig(g,i)).reverse().join(""); $("#galleryTrack2").innerHTML=gHTML+gHTML;}
+
+// gallery lightbox — click any gallery photo to view it large, with prev/next
+if($("#galleryTrack")||$("#masonry")){
+  document.body.insertAdjacentHTML("beforeend", `<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <button class="lb-close" aria-label="Close">&#10005;</button>
+    <button class="lb-nav lb-prev" aria-label="Previous photo">&#8249;</button>
+    <figure class="lb-fig"><img class="lb-img" alt=""><figcaption class="lb-cap"></figcaption></figure>
+    <button class="lb-nav lb-next" aria-label="Next photo">&#8250;</button>
+  </div>`);
+  const lb=$("#lightbox"), lbImg=lb.querySelector(".lb-img"), lbCap=lb.querySelector(".lb-cap");
+  let cur=0;
+  const show=i=>{ cur=(i+GALLERY.length)%GALLERY.length; const g=GALLERY[cur]; lbImg.src=g.img; lbImg.alt=g.cap; lbCap.textContent=g.cap; lb.classList.add("open"); lb.setAttribute("aria-hidden","false"); document.body.style.overflow="hidden"; };
+  const close=()=>{ lb.classList.remove("open"); lb.setAttribute("aria-hidden","true"); document.body.style.overflow=""; };
+  lb.querySelector(".lb-close").addEventListener("click",close);
+  lb.querySelector(".lb-prev").addEventListener("click",e=>{e.stopPropagation(); show(cur-1);});
+  lb.querySelector(".lb-next").addEventListener("click",e=>{e.stopPropagation(); show(cur+1);});
+  lb.addEventListener("click",e=>{ if(e.target===lb||e.target.classList.contains("lb-fig")) close(); });
+  document.addEventListener("keydown",e=>{ if(!lb.classList.contains("open"))return; if(e.key==="Escape")close(); else if(e.key==="ArrowLeft")show(cur-1); else if(e.key==="ArrowRight")show(cur+1); });
+  document.addEventListener("click",e=>{ const fig=e.target.closest(".gallery-photo,#masonry figure"); if(fig&&fig.dataset.idx!=null) show(+fig.dataset.idx); });
+  document.addEventListener("keydown",e=>{ if(e.key!=="Enter")return; const fig=e.target.closest&&e.target.closest(".gallery-photo,#masonry figure"); if(fig&&fig.dataset.idx!=null) show(+fig.dataset.idx); });
+}
 
 /* ============================================================ CALENDAR ============================================================ */
 const MONTHS=["January","February","March","April","May","June","July","August","September","October","November","December"];
