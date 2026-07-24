@@ -342,6 +342,185 @@ If you have any questions about a property or want insight into the current mark
 Slowly, dishes begin to show up on tables like they've always belonged there. Someone brings something still warm, someone else arrives with a tray that's been carefully wrapped, and before long the place feels less like a restaurant and more like a shared kitchen for the whole town.
 
 It's simple, but it's the kind of simple that holds a community together.`},
+ {title:"Take a look at our latest flipbook to explore our active listings.",excerpt:"From unique opportunities to beautiful homes in Seldovia, this collection gives you a closer look at what's currently available in the market.",date:"Apr 30, 2026",read:"1 min",cat:"Real Estate",img:"images/gazette/2026-04-30_2.jpg",body:`Take a look at our latest flipbook to explore our active listings.
+
+From unique opportunities to beautiful homes in Seldovia, this collection gives you a closer look at what's currently available in the market. Whether you're searching for your next home, an investment, or just browsing what's out there, it's all in one easy place to flip through and explore.`},
+ {title:"In Seldovia, May always feels like a quiet turning point.",excerpt:"Winter starts to loosen its grip, the days stretch a little longer, and suddenly life moves back outside again.",date:"Apr 30, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-04-30.jpg",body:`In Seldovia, May always feels like a quiet turning point. Winter starts to loosen its grip, the days stretch a little longer, and suddenly life moves back outside again.
+
+May in Seldovia isn't just another month, it's a reminder that brighter, busier, more active days are just around the corner.
+
+So, what are you most looking forward to this May? ☀️👇`},
+ {title:"Biking season is back in Seldovia.",excerpt:"There's a certain rhythm that returns to Seldovia when the days stretch a little longer and the air finally warms up.",date:"Apr 28, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-04-28.jpg",body:`Biking season is back in Seldovia.
+
+There's a certain rhythm that returns to Seldovia when the days stretch a little longer and the air finally warms up.
+
+You hear it before you always see it—tires on pavement, laughter echoing a little farther down the road, and kids rediscovering the simple freedom of their bikes.
+
+And that's exactly why this season always comes with a quiet reminder for all of us driving through town.
+
+Take it slow. Stay aware. Look twice, then look again.
+
+Not because the roads are dangerous, but because they're shared. And in a small community like ours, that awareness matters.
+
+So as bikes reappear across Seldovia this season, let's meet them with care, attention, and kindness on the road.`},
+ {title:"Thank you Shelly, for this review. I really appreciate you taking the time to share this!",excerpt:"Thank you Shelly, for this review. I really appreciate you taking the time to share this!",date:"Apr 27, 2026",read:"1 min",cat:"Kind Words",img:"images/gazette/2026-04-27.jpg",body:`Thank you Shelly, for this review. I really appreciate you taking the time to share this! 😊`},
+ {title:"What makes Seldovia special isn't that it takes you away from life, but that it brings you closer to it.",excerpt:"Closer to simple routines, closer to nature, closer to people who feel like community.",date:"Apr 26, 2026",read:"1 min",cat:"Living Here",img:"",body:`What makes Seldovia special isn't that it takes you away from life, but that it brings you closer to it. Closer to simple routines, closer to nature, closer to people who feel like community. Somewhere along the way, you stop feeling like you're missing out and start feeling like you've finally arrived. 😊`},
+ {title:"Today, we celebrate the incredible dedication and compassion of veterinarians who care for the animals that mean so much to us.",excerpt:"Here in Seldovia, we are especially grateful for Dr. Marlowe, who visits our community every third Thursday of each month.",date:"Apr 25, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-04-25.jpg",body:`Today, we celebrate the incredible dedication and compassion of veterinarians who care for the animals that mean so much to us.
+
+Here in Seldovia, we are especially grateful for Dr. Marlowe, who visits our community every third Thursday of each month to provide care for our beloved pets and animals.
+
+In a small town like ours, having consistent, reliable veterinary care is truly invaluable. We're so grateful for Dr. Marlowe, who travels in each month to care for our furry friends and ensure they get the attention they deserve.
+
+Thank you, Dr. Marlowe, for your heart, your time, and the care you bring to our community, you are deeply appreciated! 💙🐱🐾`},
+ {title:"Boats Are the “Roads” of Seldovia",excerpt:"One of the most unique things about Seldovia is that everything moves by water or air. For many residents, boats are the most practical way to get around.",date:"Apr 24, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-04-24.jpg",body:`Boats Are the "Roads" of Seldovia
+
+One of the most unique things about Seldovia is that everything moves by water or air. For many residents, boats are the most practical way to get around. Whether it's a quick trip across the bay or a longer journey to nearby Homer, boats make everyday travel possible.
+
+Getting Supplies and Essentials
+
+Groceries, fuel, building materials, and other essentials often arrive by boat. Many families also use boats to travel for shopping trips or to pick up supplies, making them an essential part of planning daily life in a remote coastal community.
+
+Please see the comment section to read the full continuation of this post.`},
+ {title:"Here, where life moves at a gentler pace, there's always time to curl up with a good story.",excerpt:"Whether it's by the window on a rainy day or outside enjoying the fresh air, books have a way of making every moment feel a little more special.",date:"Apr 23, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-04-23.jpg",body:`Here, where life moves at a gentler pace, there's always time to curl up with a good story. Whether it's by the window on a rainy day or outside enjoying the fresh air, books have a way of making every moment feel a little more special.
+
+Today, we celebrate the creativity behind every page and the life-changing joy that reading brings to all of us.`},
+ {title:"Earth Day in Seldovia is a reminder of how lucky we are to call this beautiful place home.",excerpt:"Living in a place surrounded by mountains, ocean, and wildlife reminds us every day how important it is to care for our planet.",date:"Apr 22, 2026",read:"1 min",cat:"Community",img:"",body:`Earth Day in Seldovia is a reminder of how lucky we are to call this beautiful place home. 🌊🌲
+
+Living in a place surrounded by mountains, ocean, and wildlife reminds us every day how important it is to care for our planet.
+
+Let's continue being good stewards of the beauty around us by keeping our waters clean, our land preserved, and our community connected to nature. Every small action makes a difference. 💚`},
+ {title:"Living in Seldovia means being surrounded by water in one of the most beautiful coastal settings in Alaska.",excerpt:"And with that close connection comes an important reality: knowing how to swim isn't just helpful, it's essential.",date:"Apr 21, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-04-21.jpg",body:`Living in Seldovia means being surrounded by water in one of the most beautiful coastal settings in Alaska. The ocean is part of daily life here from boat rides to fishing trips, from beach walks to simply enjoying the view. And with that close connection comes an important reality: knowing how to swim isn't just helpful, it's essential.
+
+Safety First, Always‼️
+
+Alaska's waters are cold, and conditions can change quickly. Even in calm weather, unexpected situations can happen—slippery docks, sudden waves, or accidents while boating.
+
+Life jackets are essential, but knowing how to swim can make a critical difference. It provides a layer of safety not just for yourself, but for those around you. It's not about fear, it's about being prepared and capable in an environment where water is always nearby.
+
+Continue reading in the comment section below.`},
+ {title:"Pending and moving forward!",excerpt:"A big congratulations to the sellers and buyers of this lot in Seldovia, one step closer to making it official!",date:"Apr 20, 2026",read:"1 min",cat:"Real Estate",img:"images/gazette/2026-04-20.jpg",body:`Pending and moving forward! A big congratulations to the sellers and buyers of this lot in Seldovia, one step closer to making it official! 🎉`},
+ {title:"People have a lot of ideas about living in Alaska but the reality, especially in Seldovia, might surprise you.",excerpt:"Here are 5 common myths… and the truth behind them.",date:"Apr 20, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-04-20_2.jpg",body:`People have a lot of ideas about living in Alaska but the reality, especially in Seldovia, might surprise you.
+
+Here are 5 common myths… and the truth behind them:
+
+1. Myth: You're completely isolated
+Reality: Seldovia is a close-knit, welcoming community. You're never really alone, neighbors look out for each other, and connections run deep.
+
+2. Myth: There's no access to essentials
+Reality: There are local stores, regular deliveries, and trips to Homer for groceries and supplies. It just takes a bit of planning.
+
+See the comment section to read more.`},
+ {title:"In Seldovia, life isn't measured by how fast you go but by how deeply you experience each moment.",excerpt:"Here, “enough” isn't measured by more, it's found in connection, in calm, and in the kind of beauty that never asks for attention.",date:"Apr 19, 2026",read:"1 min",cat:"Living Here",img:"",body:`In Seldovia, life isn't measured by how fast you go but by how deeply you experience each moment.
+
+Here, "enough" isn't measured by more, it's found in connection, in calm, and in the kind of beauty that never asks for attention but always leaves an impression.`},
+ {title:"In a place like Seldovia, where life moves at a slower pace and every connection matters, husbands play such an important role in keeping families grounded and strong.",excerpt:"Happy Husband Appreciation Day to all the amazing husbands in our community!",date:"Apr 18, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-04-18.jpg",body:`In a place like Seldovia, where life moves at a slower pace and every connection matters, husbands play such an important role in keeping families grounded and strong. 💙🌲
+
+Happy Husband Appreciation Day to all the amazing husbands in our community!
+
+Today, we honor you for the sacrifices you make, the strength you show, and the love you give!`},
+ {title:"Answer: It controls transportation and supply delivery!",excerpt:"Why is weather such an important part of daily planning in Seldovia? Because changing conditions can directly affect transportation and supply delivery.",date:"Apr 17, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-04-17.jpg",body:`Answer: It controls transportation and supply delivery!
+
+Why is weather such an important part of daily planning in Seldovia? Because changing conditions can directly affect transportation and supply delivery. Boats and small planes are essential for travel and bringing in goods, and both depend heavily on safe weather to operate.
+
+Fun fact: In coastal Alaska towns like Seldovia, checking the forecast isn't just about dressing for the day, it's about knowing when groceries, mail, and visitors might arrive!`},
+ {title:"There's nothing quite like enjoying a warm, comforting brunch in a place as peaceful as Seldovia.",excerpt:"Whether you're starting your day by the water or gathering with friends and family, Eggs Benedict feels like the perfect treat to slow down and savor the moment!",date:"Apr 16, 2026",read:"1 min",cat:"Living Here",img:"",body:`There's nothing quite like enjoying a warm, comforting brunch in a place as peaceful as Seldovia.
+
+Whether you're starting your day by the water or gathering with friends and family, Eggs Benedict feels like the perfect treat to slow down and savor the moment!`},
+ {title:"There's something special about getting your hands in the soil and watching something grow.",excerpt:"In Seldovia, even the smallest gardens bring so much beauty and life to our community.",date:"Apr 14, 2026",read:"1 min",cat:"Community",img:"",body:`There's something special about getting your hands in the soil and watching something grow.
+
+In Seldovia, even the smallest gardens bring so much beauty and life to our community.
+
+Thanks to Suzie from Thyme on the Boardwalk garden store and nursery, we have absolutely gorgeous parks that are loving cared for by Suzie and her woofers! If you see her at 11pm in the garden in the center of town, stop and lend a hand or a word of encouragement and gratitude! She is a big part of what makes our downtown so beautiful!
+
+Whether you're planting flowers, growing your own food, or simply enjoying the process, gardening is a reminder of patience, care, and the rewards of nurturing something over time. 🌿`},
+ {title:"Yes, you can stay connected in Seldovia but it's a little different from big-city living.",excerpt:"Internet is available and continues to improve, allowing residents to work remotely, run businesses, and stay in touch with loved ones.",date:"Apr 13, 2026",read:"2 min",cat:"Living Here",img:"images/gazette/2026-04-13.jpg",body:`Yes, you can stay connected in Seldovia but it's a little different from big-city living.
+
+Internet is available and continues to improve, allowing residents to work remotely, run businesses, and stay in touch with loved ones. However, reliability can vary depending on weather and demand.
+
+🛒 Groceries & Food Access
+
+Seldovia has a local store where you can pick up basic groceries and essentials. You'll find pantry staples, frozen goods, and everyday items and the selection is amazing - Chris and Tata do a great job of making the Crabpot a place to get everything from ice cream to artichoke hearts and fresh veggies and fruit! But they are just one store, so you may have special favorites that you'll need to grab those elsewhere! We love to shop local and support our neighbors and friends!
+
+If you need something from Anchorage, Ronnie with True North Air shops Costco, Fast food places, Best Buy, West Marine, whatever you need and will bring it right to our airport for you! First Class for sure!
+
+For bigger shopping trips, many residents travel to Homer, or Kenai & Soldotna where there are larger grocery stores and more variety. This often means planning ahead, making lists, and stocking up.
+
+It's common to:
+✅ Buy in bulk
+✅ Keep a well-stocked pantry
+✅ Use freezers for long-term storage
+
+Fresh produce is available, but it may be seasonal or more expensive due to transportation.
+
+📦 Shipping & Deliveries
+
+Getting packages in Seldovia is totally doable but patience is key.
+
+Mail and freight typically come through Homer before reaching Seldovia by boat or plane. This means deliveries can take longer than expected, especially during bad weather.
+
+Locals get used to:
+✅ Ordering ahead of time
+✅ Tracking shipments closely
+✅ Being flexible with delivery dates`},
+ {title:"Answer: Small local clinic; major care in nearby Homer!",excerpt:"While the town has a small local clinic for routine care, residents often travel to Homer or Anchorage for major medical services.",date:"Apr 12, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-04-12.jpg",body:`Answer: Small local clinic; major care in nearby Homer!
+
+While the town has a small local clinic for routine care, residents often travel to Homer or Anchorage for major medical services. This setup is common in remote Alaska communities, where access to specialized care requires a bit of planning.
+
+Fun fact: Our fantastic volunteer Fire and EMS teams are amazing first responders and help in times of crisis. Telemedicine and emergency transport options, including boats and small aircraft, help ensure that even in this remote coastal town, residents can get the care they need when it matters most!`},
+ {title:"Nothing matters more than happy clients!",excerpt:"Thank you Frank for this wonderful review.",date:"Apr 11, 2026",read:"1 min",cat:"Kind Words",img:"images/gazette/2026-04-11.jpg",body:`Nothing matters more than happy clients! Thank you Frank for this wonderful review. 😊`},
+ {title:"Family and community mean so much, siblings are often our first best friends and lifelong companions.",excerpt:"From growing up together to sharing memories by the water and supporting each other through every season of life.",date:"Apr 10, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-04-10.jpg",body:`Family and community mean so much, siblings are often our first best friends and lifelong companions. ❤️
+
+From growing up together to sharing memories by the water and supporting each other through every season of life, the bond between siblings is something truly special.
+
+Today, we celebrate those connections, the laughter, the memories, and the unbreakable love that makes siblings such an important part of our lives!`},
+ {title:"Here's what locals in Seldovia look forward to most when spring begins to arrive:",excerpt:"Longer days, the harbor coming back to life, the first signs of green, and the return of fishing season.",date:"Apr 9, 2026",read:"2 min",cat:"Living Here",img:"images/gazette/2026-04-09.jpg",body:`Here's what locals in Seldovia look forward to most when spring begins to arrive:
+
+🌅 Longer, Brighter Days
+After months of shorter daylight, the return of longer evenings feels like a gift. The sun lingers a little more each day, bringing warmth, light, and a sense of possibility.
+
+🌊 The Harbor Coming Back to Life
+Boats return, the docks feel busier, and there's a renewed sense of movement along the waterfront.
+
+🌱 The First Signs of Green
+After a winter of whites and grays, those first hints of green feel magical. Budding trees, fresh grass, and early blooms remind everyone that a new season has truly begun.
+
+🎣 The Return of Fishing Season
+Though many locals and commercial fishermen fish all winter, for many in Seldovia, spring marks the beginning of fishing season. There's excitement in the air as people prepare gear, plan trips, and look forward to days out on the water.
+
+🛠️ Getting Back to Projects
+Spring is when people start building, repairing, and creating again. Whether it's fixing up cabins, working on boats, or starting new projects, there's a shared energy of productivity.
+
+☕ Reconnecting with Neighbors
+As the weather warms up, and days grow long, people naturally spend more time outside. Friendly conversations return to boardwalks, streets, porches and docks, and the sense of community grows even stronger.
+
+🚤 More Travel and Connection
+With easier access to and from Homer, spring brings more visitors, more movement, and more opportunities to connect with others beyond town.`},
+ {title:"When was the last time you paused and just took it all in?",excerpt:"In Seldovia, the mist, the wildlife, and the quiet beauty of nature create moments worth slowing down for.",date:"Apr 8, 2026",read:"1 min",cat:"Living Here",img:"",body:`When was the last time you paused and just took it all in? In Seldovia, the mist, the wildlife, and the quiet beauty of nature create moments worth slowing down for. 🌿 What's your favorite way to soak in these views?`},
+ {title:"Your chance to own a beautiful home in the heart of Seldovia",excerpt:"This 3 bed, 2 bath home sits on a spacious hillside lot, offering both privacy and convenience.",date:"Apr 7, 2026",read:"1 min",cat:"Real Estate",img:"images/gazette/2026-04-07_2.jpg",body:`Your chance to own a beautiful home in the heart of Seldovia 🌳✨
+
+This 3 bed, 2 bath home sits on a spacious hillside lot, offering both privacy and convenience. With a large shop/garage, there's plenty of room for storage, hobbies, or creating the perfect workspace.
+
+All of this is just a short distance from everything in town, giving you the best of both worlds: peaceful living with easy access to the heart of the community.
+
+If you've been waiting for the right place to call home in Seldovia, this could be it. Click here to learn more
+https://www.seldoviaproperty.com/.../321-eagle-run-loop…`},
+ {title:"Here in our quiet coastal town, we're surrounded by the kind of environment that naturally supports a healthier way of life.",excerpt:"But health goes beyond the environment, it's also about the choices we make every day.",date:"Apr 7, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-04-07.jpg",body:`Here in our quiet coastal town, we're surrounded by the kind of environment that naturally supports a healthier way of life—fresh air, open space, and the calming presence of nature. But health goes beyond the environment, it's also about the choices we make every day.
+
+From staying active and eating well to taking time for rest and mental well-being, every effort counts!
+
+Today is a reminder to take care of yourself and appreciate the natural beauty that helps us live healthier, more balanced lives. 🌊`},
+ {title:"As spring begins to awaken around our Seldovia, Easter invites us to remember the profound Christian celebration of Jesus Christ's resurrection.",excerpt:"It is a powerful reminder of new beginnings, redemption, and brighter days ahead, mirroring the renewal we see in the world around us.",date:"Apr 5, 2026",read:"1 min",cat:"Community",img:"",body:`As spring begins to awaken around our Seldovia, Easter invites us to remember the profound Christian celebration of Jesus Christ's resurrection, the ultimate victory over death and the promise of eternal life. It is a powerful reminder of new beginnings, redemption, and brighter days ahead, mirroring the renewal we see in the world around us.
+
+Whether you're enjoying time with family, reflecting in quiet moments of faith and gratitude, or taking in the beauty of nature as it stirs to life, may your day be filled with peace, love, and renewed hope. Blessed Easter from our Seldovia community! He is risen indeed.`},
+ {title:"Answer: About 250 people!",excerpt:"This cozy Alaska coastal town is home to roughly 250 residents, making it a tight-knit community where everyone knows their neighbors.",date:"Apr 4, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-04-04.jpg",body:`Answer: About 250 people!
+
+This cozy Alaska coastal town is home to roughly 250 residents, making it a tight-knit community where everyone knows their neighbors. Life here moves at a slower pace, surrounded by stunning wilderness and the calm waters of Kachemak Bay.
+
+This is a number based on just the city population, not the whole area of Seldovia, out in Seldovia Village and out at MacDonald Spit and to Jakolof Bay!
+
+Fun fact: While the population is small, Seldovia welcomes visitors and seasonal workers who help keep the town vibrant and full of activity during the summer months!`},
+ {title:"May today bring you peace, and may the days ahead be filled with blessings and renewal.",excerpt:"May today bring you peace, and may the days ahead be filled with blessings and renewal.",date:"Apr 3, 2026",read:"1 min",cat:"Community",img:"",body:`May today bring you peace, and may the days ahead be filled with blessings and renewal. ✨`},
+ {title:"Life in Seldovia isn't about keeping up, it's about slowing down, breathing deeper, and finding meaning in the little things.",excerpt:"It's where peace feels natural, connection feels stronger, and every moment has space to be appreciated.",date:"Apr 2, 2026",read:"1 min",cat:"Living Here",img:"",body:`Life in Seldovia isn't about keeping up, it's about slowing down, breathing deeper, and finding meaning in the little things. It's where peace feels natural, connection feels stronger, and every moment has space to be appreciated. 💙`},
  {title:"Today we celebrate one of the most iconic landmarks in the world, the Eiffel Tower.",excerpt:"Built in 1887, it started as a bold experiment and became a global symbol of romance, art, and human imagination reaching for the sky.",date:"Mar 31, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-03-31.jpg",body:`Today we celebrate one of the most iconic landmarks in the world, the Eiffel Tower. Built in 1887, it started as a bold experiment and became a global symbol of romance, art, and human imagination reaching for the sky.
 
 Even from a small coastal town in Alaska, it's easy to appreciate how landmarks whether towering steel or a quiet harbor connect people to memory, culture, and a sense of wonder. Sometimes it's not about where you are, but how a place makes you feel.`},
