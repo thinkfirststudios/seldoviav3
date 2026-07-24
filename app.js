@@ -1049,7 +1049,146 @@ Known as the 'Last Frontier,' Alaska was purchased from Russia in 1867 and took 
 We are so thankful to be part of the United States of America!`},
  {title:"As we step into 2026, may your days be filled with joy, peace, and unforgettable moments.",excerpt:"Wishing you and your loved ones a wonderful year ahead!",date:"Jan 1, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-01-01.jpg",body:`As we step into 2026, may your days be filled with joy, peace, and unforgettable moments.
 
-Wishing you and your loved ones a wonderful year ahead! 🎉✨`}
+Wishing you and your loved ones a wonderful year ahead! 🎉✨`},
+ {title:"From snowy mornings to cozy evenings by the water, Seldovia has been full of beauty, laughter, and unforgettable moments.",excerpt:"Tonight, let's raise our glasses — to friends, family, neighbors, and all the little joys that make life in Seldovia so special.",date:"Dec 31, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-12-31.jpg",body:`From snowy mornings to cozy evenings by the water, Seldovia has been full of beauty, laughter, and unforgettable moments.
+
+Tonight, let's raise our glasses — to friends, family, neighbors, and all the little joys that make life in Seldovia so special.
+
+Here's to laughter, adventure, and sparkling new memories in the year ahead! 🥂❄️
+
+Thanks to the Swick and Giles families, see you at the fireworks show at the airport tonight!`},
+ {title:"Winter calm along Seldovia Slough",excerpt:"Winter calm along Seldovia Slough",date:"Dec 30, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-12-30.jpg",body:`Winter calm along Seldovia Slough 🦢❄️`},
+ {title:"There are times you'll see a neighbor loading extra canned goods into a skiff not for themselves, but for a family who missed the last Tusty run.",excerpt:"Small gestures like these become part of the rhythm of winter.",date:"Dec 29, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-12-29.jpg",body:`There are times you'll see a neighbor loading extra canned goods into a skiff not for themselves, but for a family who missed the last Tusty run. On another day, someone will chop an extra stack of firewood and leave it at a doorstep with a note: "You never know when the wind'll pick up." Small gestures like these become part of the rhythm of winter.
+
+Errands are carefully planned, shared, and swapped. People trade chores for meals or supplies. A walk down a snowy path often turns into a brief check-in with someone who could use a hand. Even the children's laughter on sledding hills reminds everyone that cold doesn't mean lonely.
+
+It's in these small, shared acts planning, helping, connecting that the heart of the community shines brightest. ❄️💛`},
+ {title:"How are you spending these chilly days in Seldovia?",excerpt:"How are you spending these chilly days in Seldovia?",date:"Dec 28, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-12-28.jpg",body:`How are you spending these chilly days in Seldovia?`},
+ {title:"It doesn't happen often at all here in Seldovia, but when the harbor freezes, everything slows down.",excerpt:"Living through a frozen harbor teaches patience in a way few things can.",date:"Dec 27, 2025",read:"1 min",cat:"Living Here",img:"",body:`It doesn't happen often at all here in Seldovia, but when the harbor freezes, everything slows down.  There was plenty of ice in the harbor last week, but it has already melted, or moved on and we're clear again!
+
+But we are certainly affected by Homer's harbor icing over, Makos can't travel across and heading over out of Seldovia harbor leaves you nowhere to dock!
+
+Boats rest quietly. Footsteps sound sharper. The water that once moved constantly becomes still, almost watchful. Living through a frozen harbor teaches patience in a way few things can.
+
+Living through it doesn't just change how you move through winter—it changes how you see time, patience, and home. ⛄`},
+ {title:"From our Seldovia homes to yours, Merry Christmas!",excerpt:"From our Seldovia homes to yours, Merry Christmas!",date:"Dec 25, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-12-25.jpg",body:`From our Seldovia homes to yours, Merry Christmas! 🎄🎄🎁`},
+ {title:"Whether you're spending the evening with family, neighbors, or in the peaceful comfort of home, may your Christmas Eve be filled with warmth, joy, and the simple moments that make this season magical.",excerpt:"May your Christmas Eve be filled with warmth, joy, and the simple moments that make this season magical.",date:"Dec 24, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-12-24.jpg",body:`Whether you're spending the evening with family, neighbors, or in the peaceful comfort of home, may your Christmas Eve be filled with warmth, joy, and the simple moments that make this season magical. 🎄✨`},
+ {title:"Winter in Seldovia brings quiet streets, snow-covered homes, and shorter days but it also brings something deeply meaningful: neighbors looking out for one another.",excerpt:"When storms roll in or the cold settles deep, people check in not because they have to, but because they care.",date:"Dec 23, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-12-23.jpg",body:`Winter in Seldovia brings quiet streets, snow-covered homes, and shorter days but it also brings something deeply meaningful: neighbors looking out for one another.
+
+A quick text, a knock on the door, helping shovel a path, plowing a burm free on the way, or asking if someone needs supplies before the weather turns. These small gestures happen without announcement or expectation. They're simply part of life here.
+
+When storms roll in or the cold settles deep, people check in not because they have to, but because they care. It's an unspoken understanding that in winter, community matters even more.
+
+This quiet tradition is one of the things that makes Seldovia feel like home. It's not just about surviving winter it's about sharing it, together. 😘`},
+ {title:"Hello, Seldovia! Welcome to Week 52 of 2025!",excerpt:"Stay connected and in the loop with everything happening around town, from community events to fun activities.",date:"Dec 22, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-12-22.jpg",body:`Hello, Seldovia! Welcome to Week 52 of 2025!
+
+Stay connected and in the loop with everything happening around town, from community events to fun activities, all posted daily on
+www.Seldovia.com ✨❄️☀️
+
+Don't miss a moment. Bookmark the site and check back often to see what's new in Seldovia!`},
+ {title:"The little tricks that make winter easier. The habits that save time, energy, or sanity.",excerpt:"Keep kitty litter or sand in your trunk for traction. If you get stuck on ice, sprinkle it under the tires.",date:"Dec 22, 2025",read:"1 min",cat:"Living Here",img:"",body:`The little tricks that make winter easier. The habits that save time, energy, or sanity. The lessons learned the hard way that now feel second nature.
+
+Here's one of mine: Keep kitty litter or sand in your trunk for traction. If you get stuck on ice, sprinkle it under the tires. It also adds weight over the drive wheels for better grip on icy roads.
+
+💬 Share your tips below and help everyone survive and even enjoy Seldovia winters!`},
+ {title:"Winter in Seldovia is unlike anywhere else in Alaska.",excerpt:"Temperatures drop, snow and frost cover the harbor, and days are short but residents have learned to embrace the season rather than wait it out.",date:"Dec 21, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-12-21.jpg",body:`Winter in Seldovia is unlike anywhere else in Alaska. Temperatures drop, snow and frost cover the harbor, and days are short but residents have learned to embrace the season rather than wait it out. ❄️✨
+
+Daily life is shaped by the cold: homeowners plan for supplies ahead of storms, bundle up for outdoor chores, and rely on both neighbors and community resources to navigate winter safely. Yet this planning also brings connection and a sense of pride neighbors checking in, lending a hand, or sharing a warm meal strengthens the bonds that make Seldovia unique.
+
+Compared to living in Fairbanks, Seldovia winters are easy!  So much more temperate, but still dangerous if you're not prepared.
+
+Recreation doesn't stop for winter. Residents ice fish, ski, snowshoe, or take quiet walks along the snowy shoreline. Wildlife and natural beauty provide constant reminders of the incredible environment Seldovia offers year-round. 😊`},
+ {title:"Winter in Seldovia is beautiful, but it takes a little know-how to live comfortably through it.",excerpt:"Locals here have learned that preparation and routine make all the difference.",date:"Dec 19, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-12-19.jpg",body:`Winter in Seldovia is beautiful, but it takes a little know-how to live comfortably through it. Locals here have learned that preparation and routine make all the difference.
+
+1️⃣ Layer Smartly
+Dress in warm, breathable layers so you can stay comfortable indoors and out.
+
+2️⃣ Prepare Your Home Early
+Stack firewood, check generators, and winterize before storms arrive.
+
+3️⃣ Plan Ahead
+Supplies and errands take extra thought in winter, planning saves stress later.
+
+4️⃣ Slow Down & Stay Safe
+Icy paths (get a pair of ice cleats) and short daylight hours are reminders to move carefully and give yourself extra time.
+
+5️⃣ Stay Connected
+Winter is easier when neighbors check in, share rides, and lend a helping hand.
+
+6️⃣ Find the Cozy Moments
+Warm drinks, good books, and simple gatherings make the season feel lighter and brighter.
+
+Living in Seldovia during winter is about more than staying warm, it's about embracing the season, supporting your community, and finding joy in the little moments that make winter truly special.`},
+ {title:"Seldovia is one of those rare places that makes you rethink what “home” really means.",excerpt:"It's small, tucked into the Alaskan coast, and easy to overlook on a map, but once you're here, it leaves its mark.",date:"Dec 18, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-12-18.jpg",body:`Seldovia is one of those rare places that makes you rethink what "home" really means. It's small, tucked into the Alaskan coast, and easy to overlook on a map, but once you're here, it leaves its mark.
+
+Yes, it's remote. Supplies need planning. Weather can rearrange your schedule in an instant. Services are limited. But that's also the beauty. You learn patience, resourcefulness, and a deeper appreciation for the little things—a clear sunrise over the harbor, the first snow of the season, or a quiet walk along a frozen trail.
+
+Before moving, ask yourself: do you want a house, or do you want a home that's part of a living, breathing community? Do you want convenience, or do you want meaning, peace, and authenticity? Seldovia gives the latter and for those who embrace it, it becomes unforgettable. ✨`},
+ {title:"Celebrate National Cupcake Day in Seldovia by making your favorite cupcakes and sharing them with friends and neighbors!",excerpt:"Sweet moments are better when shared, and a cupcake is the perfect way to spread a little joy in our community!",date:"Dec 15, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-12-15.jpg",body:`Celebrate National Cupcake Day in Seldovia by making your favorite cupcakes and sharing them with friends and neighbors!
+
+Sweet moments are better when shared, and a cupcake is the perfect way to spread a little joy in our community! 🧁`},
+ {title:"Thinking about living in or investing in Seldovia? Here's what makes this small Alaska town unique:",excerpt:"Location & lifestyle, limited inventory, community, and investment potential — Seldovia is one of the most affordable communities on the Kenai Peninsula!",date:"Dec 14, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-12-14.jpg",body:`Thinking about living in or investing in Seldovia? Here's what makes this small Alaska town unique:
+
+Location & Lifestyle: Seldovia isn't just a home—it's a lifestyle. Waterfront views, access to fishing, hiking, and a tight-knit community make it ideal for those seeking adventure, tranquility, and connection.
+
+Limited Inventory: Homes here are limited, which means the choices are slim and many opportunities don't last long. Whether it's a cozy cabin, a modern home, or a property with waterfront access, availability can be competitive.
+
+Community Matters: Seldovia isn't a place to just buy a house; it's a place to be part of a community. Local knowledge, relationships, and understanding the town's rhythms are key to finding the right fit.
+
+Investment Potential: Waterfront properties, vacation rentals, and land parcels hold strong appeal. For those looking to invest, Seldovia offers a rare chance to combine lifestyle and value.  Seldovia is one of the most affordable communities on the Kenai Peninsula!  Check our another article I wrote about some facts and figures of our market in comparison to other communities on the peninsula!  CLICK HERE to read more!
+https://www.seldoviaproperty.com/.../your-family-home-is…
+
+Professional Guidance Helps: Navigating Seldovia real estate is easier with someone who knows the town. As your local agent, I understand the market, the properties, and the unique quirks of living here year-round.`},
+ {title:"As our Fall extends into our Winter - take a walk along the boardwalk, before the snow falls and savor the colorful early sunsets!",excerpt:"Fall may be ending, but Seldovia's charm continues to shine through every season.",date:"Dec 13, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-12-13.jpg",body:`As our Fall extends into our Winter - take a walk along the boardwalk, before the snow falls and savor the colorful early sunsets!
+
+But it is cold this week and the skies are blue! It is so important to appreciate the gentle rhythm that only this time of year brings. Fall may be ending, but Seldovia's charm continues to shine through every season.`},
+ {title:"It's always exciting to see land change hands and new dreams take root in our community.",excerpt:"To the buyers, welcome to your next adventure!",date:"Dec 12, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-12-12.jpg",body:`It's always exciting to see land change hands and new dreams take root in our community. To the buyers, welcome to your next adventure! 😊🌲`},
+ {title:"Today is International Animal Rights Day, and it's a perfect reminder of how deeply connected we are to the animals around us.",excerpt:"From the wildlife that thrives in Seldovia's waters and forests to the beloved pets in our homes.",date:"Dec 10, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-12-10.jpg",body:`Today is International Animal Rights Day, and it's a perfect reminder of how deeply connected we are to the animals around us, from the wildlife that thrives in Seldovia's waters and forests to the beloved pets in our homes. 🌲`},
+ {title:"When people hear “remote Alaska,” they often picture isolation, harsh winters, and a whole lot of quiet, and outhouses!",excerpt:"Living here redefines what “remote” truly is. In Seldovia, remote doesn't mean disconnected it means connected in a different, more meaningful way.",date:"Dec 9, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-12-09.jpg",body:`When people hear "remote Alaska," they often picture isolation, harsh winters, and a whole lot of quiet, and outhouses!  And yes Seldovia is quiet. But it's the kind of quiet that feels comforting, not lonely.
+
+Living here redefines what "remote" truly is. In Seldovia, remote doesn't mean disconnected it means connected in a different, more meaningful way. You're closer to the tides, the trails, the wildlife, and the kind of beauty most people only see on postcards.
+
+And Seldovia has all the luxuries of connected living, high speed internet, cell service, flight and boat services, local grocery, K-12 School, Medical Clinic, Post Office, Library and all the amazing organizations as well as all the amenities like power, water and sewer!  We live the beauty of remote living without many of the struggles!
+
+Remote living here isn't about being far away from life, it's about being closer to the kind of life people dream about.`},
+ {title:"Living in places like Seldovia comes with a kind of peace you don't fully understand until you feel it.",excerpt:"Here, “less-traveled” doesn't mean “less to offer.” It means more room to breathe, more time to slow down.",date:"Dec 8, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-12-08.jpg",body:`Living in places like Seldovia comes with a kind of peace you don't fully understand until you feel it.
+
+Here, "less-traveled" doesn't mean "less to offer." It means more room to breathe, more time to slow down, and more chances to actually enjoy the beauty and people around you.
+
+Seldovia isn't just a place to live... it's a place to live well. 😊✨`},
+ {title:"Seldovia's magic isn't in fancy attractions or crowded streets full of shopping and activities.",excerpt:"It's in the quiet mornings over the harbor, the calm of snowy boardwalks, and the simplicity that lets life feel a little slower and a lot more meaningful.",date:"Dec 7, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-12-07.jpg",body:`Seldovia's magic isn't in fancy attractions or crowded streets full of shopping and activities.
+
+It's in the quiet mornings over the harbor, the calm of snowy boardwalks, and the simplicity that lets life feel a little slower and a lot more meaningful.
+
+Sometimes, the best parts of a town aren't things you can see, they're the lack of things that distract you from the important things. And that's exactly what makes Seldovia so special. ❤️`},
+ {title:"December in Seldovia has a calm, cozy feel that's hard to describe unless you've lived it.",excerpt:"Mornings start slowly, a soft winter glow over the harbor, quiet streets, and that fresh crunch of snow under your boots.",date:"Dec 6, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-12-06.jpg",body:`December in Seldovia has a calm, cozy feel that's hard to describe unless you've lived it.
+
+Mornings start slowly, a soft winter glow over the harbor, quiet streets, and that fresh crunch of snow under your boots as you step outside with a warm cup of coffee.  Hopefully that is coming soon!  LOL!
+
+By midday, you see the little moments that make this town special. Neighbors stop to chat, the smell of wood stoves burning drifts through the air, and everyone seems to look out for each other a little more this time of year. Even simple things like walking the boardwalk or checking the tides feel peaceful.
+
+And when evening comes, holiday lights reflect off the water, the sky turns those soft winter colors, and everything feels warm and familiar.
+
+December here isn't busy or rushed. It's steady, quiet, and filled with small moments that remind you why people love calling Seldovia home.`},
+ {title:"Frozen beauty at Lake Irene",excerpt:"Frozen beauty at Lake Irene",date:"Dec 5, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-12-05.jpg",body:`Frozen beauty at Lake Irene ❄️🏔️🌲`},
+ {title:"Living in a small Alaska community all winter isn't just possible, it's deeply rewarding in ways most people never expect.",excerpt:"Yes, the days get shorter and the weather gets colder, but the trade-off is a season filled with quiet beauty, real connection, and a slower rhythm that feels grounding.",date:"Dec 4, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-12-04.jpg",body:`Living in a small Alaska community all winter isn't just possible, it's deeply rewarding in ways most people never expect. 😊
+
+Yes, the days get shorter and the weather gets colder, but the trade-off is a season filled with quiet beauty, real connection, and a slower rhythm that feels grounding.
+
+In Seldovia, winter brings a kind of magic you can't find anywhere else. You learn to appreciate the stillness, the simple routines, and the pride that comes with living somewhere wild and wonderful. 🌲✨
+
+It's peaceful, it's challenging, it's cozy and for many of us, it feels like home in the truest way.`},
+ {title:"Today is all about sharing a little joy and spreading kindness.",excerpt:"Whether it's a homemade treat for a neighbor, a thoughtful note for a friend, or a simple act of service for someone in need.",date:"Dec 3, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-12-03.jpg",body:`Today is all about sharing a little joy and spreading kindness. 🎁❤️
+
+Whether it's a homemade treat for a neighbor, a thoughtful note for a friend, or a simple act of service for someone in need, every gift strengthens the bonds that make Seldovia feel like home. Even the smallest gestures a cup of cocoa, a smile, or helping someone carry groceries can create ripples of warmth throughout our town.
+
+Let's use today to celebrate the joy of giving and the power of community! 😊✨`},
+ {title:"Hello, Seldovia! Welcome to Week 49 of 2025!",excerpt:"Stay connected and in the loop with everything happening around town, from community events to fun activities.",date:"Dec 1, 2025",read:"1 min",cat:"Community",img:"",body:`Hello, Seldovia! Welcome to Week 49 of 2025!
+
+Stay connected and in the loop with everything happening around town, from community events to fun activities, all posted daily on
+www.Seldovia.com 🌊✨
+
+👉 Don't miss a moment. Bookmark the site and check back often to see what's new in Seldovia!`}
 ];
 // Real "Seldovia Days" photos pulled from the Flywheel gallery (Jenny & Melody Hall).
 const GALLERY=[{h:300,cap:"Sunset over the bay",img:"images/gallery/g-1.jpg"},{h:300,cap:"Floatplane off the bay",img:"images/gallery/g-2.jpg"},{h:300,cap:"Red salmon riches",img:"images/gallery/g-3.jpg"},{h:300,cap:"Seldovia harbor",img:"images/gallery/g-4.jpg"},{h:300,cap:"Outside Beach stream",img:"images/gallery/g-5.jpg"},{h:300,cap:"Kenai reds",img:"images/gallery/g-6.jpg"},{h:300,cap:"Enchanted woods",img:"images/gallery/g-7.jpg"},{h:300,cap:"Barabara Creek",img:"images/gallery/g-8.jpg"},{h:300,cap:"MacDonald Spit",img:"images/gallery/g-9.jpg"},{h:300,cap:"Seldovia rainbow",img:"images/gallery/g-10.jpg"},{h:300,cap:"Ferry day",img:"images/gallery/g-11.jpg"},{h:300,cap:"Through the trees",img:"images/gallery/g-12.jpg"}];
