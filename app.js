@@ -1387,7 +1387,237 @@ What's your favorite local go-to sandwich spot here in Seldovia? 🌊♻️`},
 Halibut baked with wild herbs, salmon grilled over alder wood, or crab pulled straight from the trap and shared with friends on the dock. Visitors quickly notice that meals here can feel more like gatherings, moments where family, friends and community come together.
 
 Each dish tells a story of hard work and harmony with the sea of a way of life that values freshness, sustainability, and connection. In Seldovia, the taste of the bay isn't just about flavor, it's about belonging. 😊`},
- {title:"Don't forget to turn those clocks back Saturday night.",excerpt:"Time to reset and soak in an extra hour to enjoy those cozy autumn mornings.",date:"Nov 1, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-11-01.jpg",body:`Don't forget to turn those clocks back Saturday night. Time to reset and soak in an extra hour to enjoy those cozy autumn mornings. 🍁⏰`}
+ {title:"Don't forget to turn those clocks back Saturday night.",excerpt:"Time to reset and soak in an extra hour to enjoy those cozy autumn mornings.",date:"Nov 1, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-11-01.jpg",body:`Don't forget to turn those clocks back Saturday night. Time to reset and soak in an extra hour to enjoy those cozy autumn mornings. 🍁⏰`},
+ {title:"There's no tricks, but plenty of treats for all your little ghosts and goblins this Halloween!",excerpt:"Score some major points with the kids (and candy for yourself) by checking out Harmony's Trick-or-Treat map.",date:"Oct 31, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-10-31.jpg",body:`There's no tricks, but plenty of treats for all your little ghosts 👻 and goblins 👺 this Halloween!
+
+Score some major points with the kids (and candy for yourself) by checking out Harmony's Trick-or-Treat map with all the folks who are ready to serve up the traditional treats!
+
+Okay, now tell me…
+
+1) What kind of candy will you be handing out this year?
+
+2) What kind of Halloween candy are you going to be snagging from your kid's haul?`},
+ {title:"Leaving Seldovia is never easy. It's not just the distance, it's stepping away from the rhythm of the tides.",excerpt:"This is the gift of Seldovia. It never stops calling you back.",date:"Oct 30, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-10-30.jpg",body:`Leaving Seldovia is never easy. It's not just the distance, it's stepping away from the rhythm of the tides, the quiet strength of the mountains, and the close-knit heart of a community that knows your name. 🌿
+
+When you're gone, memories of simple moments linger: walking the docks at sunset, picking berries in late summer, hearing the gulls echo across the harbor. These aren't just experiences, they're threads of home woven into who you are. 🌞✨
+
+And when you return, no matter how long you've been away, Seldovia greets you like an old friend. The salty air feels familiar, the rugged shoreline grounds you, and suddenly, everything inside you exhales, you're home.
+
+This is the gift of Seldovia. It never stops calling you back. ❤️`},
+ {title:"From cozy cabins to sunny docks, cats in Seldovia always find the best spots to nap, watch the tide, or keep their humans company.",excerpt:"Today we celebrate our furry felines who add a little (a lot of) extra warmth, mischief, and love to our days.",date:"Oct 29, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-10-29.jpg",body:`From cozy cabins to sunny docks, cats in Seldovia always find the best spots to nap, watch the tide, or keep their humans company.
+
+Today we celebrate our furry felines who add a little (a lot of) extra warmth, mischief, and love to our days. 🐾`},
+ {title:"What helps businesses here work and grow:",excerpt:"Essential services, local year-round customers, a natural resource–based economy, tourism, adaptability, and community support.",date:"Oct 28, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-10-28.jpg",body:`What helps businesses here work and grow:
+
+🌊 Essential services + infrastructure:
+
+Seldovia has a K-12 school, internet, harbor, water/sewer services, docks, small airport and floatplane access.  Small shops, restaurants, Post Office and the local clinic meet daily needs, so people don't always have to go elsewhere.
+
+🌊 Local, year-round customers:
+
+With a tight-knit community, businesses are grateful for loyalty. Even residents who travel or fish seasonally come back, and locals support each other. The population may be small, but engagement is strong.
+
+🌊 Natural resource–based economy:
+
+Fishing, boat services, harbor work, timber for personal wood heat and milling, foraging, tourism all these provide both direct business and support for secondary businesses (lodging, guiding, supplies).
+
+🌊 Tourism & destination value:
+
+Visitors are drawn to the wild beauty, trails, marine life, fishing, art, and quiet — so lodging, vacation rentals, local art,  tours, and guiding services can succeed, especially when quality and authenticity are emphasized.
+
+🌊 Adaptability & diversification:
+
+Businesses often need to wear many hats: in summer they may offer fishing charters, local foods, restaurants; in off-season, folk shift focus to create their crafts, online sales, or essential goods. Being multi-purpose helps offset seasonal swings.
+
+🌊 Community support & shared resources:
+
+Volunteers, local government, nonprofits, and residents often pitch in from helping with events that bring visitors, to promoting local artisans, to sharing or trading goods. Strong local relationships matter.`},
+ {title:"Hello, Seldovia! Welcome to Week 44 of 2025!",excerpt:"Stay connected and in the loop with everything happening around town, from community events to fun activities.",date:"Oct 28, 2025",read:"1 min",cat:"Community",img:"",body:`Hello, Seldovia! Welcome to Week 44 of 2025!
+
+Stay connected and in the loop with everything happening around town, from community events to fun activities, all posted daily on
+www.Seldovia.com 🌊✨
+
+👉 Don't miss a moment. Bookmark the site and check back often to see what's new in Seldovia!`},
+ {title:"It starts with the smell of fresh coffee, (or donuts on Tuesdays!) the hum of quiet or loud conversations, and the view of the harbor.",excerpt:"In Seldovia, even the simplest spaces have a way of weaving people together.",date:"Oct 27, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-10-27.jpg",body:`It starts with the smell of fresh coffee, (or donuts on Tuesdays!) the hum of quiet or loud conversations, and the view of the harbor or action outside the windows. ☕🍩
+
+In a small town like Seldovia, an eatery isn't just a place to grab a drink, or some food it's a gathering spot, a pause in the day where connections happen.
+
+Visitors come in as strangers, unsure where to sit, and often find themselves sharing a table or the bar with a local. Before long, stories are traded about fishing, travel, family, or the history of this little town by the sea. By the time the coffee cups and plates are empty, strangers leave as friends, tied together by warmth, laughter, and the magic of small-town connection. 😄
+
+In Seldovia, even the simplest spaces have a way of weaving people together. ✨`},
+ {title:"Embrace the spirit of generosity on this National Make A Difference Day!",excerpt:"Let's spread love, share smiles, and uplift each other.",date:"Oct 25, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-10-25.jpg",body:`🌍✨ Embrace the spirit of generosity on this National Make A Difference Day!
+
+Let's join hands and make a positive impact in our communities and beyond. 💖 Whether it's a small act of kindness or a grand gesture, every bit counts.
+
+Let's spread love, share smiles, and uplift each other. 🥰💖`},
+ {title:"A still moment at Homer's harbor. Every trip to Seldovia begins with views like this",excerpt:"A still moment at Homer's harbor. Every trip to Seldovia begins with views like this",date:"Oct 24, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-10-24.jpg",body:`A still moment at Homer's harbor. Every trip to Seldovia begins with views like this 🌞♻️🌊`},
+ {title:"In Seldovia, life unfolds at a gentler pace.",excerpt:"Parents find comfort knowing their children can roam with some independence, explore trails, and play outside.",date:"Oct 24, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-10-24_2.jpg",body:`In Seldovia, life unfolds at a gentler pace. Parents find comfort knowing their children can roam with some independence, explore trails, and play outside without the constant buzz of traffic or the pressures or concerns of city living.
+
+🔷 Everyday Amenities Within Reach
+Despite being a small town, families enjoy access to:
+• A local school and library 📚
+• The health clinic and wellness center 🏥
+• The harbor, ferry service, and air taxi ✈️
+• Grocery stores, coffee shops, and restaurants ☕🍴
+• Parks, trails, and beaches for endless outdoor adventures 🌲🏖️
+
+Without the distractions of big-city life, families focus on what matters: quality time, community traditions, and the freedom to explore the outdoors.`},
+ {title:"Each challenge and setback provides insight, growth, and perspective that success alone cannot teach.",excerpt:"In every misstep, there's an opportunity to refine, adapt, and move forward with greater purpose.",date:"Oct 23, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-10-23.jpg",body:`Each challenge and setback provides insight, growth, and perspective that success alone cannot teach.
+
+In every misstep, there's an opportunity to refine, adapt, and move forward with greater purpose. Keep going, keep learning!`},
+ {title:"When the tide slips away, rocky coves and sandy stretches transform into vibrant, living aquariums.",excerpt:"Sometimes, the most memorable discoveries are right at your feet.",date:"Oct 22, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-10-22.jpg",body:`When the tide slips away, rocky coves and sandy stretches transform into vibrant, living aquariums, revealing the intricate ecosystems that thrive just beneath the surface. 🌊
+
+Visitors can spot starfish clinging to rocks like living jewels, tiny crabs and tiny octopus darting between stones, and sea anemones swaying gently with the current. 🦀🦀
+
+For those who love nature, photography, or simply slowing down to notice the small wonders of the world, tidepooling is a gentle reminder that adventure doesn't always require a boat, a long hike, or distant travel. Sometimes, the most memorable discoveries are right at your feet. 🐙🚶`},
+ {title:"Considering a home purchase in Seldovia? If you're exploring a mortgage, connecting with a LOCAL lender is a key step.",excerpt:"A preapproval letter, sometimes called a 90% letter, shows sellers you're a serious buyer, strengthening your offer.",date:"Oct 21, 2025",read:"2 min",cat:"Real Estate",img:"images/gazette/2025-10-21.jpg",body:`Considering a home purchase in Seldovia? If you're buying with cash, you're all set, but if you're exploring a mortgage, connecting with a LOCAL lender is a key step.  Dealing with a local loan officer is so beneficial as they are familiar with properties that are remote, off-road, as well as waterfront properties all over the Peninsula!  They know the local programs and will ensure you get the best rates!
+
+I recommend holding off on a preapproval letter until you've identified a property you love. Why? A preapproval involves a credit check, which can slightly impact your score—something to avoid if the perfect home isn't on the market yet. Our Seldovia market is small, and "your" property might not be available right away, so patience can pay off.
+
+Once you've found the right home, a local lender will work diligently to secure the best rates and loan options tailored to your needs. They'll ensure you can comfortably afford the offer, and that it is competitive and matches the property's requirements, as some homes may not qualify for certain loans. A quick meeting with a lender can clarify what works best for your situation.
+
+A preapproval letter, sometimes called a 90% letter, shows sellers you're a serious buyer, strengthening your offer. It also outlines your purchasing power and should align with your offer amount—for example, a $350,000 offer should be backed by a preapproval for that amount, even if you qualify for more.
+
+Having this letter ready speeds up the process once you're under contract, as your financials are already verified.
+
+Ready to explore your options? Let's connect to get you started!  I would be happy to refer you to a few great lenders who have successfully helped folks buy in Seldovia!`},
+ {title:"Hello, Seldovia! Welcome to Week 43 of 2025!",excerpt:"Stay connected and in the loop with everything happening around town, from community events to fun activities.",date:"Oct 20, 2025",read:"1 min",cat:"Community",img:"",body:`Hello, Seldovia! Welcome to Week 43 of 2025!
+
+Stay connected and in the loop with everything happening around town, from community events to fun activities, all posted daily on
+www.Seldovia.com 🌊✨
+
+👉 Don't miss a moment. Bookmark the site and check back often to see what's new in Seldovia!`},
+ {title:"In many places, success is measured by accumulation. But in Seldovia, the rhythm of life asks a different question: what if enough is already here?",excerpt:"Sometimes the greatest wealth is knowing when to stop striving and start savoring.",date:"Oct 20, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-10-20.jpg",body:`In many places, success is measured by accumulation. Bigger houses, faster cars, endless upgrades. But in Seldovia, the rhythm of life asks a different question: what if enough is already here?
+
+For locals, "enough" can be a freezer full of salmon, a warm woodstove in winter, or neighbors who show up when you need a hand. It might be the joy of gathering berries, sharing a meal, or watching the sun sink behind the mountains, painting the sky in colors no screen could replicate. 🌅
+
+Here, abundance is measured not by excess, but by sufficiency. The right amount of food, warmth, and community to feel content. Visitors often remark on this slower, simpler pace, realizing that "enough" feels richer than chasing "more."
+
+Seldovia offers a gentle reminder in a noisy world: sometimes the greatest wealth is knowing when to stop striving and start savoring. 🌲🌊✨`},
+ {title:"When visitors dream of Alaska, they imagine rugged coastlines, wildlife around every corner, and a community rooted in tradition and resilience. In Seldovia, that dream is alive and real.",excerpt:"Seldovia isn't just a stop on the map. It's the Alaska that lingers in your heart long after you've left.",date:"Oct 20, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-10-20_2.jpg",body:`When visitors dream of Alaska, they imagine rugged coastlines, wildlife around every corner, and a community rooted in tradition and resilience. In Seldovia, that dream is alive and real.
+
+Unlike the bustling tourist hubs, Seldovia offers a quieter authenticity. Here, boardwalks carry the history of fishing families, trails lead to quiet beaches, and neighbors welcome you like old friends. Life moves at a slower pace, rich with stories, salmon dinners, and moments of quiet wonder.
+
+Seldovia isn't just a stop on the map. It's the Alaska that lingers in your heart long after you've left. ✨`},
+ {title:"What will you look for in your NEXT home?",excerpt:"A, B, C or D? Comment your pick below!",date:"Oct 16, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-10-16.jpg",body:`What will you look for in your NEXT home? 🌳✨
+
+A, B, C or D? Comment your pick below!`},
+ {title:"Every sale marks not just a transaction but a new story unfolding in our little coastal town.",excerpt:"We're so happy to see another dream taking root right here in Seldovia!",date:"Oct 16, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-10-16_2.jpg",body:`Every sale marks not just a transaction but a new story unfolding in our little coastal town. We're so happy to see another dream taking root right here in Seldovia! 😊`},
+ {title:"Growing up in Seldovia means childhood isn't rushed, it unfolds at the pace of the tide.",excerpt:"For children, it means growing up with roots knowing they belong to a circle that's bigger than their own family.",date:"Oct 15, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-10-15.jpg",body:`Growing up in Seldovia means childhood isn't rushed, it unfolds at the pace of the tide. Kids here learn to ride their bikes down quiet streets where every passerby waves and knows their name. They spend summers barefoot on the beach, picking salmonberries, fishing off the dock or skipping rocks with friends who feel more like siblings. 😄
+
+Neighbors look out for one another's kids, offering rides, snacks, or encouragement without hesitation. It's the kind of place where a scraped knee is tended by whichever parent is nearby, and every graduation feels like a celebration for the whole town. 🙌
+
+For children, it means growing up with roots knowing they belong to a circle that's bigger than their own family. For parents, it means raising kids in an environment where kindness, connection, and accountability are part of daily life. ❤️`},
+ {title:"On a personal note, today we celebrate my husband Sonny's birthday!",excerpt:"Charlie was one of a kind and is missed but will never be forgotten.",date:"Oct 14, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-10-14.jpg",body:`On a personal note, today we celebrate my husband Sonny's birthday! ❤️
+
+Today would have also been Charlie Kirk's 32nd birthday, and he is being honored posthumously with the Presidential Medal of Freedom while the day is being recognized as Charlie Kirk Day of Remembrance.
+
+Charlie made a huge impact on the world in his desire to keep open dialogue in search of truth, especially with high school and college age students.
+
+There are so many examples of this!  However, one of my favorite Charlie videos is this one… where he talks about his commitment to his faith and his love of family!  Charlie was one of a kind and is missed but will never be forgotten.`},
+ {title:"A few summers ago, a couple from the Lower 48 stepped off the ferry wide-eyed and quiet, just soaking in the stillness of Seldovia.",excerpt:"Visitors remind us to see with fresh wonder. Locals remind them that the heart of Seldovia beats strongest in its people.",date:"Oct 13, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-10-13.jpg",body:`A few summers ago, a couple from the Lower 48 stepped off the ferry wide-eyed and quiet, just soaking in the stillness of Seldovia. They asked where they might find a good walk, and a local pointed them toward the Otterbahn Trail.
+
+Hours later, they returned faces lit up, talking about wildflowers they'd never seen, an eagle that followed them overhead, and the silence of the forest that felt "like stepping into another world." 🌍
+
+For the locals, that moment was a reminder: what we pass by every day, the tide moving in and out, the spruce trees lining the trails, the way the light hits the mountains is extraordinary to someone seeing it for the first time. 🌊🌞
+
+But visitors learn something too. That same couple was invited to a backyard fish fry later that evening. They saw how Seldovians gather, sharing salmon, stories, and laughter like family. They realized that life here isn't just about breathtaking views, it's about people who take care of each other, who know every name, and who always have an extra chair at the table.
+
+That's the exchange. Visitors remind us to see with fresh wonder. Locals remind them that the heart of Seldovia beats strongest in its people. Together, those lessons weave the real story of our community. 👨‍👩‍👧‍👦`},
+ {title:"Hello, Seldovia! Welcome to Week 42 of 2025!",excerpt:"Stay connected and in the loop with everything happening around town, from community events to fun activities.",date:"Oct 13, 2025",read:"1 min",cat:"Community",img:"",body:`Hello, Seldovia! Welcome to Week 42 of 2025!
+
+Stay connected and in the loop with everything happening around town, from community events to fun activities, all posted daily on
+www.Seldovia.com 🌊✨
+
+👉 Don't miss a moment. Bookmark the site and check back often to see what's new in Seldovia!`},
+ {title:"Thyme on the Boardwalk at low tide!",excerpt:"Thyme on the Boardwalk at low tide!",date:"Oct 12, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-10-12.jpg",body:`Thyme on the Boardwalk at low tide! 🌊♻️`},
+ {title:"In Seldovia, pilots are more than just flyers they are the heartbeat of our community.",excerpt:"Next time you see a plane in our skies, take a moment to appreciate the incredible role pilots play.",date:"Oct 11, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-10-11.jpg",body:`In Seldovia, pilots are more than just flyers they are the heartbeat of our community. Nestled between mountains and sea, our town depends on aviation for almost everything: essential supplies, fresh groceries, mail, medical transport, and even visitors who keep local businesses thriving. ✈️
+
+Flying here isn't easy. Pilots navigate unpredictable weather, rugged terrain, and narrow airstrips to keep Seldovia connected to the outside world. Each takeoff and landing is a mix of skill, courage, and deep knowledge of Alaska's skies. 🌊
+
+Many of our pilots have grown up in small towns just like ours, learning early that flying here isn't just a job, it's a responsibility. They deliver more than cargo; they deliver hope, connection, and the lifeline that keeps Seldovia alive and thriving. 🌿✨
+
+Next time you see a plane in our skies, take a moment to appreciate the incredible role pilots play in keeping our community safe, supplied, and connected.`},
+ {title:"The overall objective of World Mental Health Day is to raise awareness of mental health issues around the world.",excerpt:"Mental health struggles are not a sign of weak faith but a human experience God meets with compassion.",date:"Oct 10, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-10-10.jpg",body:`The overall objective of World Mental Health Day is to raise awareness of mental health issues around the world and to mobilize efforts in support of mental health.
+
+The Day provides an opportunity for all stakeholders working on mental health issues to talk about their work, and what more needs to be done to make mental health care a reality for people worldwide.
+
+The Christian perspective on Mental Health can be helpful as we process our own struggles and make ourselves available to help others.
+
+God cares about your whole being as scripture affirms that God is concerned with your mental and emotional well-being. Psalm 34:18 says, "The Lord is close to the brokenhearted and saves those who are crushed in spirit."
+
+Mental health struggles are not a sign of weak faith but a human experience God meets with compassion.
+
+Read more here: https://www.seldoviaproperty.com/.../the-overall…`},
+ {title:"Seldovia isn't just a beautiful place to visit, it's a place where your investment can grow while also giving others a chance to experience “Real Alaska.”",excerpt:"Vacation and nightly rentals here are in high demand in the summer months.",date:"Oct 9, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-10-09.jpg",body:`Seldovia isn't just a beautiful place to visit, it's a place where your investment can grow while also giving others a chance to experience "Real Alaska."
+
+Vacation and nightly rentals here are in high demand in the summer months, offering visitors a cozy home base while exploring fishing, hiking, and the charm of small-town Alaska. For investors, this means an opportunity for both financial return and community impact. Every rental supports local businesses, creates memories for travelers, and strengthens Seldovia's future as a destination.
+
+🌊 If you've been considering investing, check out this unique opportunity:
+
+This spacious property boast a 2-bedroom, 2-bath owner's residence upstairs and a 1 bedroom apartment facing the bay downstairs!  Right in the heart of Seldovia, this is more than just a residence,it's an investment in your future. With room to host, modern comforts, and plenty of space to grow, it's the perfect opportunity to continue a successful vacation rental, add a small business on street side as well as create your own Alaskan retreat. 🌊🌲
+
+🔗 Explore the full listing here:
+https://my.flexmls.com/.../lis.../20241021193630126208000000`},
+ {title:"In a small community like Seldovia, school is more than just a place to learn, it's the heart of the town.",excerpt:"Children here attend Susan B. English School, a K–12 school that serves local families with small class sizes.",date:"Oct 8, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-10-08.jpg",body:`In a small community like Seldovia, school is more than just a place to learn, it's the heart of the town. Children here attend Susan B. English School, a K–12 school that serves local families with small class sizes and personalized attention.
+
+🏫 Multi-grade classrooms create a unique learning environment where older students often help younger ones, building a strong sense of mentorship and community. Teachers know every student and their whole family, and education feels tailored to each child.
+
+🚶 Getting to school looks a little different than in the city. Many kids walk, ride their bikes, or get dropped off by parents on their way to work. Few live too far to walk, and no one lives more than 10 miles away, so the short commute means kids can spend more time at home or outside enjoying the outdoors.  Or, like for us, who live right in town, our kids came home for lunch the majority of the time!  As much as school is important, family time is the BEST - and you get a lot of it in Seldovia!
+
+📚 School activities go beyond the classroom, students join in community events, holiday performances, sports, and local traditions. The school often brings everyone together, making it both an educational hub and a gathering place for Seldovia residents.`},
+ {title:"Our garden's first onions! Drying them… and yes, another way to use a baby gate!!!",excerpt:"Our garden's first onions! Drying them… and yes, another way to use a baby gate!!!",date:"Oct 7, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-10-07.jpg",body:`Our garden's first onions! Drying them… and yes, another way to use a baby gate!!! 😂`},
+ {title:"In Seldovia, life moves at a different pace, one that's deeply rooted in connection, community, and familiarity.",excerpt:"Everyone knows your name, your story, and even your favorite seat at the local eateries.",date:"Oct 7, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-10-07_2.jpg",body:`In Seldovia, life moves at a different pace, one that's deeply rooted in connection, community, and familiarity. ✨
+
+You step off the ferry in Seldovia, and before you've even reached Main Street, someone waves hello. At the Flube, Alicia, Amon or Charlie always greets you by your name and knows how you like your coffee or Chai. On your walk back, a neighbor stops to ask if you'll be at the potluck tonight, and another offers fresh berries from their garden, or a fresh filet from a fishing excursion that day. 😊
+
+Everyone knows your name, your story, and even your favorite seat at the local eateries. That sense of connection makes even the most ordinary moments extraordinary. ❤️`},
+ {title:"Excited to welcome this young family to Seldovia!",excerpt:"Wishing you all the best as you make wonderful memories here. Congratulations!",date:"Oct 6, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-10-06.jpg",body:`Excited to welcome this young family to Seldovia! Wishing you all the best as you make wonderful memories here. Congratulations! 🌊❤️💜`},
+ {title:"Hello, Seldovia! Welcome to Week 41 of 2025!",excerpt:"Stay connected and in the loop with everything happening around town, from community events to fun activities.",date:"Oct 6, 2025",read:"1 min",cat:"Community",img:"",body:`Hello, Seldovia! Welcome to Week 41 of 2025!
+
+Stay connected and in the loop with everything happening around town, from community events to fun activities, all posted daily on
+www.Seldovia.com 🌊✨`},
+ {title:"Keep your home in top shape with our essential home maintenance checklist.",excerpt:"From changing filters to tidying up the garden, this October we've got you covered.",date:"Oct 6, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-10-06_2.jpg",body:`Keep your home in top shape with our essential home maintenance checklist. From changing filters to tidying up the garden, this October we've got you covered. ✨`},
+ {title:"In Seldovia, our teachers do more than teach they nurture, encourage, and help our kids grow in every way.",excerpt:"On World Teachers' Day, we celebrate YOU — thank you for everything you do for our community!",date:"Oct 5, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-10-05.jpg",body:`In Seldovia, our teachers do more than teach they nurture, encourage, and help our kids grow in every way.
+
+On World Teachers' Day, we celebrate YOU — thank you for everything you do for our community! 💗😊`},
+ {title:"In Seldovia, the sky isn't just something to glance at it's a daily guide.",excerpt:"Locals have learned to “read” the weather the way others might read a book.",date:"Oct 4, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-10-04.jpg",body:`In Seldovia, the sky isn't just something to glance at it's a daily guide. Locals have learned to "read" the weather the way others might read a book, noticing subtle changes that predict what's coming next.
+
+👉 A sudden shift in the wind and smell in the air off Kachemak Bay might signal rain before the clouds even gather.
+👉 The way the tide interacts with the slough often hints at how strong the winds will be later in the day.
+👉 And those glowing, fiery sunsets? They're more than beautiful, they're often a promise of clear skies tomorrow.
+
+As a visitor, you might just find yourself picking up a few of these unspoken lessons, too. 🌊✨`},
+ {title:"One of the hidden joys of spending time in Seldovia is witnessing how the wildflowers mark the passing of the seasons.",excerpt:"Beyond their beauty, these wildflowers play a vital role in Seldovia's ecosystem.",date:"Oct 3, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-10-03.jpg",body:`One of the hidden joys of spending time in Seldovia is witnessing how the wildflowers mark the passing of the seasons.
+
+🌱 Spring (May–June):
+✨ Lupines blanket hillsides with rich purple and blue tones, thriving in open meadows and along roadsides.
+✨ Buttercups and forget-me-nots (Alaska's state flower) add bursts of cheerful yellow and blue as the snow melts away.
+
+🌞 Summer (July–August):
+✨ Fireweed dominates the landscape with its striking pink stalks. Locals even say you can tell summer's end by how high the fireweed blooms have climbed.
+✨ Daisies, yarrow, and wild roses spread across fields and trails, attracting bees and butterflies.
+✨ Salmonberry and blueberry blossoms provide both beauty and the promise of sweet berries later in the season.
+
+🍂 Late Summer–Early Fall (August–September):
+✨ Fireweed turns to fluffy white seed, floating across the breeze like snow.
+✨ Goldenrod and late-blooming asters keep splashes of color alive as the days grow shorter.
+
+Beyond their beauty, these wildflowers play a vital role in Seldovia's ecosystem supporting pollinators, enriching the soil, and providing food for both wildlife and people.`},
+ {title:"Long before the first snow falls, residents are already busy ensuring their homes and hearts are ready for the months ahead.",excerpt:"Winter here is not just a challenge but a celebration of resilience, resourcefulness, and community.",date:"Oct 2, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-10-02.jpg",body:`Long before the first snow falls, residents are already busy ensuring their homes and hearts are ready for the months ahead.
+
+🌲 Winter Prep in Seldovia Includes:
+
+✅ Stocking up firewood to keep the stoves burning through long nights.
+✅ Harvesting and preserving food from summer and fall gardens.
+✅ Checking boats, cabins, and roofs to withstand storms and heavy snow.
+✅ Community spirit — neighbors lend a hand, swap supplies, and share tips to make sure no one faces the season unprepared.
+
+Winter here is not just a challenge but a celebration of resilience, resourcefulness, and community. When the snow falls and the sea swells, Seldovia residents know they've earned their peace by preparing well.`},
+ {title:"So great to see new Seldovians making moves right away to get on and enjoy their new properties!",excerpt:"Thanks Jim for doing such a beautiful job with this new driveway!",date:"Oct 2, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-10-02_2.jpg",body:`So great to see new Seldovians making moves right away to get on and enjoy their new properties! Thanks Jim for doing such a beautiful job with this new driveway! 🚗✨`},
+ {title:"Ready for a little real estate adventure? Take a fun tour through the Seldovia market with our September Flipbook!",excerpt:"Whether you're looking for a cozy cabin by the water, a charming cottage, or your dream home, we've got something for everyone!",date:"Oct 1, 2025",read:"1 min",cat:"Real Estate",img:"",body:`Ready for a little real estate adventure? Take a fun tour through the Seldovia market with our September Flipbook!  Click through to see all our current listings and maybe even find THE one!
+
+Whether you're looking for a cozy cabin by the water, a charming cottage, or your dream home in this beautiful Alaskan town, we've got something for everyone! 🌲🌞`}
 ];
 // Real "Seldovia Days" photos pulled from the Flywheel gallery (Jenny & Melody Hall).
 const GALLERY=[{h:300,cap:"Sunset over the bay",img:"images/gallery/g-1.jpg"},{h:300,cap:"Floatplane off the bay",img:"images/gallery/g-2.jpg"},{h:300,cap:"Red salmon riches",img:"images/gallery/g-3.jpg"},{h:300,cap:"Seldovia harbor",img:"images/gallery/g-4.jpg"},{h:300,cap:"Outside Beach stream",img:"images/gallery/g-5.jpg"},{h:300,cap:"Kenai reds",img:"images/gallery/g-6.jpg"},{h:300,cap:"Enchanted woods",img:"images/gallery/g-7.jpg"},{h:300,cap:"Barabara Creek",img:"images/gallery/g-8.jpg"},{h:300,cap:"MacDonald Spit",img:"images/gallery/g-9.jpg"},{h:300,cap:"Seldovia rainbow",img:"images/gallery/g-10.jpg"},{h:300,cap:"Ferry day",img:"images/gallery/g-11.jpg"},{h:300,cap:"Through the trees",img:"images/gallery/g-12.jpg"}];
