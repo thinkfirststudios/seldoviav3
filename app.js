@@ -351,7 +351,131 @@ It's simple, but it's the kind of simple that holds a community together.`},
  {title:"Week 10 of 2026 in Seldovia carries the feeling of a season gently beginning to turn.",excerpt:"Winter still shapes the landscape, but the light feels brighter and the days a little longer, hinting at the quiet approach of change.",date:"Mar 6, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/post-6.jpg"},
  {title:"A big thank you to Seldovia Village Tribe for providing such a beautiful fitness center for our community.",excerpt:"Having a warm, welcoming place to walk on the treadmill, lift weights, or stretch it out on the mats makes all the difference during these long, cold winter days.",date:"Mar 6, 2026",read:"1 min",cat:"Community",img:"images/gazette/post-7.jpg"},
  {title:"Did you know your name often has a special meaning or history behind it?",excerpt:"Some names come from nature, some from family traditions, and others from different cultures around the world.",date:"Mar 5, 2026",read:"1 min",cat:"Community",img:"images/gazette/post-8.jpg"},
- {title:"March 2026 Photo Contest – “Color in Motion”",excerpt:"March is here, and with it comes longer days, warmer temps (fingers crossed), and all the vibrant energy of early spring in Seldovia!",date:"Mar 5, 2026",read:"1 min",cat:"Events",img:"images/gazette/post-9.jpg"}
+ {title:"March 2026 Photo Contest – “Color in Motion”",excerpt:"March is here, and with it comes longer days, warmer temps (fingers crossed), and all the vibrant energy of early spring in Seldovia!",date:"Mar 5, 2026",read:"1 min",cat:"Events",img:"images/gazette/post-9.jpg"},
+ {title:"Want to make sure your application has been received?",excerpt:"Enter your Parcel Information Number (PIN) into the search field.",date:"Jan 31, 2026",read:"1 min",cat:"Real Estate",img:"images/gazette/2026-01-31.jpg",body:`Want to make sure your application has been received? 👇
+
+Enter your Parcel Information Number (PIN) into the search field.
+https://www.kpb.us/.../assessing-forms/exemptions-deferments
+
+If your parcel has been successfully submitted, it will appear in the results along with the date submitted.
+
+Not sure what your PIN is? You can find it using
+https://geo.kpb.us/vertigisstudio/web/....
+
+For step-by-step instructions on identifying your parcel number, click
+https://www.kpb.us/.../Identify%20Your%20Parcel%20with....`},
+ {title:"Happy National Puzzle Day!",excerpt:"Drop it in the comments and see if others feel the same energy this season.",date:"Jan 29, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-01-29.jpg",body:`Happy National Puzzle Day!
+
+Drop it in the comments and see if others feel the same energy this season. 🌼🌸`},
+ {title:"You know, living in a small, tight-knit town like this really changes what “neighbors” means.",excerpt:"They're not just the people next door, they truly become like extended family.",date:"Jan 27, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-01-27.jpg",body:`You know, living in a small, tight-knit town like this really changes what "neighbors" means. They're not just the people next door, they truly become like extended family. Especially as a parent, that kind of support is everything.
+
+If your car won't start one morning, someone's already offering you a ride or give you a jump. When work and school schedules collide, another neighbor happily steps in to watch the kids for a bit.
+
+All those big celebrations, little milestones, and even the everyday ups and downs, they get shared. It builds this beautiful web of care that just feels like family.
+
+Here, parents aren't raising their kids in isolation. We're all in it together, alongside friends and neighbors who know the daily rhythm of life in this place. That network of trust and genuine kindness is what turns a town into a real community. No one feels like they're doing it all alone, and every kid grows up wrapped in way more love than any single family could ever give on their own.`},
+ {title:"Time to celebrate the one who laughs at your bad jokes, supports your crazy ideas, and makes life more fun every day.",excerpt:"Don't forget hugs, high-fives, or even a little dance in the kitchen count today!",date:"Jan 26, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-01-26.jpg",body:`Time to celebrate the one who laughs at your bad jokes, supports your crazy ideas, and makes life more fun every day.
+
+Don't forget hugs, high-fives, or even a little dance in the kitchen count today! 💃🕺`},
+ {title:"The day often starts quietly down at the harbor, with that soft morning mist rolling over the water and seabirds calling in the distance.",excerpt:"A wedding in Seldovia isn't only about the two people getting married, it's all about their families, the community, and even the town itself weaving in.",date:"Jan 25, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-01-25.jpg",body:`The day often starts quietly down at the harbor, with that soft morning mist rolling over the water and seabirds calling in the distance.
+
+People are moving around in their homes, families getting ready, neighbors popping by with a smile or a quick hello. All the little preparations just blend right into the normal rhythm of life here, no big rush, just that easy, familiar flow.
+
+When the couple says their vows, it's usually right there with the mountains and oceans in view. The natural surroundings feel like they're joining in, eagles might drift overhead, the sun catches on the ripples, and the surroundings are hushed, like it's listening. Everything's intimate and unhurried.
+
+There's none of that frantic pace you get in bigger places; here, you really feel every moment.Then as the sun starts to set and the sky turns that warm gold pink or red over the water, there's this quiet sense of it all coming together.
+
+A wedding in Seldovia isn't only about the two people getting married, it's all about their families, the community, and even the town itself weaving in. Everyone's there in spirit, part of the celebration, and it leaves these memories that stick with you long after the vows are spoken. 💗`},
+ {title:"Parents wake early, the soft light spilling over the water that surrounds the town.",excerpt:"First comes checking on their kids making sure breakfast is ready, backpacks are packed, and that everyone is out the door safely.",date:"Jan 24, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-01-24.jpg",body:`Parents wake early, the soft light spilling over the water that surrounds the town. First comes checking on their kids making sure breakfast is ready, backpacks are packed, and that everyone is out the door safely.
+
+By mid-morning, people weave their way through tasks that are part business, part community service. A neighbor waves from across the street; they trade a quick update about the upcoming community meeting. Deliveries are scheduled around tide times, and sky weather, emails wait patiently, and calls sometimes happen from the edge of the harbor.
+
+Lunchtime brings a moment to breathe watching the eagles circle overhead, listening to the quiet hum of the harbor. By afternoon, it's errands, check-ins with neighbors, helping a friend repair a roof or untangle a net. Evenings are for family: homework, dinner, maybe a quick walk to say hello to another neighbor or lend a hand.
+
+As the sun dips behind the mountains, they feel the subtle satisfaction of the day: work done, family cared for, community touched. Life here isn't always easy, and balance is never perfect but every connection, every small act, threads together the tapestry of living in a place where roads may be few, but hearts are close.`},
+ {title:"Just another beautiful reminder of life in Seldovia, eagles right outside your door.",excerpt:"Just another beautiful reminder of life in Seldovia, eagles right outside your door.",date:"Jan 23, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-01-23.jpg",body:`Just another beautiful reminder of life in Seldovia, eagles right outside your door. 🦅`},
+ {title:"In Seldovia, shopping isn't just a routine it's a chance to connect.",excerpt:"Locals know each other by name at the Crabpot, Flube or meeting True North Air out at the airport, swapping stories.",date:"Jan 22, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-01-22.jpg",body:`In Seldovia, shopping isn't just a routine it's a chance to connect. Locals know each other by name at the Crabpot, Flube or meeting True North Air out at the airport, swapping stories, sharing tips on the best catch of the week, or asking how someone's family is doing. Every trip around town is an opportunity to strengthen community ties.
+
+Cooking in Seldovia is deeply tied to the land and the sea. Fresh fish, berries (frozen from summer's harvest in the winter), and garden produce often make their way to family tables, while traditional recipes are passed down through generations. Meals aren't just about nourishment, they're about sharing family stories, teaching kids skills, and celebrating local flavors.
+
+Connections extend beyond the kitchen. Neighbors help each other out with ingredients, lend kitchen tools, or gather for a spontaneous meal. Potlucks, holiday feasts, and simple dinners alike become moments where the community comes together. In Seldovia, food and shopping are never just practical, they're woven into the fabric of everyday life, keeping people close, caring, and connected.`},
+ {title:"Life in Seldovia may feel remote, but the community is anything but isolated when it comes to safety.",excerpt:"The local fire departments are always ready, staffed by dedicated volunteers who know every street, dock, and trail.",date:"Jan 20, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-01-20.jpg",body:`Life in Seldovia may feel remote, but the community is anything but isolated when it comes to safety. The local fire departments are always ready, staffed by dedicated volunteers who know every street, dock, and trail. From emergency calls to fire prevention education, they're the backbone of safety in town.
+
+The clinic provides essential healthcare services, from routine check-ups to urgent care, keeping residents healthy and supported close to home. Having medical care nearby is a comfort that makes life here feel secure, especially for families and older adults.
+
+Beyond formal services, the community plays a huge role in safety. Neighbors watch out for one another, the City and Fire & EMS organizes preparedness events, and everyone pitches in during emergencies. Whether it's a storm, a health concern, or a town-wide project, people come together quickly and effectively. 🙏`},
+ {title:"Today we honor Martin Luther King Jr. and his powerful legacy of equality, courage, and service.",excerpt:"On this day, may we take time to reflect, listen, and find small ways to serve our communities with kindness and respect.",date:"Jan 19, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-01-19.jpg",body:`Today we honor Martin Luther King Jr. and his powerful legacy of equality, courage, and service. 🙏
+
+On this day, may we take time to reflect, listen, and find small ways to serve our communities with kindness and respect carrying his vision forward through our everyday actions.`},
+ {title:"Today is all about sharing warmth, flavor, and time with family and friends.",excerpt:"Soup Swap Day started in 2006 when Knox Gardner and a friend in Seattle invited people to swap homemade soups.",date:"Jan 17, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-01-17.jpg",body:`Today is all about sharing warmth, flavor, and time with family and friends. 🍲
+
+Soup Swap Day started in 2006 when Knox Gardner and a friend in Seattle invited people to swap homemade soups and it quickly became a cozy tradition celebrated across the U.S. and beyond.
+
+Whether you're making your favorite recipe, trying a new one, or simply enjoying the comfort of a hot bowl with loved ones, it's the perfect excuse to connect, share, and savor the season.
+
+What is your favorite soup and why?`},
+ {title:"Teaching in Seldovia goes far beyond lesson plans and classroom hours.",excerpt:"Here, educators aren't just teachers, they're neighbors, mentors, coaches, and trusted members of the community.",date:"Jan 16, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-01-16.jpg",body:`Teaching in Seldovia goes far beyond lesson plans and classroom hours. Here, educators aren't just teachers, they're neighbors, mentors, coaches, and trusted members of the community. In a small town, the impact of a teacher reaches well outside the school walls.
+
+Class sizes are small, which allows teachers to truly know their students, their strengths, challenges, families, and interests. Learning is personal, flexible, and shaped by the needs of each child. Teachers often guide the same students for years, watching them grow not just academically, but as individuals.
+
+Teaching in Seldovia isn't just about shaping minds. It's about shaping lives, building trust, and becoming part of a place where education is woven into the heart of the community.`},
+ {title:"Going to school in a remote Alaska town is an experience shaped as much by the community and landscape as by the classroom itself.",excerpt:"Schools are small, often serving multiple grade levels under one roof.",date:"Jan 14, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-01-14.jpg",body:`Going to school in a remote Alaska town is an experience shaped as much by the community and landscape as by the classroom itself. Schools are small, often serving multiple grade levels under one roof.
+
+Students grow up learning alongside the same classmates year after year, forming bonds that feel more like family than friendships. Teachers know not only their students, but their parents, siblings, and stories—education here is deeply personal.
+
+The environment is part of the curriculum. Weather isn't an inconvenience; it's a teacher. Students learn early how to respect the elements, plan ahead, and adapt when conditions change.
+
+Most importantly, students grow up with a strong sense of place. They learn where they come from, why it matters, and how to care for it.`},
+ {title:"Clear your desk, clear your mind!",excerpt:"Does anyone else have trouble with this? I want everything at my fingertips… which means my desk is full!",date:"Jan 12, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-01-12.jpg",body:`Clear your desk, clear your mind!
+
+Does anyone else have trouble with this? I want everything at my fingertips… which means my desk is full! But I do know that I feel more peaceful with a clean desk - I'll make that a priority today! 😊
+
+Today's the perfect reminder to clear the clutter, organize your workspace, and make room for fresh ideas.`},
+ {title:"There are days in Seldovia when you wake up expecting a delivery, only to hear the flight's delayed.",excerpt:"Milk or egg supply might be low, the mailbox emptier than usual, and errands need rethinking.",date:"Jan 11, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-01-11.jpg",body:`There are days in Seldovia when you wake up expecting a delivery, only to hear the flight's delayed. Milk or egg supply might be low, the mailbox emptier than usual, and errands need rethinking.
+
+That's when you notice the small ways the community keeps life moving. A neighbor drops off extra bread. Another shares a bag of frozen vegetables. Tasks get swapped, meals are stretched or altered, and everyone pitches in quietly to fill the gaps.
+
+Living here teaches resourcefulness and flexibility. It's a reminder that being remote isn't a limitation, it's an invitation to rely on planning, creativity, and the quiet support of a close-knit community.`},
+ {title:"January in Seldovia is quieter than most months.",excerpt:"The holidays are behind us, the days are short (but gaining minutes every day) and winter settles in with a calm, sometimes stark, beauty.",date:"Jan 10, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-01-10.jpg",body:`January in Seldovia is quieter than most months. The holidays are behind us, the days are short (but gaining minutes every day) and winter settles in with a calm, sometimes stark, beauty.
+
+Living through January in Seldovia teaches patience, resilience, and appreciation for the quiet joys often overlooked in busier seasons. It's a month to slow down, connect with community, and find beauty in the stillness. ❄️🌀`},
+ {title:"It's never too late…",excerpt:"to plan a stay at the Diamond Center Hotel in Anchorage!",date:"Jan 9, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-01-09.jpg",body:`It's never too late…
+
+to plan a stay at the Diamond Center Hotel in Anchorage! 🏨✨`},
+ {title:"In Seldovia, plans are more like suggestions once winter settles in.",excerpt:"Boats don't always leave when they're supposed to. Flights get delayed. Weather rolls in quietly and stays longer than expected.",date:"Jan 8, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-01-08.jpg",body:`In Seldovia, plans are more like suggestions once winter settles in. ❄️
+
+Boats don't always leave when they're supposed to. Flights get delayed. Weather rolls in quietly and stays longer than expected. Schedules bend, and sometimes they disappear altogether.
+
+And when that happens, we adjust.
+
+You'll see someone picking up an extra bag of groceries, just in case. A neighbor offering a ride without being asked. A message passed along that something didn't arrive and another message soon after saying, "We'll figure it out."
+
+Winter teaches patience here. It also teaches trust. Trust that if the ferry doesn't come, someone has what you need. If plans fall apart, another plan will form. If the day doesn't go as expected, tomorrow will.
+
+Life slows down when winter takes over, but it doesn't stop. It simply shifts into something quieter and more connected. In Seldovia, flexibility isn't just helpful it's how the community works. 😴🤗`},
+ {title:"Today we celebrate National Bird Day!",excerpt:"From bald eagles soaring high over the harbor to seabirds resting quietly along the shoreline, Seldovia is lucky to be surrounded by incredible birdlife year-round.",date:"Jan 5, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-01-05_2.jpg",body:`Today we celebrate National Bird Day! 🐦❄️ From bald eagles soaring high over the harbor to seabirds resting quietly along the shoreline, or on your roof, Seldovia is lucky to be surrounded by incredible birdlife year-round.
+
+Even in the heart of winter, these birds bring movement, sound, and life to our skies and waters.
+
+Take a moment today to look up, slow down, and appreciate the wild beauty that makes our community so special.`},
+ {title:"Excited to see this home in Seldovia being passed along to a sweet family moving to Seldovia full-time, congratulations!",excerpt:"Excited to see this home in Seldovia being passed along to a sweet family moving to Seldovia full-time, congratulations!",date:"Jan 5, 2026",read:"1 min",cat:"Real Estate",img:"images/gazette/2026-01-05.jpg",body:`Excited to see this home in Seldovia being passed along to a sweet family moving to Seldovia full-time, congratulations! 😊👨‍👩‍👧‍👦`},
+ {title:"In Seldovia, people notice when something feels off.",excerpt:"When a light doesn't turn on at the usual time. When footsteps don't pass by a familiar path. When a door that's always opened in the morning stays closed.",date:"Jan 4, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-01-04.jpg",body:`In Seldovia, people notice when something feels off. When a light doesn't turn on at the usual time. When footsteps don't pass by a familiar path. When a door that's always opened in the morning stays closed.
+
+No alarms are raised right away. Instead, someone pauses. Someone asks. Someone checks in.
+
+A knock at the door. A call or text message. A quiet walk down the trail "just to make sure everything's okay." Most of the time, it is. And when it's not, help arrives quickly not because it's an obligation, but because it's simply how things work here.
+
+This is the safety net you don't see on a map. It's built from routines, familiarity, and care. From knowing your neighbors' habits without ever needing to say it out loud. From watching out for one another in small, steady ways.
+
+In Seldovia, missing a day doesn't mean being forgotten. It means someone noticed and someone cared enough to check. 😊`},
+ {title:"On January 3, 1959, Alaska officially became the 49th state of the United States of America!",excerpt:"Known as the 'Last Frontier,' Alaska was purchased from Russia in 1867 and took nearly a century to become a state.",date:"Jan 3, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-01-03.jpg",body:`On January 3, 1959, Alaska officially became the 49th state of the United States of America! ❄️
+
+Known as the 'Last Frontier,' Alaska was purchased from Russia in 1867 and took nearly a century to become a state. Today, it's celebrated for its breathtaking landscapes, abundant wildlife, and rich cultural heritage.
+
+We are so thankful to be part of the United States of America!`},
+ {title:"As we step into 2026, may your days be filled with joy, peace, and unforgettable moments.",excerpt:"Wishing you and your loved ones a wonderful year ahead!",date:"Jan 1, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-01-01.jpg",body:`As we step into 2026, may your days be filled with joy, peace, and unforgettable moments.
+
+Wishing you and your loved ones a wonderful year ahead! 🎉✨`}
 ];
 // Real "Seldovia Days" photos pulled from the Flywheel gallery (Jenny & Melody Hall).
 const GALLERY=[{h:300,cap:"Sunset over the bay",img:"images/gallery/g-1.jpg"},{h:300,cap:"Floatplane off the bay",img:"images/gallery/g-2.jpg"},{h:300,cap:"Red salmon riches",img:"images/gallery/g-3.jpg"},{h:300,cap:"Seldovia harbor",img:"images/gallery/g-4.jpg"},{h:300,cap:"Outside Beach stream",img:"images/gallery/g-5.jpg"},{h:300,cap:"Kenai reds",img:"images/gallery/g-6.jpg"},{h:300,cap:"Enchanted woods",img:"images/gallery/g-7.jpg"},{h:300,cap:"Barabara Creek",img:"images/gallery/g-8.jpg"},{h:300,cap:"MacDonald Spit",img:"images/gallery/g-9.jpg"},{h:300,cap:"Seldovia rainbow",img:"images/gallery/g-10.jpg"},{h:300,cap:"Ferry day",img:"images/gallery/g-11.jpg"},{h:300,cap:"Through the trees",img:"images/gallery/g-12.jpg"}];
