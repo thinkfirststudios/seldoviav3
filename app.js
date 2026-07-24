@@ -342,6 +342,140 @@ If you have any questions about a property or want insight into the current mark
 Slowly, dishes begin to show up on tables like they've always belonged there. Someone brings something still warm, someone else arrives with a tray that's been carefully wrapped, and before long the place feels less like a restaurant and more like a shared kitchen for the whole town.
 
 It's simple, but it's the kind of simple that holds a community together.`},
+ {title:"When you just need to give your mind a break, your ears a rest, your thoughts a bit of reprieve… where do you go?",excerpt:"One special thing about Seldovia, is that there are many places you can walk to in town, where you can find a quiet moment.",date:"May 31, 2026",read:"1 min",cat:"Living Here",img:"",body:`When you just need to give your mind a break, your ears a rest, your thoughts a bit of reprieve… where do you go?
+
+One special thing about Seldovia, is that there are many places you can walk to in town, where you can find a quiet moment. Inside Beach, Church Beach, the Otterbahn Trail, the picnic tables at the pavilion or maybe a stroll along the docks or grab a seat along the harbor…
+
+Come find your quiet spot!`},
+ {title:"Coffee in hand, tide shifting quietly, and the harbor slowly coming to life, everything feels softer here.",excerpt:"Like the ocean has its own way of coloring the start of the day.",date:"May 30, 2026",read:"1 min",cat:"Living Here",img:"",body:`Coffee in hand, tide shifting quietly, and the harbor slowly coming to life, everything feels softer here, like the ocean has its own way of coloring the start of the day.
+
+It's not just a morning. It's a reminder of where you are. ☀️🌊`},
+ {title:"Answer: B. Salmon",excerpt:"Salmon have long been part of life around Seldovia, shaping local traditions, summer fishing seasons, and countless memories made out on the water.",date:"May 29, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-05-29.jpg",body:`Answer: B. Salmon 🐟
+
+Salmon have long been part of life around Seldovia, shaping local traditions, summer fishing seasons, and countless memories made out on the water. From coho, king salmon to sockeye, these fish return to Alaska's coastal waters each year and are a familiar sight for both locals and visitors exploring the bay.
+
+The waters surrounding Seldovia are rich with marine life, and salmon play a huge role in the ecosystem here. Alongside fishing boats and harbor views, it's common to spot bald eagles soaring overhead, sea otters drifting nearby, and even whales passing through Kachemak Bay during the season.`},
+ {title:"A global celebration of one of the most iconic and versatile dishes!",excerpt:"Even in Seldovia, it's the kind of comfort food that just hits the spot after a long day—simple, satisfying, and always a favorite!",date:"May 28, 2026",read:"1 min",cat:"Community",img:"",body:`A global celebration of one of the most iconic and versatile dishes!
+
+Even in Seldovia, it's the kind of comfort food that just hits the spot after a long day—simple, satisfying, and always a favorite!
+
+Wanna have a onion smash burger? That sounds soooo good!`},
+ {title:"As a resident of Seldovia for almost 24 years, there has not been a time without Jim in it.",excerpt:"His bright eyes and tender heart have always been a welcome part of every interaction.",date:"May 28, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-05-28.jpg",body:`As a resident of Seldovia for almost 24 years, there has not been a time without Jim in it. His bright eyes and tender heart have always been a welcome part of every interaction, whether at the dump, talking through the window of his big equipment, sitting at a local restaurant, or stopping by to see the status of his beets and flourishing garden.
+
+Jim was on speed dial for me as he was the "go to" for any client needing dirt work, driveways and help with septic, pilings or moving big things… He is leaving a huge void in our personal and professional worlds and our hearts are broken with this great loss to our entire community.
+
+Our hearts are with the entire Hopkins family – rest in peace Jim – we love you!`},
+ {title:"Aside from the MV Tustumena that serves the broader Alaska coastline, we're especially grateful here in Seldovia for the Seldovia Bay Ferry.",excerpt:"Our daily lifeline across Kachemak Bay.",date:"May 27, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-05-27_1.jpg",body:`Aside from the MV Tustumena that serves the broader Alaska coastline, we're especially grateful here in Seldovia for the Seldovia Bay Ferry, our daily lifeline across Kachemak Bay.
+
+Living in Seldovia means understanding that the bay isn't a barrier, it's a lifeline. And the Seldovia Bay Ferry is one of the most important threads holding that lifeline together, day after day, trip after trip.`},
+ {title:"One of the most special parts of summer is the return of seasonal residents.",excerpt:"For many Seldovians, summer isn't just about sunshine, it's about reunion.",date:"May 26, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-05-26.jpg",body:`One of the most special parts of summer is the return of seasonal residents. For many Seldovians, summer isn't just about sunshine, it's about reunion. Friends, families, and neighbors who spend the colder months away come back to their homes, cabins, and favorite spots. There's something comforting about seeing familiar faces again, picking up conversations where they left off months ago, and sharing stories that feel like they never paused.
+
+Along with them come visitors, travelers who make their way across Kachemak Bay to experience Seldovia for the first time or return because they fell in love with it before.`},
+ {title:"Today is a day of remembrance, reflection, and gratitude.",excerpt:"We pause to honor the men and women who gave their lives in service to our country.",date:"May 25, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-05-25.jpg",body:`Today is a day of remembrance, reflection, and gratitude. We pause to honor the men and women who gave their lives in service to our country, their sacrifice is the reason for the freedoms we live with today.
+
+We remember them. We honor them. And we are grateful. 🙏`},
+ {title:"Here, dreams don't feel far away or out of reach, they feel lived in.",excerpt:"Not something to chase, but something you're quietly part of already.",date:"May 24, 2026",read:"1 min",cat:"Living Here",img:"",body:`Here, dreams don't feel far away or out of reach, they feel lived in. Not something to chase, but something you're quietly part of already.
+
+In Seldovia, it's not about escaping life to find something better… it's about realizing you've been standing in it all along.`},
+ {title:"Seldovia lives in rhythm with the bay, and that rhythm is carried by the transportation that serves it.",excerpt:"Kachemak Bay isn't just a backdrop, it's the highway.",date:"May 23, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-05-23.jpg",body:`Seldovia lives in rhythm with the bay, and that rhythm is carried by the transportation that serves it.
+
+Kachemak Bay isn't just a backdrop, it's the highway. Every trip in and out of town depends on reliable service boats and ferries that connect Seldovia to Homer and the wider world. Whether it's the regular ferry run bringing residents, visitors, and supplies, or smaller skiffs and water taxis moving across the water, these services are the quiet backbone of daily life here.
+
+And maybe that's part of why people stay tied to it year after year. The journey isn't just a commute, it's part of the experience.`},
+ {title:"As Seldovians, these everyday patterns become second nature, but they're also what make the town feel like home.",excerpt:"A small business scene where everyone knows everyone, work and life naturally overlap, and supporting local is just the way it is.",date:"May 22, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-05-22.jpg",body:`As Seldovians, these everyday patterns become second nature, but they're also what make the town feel like home.
+
+1. A Small Business Scene Where Everyone Knows Everyone
+
+Local businesses aren't just places to shop—they're where relationships live. As Seldovians, it's normal to be greeted by name, catch up while buying something simple, and support places that feel more like neighbors than stores.
+
+2. Work and Life Naturally Overlap
+
+In a small town, business owners, teachers, parents, and workers often wear multiple hats. It's common to see the same people in different roles throughout the week, which makes everyday interactions feel familiar and grounded.
+
+3. Supporting Local Is Just the Way It Is
+
+As Seldovians, there's a shared understanding that supporting each other keeps the community strong, whether it's buying local, attending events, or helping a neighbor's business grow.`},
+ {title:"Congratulations to the seller & buyer! This property is now officially under contract!",excerpt:"A rare property like this is more than just land, it's a front-row seat to one of the most beautiful stretches of coastline anywhere.",date:"May 21, 2026",read:"1 min",cat:"Real Estate",img:"images/gazette/2026-05-21_2.jpg",body:`Congratulations to the seller & buyer! This property is now officially under contract! A rare property like this is more than just land, it's a front-row seat to one of the most beautiful stretches of coastline anywhere. 😊`},
+ {title:"Are you team sweet, herbal, or black?",excerpt:"In Seldovia, a simple cup of tea can feel like a pause in the day, something warm in your hands after time outside.",date:"May 21, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-05-21.jpg",body:`Are you team sweet, herbal, or black?
+
+In Seldovia, a simple cup of tea can feel like a pause in the day, something warm in your hands after time outside, or a slow start to the morning while everything is still quiet.
+
+Happy International Tea Day!`},
+ {title:"Today we celebrate more than a milestone, we celebrate the hard work, growth, and determination that brought you here.",excerpt:"Congratulations, graduates! Your future is just beginning.",date:"May 19, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-05-19_2.jpg",body:`Today we celebrate more than a milestone, we celebrate the hard work, growth, and determination that brought you here.
+
+As you move ahead, carry with you the lessons learned, the friendships built, and the memories made along the way. Seldovia is proud of you today and always.
+
+Congratulations, graduates! Your future is just beginning.`},
+ {title:"Here's our updated flipbook for the month of May featuring the latest Seldovia real estate listings.",excerpt:"Take a scroll through and see what catches your eye!",date:"May 19, 2026",read:"1 min",cat:"Real Estate",img:"images/gazette/2026-05-19.jpg",body:`Here's our updated flipbook for the month of May featuring the latest Seldovia real estate listings. Take a scroll through and see what catches your eye!`},
+ {title:"In Seldovia, homemade always hits a little different.",excerpt:"Whether it's sour dough bread, cookies, sticky buns or something even sweeter — what's baking in your kitchen today?",date:"May 17, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-05-17.jpg",body:`In Seldovia, homemade always hits a little different. Whether it's sour dough bread, cookies, sticky buns or something even sweeter — what's baking in your kitchen today?`},
+ {title:"Here, life isn't rushed forward. It gently moves between memory and possibility.",excerpt:"Reminding you that both are worth slowing down for.",date:"May 16, 2026",read:"1 min",cat:"Living Here",img:"",body:`Here, life isn't rushed forward. It gently moves between memory and possibility, reminding you that both are worth slowing down for.
+
+Seldovia isn't just a place, it's a feeling of continuity, where every step carries you from what was… into what's next. 🌅`},
+ {title:"A reminder to slow down, enjoy the ride, and appreciate the simple commute in Seldovia.",excerpt:"Fresh air, quiet roads, and a different way to start the day!",date:"May 15, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-05-15.jpg",body:`A reminder to slow down, enjoy the ride, and appreciate the simple commute in Seldovia. Fresh air, quiet roads, and a different way to start the day! 🚲`},
+ {title:"For many of us, the Tusty has always been part of life here.",excerpt:"It brings groceries, supplies, visitors, and loved ones returning home.",date:"May 14, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-05-14.jpg",body:`For many of us, the Tusty has always been part of life here. It brings groceries, supplies, visitors, and loved ones returning home. Sometimes it carries people heading off on new adventures, and other times it brings them back after being away.
+
+But beyond all of that, it's the feeling connected to it that stands out most. Watching it pull into Seldovia Bay never really gets old. It reminds us how connected this small coastal community is, even tucked away across Kachemak Bay.
+
+So many memories in Seldovia somehow involve the Tusty—waiting at the dock, waving goodbye, welcoming someone home, or simply watching it arrive from the shoreline.
+
+It's more than just a ferry to us. It's part of the story of living here.`},
+ {title:"Answer: Sea otters!",excerpt:"The waters around this Alaska coastal town are often home to sea otters, playful and curious creatures that delight locals and visitors alike.",date:"May 13, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-05-13.jpg",body:`Answer: Sea otters!
+
+The waters around this Alaska coastal town are often home to sea otters, playful and curious creatures that delight locals and visitors alike.
+
+We do see occasional orcas, seals and humpback whales in the bay!
+
+Fun fact: Sea otters float together "raft" in the bay, and watching them swim, roll and play is one of Seldovia's most charming sights!`},
+ {title:"In a small, close-knit community like Seldovia, though we don't have any nurses living full-time here, we have many first responders who serve our community whenever a call arises!",excerpt:"They're familiar faces, calm voices in urgent moments, and a steady presence when people need support the most.",date:"May 12, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-05-12.jpg",body:`In a small, close-knit community like Seldovia, though we don't have any nurses living full-time here, we have many first responders who serve our community whenever a call arises! They're familiar faces, calm voices in urgent moments, and a steady presence when people need support the most. Their impact is felt deeply in everyday life here.
+
+From routine care to emergencies, they help keep our community healthy, safe, and cared for no matter the distance or conditions.
+
+Thank you to all nurses, and I'm adding First Responders - especially those serving remote communities like ours. Your work truly makes a difference 💙`},
+ {title:"One of the things I love most about spring in Seldovia is how gently it arrives.",excerpt:"Or just when you think it has arrived… snowfall! There's no sudden change overnight, it slowly, consistently unfolds in front of you, almost quietly.",date:"May 11, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-05-11.jpg",body:`One of the things I love most about spring in Seldovia is how gently it arrives. Or just when you think it has arrived… snowfall! There's no sudden change overnight, it slowly, consistently unfolds in front of you, almost quietly.
+
+Nothing feels rushed. Spring takes its time, and somehow that makes you appreciate it even more. 😊`},
+ {title:"Otterbahn Trail is not just a trail through nature, it's a pause from everything that feels rushed.",excerpt:"And somewhere along the way, you realize it's not about getting somewhere at all—it's about slowing down enough to feel present again.",date:"May 10, 2026",read:"1 min",cat:"Living Here",img:"",body:`Otterbahn Trail is not just a trail through nature, it's a pause from everything that feels rushed.
+
+And somewhere along the way, you realize it's not about getting somewhere at all—it's about slowing down enough to feel present again.
+
+Seldovia isn't just a place you walk through. It's where unhurried joy finds you, one step at a time.`},
+ {title:"“Life doesn't come with a manual, it comes with a mother.”",excerpt:"Happy Mother's Day to all the incredible moms and mother figures.",date:"May 10, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-05-10.jpg",body:`"Life doesn't come with a manual, it comes with a mother." 🌸
+
+Happy Mother's Day to all the incredible moms and mother figures 💛
+
+In Seldovia, we see every day how deeply mothers shape families and community through quiet strength, endless care, and love that shows up in a thousand small ways.
+
+Today is for celebrating you, honoring you, and saying thank you for everything you do 💛`},
+ {title:"Answer: Dense wildlife populations!",excerpt:"Why is Seldovia popular with wildlife photographers? The area is home to dense wildlife populations.",date:"May 7, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-05-07.jpg",body:`Answer: Dense wildlife populations!
+
+Why is Seldovia popular with wildlife photographers? The area is home to dense wildlife populations, from over 100 different bird species with many bald eagles and sea otters to an occasional moose and one of the highest population of black bears in the state, offering photographers countless opportunities to capture Alaska's natural beauty.
+
+Fun fact: With its mix of coastal waters, forests, and mountains, Seldovia provides a living wildlife gallery, perfect for both amateur and professional photographers looking to snap that iconic shot!`},
+ {title:"Cheers to the seller and new owners of this lot in the heart of Seldovia!",excerpt:"Exciting opportunities and new beginnings are ahead.",date:"May 6, 2026",read:"1 min",cat:"Real Estate",img:"images/gazette/2026-05-06.jpg",body:`Cheers to the seller and new owners of this lot in the heart of Seldovia! Exciting opportunities and new beginnings are ahead.
+
+It's so great to see folks returning to Seldovia! It's true that once you live here, it's hard to find somewhere else that fills your heart the way Seldovia does! It's a magnetic force being/calling you home! 😊`},
+ {title:"It's not just the scenery that makes this Seldovia special, it's what it does to you.",excerpt:"The wild, untouched beauty has a way of grounding you, clearing your mind, and reminding you to breathe a little deeper.",date:"May 5, 2026",read:"1 min",cat:"Living Here",img:"",body:`It's not just the scenery that makes this Seldovia special, it's what it does to you. The wild, untouched beauty has a way of grounding you, clearing your mind, and reminding you to breathe a little deeper.
+
+In Seldovia, the wild doesn't overwhelm you—it restores you. And sometimes, that's exactly what a busy heart needs.`},
+ {title:"In places like Seldovia, we're just like everyone else… except our “drive-thru” might involve a boat.",excerpt:"And our view is a mountain or ocean instead of a parking lot.",date:"May 3, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-05-03.jpg",body:`In places like Seldovia, we're just like everyone else… except our "drive-thru" might involve a boat, and our view is a mountain or ocean instead of a parking lot 🦌
+
+Meanwhile, the igloo idea is still going strong somewhere on the internet… probably next to "we all ride moose to work" 🦌
+
+In Seldovia, we've got warm homes, strong coffee, Starlink, Wi-Fi, city water and sewer, school days, work days, and neighbors who will absolutely wave at you from across the street or along the harbor like it's totally normal!
+
+So no, we're not out here building igloos after breakfast. We're just trying to keep our coffee warm like the rest of the world 😊
+
+What's the funniest Alaska myth you've ever heard? I need a good laugh 😂`},
+ {title:"Answer: Milder winters and cooler summers!",excerpt:"Thanks to its coastal location, Seldovia enjoys milder winters and cooler summers than the interior.",date:"May 2, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-05-02.jpg",body:`Answer: Milder winters and cooler summers!
+
+Thanks to its coastal location, Seldovia enjoys milder winters and cooler summers than the interior, making the weather a bit more forgiving while still giving residents that true Alaskan experience enjoying the beauty and weather of all 4 seasons.
+
+Fun fact: The ocean acts as a natural thermostat, keeping the town cozy in winter and pleasantly cool in summer perfect for fishing, kayaking, and exploring the outdoors year-round!`},
+ {title:"What's one thing you love most about our small-town gatherings?",excerpt:"Have you ever noticed how something as simple as sharing a meal can bring a whole community closer?",date:"May 1, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-05-01.jpg",body:`What's one thing you love most about our small-town gatherings?
+
+Have you ever noticed how something as simple as sharing a meal can bring a whole community closer?
+
+That's exactly what a potluck in Seldovia is all about. Everyone brings something to the table whether it's a favorite dish, a helping hand, or simply their presence. And somehow, it all comes together to create something bigger than the event itself.`},
  {title:"Take a look at our latest flipbook to explore our active listings.",excerpt:"From unique opportunities to beautiful homes in Seldovia, this collection gives you a closer look at what's currently available in the market.",date:"Apr 30, 2026",read:"1 min",cat:"Real Estate",img:"images/gazette/2026-04-30_2.jpg",body:`Take a look at our latest flipbook to explore our active listings.
 
 From unique opportunities to beautiful homes in Seldovia, this collection gives you a closer look at what's currently available in the market. Whether you're searching for your next home, an investment, or just browsing what's out there, it's all in one easy place to flip through and explore.`},
