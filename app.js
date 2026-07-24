@@ -1617,7 +1617,279 @@ Winter here is not just a challenge but a celebration of resilience, resourceful
  {title:"So great to see new Seldovians making moves right away to get on and enjoy their new properties!",excerpt:"Thanks Jim for doing such a beautiful job with this new driveway!",date:"Oct 2, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-10-02_2.jpg",body:`So great to see new Seldovians making moves right away to get on and enjoy their new properties! Thanks Jim for doing such a beautiful job with this new driveway! 🚗✨`},
  {title:"Ready for a little real estate adventure? Take a fun tour through the Seldovia market with our September Flipbook!",excerpt:"Whether you're looking for a cozy cabin by the water, a charming cottage, or your dream home, we've got something for everyone!",date:"Oct 1, 2025",read:"1 min",cat:"Real Estate",img:"",body:`Ready for a little real estate adventure? Take a fun tour through the Seldovia market with our September Flipbook!  Click through to see all our current listings and maybe even find THE one!
 
-Whether you're looking for a cozy cabin by the water, a charming cottage, or your dream home in this beautiful Alaskan town, we've got something for everyone! 🌲🌞`}
+Whether you're looking for a cozy cabin by the water, a charming cottage, or your dream home in this beautiful Alaskan town, we've got something for everyone! 🌲🌞`},
+ {title:"Seldovia's history is written in its buildings.",excerpt:"Many of the waterfront structures stand on pilings, a reminder of how the town was once designed to accommodate tides and a large fishing industry.",date:"Sep 30, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-09-30.jpg",body:`Seldovia's history is written in its buildings. Many of the waterfront structures stand on pilings, a reminder of how the town was once designed to accommodate tides and a large fishing industry.
+
+After the 1964 Good Friday Earthquake, much of Seldovia had to be rebuilt, but several historic landmarks still remain, offering a window into the past.
+
+Notable examples include:
+
+✨ The old boardwalk buildings that highlight Seldovia's roots as a bustling fishing and trading hub.
+✨ St. Nicholas Russian Orthodox Church, which reflects the influence of Russian settlers in Alaska.
+✨ Preserved waterfront homes and cabins, showcasing traditional Alaskan craftsmanship and adaptation to coastal living.
+
+These buildings are more than structures, they are cultural markers that tell the story of resilience, adaptation, and community spirit. Walking through Seldovia, you're not just seeing homes and shops, you're stepping into history that continues to shape the town today.
+
+👉 Did you know that many of Seldovia's historic buildings had to be raised or rebuilt after the land dropped several feet during the 1964 earthquake?`},
+ {title:"Hello, Seldovia! Welcome to Week 40 of 2025!",excerpt:"Stay connected and in the loop with everything happening around town, from community events to fun activities.",date:"Sep 29, 2025",read:"1 min",cat:"Community",img:"",body:`Hello, Seldovia! Welcome to Week 40 of 2025!
+
+Stay connected and in the loop with everything happening around town, from community events to fun activities, all posted daily on
+www.Seldovia.com 🌊✨
+
+👉 Don't miss a moment. Bookmark the site and check back often to see what's new in Seldovia!`},
+ {title:"Happy National Coffee Day!",excerpt:"Let's raise our mugs and celebrate the magic of coffee - a daily dose of energy, warmth, and inspiration.",date:"Sep 29, 2025",read:"1 min",cat:"Community",img:"",body:`Happy National Coffee Day! ☕
+
+Let's raise our mugs and celebrate the magic of coffee - a daily dose of energy, warmth, and inspiration. Whether you like it black, creamy, or sweet, coffee brings folks together.
+
+Here's to endless cups of creativity and caffeinated moments! 🎉✨
+
+#seldoviaalaska #seldovia #seldoviaak #seldoviacom #Alaska #alaskalife #alaskaliving #seldovialife #coffeeday`},
+ {title:"Life in Seldovia is all about connection to each other, to the land, and to the sea.",excerpt:"While our town may be small, we're proud to be part of Alaska's coastal heartbeat.",date:"Sep 28, 2025",read:"1 min",cat:"Living Here",img:"",body:`Life in Seldovia is all about connection to each other, to the land, and to the sea.
+
+While our town may be small, we're proud to be part of Alaska's coastal heartbeat. From local fishermen bringing in fresh catch, to small businesses fueling our economy, to neighbors volunteering and lifting each other up, Seldovia shows what it means to thrive together. 💙
+
+Our community doesn't just live by the water, we live with it —celebrating traditions, protecting our environment, and sharing the beauty of this place with visitors who soon feel like family.`},
+ {title:"Happy World Tourism Day!",excerpt:"Let's celebrate the beauty of travel, the diversity of cultures, and the unforgettable memories that unite us all.",date:"Sep 27, 2025",read:"1 min",cat:"Community",img:"",body:`🌍✈️ Happy World Tourism Day! 🎏
+
+Let's celebrate the beauty of travel, the diversity of cultures, and the unforgettable memories that unite us all.
+
+Whether you're exploring new destinations or revisiting familiar ones, let's cherish the experiences that broaden our horizons and connect us to the world.
+
+Here's to more adventures and meaningful journeys ahead! 🌍🌟`},
+ {title:"Fall colors over Anchorage!",excerpt:"Fall colors over Anchorage!",date:"Sep 26, 2025",read:"1 min",cat:"Living Here",img:"",body:`Fall colors over Anchorage! 🍁`},
+ {title:"We're recorded! This beautiful 3+ acre parcel on Nutbeem Road has officially closed.",excerpt:"Congratulations to the Sellers and the Buyers on this exciting new chapter in Seldovia!",date:"Sep 25, 2025",read:"1 min",cat:"Real Estate",img:"",body:`We're recorded! ✨
+
+This beautiful 3+ acre parcel on Nutbeem Road has officially closed. Congratulations to the Sellers and the Buyers on this exciting new chapter in Seldovia!`},
+ {title:"A unique opportunity has just been secured in the heart of Seldovia!",excerpt:"This property carries both charm and potential, giving the new owners a head start on creating their Seldovia dream.",date:"Sep 25, 2025",read:"1 min",cat:"Real Estate",img:"",body:`A unique opportunity has just been secured in the heart of Seldovia! Congratulations to the Sellers and the Buyers!
+
+This property carries both charm and potential, giving the new owners a head start on creating their Seldovia dream. 😊🌿`},
+ {title:"The modern world often feels louder, faster, and more disconnected than ever before. Yet in Seldovia, life moves differently!",excerpt:"Here, connection isn't found in Wi-Fi signals or endless notifications, it's found in genuine human moments.",date:"Sep 24, 2025",read:"1 min",cat:"Living Here",img:"",body:`The modern world often feels louder, faster, and more disconnected than ever before. Yet in Seldovia, life moves differently! Here, connection isn't found in Wi-Fi signals or endless notifications, it's found in genuine human moments.
+
+Like a 2 minute errand to the Post Office becomes a 25 minute visit with a neighbor!  Or a stop at the Crabpot means a meaningful hello to a friend in the aisle! 🌿✨
+
+Even nature itself encourages connection. Without the constant buzz of city life, evenings are spent watching sunsets together, sharing stories by a fire, or simply walking the beach. It's in these unhurried moments that people find what so many crave: belonging.
+
+In a world where it's easy to feel disconnected, Seldovia quietly reminds us that the strongest connections are built not online, but in person with kindness, presence, and care. 💙`},
+ {title:"Embracing the changing colors and crisp air on this beautiful First Day of Fall!",excerpt:"Let the pumpkin spice “everything” begin!",date:"Sep 23, 2025",read:"1 min",cat:"Living Here",img:"",body:`Embracing the changing colors and crisp air on this beautiful First Day of Fall! 🌷 Let the pumpkin spice "everything" begin! 🎃✨`},
+ {title:"Taken from East End Road in Homer, this breathtaking view looks across Kachemak Bay toward Seldovia!",excerpt:"Taken from East End Road in Homer, this breathtaking view looks across Kachemak Bay toward Seldovia!",date:"Sep 22, 2025",read:"1 min",cat:"Living Here",img:"",body:`Taken from East End Road in Homer, this breathtaking view looks across Kachemak Bay toward Seldovia!`},
+ {title:"Hello, Seldovia! Welcome to Week 39 of 2025!",excerpt:"Stay connected and in the loop with everything happening around town, from community events to fun activities.",date:"Sep 22, 2025",read:"1 min",cat:"Community",img:"",body:`Hello, Seldovia! Welcome to Week 39 of 2025!
+
+Stay connected and in the loop with everything happening around town, from community events to fun activities, all posted daily on
+www.Seldovia.com 🌊✨
+
+👉 Don't miss a moment. Bookmark the site and check back often to see what's new in Seldovia!`},
+ {title:"Seldovia is a foodie's paradise, especially when it comes to seasonal delights!",excerpt:"From fresh seafood to wild berries, each season brings its own flavors to savor.",date:"Sep 21, 2025",read:"1 min",cat:"Living Here",img:"",body:`Seldovia is a foodie's paradise, especially when it comes to seasonal delights! From fresh seafood to wild berries, each season brings its own flavors to savor. Here's what to try and where to find it:
+
+Spring 🌱
+✅ Mushrooms – Hunt in the forests or ask locals where to forage safely.
+✅ Early Greens & Herbs
+
+Summer 🌞
+✅ Wild Salmonberries & Blueberries – Pick your own   or enjoy in treats at the local restaurants.
+✅ Fresh Halibut & Salmon, rock fish and cod are available in the sea and some restaurants.  But you should go out and catch it yourself!  That is the adventure!
+
+Fall 🍂
+✅ Hedgehog Mushrooms – A favorite among foragers for soups and sautés.
+✅ Game Meats – Goat, moose, duck and bear are around Seldovia.  And there's always Winter King salmon!
+
+Winter ❄️
+✅ Hearty Soups & Stews – Local cafes serve warming dishes perfect for chilly days.
+
+Pro Tip: Many seasonal foods are best experienced through local festivals, markets, and restaurants so plan your visit around these for a true taste of Seldovia!`},
+ {title:"A cozy home isn't about square footage or luxury finishes, it's about the feeling it gives you.",excerpt:"Ready to find the place that feels just right for you? Reach out today!",date:"Sep 20, 2025",read:"1 min",cat:"Real Estate",img:"",body:`A cozy home isn't about square footage or luxury finishes, it's about the feeling it gives you. The laughter shared around the table, the comfort of a favorite chair, and the love that fills every corner. 💗
+
+Ready to find the place that feels just right for you? Reach out today!`},
+ {title:"Writers find quiet corners to let their stories flow, poets capture the raw beauty in verse, and dreamers discover visions shaped by the sea and sky.",excerpt:"If you were here, what kind of story would Seldovia inspire you to write?",date:"Sep 19, 2025",read:"1 min",cat:"Living Here",img:"",body:`Writers find quiet corners to let their stories flow, poets capture the raw beauty in verse, and dreamers discover visions shaped by the sea and sky.
+
+📖 Why Seldovia Inspires:
+✨ The stillness of nature opens space for reflection.
+✨ The rich history and culture spark imagination.
+✨ The dramatic landscapes feel like living poetry & living art.
+
+Whether it's journaling by the water, sketching ideas in a cozy cabin, or simply breathing in the crisp coastal air, Seldovia gives dreamers the gift of perspective and possibility. 🌅
+
+If you were here, what kind of story would Seldovia inspire you to write?`},
+ {title:"We're pending! Two parcels just outside downtown Seldovia are off the market.",excerpt:"Congratulations to everyone involved in this rare Alaskan opportunity!",date:"Sep 18, 2025",read:"1 min",cat:"Real Estate",img:"",body:`We're pending! Two parcels just outside downtown Seldovia are off the market. Congratulations to everyone involved in this rare Alaskan opportunity! 😊`},
+ {title:"Happy National Cheeseburger Day!",excerpt:"What better excuse to treat yourself than today?",date:"Sep 18, 2025",read:"1 min",cat:"Community",img:"",body:`🍔 Happy National Cheeseburger Day! 🍔
+
+What better excuse to treat yourself than today? Whether you like it stacked high with all the fixings or simple and classic, or a Smash Burger - a cheeseburger is always a reason to smile. 😋`},
+ {title:"Living off the grid in Seldovia isn't just a choice, it's a lifestyle that asks for resilience, creativity, and a love for nature's raw beauty.",excerpt:"For many, living off the grid here is more than survival it's thriving in harmony with nature.",date:"Sep 17, 2025",read:"2 min",cat:"Living Here",img:"",body:`Living off the grid in Seldovia isn't just a choice , it's a lifestyle that asks for resilience, creativity, and a love for nature's raw beauty. Many who choose this path seek freedom from the noise of modern life, a deeper connection with the land, and the satisfaction of self-reliance.
+
+⚡ The Challenges:
+
+Power: Generators, solar panels, and fuel storage become daily concerns. A cloudy week or mechanical hiccup can quickly change your plans.
+
+Water: Hauling water or setting up rain or water catchment systems requires effort and planning, especially in the winter months.
+
+Food & Supplies: off-gridders rely on gardening, fishing, hunting, or long supply runs. Every trip to town is a strategic mission.
+
+Weather: Seldovia's coastal storms and long winters test patience, equipment, and resourcefulness.
+
+✨ The Joys:
+
+Freedom: You decide how to power your home, grow your food, and manage your time.
+
+Connection: Every day brings a stronger bond with the land, the sea, and the community around you.
+
+Simplicity: Life slows down — each task has meaning, and each success feels earned.
+
+Beauty: From snow-dusted mountains to summer's endless light, Seldovia gives back all it takes.
+
+For many, living off the grid here is more than survival it's thriving in harmony with nature, finding joy in the small victories, and building a life where every sunrise is recognized as a gift. 🌅`},
+ {title:"Seldovia's weather can be unpredictable, so packing smart makes your trip more comfortable and enjoyable.",excerpt:"Here's a handy guide: clothing, outdoor essentials, and optional items.",date:"Sep 16, 2025",read:"1 min",cat:"Living Here",img:"",body:`Seldovia's weather can be unpredictable, so packing smart makes your trip more comfortable and enjoyable. Here's a handy guide:
+
+✨ Clothing
+Layered outfits – Temperatures can change quickly; pack base layers, fleece, and a waterproof jacket.
+Rain gear – Waterproof jacket, pants, and boots are essential, even in summer.
+Comfortable shoes – Hiking boots or sturdy sneakers for trails and town exploration.
+Hat & gloves – Especially for spring, fall, and winter visits.
+
+✨ Outdoor Essentials
+Backpack – For day hikes and beach walks.
+Reusable water bottle – Stay hydrated during adventures.
+Sunscreen & sunglasses – Even on cloudy days, UV protection is important.
+Binoculars & camera – Capture wildlife and stunning scenery.
+
+✨ Optional Items
+Fishing gear – If you plan to try Seldovia's famous fishing.
+Kayak or paddleboard equipment – For water enthusiasts.
+Snacks & picnic supplies – Perfect for scenic stops.
+
+No matter the season, being prepared means you can fully enjoy Seldovia's natural beauty, charming town, and outdoor adventures.`},
+ {title:"Exploring Seldovia doesn't have to break the bank!",excerpt:"This charming Alaskan town is full of experiences you can enjoy on any budget.",date:"Sep 15, 2025",read:"1 min",cat:"Living Here",img:"",body:`Exploring Seldovia doesn't have to break the bank! This charming Alaskan town is full of experiences you can enjoy on any budget:
+
+🥾 Hike the Trails – Take in breathtaking views without spending a dime.
+🚣 Fish or Paddle – Bring your gear and enjoy the waters of Seldovia.
+🍎 Pick Wild Berries – Taste the flavors of the season straight from nature.
+📷 Capture Nature's Beauty – Wander the shores, forests, and mountains with your camera.
+🎉 Local Festivals & Events – Many are free or low-cost, offering fun, food, and chilling with our community of good folks.
+
+Seldovia is proof that some of the best adventures in life are simple, beautiful, and free!`},
+ {title:"Hello, Seldovia! Welcome to Week 38 of 2025!",excerpt:"Stay connected and in the loop with everything happening around town, from community events to fun activities.",date:"Sep 15, 2025",read:"1 min",cat:"Community",img:"",body:`Hello, Seldovia! Welcome to Week 38 of 2025!
+
+Stay connected and in the loop with everything happening around town, from community events to fun activities, all posted daily on
+www.Seldovia.com 🌊✨
+
+👉 Don't miss a moment. Bookmark the site and check back often to see what's new in Seldovia!`},
+ {title:"Happy Grandparents Day to the pillars of family and wisdom!",excerpt:"Celebrate the generations that have built our families and enriched our lives.",date:"Sep 14, 2025",read:"1 min",cat:"Community",img:"",body:`Happy Grandparents Day to the pillars of family and wisdom! 🌳❤️
+
+Celebrate the generations that have built our families and enriched our lives. Hug a grandparent today!`},
+ {title:"5 ways to explore Seldovia: stroll the boardwalk, rent a bike, paddle around, hit the trails, and savor local eats.",excerpt:"In Seldovia, the journey is part of the experience and the best views are often found on foot or by pedal.",date:"Sep 13, 2025",read:"1 min",cat:"Living Here",img:"",body:`1. Stroll the Historic Boardwalk
+Enjoy views of the slough, colorful buildings, and local shops at your own pace.
+
+2. Rent a Bike
+Cover more ground while still enjoying the fresh air. Biking is perfect for exploring the harbor, Outside Beach, and scenic overlooks.
+
+3. Paddle Around
+Kayak rentals let you explore Seldovia from the water—paddle the slough, coastline, and even to nearby beaches.
+
+4. Hit the Trails
+From the short Otterbahn Trail to longer hikes like Rocky Ridge, there's no shortage of walking adventures.
+
+5. Savor Local Eats
+Fuel your journey at coffee shops, food carts and restaurants right in town—most within a few minutes' walk of the harbor.
+
+In Seldovia, the journey is part of the experience and the best views are often found on foot or by pedal.`},
+ {title:"Happy National Day of Encouragement!",excerpt:"Today, let's lift each other up with kind words and positive vibes.",date:"Sep 12, 2025",read:"1 min",cat:"Community",img:"",body:`Happy National Day of Encouragement! Today, let's lift each other up with kind words and positive vibes. A little encouragement can go a long way, who are you cheering on today? 💖🙌`},
+ {title:"Today, on Patriot Day, we pause to remember the lives lost, the heroes who stepped forward, and the strength that brought us together.",excerpt:"May we honor their memory by living with unity, compassion, and resilience every day.",date:"Sep 11, 2025",read:"1 min",cat:"Community",img:"",body:`Today, on Patriot Day, we pause to remember the lives lost, the heroes who stepped forward, and the strength that brought us together. May we honor their memory by living with unity, compassion, and resilience every day. ❤️🤍💙`},
+ {title:"Long before Seldovia became the quiet coastal haven we know today, its shores were alive with the rhythms of the native people.",excerpt:"The name Seldovia is thought to come from the Russian word “seldevoy,” meaning “herring.”",date:"Sep 10, 2025",read:"1 min",cat:"Living Here",img:"",body:`Long before Seldovia became the quiet coastal haven we know today, its shores were alive with the rhythms of the native people. They fished the rich waters, gathered berries in the surrounding hills, and built a way of life deeply tied to the seasons and the sea.
+
+The name Seldovia is thought to come from the Russian word "seldevoy," meaning "herring," a nod to the once-abundant fish that drew both Indigenous peoples and Russian traders to these waters in the 18th century.
+
+When Russian explorers arrived, they brought new trade opportunities, religion, and ways of life, leaving lasting marks on the community.
+
+Later, the American fishing industry transformed Seldovia into a lively port town, with canneries, fishing fleets, and boardwalks bustling with activity. For decades, the harbor was a lifeline to the peninsula, bringing in supplies, news, and visitors from around the world.
+
+✨ To learn more about Seldovia, visit www.Seldovia.com.`},
+ {title:"Here's what you need to know before you pitch your tent:",excerpt:"Getting here, camping spots, what to bring, activities, and leave no trace.",date:"Sep 8, 2025",read:"1 min",cat:"Living Here",img:"",body:`Here's what you need to know before you pitch your tent:
+
+1. Getting Here
+Seldovia is only accessible by boat, ferry, or small plane. Plan your travel in advance and consider bringing your gear with you, as supplies in town may be limited.
+
+2. Camping Spots
+
+Outside Beach – Popular for beachside camping and tidepool exploration.
+Sandy Beach – Ideal for those arriving by kayak or skiff, with scenic views and quiet surroundings.
+
+3. What to Bring
+Warm, layered clothing (even in summer)
+Rain gear and waterproof tent
+Bug spray and bear-safe food storage
+Cooking supplies and drinking water (or a water filter)
+
+4. Activities
+Hiking local trails like Otterbahn or Rocky Ridge
+Kayaking along the slough and coastline
+Fishing for halibut, salmon, or rockfish
+Beachcombing for shells, driftwood, and sea glass
+
+5. Leave No Trace
+Help preserve Seldovia's natural beauty by packing out all trash, respecting wildlife, and minimizing your campfire impact.`},
+ {title:"57739 Seldovia Bay Lease — 1.68 acres with 600 feet along the bay and 600 feet along the lagoon.",excerpt:"Solar + generator make everything easy. Comes with a boat! Amazing views all around.",date:"Sep 8, 2025",read:"1 min",cat:"Real Estate",img:"",body:`📍 57739 Seldovia Bay Lease Seldovia, AK 99663
+🌲 1.68 acres
+🌞⚡ Solar + generator make everything easy
+🌊 600 feet along the bay
+🌿 600 feet along the lagoon
+🏘️ Straight across from Seldovia
+🚤 Comes with a boat!
+🛁 Snorkel tub
+😍 Amazing views all around
+🔗 https://my.flexmls.com/.../lis.../20230910205956685677000000
+🌐 www.SeldoviaProperty.com
+📞 Call Jenny with Seldovia Property: (907) 406-0044`},
+ {title:"A big congratulations to both the Sellers and the Buyers of this beautiful lot located right in the heart of Seldovia!",excerpt:"Such a great spot with so much potential, we can't wait to see what new memories and opportunities grow here.",date:"Sep 8, 2025",read:"1 min",cat:"Real Estate",img:"",body:`A big congratulations to both the Sellers and the Buyers of this beautiful lot located right in the heart of Seldovia! 🌿✨
+
+Such a great spot with so much potential, we can't wait to see what new memories and opportunities grow here.`},
+ {title:"A huge thank you to Liane! Grateful for the opportunity and for your kind words, looking forward to seeing you soon!",excerpt:"A huge thank you to Liane! Grateful for the opportunity and for your kind words.",date:"Sep 7, 2025",read:"1 min",cat:"Kind Words",img:"",body:`A huge thank you to Liane! Grateful for the opportunity and for your kind words, looking forward to seeing you soon! 💗`},
+ {title:"It's Read A Book Day! Let's celebrate the power of stories, knowledge, and imagination today.",excerpt:"Put down your phone and let's get lost in the pages while we embrace the joy of reading!",date:"Sep 6, 2025",read:"1 min",cat:"Community",img:"",body:`It's Read A Book Day! 📚🌍 Let's celebrate the power of stories, knowledge, and imagination today.
+
+Whether it's learning something new, being inspired by a biography, or enjoying an adventure, romance, mystery or fantasy, books have the magical ability to transport us to different worlds, and help us grow to be the people we want to be, for ourselves, and for others.
+
+Put down your phone and let's get lost in the pages while we embrace the joy of reading! 📖💫🌟`},
+ {title:"Happy National Cheese Pizza Day!",excerpt:"There's nothing like a classic slice of cheesy goodness to make any day better.",date:"Sep 5, 2025",read:"1 min",cat:"Community",img:"",body:`Happy National Cheese Pizza Day! There's nothing like a classic slice of cheesy goodness to make any day better.
+
+Whether you prefer it thin crust or deep dish, let's celebrate the ultimate comfort food! 🍕`},
+ {title:"It's always exciting to see dreams take root here, whether it's building a future home, creating a getaway retreat, or simply investing in a piece of Seldovia's beauty!",excerpt:"Thinking about buying or selling in Seldovia? Reach out today, let's make your real estate goals a reality!",date:"Sep 5, 2025",read:"1 min",cat:"Real Estate",img:"",body:`It's always exciting to see dreams take root here, whether it's building a future home, creating a getaway retreat, or simply investing in a piece of Seldovia's beauty! 💗
+
+👉 Thinking about buying or selling in Seldovia? Reach out today, let's make your real estate goals a reality!`},
+ {title:"Start your day along the Seldovia Slough, where colorful boats and reflections dance across the water.",excerpt:"The skies over Seldovia put on a nightly masterpiece worth framing.",date:"Sep 4, 2025",read:"1 min",cat:"Living Here",img:"",body:`Start your day along the Seldovia Slough, where colorful boats and reflections dance across the water. Then wander the Otterbahn Trail for vibrant wildflowers, coastal bluffs, and sweeping views of Kachemak Bay. Don't miss the historic boardwalk—its weathered planks and character-filled homes are pure Alaskan charm.
+
+For wildlife lovers, the harbor and nearby beaches offer chances to photograph otters, eagles, and the occasional bear foraging along the shore. If you're lucky enough to be here at low tide, the tidepools sparkle with starfish, anemones, and crabs, perfect for close-up shots.
+
+And when the day winds down, head to the Watchpoint or catch the glow from your own deck—the skies over Seldovia put on a nightly masterpiece worth framing. 🌞🌿`},
+ {title:"L1 Shoreline Drive — Waterfront Seldovia lot for sale, .18 acres of buildable land with a natural beach.",excerpt:"Unobstructed sunrise views, close to everything, heavily treed, wild berries abound.",date:"Sep 3, 2025",read:"1 min",cat:"Real Estate",img:"",body:`📍 L1 Shoreline Drive Seldovia, AK 99663
+🌊 Waterfront Property
+🌲 .18 Acres
+🏗️ Buildable Land
+🏖️ Natural Beach
+⚡ Utilities Nearby
+🌅 Unobstructed Sunrise Views
+🌲 Close to Everything
+🌲 Heavily Treed
+🍎 Wild Berries Abound
+🔗 https://my.flexmls.com/.../lis.../20250715170737248737000000
+🌐 https://www.seldoviaproperty.com/
+📞 Call Jenny with Seldovia Property (907) 406-0044`},
+ {title:"No matter the season, Seldovia offers adventures that will leave you in awe.",excerpt:"From summer fishing trips and berry picking to winter walks and cozy gatherings, our little coastal town is full of charm year-round.",date:"Sep 2, 2025",read:"1 min",cat:"Living Here",img:"",body:`No matter the season, Seldovia offers adventures that will leave you in awe. 🌊🏔️ From summer fishing trips and berry picking to winter walks and cozy gatherings, our little coastal town is full of charm year-round. Here are some favorites:
+
+🎣 Cast for salmon, halibut, or rockfish in our rich waters.
+🥾 Explore scenic trails surrounded by breathtaking views.
+🛶 Kayak through calm bays and spot eagles, otters, and more.
+🌅 Capture the vibrant colors of a Seldovia sunset.
+🍽️ Savor fresh, local seafood at welcoming eateries.
+
+Whether you're here for a weekend getaway or a long, peaceful stay, there's always something to enjoy in Seldovia, Alaska. 💙`},
+ {title:"Hello, Seldovia! Welcome to Week 36 of 2025!",excerpt:"Stay connected and in the loop with everything happening around town, from community events to fun activities.",date:"Sep 1, 2025",read:"1 min",cat:"Community",img:"",body:`Hello, Seldovia! Welcome to Week 36 of 2025!
+
+Stay connected and in the loop with everything happening around town, from community events to fun activities, all posted daily on
+www.Seldovia.com 🌊✨
+
+👉 Don't miss a moment. Bookmark the site and check back often to see what's new in Seldovia!`},
+ {title:"Happy Labor Day from Seldovia!",excerpt:"Today we celebrate the hard work, dedication, and spirit of those who keep our community strong.",date:"Sep 1, 2025",read:"1 min",cat:"Community",img:"",body:`✨ Happy Labor Day from Seldovia! ✨
+
+Today we celebrate the hard work, dedication, and spirit of those who keep our community strong. Whether you're casting a line, enjoying the trails, or simply soaking up the last days of summer, we hope you take this time to relax and recharge—you've earned it! 💙
+
+Here's to the workers, dreamers, and doers thank you for all that you do. 🙌`}
 ];
 // Real "Seldovia Days" photos pulled from the Flywheel gallery (Jenny & Melody Hall).
 const GALLERY=[{h:300,cap:"Sunset over the bay",img:"images/gallery/g-1.jpg"},{h:300,cap:"Floatplane off the bay",img:"images/gallery/g-2.jpg"},{h:300,cap:"Red salmon riches",img:"images/gallery/g-3.jpg"},{h:300,cap:"Seldovia harbor",img:"images/gallery/g-4.jpg"},{h:300,cap:"Outside Beach stream",img:"images/gallery/g-5.jpg"},{h:300,cap:"Kenai reds",img:"images/gallery/g-6.jpg"},{h:300,cap:"Enchanted woods",img:"images/gallery/g-7.jpg"},{h:300,cap:"Barabara Creek",img:"images/gallery/g-8.jpg"},{h:300,cap:"MacDonald Spit",img:"images/gallery/g-9.jpg"},{h:300,cap:"Seldovia rainbow",img:"images/gallery/g-10.jpg"},{h:300,cap:"Ferry day",img:"images/gallery/g-11.jpg"},{h:300,cap:"Through the trees",img:"images/gallery/g-12.jpg"}];
