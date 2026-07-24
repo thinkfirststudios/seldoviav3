@@ -352,6 +352,155 @@ It's simple, but it's the kind of simple that holds a community together.`},
  {title:"A big thank you to Seldovia Village Tribe for providing such a beautiful fitness center for our community.",excerpt:"Having a warm, welcoming place to walk on the treadmill, lift weights, or stretch it out on the mats makes all the difference during these long, cold winter days.",date:"Mar 6, 2026",read:"1 min",cat:"Community",img:"images/gazette/post-7.jpg"},
  {title:"Did you know your name often has a special meaning or history behind it?",excerpt:"Some names come from nature, some from family traditions, and others from different cultures around the world.",date:"Mar 5, 2026",read:"1 min",cat:"Community",img:"images/gazette/post-8.jpg"},
  {title:"March 2026 Photo Contest – “Color in Motion”",excerpt:"March is here, and with it comes longer days, warmer temps (fingers crossed), and all the vibrant energy of early spring in Seldovia!",date:"Mar 5, 2026",read:"1 min",cat:"Events",img:"images/gazette/post-9.jpg"},
+ {title:"Just another beautiful sunrise over the Seldovia lagoon.",excerpt:"Just another beautiful sunrise over the Seldovia lagoon.",date:"Feb 28, 2026",read:"1 min",cat:"Living Here",img:"",body:`Just another beautiful sunrise over the Seldovia lagoon. 🌊`},
+ {title:"In Seldovia, getting around isn't just about going from point A to point B, it's about reading the world around you.",excerpt:"A child trudges across the icy roads, watching for black ice and wearing good boots with traction is important!",date:"Feb 27, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-02-27.jpg",body:`In Seldovia, getting around isn't just about going from point A to point B, it's about reading the world around you.
+
+A child trudges across the icy roads, watching for black ice and wearing good boots with traction is important! Every step is a lesson in patience and observation. Nearby, a snowmobile glides over a trail, the rider adjusting balance and speed to navigate hidden dips, drifted snow, and icy patches.
+
+Out on the harbor, boats move like chess pieces, guided by tides, wind, and currents. Docking isn't casual; it's a careful calculation of angle, momentum, and timing, learned through repeated trips and watching elders handle tricky dockings. Even foggy mornings become a classroom, residents read the wind, track barometric shifts, and rely on hand signals and radios to communicate across distance.
+
+These skills aren't just practical they're survival, honed through years of trial and error, taught by neighbors, and passed down to the next generation. In Seldovia, transportation is a dance with nature, and anyone who masters it gains more than mobility, they gain confidence, awareness, and a deep respect for the environment.`},
+ {title:"In Seldovia, life is shaped by nature itself.",excerpt:"In Seldovia, life is shaped by nature itself.",date:"Feb 26, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-02-26.jpg",body:`In Seldovia, life is shaped by nature itself. 🌊🦅`},
+ {title:"Life in Seldovia comes with unique challenges.",excerpt:"When storms block the harbor with ice (either here or in Homer) residents can't just race to the other side of the bay.",date:"Feb 25, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-02-25.jpg",body:`Life in Seldovia comes with unique challenges. When storms block the harbor with ice (either here or in Homer) residents can't just race to the other side of the bay. When winter freezes pipes or heavy snow damages a dock, ingenuity becomes essential.
+
+Some favorite DIY fixes include:
+
+❄️ Frozen Pipes: Using insulation, heated cables, or temporary reroutes until permanent solutions can be installed.
+
+❄️ Dock Repairs: Quick boarding or reinforced supports to keep vessels safe during unpredictable tides.
+
+❄️ Power or Heating Issues: Backup generators, wood stoves, and creative energy-saving setups to get through outages.
+
+In a town where waiting for deliveries isn't an option, resourcefulness is survival and neighbors sharing knowledge and lending hands make these solutions possible.
+
+Here, DIY isn't just about fixing problems; it's about keeping life flowing, staying connected, and learning from each challenge.`},
+ {title:"Answer: A naturally sheltered bay!",excerpt:"Unlike many coastal towns, Seldovia benefits from a naturally sheltered bay that shields boats and docks from the full force of rough waters.",date:"Feb 24, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-02-24.jpg",body:`Answer: A naturally sheltered bay!
+
+Unlike many coastal towns, Seldovia benefits from a naturally sheltered bay that shields boats and docks from the full force of rough waters. This calm harbor has been essential for fishing boats at harbor, transportation, and daily life in town.
+
+Fun fact: This natural protection helped Seldovia grow into a thriving community, allowing residents to safely dock vessels even in harsh Alaskan weather!`},
+ {title:"What safety tips would you share with other parents when it comes to kids playing on ices over lakes or trails?",excerpt:"Here are a few that work for our family: dress for visibility and warmth, set firm boundaries, and encourage buddy play.",date:"Feb 23, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-02-23.jpg",body:`What safety tips would you share with other parents when it comes to kids playing on ices over lakes or trails? Here are a few that work for our family:
+
+🌊 Dress for visibility and warmth. Bright colors, reflective strips, and waterproof layers help kids stay seen and protected from cold and wind. Good boots with traction reduce slipping on icy paths.
+
+🌊 Set firm boundaries. Teach children which areas are safe and which are off-limits especially near any moving water, thin ice, or steep edges. Clear rules make it easier for kids to play with confidence.
+
+🌊 Encourage buddy play. Kids should never play alone on remote trails. Having a friend nearby means quicker help if someone slips or gets scared.
+
+With guidance and shared responsibility, icy places (roads, frozen lakes) and trails can remain places of adventure instead of risk. In a close-knit town, safety grows when adults stay alert and children learn to respect the environment around them.`},
+ {title:"Answer: 1845 feet long, perfect for the daily Cesna 172 or 206, and Pipers, Beavers, Navahos can also operate on these shorter runways, and of course an occasional helicopter.",excerpt:"Seldovia's airport isn't your typical commercial hub, it's a small regional airstrip designed for bush planes.",date:"Feb 22, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-02-22.jpg",body:`Answer: 1845 feet long, perfect for the daily Cesna 172 or 206, and Pipers, Beavers, Navahos can also operate on these shorter runways, and of course an occasional helicopter.
+
+Seldovia's airport isn't your typical commercial hub, it's a small regional airstrip designed for bush planes, which are essential for connecting remote Alaska communities. These airports handle small aircraft that can land on shorter runways, making travel, deliveries, and emergency services possible in areas where roads are limited or nonexistent.
+
+Fun fact: Bush planes are a lifeline for towns like Seldovia, bringing everything from groceries to visitors, and even providing medevac services when needed.`},
+ {title:"In a town like Seldovia, cut off from the road system, medical emergencies are met with calm, preparation, and community trust.",excerpt:"There's no quick drive to a hospital, no rush of sirens down highways.",date:"Feb 21, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-02-21.jpg",body:`In a town like Seldovia, cut off from the road system, medical emergencies are met with calm, preparation, and community trust. There's no quick drive to a hospital, no rush of sirens down highways. Instead, response begins with awareness knowing the weather, the tides, and the available options before an emergency ever happens.
+
+Residents learn early to be prepared. Homes are stocked with first-aid supplies, neighbors know who has medical training, and communication travels fast when something isn't right.
+
+In moments of urgency, we have a fantastic volunteer fire and EMS department. With an ambulance and firetruck we are able to offer first line support! Many people step in without hesitation, checking on one another, making calls, and coordinating help while staying steady and focused.
+
+We also have a beautiful and brand new clinic in town that can help anyone needing care. It is staffed with providers that travel from the Homer side on a very regular basis.
+
+However, in an emergency, on off hours, in the dark or during bad weather, transportation to a hospital becomes a critical piece. Depending on conditions, help may arrive/depart by boat or air, and timing is everything. Weather can delay movement, so patience and clear thinking matter just as much as speed. These moments reveal how deeply residents rely on trust, not just in systems, but in each other.`},
+ {title:"Visiting a place like Seldovia is a privilege and with it comes an unspoken understanding of respect for both the people and the place.",excerpt:"In a town where everyone knows each other, and the harbor is both livelihood and community hub, visitors quickly learn that their actions ripple beyond themselves.",date:"Feb 19, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-02-19.jpg",body:`Visiting a place like Seldovia is a privilege and with it comes an unspoken understanding of respect for both the people and the place. In a town where everyone knows each other, and the harbor is both livelihood and community hub, visitors quickly learn that their actions ripple beyond themselves.
+
+Simple gestures make a difference: giving way on narrow docks, asking before photographing someone's property or boat, and showing patience when schedules are influenced by tides or weather. Taking the time to listen, learn, and engage with locals fosters goodwill and creates meaningful experiences that go beyond sightseeing.
+
+Being mindful also means participating thoughtfully in shared spaces. Leaving no trace, following rules, and supporting small businesses all contribute to the town's rhythm and sustainability. Visitors who approach Seldovia with curiosity and care often find themselves welcomed like neighbors, not strangers.
+
+In a tight-knit harbor town, respect isn't just polite—it's essential to maintaining the balance that makes life here special. Visitors who honor that balance leave with memories of connection, kindness, and the unique beauty of a community shaped by both water and tradition.`},
+ {title:"It was a mean night on the Richardson Highway back in '98.",excerpt:"Snow blowing sideways, wind cutting like a knife, and the kind of cold that makes you glad you plugged the block heater in before leaving Delta Junction.",date:"Feb 18, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-02-18.jpg",body:`It was a mean night on the Richardson Highway back in '98. Snow blowing sideways, wind cutting like a knife, and the kind of cold that makes you glad you plugged the block heater in before leaving Delta Junction.
+
+I was heading north in my old Ford when I saw headlights cocked off the shoulder. Guy had slid his truck into the ditch. Wife in the cab with a baby, all of them looking half-frozen. I pulled over, grabbed the tow strap I always carry, and yanked him out. Truck was running rough after the slide, so I told them to follow me.
+
+Mechanic in town was closed, so I took them to my place instead. My wife heated up some moose stew, got the baby warm by the wood stove, and we let them crash on the couch. Next morning I helped the husband, Tom was his name, swap a bad belt with parts I had lying around.
+
+Tom was a fisherman from Homer, up looking for winter work after the season went flat. They were scraping bottom, baby on the way had changed everything. I gave him a couple hundred bucks I could spare and a lead on a warehouse job a buddy mentioned. He shook my hand hard, said he wouldn't forget it. I shrugged. Out here you stop when somebody's in trouble. That's just how it is.
+
+Fifteen years later I'm in the Fred Meyer in Fairbanks when a young man walks up. "You're the one who pulled my dad out of that ditch, right?" Turns out he was Tom's son, all grown.
+
+Tom had told that story so many times it became family scripture. Read more here: https://www.seldoviaproperty.com/.../it-was-a-mean-night…`},
+ {title:"Happy Random Acts of Kindness Day from Seldovia!",excerpt:"Today is all about spreading a little love and making someone's day brighter whether it's a smile, a helping hand, or a thoughtful note.",date:"Feb 17, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-02-17.jpg",body:`Happy Random Acts of Kindness Day from Seldovia! 😘
+
+Today is all about spreading a little love and making someone's day brighter whether it's a smile, a helping hand, or a thoughtful note. It's often the small gestures that make the biggest difference.
+
+Take a moment to do something kind for someone today, you never know the ripple effect it might have! 😊`},
+ {title:"Today, we honor the leaders who shaped our nation and celebrate the history that brings us together.",excerpt:"Whether you're spending the day relaxing, enjoying winter adventures, or cozying up at home, we hope it's a wonderful day filled with gratitude and good moments.",date:"Feb 16, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-02-16.jpg",body:`Today, we honor the leaders who shaped our nation and celebrate the history that brings us together.
+
+Whether you're spending the day relaxing, enjoying winter adventures, or cozying up at home, we hope it's a wonderful day filled with gratitude and good moments. 🙏`},
+ {title:"Here's a quick summary of what really matters when buyers hunt for a home in Seldovia, it's not just about the pretty waterfront view (though that's nice too!):",excerpt:"Walkable proximity, outdoor living spaces, and flexible multi-functional interiors — the features that turn a house into a true home.",date:"Feb 15, 2026",read:"1 min",cat:"Real Estate",img:"images/gazette/2026-02-15.jpg",body:`Here's a quick summary of what really matters when buyers hunt for a home in Seldovia, it's not just about the pretty waterfront view (though that's nice too!):
+
+🌿 Walkable proximity to the harbor, town center, stores, school, and community spots, because Seldovia is truly a walking town where everything feels close and connected.
+
+🌿 Outdoor living spaces like decks, patios, or yards, perfect for soaking in those stunning mountain and harbor views, hosting summer gatherings, watching wildlife, or just relaxing on those endless sunny days.
+
+🌿 Flexible, multi-functional interiors — extra rooms or open layouts that work as guest spaces, workshops, home offices, or cozy spots to ride out the long, dark winters with hobbies, work, or family time.
+
+In a place like Seldovia, the perfect home isn't just four walls and a roof, it really supports the whole lifestyle here. It's about making everyday life easier, staying tied to our community, and being able to fully embrace the incredible natural beauty all around us.
+
+Whether you're strolling to the docks for coffee, firing up the grill on your deck with friends as the sun lingers forever, or curling up in a cozy multi-purpose room when winter rolls in, these features turn a house into a true home in one of the most special spots on earth.
+
+What about you, if you were picking a place in Seldovia, which of these would be your top must-have?`},
+ {title:"Happy Valentine's Day from Seldovia, Alaska!",excerpt:"Whether you're celebrating with a loved one, family, friends, or even treating yourself, today is all about love, kindness, and the little moments that make life special.",date:"Feb 14, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-02-14.jpg",body:`Happy Valentine's Day from Seldovia, Alaska!
+
+Whether you're celebrating with a loved one, family, friends, or even treating yourself, today is all about love, kindness, and the little moments that make life special. From cozy winter walks to shared smiles by the fire, or walks on the beach… may your day be full of warmth and happiness! ❤️`},
+ {title:"In most places, road access is considered essential. In Seldovia, the water often matters more.",excerpt:"Buyers here are drawn less by highways and driveways, but by the quiet pull of the harbor and the wide-open views of mountains and tidewater.",date:"Feb 13, 2026",read:"1 min",cat:"Real Estate",img:"images/gazette/2026-02-13.jpg",body:`In most places, road access is considered essential. In Seldovia, the water often matters more. Buyers here are drawn less by highways and driveways, but by the quiet pull of the harbor and the wide-open views of mountains and tidewater. A home facing the water offers something roads cannot: a front-row seat to nature's daily rhythms.
+
+For many buyers, this connection to the water represents freedom rather than limitation. Boats replace cars, running lines and docks replace driveways, and travel becomes an experience rather than a task.
+
+In Seldovia, choosing a waterfront home isn't about giving something up. It's about choosing what matters more: connection over convenience, scenery over speed, and a way of life guided by tides instead of traffic. For many buyers, that trade is exactly what makes a property truly valuable.
+
+Take a look at one of my amazing waterfront listings right on Seldovia Bay here: https://my.flexmls.com/jennychissus/search/office_listing_categories/Active/listings/20230910205956685677000000?_variant=`},
+ {title:"While we are still in the middle of winter, we anticipate a time when winter finally loosens its grip on Seldovia.",excerpt:"Waterfront properties tell a unique story of the season they've endured.",date:"Feb 12, 2026",read:"1 min",cat:"Real Estate",img:"images/gazette/2026-02-12.jpg",body:`While we are still in the middle of winter, we anticipate a time when winter finally loosens its grip on Seldovia. Waterfront properties tell a unique story of the season they've endured. Snowmelt seeps into the soil, winds leave their mark on docks and railings, and months of salt air and ice quietly test every board, beam, and window.
+
+The first step is observation. Owners walk the shoreline slowly, noting ice damage, loose boards, and areas where tides may have shifted the ground. Docks are checked for stability, cleats tightened, and pilings inspected for wear. Even small repairs matter here, where the next storm or high tide can undo months of neglect.
+
+If you are not here in the winter, your home needs attention, and my husband and son run Winter Watch, a business here in Seldovia, that will keep an eye on your property over the long dark winter months. Making sure windows aren't broken in a storm, the heat stays on (or returns after a power outage) and the roofs and decks aren't collecting dangerous amounts of snow. They are your eyes and ears while you are away, making sure there aren't unwanted visitors in your absence. They will also keep your driveways plowed and clear for for fuel delivery and emergency access as well as safe comings and goings for those who enjoy winters in Seldovia but need that extra bit of help!
+
+Maintaining a waterfront property during and after winter isn't just about fixing what may have broken, it's about readying a home for the life that returns with spring.`},
+ {title:"In Seldovia, the harbor isn't just a spot for tying up boats, it's where our stories live on, carried in every tide and etched into every weathered dock.",excerpt:"This year, our principal at Susan B. English School, Diane Maples, gave students an exciting challenge: build a solid business plan and pitch it Shark Tank-style.",date:"Feb 11, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-02-11.jpg",body:`In Seldovia, the harbor isn't just a spot for tying up boats, it's where our stories live on, carried in every tide and etched into every weathered dock.
+
+The elders still share tales of simpler times: fishing with basic gear and hardworking hands, reading storms in the sky's shifting colors, and how this small harbor served as the true center of work, laughter, and neighborly support.
+
+This year, our principal at Susan B. English School, Diane Maples, gave the junior high and high school students an exciting challenge: build a solid business plan and pitch it Shark Tank-style to a panel of local business leaders.
+
+The kids had to think through everything, from the core idea to marketing, budgeting, and teaming up with each other or other businesses in town, while focusing on what our community and visitors really need. It all had to stay true to Seldovia's soul: our traditions, our people, the stunning natural beauty around us, and a deep respect for our history and culture.
+
+I was genuinely honored (and a tad nervous) when they asked me to join the "sharks." Out of the 11 presentations, almost every one centered on serving tourists in creative ways: Read more here https://www.seldoviaproperty.com/.../in-seldovia-the…`},
+ {title:"In Seldovia, summer brings warmth, long days, and a sense of possibility that draws people in from near and far.",excerpt:"Many arrive with a seasonal mindset a temporary retreat from the bustle of city life.",date:"Feb 10, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-02-10.jpg",body:`In Seldovia, summer brings warmth, long days, and a sense of possibility that draws people in from near and far. Many arrive with a seasonal mindset a temporary retreat from the bustle of city life.
+
+Over time, seasonal owners begin to see themselves not as visitors, but as part of the community. They learn the names of neighbors, volunteer for local projects, and invest not just in property, but in the people and the town itself. The quiet pride of contributing, of being recognized as part of Seldovia's fabric, transforms a temporary escape into a lifelong home.
+
+In Seldovia, summer may be fleeting, but the connections it creates are enduring. Many who once came for just a few months find that leaving is never truly an option—the town, the people, and the way of life have become a part of them.`},
+ {title:"Today is the perfect excuse to enjoy your favorite slice (or two… or three 😉).",excerpt:"So grab a slice, share it with someone you love, and make today extra delicious!",date:"Feb 9, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-02-09.jpg",body:`Today is the perfect excuse to enjoy your favorite slice (or two… or three 😉).
+
+So grab a slice, share it with someone you love, and make today extra delicious!
+
+Breezy's makes a very good pizza - do check it out! The bread part (crust - LOL) is AMAZING!`},
+ {title:"Surviving winter in Seldovia isn't just about enduring cold, it's about living in harmony with it.",excerpt:"In a town without roads, transportation becomes a careful dance with nature.",date:"Feb 7, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-02-07.jpg",body:`Surviving winter in Seldovia isn't just about enduring cold, it's about living in harmony with it. In a town without roads, transportation becomes a careful dance with nature: even if our harbor isn't frozen in Seldovia, boats are docked for sometimes a few weeks, awaiting Homer's harbor to thaw, planes are scheduled around weather, and snowmobiles or sleds taking over daily routes. Planning ahead isn't optional, it's survival.
+
+In Seldovia, we all know the importance of not just a BIG but a stocked pantry, as sometimes fresh food and resources become a community effort. Local fishermen, hunters, and gardeners share their summer harvests, while neighbors take care of each other, firewood, and homemade preserves. What goes around comes around, and we all are eager to lend a hand. Even small acts, checking on a neighbor's roof after a storm or helping clear snow from the docks, can make the difference between comfort and hardship.
+
+Health and wellness are tightly linked to connection. Doctors and emergency services are limited, so residents rely on each other. Parents teach kids outdoor skills early—fire-starting, ice navigation, and reading weather signs, skills that build confidence and safety in a harsh landscape. Mental resilience is equally important; neighbors create warmth through shared meals, stories, and traditions that turn isolation into community.`},
+ {title:"My office, my happy place!",excerpt:"You're always welcome to stop by and say hello!",date:"Feb 6, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-02-06.jpg",body:`My office, my happy place! You're always welcome to stop by and say hello! 👋`},
+ {title:"So when it comes time to leave, it isn't just geography you're stepping away from.",excerpt:"It's the rhythm of life you've grown into. It's the simple certainty of belonging to a place where time feels different.",date:"Feb 5, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-02-05.jpg",body:`So when it comes time to leave, it isn't just geography you're stepping away from. It's the rhythm of life you've grown into. It's the simple certainty of belonging to a place where time feels different, where the world feels smaller but somehow more meaningful.
+
+Even when new places promise opportunity, Seldovia leaves its imprint on you, a deep sense of home that cannot be traded for convenience or forgotten with distance.
+
+Leaving may take you elsewhere, but Seldovia rests with you. It stays in the habits you carry forward, in the values shaped by connection and care, and in the quiet moments when your heart still listens for the sound of water against the docks or shore, as if home might answer back.`},
+ {title:"Stay warm, savor every spoonful, and enjoy the simple comforts of winter in Seldovia.",excerpt:"Stay warm, savor every spoonful, and enjoy the simple comforts of winter in Seldovia.",date:"Feb 4, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-02-04.jpg",body:`Stay warm, savor every spoonful, and enjoy the simple comforts of winter in Seldovia. 💛`},
+ {title:"An ordinary day in Seldovia begins quietly, with soft light over the harbor and the call of seabirds echoing through town.",excerpt:"Mornings unfold with simple rituals: coffee by the window, kids heading off to school, fishermen preparing for the day.",date:"Feb 3, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-02-03.jpg",body:`An ordinary day in Seldovia begins quietly, with soft light over the harbor and the call of seabirds echoing through town.
+
+Mornings unfold with simple rituals: coffee by the window, kids heading off to school, fishermen preparing for the day, and shop doors and coffee shops opening with familiar smiles. By afternoon, the town quietly hums with steady life, errands run on foot, quick conversations happen at the Post Office between tasks, and the natural world offers its own small wonders, from eagles circling overhead to the twice daily tide changing course.
+
+As evening settles in, the mountains glow with fading sunlight and homes fill with warmth and conversation. Dinner is shared, stories are told, and the pace of the day slows even more.
+
+Nothing grand may have happened, yet everything feels full.`},
+ {title:"In Seldovia, childhood is a year-round adventure shaped by the rhythm of the seasons.",excerpt:"In winter, kids stuff feet and pants into snow boots, grab gloves and hats, run through snow-dusted streets, sliding down icy hills.",date:"Feb 2, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-02-02.jpg",body:`In Seldovia, childhood is a year-round adventure shaped by the rhythm of the seasons. In winter, kids stuff feet and pants into snow boots, grab gloves and hats, run through snow-dusted streets, sliding down icy hills, and racing along frozen harbor edges and skating or playing hockey along the waterfront.
+
+When summer arrives, the snow boots give way to sandals, tennis shoes and bare feet. Children explore tide pools along the shoreline, fish from the docks, or chase each other through sunlit parks and endless bike riding through town. Long evenings stretch like golden ribbons, filled with the smell of grilled seafood, berry picking, and the hum of community celebrations. Every day feels wide open, a chance to discover the beauty of the natural world that surrounds them.
+
+Growing up in Seldovia means experiencing two very different worlds. It's a childhood where the seasons aren't just a backdrop, but a playground, a classroom, and a canvas for memories that last a lifetime.`},
  {title:"Want to make sure your application has been received?",excerpt:"Enter your Parcel Information Number (PIN) into the search field.",date:"Jan 31, 2026",read:"1 min",cat:"Real Estate",img:"images/gazette/2026-01-31.jpg",body:`Want to make sure your application has been received? 👇
 
 Enter your Parcel Information Number (PIN) into the search field.
