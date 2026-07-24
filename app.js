@@ -1188,7 +1188,206 @@ Let's use today to celebrate the joy of giving and the power of community! 😊�
 Stay connected and in the loop with everything happening around town, from community events to fun activities, all posted daily on
 www.Seldovia.com 🌊✨
 
-👉 Don't miss a moment. Bookmark the site and check back often to see what's new in Seldovia!`}
+👉 Don't miss a moment. Bookmark the site and check back often to see what's new in Seldovia!`},
+ {title:"Whether it's for preserving summer's berry harvest, storing homemade pickles, freshly canned smoked salmon or holding the first wildflowers of spring, these humble jars connect us to tradition and to each other.",excerpt:"There's something deeply comforting about how a simple mason jar can carry so much — flavor, memory, and love.",date:"Nov 30, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-11-30.jpg",body:`Whether it's for preserving summer's berry harvest, storing homemade pickles, freshly canned smoked salmon or holding the first wildflowers of spring, these humble jars connect us to tradition and to each other.
+
+You'll find them tucked into kitchen shelves filled with jams, lined up at community potlucks filled with fresh salads, pickled beets or used as candle holders that cast a warm glow over cozy dinners. There's something deeply comforting about how a simple mason jar can carry so much — flavor, memory, and love.
+
+In a small town like Seldovia, where homemade and handcrafted are part of daily living, mason jars remind us that beauty isn't always about extravagance it's about care, creativity, and heart. 💛`},
+ {title:"There's a rhythm to life in Seldovia that starts at dawn, a handful of neighbors loading gear into small skiffs, cups of coffee in hand.",excerpt:"Fishing here isn't just an activity; it's how people connect.",date:"Nov 29, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-11-29.jpg",body:`There's a rhythm to life in Seldovia that starts at dawn, a handful of neighbors loading gear into small skiffs, cups of coffee in hand, trading the day's best tide tips as they head to their favorite spots. Fishing here isn't just an activity; it's how people connect. 🎣☕
+
+Kids learn to bait hooks beside grandparents, newcomers get led to hidden coves by neighbors who've fished these waters for decades, and evenings often end with a shared meal where the day's catch becomes everyone's dinner.
+
+Living here means your front porch overlooks a way of life built on respect for the sea, friendly faces, and the kind of small-town kindness that makes Seldovia feel like home. ✨
+
+If you want a life where outdoor adventure and community warmth go hand in hand, Seldovia delivers: every sunrise, every cast, every shared meal. 😊`},
+ {title:"When fall deepens and winter winds start to roll in, Seldovia reveals a side few travelers get to see, the raw breathtaking power of the sea.",excerpt:"Storm watching here isn't just about witnessing waves crash against the breakwater; it's about feeling the pulse of nature in real time.",date:"Nov 28, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-11-28.jpg",body:`When fall deepens and winter winds start to roll in, Seldovia reveals a side few travelers get to see, the raw breathtaking power of the sea. Storm watching here isn't just about witnessing waves crash against the breakwater; it's about feeling the pulse of nature in real time.
+
+From the harbor, you can see the whitecaps churn under gray skies, gulls battling the wind, and the rhythm of the tide shifting with every gust. Locals often gather at safe vantage points along Inside Beach, the harbor front, or overlooking Outside Beach to watch the spectacle unfold. It's both humbling and awe-inspiring, a reminder of how deeply life in Seldovia is tied to the ocean's moods.
+
+For visitors, it's a chance to experience Alaska beyond the postcard calm to see the same wild beauty that shapes the community's resilience and respect for nature. Just bring a warm coat, a thermos of coffee, and let the storm tell its story.`},
+ {title:"Happy Thanksgiving from Seldovia!",excerpt:"Today, we're thankful for our beautiful town, the people who make it special, and the sense of community that brings us together year after year.",date:"Nov 27, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-11-27.jpg",body:`Happy Thanksgiving from Seldovia!
+
+Today, we're thankful for our beautiful town, the people who make it special, and the sense of community that brings us together year after year. May your day be filled with gratitude, good food, shared laughter, and moments that remind you of what truly matters. 🦃✨`},
+ {title:"In Seldovia, winter brings more than just snow it brings a shift in rhythm.",excerpt:"As daylight shortens to just a little over 6 hours, locals adjust their routines around the light.",date:"Nov 26, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-11-26.jpg",body:`In Seldovia, winter brings more than just snow it brings a shift in rhythm.
+
+As daylight shortens to just a little over 6 hours, locals adjust their routines around the light. You'll see the sport fishermen heading out at dawn to make the most of the brief glow, in hopes of bringing home a Winter King, students walking to school under soft morning twilight, and neighbors timing errands between sunrise and sunset. 🎏
+
+It's a season that encourages balance — work and rest, solitude and connection. Evenings often mean gathering indoors or sharing meals.
+
+While the days are short, the spirit of the town shines brighter than ever. 🌙
+
+Winter in Seldovia reminds us that beauty isn't about how long the light lasts, it's about how you embrace the beauty of the dark - star watching, bonfire building and putting up your Christmas lights in September! 🎄`},
+ {title:"There's a shift happening subtle, steady, and heartfelt. Many folks are choosing to leave the noise and speed of larger Alaska towns.",excerpt:"Both young and old, come for the calm, but they stay for the closeness.",date:"Nov 25, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-11-25.jpg",body:`There's a shift happening subtle, steady, and heartfelt. Many folks are choosing to leave the noise and speed of larger Alaska towns and instead planting their roots in small communities like Seldovia. And the reason isn't just the scenery, though the mountains, ocean, and endless sky do feel like they're working together to slow the world down.
+
+It's the way of life here. ✨
+
+Both young and old, come for the calm, but they stay for the closeness.
+
+They find that life is simpler (not always easier) when everything is within reach: local shops, quiet walking paths, forests that feel untouched, and views that never get old. There's no rush here, no traffic, no pressure to keep up. Instead, Seldovia offers space not just physical space, but mental and emotional space. Space to breathe, to reflect, to enjoy the days ahead.
+
+And maybe that's what makes Seldovia such a draw!
+
+It's not an escape.
+It's a return to simplicity, to community, and to the beauty of living life at your own pace. 💫🌊`},
+ {title:"Imagine waking up to the sound of gulls and the soft hum of the tide rolling in.",excerpt:"The first thing you check isn't the news, it's the weather and the tides.",date:"Nov 24, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-11-24.jpg",body:`Imagine waking up to the sound of gulls and the soft hum of the tide rolling in. The first thing you check isn't the news, it's the weather and the tides. If it's calm, the boats will head out early. If fog settles in, plans shift.
+
+By mid-morning, locals can be seen walking along the Main Street, coffee in hand, greeting neighbors as they pass. Someone's loading fishing gear, another's heading out for a hike before the rain moves in. 🎣🥾
+
+In the afternoon, kids play outside until the sun dips behind the mountains and in winter, that happens early, so evenings are spent by the fire, cooking, watching a movie, crafting, or planning for the next fair-weather day. 🌞
+
+Here in Seldovia, nature sets the pace. It teaches patience, flexibility, and appreciation for life's simple rhythms. And that's part of what makes living here so special.
+
+#seldoviaalaska #seldovia #seldoviaak #seldoviaproperty`},
+ {title:"Nothing like that rich, bold shot of espresso to kickstart the day!",excerpt:"Here in Seldovia, a good espresso pairs perfectly with good company and harbor views.",date:"Nov 23, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-11-23.jpg",body:`Nothing like that rich, bold shot of espresso to kickstart the day!
+
+Here in Seldovia, a good espresso pairs perfectly with good company and harbor views. 💛
+
+How do you take your espresso, hot, cold, bold and black or with a swirl of sweetness?
+
+I'm not a coffee drinker - but I appreciate all those who are - as I know I'm in the minority! LOL!  I'll take a "Jenny Chai" or hot chocolate though!`},
+ {title:"Success looks different here. It's not measured by how fast you climb or how much you own, it's about how deeply you live.",excerpt:"Success isn't having everything. It's having the freedom to enjoy anything.",date:"Nov 22, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-11-22.jpg",body:`Success looks different here. It's not measured by how fast you climb or how much you own, it's about how deeply you live. ♻️
+
+In Seldovia, success might look like knowing your neighbors by name, spending an afternoon helping with a community project, or taking a walk by the slough as the tide rolls in. It's being able to attend every school event with your kiddos or eating every meal with your family daily, or how about today, when the neighbor's dog runs up on your deck as he passes by on his walk with his "mom" for a sweet hello and pat on the head!
+
+Success isn't having everything. It's having the freedom to enjoy anything. When your time is yours, you're not just successful, you're free.
+
+Seldovia allows you to slow down, forces you to connect to the most important things! 😊
+
+It's about balance, connection, and the freedom to live life at a pace that feels human again. 🌊🥰`},
+ {title:"Frosty Outside Beach on a day trip to Homer!",excerpt:"Frosty Outside Beach on a day trip to Homer!",date:"Nov 21, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-11-21.jpg",body:`Frosty Outside Beach on a day trip to Homer! ❄️`},
+ {title:"Today, we wear purple to honor those affected by pancreatic cancer and to raise awareness about this often silent but devastating disease.",excerpt:"Every voice matters. Every story shared brings hope.",date:"Nov 20, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-11-20.jpg",body:`Today, we wear purple to honor those affected by pancreatic cancer and to raise awareness about this often silent but devastating disease. Early detection saves lives, so let's spread the word, learn the signs, and support ongoing research and those fighting this battle every day.
+
+Today I remember my Mother-in-law Ginny who succumbed to this terrible disease two years ago, and others close to us who are suffering still.  May the cure be found!
+
+Every voice matters. Every story shared brings hope. 💜`},
+ {title:"From early mornings on the water to helping neighbors when it's needed most, your quiet strength and care make Seldovia the place we're proud to call home.",excerpt:"Happy International Men's Day!",date:"Nov 19, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-11-19.jpg",body:`From early mornings on the water to helping neighbors when it's needed most, your quiet strength and care make Seldovia the place we're proud to call home.
+
+Here's to the men who lead with kindness, courage, and community spirit.
+
+Let's celebrate the role men play in the success of our society!  We couldn't do any of this without them!  Each is an important part of the success of both - men and women!  Let's let the guys know just how much we appreciate them!
+
+Happy International Men's Day! 👏`},
+ {title:"When I first came to Seldovia, 23 years ago I thought I was just visiting a quiet little town by the sea. But it didn't take long to realize this place changes you in the best way.",excerpt:"Seldovia taught me that you don't need much to live richly.",date:"Nov 18, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-11-18.jpg",body:`When I first came to Seldovia, 23 years ago I thought I was just visiting a quiet little town by the sea. But it didn't take long to realize this place changes you in the best way. ✨
+
+Some folks say "Slowdovia" as it is so much different than across the bay, life here moves at its own pace, with its own rhythm. You start measuring time not by deadlines, but by tides, ferry schedules, and the way the light hits the bay in the evening.
+
+The quiet isn't empty; it's full of meaning. It's the laughter of kids biking down Main Street, the smell of salmon on the Traeger while you watch the Tustumena depart for Homer, and the comfort of knowing your neighbors will check on you when the storm rolls in. 🌊♻️
+
+Seldovia taught me that you don't need much to live richly. You just need people who care, wood for the stove, a view that humbles you every morning, and the kind of peace that only a small town can give. ❄️🌙`},
+ {title:"There's something so comforting about the smell of fresh bread baking, it fills the kitchen with warmth and brings everyone together.",excerpt:"Today's a perfect reminder to slow down, mix up something simple, and enjoy the little things that make life here feel like home.",date:"Nov 17, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-11-17.jpg",body:`There's something so comforting about the smell of fresh bread baking, it fills the kitchen with warmth and brings everyone together.
+
+In a small town like Seldovia, homemade bread feels extra special whether it's shared with neighbors, brought to a gathering, or enjoyed with a cup of coffee while watching the tide. ☕
+
+Today's a perfect reminder to slow down, mix up something simple, and enjoy the little things that make life here feel like home. 😊`},
+ {title:"In Seldovia, there's a quiet rhythm to daily life, the hum of the harbor, the crunch of gravel roads, and the simple gesture that ties everyone together: The Wave.",excerpt:"It's our Seldovia way of saying, “I see you. We're part of the same story.”",date:"Nov 16, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-11-16.jpg",body:`In Seldovia, there's a quiet rhythm to daily life, the hum of the harbor, the crunch of gravel roads, and the simple gesture that ties everyone together:
+
+The Wave. 🌊
+
+Whether you're passing someone on the boardwalk, meeting a skiff out on the water, or just driving by on your ATV, a wave isn't just politeness, it's connection.
+
+It's our Seldovia way of saying, "I see you. We're part of the same story."
+
+In a small Alaskan town where community means everything, those small gestures remind us that even in the most remote places, kindness travels far. 💛`},
+ {title:"I've always been a card sender, there's just something special about putting thoughts into words and sending a little note to brighten someone's day.",excerpt:"On I Love to Write Day, I'm thankful for the chance to share pieces of life here in Seldovia.",date:"Nov 15, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-11-15.jpg",body:`I've always been a card sender, there's just something special about putting thoughts into words and sending a little note to brighten someone's day. 😊
+
+Writing has always been my way of slowing down, reflecting, and connecting.
+
+On I Love to Write Day, I'm thankful for the chance to share pieces of life here in Seldovia and for every message, letter, and story that helps us feel a little closer. 🌊♻️`},
+ {title:"History of World Kindness Day",excerpt:"World Kindness Day originated in 1997 when a group of humanitarian organizations from various countries gathered in Tokyo for the first “World Kindness Movement” conference.",date:"Nov 13, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-11-13.jpg",body:`History of World Kindness Day
+
+World Kindness Day originated in 1997 when a group of humanitarian organizations from various countries gathered in Tokyo for the first "World Kindness Movement" conference. Frustrated by global conflicts and a perceived decline in compassion, delegates from Japan, Australia, Thailand, Singapore, the UK, Canada, and the US pledged to promote kindness as a counterforce to violence.
+
+They formally launched the movement on November 13, 1997, and chose that date, November 13 as World Kindness Day to mark the occasion.
+
+The global day gained traction in 1998 when it was officially observed, and by 2000, over 28 countries participated. Today, it's recognized in more than 50 nations, with events ranging from free hugs campaigns to school programs teaching empathy.
+
+Elias & Mia:
+In a bustling city park, an elderly man named Elias sat alone on his usual bench every afternoon, feeding pigeons with crumbs from his pocket. His wife had passed years ago, and his children lived far away…
+
+Read more here: https://www.seldoviaproperty.com/.../history-of-world…`},
+ {title:"Encore! Thanks Ecola for this great shot from last night!",excerpt:"Encore! Thanks Ecola for this great shot from last night!",date:"Nov 12, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-11-12.jpg",body:`Encore!  Thanks Ecola for this great shot from last night!`},
+ {title:"Be sure to check your mail for the notice from the KPB Assessing Department.",excerpt:"Don't miss this opportunity to maximize your property tax savings for 2026—get your application in today!",date:"Nov 12, 2025",read:"1 min",cat:"Real Estate",img:"",body:`Be sure to check your mail for the notice from the KPB Assessing Department (If you haven't applied for this exemption before, you wouldn't have received this attached notice - so I wanted to make sure you knew this is available if you qualify!). Don't miss this opportunity to maximize your property tax savings for 2026—get your application in today!
+
+Click on the link below to complete and submit the application online.
+$75k Residential Exemption Application - Online Form
+https://www.kpb.us/.../75k-residential-exemption-application
+
+For a paper copy of the exemption application, follow the link below
+$75k Residential Exemption Application - Printable Form
+https://www.kpb.us/.../Documents/75K_Resident_Fillable.pdf`},
+ {title:"Today, we pause to honor the men and women who have bravely served our country, our veterans.",excerpt:"To each of you who has served: thank you. Your strength and sacrifice inspire us every day.",date:"Nov 11, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-11-11.jpg",body:`Today, we pause to honor the men and women who have bravely served our country, our veterans. Their courage, dedication, and love for freedom have shaped the nation we are proud to call home.
+
+Here in Seldovia, that gratitude feels especially close to the heart. Many of our veterans are our neighbors, friends, and family members the same faces we see at the harbor, in local shops, or walking along the boardwalk.
+
+To each of you who has served: thank you. Your strength and sacrifice inspire us every day. 💙`},
+ {title:"Chances are good that clear skies will reveal a spectacular light show over Seldovia tonight. Don't miss it!",excerpt:"Chances are good that clear skies will reveal a spectacular light show over Seldovia tonight.",date:"Nov 11, 2025",read:"1 min",cat:"Living Here",img:"",body:`Chances are good that clear skies will reveal a spectacular light show over Seldovia tonight. Don't miss it!
+
+Read here to learn more: https://auroranotify.com/`},
+ {title:"Hello, Seldovia! Welcome to Week 46 of 2025!",excerpt:"Stay connected and in the loop with everything happening around town, from community events to fun activities.",date:"Nov 10, 2025",read:"1 min",cat:"Community",img:"",body:`Hello, Seldovia! Welcome to Week 46 of 2025!
+
+Stay connected and in the loop with everything happening around town, from community events to fun activities, all posted daily on
+www.Seldovia.com 🌙✨
+
+👉 Don't miss a moment. Bookmark the site and check back often to see what's new in Seldovia!`},
+ {title:"From our quiet shores here in Seldovia to Marines stationed around the world, we pause today to say thank you.",excerpt:"Happy Birthday, U.S. Marine Corps!",date:"Nov 10, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-11-10.jpg",body:`From our quiet shores here in Seldovia to Marines stationed around the world, we pause today to say thank you. 🙏
+
+As we honor 250 years of the Marine Corps, we remember the strength that comes from service, brotherhood, and commitment to something greater than ourselves.
+
+Happy Birthday, U.S. Marine Corps! 🇺🇸`},
+ {title:"The water taxi, ferry, or small planes are our highways, and each trip comes with its own rhythm and reward.",excerpt:"It's not just about living without a road it's about living with purpose.",date:"Nov 9, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-11-09.jpg",body:`The water taxi, ferry, or small planes are our highways, and each trip comes with its own rhythm and reward.
+
+But what might seem like isolation to some feels like connection to others. Without the rush of traffic or endless errands, neighbors become family, and the landscape becomes your companion. You learn to plan ahead, live intentionally, and appreciate the beauty of simplicity. 🌞🌊♻️
+
+It's not just about living without a road it's about living with purpose, grounded in community and surrounded by nature that reminds you daily just how extraordinary "remote" can be.`},
+ {title:"It's a question locals in Seldovia hear often and the answer is almost always the same: Never.",excerpt:"The quiet in Seldovia isn't empty; it's so full!",date:"Nov 8, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-11-08.jpg",body:`It's a question locals in Seldovia hear often and the answer is almost always the same:
+
+Never. ✨
+
+The quiet in Seldovia isn't empty; it's so full! It's the sound of eagles calling across the harbor, waves brushing against the shore, and wind moving through the spruce trees.
+
+In a world that never stops buzzing, the stillness of Seldovia feels like a gift. It gives space to think, to breathe, to notice the small things the sparkle of sunlight on the water, the laughter from a neighbor's porch, the rhythm of the tides. 🌊♻️
+
+The quiet doesn't mean nothing's happening. It means you can finally hear what matters most!  As long as you turn off your phone! LOL! 😄`},
+ {title:"Seldovia may be small, but its opportunities are big.",excerpt:"Folks interested in investing in not just a home, but a lifestyle are discovering that this coastal community offers something rare.",date:"Nov 7, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-11-07.jpg",body:`Seldovia may be small, but its opportunities are big. Folks interested in investing in not just a home, but a lifestyle are discovering that this coastal community offers something rare:  affordable entry into Alaska's remote lifestyle, combined with strong long-term potential.
+
+🏡 Real Estate with Character: From charming cabins to buildable lots, properties here aren't just investments; they're gateways to a simpler, more connected way of life.
+
+🌲 Tourism Potential: With fishing, hiking, wildlife, and rich culture, Seldovia is a growing destination for travelers seeking "Real Alaska." That makes vacation rentals and boutique lodges smart plays for steady returns.
+
+🌊 Lifestyle + Value: Unlike crowded markets, Seldovia offers balance, an investment that doubles as a personal retreat. Your property here isn't just numbers on paper; it's time on the water, trails, and beaches.
+
+In a world where investors are chasing crowded, expensive markets, Seldovia stands out as a hidden opportunity. The smart ones know: it's better to get in early.
+
+✨ Ready to explore the possibilities? Visit SeldoviaProperty.com or connect with Jenny Chissus at Seldovia Property to see what's waiting for you.`},
+ {title:"Tustumena coming in RIGHT NOW to Seldovia! Better late than not!",excerpt:"Thankful for the Tusty!",date:"Nov 6, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-11-06.jpg",body:`Tustumena coming in RIGHT NOW to Seldovia! Better late than not! Thankful for the Tusty! 🌊⛴️`},
+ {title:"Homer may be the “Hamlet by the Sea,” but just across Kachemak Bay lies Seldovia smaller, quieter, and in many ways, more personal.",excerpt:"If Homer is Alaska's bustling harbor, Seldovia is its hidden heartbeat.",date:"Nov 5, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-11-05.jpg",body:`Homer may be the "Hamlet by the Sea," but just across Kachemak Bay lies Seldovia smaller, quieter, and in many ways, more personal, and closer to the halibut fishing grounds, taking 2-3 hours off the total travel time to the big fish!
+
+✨ The Journey Matters: To reach Seldovia, you take a boat, plane, or ferry. That extra step filters the rush and leaves you with a community that feels truly tucked away.
+
+🌲 A Village Vibe: Homer hums with activity, but Seldovia thrives on connection. Here, you'll find fewer crowds, more conversations, and neighbors who quickly become friends.
+
+🌲 Nature, Up Close: Both towns offer stunning scenery, but Seldovia's trails, tidepools, and beaches often feel like your own private discovery. No traffic, no noise just pure Alaska.
+
+🍎 Culture with Roots: While Homer is lively with galleries and markets, Seldovia celebrates with berry festivals, local art, and traditions that honor both history and nature.
+
+👉 If Homer is Alaska's bustling harbor, Seldovia is its hidden heartbeat. Sometimes, the places harder to reach end up being the ones worth holding onto.`},
+ {title:"Straight from Seldovia soil.",excerpt:"Straight from Seldovia soil.",date:"Nov 4, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-11-04.jpg",body:`Straight from Seldovia soil. 🥕`},
+ {title:"Hello, Seldovia! Welcome to Week 45 of 2025!",excerpt:"Stay connected and in the loop with everything happening around town, from community events to fun activities.",date:"Nov 3, 2025",read:"1 min",cat:"Community",img:"",body:`Hello, Seldovia! Welcome to Week 45 of 2025!
+
+Stay connected and in the loop with everything happening around town, from community events to fun activities, all posted daily on
+www.Seldovia.com 🌊✨
+
+👉 Don't miss a moment. Bookmark the site and check back often to see what's new in Seldovia!`},
+ {title:"Whether it's fresh halibut, smoked salmon, or classic turkey stacked between two slices of homemade bread there's something extra special about a sandwich enjoyed by the sea.",excerpt:"What's your favorite local go-to sandwich spot here in Seldovia?",date:"Nov 3, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-11-03.jpg",body:`Whether it's fresh halibut, smoked salmon, or classic turkey stacked between two slices of homemade bread there's something extra special about a sandwich enjoyed by the sea.
+
+What's your favorite local go-to sandwich spot here in Seldovia? 🌊♻️`},
+ {title:"Locals swap recipes as easily as they swap stories!",excerpt:"In Seldovia, the taste of the bay isn't just about flavor, it's about belonging.",date:"Nov 2, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-11-02.jpg",body:`Locals swap recipes as easily as they swap stories! 🐟
+
+Halibut baked with wild herbs, salmon grilled over alder wood, or crab pulled straight from the trap and shared with friends on the dock. Visitors quickly notice that meals here can feel more like gatherings, moments where family, friends and community come together.
+
+Each dish tells a story of hard work and harmony with the sea of a way of life that values freshness, sustainability, and connection. In Seldovia, the taste of the bay isn't just about flavor, it's about belonging. 😊`},
+ {title:"Don't forget to turn those clocks back Saturday night.",excerpt:"Time to reset and soak in an extra hour to enjoy those cozy autumn mornings.",date:"Nov 1, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-11-01.jpg",body:`Don't forget to turn those clocks back Saturday night. Time to reset and soak in an extra hour to enjoy those cozy autumn mornings. 🍁⏰`}
 ];
 // Real "Seldovia Days" photos pulled from the Flywheel gallery (Jenny & Melody Hall).
 const GALLERY=[{h:300,cap:"Sunset over the bay",img:"images/gallery/g-1.jpg"},{h:300,cap:"Floatplane off the bay",img:"images/gallery/g-2.jpg"},{h:300,cap:"Red salmon riches",img:"images/gallery/g-3.jpg"},{h:300,cap:"Seldovia harbor",img:"images/gallery/g-4.jpg"},{h:300,cap:"Outside Beach stream",img:"images/gallery/g-5.jpg"},{h:300,cap:"Kenai reds",img:"images/gallery/g-6.jpg"},{h:300,cap:"Enchanted woods",img:"images/gallery/g-7.jpg"},{h:300,cap:"Barabara Creek",img:"images/gallery/g-8.jpg"},{h:300,cap:"MacDonald Spit",img:"images/gallery/g-9.jpg"},{h:300,cap:"Seldovia rainbow",img:"images/gallery/g-10.jpg"},{h:300,cap:"Ferry day",img:"images/gallery/g-11.jpg"},{h:300,cap:"Through the trees",img:"images/gallery/g-12.jpg"}];
