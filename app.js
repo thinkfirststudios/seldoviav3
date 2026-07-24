@@ -465,10 +465,12 @@ const NOTES=[
  {cat:"Jobs",title:"SVT Health & Wellness is hiring",body:"Healthcare professionals wanted for positions in Seldovia and Homer.",by:"Seldovia Village Tribe",when:"Jul 10"},
  {cat:"Notice",title:"Road closure — C Street",body:"C Street is closed to through traffic. Please plan an alternate route.",by:"City of Seldovia",when:"Jul 7"}
 ];
-// Intentionally EMPTY — the previous quotes were invented, and fabricated reviews on a
-// broker's site are a liability. Add Jenny's REAL client testimonials here (she has them
-// in her posts and reviews); the section stays hidden until then.
-const TESTIMONIALS=[];
+// REAL client testimonials, verbatim from Jenny's published client-testimonial graphics.
+// Never add invented quotes here — the section self-hides when this array is empty.
+const TESTIMONIALS=[
+ {name:"Christine D.",role:"Home buyer",c:"#663015",t:"We very much appreciated Jenny's professionalism and helpfulness in the purchase of our home. Even with a small budget it was a big decision for us and Jenny was just as excited as we were! She made our dream possible!!! Thank you Jenny."},
+ {name:"Rich K.",role:"Land buyer",c:"#1d6b78",t:"This was so easy for me. Jenny did all kinds of work, I did almost nothing. She snowshoed the property, took pictures, went with the surveyor, took more pictures after the snowmelt. I'm thousands of miles away, never lifted a finger. She's smart and clear, very relaxing to talk to; we shared some fun stories. We never met in person, but she's making me miss Seldovia."}
+];
 // REAL Seldovia businesses. These are not paid sponsors — the strip spotlights local
 // businesses. Swap in genuine sponsors once Jenny sells that space.
 const SPONSORS=[{name:"Boardwalk Hotel",cat:"Lodging",c:"#663015"},{name:"Jack and Aiva's",cat:"Restaurant",c:"#DF1284"},{name:"Thyme on the Boardwalk",cat:"Dining",c:"#7f8a6b"},{name:"Smokey Bay Air",cat:"Air Taxi",c:"#4f5a3d"},{name:"Crabpot Grocery",cat:"Grocery",c:"#a8683a"},{name:"Alaska Free Diver",cat:"Charters & Tours",c:"#b0357e"},{name:"Mako's Water Taxi",cat:"Water Taxi",c:"#1d6b78"},{name:"Seldovia Fishing Adventures",cat:"Fishing Charters",c:"#2c4a3a"}];
