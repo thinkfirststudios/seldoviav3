@@ -114,7 +114,26 @@ document.body.insertAdjacentHTML("beforeend", `
 
 /* ============================================================ MOCK DATA ============================================================ */
 const CATEGORIES=[{b:"Stay",s:"Lodges & cabins",key:"lodging"},{b:"Eat & Drink",s:"Dining & cafés",key:"dining"},{b:"Charters & Tours",s:"On the water",key:"charters"},{b:"Cafés",s:"Coffee & bakery",key:"dining"},{b:"Arts & Galleries",s:"Local makers",key:"arts"},{b:"Outdoors & Trails",s:"Hikes & beaches",key:"outdoors"},{b:"Beauty & Wellness",s:"Spa & self-care",key:"wellness"},{b:"Events",s:"What's on",key:"events"}];
-const PLACES=[{name:"Seldovia Boardwalk Hotel",cat:"Lodging",key:"lodging",rate:4.9,rev:212,open:true},{name:"Tide Pool Café",cat:"Café",key:"dining",rate:4.8,rev:176,open:true},{name:"Kachemak Bay Charters",cat:"Charters",key:"charters",rate:4.9,rev:143,open:true},{name:"Salmonberry Bakery",cat:"Bakery",key:"dining",rate:4.7,rev:98,open:true},{name:"Slough Arts Gallery",cat:"Arts",key:"arts",rate:4.6,rev:64,open:false},{name:"Otterbahn Trail",cat:"Outdoors",key:"outdoors",rate:4.9,rev:230,open:true},{name:"Otter Cove Lodge",cat:"Lodging",key:"lodging",rate:4.8,rev:151,open:true},{name:"Linwood Bar & Grill",cat:"Dining",key:"dining",rate:4.5,rev:120,open:true},{name:"Outside Beach Park",cat:"Outdoors",key:"outdoors",rate:4.7,rev:88,open:true}];
+// REAL Seldovia places — sourced from the existing seldovia.com business directory.
+// No star ratings or review counts: we don't have real review data, so we don't invent it.
+const PLACES=[
+ {name:"Boardwalk Hotel",cat:"Hotel",key:"lodging",phone:"(907) 234-7816",url:"https://www.SeldoviaHotel.com"},
+ {name:"Sea Parrot Inn",cat:"Inn",key:"lodging",phone:"(844) 377-7829",url:"https://www.seaparrotinn.com"},
+ {name:"Seldovia Suites",cat:"Lodging",key:"lodging",phone:"(907) 234-3700"},
+ {name:"Between Beaches",cat:"Lodging",key:"lodging",phone:"(907) 290-6785"},
+ {name:"Alaska Dancing Eagles Cabin Rental",cat:"Cabin Rental",key:"lodging",phone:"(907) 360-6363",url:"https://www.dancingeagles.com"},
+ {name:"Jack and Aiva's Restaurant",cat:"Restaurant",key:"dining",phone:"(907) 234-7440"},
+ {name:"Thyme on the Boardwalk",cat:"Dining",key:"dining",phone:"(907) 440-2213",url:"https://www.ThymeOnTheBoardwalk.com"},
+ {name:"Linwood Bar & Grill",cat:"Bar & Grill",key:"dining"},
+ {name:"Crabpot Grocery",cat:"Grocery",key:"dining",phone:"(907) 234-7435"},
+ {name:"Alaska Free Diver",cat:"Charters & Tours",key:"charters",phone:"(907) 205-7963",url:"https://www.AlaskaFreeDiver.com"},
+ {name:"Seldovia Fishing Adventures",cat:"Fishing Charters",key:"charters",phone:"(907) 234-7417",url:"https://www.fishhalibut.com"},
+ {name:"Mako's Water Taxi",cat:"Water Taxi",key:"charters",phone:"(907) 235-9055"},
+ {name:"Otterbahn Trail",cat:"Trail",key:"outdoors"},
+ {name:"Outside Beach Park",cat:"Beach & Park",key:"outdoors"},
+ {name:"Seldovia Sea Glass",cat:"Local Art",key:"arts"},
+ {name:"Seldovia Outdoor Rentals & Gifts",cat:"Gifts & Rentals",key:"arts",phone:"(907) 302-0320"}
+];
 // Jenny's Seldovia Blog — recovered posts (original titles, dates, images preserved). PROD: managed via admin.
 const GAZETTE=[
  {title:"Thank you, Jennifer!",excerpt:"Jennifer, thank you so much for your kind words! It makes me so happy to hear how pleased you are with your Seldovia investment and my service.",date:"Jul 17, 2026",read:"1 min",cat:"Kind Words",img:"images/gazette/2026-07-17.jpg",body:`Jennifer, thank you so much for your kind words! It makes me so happy to hear how pleased you are with your Seldovia investment and my service.
@@ -372,15 +391,53 @@ The parcel is secured by a 55-year lease through the Seldovia Native Association
 ];
 // Community members — opt-in, privacy-first: each person shares only what they want,
 // so fields are intentionally uneven. PROD: populated from approved Netlify Form submissions.
-const MEMBERS=[
- {name:"The Chissus Family",addr:"Main Street",phone:"(907) 555-0148",bday:"",anniv:"Jun 14",photo:"",featured:true},
- {name:"Mara & Jo Hendrickson",addr:"Boardwalk",phone:"",bday:"Mar 3",anniv:"Aug 22",photo:""},
- {name:"Tom Reyes",addr:"",phone:"(907) 555-0163",bday:"Nov 9",anniv:"",photo:""},
- {name:"Susan English",addr:"Winifred Ave",phone:"",bday:"",anniv:"",photo:""},
- {name:"D. Whitfield",addr:"",phone:"(907) 555-0129",bday:"Jul 30",anniv:"",photo:""},
- {name:"The Hansen Household",addr:"Jakolof Bay Rd",phone:"(907) 555-0175",bday:"",anniv:"Sep 5",photo:""}
+// Community phone-book residents. Intentionally EMPTY — the placeholder "neighbors" here were
+// invented, and we don't publish real residents' contact details without their opt-in.
+// Entries arrive via the directory-add form (Jenny approves each one). The old seldovia.com
+// directory holds 145 residents already marked public — migrate only on Jenny's say-so.
+const MEMBERS=[];
+// REAL Seldovia businesses — migrated from the Connections directory on the existing
+// seldovia.com WordPress site (37 approved + publicly-visible organizations).
+// Entries marked "unlisted" on the old site are intentionally NOT included.
+const DIRECTORY=[
+ {name:"Aero Tech Lodge",cat:"Lodging",phone:"(907) 234-6200",spon:false},
+ {name:"Alaska Dancing Eagles Cabin Rental",cat:"Lodging",phone:"(907) 360-6363",url:"https://www.dancingeagles.com",spon:false},
+ {name:"Alaska Free Diver",cat:"Charters & Tours",phone:"(907) 205-7963",url:"https://www.AlaskaFreeDiver.com",spon:false},
+ {name:"Alaska Marine Highway System",cat:"Transportation",phone:"(800) 642-0066",spon:false},
+ {name:"Asta Waterfront Suite",cat:"Lodging",phone:"(907) 231-6522",spon:false},
+ {name:"Between Beaches",cat:"Lodging",phone:"(907) 290-6785",spon:false},
+ {name:"Boardwalk Hotel",cat:"Lodging",phone:"(907) 234-7816",url:"https://www.SeldoviaHotel.com",spon:false},
+ {name:"City of Seldovia",cat:"Community",phone:"(907) 234-7643",spon:false},
+ {name:"Crabpot Grocery",cat:"Shopping",phone:"(907) 234-7435",spon:false},
+ {name:"Family First Construction",cat:"Services",phone:"(907) 310-6419",spon:false},
+ {name:"Fathoms Hair & Nail Salon",cat:"Beauty & Wellness",phone:"(907) 726-7255",spon:false},
+ {name:"Halo Cab",cat:"Transportation",phone:"(907) 205-7828",spon:false},
+ {name:"Jack and Aiva's Restaurant",cat:"Food & Drink",phone:"(907) 234-7440",spon:false},
+ {name:"Kar-a-Van Transfer",cat:"Transportation",phone:"(907) 234-7802",spon:false},
+ {name:"Mako's Water Taxi",cat:"Transportation",phone:"(907) 235-9055",spon:false},
+ {name:"Red Mountain Marine",cat:"Marine",phone:"(907) 399-8230",spon:false},
+ {name:"Sea Parrot Inn",cat:"Lodging",phone:"(844) 377-7829",url:"https://www.seaparrotinn.com",spon:false},
+ {name:"Seldovia Chamber of Commerce",cat:"Community",phone:"(907) 234-7612",spon:false},
+ {name:"Seldovia Fishing Adventures",cat:"Charters & Tours",phone:"(907) 234-7417",url:"https://www.fishhalibut.com",spon:false},
+ {name:"Seldovia Fuel and Lube",cat:"Marine",phone:"(907) 234-7622",spon:false},
+ {name:"Seldovia Harbor Inn",cat:"Lodging",phone:"(907) 202-3095",spon:false},
+ {name:"Seldovia Health and Wellness",cat:"Health",phone:"(907) 435-3262",spon:false},
+ {name:"Seldovia Native Association",cat:"Community",phone:"(907) 234-7625",spon:false},
+ {name:"Seldovia Outdoor Rentals & Gifts",cat:"Shopping",phone:"(907) 302-0320",spon:false},
+ {name:"Seldovia Police Department",cat:"Community",phone:"(907) 234-7640",spon:false},
+ {name:"Seldovia Property",cat:"Real Estate",phone:"(907) 234-8000",url:"https://www.SeldoviaProperty.com",spon:false},
+ {name:"Seldovia Public Library",cat:"Community",phone:"(907) 234-7662",spon:false},
+ {name:"Seldovia Sea Glass",cat:"Shopping",phone:"",spon:false},
+ {name:"Seldovia Sea Otter Community Center",cat:"Community",phone:"(907) 234-4110",spon:false},
+ {name:"Seldovia Suites",cat:"Lodging",phone:"(907) 234-3700",spon:false},
+ {name:"Seldovia Village Tribe",cat:"Community",phone:"(907) 234-7898",spon:false},
+ {name:"Smokey Bay Air",cat:"Transportation",phone:"(907) 234-8511",url:"https://www.SmokeyBayAir.com",spon:false},
+ {name:"Susan B English School",cat:"Community",phone:"(907) 234-7616",spon:false},
+ {name:"The Great Escape — Alaskan Vacation Rentals",cat:"Lodging",phone:"",url:"https://www.greatescapealaska.com",spon:false},
+ {name:"Thyme on the Boardwalk",cat:"Food & Drink",phone:"(907) 440-2213",url:"https://www.ThymeOnTheBoardwalk.com",spon:false},
+ {name:"United States Post Office — Seldovia",cat:"Community",phone:"(907) 234-7831",spon:false},
+ {name:"Winter Watch",cat:"Services",phone:"(907) 406-0775",url:"https://www.SeldoviaWinterWatch.com",spon:false}
 ];
-const DIRECTORY=[{name:"Seldovia Boardwalk Hotel",cat:"Lodging",phone:"(907) 555-0142",spon:true},{name:"Tide Pool Café",cat:"Food & Drink",phone:"(907) 555-0198",spon:false},{name:"Kachemak Bay Charters",cat:"Charters",phone:"(907) 555-0170",spon:true},{name:"Seldovia General Store",cat:"Shopping",phone:"(907) 555-0111",spon:false},{name:"Bay Fuel & Marine",cat:"Marine",phone:"(907) 555-0133",spon:false},{name:"Slough Arts Gallery",cat:"Arts",phone:"(907) 555-0165",spon:false},{name:"Susan B. English School",cat:"Public",phone:"(907) 555-0100",spon:false},{name:"Seldovia Medical Clinic",cat:"Health",phone:"(907) 555-0122",spon:false},{name:"Otter Cove Lodge",cat:"Lodging",phone:"(907) 555-0188",spon:true},{name:"Harbor Water Taxi",cat:"Charters",phone:"(907) 555-0155",spon:false},{name:"Salmonberry Bakery",cat:"Food & Drink",phone:"(907) 555-0177",spon:false},{name:"Seldovia Public Library",cat:"Public",phone:"(907) 555-0109",spon:false}];
 const NOTES=[{cat:"Free",title:"Free firewood — you haul",body:"Spruce rounds from a downed tree near Jakolof Bay Rd. First come, first served.",by:"The Hansens",when:"Jul 12"},{cat:"Lost & Found",title:"Found: blue rain jacket",body:"Left at the ferry terminal bench. Describe it and it's yours — check at the General Store.",by:"Terminal staff",when:"Jul 11"},{cat:"Wanted",title:"Ride-share to Homer Sat",body:"Two folks + groceries looking to split the water-taxi Saturday morning. Text the board.",by:"Mara & Jo",when:"Jul 10"},{cat:"For Sale",title:"14' aluminum skiff",body:"Solid little boat, 9.9 hp, trailer included. Great for calm-day crossings.",by:"D. Whitfield",when:"Jul 9"},{cat:"Volunteer",title:"Trail crew needs hands",body:"Otterbahn cleanup Friday at 10. Gloves and cocoa provided — kids welcome!",by:"Trails Committee",when:"Jul 8"},{cat:"Announcement",title:"Library summer hours",body:"Open Tue–Sat, 11–5 through August. New books in from the Homer exchange.",by:"Seldovia Library",when:"Jul 7"}];
 const TESTIMONIALS=[{name:"Richard Duffy",role:"Visitor from Anchorage",c:"#663015",t:"We found the ferry times, a cabin, and a kayak tour all in one afternoon. Coming back every summer now."},{name:"Dana Sanders",role:"Seldovia local",c:"#DF1284",t:"Finally a calendar you can actually scroll. I check the bulletin board every morning with my coffee."},{name:"Marta Ivanoff",role:"Gallery owner",c:"#7f8a6b",t:"Listing my gallery here brought in real foot traffic. It feels like the whole town in one place."},{name:"Tom & Lily Reyes",role:"New homeowners",c:"#a8683a",t:"We bought our first cabin on the bay through the site. Warm, honest, and genuinely helpful."}];
 const SPONSORS=[{name:"Boardwalk Hotel",cat:"Lodging",c:"#663015"},{name:"Kachemak Charters",cat:"Fishing",c:"#DF1284"},{name:"Tide Pool Café",cat:"Food & Drink",c:"#7f8a6b"},{name:"Bay Fuel & Marine",cat:"Marine",c:"#4f5a3d"},{name:"Otter Cove Lodge",cat:"Lodging",c:"#a8683a"},{name:"Slough Arts",cat:"Arts",c:"#b0357e"}];
@@ -418,14 +475,12 @@ function renderPlaces(){
   if(!$("#placeGrid")) return;
   const rows=PLACES.filter(p=>placeTab==="all"||p.key===placeTab);
   $("#placeGrid").innerHTML=rows.map(p=>`
-    <a class="place" href="explore.html">
-      <div class="place-media"><img class="place-photo" src="${PLACE_IMG[p.key]||'images/categories/cat-5.jpg'}" alt="" loading="lazy" width="600" height="400">
-        <span class="badge-open" style="${p.open?'':'background:#efe6e2;color:#9a877f'}">${p.open?'Open':'Closed'}</span>
-      </div>
+    <a class="place" href="${p.url?esc(p.url):'phone-book.html'}"${p.url?' target="_blank" rel="noopener"':''}>
+      <div class="place-media"><img class="place-photo" src="${PLACE_IMG[p.key]||'images/categories/cat-5.jpg'}" alt="" loading="lazy" width="600" height="400"></div>
       <div class="place-body">
-        <div class="rating"><span class="stars">${stars(p.rate)}</span> <b>${p.rate.toFixed(1)}</b><span>(${p.rev})</span> <span class="cat">· ${esc(p.cat)}</span></div>
+        <div class="rating"><span class="cat">${esc(p.cat)}</span></div>
         <h4>${esc(p.name)}</h4>
-        <div class="place-loc"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.3-7-11a7 7 0 0 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> Seldovia, AK</div>
+        <div class="place-loc"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.3-7-11a7 7 0 0 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> Seldovia, AK${p.phone?` · ${esc(p.phone)}`:""}</div>
       </div>
     </a>`).join("");
 }
@@ -565,9 +620,12 @@ if($("#dirList")){
       ${bits.length?`<div class="d-contact">${bits.join(" · ")}</div>`:'<div class="d-contact d-muted">Listed — details private</div>'}
       ${celebrations(p)}</div>
       ${p.featured?'<span class="spon-flag">★ Featured</span>':''}</div>`;};
-  const bizCard=d=>`<div class="dir-item ${d.spon?'featured':''}"><div class="d-ico">${esc(d.name[0])}</div>
-      <div class="d-main"><div class="d-cat">${esc(d.cat)}</div><h4>${esc(d.name)}</h4><div class="d-contact">${esc(d.phone)} · Seldovia, AK</div></div>
-      ${d.spon?'<span class="spon-flag">★ Sponsor</span>':''}</div>`;
+  const bizCard=d=>{
+    const bits=[]; if(d.phone)bits.push(`<a href="tel:${d.phone.replace(/[^\d]/g,"")}">${esc(d.phone)}</a>`); bits.push("Seldovia, AK");
+    const site=d.url?`<div class="d-site"><a href="${esc(d.url)}" target="_blank" rel="noopener">Visit website ↗</a></div>`:"";
+    return `<div class="dir-item ${d.spon?'featured':''}"><div class="d-ico">${esc(d.name[0])}</div>
+      <div class="d-main"><div class="d-cat">${esc(d.cat)}</div><h4>${esc(d.name)}</h4><div class="d-contact">${bits.join(" · ")}</div>${site}</div>
+      ${d.spon?'<span class="spon-flag">★ Sponsor</span>':''}</div>`;};
 
   const renderDir=()=>{const q=dirQuery.trim().toLowerCase();
     const rows=ALL.filter(r=>{
@@ -575,7 +633,10 @@ if($("#dirList")){
       const inQ = !q || r.name.toLowerCase().includes(q) || (r.cat||"").toLowerCase().includes(q) || (r.addr||"").toLowerCase().includes(q);
       return inCat && inQ;
     });
-    $("#dirList").innerHTML=rows.length?rows.map(r=>r.type==="person"?personCard(r):bizCard(r)).join(""):`<div class="dir-empty">No matches — try another word or category.</div>`;};
+    const empty = (!q && (dirCat==="People"||(dirCat==="All"&&!PEOPLE.length)) && !PEOPLE.length)
+      ? `<div class="dir-empty">The neighbor listings are just getting started — <a href="directory-add.html">add your household</a> and share only what you're comfortable with.</div>`
+      : `<div class="dir-empty">No matches — try another word or category.</div>`;
+    $("#dirList").innerHTML=rows.length?rows.map(r=>r.type==="person"?personCard(r):bizCard(r)).join(""):empty;};
   renderDir();
   $("#dirChips").addEventListener("click",e=>{const b=e.target.closest(".chip"); if(!b)return; dirCat=b.dataset.cat; $$("#dirChips .chip").forEach(c=>c.setAttribute("aria-pressed",c===b)); renderDir();});
   $("#dirSearch").addEventListener("input",e=>{dirQuery=e.target.value; renderDir();});
@@ -645,7 +706,7 @@ document.addEventListener("click",e=>{const b=e.target.closest(".add-cal"); if(b
 
 /* ============================================================ GLOBAL SEARCH ============================================================ */
 const INDEX=[
-  ...PLACES.map(p=>({type:"Place",title:p.name,desc:`${p.cat} · ${p.rate}★`,href:"explore.html",kw:p.cat+" "+p.key})),
+  ...PLACES.map(p=>({type:"Place",title:p.name,desc:p.phone?`${p.cat} · ${p.phone}`:p.cat,href:"explore.html",kw:p.cat+" "+p.key})),
   ...LISTINGS.map(l=>({type:"Real Estate",title:l.name,desc:l.cat,href:"real-estate.html",kw:l.cat})),
   ...CATEGORIES.map(c=>({type:"Category",title:c.b,desc:c.s,href:"explore.html?cat="+c.key,kw:c.key})),
   ...GAZETTE.map(g=>({type:"Jenny's Blog",title:g.title,desc:g.excerpt,href:"gazette.html",kw:g.cat})),

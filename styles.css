@@ -477,6 +477,11 @@ form.stack{display:grid; gap:.85rem;}
 .dir-item.person .d-ico{background:var(--accent-soft); color:var(--accent);}
 .dir-item .d-photo{width:44px; height:44px; flex:none; border-radius:50%; object-fit:cover; border:1px solid var(--line);}
 .dir-item .d-muted{font-style:italic; color:var(--muted);}
+.dir-item .d-contact a{color:inherit; text-decoration:none;}
+.dir-item .d-contact a:hover{color:var(--accent-ink); text-decoration:underline;}
+.dir-item .d-site{margin-top:.28rem; font-size:.84rem;}
+.dir-item .d-site a{color:var(--accent-ink); font-weight:700; text-decoration:none;}
+.dir-item .d-site a:hover{text-decoration:underline;}
 .d-cel{display:flex; flex-wrap:wrap; gap:.35rem; margin-top:.45rem;}
 .d-cel .cel{font-size:.74rem; font-weight:700; color:var(--accent-ink); background:var(--accent-soft); border-radius:var(--radius-pill); padding:.12rem .5rem;}
 .dir-note{text-align:center; color:var(--text-soft); font-size:.92rem; margin-top:1.4rem;}
