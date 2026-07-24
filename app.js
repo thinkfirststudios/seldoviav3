@@ -248,9 +248,100 @@ From all of us, we wish you a safe, happy, and memorable Independence Day filled
 🌿 Peaceful, private Alaska retreat with room to relax, garden & explore
 
 📞 Call Jenny Chissus with Seldovia Property at (907) 406-0044`},
- {title:"A coastal town that never looks the same twice",excerpt:"In Seldovia, Alaska, there's a familiar feeling you can't quite put into words — you think you know a place, and then it quietly changes on you.",date:"Jul 3, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-07-03.jpg",body:`In Seldovia, Alaska, there's a familiar feeling you can't quite put into words, you think you know a place, and then it quietly changes on you.
+ {title:"A coastal town that never looks the same twice",excerpt:"In Seldovia, Alaska, there's a familiar feeling you can't quite put into words — you think you know a place, and then it quietly changes on you.",date:"Jul 3, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-07-03_01.jpg",body:`In Seldovia, Alaska, there's a familiar feeling you can't quite put into words, you think you know a place, and then it quietly changes on you.
 
 Even the same walk down the street or dock never feels identical twice. The tide has shifted. The wind has changed direction. The light lands differently on the water. And somehow, that's enough to make it feel like a new place again. 🌱✨`},
+ {title:"In Seldovia, Log Cabin Day fits right into the landscape and way of life.",excerpt:"Built from the land, shaped by hand, and made to last.",date:"Jun 28, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-06-28.jpg",body:`In Seldovia, Log Cabin Day fits right into the landscape and way of life.
+
+Built from the land, shaped by hand, and made to last.
+
+In a place like Seldovia, where forests meet the sea and nature sets the pace, the spirit of self-reliance and simplicity still makes sense.
+
+Log Cabin Day isn't only about looking back. It's about appreciating a way of life that still feels close to home here in Alaska.
+
+Quiet, grounded, and built with purpose, that's a story Seldovia understands well.`},
+ {title:"351 Shoreline Drive — Pending",excerpt:"A 1 bedroom, 1 bath cottage with an east-facing bay window, copper sink, live-edge kitchen counters, and custom willow wood staircase railings.",date:"Jun 27, 2026",read:"1 min",cat:"Real Estate",img:"",body:`📍 351 Shoreline Drive, Seldovia, AK 99663
+🛏️ 1 bedroom, 1 bath cottage
+🌅 East-facing bay window with abundant natural light
+📖 Cozy reading nook
+🚰 Copper sink & handcrafted live-edge kitchen counters
+🪵 Custom willow wood staircase railings
+🛏️ Spacious upstairs bedroom with window seat & forest views
+🌿 Landscaped yard with rhubarb, raspberries, salmonberries & strawberries
+☀️ Sunny deck
+🔧 Garden shed & additional lean-to storage with washer
+🚗 Ample parking for vehicles, ATVs & a boat
+💧 City water, sewer & HEA power
+🚶 Walking distance to shops, restaurants, harbor, post office, school & airport
+🌐 https://www.seldoviaproperty.com/
+📞 Call Jenny with Seldovia Property (907) 406-0044`},
+ {title:"In Seldovia, evenings like this are more than just entertainment, they're part of what makes the community feel like home.",excerpt:"BINGO at Linwood Bar & Grill is a simple, fun tradition where neighbors gather, conversations flow easily, and laughter fills the room.",date:"Jun 27, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-06-27.jpg",body:`In Seldovia, evenings like this are more than just entertainment, they're part of what makes the community feel like home.
+
+BINGO at Linwood Bar & Grill is a simple, fun tradition where neighbors gather, conversations flow easily, and laughter fills the room. It's not about being the luckiest player in the room—it's about being together, sharing the moment, and enjoying a laid-back night out.  And, there are always cool prizes! 😀`},
+ {title:"Love, Love, Love.",excerpt:"Every review someone takes the time to write is a gift, and I never take them for granted.",date:"Jun 26, 2026",read:"1 min",cat:"Kind Words",img:"images/gazette/2026-06-26.jpg",body:`Love, Love, Love.
+
+Every review someone takes the time to write is a gift, and I never take them for granted.
+
+I'm truly humbled by the kind words my clients share, but even more than the reviews themselves, I'm grateful for the people behind them. Helping folks sell their properties or assisting someone in finding their place in Seldovia is a responsibility I take seriously. There's nothing more rewarding than knowing they feel well cared for throughout the process.
+
+To everyone who has trusted me, referred a friend, or taken a few minutes to leave a review…Thank you!! Your support means more than you know, and seeing happy clients enjoying their Seldovia dreams is the absolute very best part of what I do! ❤️`},
+ {title:"Dreaming of waterfront living in Seldovia, Alaska?",excerpt:"Imagine waking up to the tide right outside your window, coffee in hand, with nothing but quiet water, mountain views, and fresh coastal air to start your day.",date:"Jun 25, 2026",read:"1 min",cat:"Real Estate",img:"images/gazette/2026-06-25.jpg",body:`Dreaming of waterfront living in Seldovia, Alaska?
+
+Imagine waking up to the tide right outside your window, coffee in hand, with nothing but quiet water, mountain views, and fresh coastal air to start your day.
+
+Check in the comments to view these beautiful listings!`},
+ {title:"If someone visited Seldovia for one view only, where would you take them?",excerpt:"If someone visited Seldovia for one view only, where would you take them?",date:"Jun 24, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-06-24.jpg",body:`If someone visited Seldovia for one view only, where would you take them?`},
+ {title:"Happy Father's Day from our little coastal corner of Alaska!",excerpt:"Where dads aren't just providers, they're storytellers, trail guides, fishermen, problem-solvers, and the calm in every storm.",date:"Jun 21, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-06-21.jpg",body:`Happy Father's Day from our little coastal corner of Alaska!
+
+Where dads aren't just providers, they're storytellers, trail guides, fishermen, problem-solvers, and the calm in every storm.
+
+Today, we celebrate the fathers of Seldovia and every corner of the world.
+
+Happy Father's Day to all dads!`},
+ {title:"American Eagle Day reminds us how special it is to share places like Seldovia with such incredible wildlife.",excerpt:"From soaring above the bay to resting along the shoreline, bald eagles are a powerful symbol of Alaska's wild beauty and freedom.",date:"Jun 20, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-06-20.jpg",body:`American Eagle Day reminds us how special it is to share places like Seldovia with such incredible wildlife. From soaring above the bay to resting along the shoreline, bald eagles are a powerful symbol of Alaska's wild beauty and freedom. 🦅🌊`},
+ {title:"Just Sold!",excerpt:"Wishing both the sellers and the new owners all the best as this little piece of Seldovia begins its next chapter.",date:"Jun 19, 2026",read:"1 min",cat:"Real Estate",img:"images/gazette/2026-06-19.jpg",body:`Just Sold! Wishing both the sellers and the new owners all the best as this little piece of Seldovia begins its next chapter. 🙏✨`},
+ {title:"We've just recorded!",excerpt:"Big congratulations to both parties on a successful closing, and here's to what comes next for this incredible property!",date:"Jun 12, 2026",read:"1 min",cat:"Real Estate",img:"images/gazette/2026-06-12.jpg",body:`We've just recorded! Big congratulations to both parties on a successful closing, and here's to what comes next for this incredible property! 😊`},
+ {title:"Summer in Seldovia, Alaska brings increased activity in small aircraft operations",excerpt:"During this season, air traffic typically includes a mix of scheduled commuter flights, private aircraft, and charter services.",date:"Jun 11, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-06-11.jpg",body:`Summer in Seldovia, Alaska brings increased activity in small aircraft operations as the town sees more seasonal movement, visitors, and supply deliveries.
+
+During this season, air traffic typically includes a mix of scheduled commuter flights, private aircraft, and charter services.
+
+These flights connect Seldovia to nearby hubs such as Homer and other parts of the Kenai Peninsula and Anchorage, making it easier for residents, seasonal homeowners, and visitors to access our community.  We are so thankful for such a great airstrip!`},
+ {title:"Our June 2026 flipbook is now live!",excerpt:"Take a look at the newest listings and current market update in Seldovia, Alaska.",date:"Jun 9, 2026",read:"1 min",cat:"Real Estate",img:"images/gazette/2026-06-09.jpg",body:`Our June 2026 flipbook is now live! Take a look at the newest listings and current market update in Seldovia, Alaska.
+
+If you have any questions about a property or want insight into the current market, feel free to reach out to me. I'm happy to help you navigate buying or selling in Seldovia! 907-406-0044`},
+ {title:"333 Anderson Way — Heart-of-Town Seldovia Location",excerpt:"Three town lots (0.69 acres total), a sun-filled ranch home, a 768 sq ft shop, and commercial zoning with expansion potential.",date:"Jun 8, 2026",read:"1 min",cat:"Real Estate",img:"images/gazette/2026-06-08_02.jpg",body:`📍 333 Anderson Way Seldovia, AK 99663
+🏘️ Heart-of-Town Seldovia Location
+🌳 Three Town Lots (0.69 Acres Total)
+☀️ Sun-Filled Ranch Home
+🏠 2 BR, 1.5 BA Single-Level Living
+📐 1,120 Sq Ft Layout
+🏗️ 768 Sq Ft Spacious Shop
+🔧 Additional Storage Sheds (192 & 256 Sq Ft)
+💧 Utility-Ready Building (Water, Sewer, Power)
+🚶 Walkable to Harbor, Shops & School
+🏢 Commercial Zoning & Expansion Potential
+🌐 https://www.seldoviaproperty.com/
+📞 Call Jenny with Seldovia Property (907) 406-0044`},
+ {title:"60187 Chesloknu Lease — Waterfront Seldovia Bay Location",excerpt:"A custom-built log home with rare private road access, bay and mountain views, an expansive loft and artist's atelier, and beach access.",date:"Jun 8, 2026",read:"1 min",cat:"Real Estate",img:"images/gazette/2026-06-08_01.jpg",body:`📍 60187 Chesloknu Lease Seldovia, AK 99663
+🌊 Waterfront Seldovia Bay Location
+🚗 Rare Private Road Access
+🪵 Custom-Built Log Home
+🏔️ Bay & Mountain Views
+🌅 Sunrise & Sunset Views
+☀️ Sun-Filled Property
+🛋️ Open-Concept Living Space
+🎨 Expansive Loft & Artist's Atelier
+🦌 Exceptional Wildlife Viewing
+🏖️ Beach Access & Wraparound Deck
+🌐 https://www.seldoviaproperty.com/
+📞 Call Jenny with Seldovia Property (907) 406-0044`},
+ {title:"Thank you so much for the kind review Rich!",excerpt:"Thank you so much for the kind review Rich!",date:"Jun 6, 2026",read:"1 min",cat:"Kind Words",img:"images/gazette/2026-06-06.jpg",body:`Thank you so much for the kind review Rich! 🙏`},
+ {title:"Glorious Seldovia Summer Sunset!",excerpt:"Glorious Seldovia Summer Sunset!",date:"Jun 5, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-06-05.jpg",body:`Glorious Seldovia Summer Sunset! ❤️`},
+ {title:"On Flag Day in Seldovia, the day doesn't start with a crowd, it starts with a potluck at Jack and Aiva's restaurant.",excerpt:"Slowly, dishes begin to show up on tables like they've always belonged there.",date:"Jun 2, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-06-02.jpg",body:`On Flag Day in Seldovia, the day doesn't start with a crowd, it starts with a potluck at Jack and Aiva's restaurant.
+
+Slowly, dishes begin to show up on tables like they've always belonged there. Someone brings something still warm, someone else arrives with a tray that's been carefully wrapped, and before long the place feels less like a restaurant and more like a shared kitchen for the whole town.
+
+It's simple, but it's the kind of simple that holds a community together.`},
  {title:"In Seldovia, working moms wear many hats and often all in the same day.",excerpt:"It’s early mornings with the tide schedule in mind, kids bundled up before school boats or boardwalk walks, and workdays shaped by weather, community needs, and family life all at once.",date:"Mar 12, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/post-0.jpg"},
  {title:"Author Event – “My Heart is Good” with Josh Wisniewski",excerpt:"We love celebrating local talent, and Seldovia is full of it.",date:"Mar 11, 2026",read:"1 min",cat:"Events",img:"images/gazette/post-1.jpg"},
  {title:"New Library Hours – Thank You Volunteers!",excerpt:"We’re so grateful for the volunteers who keep our library open and thriving.",date:"Mar 10, 2026",read:"1 min",cat:"Community",img:"images/gazette/post-2.jpg"},
