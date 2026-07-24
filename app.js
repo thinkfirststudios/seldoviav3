@@ -342,16 +342,128 @@ If you have any questions about a property or want insight into the current mark
 Slowly, dishes begin to show up on tables like they've always belonged there. Someone brings something still warm, someone else arrives with a tray that's been carefully wrapped, and before long the place feels less like a restaurant and more like a shared kitchen for the whole town.
 
 It's simple, but it's the kind of simple that holds a community together.`},
- {title:"In Seldovia, working moms wear many hats and often all in the same day.",excerpt:"It’s early mornings with the tide schedule in mind, kids bundled up before school boats or boardwalk walks, and workdays shaped by weather, community needs, and family life all at once.",date:"Mar 12, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/post-0.jpg"},
- {title:"Author Event – “My Heart is Good” with Josh Wisniewski",excerpt:"We love celebrating local talent, and Seldovia is full of it.",date:"Mar 11, 2026",read:"1 min",cat:"Events",img:"images/gazette/post-1.jpg"},
- {title:"New Library Hours – Thank You Volunteers!",excerpt:"We’re so grateful for the volunteers who keep our library open and thriving.",date:"Mar 10, 2026",read:"1 min",cat:"Community",img:"images/gazette/post-2.jpg"},
- {title:"National Napping Day is a reminder that slowing down is just as important as showing up.",excerpt:"Sometimes the best way to reset isn’t coffee… it’s a blanket, a window view of the harbor, and a few peaceful minutes of doing nothing at all.",date:"Mar 9, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/post-3.jpg"},
- {title:"March 8 marks the start of Daylight Saving Time.",excerpt:"At 2:00 A.M., the clocks jump ahead one hour so don’t forget to spring forward.",date:"Mar 8, 2026",read:"1 min",cat:"Community",img:"images/gazette/post-4.jpg"},
- {title:"Living here means learning from the water, the weather, and the quiet strength of a coastal town that stands beautifully against the elements.",excerpt:"From this view on the Homer Spit, looking across the bay toward Seldovia, you can almost feel the character of the place calling you home.",date:"Mar 7, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/post-5.jpg"},
- {title:"Week 10 of 2026 in Seldovia carries the feeling of a season gently beginning to turn.",excerpt:"Winter still shapes the landscape, but the light feels brighter and the days a little longer, hinting at the quiet approach of change.",date:"Mar 6, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/post-6.jpg"},
- {title:"A big thank you to Seldovia Village Tribe for providing such a beautiful fitness center for our community.",excerpt:"Having a warm, welcoming place to walk on the treadmill, lift weights, or stretch it out on the mats makes all the difference during these long, cold winter days.",date:"Mar 6, 2026",read:"1 min",cat:"Community",img:"images/gazette/post-7.jpg"},
- {title:"Did you know your name often has a special meaning or history behind it?",excerpt:"Some names come from nature, some from family traditions, and others from different cultures around the world.",date:"Mar 5, 2026",read:"1 min",cat:"Community",img:"images/gazette/post-8.jpg"},
- {title:"March 2026 Photo Contest – “Color in Motion”",excerpt:"March is here, and with it comes longer days, warmer temps (fingers crossed), and all the vibrant energy of early spring in Seldovia!",date:"Mar 5, 2026",read:"1 min",cat:"Events",img:"images/gazette/post-9.jpg"},
+ {title:"Today we celebrate one of the most iconic landmarks in the world, the Eiffel Tower.",excerpt:"Built in 1887, it started as a bold experiment and became a global symbol of romance, art, and human imagination reaching for the sky.",date:"Mar 31, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-03-31.jpg",body:`Today we celebrate one of the most iconic landmarks in the world, the Eiffel Tower. Built in 1887, it started as a bold experiment and became a global symbol of romance, art, and human imagination reaching for the sky.
+
+Even from a small coastal town in Alaska, it's easy to appreciate how landmarks whether towering steel or a quiet harbor connect people to memory, culture, and a sense of wonder. Sometimes it's not about where you are, but how a place makes you feel.`},
+ {title:"We are thankful for the traveling PAs, RNs, and doctors that serve us here in Seldovia.",excerpt:"Even though we don't have doctors living full time in town, we still know how important they are when the need arises!",date:"Mar 30, 2026",read:"1 min",cat:"Community",img:"",body:`We are thankful for the traveling PAs, RNs, and doctors that serve us here in Seldovia. Even though we don't have doctors living full time in town, we still know how important they are when the need arises!
+
+Especially in Seldovia, where we are off the road system and medical care often means traveling, waiting, and trusting someone far from home.
+
+Doctors in Homer, Soldotna or even Anchorage become a vital part of life for Seldovians. They're the ones families rely on when something can't be handled locally, when weather delays travel, or when care requires a long trip by boat or plane. Their work reaches beyond clinic walls and into places like ours, where access isn't always easy but the need is just as real.
+
+If a doctor has helped you or your family, near or far, today is a good day to say thank you.`},
+ {title:"Living in Seldovia isn't always easy to explain to people who haven't experienced it firsthand.",excerpt:"From the outside, it can seem quiet maybe even too quiet. Limited stores, fewer events, and a slower pace might make some wonder if life here is “boring.”",date:"Mar 28, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-03-28.jpg",body:`Living in Seldovia isn't always easy to explain to people who haven't experienced it firsthand. From the outside, it can seem quiet maybe even too quiet. Limited stores, fewer events, and a slower pace might make some wonder if life here is "boring."
+
+What may look like "not much going on" is actually a lifestyle built around simplicity, awareness, and adaptability.
+
+What some might call boring is often just unfamiliar.
+
+Without the typical entertainment options found in larger towns, residents create their own ways of enjoying life—through time outdoors, community interactions, hobbies, and shared experiences. Social life is less about variety and more about meaning.
+
+Living in Seldovia isn't about constant activity or endless options. It's about connection, resilience, and appreciating a lifestyle that's closely tied to both people and place.
+
+So is Seldovia boring or misunderstood?
+
+For many, it's simply misunderstood.`},
+ {title:"In Seldovia, a hat isn't just an accessory, it's part of daily life.",excerpt:"One minute it's blocking the sun off the harbor, the next it's keeping the wind out of your ears or the rain off your face.",date:"Mar 27, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-03-27.jpg",body:`In Seldovia, a hat isn't just an accessory, it's part of daily life. One minute it's blocking the sun off the harbor, the next it's keeping the wind out of your ears or the rain off your face.
+
+So grab your favorite hat today and wear it proudly! 🧢`},
+ {title:"Living or spending time here isn't just about the views, it's about the experience of being surrounded by wild beauty.",excerpt:"It invites you to pause, reflect, and truly take it all in.",date:"Mar 26, 2026",read:"1 min",cat:"Living Here",img:"",body:`Living or spending time here isn't just about the views, it's about the experience of being surrounded by wild beauty that invites you to pause, reflect, and truly take it all in.`},
+ {title:"Mariah and John! Thank you - what a pleasure it was for me to help your sweet family into your first home!",excerpt:"I just LOVE that you grew up here, and now find that Seldovia is your “full time home” to raise your little girl!",date:"Mar 25, 2026",read:"1 min",cat:"Kind Words",img:"images/gazette/2026-03-25.jpg",body:`Mariah and John! Thank you - what a pleasure it was for me to help your sweet family into your first home! I just LOVE that you grew up here, and now find that Seldovia is your "full time home" to raise your little girl!
+
+I'm excited to see you make this cute house your own - you are both very hard workers and have great ideas and the energy to love on that property!
+
+I see sunny gardens and full swing sets with lots of laughter in your future! Thank you for your kind testimonial! 💗`},
+ {title:"In a small coastal town like Seldovia, life has a way of keeping your inner child alive.",excerpt:"From the frozen winters where kids and adults race down snowy hills on sleds, to the rainy days where puddles invite a little jumping and splashing.",date:"Mar 22, 2026",read:"1 min",cat:"Living Here",img:"",body:`In a small coastal town like Seldovia, life has a way of keeping your inner child alive. From the frozen winters where kids and adults race down snowy hills on sleds, to the rainy days where puddles invite a little jumping and splashing, there's always a moment to embrace pure, playful joy.
+
+Today, we challenge you to do something silly that makes you feel like a kid again. Maybe it's building a snow fort, skipping rocks by the lagoon, or even dancing on the boardwalk like no one's watching. Whatever it is, let it remind you of the simple happiness that comes from being carefree.`},
+ {title:"Standing tall in the snowfall!",excerpt:"Living in Seldovia gives you the chance to witness and often get close-up views of this beautiful creature!",date:"Mar 21, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-03-21.jpg",body:`Standing tall in the snowfall! Living in Seldovia gives you the chance to witness and often get close-up views of this beautiful creature! 🦅❄️`},
+ {title:"SBE Lifeguard Certification Class",excerpt:"The Seldovia Lifeguard Certification Class is such an important opportunity.",date:"Mar 21, 2026",read:"1 min",cat:"Community",img:"",body:`SBE Lifeguard Certification Class
+
+The Seldovia Lifeguard Certification Class is such an important opportunity. Here's hoping Jen gets a full roster of participants ready to step up and help keep our pool staffed and safe.
+
+Training local lifeguards means more swim time, more programs, and peace of mind for families. If you've considered it, even just a bit, this could be your moment to serve the community in a meaningful way.
+
+Thank you to all those who already volunteer at our pool!!!`},
+ {title:"In Seldovia, spring doesn't arrive all at once, it tiptoes in.",excerpt:"The snow softens, (or it blasts us once more just to let us know that winter is not releasing its grasp quite yet!) daylight lingers a little longer.",date:"Mar 20, 2026",read:"1 min",cat:"Living Here",img:"",body:`In Seldovia, spring doesn't arrive all at once, it tiptoes in. The snow softens, (or it blasts us once more just to let us know that winter is not releasing its grasp quite yet!) daylight lingers a little longer, and the harbor starts to look more awake than asleep.
+
+There are more and more patches of bare ground, less and less ice and a few brave birds returning, or that familiar sound of water moving freely again.
+
+The first day of spring reminds us that change is coming, slowly but surely, and that brighter days are ahead for our little Alaska town by the water.`},
+ {title:"8 eggs today! Even in the snow!",excerpt:"8 eggs today! Even in the snow! Good girls",date:"Mar 20, 2026",read:"1 min",cat:"Living Here",img:"",body:`8 eggs today! Even in the snow! Good girls 🖤❤️👍`},
+ {title:"Linwood BINGO – A Fun Night Out",excerpt:"BINGO at the Linwood Bar & Grill is one of those simple, classic Seldovia nights that brings everyone together.",date:"Mar 19, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-03-19.jpg",body:`Linwood BINGO – A Fun Night Out
+
+BINGO at the Linwood Bar & Grill is one of those simple, classic Seldovia nights that brings everyone together.
+
+It's a chance to get out of the house, share some laughs, and maybe even win a sweet prize. If you haven't gone in a while, grab a friend and join the fun.
+
+Community happens when we show up. It's true!!! See you there!`},
+ {title:"Whether you're searching for your next property or keeping an eye on the market, everything is now in one convenient place.",excerpt:"Browse anytime and stay up to date with what's available!",date:"Mar 18, 2026",read:"1 min",cat:"Real Estate",img:"",body:`Whether you're searching for your next property or keeping an eye on the market, everything is now in one convenient place. Browse anytime and stay up to date with what's available! 👉
+www.SeldoviaProperty.com`},
+ {title:"Today isn't just about green and gold it's about celebrating joy, kindness, and a little bit of luck in our lives.",excerpt:"Take a moment to share a smile, spread some cheer, and enjoy the magic of the day.",date:"Mar 17, 2026",read:"1 min",cat:"Community",img:"",body:`Today isn't just about green and gold it's about celebrating joy, kindness, and a little bit of luck in our lives.
+
+Take a moment to share a smile, spread some cheer, and enjoy the magic of the day. 🌈
+
+Wishing everyone a lucky and happy St. Patrick's Day!`},
+ {title:"Seldovia truly shows up for kids, especially in the winter months.",excerpt:"From outdoor adventure days (just bring your gear!) to hands-on fun! They are making granola bars, decorating cupcakes, planting bulbs.",date:"Mar 15, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-03-15.jpg",body:`Seldovia truly shows up for kids, especially in the winter months. From outdoor adventure days (just bring your gear!) to hands-on fun! They are making granola bars, decorating cupcakes, planting bulbs, creating gnome shamrock planters, crafting seed bombs, whipping up edible dirt cups, and making rainbow twirlys! There is always something creative and active happening.
+
+These activities don't just fill an afternoon; they build skills, friendships, and confidence.
+
+A heartfelt thank you to the organizers and volunteers who plan, prep, and clean up so our kiddos have safe, engaging ways to learn and play.
+
+Parents, please take advantage of it! Our community invests in its kids, and it shows.`},
+ {title:"Today, we invite you to write your story whether it's a memory, a dream, or a reflection on life in our Alaska coastal town.",excerpt:"Share the tales that make you who you are, and celebrate the experiences that connect us all!",date:"Mar 14, 2026",read:"1 min",cat:"Community",img:"",body:`Today, we invite you to write your story whether it's a memory, a dream, or a reflection on life in our Alaska coastal town.
+
+Share the tales that make you who you are, and celebrate the experiences that connect us all!`},
+ {title:"In Seldovia, working moms wear many hats and often all in the same day.",excerpt:"It's early mornings with the tide schedule in mind, kids bundled up before school boats or boardwalk walks, and workdays shaped by weather, community needs, and family life all at once.",date:"Mar 12, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/post-0.jpg",body:`It's early mornings with the tide schedule in mind, kids bundled up before school boats or boardwalk walks, and workdays shaped by weather, community needs, and family life all at once.
+
+National Working Moms Day is a moment to recognize the strength it takes to do it all in a remote town, where support often comes from neighbors and success is measured not just in productivity, but in care, connection, and commitment.
+
+To the working moms of Seldovia: your hard work keeps families strong and this town moving forward. 🌸 Thank you for all you do as you are often the unsung heroes!`},
+ {title:"Author Event – “My Heart is Good” with Josh Wisniewski",excerpt:"We love celebrating local talent, and Seldovia is full of it.",date:"Mar 11, 2026",read:"1 min",cat:"Events",img:"images/gazette/2026-03-11.jpg",body:`Author Event – "My Heart is Good" with Josh Wisniewski
+
+https://tinyurl.com/2jahp5hn
+
+We love celebrating local talent, and Seldovia is full of it. The author event featuring My Heart is Good with Josh Wisniewski is a great reminder of how many artists, writers, and musicians call this place home.
+
+When we attend these events, we're not just supporting one person, we're supporting a culture of creativity in our town. Let's keep showing up for our own.`},
+ {title:"New Library Hours – Thank You Volunteers!",excerpt:"We're so grateful for the volunteers who keep our library open and thriving.",date:"Mar 10, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-03-10.jpg",body:`New Library Hours – Thank You Volunteers!
+
+We're so grateful for the volunteers who keep our library open and thriving. With expanded hours, it's even easier to stop in, browse the shelves, check out a movie, or discover something new to listen to.
+
+Our little library is such a gift! Welcoming, well-loved, and full of resources for every age. Thank you to everyone who gives their time to make it possible.`},
+ {title:"National Napping Day is a reminder that slowing down is just as important as showing up.",excerpt:"Sometimes the best way to reset isn't coffee… it's a blanket, a window view of the harbor, and a few peaceful minutes of doing nothing at all.",date:"Mar 9, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/post-3.jpg",body:`National Napping Day is a reminder that slowing down is just as important as showing up. Sometimes the best way to reset isn't coffee… it's a blanket, a window view of the harbor, and a few peaceful minutes of doing nothing at all.
+
+So if today gives you an excuse to close your eyes and listen to the sounds of the water, take it. You've earned it.`},
+ {title:"March 8 marks the start of Daylight Saving Time.",excerpt:"At 2:00 A.M., the clocks jump ahead one hour so don't forget to spring forward.",date:"Mar 8, 2026",read:"1 min",cat:"Community",img:"images/gazette/post-4.jpg",body:`March 8 marks the start of Daylight Saving Time. At 2:00 A.M., the clocks jump ahead one hour so don't forget to spring forward.
+
+Longer, brighter evenings, more time to enjoy the outdoors, and a gentle reminder that spring is on its way! Hooray!`},
+ {title:"Living here means learning from the water, the weather, and the quiet strength of a coastal town that stands beautifully against the elements.",excerpt:"And from this view on the Homer Spit, looking across the bay toward Seldovia, you can almost feel the character of the place calling you home.",date:"Mar 7, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/post-5.jpg",body:`Living here means learning from the water, the weather, and the quiet strength of a coastal town that stands beautifully against the elements.
+
+And from this view on the Homer Spit, looking across the bay toward Seldovia, you can almost feel the character of the place calling you home. 🌊✨`},
+ {title:"A big thank you to Seldovia Village Tribe for providing such a beautiful fitness center for our community.",excerpt:"Having a warm, welcoming place to walk on the treadmill, lift weights, or stretch it out on the mats makes all the difference during these long, cold winter days.",date:"Mar 6, 2026",read:"1 min",cat:"Community",img:"images/gazette/post-7.jpg",body:`A big thank you to Seldovia Village Tribe for providing such a beautiful fitness center for our community. Having a warm, welcoming place to walk on the treadmill, lift weights, or stretch it out on the mats makes all the difference during these long, cold winter days.
+
+If you've been meaning to get moving, this is your nudge… it's right here in town and ready for you. We're lucky to have it!`},
+ {title:"Did you know your name often has a special meaning or history behind it?",excerpt:"Some names come from nature, some from family traditions, and others from different cultures around the world.",date:"Mar 5, 2026",read:"1 min",cat:"Community",img:"images/gazette/post-8.jpg",body:`Did you know your name often has a special meaning or history behind it? Some names come from nature, some from family traditions, and others from different cultures around the world.
+
+Does your name's meaning match your personality? We'd love to hear!
+
+My 3 children's names mean Handsome, Poet, From the Sea! What are the meanings of your kids names?`},
+ {title:"March 2026 Photo Contest – “Color in Motion”",excerpt:"March is here, and with it comes longer days, warmer temps (fingers crossed), and all the vibrant energy of early spring in Seldovia!",date:"Mar 5, 2026",read:"1 min",cat:"Events",img:"images/gazette/post-9.jpg",body:`March 2026 Photo Contest – "Color in Motion"
+
+March is here, and with it comes longer days, warmer temps (fingers crossed), and all the vibrant energy of early spring in Seldovia!`},
+ {title:"Walk along the quiet docks, watch the waves ripple under the sunset, and feel the gentle rhythm of life here in Seldovia.",excerpt:"This is a place where your soul can rest, where every moment reminds you of home.",date:"Mar 4, 2026",read:"1 min",cat:"Living Here",img:"",body:`Walk along the quiet docks, watch the waves ripple under the sunset, and feel the gentle rhythm of life here in Seldovia. This is a place where your soul can rest, where every moment reminds you of home, and where nature and community come together in perfect harmony. 🦅❤️`},
+ {title:"Answer: Wooden boardwalks!",excerpt:"Back in the day, this coastal town relied on wooden boardwalks instead of paved streets.",date:"Mar 3, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-03-03.jpg",body:`Answer: Wooden boardwalks!
+
+Back in the day, this coastal town relied on wooden boardwalks instead of paved streets. These walkways connected homes, shops, and docks, allowing residents to move around easily along the waterfront.
+
+Fun fact: Some of Seldovia's boardwalks are still in use today, preserving a piece of the town's unique history and charm!`},
+ {title:"Dr. Seuss, born Theodor Seuss Geisel, was an American author and illustrator famous for his whimsical rhymes.",excerpt:"In our little Alaska coastal town, imagination is everywhere, on the boardwalk, by the lagoon, and even in the snow!",date:"Mar 2, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-03-02.jpg",body:`Dr. Seuss, born Theodor Seuss Geisel, was an American author and illustrator famous for his whimsical rhymes, imaginative characters, and playful stories that have delighted children and adults around the world for generations.
+
+In our little Alaska coastal town, imagination is everywhere, on the boardwalk, by the lagoon, and even in the snow!
+
+💡 Question for you: If you could spend a day in a Dr. Seuss world here in Seldovia, what kind of adventure would you have?`},
+ {title:"With boardwalks full of stories and eagles in the sky, Seldovia shows us that freedom can be simple.",excerpt:"With boardwalks full of stories and eagles in the sky, Seldovia shows us that freedom can be simple. Happy March!",date:"Mar 1, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-03-01.jpg",body:`With boardwalks full of stories and eagles in the sky, Seldovia shows us that freedom can be simple. Happy March! 🌿🦅`},
  {title:"Just another beautiful sunrise over the Seldovia lagoon.",excerpt:"Just another beautiful sunrise over the Seldovia lagoon.",date:"Feb 28, 2026",read:"1 min",cat:"Living Here",img:"",body:`Just another beautiful sunrise over the Seldovia lagoon. 🌊`},
  {title:"In Seldovia, getting around isn't just about going from point A to point B, it's about reading the world around you.",excerpt:"A child trudges across the icy roads, watching for black ice and wearing good boots with traction is important!",date:"Feb 27, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-02-27.jpg",body:`In Seldovia, getting around isn't just about going from point A to point B, it's about reading the world around you.
 
