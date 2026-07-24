@@ -264,7 +264,25 @@ Even the same walk down the street or dock never feels identical twice. The tide
 ];
 // Real "Seldovia Days" photos pulled from the Flywheel gallery (Jenny & Melody Hall).
 const GALLERY=[{h:300,cap:"Sunset over the bay",img:"images/gallery/g-1.jpg"},{h:300,cap:"Floatplane off the bay",img:"images/gallery/g-2.jpg"},{h:300,cap:"Red salmon riches",img:"images/gallery/g-3.jpg"},{h:300,cap:"Seldovia harbor",img:"images/gallery/g-4.jpg"},{h:300,cap:"Outside Beach stream",img:"images/gallery/g-5.jpg"},{h:300,cap:"Kenai reds",img:"images/gallery/g-6.jpg"},{h:300,cap:"Enchanted woods",img:"images/gallery/g-7.jpg"},{h:300,cap:"Barabara Creek",img:"images/gallery/g-8.jpg"},{h:300,cap:"MacDonald Spit",img:"images/gallery/g-9.jpg"},{h:300,cap:"Seldovia rainbow",img:"images/gallery/g-10.jpg"},{h:300,cap:"Ferry day",img:"images/gallery/g-11.jpg"},{h:300,cap:"Through the trees",img:"images/gallery/g-12.jpg"}];
-const EVENTS=[{d:"2026-07-15",t:"09:00",title:"Farmers & Makers Market",where:"Seldovia Bay Pavilion",cat:"Market",dur:"til 1 PM"},{d:"2026-07-15",t:"18:30",title:"Open Mic on the Boardwalk",where:"Linwood Bar & Grill",cat:"Music",dur:"til late"},{d:"2026-07-17",t:"10:00",title:"Otterbahn Trail Cleanup",where:"Trailhead by the school",cat:"Volunteer",dur:"2 hrs"},{d:"2026-07-18",t:"08:00",title:"Halibut Derby — Weigh-in",where:"City Dock",cat:"Fishing",dur:"daily"},{d:"2026-07-19",t:"19:00",title:"Community Potluck & Bonfire",where:"Outside Beach",cat:"Community",dur:"til dusk"},{d:"2026-07-21",t:"17:30",title:"City Council Meeting",where:"Seldovia City Hall",cat:"Civic",dur:"1.5 hrs"},{d:"2026-07-22",t:"11:00",title:"Kids' Tide-Pool Walk",where:"Outside Beach",cat:"Family",dur:"90 min"},{d:"2026-07-24",t:"18:00",title:"Gallery Night — Local Artists",where:"Seldovia Arts Council",cat:"Arts",dur:"til 9 PM"},{d:"2026-07-26",t:"09:30",title:"Sunday Kayak Paddle",where:"Small-Boat Harbor",cat:"Outdoors",dur:"3 hrs"},{d:"2026-07-28",t:"12:00",title:"Senior Lunch & Cards",where:"SVT Community Room",cat:"Community",dur:"2 hrs"},{d:"2026-07-31",t:"18:00",title:"End-of-Month Fish Fry",where:"Harbor Pavilion",cat:"Food",dur:"til 8 PM"},{d:"2026-08-01",t:"09:00",title:"Farmers & Makers Market",where:"Seldovia Bay Pavilion",cat:"Market",dur:"til 1 PM"}];
+// REAL 2026 Seldovia events — sourced from the community news feed on seldovia.com
+// (incl. the "2026 Summer Events in Seldovia" roundup). Times shown only where confirmed.
+const EVENTS=[
+ {d:"2026-05-22",t:"",title:"Human Powered Fishing Derby",where:"Seldovia Harbor",cat:"Fishing",dur:"May 22–24"},
+ {d:"2026-05-24",t:"",title:"Blessing of the Fishermen & Fleet",where:"Seldovia Harbor",cat:"Community",dur:""},
+ {d:"2026-06-01",t:"",title:"Seldovia's Chinook Challenge",where:"Seldovia",cat:"Fishing",dur:"Jun 1 – Jul 3"},
+ {d:"2026-06-14",t:"",title:"Flag Day Breakfast Potluck",where:"Seldovia",cat:"Community",dur:""},
+ {d:"2026-06-18",t:"",title:"Summer Solstice Music Festival",where:"Seldovia",cat:"Music",dur:"Jun 18–20"},
+ {d:"2026-07-03",t:"",title:"Independence Day Activities",where:"Downtown Seldovia",cat:"Community",dur:"Jul 3–5"},
+ {d:"2026-07-04",t:"",title:"Salmon Shuffle 5K",where:"Seldovia",cat:"Outdoors",dur:""},
+ {d:"2026-07-17",t:"",title:"Songs on the Slough",where:"Seldovia Slough",cat:"Music",dur:"Jul 17–18"},
+ {d:"2026-07-24",t:"",title:"Seldovia Fly-In 2026",where:"Seldovia Airport",cat:"Festival",dur:"Jul 24–26"},
+ {d:"2026-07-24",t:"",title:"Teen Night — Fish Fry & Finger Darts",where:"Seldovia Bible Chapel",cat:"Youth",dur:"Evening"},
+ {d:"2026-07-25",t:"14:30",title:"Pier One Theatre — The Frogs",where:"Clam Shell Stage",cat:"Arts",dur:""},
+ {d:"2026-07-25",t:"",title:"Jakolof Bay 10-Miler",where:"Jakolof Bay Road",cat:"Outdoors",dur:""},
+ {d:"2026-07-27",t:"17:00",title:"City Council Work Session",where:"Council Chambers, 260 Seldovia St",cat:"Civic",dur:""},
+ {d:"2026-08-08",t:"",title:"Salmonberry Delights Cooking Competition",where:"Seldovia",cat:"Food",dur:""},
+ {d:"2026-08-30",t:"",title:"Guitar Master's Concert",where:"Seldovia",cat:"Music",dur:""}
+];
 // Jenny's active listings (real). Photos in images/listings/ (optimized). Full detail via listing.html?id=slug.
 const LISTINGS=[
  {slug:"230-kachemak-st", addr:"230 Kachemak St", city:"Seldovia, AK 99663", price:"$475,000", beds:"3", baths:"1.5", sqft:"1,122", status:"For Sale", img:"images/listings/230-kachemak-st.jpg",
@@ -438,9 +456,22 @@ const DIRECTORY=[
  {name:"United States Post Office — Seldovia",cat:"Community",phone:"(907) 234-7831",spon:false},
  {name:"Winter Watch",cat:"Services",phone:"(907) 406-0775",url:"https://www.SeldoviaWinterWatch.com",spon:false}
 ];
-const NOTES=[{cat:"Free",title:"Free firewood — you haul",body:"Spruce rounds from a downed tree near Jakolof Bay Rd. First come, first served.",by:"The Hansens",when:"Jul 12"},{cat:"Lost & Found",title:"Found: blue rain jacket",body:"Left at the ferry terminal bench. Describe it and it's yours — check at the General Store.",by:"Terminal staff",when:"Jul 11"},{cat:"Wanted",title:"Ride-share to Homer Sat",body:"Two folks + groceries looking to split the water-taxi Saturday morning. Text the board.",by:"Mara & Jo",when:"Jul 10"},{cat:"For Sale",title:"14' aluminum skiff",body:"Solid little boat, 9.9 hp, trailer included. Great for calm-day crossings.",by:"D. Whitfield",when:"Jul 9"},{cat:"Volunteer",title:"Trail crew needs hands",body:"Otterbahn cleanup Friday at 10. Gloves and cocoa provided — kids welcome!",by:"Trails Committee",when:"Jul 8"},{cat:"Announcement",title:"Library summer hours",body:"Open Tue–Sat, 11–5 through August. New books in from the Homer exchange.",by:"Seldovia Library",when:"Jul 7"}];
-const TESTIMONIALS=[{name:"Richard Duffy",role:"Visitor from Anchorage",c:"#663015",t:"We found the ferry times, a cabin, and a kayak tour all in one afternoon. Coming back every summer now."},{name:"Dana Sanders",role:"Seldovia local",c:"#DF1284",t:"Finally a calendar you can actually scroll. I check the bulletin board every morning with my coffee."},{name:"Marta Ivanoff",role:"Gallery owner",c:"#7f8a6b",t:"Listing my gallery here brought in real foot traffic. It feels like the whole town in one place."},{name:"Tom & Lily Reyes",role:"New homeowners",c:"#a8683a",t:"We bought our first cabin on the bay through the site. Warm, honest, and genuinely helpful."}];
-const SPONSORS=[{name:"Boardwalk Hotel",cat:"Lodging",c:"#663015"},{name:"Kachemak Charters",cat:"Fishing",c:"#DF1284"},{name:"Tide Pool Café",cat:"Food & Drink",c:"#7f8a6b"},{name:"Bay Fuel & Marine",cat:"Marine",c:"#4f5a3d"},{name:"Otter Cove Lodge",cat:"Lodging",c:"#a8683a"},{name:"Slough Arts",cat:"Arts",c:"#b0357e"}];
+// REAL community announcements — sourced from the seldovia.com community news feed.
+const NOTES=[
+ {cat:"Announcement",title:"Seldovia Booster Club Annual Auction",body:"The Seldovia Sea Otters Booster Club invites the community to an evening of great food, exciting auctions, and a cash raffle supporting local middle and high school students.",by:"Sea Otters Booster Club",when:"Jul 23"},
+ {cat:"Civic",title:"City Council Work Session — July 27",body:"Residents are invited to the Council Work Session on Monday, July 27 at 5:00 p.m., in person at the Council Chambers, 260 Seldovia Street.",by:"City of Seldovia",when:"Jul 22"},
+ {cat:"Class",title:"Kuspuk Sewing Class",body:"Learn to sew a traditional Kuspuk in a three-day class led by Angel Oliveira. New sewers and experienced hands are both welcome.",by:"Community Class",when:"Jul 20"},
+ {cat:"Announcement",title:"Susan B. English Community Pool — summer schedule",body:"Lap swim, water aerobics, family swim, and free community swim sessions run throughout the week all summer long.",by:"Susan B. English School",when:"Jul 15"},
+ {cat:"Jobs",title:"SVT Health & Wellness is hiring",body:"Healthcare professionals wanted for positions in Seldovia and Homer.",by:"Seldovia Village Tribe",when:"Jul 10"},
+ {cat:"Notice",title:"Road closure — C Street",body:"C Street is closed to through traffic. Please plan an alternate route.",by:"City of Seldovia",when:"Jul 7"}
+];
+// Intentionally EMPTY — the previous quotes were invented, and fabricated reviews on a
+// broker's site are a liability. Add Jenny's REAL client testimonials here (she has them
+// in her posts and reviews); the section stays hidden until then.
+const TESTIMONIALS=[];
+// REAL Seldovia businesses. These are not paid sponsors — the strip spotlights local
+// businesses. Swap in genuine sponsors once Jenny sells that space.
+const SPONSORS=[{name:"Boardwalk Hotel",cat:"Lodging",c:"#663015"},{name:"Jack and Aiva's",cat:"Restaurant",c:"#DF1284"},{name:"Thyme on the Boardwalk",cat:"Dining",c:"#7f8a6b"},{name:"Smokey Bay Air",cat:"Air Taxi",c:"#4f5a3d"},{name:"Crabpot Grocery",cat:"Grocery",c:"#a8683a"},{name:"Alaska Free Diver",cat:"Charters & Tours",c:"#b0357e"},{name:"Mako's Water Taxi",cat:"Water Taxi",c:"#1d6b78"},{name:"Seldovia Fishing Adventures",cat:"Fishing Charters",c:"#2c4a3a"}];
 
 /* ============================================================ RENDER (each guarded — runs only if its container exists on this page) ============================================================ */
 function stars(r){const full=Math.round(r); return "★★★★★".slice(0,full)+"☆☆☆☆☆".slice(0,5-full);}
@@ -646,10 +677,14 @@ if($("#dirList")){
 if($("#board")) $("#board").innerHTML=NOTES.map(n=>`<article class="note"><span class="n-cat">${esc(n.cat)}</span><h4>${esc(n.title)}</h4><p>${esc(n.body)}</p><div class="n-foot"><span>${esc(n.by)}</span><span>${esc(n.when)}</span></div></article>`).join("");
 
 // testimonials
-if($("#quoteGrid")) $("#quoteGrid").innerHTML=TESTIMONIALS.map(t=>`<div class="quote"><span class="qmark">&rdquo;</span><div class="quote-head"><span class="avatar" style="background:${t.c}">${esc(t.name[0])}</span><span><b>${esc(t.name)}</b><span>${esc(t.role)}</span></span></div><p>${esc(t.t)}</p></div>`).join("");
+// Renders only when there are REAL testimonials; the section hides itself while empty.
+if($("#quoteGrid")){
+  if(!TESTIMONIALS.length){ const sec=$("#quoteGrid").closest("section"); if(sec) sec.style.display="none"; }
+  else $("#quoteGrid").innerHTML=TESTIMONIALS.map(t=>`<div class="quote"><span class="qmark">&rdquo;</span><div class="quote-head"><span class="avatar" style="background:${t.c}">${esc(t.name[0])}</span><span><b>${esc(t.name)}</b><span>${esc(t.role)}</span></span></div><p>${esc(t.t)}</p></div>`).join("");
+}
 
 // sponsors
-if($("#sponsorTrack")){const spHTML=SPONSORS.map(s=>`<a class="sponsor" href="contact.html" aria-label="${esc(s.name)} — ${esc(s.cat)}"><span class="logo" style="background:${s.c}">${esc(s.name[0])}</span><span class="s-name">${esc(s.name)}</span><span class="s-cat">${esc(s.cat)}</span></a>`).join(""); $("#sponsorTrack").innerHTML=spHTML+spHTML;}
+if($("#sponsorTrack")){const spHTML=SPONSORS.map(s=>`<a class="sponsor" href="phone-book.html" aria-label="${esc(s.name)} — ${esc(s.cat)}"><span class="logo" style="background:${s.c}">${esc(s.name[0])}</span><span class="s-name">${esc(s.name)}</span><span class="s-cat">${esc(s.cat)}</span></a>`).join(""); $("#sponsorTrack").innerHTML=spHTML+spHTML;}
 
 // home photo gallery (auto-scroll)
 const galFig=(g,i)=>`<figure class="gallery-photo" tabindex="0" data-idx="${i}"><img src="${g.img}" alt="${esc(g.cap)}" loading="lazy" width="600" height="450"><figcaption>${esc(g.cap)}</figcaption></figure>`;
@@ -682,7 +717,7 @@ const MONTHS=["January","February","March","April","May","June","July","August",
 const DOW=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 const parseD=s=>{const[y,m,d]=s.split("-").map(Number); return{y,m:m-1,d};};
 const fmtDayLabel=s=>{const{y,m,d}=parseD(s); const dt=new Date(y,m,d); return `${DOW[dt.getDay()]}, ${MONTHS[m]} ${d}`;};
-const fmt12=t=>{let[h,mi]=t.split(":").map(Number); const ap=h>=12?"PM":"AM"; h=h%12||12; return `${h}:${String(mi).padStart(2,"0")} ${ap}`;};
+const fmt12=t=>{if(!t)return "All day"; let[h,mi]=t.split(":").map(Number); const ap=h>=12?"PM":"AM"; h=h%12||12; return `${h}:${String(mi).padStart(2,"0")} ${ap}`;};
 if($("#agendaScroll")){
   const byDay={}; EVENTS.forEach(e=>{(byDay[e.d]??=[]).push(e);});
   $("#agendaScroll").innerHTML=Object.keys(byDay).sort().map(day=>`<div class="agenda-day">${esc(fmtDayLabel(day))}</div>
@@ -698,7 +733,7 @@ if($("#agendaScroll")){
   $("#mgBody").innerHTML=cells;
   const setCalView=v=>{const ag=v==="agenda"; $("#viewAgenda").setAttribute("aria-pressed",ag); $("#viewMonth").setAttribute("aria-pressed",!ag);
     $("#agenda").classList.toggle("hide",!ag); $("#monthgrid").classList.toggle("show",!ag);
-    $("#calHint").innerHTML=ag?'Upcoming events · <span class="sample-flag">sample feed</span>':'July 2026 · <span class="sample-flag">sample feed</span>';};
+    $("#calHint").innerHTML=ag?'Upcoming events in Seldovia':'July 2026';};
   $("#viewAgenda").addEventListener("click",()=>setCalView("agenda"));
   $("#viewMonth").addEventListener("click",()=>setCalView("month"));
 }
