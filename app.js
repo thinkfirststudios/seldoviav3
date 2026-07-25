@@ -897,6 +897,18 @@ I was genuinely honored (and a tad nervous) when they asked me to join the "shar
 Over time, seasonal owners begin to see themselves not as visitors, but as part of the community. They learn the names of neighbors, volunteer for local projects, and invest not just in property, but in the people and the town itself. The quiet pride of contributing, of being recognized as part of Seldovia's fabric, transforms a temporary escape into a lifelong home.
 
 In Seldovia, summer may be fleeting, but the connections it creates are enduring. Many who once came for just a few months find that leaving is never truly an option—the town, the people, and the way of life have become a part of them.`},
+ {title:"OK - dates are crazy!",excerpt:"The ACTUAL due date is February 15, 2026 for the Property Tax exemption application with the Kenai Peninsula Borough.",date:"Feb 10, 2026",read:"1 min",cat:"Real Estate",img:"images/gazette/2026-02-10_2.jpg",body:`OK - dates are crazy!
+
+LOL!  The ACTUAL due date is February 15, 2026 for the Property Tax exemption application with the Kenai Peninsula Borough.
+
+However, February 15 is a SUNDAY, so they pushed it to the 16th (which is why I had that noted on my card for you all) but the 16th is President's Day and the borough is CLOSED!  So, the actual drop dead due date is February 17 by 5pm.
+
+But hey, don't procrastinate - just get it done today! 🙂.
+
+I wanted to confirm the date situation because I did have someone ask me - and so I talked to Cynthia at the KPB and she confirmed that if you must wait til the last minute - your application has to be submitted online by 5pm on the 17th or if mailed, it must be postmarked by the 17th!
+
+All the info on the exemptions, including Senior and Disabled Veteran and Volunteer Firefighter exemptions are on this page:
+https://www.kpb.us/.../assessing-forms/exemptions-deferments`},
  {title:"Today is the perfect excuse to enjoy your favorite slice (or two… or three 😉).",excerpt:"So grab a slice, share it with someone you love, and make today extra delicious!",date:"Feb 9, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-02-09.jpg",body:`Today is the perfect excuse to enjoy your favorite slice (or two… or three 😉).
 
 So grab a slice, share it with someone you love, and make today extra delicious!
