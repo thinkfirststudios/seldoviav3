@@ -1064,7 +1064,7 @@ Errands are carefully planned, shared, and swapped. People trade chores for meal
 
 It's in these small, shared acts planning, helping, connecting that the heart of the community shines brightest. ❄️💛`},
  {title:"How are you spending these chilly days in Seldovia?",excerpt:"How are you spending these chilly days in Seldovia?",date:"Dec 28, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-12-28.jpg",body:`How are you spending these chilly days in Seldovia?`},
- {title:"It doesn't happen often at all here in Seldovia, but when the harbor freezes, everything slows down.",excerpt:"Living through a frozen harbor teaches patience in a way few things can.",date:"Dec 27, 2025",read:"1 min",cat:"Living Here",img:"",body:`It doesn't happen often at all here in Seldovia, but when the harbor freezes, everything slows down.  There was plenty of ice in the harbor last week, but it has already melted, or moved on and we're clear again!
+ {title:"It doesn't happen often at all here in Seldovia, but when the harbor freezes, everything slows down.",excerpt:"Living through a frozen harbor teaches patience in a way few things can.",date:"Dec 27, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-12-26.jpg",body:`It doesn't happen often at all here in Seldovia, but when the harbor freezes, everything slows down.  There was plenty of ice in the harbor last week, but it has already melted, or moved on and we're clear again!
 
 But we are certainly affected by Homer's harbor icing over, Makos can't travel across and heading over out of Seldovia harbor leaves you nowhere to dock!
 
