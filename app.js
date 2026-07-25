@@ -251,6 +251,53 @@ From all of us, we wish you a safe, happy, and memorable Independence Day filled
  {title:"A coastal town that never looks the same twice",excerpt:"In Seldovia, Alaska, there's a familiar feeling you can't quite put into words — you think you know a place, and then it quietly changes on you.",date:"Jul 3, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-07-03_01.jpg",body:`In Seldovia, Alaska, there's a familiar feeling you can't quite put into words, you think you know a place, and then it quietly changes on you.
 
 Even the same walk down the street or dock never feels identical twice. The tide has shifted. The wind has changed direction. The light lands differently on the water. And somehow, that's enough to make it feel like a new place again. 🌱✨`},
+ {title:"175 Augustine North Avenue — 3,500+ sq. ft. waterfront home + iconic waterfront cabin",excerpt:"Successful turnkey Bed & Breakfast with nearly 90 feet of waterfront on the Seldovia Slough.",date:"Jul 3, 2026",read:"1 min",cat:"Real Estate",img:"images/gazette/2026-07-03_02.jpg",body:`📍 175 Augustine North Avenue, Seldovia, AK 99663
+🏡 3,500+ sq. ft. waterfront home + iconic waterfront cabin
+🛏️ 7 bedrooms | 🛁 6 bathrooms
+🏨 Successful turnkey Bed & Breakfast
+🌊 Nearly 90 feet of waterfront on the Seldovia Slough
+🏔️ Incredible views of the slough, Seldovia Bay, mountains & sunsets
+🚶 Easy walk to the harbor, Main Street, restaurants, shops & airport
+🛖 Waterfront cabin built over the water with wraparound deck
+🚣 Launch your kayak or paddleboard right from the beach below
+🚗 Oversized two-car garage & shop with plenty of room for Alaska gear
+🌿 Huge two-story greenhouse for flowers & vegetables
+🔥 Smokehouse with hot & cold smokers and prep area
+🚙 Large driveway with room for boats, trailers, RVs & guest parking
+🐟 Dedicated fish processing room with workspace & freezers
+🏘️ Waterfront Commercial Residential zoning with endless possibilities
+🎨 Furniture, furnishings & much of the equipment included (excluding personal items & select artwork)
+🌐 https://www.seldoviaproperty.com/
+📞 Call Jenny with Seldovia Property: (907) 406-0044`},
+ {title:"This charming cabin captured plenty of attention and hearts from the moment it hit the market!",excerpt:"After just 6 days, it's officially Pending! Congratulations to both the seller and the buyer!",date:"Jul 2, 2026",read:"1 min",cat:"Real Estate",img:"images/gazette/2026-07-02_01.jpg",body:`This charming cabin captured plenty of attention and hearts from the moment it hit the market! 🏡✨
+
+After just 6 days, it's officially Pending! Congratulations to both the seller and the buyer! 😊`},
+ {title:"Most of my clients didn't start as buyers.",excerpt:"They started as visitors, across the bay for a boat ride, a fun concert, Festival or for the 4th of July, or to see friends…",date:"Jul 2, 2026",read:"1 min",cat:"Real Estate",img:"images/gazette/2026-07-02_02.jpg",body:`Most of my clients didn't start as buyers.
+
+They started as visitors, across the bay for a boat ride, a fun concert, Festival or for the 4th of July, or to see friends…
+
+Just passing through, curious, they wanted to see what the place was about. And they went back home, back to their routine, back to everything that was waiting for them.
+
+Then a few weeks later sometimes a month, sometimes longer, my phone lights up.
+
+"I haven't been able to stop thinking about it. What's on the market in Seldovia?"
+
+I. Smile. Every. Time.`},
+ {title:"No roads in. No highway out. Just Kachemak Bay, the mountains, and a community of about 300 people who chose this place on purpose.",excerpt:"And that's the thing about Seldovia, nobody ends up here by accident.",date:"Jul 1, 2026",read:"1 min",cat:"Real Estate",img:"images/gazette/2026-07-01.jpg",body:`No roads in. No highway out. Just Kachemak Bay, the mountains, and a community of about 300 people who chose this place on purpose.
+
+And that's the thing about Seldovia, nobody ends up here by accident.
+
+People find us, fall in love with the quiet, the eagles, the way neighbors actually show up for each other, and they start asking a question they never expected to ask:
+
+What would it take to stay?
+
+I get to answer that question for a living.
+
+This town has a boardwalk with stories in every plank, and waters that have supported livelihoods and allowed recreational dreams to come true!
+
+Kachemak Bay right at your doorstep. Dark winters that somehow bring people closer together instead of pushing them apart.
+
+It's not the easiest life. But it might be the most meaningful one you'll ever choose.`},
  {title:"In Seldovia, Log Cabin Day fits right into the landscape and way of life.",excerpt:"Built from the land, shaped by hand, and made to last.",date:"Jun 28, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-06-28.jpg",body:`In Seldovia, Log Cabin Day fits right into the landscape and way of life.
 
 Built from the land, shaped by hand, and made to last.
