@@ -291,6 +291,7 @@ Imagine waking up to the tide right outside your window, coffee in hand, with no
 
 Check in the comments to view these beautiful listings!`},
  {title:"If someone visited Seldovia for one view only, where would you take them?",excerpt:"If someone visited Seldovia for one view only, where would you take them?",date:"Jun 24, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-06-24.jpg",body:`If someone visited Seldovia for one view only, where would you take them?`},
+ {title:"Ferry day! Hi there, Tusty",excerpt:"Ferry day! Hi there, Tusty",date:"Jun 23, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-06-23.jpg",body:`Ferry day! Hi there, Tusty 🚢👋`},
  {title:"Happy Father's Day from our little coastal corner of Alaska!",excerpt:"Where dads aren't just providers, they're storytellers, trail guides, fishermen, problem-solvers, and the calm in every storm.",date:"Jun 21, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-06-21.jpg",body:`Happy Father's Day from our little coastal corner of Alaska!
 
 Where dads aren't just providers, they're storytellers, trail guides, fishermen, problem-solvers, and the calm in every storm.
