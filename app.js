@@ -1063,6 +1063,7 @@ Thanks to the Swick and Giles families, see you at the fireworks show at the air
 Errands are carefully planned, shared, and swapped. People trade chores for meals or supplies. A walk down a snowy path often turns into a brief check-in with someone who could use a hand. Even the children's laughter on sledding hills reminds everyone that cold doesn't mean lonely.
 
 It's in these small, shared acts planning, helping, connecting that the heart of the community shines brightest. ❄️💛`},
+ {title:"Time's almost up! Just 2 days left to get your entries in!",excerpt:"Time's almost up! Just 2 days left to get your entries in!",date:"Dec 29, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-12-29_2.jpg",body:`Time's almost up! Just 2 days left to get your entries in!`},
  {title:"How are you spending these chilly days in Seldovia?",excerpt:"How are you spending these chilly days in Seldovia?",date:"Dec 28, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-12-28.jpg",body:`How are you spending these chilly days in Seldovia?`},
  {title:"It doesn't happen often at all here in Seldovia, but when the harbor freezes, everything slows down.",excerpt:"Living through a frozen harbor teaches patience in a way few things can.",date:"Dec 27, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-12-26.jpg",body:`It doesn't happen often at all here in Seldovia, but when the harbor freezes, everything slows down.  There was plenty of ice in the harbor last week, but it has already melted, or moved on and we're clear again!
 
