@@ -1958,7 +1958,267 @@ www.Seldovia.com 🌊✨
 
 Today we celebrate the hard work, dedication, and spirit of those who keep our community strong. Whether you're casting a line, enjoying the trails, or simply soaking up the last days of summer, we hope you take this time to relax and recharge—you've earned it! 💙
 
-Here's to the workers, dreamers, and doers thank you for all that you do. 🙌`}
+Here's to the workers, dreamers, and doers thank you for all that you do. 🙌`},
+ {title:"Seldovia's Outside Beach is a serene spot that offers a perfect blend of relaxation and adventure.",excerpt:"Whether you're looking to unwind with the sound of waves crashing against the shore, or you're eager to explore the natural beauty of the area, there's something for everyone.",date:"Jan 31, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-01-31.jpg",body:`Seldovia's Outside Beach is a serene spot that offers a perfect blend of relaxation and adventure. Whether you're looking to unwind with the sound of waves crashing against the shore, or you're eager to explore the natural beauty of the area, there's something for everyone. 🌊✨
+
+Let's get inspired at Outside Beach:
+
+1. Beachcombing – Wander along the shore and discover unique seashells, driftwood, and other treasures washed up by the ocean.
+2. Wildlife Viewing – Keep an eye out for sea otters, birds, and the occasional seal as they make appearances along the ocean.
+3. Photography – Capture stunning views of the rugged coastline, dramatic skies, and peaceful waters. It's a photographer's dream!
+4. Picnicking – Pack a lunch and enjoy a peaceful meal with the beach as your backdrop. There are perfect spots to sit and take in the scenery.
+5. Kayaking and Paddleboarding – For those seeking more adventure, kayaking and paddleboarding offer an exciting way to explore the waters around Outside Beach.
+6. Relaxation – Simply sit back, relax, and enjoy the peaceful environment, making it an ideal spot to recharge and take in the natural beauty.
+7. For the brave – Dive in, the water is fine... and cold, I mean REFRESHING!
+
+Whether you're a nature lover, adventurer, or simply looking for some peace and quiet, Outside Beach has something to offer. 🌊💧`},
+ {title:"What's your view today?",excerpt:"What's your view today?",date:"Jan 28, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-01-28.jpg",body:`What's your view today? 👀🏔️`},
+ {title:"Hello Seldovia, and welcome to Week 4 of 2025! (Part 2/2)",excerpt:"Weekly activities at the Sea Otter Community Center and Seldovia Bible Chapel.",date:"Jan 27, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-01-27_2.jpg",body:`Hello Seldovia, and welcome to Week 4 of 2025! (Part 2/2)
+
+Weekly Activities at Sea Otter Community Center (SOCC):
+
+- Arts & Crafts Club: Mondays, 3:15 PM
+- Cooking with Lisa: Wednesdays, 3:15–5:00 PM
+- Chess Club:
+- Advanced: Thursdays, 3:15–4:00 PM
+- Beginners: Thursdays, 4:00–5:00 PM
+- Science Friday: Fridays, 1:00–3:00 PM
+
+Weekly Activities at Seldovia Bible Chapel:
+
+- Sunday School: 9:45–10:45 AM
+- Morning Worship: 11:00 AM
+- Teens Ground Zero (Grades 7-12): Sundays, 3:00 PM – Fun, refreshments, and Bible study for teens.
+
+Stay updated with the Daily Calendar at www.Seldovia.com for new programs and updates.
+
+While you're at it, take a look at the latest in the Seldovia real estate market at www.SeldoviaProperty.com. If anything catches your eye, give me a call—I'm always here to help as your Seldovia Connection!
+
+Let's make it a fantastic week, Seldovia!`},
+ {title:"Hello Seldovia, and welcome to Week 4 of 2025! (Part 1/2)",excerpt:"Let's dive into another exciting week filled with community events, activities, and opportunities to stay connected!",date:"Jan 27, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-01-27_1.jpg",body:`Hello Seldovia, and welcome to Week 4 of 2025! (Part 1/2)
+
+Let's dive into another exciting week filled with community events, activities, and opportunities to stay connected!
+
+Upcoming Events:
+
+Monday, January 27, 2025
+- Seldovia City Council Regular Meeting
+Time: 6:00 PM
+Location: Council Chambers
+
+Tuesday, January 28, 2025
+- SBE PAC Meeting
+Time: 6:00 PM
+Location: SBE Commons Area
+
+The pool is OPENING tomorrow, January 28! Check out the photos for more details!
+
+Wednesday, January 29, 2025
+- SVT Children's Library Elder Reading with Darlene Crawford (0-6 years)
+Time: 11am-12pm
+Location: Alaska Tribal Cache Building
+
+Preschool Hands-On Activities (Ages 3-5)
+When: Mondays, Tuesdays & Wednesdays
+Contact: Text or call Meg at 907-726-7255 for details.
+Let your little ones explore, create, and learn in a fun, interactive environment!
+
+Linwood Bar & Grill - Free Bingo
+When: Fridays at 6:00 PM
+Enjoy 10 exciting rounds of bingo with fun local prizes donated by the Linwood and other local businesses. Thank you, Jackie, for organizing this community favorite!
+
+Weekly Activities for Seldovia Village Tribe (SVT):
+
+- Elementary Homeschool Art Class (with Ecola Collier): Mondays, 1:30–2:30 PM
+- After School Time (Grades K-5): Mondays, Wednesdays & Fridays, 3:15 PM
+- Open Gym: Fridays, 6:00 PM – Fun for the whole family!
+- Fitness Center: Weekdays, 8–10 AM & 1–2 PM
+- Walking Club: Thursdays – All abilities welcome!
+
+Click here for Part 2: https://web.facebook.com/photo/?fbid=1140312237933368&set=a.556376149660316`},
+ {title:"Craving something sweet? Explore a few places in Seldovia to grab some delicious ice cream!",excerpt:"Craving something sweet? Explore a few places in Seldovia to grab some delicious ice cream!",date:"Jan 27, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-01-27.jpg",body:`Craving something sweet? 🍦 Explore a few places in Seldovia to grab some delicious ice cream! Check out the options here: https://www.seldovia.com/to-do/restaurants-and-groceries/`},
+ {title:"Seldovia, Alaska, may be a small town, but it holds rich history and culture.",excerpt:"One notable museum in Seldovia is the Seldovia Museum & Visitor Center.",date:"Jan 26, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-01-26.jpg",body:`Seldovia, Alaska, may be a small town, but it holds rich history and culture. One notable museum in Seldovia is:
+
+Seldovia Museum & Visitor Center
+
+https://svt.org/seldovia-visitor-center-and-museum/
+
+Located in the heart of town, the Seldovia Museum showcases the area's deep-rooted history, culture, and traditions. Exhibits highlight Native Alutiiq heritage, early settlers, fishing industry history, and the town's resilience after the 1964 Good Friday Earthquake. It's a great place to explore Seldovia's past and learn about its vibrant community.
+
+Stop by the museum to connect with Seldovia's rich stories and traditions! ✨`},
+ {title:"Embrace the Power of Positivity!",excerpt:"On National Compliment Day, let's spread kindness like confetti!",date:"Jan 24, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-01-24.jpg",body:`🌞 Embrace the Power of Positivity! 🌞
+
+On National Compliment Day, let's spread kindness like confetti! Tag someone below and give them a compliment that brightens their day. Let's lift each other up!
+
+An honest compliment is always welcome and if you lead with your heart - it will be received and make a difference in someone's day!`},
+ {title:"If you love pie (like me) then you'll definitely be excited when I tell you that today is #NationalPieDay!",excerpt:"What are some of your favorite pies?",date:"Jan 23, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-01-23.jpg",body:`If you love pie (like me) then you'll definitely be excited when I tell you that today is #NationalPieDay! 🥧
+
+What are some of your favorite pies?
+
+My dad made the best pies with an emphasis on a delicious tender flakey crust and often we had pies instead of cakes for birthdays… here's a list of some of my favorites:
+
+• Dad's blackberry pie from wild blackberries picked off the beach with a scoop of vanilla ice cream (he would let us lick the plate on this one!)
+• Lemon meringue - the meringue was always so tall
+• Apple - with apples from our trees and a slice of sharp cheddar cheese
+
+What kind of pie will you be enjoying to celebrate the day?`},
+ {title:"It's National Hugging Day!",excerpt:"There's nothing like a good hug to make you feel warm, loved, and connected.",date:"Jan 21, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-01-21.jpg",body:`It's National Hugging Day! 🤗💖 There's nothing like a good hug to make you feel warm, loved, and connected. Whether it's a hug from a friend, family, or even a furry companion, today is all about sharing those sweet moments.
+
+Who would you love to give a big hug to today? Tag them and let them know!`},
+ {title:"Hello Seldovia, and welcome to Week 4 of 2025!",excerpt:"Upcoming events and weekly activities across Seldovia.",date:"Jan 20, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-01-20_2.jpg",body:`Hello Seldovia, and welcome to Week 4 of 2025!
+
+Upcoming Events:
+
+SVT - Thrive 'Autism Spectrum'
+When: January 21st @ 12:30 PM
+Don't miss this opportunity to learn and connect.
+
+Preschool Hands-On Activities (Ages 3-5)
+When: Mondays, Tuesdays & Wednesdays
+Contact: Text or call Meg at 907-726-7255 for questions.
+Let your little ones explore, create, and learn in a fun and interactive environment!
+
+Linwood Bar & Grill - FREE BINGO
+When: Fridays at 6:00 PM
+Join in for 10 rounds of Bingo with fun local prizes donated by the Linwood and other businesses in town! Thanks Jackie for putting this together!
+
+Seldovia Public Library Board of Directors Meeting
+When: January 21, 6:30 PM
+
+Weekly Activities for Seldovia Village Tribe (SVT):
+• Elementary Homeschool Art Class with Ecola Collier, Mondays 1:30-2:30 PM
+• Gentle Exercise with Jenifer Dickson, Tuesdays 11:15-12:15 PM
+• After School Time (Grades K-5), Mondays, Wednesdays, and Fridays | 3:15 PM
+• Open Gym, Fridays | 6:00 PM – Fun for the whole family!
+• Children's Library Elder Reading (Ages 0-6), Wednesdays | 11:00 AM
+• Fitness Center, Weekdays | 8–10 AM & 1–2 PM
+• Walking Club, Thursdays – All abilities welcome!
+
+Weekly Activities for Sea Otter Community Center (SOCC):
+• Arts & Crafts Club, Mondays | 3:15 PM
+• Cooking with Lisa, Wednesdays | 3:15–5:00 PM
+• Chess Club:
+Advanced: Thursdays | 3:15–4:00 PM
+Beginners: Thursdays | 4:00–5:00 PM
+• Science Friday, Fridays | 1:00–3:00 PM
+
+Weekly Activities at Seldovia Bible Chapel (Every Sunday):
+• Sunday School, 9:45–10:45 AM
+• Morning Worship, 11:00 AM
+• Teens Ground Zero (Grades 7-12), 3:00 PM – Fun, refreshments, and Bible study for teens.
+
+Stay connected, get involved, and make the most of this wonderful week! Check out the DAILY CALENDAR at Seldovia.com for new programs and updates.
+
+While you're at it, take a look at the latest in the Seldovia real estate market at www.SeldoviaProperty.com. If anything catches your eye, give me a call—I'm always here to help as your Seldovia Connection!`},
+ {title:"“Everybody can be great because everyone can serve.” — Martin Luther King, Jr.",excerpt:"Today, we celebrate the legacy of a true leader who inspired change through service and love.",date:"Jan 20, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-01-20.jpg",body:`"Everybody can be great because everyone can serve." — Martin Luther King, Jr. ✨
+
+Today, we celebrate the legacy of a true leader who inspired change through service and love. Let's honor Martin Luther King Jr.'s incredible impact by continuing to serve and uplift those around us. 💙`},
+ {title:"Discover Beauty at Seldovia's One and Only Salon!",excerpt:"Meggie at Fathoms Salon offers personalized beauty services right here in our cozy coastal town!",date:"Jan 18, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-01-18.jpg",body:`✨ Discover Beauty at Seldovia's One and Only Salon! ✨
+
+Looking for a fresh new look or a little self-care? Meggie at Fathoms Salon offers personalized beauty services right here in our cozy coastal town!
+
+Whether it's a stylish haircut, a relaxing treatment, or a bold new color, Fathoms Salon is here to make you feel and look your best. 🌊✂️
+
+Stop by and treat yourself—you deserve it! 💖`},
+ {title:"Endless beauty around every curve at Turnagain Arm",excerpt:"Endless beauty around every curve at Turnagain Arm",date:"Jan 16, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-01-16.jpg",body:`Endless beauty around every curve at Turnagain Arm ✨`},
+ {title:"Bagels: Because breakfast shouldn't be boring!",excerpt:"What's your favorite bagel combo?",date:"Jan 15, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-01-15.jpg",body:`Bagels: Because breakfast shouldn't be boring! 🌞 What's your favorite bagel combo?`},
+ {title:"How in the world did we end up in Seldovia? Part 3.",excerpt:"About 2 weeks before school was to start in Fairbanks, we got THE call — from the Boys & Girls Club!",date:"Jan 14, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-01-14.jpg",body:`How in the world did we end up in Seldovia? Part 3.
+
+Disappointed, yes. We had so loved our visit to Seldovia in May and we couldn't get it out of our minds… We kept talking to Susan B English school - but soon summer was upon us, and everyone was on break. We kept scouring the internet and talking to folks in Seldovia to ask about possible position openings, to no avail.
+
+Then, about 2 weeks before school was to start here in Fairbanks, we got THE call - from the Boys & Girls Club! They offered Sonny the position, and hoped he could start as soon as possible. Thankfully, they proposed a salary that would make it possible for a family of five to survive in Seldovia! We knew that it was not for financial gain that we were making this move to Seldovia - it was truly all about lifestyle! But first - Sonny had to call his principal and superintendant about releasing him from his teaching contract!
+
+Fortunately, they had applicants for his position and they wrote a glowing recommendation and were willing to release him stating that he'd always be welcome back in the district! It was awesome that they understood we were following our dream!
+
+We couldn't wait to call the owner of our sweet cottage on Bootlegger's Cove and let him know we were ready to put in an offer - and he had secured a job in Seldovia! It was all coming together! Read the continuation here: https://www.seldoviaproperty.com/.../how-in-the-world-did…`},
+ {title:"Hello Seldovia, and Welcome to Week 3 of 2025!",excerpt:"Let's kick off this week with exciting events and activities happening all around Seldovia!",date:"Jan 13, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-01-13.jpg",body:`Hello Seldovia, and Welcome to Week 3 of 2025! Let's kick off this week with exciting events and activities happening all around Seldovia!
+
+Upcoming events:
+• Preschool Hands-On Activities (Ages 3-5)
+When: Mondays, Tuesdays & Wednesdays
+Contact: Text or call Meg at 907-726-7255 for questions.
+Let your little ones explore, create, and learn in a fun and interactive environment!
+
+• Seldovia City Council Regular Meeting
+When: Monday, January 13, 2025 | 6:00 PM
+Where: Council Chambers
+Stay informed and involved in local decisions that shape our community.
+
+• Seldovia Arts Council: 2025 Photo Essay Series
+Event: "The Ice Below" and other tales from Antarctica
+When: Saturday, January 18th | 6:00 PM
+A captivating visual journey exploring the icy wonders of Antarctica!
+
+Weekly Activities for Seldovia Village Tribe (SVT):
+• After School Time: Mondays, Wednesdays, and Fridays | 3:15 PM (Grades K-5)
+• Open Gym: Fridays | 6:00 PM – Fun for the whole family!
+• Children's Library Elder Reading: Wednesdays | 11:00 AM (Ages 0-6)
+• Fitness Center: Weekdays | 8–10 AM & 1–2 PM
+• Walking Club: Thursdays – All abilities welcome!
+
+Weekly Activities for Sea Otter Community Center (SOCC):
+• Cooking with Lisa: Wednesdays | 3:15–5:00 PM
+• Arts & Crafts Club: Mondays | 3:15 PM – Unleash your creativity!
+• Chess Club: Thursdays
+- Advanced: 3:15–4:00 PM
+- Beginners: 4:00–5:00 PM
+• Science Friday: Fridays | 1:00–3:00 PM – Dive into science fun!
+
+Sunday Activities at Seldovia Bible Chapel:
+• Sunday School: 9:45–10:45 AM
+• Morning Worship: 11:00 AM
+• Teens Ground Zero (Grades 7-12): 3:00 PM – Fun, refreshments, and Bible study for teens.
+
+Stay connected, get involved, and make the most of this wonderful week! Check out the DAILY CALENDAR at Seldovia.com for new programs and updates.
+
+While you're at it, take a look at the latest in the Seldovia real estate market at www.SeldoviaProperty.com. If anything catches your eye, give me a call—I'm always here to help as your Seldovia Connection!`},
+ {title:"We're excited to announce that Susan B. English School has a new Pool Manager—Amelia Pollack!",excerpt:"Let's dive into a season of fun and fitness!",date:"Jan 11, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-01-11.jpg",body:`We're excited to announce that Susan B. English School has a new Pool Manager—Amelia Pollack! Amelia brings great energy and expertise, and we can't wait for a fantastic semester of swimming for both our students and the community. Let's dive into a season of fun and fitness! 🌊`},
+ {title:"When the weather gets chilly, what's your comfort drink of choice?",excerpt:"When the weather gets chilly, what's your comfort drink of choice?",date:"Jan 10, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-01-10.jpg",body:`When the weather gets chilly, what's your comfort drink of choice?`},
+ {title:"Honoring the Heroes in Uniform!",excerpt:"On Law Enforcement Day, we salute the brave men and women all throughout our country who work tirelessly to keep our communities safe.",date:"Jan 9, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-01-09.jpg",body:`Honoring the Heroes in Uniform! On Law Enforcement Day, we salute the brave men and women all throughout our country who work tirelessly to keep our communities safe. Your dedication is truly commendable. Thank you for your service! 🙌💙`},
+ {title:"It's always so heartwarming to receive wonderful feedback from clients!",excerpt:"Thank you for making what I do so rewarding!",date:"Jan 8, 2025",read:"1 min",cat:"Kind Words",img:"images/gazette/2025-01-08.jpg",body:`It's always so heartwarming to receive wonderful feedback from clients! Thank you for making what I do so rewarding! 💗`},
+ {title:"Right now, during the winter, the only place for pizza out is the Linwood Bar and Grill - for which we are so thankful!",excerpt:"The Crabpot grocery does a great job of keeping the frozen section supplied with a variety of pizza options!",date:"Jan 7, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-01-07.jpg",body:`Right now, during the winter, the only place for pizza out is the Linwood Bar and Grill - for which we are so thankful!
+
+But if you don't feel like going out, and you aren't up to making your own homemade pizza, the Crabpot grocery does a great job of keeping the frozen section supplied with a variety of pizza options! They also have Boboli crusts (which is the hardest part of getting a pizza together at home!). Thanks Tata and Chris! 😊`},
+ {title:"Seldovia, Alaska, is a hidden gem when it comes to wild berries!",excerpt:"Here are some of the best spots to find them.",date:"Jan 6, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-01-06.jpg",body:`Seldovia, Alaska, is a hidden gem when it comes to wild berries! ✨
+
+Here are some of the best spots to find them:
+
+Outside Beach & Otterbahn Trail: This scenic area is a prime location for wild berries, especially in the late summer and fall. You'll find blueberries, raspberries, salmonberries, and even huckleberries along the trails.
+
+Rocky Ridge Trail, Red Mountain Hike and up to the ACS tower trails you'll find berries along the way! You can find an abundance of wild berries growing in forested areas along our trails. Sometimes you will find small pockets of raspberry bushes or even wild strawberries which thrive near the coastline.
+
+Always be sure to pick along easements, trails or public lands. Be thoughtful not to trespass on private property. If you don't know where to go - ask!`},
+ {title:"Do you agree? Yes or no?",excerpt:"Do you agree? Yes or no?",date:"Jan 5, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-01-05.jpg",body:`Do you agree? Yes or no?`},
+ {title:"5 ways to embrace winter in Seldovia, from the new Waterfront Ice Rink to cozying up with a warm drink.",excerpt:"Winter in Seldovia is all about embracing the quiet charm and natural beauty of this Alaskan gem!",date:"Jan 4, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-01-04.jpg",body:`1. Explore the brand new Seldovia Waterfront Ice Rink!
+Bundle up and enjoy a magical experience skating on the waterfront. It's a perfect winter activity for families and friends, Thanks Ashley for all you have done to bring this project to life! I love our view of the activities! And, the kids will absolutely LOVE our new ice rink!
+
+2. Go Winter Beachcombing.
+The heavy seas and high tides offer a unique chance to find beautiful driftwood, shells, or sea glass while enjoying stunning views of Kachemak Bay.
+
+3. Winter Hiking.
+Take to the trails surrounding Seldovia! Trails provide a peaceful way to enjoy the beauty of the Alaskan wilderness. Don't miss Otterbahn Trail for its tranquil forest vibes. Do wear good shoes, as we have got ice!
+
+4. Wildlife Spotting.
+Winter is a quieter time for wildlife, but you can still spot eagles, sea otters, and other hardy creatures thriving in the cold. Bring your binoculars for the best experience!
+
+5. Cozy Up with a Warm Drink
+Visit a local café or restaurant and enjoy a hot drink while chatting with locals. It's the perfect way to warm up and soak in the community spirit.
+
+Winter in Seldovia is all about embracing the quiet charm and natural beauty of this Alaskan gem!`},
+ {title:"Pebble beaches, white rocks, salty breeze, and endless fetch games!",excerpt:"Experience the joy of seaside adventures at Seldovia's favorite dog-friendly beaches.",date:"Jan 2, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-01-02.jpg",body:`Pebble beaches, white rocks, salty breeze, and endless fetch games! 🎾🌊 Experience the joy of seaside adventures at Seldovia's favorite dog-friendly beaches:
+
+• Outside Beach - just a mile from Main Street in Seldovia.
+• Jakolof Bay - about 10 miles out the road!
+
+You can also head out on our many hiking trails where your furry friends love to chase squirrels and tree bears (though they are hopefully sleeping now!)
+
+• Rocky Ridge Trail
+• TV Tower
+• Red Mountain
+• Tutka Bay Trail
+
+Did I miss a great spot? Comment below if you'd like to share!`},
+ {title:"Wishing everyone a very Happy New Year!",excerpt:"Here's to new beginnings and exciting adventures in 2025!",date:"Jan 1, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-01-01.jpg",body:`Wishing everyone a very Happy New Year! Here's to new beginnings and exciting adventures in 2025! 🥂🎉`}
 ];
 // Real "Seldovia Days" photos pulled from the Flywheel gallery (Jenny & Melody Hall).
 const GALLERY=[{h:300,cap:"Sunset over the bay",img:"images/gallery/g-1.jpg"},{h:300,cap:"Floatplane off the bay",img:"images/gallery/g-2.jpg"},{h:300,cap:"Red salmon riches",img:"images/gallery/g-3.jpg"},{h:300,cap:"Seldovia harbor",img:"images/gallery/g-4.jpg"},{h:300,cap:"Outside Beach stream",img:"images/gallery/g-5.jpg"},{h:300,cap:"Kenai reds",img:"images/gallery/g-6.jpg"},{h:300,cap:"Enchanted woods",img:"images/gallery/g-7.jpg"},{h:300,cap:"Barabara Creek",img:"images/gallery/g-8.jpg"},{h:300,cap:"MacDonald Spit",img:"images/gallery/g-9.jpg"},{h:300,cap:"Seldovia rainbow",img:"images/gallery/g-10.jpg"},{h:300,cap:"Ferry day",img:"images/gallery/g-11.jpg"},{h:300,cap:"Through the trees",img:"images/gallery/g-12.jpg"}];
