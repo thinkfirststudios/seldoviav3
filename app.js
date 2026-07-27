@@ -1959,6 +1959,284 @@ www.Seldovia.com 🌊✨
 Today we celebrate the hard work, dedication, and spirit of those who keep our community strong. Whether you're casting a line, enjoying the trails, or simply soaking up the last days of summer, we hope you take this time to relax and recharge—you've earned it! 💙
 
 Here's to the workers, dreamers, and doers thank you for all that you do. 🙌`},
+ {title:"Thank You Paul & Lori!",excerpt:"I am incredibly lucky to work with such amazing clients, and today, I want to give a special shoutout to Paul & Lori!",date:"Feb 28, 2025",read:"1 min",cat:"Kind Words",img:"images/gazette/2025-02-28.jpg",body:`Thank You Paul & Lori! 🙏
+
+I am incredibly lucky to work with such amazing clients, and today, I want to give a special shoutout to Paul & Lori! Receiving your thoughtful gift was such a wonderful surprise! 💗`},
+ {title:"From construction to transportation to real estate, Seldovia has a dedicated team of professionals ready to help you with all your needs.",excerpt:"The experts in Seldovia are here to support you every step of the way.",date:"Feb 27, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-02-27.jpg",body:`From construction to transportation to real estate, Seldovia has a dedicated team of professionals ready to help you with all your needs.
+
+Whether you're building your dream home, navigating the town's unique landscape, or searching for your perfect property, the experts in Seldovia are here to support you every step of the way. 🔨✈️🏡
+
+Check out the full list and connect with the best services Seldovia has to offer.
+https://www.seldovia.com/to-do/professional-services/`},
+ {title:"When it comes to convenience, quality, and exceptional service, Seldovia Fuel & Lube ranks top of the list in Seldovia.",excerpt:"This trusted establishment has everything you need under one roof.",date:"Feb 25, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-02-25.jpg",body:`When it comes to convenience, quality, and exceptional service, Seldovia Fuel & Lube ranks top of the list in Seldovia. Whether you're a local resident, a visiting boater, or an adventurer exploring the beauty of Seldovia, this trusted establishment has everything you need under one roof. 😄
+
+Why Choose Seldovia Fuel & Lube? 👇
+
+✨ Locally owned and operated – A business that understands and values the needs of Seldovia's residents.
+✨ Variety and convenience – A one-stop destination for supplies, fuel, and more.
+✨ Exceptional service – A friendly team that treats customers like family.
+
+Next time you need supplies, fuel, or just a friendly smile, stop by Seldovia Fuel & Lube! Whether you're prepping for a fishing trip, stocking up on essentials, or fueling up for your next adventure, they've got you covered. 🙌`},
+ {title:"Hello, Seldovia! Welcome to Week 8 of 2025!",excerpt:"Important city meetings and exciting community activities to keep you connected — plus FREE skating at the Waterfront Ice Rink!",date:"Feb 24, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-02-24.jpg",body:`Hello, Seldovia! Welcome to Week 8 of 2025!
+
+Let's kick off the week with important city meetings and exciting community activities to keep you connected. Plus, don't forget—the Waterfront Ice Rink is open every day for FREE skating! ⛸️❄️
+
+Upcoming Events
+
+Monday, February 24, 2025
+
+IditaRead begins today!
+If you haven't already decorated your sled, the library is open until 5:00 pm today.
+
+Seldovia City Council Worksession
+Council Chambers | 4:30 PM | In Person at Council Chambers, 260 Seldovia Street, or by Zoom Webinar. Webinar ID: 845 7628 0095, Passcode: 864684
+
+Seldovia City Council Regular Meeting
+Council Chambers | 6:00 PM | In Person at Council Chambers, 260 Seldovia Street, or by Zoom Webinar. Webinar ID: 845 7628 0095, Passcode: 864684
+
+Tuesday, February 25, 2025
+NSF Annual Community Participation Workshop
+Seldovia Conference Center | 7:00–8:30 PM
+
+Linwood Bar & Grill - FREE BINGO
+Fridays at 6:00 PM
+Join us for 10 rounds of exciting bingo featuring fun local prizes donated by the Linwood and other businesses in town. A big thank you to Jackie for organizing this community favorite!
+
+Seldovia Village Tribe (SVT) Weekly Activities
+Elementary Homeschool Art Class (with Ecola Collier) – Mondays, 1:30–2:30 PM
+Open Swim – Tuesdays, 3:15–5:00 PM & Fridays, 6:00–8:00 PM
+Walking Club – Thursdays – All abilities welcome!
+After School Time (Grades K-5) – Fridays, 3:15 PM
+Open Gym – Fridays, 6:00 PM – Fun for the whole family!
+Fitness Center – Weekdays, 8:00–10:00 AM & 1:00–2:00 PM
+
+Sea Otter Community Center (SOCC) Weekly Activities
+Workout with Lisa – Weekdays, 9:00–9:45 AM
+Yoga – Tuesdays & Thursdays, 10:00–11:00 AM
+1st-3rd Grade Girls Cheer Club – Wednesdays & Thursdays, 3:15–4:15 PM
+
+Seldovia Bible Chapel Weekly Activities
+Morning Worship – Sundays, 11:00 AM
+Sunday School – Sundays, 9:45–10:45 AM
+Chapel Teens Ground Zero (Grades 7-12) – Sundays, 3:00 PM
+Tuesday Evening Bible Studies
+Men's Bible Study – 7:00 PM | Location: Church Fellowship Hall
+Women's Bible Study – 7:00 PM | Location: Church
+
+Susan B. English School Weekly Activities
+Pool Schedule – Check out the photo for details!
+
+Seldovia Public Library Winter Schedule
+Check out the photo for details!
+
+Stay connected, mark your calendars, and make the most of these exciting opportunities. Check out the DAILY CALENDAR at Seldovia.com for new programs and updates.
+
+While you're at it, take a look at the latest in the Seldovia real estate market at www.SeldoviaProperty.com. If anything catches your eye, give me a call—I'm always here to help as your Seldovia Connection!`},
+ {title:"I'll go first—magical! What's yours?",excerpt:"I'll go first—magical! What's yours?",date:"Feb 23, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-02-23.jpg",body:`I'll go first—magical! ❄️✨ What's yours?`},
+ {title:"Showering Extra Love on Fur-babies!",excerpt:"Happy Love Your Pet Day! Whether they have floppy ears or a wagging tail, today is all about spoiling our furry companions!",date:"Feb 20, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-02-20.jpg",body:`Showering Extra Love on Fur-babies! 🐱🐕
+
+Happy Love Your Pet Day! Whether they have floppy ears or a wagging tail, today is all about spoiling our furry companions!
+
+Share an emoji of your beloved pet below and let's spread the love! 🥰`},
+ {title:"Brie, thank you so much!",excerpt:"It's been so much fun watching you and Josh bring your homestead to life, from chickens to bunnies, pigs, and more!",date:"Feb 18, 2025",read:"1 min",cat:"Kind Words",img:"images/gazette/2025-02-18.jpg",body:`Brie, thank you so much! It's been so much fun watching you and Josh bring your homestead to life, from chickens to bunnies, pigs, and more! It's been a pleasure working with you, and I'm so grateful for the opportunity to be a part of your journey. 😊`},
+ {title:"Presidential quotes to reflect on this Presidents Day.",excerpt:"Wise words. What is your favorite presidential quote?",date:"Feb 17, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-02-17.jpg",body:`"Change is the law of life. And those who look only to the past or present are certain to miss the future." — John F Kennedy
+
+"The dogmas of the quiet past are inadequate to the stormy present. The occasion is piled high with difficulty, and we must rise with the occasion. As our case is new, so we must think anew and act anew." — Abraham Lincoln
+
+"In any moment of decision, the best thing you can do is the right thing, the next best thing is the wrong thing, and the worst thing you can do is nothing." — Theodore Roosevelt
+
+"Strong hearts and helpful hands are needed, and, fortunately, we have them in every part of our beloved country." — William McKinley
+
+"There can be no greater good than the quest for peace, and no finer purpose than the preservation of freedom." — Ronald Reagan
+
+Wise words. What is your favorite presidential quote?`},
+ {title:"Hello, Seldovia! Welcome to Week 7 of 2025!",excerpt:"City meetings, Presidents Day schedule changes, and community activities — plus FREE skating at the Waterfront Ice Rink!",date:"Feb 17, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-02-17_2.jpg",body:`Hello, Seldovia! Welcome to Week 7 of 2025!
+
+Let's kick off the week with important city meetings and exciting community activities to keep you connected. Plus, don't forget—the Waterfront Ice Rink is open every day for FREE skating! ⛸️❄️
+
+Upcoming Activities, Meetings and Schedule Changes:
+
+Monday, February 17 – Presidents Day 🇺🇸
+SVT Administrative Offices & Fitness Center – Closed
+Susan B. English School – No School (No Swim)
+SVT Kids Beach Fun 🏖️
+Time: 1:00–3:00 PM | All ages welcome!
+
+Tuesday, February 18
+Seldovia Oil Spill Response Team Annual Membership Meeting
+Time: 6:00 PM | Location: Multi-Purpose Building
+
+Wednesday, February 19
+SVT Bingo Night 🎉
+Time: 6:00 PM | Location: Alaska Tribal Cache Building
+
+Linwood Bar & Grill - FREE BINGO
+Fridays at 6:00 PM
+Join us for 10 rounds of exciting bingo featuring fun local prizes donated by the Linwood and other businesses in town. A big thank you to Jackie for organizing this community favorite!
+
+Seldovia Village Tribe (SVT) Weekly Activities:
+Elementary Homeschool Art Class (with Ecola Collier): Mondays, 1:30–2:30 PM
+Open Swim: Tuesdays, 3:15–5:00 PM & Fridays, 6:00–8:00 PM
+After School Time (Grades K-5): Fridays, 3:15 PM
+Open Gym: Fridays, 6:00 PM – Fun for the whole family!
+Fitness Center: Weekdays, 8:00–10:00 AM & 1:00–2:00 PM
+
+Sea Otter Community Center (SOCC) Weekly Activities:
+Workout with Lisa: Weekdays, 9:00–9:45 AM
+Yoga: Tuesdays & Thursdays, 10:00–11:00 AM
+1st-3rd Grade Girls Cheer Club: Wednesdays & Thursdays, 3:15–4:15 PM
+
+Seldovia Bible Chapel Weekly Activities:
+Morning Worship: Sundays, 11:00 AM
+Sunday School: Sundays, 9:45–10:45 AM
+Chapel Teens Ground Zero (Grades 7-12): Sundays, 3:00 PM – Fun, refreshments, and Bible study for teens.
+Tuesday Evening Bible Studies:
+Men's Bible Study: 7:00 PM | Location: Church Fellowship Hall
+Women's Bible Study: 7:00 PM | Location: Church
+
+Susan B. English School Weekly Activities:
+Pool Schedule: Check out the photo for details!
+
+Seldovia Public Library Winter Schedule:
+Check out the photo for details!
+
+Have a fantastic week, Seldovia! ❄️
+
+Stay connected, mark your calendars, and make the most of these exciting opportunities. Check out the DAILY CALENDAR at Seldovia.com for new programs and updates.
+
+While you're at it, take a look at the latest in the Seldovia real estate market at www.SeldoviaProperty.com. If anything catches your eye, give me a call—I'm always here to help as your Seldovia Connection!`},
+ {title:"Happy Valentine's Day!",excerpt:"To celebrate the day, here are 7 things I love about living in Seldovia.",date:"Feb 14, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-02-14.jpg",body:`Happy Valentine's Day! 💕
+
+There are many ways to celebrate love! Love of people, love of situation, love of work, love of place, love of possibilities, etc! It truly isn't all about flowers and chocolate or jewelry (those are nice though!) 😄
+
+To celebrate the day, here are 7 things I love about living in Seldovia: 🌲🌷
+
+• Our caring community
+• Our gorgeous environs
+• Small town atmosphere
+• The tranquility
+• Subsistence fishing!
+
+What about you?`},
+ {title:"Moon over Fairbanks this morning!",excerpt:"Moon over Fairbanks this morning!",date:"Feb 11, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-02-11.jpg",body:`Moon over Fairbanks this morning! 🌙✨`},
+ {title:"Hello, Seldovia, and welcome to Week 6 of 2025!",excerpt:"City meetings and community activities — plus FREE skating every day at the Waterfront Ice Rink!",date:"Feb 10, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-02-10.jpg",body:`Hello, Seldovia, and welcome to Week 6 of 2025!
+
+Let's start the week strong with important city meetings and a host of community activities to keep you engaged and informed. Plus, don't forget—the Waterfront Ice Rink is open for FREE skating every day! ⛸️❄️
+
+Upcoming Events:
+
+City & Department Meetings:
+
+Monday, February 10, 2025
+Seldovia City Council Worksession
+Time: 4:00 PM
+
+Seldovia City Council Regular Meeting
+Time: 6:00 PM at Council Chambers
+In Person at Council Chambers, 260 Seldovia Street, or by Zoom Webinar. Webinar ID: 845 7628 0095, Passcode: 864684
+
+Tuesday, February 11, 2025
+Seldovia Volunteer Fire Department Executive Board Meeting
+Time: 6:00 PM in the Multi-Purpose Room
+
+Community Fun:
+Linwood Bar & Grill - FREE BINGO
+When: Fridays at 6:00 PM
+Join us for 10 rounds of exciting bingo featuring fun local prizes donated by the Linwood and other businesses in town. A big thank you to Jackie for putting together this community favorite!
+
+Weekly Activities for Seldovia Village Tribe (SVT):
+Elementary Homeschool Art Class (with Ecola Collier): Mondays, 1:30–2:30 PM
+Open Swim: Tuesdays, 3:15–5:00 PM & Fridays, 6:00–8:00 PM
+After School Time (Grades K-5): Fridays, 3:15 PM
+Open Gym: Fridays, 6:00 PM – Fun for the whole family!
+Fitness Center: Weekdays, 8:00–10:00 AM & 1:00–2:00 PM
+
+Weekly Activities at Sea Otter Community Center (SOCC):
+Workout with Lisa: Weekdays, 9:00–9:45 AM
+Yoga: Tuesdays & Thursdays, 10:00–11:00 AM
+1st-3rd Grade Girls Cheer Club: Wednesdays & Thursdays, 3:15–4:15 PM
+
+Weekly Activities at Seldovia Bible Chapel:
+Sunday School: 9:45–10:45 AM
+Morning Worship: 11:00 AM
+Teens Ground Zero (Grades 7-12): Sundays, 3:00 PM – Enjoy fun, refreshments, and Bible study for teens.
+
+Weekly Activities at Susan B. English School:
+Pool Schedule: Check out the photo for details!
+
+Stay connected, mark your calendars, and make the most of these exciting opportunities. Check out the DAILY CALENDAR at Seldovia.com for new programs and updates.
+
+While you're at it, take a look at the latest in the Seldovia real estate market at www.SeldoviaProperty.com. If anything catches your eye, give me a call—I'm always here to help as your Seldovia Connection!`},
+ {title:"Celebrating one of the most important cornerstones of society.",excerpt:"Strong marriages create loving families, resulting in happy and successful children who grow up to be our next generation of amazing adults.",date:"Feb 9, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-02-09.jpg",body:`Celebrating one of the most important cornerstones of society. 💑✨
+
+Strong marriages create loving families, resulting in happy and successful children who grow up to be our next generation of amazing adults who bring new energy, hope, ideas and promise into the world! ❤️`},
+ {title:"Sending Warmth Across the Miles! It's Send a Card to a Friend Day!",excerpt:"Take a moment to brighten someone's day with a heartfelt message. Let's send out “Happy Mail” one card at a time!",date:"Feb 7, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-02-07.jpg",body:`Sending Warmth Across the Miles! 💌💖 It's Send a Card to a Friend Day!
+
+I truly like getting mail that is not a bill, or an advertisement, but a note from a friend! Don't you?
+
+Take a moment to brighten someone's day with a heartfelt message. Let's send out "Happy Mail" one card at a time! Who will you send a little love to today? Tag them below! 💌📬
+
+#seldovia #seldoviaalaska #seldoviaak #seldoviaproperty #alaska #alaskalife #alaskaliving`},
+ {title:"There's nothing that quite warms you up during these winter months like a delicious home-made soup!",excerpt:"Do you have a favorite home-made recipe that you love, and maybe would like to share?",date:"Feb 4, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-02-04.jpg",body:`There's nothing that quite warms you up during these winter months like a delicious home-made soup! Comfort food for sure! 🍲🥄
+
+We've been making a brocolli vegetable soup that tastes great is filling AND super easy to heat up for lunch... speedy speedy! 🥦
+
+Do you have a favorite home-made recipe that you love, and maybe would like to share?`},
+ {title:"Hello Seldovia, and welcome to Week 5 of 2025!",excerpt:"Here's a look at what's happening this week in our wonderful community.",date:"Feb 3, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-02-03.jpg",body:`Hello Seldovia, and welcome to Week 5 of 2025! Here's a look at what's happening this week in our wonderful community:
+
+Upcoming Events:
+
+Tuesday, February 4, 2025
+Dr. Marlowe's Veterinary Services
+Call Debbie Cameron at (907) 435-3255 to schedule an appointment!
+
+Wednesday, February 5, 2025
+Children's Library Elder Reading (Ages 0-6), Wednesdays | 11:00 AM
+
+Thursday, February 6, 2025
+Walking Club: All abilities welcome! | 11:30am-12pm
+
+Linwood Bar & Grill - FREE BINGO
+When: Fridays at 6:00 PM
+Join in for 10 rounds of exciting Bingo with fun local prizes donated by the Linwood and other businesses in town. Thank you, Jackie, for organizing this community favorite!
+
+Weekly Activities for Seldovia Village Tribe (SVT):
+Elementary Homeschool Art Class (with Ecola Collier): Mondays, 1:30–2:30 PM
+Open Swim: Tuesdays 3:15-5pm & Fridays 6-8pm
+After School Time (Grades K-5): Mondays, Wednesdays & Fridays, 3:15 PM
+Open Gym: Fridays, 6:00 PM – Fun for the whole family!
+Fitness Center: Weekdays, 8–10 AM & 1–2 PM
+
+Weekly Activities at Sea Otter Community Center (SOCC):
+Workout with Lisa: Weekdays, 9–9:45 AM
+Yoga: Tuesdays & Thursdays, 10–11 AM
+1st-3rd Grade Girls Cheer Club: Wednesdays & Thursdays, 3:15–4:15 PM
+
+Weekly Activities at Seldovia Bible Chapel:
+Sunday School: 9:45–10:45 AM
+Morning Worship: 11:00 AM
+Teens Ground Zero (Grades 7-12): Sundays, 3:00 PM – Fun, refreshments, and Bible study for teens.
+
+Weekly Activities at Susan B. English School:
+Check out the photo for the pool schedule!
+
+Stay connected, get involved, and make the most of this wonderful week! Check out the DAILY CALENDAR at Seldovia.com for new programs and updates.
+
+While you're at it, take a look at the latest in the Seldovia real estate market at www.SeldoviaProperty.com. If anything catches your eye, give me a call—I'm always here to help as your Seldovia Connection!`},
+ {title:"Guess who's popping up today? It's Groundhog Day!",excerpt:"Will we get an early spring or more winter? Fingers crossed for sunshine!",date:"Feb 2, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-02-02.jpg",body:`Guess who's popping up today? It's Groundhog Day! 🌱
+
+Some interesting facts:
+The first Groundhog Day was observed in 1887 in Punxsutawney, Pennsylvania.
+
+On Groundhog Day, a groundhog, named Punxsutawney Phil, from Punxsutawney, emerges in the morning to a large crowd.
+
+If Phil sees his shadow, there will be 6 more weeks of frigid weather. If Phil looks down, and does not see his shadow, then that means that Spring is coming along with sunshine and warmth!
+
+Funny fact: Phil's success rate at predicting the weather is only about 39%. Haha!
+
+Groundhogs typically have a lifespan of 6-8 years. However, each groundhog day, Phil is given a "Magical Potion" to extend his life for seven more years!
+
+Will we get an early spring or more winter? Fingers crossed for sunshine! 🌞 What's your prediction? Share below! 🌱🌸`},
  {title:"Seldovia's Outside Beach is a serene spot that offers a perfect blend of relaxation and adventure.",excerpt:"Whether you're looking to unwind with the sound of waves crashing against the shore, or you're eager to explore the natural beauty of the area, there's something for everyone.",date:"Jan 31, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-01-31.jpg",body:`Seldovia's Outside Beach is a serene spot that offers a perfect blend of relaxation and adventure. Whether you're looking to unwind with the sound of waves crashing against the shore, or you're eager to explore the natural beauty of the area, there's something for everyone. 🌊✨
 
 Let's get inspired at Outside Beach:
@@ -2062,6 +2340,7 @@ My dad made the best pies with an emphasis on a delicious tender flakey crust an
 • Apple - with apples from our trees and a slice of sharp cheddar cheese
 
 What kind of pie will you be enjoying to celebrate the day?`},
+ {title:"Flying into Seldovia with a breathtaking view of Homer Spit blanketed in snow.",excerpt:"Flying into Seldovia with a breathtaking view of Homer Spit blanketed in snow.",date:"Jan 22, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-01-22.jpg",body:`Flying into Seldovia with a breathtaking view of Homer Spit blanketed in snow. ❄️✈️`},
  {title:"It's National Hugging Day!",excerpt:"There's nothing like a good hug to make you feel warm, loved, and connected.",date:"Jan 21, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-01-21.jpg",body:`It's National Hugging Day! 🤗💖 There's nothing like a good hug to make you feel warm, loved, and connected. Whether it's a hug from a friend, family, or even a furry companion, today is all about sharing those sweet moments.
 
 Who would you love to give a big hug to today? Tag them and let them know!`},
