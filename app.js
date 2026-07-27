@@ -1959,6 +1959,350 @@ www.Seldovia.com 🌊✨
 Today we celebrate the hard work, dedication, and spirit of those who keep our community strong. Whether you're casting a line, enjoying the trails, or simply soaking up the last days of summer, we hope you take this time to relax and recharge—you've earned it! 💙
 
 Here's to the workers, dreamers, and doers thank you for all that you do. 🙌`},
+ {title:"Hello, Seldovia! Welcome to Week 21 of 2025!",excerpt:"We're heading into the final week of May with sunshine, celebration, and community connection!",date:"May 26, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-05-26.jpg",body:`Hello, Seldovia! Welcome to Week 21 of 2025!
+
+We're heading into the final week of May with sunshine, celebration, and community connection!
+
+UPCOMING EVENTS:
+
+Monday, May 26, 2025
+• Happy Memorial Day! Take a moment to honor and remember our fallen heroes.
+
+Tuesday, May 27, 2025
+• Seldovia City Council Special Meeting – 6:00 PM at Council Chambers
+• SVT Thrive Writing Workshop – 12:30–2:30 PM in the Elder's Room at ATC
+• SVT Final Swims – 3:15–5:00 PM
+
+Wednesday, May 28, 2025
+• SVT Swim Finale – 3:15 PM at Susan B. English School
+• Seldovia BioBlitz – begins today with intertidal invertebrates led by Erin and Valisa (runs through Saturday, May 31)
+
+Thursday, May 29, 2025
+• BioBlitz macroalgae (seaweed) exploration with Tania Spurkland
+
+Friday, May 30, 2025
+• SVT Summer Kickoff BBQ – 1:00 PM at the outside beach (contact Laurel Hilts at 907-435-3252 for details)
+• SVT Final Swims – 6:00–8:00 PM
+
+Saturday, May 31, 2025
+• BioBlitz botany and bird inventory with Cindy Mom
+
+WEEKLY ACTIVITIES:
+
+Seldovia Village Tribe (SVT)
+• Basketball Practice (Grades K–5) – 3:15–4:30 PM at SBE Gym
+• Open Swim – Tuesdays, 3:15–5:00 PM
+• Outdoor Walking – Thursdays, 2:00 PM (meet at ATC)
+• After School Time (Grades K–5) – Mon/Wed/Fri, 3:15–5:00 PM at Corner Room, ATC
+• Fitness Center – Weekdays, 8:00–10:00 AM & 1:00–2:00 PM (M/W/F)
+• Open Gym – Fridays, 6:00–8:00 PM
+
+Sea Otter Community Center (SOCC)
+• Yoga – Tue & Thu, 10:00 AM
+• Workout with Lisa – weekdays, 9:00–9:45 AM
+• Open Club Day – Wednesdays, 3:15–5:00 PM
+• Chess Club – Thursdays, 3:15–5:00 PM
+• Arts & Crafts Club – Thursdays, 3:15–5:00 PM
+
+Seldovia Public Library – Spring Hours
+• Mon: 2:00–4:00 PM
+• Tue: 2:00–7:00 PM
+• Wed: 2:00–4:00 PM
+• Thu: 2:00–4:00 PM
+• Sat: 2:00–5:00 PM
+
+Seldovia Bible Chapel
+• Sunday School – Sundays, 9:45–10:45 AM
+• Morning Worship – Sundays, 11:00 AM
+• Chapel Teens Ground Zero (Grades 7–12) – Sundays, 3:00 PM
+• Tuesday Bible Studies – Men's at 7:00 PM (Fellowship Hall), Women's at 7:00 PM (Church)
+
+St. Nicholas Russian Orthodox Church
+• Vespers Service – Saturdays, 5:00–6:00 PM (call Ginny Glenn at 970-404-1249)
+• Sunday Service – 10:00 AM
+
+Grace Haven Community Church
+• Sunday Worship – 10:00 AM
+
+Stay connected and check out the daily calendar at Seldovia.com for the latest updates! Thinking about real estate in Seldovia? Visit www.SeldoviaProperty.com—if something catches your eye, I'm always here to help, your Seldovia Connection!`},
+ {title:"Dust off the bike and enjoy the views — biking isn't just a commute, it's a joy.",excerpt:"You also get the benefit of saying hello to all your friends and neighbors along the way!",date:"May 20, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-05-20.jpg",body:`You also get the benefit of saying hello to all your friends and neighbors along the way! Library are all within easy walking and biking distance! So dust off the bike and enjoy the views, biking isn't just a commute—it's a joy. ❤️
+
+Whether you're pedaling along the boardwalk or cruising through the quiet backroads, today's the perfect excuse to leave the car behind and enjoy the ride.
+
+You also get the benefit of saying hello to all your friends and neighbors along the way! 😊`},
+ {title:"Thinking about making Seldovia your home?",excerpt:"Whether you're drawn to the quiet charm of Main Street, the stunning waterfront views, or the tucked-away trails of the surrounding hillside, each corner of Seldovia offers something unique.",date:"May 19, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-05-19.jpg",body:`Thinking about making Seldovia your home? Whether you're drawn to the quiet charm of Main Street, the stunning waterfront views, or the tucked-away trails of the surrounding hillside, each corner of Seldovia offers something unique.
+
+Here are a few key things to consider:
+✨ Lifestyle – Want to be close to the harbor, the school, or nature trails?
+🚶 Walkability – Some areas are steps from local shops and cafes, while others offer more privacy.
+🏠 Views & Vibe – From oceanfront tranquility to forested serenity—what calls to you?
+🏡 Property Type – Ready-to-move-in homes, fixer-uppers, or vacant land to build your dream.
+
+No matter your goals, I'm here to help you find your perfect spot in our beautiful corner of Alaska. Let's explore what fits you best!`},
+ {title:"Hello, Seldovia! Welcome to Week 20 of 2025!",excerpt:"The final bell is ringing at Susan B. English, the derby boats are heading out, and the community is coming together.",date:"May 19, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-05-19_2.jpg",body:`Hello, Seldovia! Welcome to Week 20 of 2025!
+
+The final bell is ringing at Susan B. English, the derby boats are heading out, and the community is coming together for celebration and remembrance. Let's welcome the week with fresh energy and appreciation for all the ways we can gather, grow, and enjoy Seldovia!
+
+Upcoming Events:
+
+Monday, May 19, 2025
+• POSTPONED – City of Seldovia Spring Clean-Up Week was scheduled for May 19–22
+
+Thursday, May 22, 2025
+• Susan B. English School – End of School Year
+
+Friday, May 23, 2025
+• Seldovia Chamber of Commerce's Annual Human Powered Fishing Derby begins! (May 23-25)
+🐟 Saturday, May 24 – Derby continues
+🐟 Sunday, May 25 – Derby Finale & Community Potluck at 5:00 PM
+➤ Join the Facebook group for updates: The Seldovia Human Powered Fishing Derby
+
+Sunday, May 25, 2025
+• Blessing of the Fishermen and Fleet – 10:00 PM at the Gateway Pavilion on Main Street
+
+Weekly Activities:
+
+Seldovia Village Tribe (SVT)
+• SVT Basketball Practice (Grades K–5) – 3:15–4:30 PM at the SBE Gymnasium
+• Open Swim – Tuesdays, 3:15–5:00 PM
+• Outdoor Walking – Thursdays, 2:00 PM (Meet at ATC – all abilities welcome!)
+• After School Time (Grades K–5) – Mondays, Wednesdays, Fridays, 3:15–5:00 PM at Corner Room, ATC
+• Fitness Center – Weekdays, 8:00–10:00 AM and 1:00–2:00 PM (Monday, Wednesday, Friday)
+• Open Gym & Swim – Fridays, 6:00–8:00 PM (Swim ended May 16)
+
+Sea Otter Community Center (SOCC)
+• Yoga – Tuesday and Thursday, 10:00 AM
+• Workout with Lisa – Weekdays, 9:00–9:45 AM
+• Open Club Day – Wednesdays, 3:15–5:00 PM
+• Chess Club – Thursdays, 3:15–5:00 PM
+• Arts & Crafts Club – Thursdays, 3:15–5:00 PM
+• Ceramics Studio – Kids and adults, see flyer for times and details
+
+Susan B. English School – Updated Pool Schedule
+• Lap Swim – Monday, Wednesday, Friday, 8:00–10:00 AM
+• Lap Swim – Tuesday and Friday, 5:00–6:00 PM
+• 50+ Exercise – Monday, Wednesday, Friday, 10:00–11:00 AM
+• Tot Swim – Thursdays, 10:00–11:30 AM (for families with children ages 4 and under)
+
+Seldovia Public Library – Spring Hours
+• Monday: 2:00–4:00 PM
+• Tuesday: 2:00–7:00 PM
+• Wednesday: 2:00–4:00 PM
+• Thursday: 2:00–4:00 PM
+• Saturday: 2:00–5:00 PM
+
+Seldovia Bible Chapel
+• Sunday School – Sundays, 9:45–10:45 AM
+• Morning Worship – Sundays, 11:00 AM
+• Chapel Teens Ground Zero (Grades 7–12) – Sundays, 3:00 PM
+• Tuesday Evening Bible Studies: Men's Bible Study – 7:00 PM at the Fellowship Hall; Women's Bible Study – 7:00 PM at the Church
+
+St. Nicholas Russian Orthodox Church
+• Vespers Service – Saturdays, 5:00–6:00 PM (Contact Ginny Glenn at 970-404-1249 for more info)
+• Sunday Service – 10:00 AM
+
+Grace Haven Community Church
+• Sunday Worship – 10:00 AM
+
+Stay connected and check out the daily calendar at Seldovia.com for the latest updates! Thinking about real estate in Seldovia? Visit www.SeldoviaProperty.com—if something catches your eye, I'm always here to help, your Seldovia Connection!`},
+ {title:"Happy World Baking Day!",excerpt:"Today we're sending a big THANK YOU to all of Seldovia's amazing bakers.",date:"May 17, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-05-17.jpg",body:`Happy World Baking Day! 🍞🥐
+
+Today we're sending a big THANK YOU to all of Seldovia's amazing bakers who fill our town with the smell of fresh bread, sweet treats, and warm smiles.
+
+From perfectly golden loaves to irresistible pastries, you make our days a little sweeter and our community a whole lot tastier.`},
+ {title:"We just recorded on this cozy cabin in Seldovia. Congratulations to our wonderful buyers!",excerpt:"Here's to new beginnings, peaceful mornings, and making memories in this special corner of Nutbeem Road.",date:"May 16, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-05-16_2.jpg",body:`We just recorded on this cozy cabin in Seldovia. Congratulations to our wonderful buyers! Here's to new beginnings, peaceful mornings, and making memories in this special corner of Nutbeem Road. 🌱✨`},
+ {title:"Let the grillin' and chillin' begin! Happy National BBQ Day!",excerpt:"Fire up the grill and let the deliciousness unfold.",date:"May 16, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-05-16.jpg",body:`Let the grillin' and chillin' begin! Happy National BBQ Day! 🔥
+
+Fire up the grill and let the deliciousness unfold. Gather 'round for sizzling bites and good times. Let's make this BBQ day one for the books! 🍖🌭`},
+ {title:"Today, we celebrate the love, strength, and support that families bring into our lives.",excerpt:"In a small town like Seldovia, family often extends beyond the walls of a home.",date:"May 15, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-05-15.jpg",body:`Today, we celebrate the love, strength, and support that families bring into our lives—whether by blood, by choice, or by community. In a small town like Seldovia, family often extends beyond the walls of a home.
+
+Here's to the people who lift us up, cheer us on, and make us feel at home no matter where we are. 💗`},
+ {title:"When it comes to your dream home, how many rooms do you need?",excerpt:"Is bigger better with a spacious layout, or would you minimize your footprint?",date:"May 14, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-05-14.jpg",body:`When it comes to your dream home, how many rooms do you need?
+
+How many bedrooms, a home office, and a guest room? Maybe a library, yoga studio or sewing room?
+
+Is bigger better with a spacious layout, or would you minimize your footprint? Maybe more outdoor living spaces? 🤔`},
+ {title:"This remote, peaceful town offers a true getaway where the hustle and bustle of daily life can't follow.",excerpt:"It's just you, the quiet waters, and the beauty of Seldovia.",date:"May 13, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-05-13.jpg",body:`This remote, peaceful town offers a true getaway where the hustle and bustle of daily life can't follow. It's just you, the quiet waters, and the beauty of Seldovia.`},
+ {title:"Hello, Seldovia! Welcome to Week 19 of 2025!",excerpt:"It's mid-May and our community is blooming with energy!",date:"May 12, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-05-12_2.jpg",body:`Hello, Seldovia! Welcome to Week 19 of 2025!
+
+It's mid-May and our community is blooming with energy! Check out what's happening in Seldovia this week!
+
+Upcoming Events:
+
+Monday, May 12, 2025
+• Seldovia City Council Regular Meeting – 6:00 PM at Council Chambers (Agenda available online or at City Hall)
+
+Tuesday, May 13, 2025
+• SVT Thrive "Nettles" with Jenifer Dickson
+• SVT Homeschool Wood Shop Class (Grades K–5) – 1:30–2:30 PM (May 13–15)
+
+Thursday, May 15, 2025
+• SVT Dr. Marlowe Veterinary Services – Call Debbie Cameron @ (907) 435-3255 to schedule an appointment!
+
+Friday, May 16, 2025
+• Seldovia Bay Ferry is sailing today – All aboard!
+
+Saturday, May 17, 2025
+• SOCC Science Friday (on Saturday!): "Science on the Boat" – (See the attached flier for more information)
+• SVT Science Birding Trip – Contact Laurel Hilts at 907-435-3252 for more information.
+
+Weekly Activities:
+
+Seldovia Village Tribe (SVT)
+• Swimming Lessons for Pre-K – Mondays, Wednesdays, Fridays until May 7
+• SVT Basketball Practice (Grades K–5) – 3:15–4:30 PM at the SBE Gymnasium
+• Open Swim – Tuesdays, 3:15–5:00 PM
+• Outdoor Walking – Thursdays, 2:00 PM (Meet at ATC – all abilities welcome!)
+• After School Time (Grades K–5) – Mondays, Wednesdays, Fridays, 3:15–5:00 PM at Corner Room, ATC
+• Fitness Center – Weekdays, 8:00–10:00 AM and 1:00–2:00 PM (Monday, Wednesday, Friday)
+• Open Gym & Swim – Fridays, 6:00–8:00 PM (Swim ends May 16)
+
+Sea Otter Community Center (SOCC)
+• Yoga – Tuesday and Thursday, 10:00 AM
+• Workout with Lisa – Weekdays, 9:00–9:45 AM
+• Open Club Day – Wednesdays, 3:15–5:00 PM
+• Chess Club – Thursdays, 3:15–5:00 PM
+• Arts & Crafts Club – Thursdays, 3:15–5:00 PM
+• Ceramics Studio for kids and adults – See flyer for times and details
+
+Susan B. English School Updated Pool Schedule
+• Lap Swim – Monday, Wednesday, Friday, 8:00–10:00 AM
+• Lap Swim – Tuesday and Friday, 5:00–6:00 PM
+• 50+ Exercise – Monday, Wednesday, Friday, 10:00–11:00 AM
+• Tot Swim – Thursdays, 10:00–11:30 AM. For families with children ages 4 and under.
+
+Seldovia Public Library – Spring Hours
+• Monday: 2:00–4:00 PM
+• Tuesday: 2:00–7:00 PM
+• Wednesday: 2:00–4:00 PM
+• Thursday: 2:00–4:00 PM
+• Saturday: 2:00–5:00 PM
+
+Seldovia Bible Chapel
+• Sunday School – Sundays, 9:45–10:45 AM
+• Morning Worship – Sundays, 11:00 AM
+• Chapel Teens Ground Zero (Grades 7–12) – Sundays, 3:00 PM
+• Tuesday Evening Bible Studies: Men's Bible Study – 7:00 PM at the Fellowship Hall; Women's Bible Study – 7:00 PM at the Church
+
+St. Nicholas Russian Orthodox Church
+• Vespers Service – Saturdays, 5:00–6:00 PM (Contact Ginny Glenn at 970-404-1249 for more info)
+• Sunday Service – 10:00 AM
+
+Grace Haven Community Church
+• Sunday Worship – 10:00 AM
+
+Stay connected and check out the daily calendar at Seldovia.com for the latest updates! Thinking about real estate in Seldovia? Visit www.SeldoviaProperty.com—if something catches your eye, I'm always here to help, your Seldovia Connection!`},
+ {title:"Happy World Nurse Day!",excerpt:"Let's celebrate and honor the incredible dedication, compassion, and expertise of nurses worldwide.",date:"May 12, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-05-12.jpg",body:`Happy World Nurse Day! 🏥❤️
+
+Let's celebrate and honor the incredible dedication, compassion, and expertise of nurses worldwide. Thank you for your tireless efforts in caring for us and making a difference in the lives of so many. 🙌🩺🌍`},
+ {title:"Having a great mom means growing up with a fierce cheerleader, a gentle guide, and a safe haven.",excerpt:"The ripple of a mother's love transforms the world, one tender moment at a time.",date:"May 11, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-05-11.jpg",body:`...creating memories that anchor you through life's storms. ✨
+
+Having a great mom means growing up with a fierce cheerleader, a gentle guide, and a safe haven—someone who teaches you to navigate life's highs and lows with grace. Her sacrifices often go unspoken, but she shapes who you are. From late nights to warm hugs (even when you resist!), and her unwavering belief in you—these are the precious gifts that last a lifetime.
+
+Whether you're blessed with an incredible mom or strive every day to be one, know this: the ripple of a mother's love transforms the world, one tender moment at a time. 💖`},
+ {title:"I've always felt like a match maker!",excerpt:"It's all about the connection the moment it just feels right.",date:"May 10, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-05-10.jpg",body:`I've always felt like a match maker! 🥹
+
+It's all about the connection the moment it just feels right. Whether it's the cozy living room or that perfect view, the right home makes your heart skip a beat.
+
+Ready to fall in love with your dream property? Give me a call - Jenny, broker/owner of Seldovia Property - 907-406-0044! I would love to help you make that connection! ✨`},
+ {title:"Hit the thumbs up if you're a sunrise lover. Tap the heart if you're a sunset chaser!",excerpt:"Let's see which moment wins!",date:"May 9, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-05-09.jpg",body:`Hit the 👍 if you're a sunrise lover. Tap the ❤️ if you're a sunset chaser!
+
+Let's see which moment wins! ✨`},
+ {title:"Dreaming of finally owning a home this year? It's closer than you think!",excerpt:"Here's how to make it happen — from setting a budget to closing the deal.",date:"May 6, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-05-06.jpg",body:`Dreaming of finally owning a home this year? It's closer than you think! Here's how to make it happen:
+
+1. SET A BUDGET: Calculate what you can afford based on your income and debts using online mortgage calculators, and start saving for a down payment. Call me if you need a hand working through the details!
+
+2. CONNECT WITH AN AGENT: Find a trustworthy expert. Yep - you've got me!
+
+3. GET PREAPPROVED: If you are truly "ready" to start the active search, this will give you an idea of how much you can borrow and show sellers you're serious.
+
+4. START HOUSE HUNTING: Work with me to identify homes within your budget and your desired area.
+
+5. MAKE AN OFFER: Once you find your home, I'll help you put together the offer that works for you and your family!
+
+6. CLOSE THE DEAL: Sign the final papers, and become a homeowner! Whoop Whoop!
+
+If you plan ahead and stay focused, this could be the year you finally get the keys to your future! Reach out today, and let's start making it happen. 🏡✨`},
+ {title:"Hello, Seldovia! Welcome to Week 18 of 2025!",excerpt:"May is in full swing, bringing a fresh round of community events, meetings, and family fun!",date:"May 5, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-05-05.jpg",body:`Hello, Seldovia! Welcome to Week 18 of 2025!
+
+May is in full swing, bringing a fresh round of community events, meetings, and family fun!
+
+Upcoming Events
+
+Monday, May 5, 2025
+• SRSA Board Special Meeting – 5:00 PM. Available via Zoom and in person. The public is encouraged to attend and participate.
+
+Wednesday, May 7, 2025
+• SBE PAC Meeting – 4:00 PM in the Susan B. English Commons Area or via Zoom
+• City of Seldovia Planning Commission Regular Meeting – 6:00 PM at Council Chambers
+
+Friday, May 9, 2025
+• SVT Cold Water Safety Training – May 9–10 (See flyer for more details)
+• SVT Bike Rodeo – 3:15–4:30 PM at the Susan B. English School parking lot
+
+Saturday, May 10, 2025
+• SBE Booster Club Dinner & Auction 5pm at the Susan B. English School
+
+Weekly Activities
+
+Seldovia Village Tribe (SVT)
+• Swimming Lessons for Pre-K – Mondays, Wednesdays, Fridays until May 7
+• SVT Basketball Practice (Grades K–5) – 3:15–4:30 PM at the SBE Gymnasium
+• Open Swim – Tuesdays, 3:15–5:00 PM
+• Outdoor Walking – Thursdays, 2:00 PM (Meet at ATC – all abilities welcome!)
+• After School Time (Grades K–5) – Mondays, Wednesdays, Fridays, 3:15–5:00 PM at Corner Room, ATC
+• Fitness Center – Weekdays, 8:00–10:00 AM and 1:00–2:00 PM (Monday, Wednesday, Friday)
+• Open Gym & Swim – Fridays, 6:00–8:00 PM (Swim ends May 16)
+
+Sea Otter Community Center (SOCC)
+• Yoga – Tuesday and Thursday, 10:00 AM
+• Workout with Lisa – Weekdays, 9:00–9:45 AM
+• Open Club Day – Wednesdays, 3:15–5:00 PM
+• Chess Club – Thursdays, 3:15–5:00 PM until May 8
+• Arts & Crafts Club 3:15-5:00pm
+• Ceramics Studio for kids and adults – See flyer for times and details
+
+Susan B. English School Pool
+• Lap Swim – Monday, Wednesday, Friday, 8:00–10:00 AM
+• Lap Swim – Tuesday and Friday, 5:00–6:00 PM
+• 50+ Exercise – Monday, Wednesday, Friday, 10:00–11:00 AM
+
+Seldovia Public Library – Spring Hours
+• Monday: 2:00–4:00 PM
+• Tuesday: 2:00–7:00 PM
+• Wednesday: 2:00–4:00 PM
+• Thursday: 2:00–4:00 PM
+• Saturday: 2:00–5:00 PM
+
+Seldovia Bible Chapel
+• Sunday School – Sundays, 9:45–10:45 AM
+• Morning Worship – Sundays, 11:00 AM
+• Chapel Teens Ground Zero (Grades 7–12) – Sundays, 3:00 PM
+• Tuesday Evening Bible Studies: Men's Bible Study – 7:00 PM at the Fellowship Hall; Women's Bible Study – 7:00 PM at the Church
+
+St. Nicholas Russian Orthodox Church
+• Vespers Service – Saturdays, 5:00–6:00 PM (Contact Ginny Glenn at 970-404-1249 for more info)
+• Sunday Service – 10:00 AM
+
+Grace Haven Community Church
+• Sunday Worship – 10:00 AM
+
+Stay connected and check out the daily calendar at Seldovia.com for the latest updates! Thinking about real estate in Seldovia? Visit www.SeldoviaProperty.com—if something catches your eye, I'm always here to help, your Seldovia Connection!`},
+ {title:"A Big Shout-Out to Our Seldovia Firefighters!",excerpt:"Thank you for your time, your expertise, and your unwavering dedication to keeping Seldovia safe.",date:"May 4, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-05-04.jpg",body:`A Big Shout-Out to Our Seldovia Firefighters! 🚒🔥
+
+Let's take a moment to recognize the brave men and women who show up with courage, skill, and heart whenever our community needs them most.
+
+Thank you for your time, your expertise, and your unwavering dedication to keeping Seldovia safe. We are so grateful for all that you do! 🙌`},
+ {title:"Teaching is more than a profession—it's a passion that shapes futures.",excerpt:"On this Teacher Appreciation Day, let's celebrate the incredible mentors, guides, and lifelong learners who light the way for our youth.",date:"May 3, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-05-03.jpg",body:`Teaching is more than a profession—it's a passion that shapes futures. 📚🌟
+
+Here in Seldovia, our teachers are in a position to do more than educate—they inspire, nurture, and help our community grow stronger every day. 💙
+
+Do you have a special teacher that comes to mind? If so, give them a call today, a text or write a letter. A great teacher's incredible impact lasts a lifetime, and it is so important to let them know!
+
+On this Teacher Appreciation Day, let's celebrate the incredible mentors, guides, and lifelong learners who light the way for our youth. Whether it's in a cozy classroom by the bay or out exploring nature as part of a lesson, thank you for all you do. ✨`},
+ {title:"The days are longer, the wildflowers are blooming, and the town starts to come alive with that early summer energy.",excerpt:"May is the quiet, beautiful beginning of all the summer fun to come.",date:"May 2, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-05-02.jpg",body:`The days are longer, the wildflowers are blooming, and the town starts to come alive with that early summer energy. Whether you're here for wildlife, beach walks, or just a peaceful escape. 🌞🌊
+
+May is the quiet, beautiful beginning of all the summer fun to come. Who's ready to make some memories in Seldovia?`},
  {title:"Whether you're fresh off the ferry or just strolling the boardwalk, The Linwood Bar & Grill is your go-to spot for hearty meals, cold drinks, and that classic small-town charm.",excerpt:"Swing by for lunch, stay for sunset, and leave with memories!",date:"Apr 30, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-04-30.jpg",body:`Whether you're fresh off the ferry or just strolling the boardwalk, The Linwood Bar & Grill is your go-to spot for hearty meals, cold drinks, and that classic small-town charm. 🍽️✨
 
 Swing by for lunch, stay for sunset, and leave with memories (and maybe a full belly!). Whether you're a first-timer or a longtime local, there's always something new to try.
