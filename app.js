@@ -1959,6 +1959,411 @@ www.Seldovia.com 🌊✨
 Today we celebrate the hard work, dedication, and spirit of those who keep our community strong. Whether you're casting a line, enjoying the trails, or simply soaking up the last days of summer, we hope you take this time to relax and recharge—you've earned it! 💙
 
 Here's to the workers, dreamers, and doers thank you for all that you do. 🙌`},
+ {title:"Whether you're fresh off the ferry or just strolling the boardwalk, The Linwood Bar & Grill is your go-to spot for hearty meals, cold drinks, and that classic small-town charm.",excerpt:"Swing by for lunch, stay for sunset, and leave with memories!",date:"Apr 30, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-04-30.jpg",body:`Whether you're fresh off the ferry or just strolling the boardwalk, The Linwood Bar & Grill is your go-to spot for hearty meals, cold drinks, and that classic small-town charm. 🍽️✨
+
+Swing by for lunch, stay for sunset, and leave with memories (and maybe a full belly!). Whether you're a first-timer or a longtime local, there's always something new to try.
+
+All summer the Linwood hosts live music over the weekends, so it is another great reason to swing by! 🎶
+
+Photo credit to Linwood Bar & Grill`},
+ {title:"SALE PENDING! In just 4 DAYS, this cozy cabin in Seldovia has found its perfect match!",excerpt:"From the moment it hit the market, we knew it wouldn't last long.",date:"Apr 30, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-04-30_2.jpg",body:`SALE PENDING! ✨
+
+In just 4 DAYS, this cozy cabin in Seldovia has found its perfect match! 🔥🔥 From the moment it hit the market, we knew it wouldn't last long. The charm, the glorious woods, the special personal touches, and that cabin feel. It's no wonder this cabin has already found new owners excited to make it their own!`},
+ {title:"This stunning waterfront lot went pending in just 4 DAYS and closed in a mere 2 WEEKS!",excerpt:"Talk about a quick and seamless transaction!",date:"Apr 30, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-04-30_3.jpg",body:`This stunning waterfront lot went pending in just 4 DAYS and closed in a mere 2 WEEKS! Talk about a quick and seamless transaction! 🌊🌊
+
+It's safe to say this one didn't last long, and the new owners are ready to enjoy all the beauty and peace that comes with this prime spot. Congratulations! ✨`},
+ {title:"As of 2025, the estimated population of Seldovia, Alaska, is approximately 254 residents.",excerpt:"It's the kind of place where neighbors wave, the local café knows your order, and life moves with the rhythm of the tides.",date:"Apr 29, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-04-29.jpg",body:`As of 2025, the estimated population of Seldovia, Alaska, is approximately 254 residents, according to Alaska Demographics. This only includes those who live inside the City limits full-time.
+
+With less than 300 people calling Seldovia City their year-round home, it's the kind of place where neighbors wave, the local café knows your order, and life moves with the rhythm of the tides. 🌊✨
+
+Want to know what it's really like to live or visit here? Tap into local events, real estate, and our daily calendar at www.Seldovia.com for a glimpse into our Seldovia life!`},
+ {title:"Hello, Seldovia! Welcome to Week 17 of 2025!",excerpt:"The sun is staying out longer, and our town is coming alive with spring energy!",date:"Apr 29, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-04-29_2.jpg",body:`Hello, Seldovia! Welcome to Week 17 of 2025!
+
+The sun is staying out longer, and our town is coming alive with spring energy! From community celebrations to Sea Week adventures, there's something for everyone to enjoy. Take a look below and mark your calendars!
+
+Upcoming Events
+
+Tuesday, April 29, 2025
+• Seldovia City Council Budget Worksession – 5:00 PM at Council Chambers
+• Sea Week at Susan B. English School – April 28–May 2 (A fun-filled adventure all week long learning about the sea, boating, and water safety!)
+• SVT Thrive: Infant Learning Program – 12:30–1:30 PM at ATC in Seldovia
+
+Sunday, May 4, 2025
+Join us as we celebrate Jonathan and Melanie Hoard and their 20 years of faithful service at Seldovia Bible Chapel!
+• Worship Service at 11:00 AM. Potluck lunch following the service.
+
+Weekly Activities
+
+Seldovia Village Tribe (SVT)
+• Open Swim – Tuesdays, 3:15–5:00 PM and Fridays, 6:00–8:00 PM
+• Outdoor Walking – Thursdays, 2:00 PM (Meet at ATC – all abilities welcome!)
+• After School Time (Grades K–5) – Mondays, Wednesdays, Fridays, 3:15–5:00 PM at Corner Room, ATC
+• Fitness Center – Weekdays, 8:00–10:00 AM and 1:00–2:00 PM (Monday, Wednesday, Friday)
+• Open Gym – Fridays, 6:00–8:00 PM
+
+Sea Otter Community Center (SOCC)
+• Yoga – Tuesday to Thursday, 10:00 AM
+• Workout with Lisa – Weekdays, 9:00–9:45 AM
+• Open Club Day – Wednesdays, 3:15–5:00 PM
+• Chess Club – Thursdays, 3:15–5:00 PM
+• Ceramics Studio for kids and adults – see flyer for times and details
+
+Susan B. English School Pool
+• Lap Swim – Monday, Wednesday, Friday, 8:00–10:00 AM
+• Lap Swim – Tuesday and Friday, 5:00–6:00 PM
+• 50+ Exercise – Monday, Wednesday, Friday, 10:00–11:00 AM
+
+Seldovia Public Library – Spring Hours
+• Monday: 2:00–4:00 PM
+• Tuesday: 2:00–7:00 PM
+• Wednesday: 2:00–4:00 PM
+• Thursday: 2:00–4:00 PM
+• Saturday: 2:00–5:00 PM
+
+Seldovia Bible Chapel
+• Sunday School – Sundays, 9:45–10:45 AM
+• Morning Worship – Sundays, 11:00 AM
+• Chapel Teens Ground Zero (Grades 7–12) – Sundays, 3:00 PM
+• Tuesday Evening Bible Studies: Men's Bible Study – 7:00 PM at the Fellowship Hall; Women's Bible Study – 7:00 PM at the Church
+
+St. Nicholas Russian Orthodox Church
+• Vespers Service – Saturdays, 5:00–6:00 PM (Contact Ginny Glenn at 970-404-1249 for more info)
+• Sunday Service – 10:00 AM
+
+Grace Haven Community Church
+• Sunday Worship – 10:00 AM
+
+Stay connected and check out the daily calendar at Seldovia.com for the latest updates! Thinking about real estate in Seldovia? Visit www.SeldoviaProperty.com—if something catches your eye, I'm always here to help!`},
+ {title:"Do you agree? Yes or no?",excerpt:"Do you agree? Yes or no?",date:"Apr 28, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-04-28.jpg",body:`Do you agree? Yes or no?`},
+ {title:"Want to experience Seldovia like a local?",excerpt:"Whether you're looking to unwind by the water, explore art-filled corners, or grab a bite where the locals eat—we've got you covered.",date:"Apr 27, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-04-27.jpg",body:`Want to experience Seldovia like a local?
+
+Whether you're looking to unwind by the water, explore art-filled corners, or grab a bite where the locals eat—we've got you covered.
+
+Visit Seldovia.com for a full list of Seldovia's favorite locales and start planning your one-of-a-kind coastal adventure today! ✨`},
+ {title:"How to Get Here: getting to Seldovia is half the adventure!",excerpt:"You can reach our charming coastal town by ferry, plane, or water taxi.",date:"Apr 26, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-04-26.jpg",body:`✨ How to Get Here: ✨
+Getting to Seldovia is half the adventure! You can reach our charming coastal town by:
+
+🚢 Ferry: Hop on the Seldovia Bay Ferry, Rainbow Connection or Tustumena Ferry for a scenic ride across Kachemak Bay right into the heart of Seldovia.
+
+✈️ Plane: Enjoy breathtaking aerial views by flying into Seldovia on a small plane. Our airport is in easy walking distance to town!
+
+🛥️ Water Taxi: For a more personal experience, water taxis provide a direct route to Jakolof Bay dock (pictured in the post) or you can charter a trip right into the heart of Seldovia.
+
+What to Do Once You Arrive:
+Check out this quick list of must-dos:
+
+🏞️ Explore the Trails: From hiking in the Seldovia Wilderness to strolls along the coastline, the natural beauty is endless.
+
+🐟 Fishing: Whether you're a seasoned pro or a beginner, Seldovia offers prime fishing spots.
+
+🍽️ Local Eats: Enjoy delicious seafood and local cuisine at Seldovia's cozy eateries.
+
+🏘️ Discover the History: Take a walk along the historic boardwalk or visit the Seldovia Historical Museum.
+
+🚶 Tour around: Rent a bicycle, golf cart or kayak to tour the area by land or sea!
+
+🛍️ Shop: We don't have a mall or big box stores (we love that about Seldovia) but we do have a few great places to pick up a treasure, a snack or drink or gift to go!`},
+ {title:"Honestly, buying a home can be scary - just the “not knowing” what comes next.",excerpt:"The most important thing is to give me a call - we will walk through it together!",date:"Apr 25, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-04-25.jpg",body:`Honestly, buying a home can be scary - just the "not knowing" what comes next, what questions you should ask, what you don't want to forget, how to get started, what steps to get all the way to closing...
+
+The most important thing is to give me a call - we will walk through it together! I'll help you in every way I can to answer your questions, get answers if I don't have them and help you gather all the information you need to make a great decision for you and your family! 😊
+
+I got you!
+
+So, if you are thinking about buying or selling, just give a call, we can start the conversation. I'd love to help make that next step easier! 📞`},
+ {title:"Here's a Term You'll Want to Know!",excerpt:"Whether you're buying your first home or just love learning the lingo, understanding the basics makes the journey smoother.",date:"Apr 24, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-04-24.jpg",body:`Here's a Term You'll Want to Know! Whether you're buying your first home or just love learning the lingo, understanding the basics makes the journey smoother. Stay tuned for more real estate wisdom! 🏡`},
+ {title:"Happy World Book Day!",excerpt:"Let's celebrate the power of stories, knowledge, and imagination today.",date:"Apr 23, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-04-23.jpg",body:`📚 Happy World Book Day! 🌍✨ Let's celebrate the power of stories, knowledge, and imagination today.
+
+Whether it's an adventure, romance, mystery or fantasy, books have the magical ability to transport us to different worlds.
+
+Or maybe, you are looking to learn some history, how to's or you're looking for encouragement, ideas and inspiration... it is ALL possible in a book!
+
+Let's get lost in the pages and embrace the joy of reading! 📖💫🌟`},
+ {title:"Celebrate Earth Day in Seldovia!",excerpt:"There are so many ways to get involved in Seldovia—whether it's volunteering, donating, or simply spreading the word about causes that matter.",date:"Apr 22, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-04-22.jpg",body:`Celebrate Earth Day in Seldovia! 🌍🌎
+
+There are so many ways to get involved in Seldovia—whether it's volunteering, donating, or simply spreading the word about causes that matter. Every little effort helps keep our beautiful town thriving! ♻️`},
+ {title:"Spring brings sunshine, blooming flowers, and the perfect market conditions to sell your home!",excerpt:"Increased buyer activity, maximized curb appeal, and favorable weather for showings and moving.",date:"Apr 21, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-04-21.jpg",body:`Spring brings sunshine, blooming flowers, and the perfect market conditions to sell your home! Here's why:
+
+• Increased buyer activity: More families are out searching for their dream homes during this season, creating higher demand for your property.
+
+• Maximized curb appeal: Spring's vibrant colors and landscapes naturally enhance the attractiveness of your home, impressing potential buyers at first sight.
+
+• Favorable weather for showings and moving thanks to the pleasant weather. And for Seldovians, the Tusty is running - so moving in or out of Seldovia is easier!
+
+Thinking of capitalizing on the spring market? Reach out today for a consultation!`},
+ {title:"Hello, Seldovia! Welcome to Week 16 of 2025!",excerpt:"We've got a great lineup of events and activities this week in Seldovia!",date:"Apr 21, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-04-21_2.jpg",body:`Hello, Seldovia! Welcome to Week 16 of 2025!
+
+We've got a great lineup of events and activities this week in Seldovia! Check out the exciting things happening:
+
+Upcoming Events
+
+Russian Orthodox Church:
+Tuesday, April 22, 2025 -
+• Father Mark Solomon is Coming to Seldovia!
+– Tuesday, 5:00 PM: Vespers and Confessions
+– Wednesday, 9:00 AM: Divine Liturgy
+– Potluck Meal after Liturgy at Maurice & Ginny Glenn's home (379 Spruce St.) Everyone is invited to attend!!!
+
+• SBE Pool Homeschool Swim Lessons start today! (See the photo flyer for more information)
+
+Thursday, April 24, 2025
+• SVT Spring Carnival – April 24 & 25
+– Thursday, April 24: 3:15–7:00 PM
+– Friday, April 25: 12:00–7:00 PM
+See the flyer for the full list of activities!
+
+Saturday, April 26, 2025
+• SBE Lifeguard Certification Course – Saturday & Sunday, April 27th. $250 per person. Must be 16 years or older. Contact Amelia at 907-205-7963 or email amelia.pollack@gmail.com
+• SAC - Earth Day Film Festival – 6:30–9:00 PM at the Sea Otter Community Center (SOCC)
+
+Sunday, April 27, 2025
+• Grace Haven Community Church Easter Service – Rescheduled to 5:00 PM on April 27.
+
+WEEKLY ACTIVITIES:
+
+Seldovia Village Tribe (SVT) Weekly Activities
+• Open Swim – Tuesdays, 3:15–5:00 PM & Fridays, 6:00–8:00 PM
+• Outdoor Walking – Thursdays, 2:00 PM (Meet at ATC – All abilities welcome!)
+• After School Time (Grades K–5) – Mondays, Wednesdays, Fridays, 3:15–5:00 PM at Corner Room, ATC
+• Fitness Center – Weekdays, 8:00–10:00 AM & 1:00–2:00 PM (Monday, Wednesday, Friday)
+• Open Gym – Fridays, 6:00–8:00 PM
+
+Sea Otter Community Center (SOCC) Weekly Activities
+• Yoga – Tuesday–Thursday, 10:00 AM
+• Workout with Lisa – Weekdays, 9:00–9:45 AM
+• Open Club Day – Wednesdays, 3:15–5:00 PM
+• Chess Club – Thursdays, 3:15–5:00 PM
+
+Susan B. English School POOL Weekly Activities
+• Lap Swim – Monday, Wednesday, Friday, 8:00–10:00 AM
+• Lap Swim – Tuesday & Friday, 5:00–6:00 PM
+• 50+ Exercise – Monday, Wednesday, Friday, 10:00–11:00 AM
+
+Seldovia Public Library – Spring Hours
+• Monday: 2:00–4:00 PM
+• Tuesday: 2:00–7:00 PM
+• Wednesday: 2:00–4:00 PM
+• Thursday: 2:00–4:00 PM
+• Saturday: 2:00–5:00 PM
+
+Seldovia Bible Chapel Weekly Activities
+• Sunday School – Sundays, 9:45–10:45 AM
+• Morning Worship – Sundays, 11:00 AM
+• Chapel Teens Ground Zero (Grades 7–12) – Sundays, 3:00 PM
+• Tuesday Evening Bible Studies: Men's Bible Study – 7:00 PM at the Fellowship Hall; Women's Bible Study – 7:00 PM at the Church
+
+St. Nicholas Russian Orthodox Church
+• Vespers Service – Saturdays, 5:00–6:00 PM (Contact Ginny Glenn at 970-404-1249 for more info)
+• Sunday Service – 10:00 AM
+
+Grace Haven Community Church
+• Sunday Worship – 10:00 AM
+
+Stay connected and check out the daily calendar at Seldovia.com for the latest updates! Thinking about real estate in Seldovia? Visit www.SeldoviaProperty.com—if something catches your eye, I'm always here to help!`},
+ {title:"May our hearts be filled with hope, peace, and love as we remember the sacrifice of Jesus Christ.",excerpt:"Wishing everyone a happy and blessed Easter holiday.",date:"Apr 20, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-04-20.jpg",body:`May our hearts be filled with hope, peace, and love as we remember the sacrifice of Jesus Christ. Wishing everyone a happy and blessed Easter holiday. 🐰🐣🌿`},
+ {title:"Hoppy Easter Sunday, everyone!",excerpt:"May your basket be full of chocolate eggs, your day be sprinkled with joy, and your hearts be as light as bunny hops!",date:"Apr 20, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-04-20_2.jpg",body:`Hoppy Easter Sunday, everyone! 🐰🌷
+
+May your basket be full of chocolate eggs, your day be sprinkled with joy, and your hearts be as light as bunny hops! 🌼💛`},
+ {title:"Check out Seldovia.com for events, photos, daily calendar and all the information on businesses, services and organizations that make Seldovia extra special!",excerpt:"Yes, it is all about the people!",date:"Apr 19, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-04-19.jpg",body:`Check out Seldovia.com for events, photos, daily calendar and all the information on businesses, services and organizations that make Seldovia extra special! ✨
+
+Yes, it is all about the people! 😊☁️`},
+ {title:"On this Good Friday, may your day be filled with reflection, renewal and the promise of His grace.",excerpt:"On this Good Friday, may your day be filled with reflection, renewal and the promise of His grace.",date:"Apr 18, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-04-18.jpg",body:`On this Good Friday, may your day be filled with reflection, renewal and the promise of His grace. 🙏🌷`},
+ {title:"Your real estate agent works tirelessly to guide you home—and they deserve a little extra appreciation!",excerpt:"Here are 4 simple ways to show your agent just how much you value their hard work, dedication, and expertise.",date:"Apr 17, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-04-17.jpg",body:`Your real estate agent works tirelessly to guide you home—and they deserve a little extra appreciation! 💛 Here are 4 simple ways to show your agent just how much you value their hard work, dedication, and expertise. ✨
+
+1. Leave a Positive Review
+A well-written online review on platforms like Google or Zillow can go a long way in attracting new clients. Sharing your positive experience also helps build their reputation.
+
+2. If you've had a great experience, recommend your agent to others who are looking to buy or sell. Personal referrals are invaluable.
+
+3. Give them a shoutout on your social media profiles, whether it's sharing a post about the home they helped you buy or a simple thank-you tag. It's a great way to show public appreciation and help them grow their network.
+
+4. Whether it's a phone call on the anniversary of your home purchase or checking in periodically, ongoing support reinforces your trust and appreciation for their hard work.`},
+ {title:"Navigating the real estate market can be complex, but the right agent provides invaluable expertise to ensure a smooth and successful experience.",excerpt:"Here's how a professional agent can assist you!",date:"Apr 16, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-04-16.jpg",body:`Navigating the real estate market can be complex, but the right agent provides invaluable expertise to ensure a smooth and successful experience. Here's how a professional agent can assist you! 👇✨`},
+ {title:"Friendly Reminder: Tax Deadline is here!",excerpt:"Don't forget to file your taxes and check that off the to-do list and stay financially savvy!",date:"Apr 15, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-04-15.jpg",body:`⏰ Friendly Reminder: Tax Deadline is here! 🧾 Don't forget to file your taxes and check that off the to-do list and stay financially savvy! 💰🧾`},
+ {title:"This one's extra special, these wonderful buyers have been searching with me for three years to find the perfect place to call their own.",excerpt:"I'm so thrilled to say we finally found the one!",date:"Apr 14, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-04-14.jpg",body:`This one's extra special, these wonderful buyers have been searching with me for three years to find the perfect place to call their own. It's been a journey full of patience, persistence, and hope... and I'm so thrilled to say we finally found the one! ✨`},
+ {title:"Hello, Seldovia! Welcome to Week 15 of 2025!",excerpt:"Whether you're looking to improve your skills, enjoy some bingo, or participate in a community egg hunt, there's plenty to do in Seldovia this week.",date:"Apr 14, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-04-14_2.jpg",body:`Hello, Seldovia! Welcome to Week 15 of 2025!
+
+We're excited to kick off Week 15 with a variety of events, classes, and activities for all ages! Whether you're looking to improve your skills, enjoy some bingo, or participate in a community egg hunt, there's plenty to do in Seldovia this week. Be sure to check out all the upcoming happenings:
+
+Upcoming Events
+
+Monday, April 14, 2025
+• Start of SVT Swimming Lessons for Pre-K Kids – 11:00 AM–12:00 PM every Monday, Wednesday, and Friday
+
+Tuesday, April 15, 2025
+• SVT - Reducing the Toxic Burden in Your Life – 12:30–1:30 PM at the Elder's Room, ATC Building
+
+Wednesday, April 16, 2025
+• SVT - Children's Library Elder Reading – 11:00 AM–12:00 PM (For ages 0–6 years) at the Corner Gathering Room, ATC Building
+• SVT BINGO – 6:00–8:00 PM at the Seldovia Conference Center
+
+Thursday, April 17, 2025
+• JOY Club – 3:15–4:15 PM (For all children K–6th grade. Need a ride? Text or call Pastor Jonathan Hoard at 907-202-3947)
+• SBE Tot Swim – 10:00–11:30 AM (For families with children ages 4 & under. Older siblings welcome if the pool remains a calm learning space)
+• Dr. Marlowe Veterinary Services in town – Call Debbie Cameron at 907-435-3255 to schedule an appointment
+
+Friday, April 18, 2025
+• Deadline – 4th of July Coordinator Application
+• SVT - Tie Dye Fun & More! – 1:00–3:00 PM (Corner Room, ATC Building)
+• SBC - Good Friday Service – 3:00 PM
+• Linwood Bar & Grill Free Bingo – 6:00 PM
+
+Saturday, April 19, 2025
+• SVT - Community Easter Egg Hunt – 11:30 AM at Susan B. English School (For children birth–6th grade)
+• SBC - Family Lunch & Children's Easter Egg Hunt – 12:00 PM
+
+Sunday, April 20, 2025
+• SBC - Community 'Son-Rise' Service – 7:30 AM at Outside Beach followed by a breakfast potluck at the Bible Chapel
+• Resurrection Sunday Morning Worship – 11:00 AM (featuring special songs from the Children's Choir)
+
+Seldovia Village Tribe (SVT) Weekly Activities
+• Open Swim – Tuesdays, 3:15–5:00 PM & Fridays, 6:00–8:00 PM
+• Outdoor Walking – Thursdays, 2:00 PM (Meet at ATC – All abilities welcome!)
+• After School Time (Grades K–5) – Mondays, Wednesdays, Fridays, 3:15–5:00 PM at Corner Room, ATC
+• Fitness Center – Weekdays, 8:00–10:00 AM & 1:00–2:00 PM (Monday, Wednesday, Friday)
+• Open Gym – Fridays, 6:00–8:00 PM
+
+Sea Otter Community Center (SOCC) Weekly Activities
+• Yoga – Tuesday–Thursday, 10:00 AM
+• Workout with Lisa – Weekdays, 9:00–9:45 AM
+• Open Club Day – Wednesdays, 3:15–5:00 PM
+• Chess Club – Thursdays, 3:15–5:00 PM
+
+Susan B. English School Weekly Activities
+• Lap Swim – Monday, Wednesday, Friday, 8:00–10:00 AM
+• Lap Swim – Tuesday & Friday, 5:00–6:00 PM
+• 50+ Exercise – Monday, Wednesday, Friday, 10:00–11:00 AM
+
+Seldovia Public Library – Spring Hours
+• Monday: 2:00–4:00 PM
+• Tuesday: 2:00–7:00 PM
+• Wednesday: 2:00–4:00 PM
+• Thursday: 2:00–4:00 PM
+• Saturday: 2:00–5:00 PM
+
+Seldovia Bible Chapel Weekly Activities
+• Sunday School – Sundays, 9:45–10:45 AM
+• Morning Worship – Sundays, 11:00 AM
+• Chapel Teens Ground Zero (Grades 7–12) – Sundays, 3:00 PM
+• Tuesday Evening Bible Studies: Men's Bible Study – 7:00 PM at the Fellowship Hall; Women's Bible Study – 7:00 PM at the Church
+
+St. Nicholas Russian Orthodox Church
+• Vespers Service – Saturdays, 5:00–6:00 PM (Contact Ginny Glenn at 970-404-1249 for more info)
+• Sunday Service – 10:00 AM
+
+Grace Haven Community Church
+• Sunday Worship – 10:00 AM
+
+Stay connected and check out the daily calendar at Seldovia.com for the latest updates! Thinking about real estate in Seldovia? Visit www.SeldoviaProperty.com—if something catches your eye, I'm always here to help! 😄🏡`},
+ {title:"Per an analysis by NerdWallet, the average price of homeowners insurance is $1,915 annually.",excerpt:"It's an essential part of protecting your house from the unexpected.",date:"Apr 13, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-04-13.jpg",body:`Per an analysis by NerdWallet, the average price of homeowners insurance is $1,915 annually, or $160 a month, for a $300,000 home. Though that may seem steep, it's an essential part of protecting your house from the unexpected.
+
+Of course, numerous factors impact the overall price, including your state, claim history, credit history, and the age and location of the home, making it important that you work with a qualified agent to find the best coverage for you and your property. Reach out to get started! 📲`},
+ {title:"Step back in time and take a stroll along Seldovia's historic boardwalk—a place where the past meets the present in the most picturesque way.",excerpt:"Whether you're here for the history, the scenery, or just a peaceful walk, the Seldovia Boardwalk is a must-visit!",date:"Apr 12, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-04-12.jpg",body:`Step back in time and take a stroll along Seldovia's historic boardwalk—a place where the past meets the present in the most picturesque way. Once a bustling hub of activity, this wooden boardwalk has stood the test of time, offering visitors a glimpse into Seldovia's rich history while showcasing its undeniable coastal charm.
+
+✨ Why You'll Love the Seldovia Boardwalk:
+✅ A Piece of History – Walk where generations before have traveled, connecting Seldovia's past to today. 📸🌲
+✅ Scenic Waterfront Views – The perfect spot to take in breathtaking views of the harbor, boats, and wildlife. 🌊🦅
+✅ Local Shop & Gardens – Browse a charming local business and sit in a garden as you experience the heart of the community.
+
+Whether you're here for the history, the scenery, or just a peaceful walk, the Seldovia Boardwalk is a must-visit!`},
+ {title:"Turn up the warmth without burning a hole in your pocket!",excerpt:"Winter heating bills can really give you chills, so here are some savvy tips to keep your home cozy and costs down.",date:"Apr 10, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-04-10.jpg",body:`Turn up the warmth without burning a hole in your pocket! 🔥❄️ Winter heating bills can really give you chills, so here are some savvy tips to keep your home cozy and costs down:
+
+🔷 Seal drafts around doors and windows, and replace damaged trim.
+🔷 Improve your insulation, especially in unfinished rooms.
+🔷 Schedule maintenance checks on your heating appliances.
+🔷 When possible, put on a sweater instead of cranking up the heat.
+
+Let's make this winter cozy and budget friendly. Send me a message today to discuss your home-improvement needs! 🏡🔨`},
+ {title:"Depending on how cold... I've got to warm up first!",excerpt:"A warm cup of tea might do it, a soft sherpa blanket - and if I seem to have lowered my core temp - I don't hesitate to take a hot shower!",date:"Apr 9, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-04-09.jpg",body:`Depending on how cold... I've got to warm up first! A warm cup of tea might do it, a soft sherpa blanket - and if I seem to have lowered my core temp - I don't hesitate to take a hot shower! That will fix it! LOL!
+
+Curling up with a book, sending a few cards, catching up on the latest news, checking in with friends on socials, working on Chamber Biz, tidying my studio or calling my mom - and of course, chatting with my family are "go tos" for me! What about you? 😊✨`},
+ {title:"Hello, Seldovia! Welcome to Week 14 of 2025!",excerpt:"It's a new week in Seldovia, and we've got exciting events, classes, and activities lined up for everyone!",date:"Apr 7, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-04-07.jpg",body:`Hello, Seldovia! Welcome to Week 14 of 2025!
+
+It's a new week in Seldovia, and we've got exciting events, classes, and activities lined up for everyone! Check out what's happening this week:
+
+Upcoming Events
+
+Tuesday, April 8, 2025
+• SBE Principal/Teacher Interviews – 4:00–7:00 PM. If you have any questions, please don't hesitate to contact Mr. Druce.
+
+Thursday, April 10, 2025
+• JOY Club – 3:15–4:15 PM. For all children ages K-6th grade. For more information or if you need a ride, please text or call Pastor Jonathan Hoard at 907-202-3947.
+• SVT – Knitting Class with Honeybee Nordenson – 6:00–8:00 PM. Sign up @ svt.org/events/knitting-class.
+
+Friday, April 11, 2025
+• SVT – EggCellent Early Release Time – 1:40–3:30 PM @ Seldovia Conference Center. For more information, contact Laurie Glenn at 907-234-7898.
+• Linwood Bar & Grill Free Bingo – 6:00 PM. Join us for 10 rounds of bingo with fun local prizes donated by the Linwood and other businesses in town. Thanks, Haley, for running the games while Jackie is away—so much fun ahead!
+
+Seldovia Village Tribe (SVT) Weekly Activities
+• Open Swim – Tuesdays, 3:15–5:00 PM & Fridays, 6:00–8:00 PM
+• Outdoor Walking – Thursdays, 2:00 PM (Meet at Alaska Tribal Cache Building – All abilities welcome!)
+• After School Time (Grades K-5) – Mondays, Wednesdays, Fridays, 3:15–5:00 PM @ Corner Room, ATC
+• Fitness Center – Weekdays, 8:00–10:00 AM & 1:00–2:00 PM (Monday, Wednesday, Friday)
+• Open Gym – Fridays, 6:00–8:00 PM
+
+Sea Otter Community Center (SOCC) Weekly Activities
+• Yoga – Tuesday–Thursday, 10:00 AM
+• Workout with Lisa – Weekdays, 9:00–9:45 AM
+• Open Club Day – Wednesdays, 3:15–5:00 PM (No Open Club this Wednesday, April 9)
+• Chess Club – Thursdays, 3:15–5:00 PM
+
+Seldovia Public Library Spring Schedule
+• Monday: 2:00–4:00 PM
+• Tuesday: 2:00–7:00 PM
+• Wednesday: 2:00–4:00 PM
+• Thursday: 2:00–4:00 PM
+• Saturday: 2:00–5:00 PM
+
+Seldovia Bible Chapel Weekly Activities
+• Morning Worship – Sundays, 11:00 AM
+• Sunday School – Sundays, 9:45–10:45 AM
+• Chapel Teens Ground Zero (Grades 7-12) – Sundays, 3:00 PM (Fun, refreshments, and Bible study for teens.)
+• Tuesday Evening Bible Studies: Men's Bible Study – 7:00 PM | Church Fellowship Hall; Women's Bible Study – 7:00 PM | Church
+
+St. Nicholas Russian Orthodox Church
+• Vespers Service – Every Saturday, 5:00–6:00 PM (Contact Ginny Glenn at 970-404-1249 for more info.)
+• Sunday Service – 10:00 AM
+
+Grace Haven Community Church
+• Sunday Worship – 10:00 AM
+
+Stay connected, and check out the latest updates on the calendar at Seldovia.com. If you're looking for real estate or need assistance, I'm just a call away!`},
+ {title:"Majestic mountains standing tall against the sky. Breathtaking views in Kenai!",excerpt:"Majestic mountains standing tall against the sky. Breathtaking views in Kenai!",date:"Apr 6, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-04-06.jpg",body:`Majestic mountains standing tall against the sky. Breathtaking views in Kenai! 🏔️✨`},
+ {title:"If you're looking for a scenic and peaceful hike in Seldovia, the Otterbahn Trail is a must!",excerpt:"It's the perfect spot to stretch your legs, take in the fresh air, and experience the beauty of Seldovia.",date:"Apr 5, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-04-05.jpg",body:`If you're looking for a scenic and peaceful hike in Seldovia, the Otterbahn Trail is a must! This beautiful trail winds through lush forests, over wooden bridges, and leads to breathtaking coastal views. Whether you're a nature lover, photographer, or just in need of a refreshing walk, this trail has something for everyone.
+
+✨ What Makes Otterbahn Trail Special?
+✅ A Walk Through Nature – Enjoy towering trees, wildflowers, and the chance to spot local wildlife. 🌲
+✅ A Perfect Escape – A quiet, relaxing trail that feels like a hidden paradise.
+✅ Beach Access – The trail leads straight to Outside Beach, where you can soak in stunning ocean views. 🌊☁️
+
+It's the perfect spot to stretch your legs, take in the fresh air, and experience the beauty of Seldovia.`},
+ {title:"Look what we caught ice fishing on the Lake Louise – a beautiful LITTLE whitefish!",excerpt:"This bait fish, along with 30 of his friends are coming home with us to Seldovia.",date:"Apr 4, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-04-04.jpg",body:`Look what we caught ice fishing on the Lake Louise – a beautiful LITTLE whitefish! This bait fish, along with 30 of his friends are coming home with us to Seldovia, where it'll play a role in our summer fishing adventures.
+
+And we've heard from a local that they are pretty good eating! So we will see! Fun to catch though! 😊`},
+ {title:"There's nothing quite like spending time at Outside Beach—one of Seldovia's most beautiful and peaceful spots.",excerpt:"If you've ever spent time at Outside Beach, you know it's more than just a beach—it's an experience!",date:"Apr 3, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-04-03.jpg",body:`There's nothing quite like spending time at Outside Beach—one of Seldovia's most beautiful and peaceful spots. Whether you're strolling along the shore searching for sea glass and unique driftwood or gathering around a cozy bonfire as the sun sets, this beach is the perfect place to embrace the magic of coastal life.
+
+✨ Why Outside Beach is a Must-Visit:
+✅ Taking your favorite dog for a run - a real run - wind in their fur kind of run! So good!
+✅ Beachcombing Treasures – Find shells, sea glass, and natural wonders washed up by the tides. 🌊
+✅ Breathtaking Views – Take in the stunning scenery of the ocean and surrounding mountains. 🏔️
+✅ Unforgettable Evenings – There's nothing better than a warm bonfire with friends, the sound of waves, and the Alaskan sky above. 🔥🌌
+
+If you've ever spent time at Outside Beach, you know it's more than just a beach—it's an experience!`},
+ {title:"Thinking about selling your home? The first step might surprise you!",excerpt:"It's not staging or listing—it's getting an accurate valuation.",date:"Apr 2, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-04-02.jpg",body:`Thinking about selling your home? 🌲 The first step might surprise you! It's not staging or listing —it's getting an accurate valuation.
+
+Whether you opt for a professional appraisal or a comparative market analysis (CMA), knowing your home's true worth is crucial for setting the right price. This ensures that your property is competitive in today's market while maximizing your return. 💰🔑
+
+Don't leave money on the table—start the selling process on the right note from the very beginning. Reach out today!`},
+ {title:"Why I Love Being Seldovia's Real Estate Agent?",excerpt:"It's more than just a job—it's about bringing people together.",date:"Apr 1, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-04-01.jpg",body:`Why I Love Being Seldovia's Real Estate Agent?
+
+If you were to ask me how I like being Seldovia's real estate agent, I'd say "I love it."
+
+But if you were to ask me on a deeper level..
+
+I'd tell you it's more than just a job—it's about bringing people together. It's about helping people find not just a house, but a place they can truly call home. It's about welcoming new faces into our incredible community and guiding those who have cherished Seldovia for years through their next big chapter.
+
+Every property tells a story, and I feel honored to be a part of those stories. Whether it's finding the perfect waterfront getaway, helping a family settle into their dream home, or assisting a seller as they move on to new adventures, every transaction is personal to me.
+
+Seldovia isn't just a location on a map—it's a way of life, and I'm grateful every day to be able to share that with others. 💙🌲`},
  {title:"Hello, Seldovia! Welcome to Week 13 of 2025!",excerpt:"The Tustumena is back in Seldovia this week, and there's plenty more to look forward to.",date:"Mar 31, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-03-31.jpg",body:`Hello, Seldovia! Welcome to Week 13 of 2025!
 
 The Tustumena is back in Seldovia this week, and there's plenty more to look forward to—from local meetings and fun gatherings to outdoor adventures. Mark your calendars and don't miss out!
