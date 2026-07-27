@@ -1959,6 +1959,96 @@ www.Seldovia.com 🌊✨
 Today we celebrate the hard work, dedication, and spirit of those who keep our community strong. Whether you're casting a line, enjoying the trails, or simply soaking up the last days of summer, we hope you take this time to relax and recharge—you've earned it! 💙
 
 Here's to the workers, dreamers, and doers thank you for all that you do. 🙌`},
+ {title:"Tell us you've been to Seldovia without telling us you've been to Seldovia...",excerpt:"Tell us you've been to Seldovia without telling us you've been to Seldovia...",date:"Jul 31, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-07-31.jpg",body:`Tell us you've been to Seldovia without telling us you've been to Seldovia... 😊
+
+#seldovia #seldoviaalaska #seldoviaak #seldoviaproperty #alaska #alaskalife #alaskaliving`},
+ {title:"Tag your ride-or-die bestie below and let them know why you're grateful!",excerpt:"The inside jokes that never get old, the late-night talks, and the adventures we'll remember forever.",date:"Jul 30, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-07-30.jpg",body:`Today, let's celebrate:
+• The inside jokes that never get old 😂
+• The late-night talks that make everything feel better 🌙
+• The adventures, big and small, that we'll remember forever 🌍
+
+Tag your ride-or-die bestie below and let them know why you're grateful!`},
+ {title:"The Slough was like glass this day as we slowly motored up towards the airstrip.",excerpt:"Calm, quiet, and perfectly reflective. A peaceful moment in Seldovia.",date:"Jul 29, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-07-29.jpg",body:`The Slough was like glass this day as we slowly motored up towards the airstrip. Calm, quiet, and perfectly reflective. A peaceful moment in Seldovia. 🌊🌿`},
+ {title:"Listed and Pending in ONE Day!",excerpt:"This Seldovia property didn't waste any time on the market and already pending in just one day!",date:"Jul 28, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-07-28.jpg",body:`Listed and Pending in ONE Day!
+
+This Seldovia property didn't waste any time on the market and already pending in just one day! Congratulations to the seller and the soon-to-be new owners! 🎉`},
+ {title:"Happy Parents' Day!",excerpt:"Today we celebrate the love, guidance, and strength of parents everywhere.",date:"Jul 27, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-07-27.jpg",body:`Happy Parents' Day! 👨‍👩‍👧‍👦
+
+Today we celebrate the love, guidance, and strength of parents everywhere. Whether by birth, choice, or heart—thank you for the care, patience, and support you give every single day.
+
+Here's to all the parents who shape our lives with unconditional love. 👏✨`},
+ {title:"Before you fall in love with that dream home, get your financial green light!",excerpt:"Pre-approval shows you how much you can borrow, proves you're a serious buyer, and gives you a head start.",date:"Jul 24, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-07-24.jpg",body:`Before you fall in love with that dream home, get your financial green light! ✅
+
+Pre-approval shows you how much you can borrow, proves you're a serious buyer, and gives you a head start once you're ready to make an offer.
+
+It's more than a number, it's your ticket to shop with confidence. 🧳🔑`},
+ {title:"Congratulations to the Seller and Buyers of these two great Seldovia lots!",excerpt:"It's always an honor to be part of such meaningful milestones.",date:"Jul 22, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-07-22.jpg",body:`Congratulations to the Seller and Buyers of these two great Seldovia lots! Thank you for trusting me to help guide this journey, it's always an honor to be part of such meaningful milestones. 😊✨`},
+ {title:"Everything Seldovia, All in One Place!",excerpt:"Whether you're planning a visit, dreaming of making Seldovia your home, or you're a local—Seldovia.com has it all.",date:"Jul 21, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-07-21.jpg",body:`Everything Seldovia, All in One Place!
+
+Whether you're planning a visit, dreaming of making Seldovia your home, or you're a local wanting to stay in the loop—Seldovia.com has it all.
+
+📅 Stay updated on upcoming events
+🏡 Browse current real estate listings
+📸 See the latest community photos
+📍 Discover local businesses and stories
+
+It's your one-stop connection to this beautiful, tight-knit coastal town we love so much. Come explore what makes Seldovia truly special—visit Seldovia.com today!
+
+#seldovia #seldoviaalaska #seldoviaak #seldoviaproperty #alaska #alaskalife #alaskaliving #seldoviacom`},
+ {title:"Happy National Ice Cream Day!",excerpt:"Whether you're enjoying a cone by the harbor, a sundae at home, or a scoop after a beach walk—today's the perfect excuse to treat yourself!",date:"Jul 20, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-07-20.jpg",body:`Happy National Ice Cream Day!
+
+Whether you're enjoying a cone by the harbor, a sundae at home, or a scoop after a beach walk—today's the perfect excuse to treat yourself!
+
+What's your favorite flavor to enjoy in Seldovia?`},
+ {title:"Congratulations to the happy sellers and the lucky new buyer of this beautiful, heavily wooded and level lot in Seldovia!",excerpt:"Can't wait to see what's next for this special property.",date:"Jul 18, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-07-18.jpg",body:`Congratulations to the happy sellers and the lucky new buyer of this beautiful, heavily wooded and level lot in Seldovia! Can't wait to see what's next for this special property. 🌞😊`},
+ {title:"This large, beautifully wooded parcel sits right on Jakolof Bay Road, offering year-round access and HEA power nearby.",excerpt:"Bonus: The neighboring property is also for sale! Grab both and own a full 6-acre slice of Seldovia paradise!",date:"Jul 15, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-07-15_2.jpg",body:`🌲 This large, beautifully wooded parcel sits right on Jakolof Bay Road, offering year-round access and 💡 HEA power nearby—making it a prime location for your dream escape.
+
+Surrounded by towering Sitka spruce, and bursting with blueberries and salmonberries 🫐, this land feels like pure Alaskan wilderness. With multiple building sites nestled among the trees 🌿 and the potential for breathtaking views from the top 🏔️, the possibilities are wide open.
+
+✨ Bonus: The neighboring property is also for sale! Grab both and own a full 6-acre slice of Seldovia paradise!
+
+🔗 Visit www.SeldoviaProperty.com for more info!`},
+ {title:"A picture-perfect spot has found its next chapter, and we're so thrilled for everyone involved.",excerpt:"Here's to peaceful mornings, salty air, and countless memories to come!",date:"Jul 15, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-07-15.jpg",body:`A picture-perfect spot has found its next chapter, and we're so thrilled for everyone involved. Here's to peaceful mornings, salty air, and countless memories to come!
+
+Thank you for letting me be part of this special moment in Seldovia. 🌿✨`},
+ {title:"Crafting your dream home starts before you even get the keys, right in the heart of the purchase and sale contract.",excerpt:"Many properties in Seldovia are being sold turn-key.",date:"Jul 14, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-07-14.jpg",body:`Crafting your dream home starts before you even get the keys, right in the heart of the purchase and sale contract. 🔑
+
+Many properties in Seldovia are being sold turn-key, as getting things to town (and out of town) is sometime a logistical and costly challenge!
+
+As a buyer, you're always in a position to request specific items remain in the house if there's something that really catches your eye. Whether it's that stunning dining room table in the dining room or the top-of-the-line Traeger smoker, don't hesitate to make your desires known. By clearly outlining which items you would like to be included, its part of the negotiations as it helps to create the space exactly as you envision it.
+
+📋 Have questions about how to make the most of your purchase agreement? Let's dive in together to ensure that your new home meets all your expectations!`},
+ {title:"It's in the small, quiet moments, laughter with loved ones, a deep breath of fresh air.",excerpt:"Perfection isn't the goal. Living fully, with gratitude and heart that's where the magic is!",date:"Jul 13, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-07-13.jpg",body:`It's in the small, quiet moments, laughter with loved ones, a deep breath of fresh air, the feeling of peace after a long day where we find true joy.
+
+Perfection isn't the goal. Living fully, with gratitude and heart that's where the magic is! ✨`},
+ {title:"We were all set for a smooth listing photoshoot — and then this little local star strolled right in!",excerpt:"Perfect lighting, beautiful setting, everything in place. And then... a pose!",date:"Jul 12, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-07-12.jpg",body:`We were all set for a smooth listing photoshoot perfect lighting, beautiful setting, everything in place. And then... this little local star strolled right in and decided to strike a pose! 🐱😊`},
+ {title:"A Perfect Place to Sit and Relax",excerpt:"Imagine unwinding with a cup of coffee and watching the world go by—this could be your everyday view from our Main Street listing.",date:"Jul 11, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-07-11.jpg",body:`A Perfect Place to Sit and Relax 🌊
+
+Imagine unwinding with a cup of coffee and watching the world go by—this could be your everyday view from our Main Street listing in Seldovia.
+
+Whether you're looking for peace, charm, or a cozy spot to call home, this place has it all, including income opportunities with a successful B&B and superb retail/office space along Main Street!
+
+Don't miss the chance to own a front-row seat to a small-town home and business opportunity! Visit www.SeldoviaProperty.com to learn more! 😊✨`},
+ {title:"One of the best parts of my work is hearing from clients after the sale or purchase is complete.",excerpt:"Thank you to everyone who has trusted me with such an important part of your life.",date:"Jul 10, 2025",read:"1 min",cat:"Kind Words",img:"images/gazette/2025-07-10.jpg",body:`One of the best parts of my work is hearing from clients after the sale or purchase is complete. Whether it's a quick note, a thoughtful message, or a kind word in passing, it means the world to me! 😊
+
+Thank you to everyone who has trusted me with such an important part of your life. I'm grateful every day for the opportunity to be a part of your journey here in Seldovia. 👏✨`},
+ {title:"Happy Fried Chicken Day!",excerpt:"There's nothing quite like crispy, golden goodness.",date:"Jul 6, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-07-06.jpg",body:`Happy Fried Chicken Day! 🍗
+
+There's nothing quite like crispy, golden goodness. 😋 Whether you prefer it spicy 🌶️, classic 🍽️, or with a side of fries 🍟, let's celebrate this delicious comfort food!
+
+What's your favorite way to enjoy fried chicken?`},
+ {title:"Happy Fourth of July, Seldovia!",excerpt:"Let's hear it for the red, white, and blueberry (Our 4th theme this year!)",date:"Jul 4, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-07-04.jpg",body:`Happy Fourth of July, Seldovia! Let's hear it for the red, white, and blueberry (Our 4th theme this year!) 🇺🇸🫐
+
+How do you plan on celebrating today? Let me know in the comments! 😊`},
+ {title:"Looking for steady income and long-term growth? Rental properties might be your smartest move yet.",excerpt:"Check out Seldovia Property's current listings and see what rental opportunities might be waiting for you!",date:"Jul 3, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-07-03.jpg",body:`Looking for steady income and long-term growth? Rental properties might be your smartest move yet.
+
+Check out Seldovia Property's current listings and see what rental opportunities might be waiting for you! Visit our website at www.SeldoviaProperty.com. ✨🌿`},
+ {title:"Pricing your home right from the start makes all the difference.",excerpt:"Curious what your home is worth? Let's connect for a free, no-pressure home valuation.",date:"Jul 2, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-07-02.jpg",body:`Pricing your home right from the start makes all the difference. ✨
+
+The key is understanding the market, evaluating your home's unique features, and setting a price that attracts serious buyers while maximizing your return.
+
+Curious what your home is worth? Let's connect for a free, no-pressure home valuation. I'm here to help as your Seldovia Connection! 😊`},
+ {title:"What I love about sunsets is... how they paint the sky with colors that words can't capture.",excerpt:"Reminding us to pause and appreciate the simple, beautiful moments. What do you love most about Seldovia sunset?",date:"Jul 1, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-07-01.jpg",body:`What I love about sunsets is... How they paint the sky with colors that words can't capture, reminding us to pause and appreciate the simple, beautiful moments. What do you love most about Seldovia sunset? 💛`},
  {title:"Because who doesn't love a pop of pink?",excerpt:"Because who doesn't love a pop of pink?",date:"Jun 30, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-06-30.jpg",body:`Because who doesn't love a pop of pink? 💗`},
  {title:"Here are some common real estate terms to help you feel confident and informed on your buying or selling journey.",excerpt:"Here are some common real estate terms to help you feel confident and informed.",date:"Jun 29, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-06-29.jpg",body:`Here are some common real estate terms to help you feel confident and informed on your buying or selling journey. 🌿✨`},
  {title:"Unlock Your Dream Home in 9 Easy Steps!",excerpt:"A simple, nine-step homebuyer guide to take you from “just looking” to “welcome home.”",date:"Jun 26, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-06-26.jpg",body:`Unlock Your Dream Home in 9 Easy Steps! Here's a simple, nine-step homebuyer guide to take you from "just looking" to "welcome home." 🏡✨`},
