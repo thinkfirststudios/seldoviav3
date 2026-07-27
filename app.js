@@ -1959,6 +1959,176 @@ www.Seldovia.com 🌊✨
 Today we celebrate the hard work, dedication, and spirit of those who keep our community strong. Whether you're casting a line, enjoying the trails, or simply soaking up the last days of summer, we hope you take this time to relax and recharge—you've earned it! 💙
 
 Here's to the workers, dreamers, and doers thank you for all that you do. 🙌`},
+ {title:"Because who doesn't love a pop of pink?",excerpt:"Because who doesn't love a pop of pink?",date:"Jun 30, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-06-30.jpg",body:`Because who doesn't love a pop of pink? 💗`},
+ {title:"Here are some common real estate terms to help you feel confident and informed on your buying or selling journey.",excerpt:"Here are some common real estate terms to help you feel confident and informed.",date:"Jun 29, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-06-29.jpg",body:`Here are some common real estate terms to help you feel confident and informed on your buying or selling journey. 🌿✨`},
+ {title:"Unlock Your Dream Home in 9 Easy Steps!",excerpt:"A simple, nine-step homebuyer guide to take you from “just looking” to “welcome home.”",date:"Jun 26, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-06-26.jpg",body:`Unlock Your Dream Home in 9 Easy Steps! Here's a simple, nine-step homebuyer guide to take you from "just looking" to "welcome home." 🏡✨`},
+ {title:"Pending in Just 6 Days!",excerpt:"Big congratulations to both the sellers and buyers of this beautiful 3+ acre property in Seldovia!",date:"Jun 24, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-06-24.jpg",body:`Pending in Just 6 Days!
+
+Big congratulations to both the sellers and buyers of this beautiful 3+ acre property in Seldovia! Exciting times ahead as this special piece of land begins its next chapter. 😊✨`},
+ {title:"Witnessed the Seldovia Summer Solstice Music Festival right from my office window!",excerpt:"Music, laughter, and sunshine filling the air!",date:"Jun 23, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-06-23.jpg",body:`Witnessed the Seldovia Summer Solstice Music Festival right from my office window; music, laughter, and sunshine filling the air! 🎶🎻
+
+One of the many joys of living and working in the heart of this vibrant little town. 💛`},
+ {title:"Joy doesn't always arrive, it's something we build in the small moments.",excerpt:"The choices we make, and the way we show up each day!",date:"Jun 22, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-06-22.jpg",body:`Joy doesn't always arrive, it's something we build in the small moments, the choices we make, and the way we show up each day! Happy Sunday! ✨😊`},
+ {title:"The summer solstice is often associated with June 21, but the exact date varies.",excerpt:"In Seldovia, the Summer Solstice is celebrated each year with our Music Festival!",date:"Jun 21, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-06-21.jpg",body:`The summer solstice is often associated with June 21, but the exact date varies. It typically occurs between June 20 and June 22 in the Northern Hemisphere, depending on the Earth's orbit and the Gregorian calendar.
+
+The ACTUAL solstice happens at a precise moment when the Earth's tilt maximizes sunlight in the Northern Hemisphere—and this moment shifts slightly each year.
+
+For example, in 2025, it's expected around June 20 at 10:43 PM UTC.
+
+June 21 is a common celebration date due to tradition and calendar consistency, especially in cultures like those observing Midsummer. But the astronomical event isn't always exactly on that day!
+
+Historically, the summer solstice has been celebrated across cultures for millennia, tied to agriculture, fertility, and renewal.
+
+Solstice celebrations range from modern pagan rituals at Stonehenge to secular festivals like Sweden's Midsummer, where communities gather for music, food, and dancing. It's a blend of astronomical wonder and cultural heritage, reflecting humanity's deep connection to seasonal cycles.
+
+In Seldovia, the Summer Solstice is celebrated each year with our Music Festival! This is a great time to visit our community, enjoy amazing music, time with friends, and hopefully beautiful weather on the longest days of the year! 🌞🎻
+https://www.seldovia.com/save-the-dates-june-19-21st-for...`},
+ {title:"Today's the Official First Day of Summer!",excerpt:"Longer days, brighter skies, and all the salty, sun-kissed Seldovia adventures await!",date:"Jun 20, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-06-20.jpg",body:`Today's the Official First Day of Summer! Longer days, brighter skies, and all the salty, sun-kissed Seldovia adventures await! Whether you're hiking, fishing, beachcombing, or just soaking in the views, summer starts now. 🌊🌲
+
+How are you celebrating the season's arrival?`},
+ {title:"Finally Under Contract!",excerpt:"This cozy cabin, nestled right by the water's edge, offers breathtaking views and that peaceful coastal lifestyle so many dream about.",date:"Jun 19, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-06-19.jpg",body:`Finally Under Contract! 🌊
+
+This cozy cabin, nestled right by the water's edge, offers breathtaking views and that peaceful coastal lifestyle so many dream about. It's been a pleasure helping bring this special property to the next chapter and we're excited for all the memories that await the new owners! 😊`},
+ {title:"Whether you're on a hike, kayaking the coastline, or simply relaxing on your porch, the wildlife in Seldovia is never far.",excerpt:"It's all part of the everyday magic here!",date:"Jun 16, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-06-16.jpg",body:`Whether you're on a hike, kayaking the coastline, or simply relaxing on your porch, the wildlife in Seldovia is never far, it's all part of the everyday magic here! 🌲🦅🦦`},
+ {title:"Happy Father's Day, Seldovia!",excerpt:"So many great dads in our world! Go find one, give him a “Hi Five” and let him know just how important he is.",date:"Jun 15, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-06-15.jpg",body:`Happy Father's Day, Seldovia! 💙
+
+Today, I'm celebrating the dads in my life! Unfortunately, my father and father-in-law are no longer with us - but my husband is the greatest dad I know, and our oldest son is doing an amazing job with his two littles!
+
+So many great dads in our world! Go find one, give him a "Hi Five" and let him know just how important he is to our families in our community! What are you doing to celebrate the dads in your life today? 🤝`},
+ {title:"Here in Seldovia, the flag waves proudly over our harbor, our homes, and our hearts.",excerpt:"Take a moment today to reflect, celebrate, and fly the flag high!",date:"Jun 14, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-06-14.jpg",body:`Here in Seldovia, the flag waves proudly over our harbor, our homes, and our hearts—reminding us of the values we hold dear and the beauty of living in a community that honors its roots.
+
+Take a moment today to reflect, celebrate, and fly the flag high! ✨`},
+ {title:"We'd love to see your slice of summer in Seldovia!",excerpt:"We'd love to see your slice of summer in Seldovia!",date:"Jun 13, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-06-13.jpg",body:`We'd love to see your slice of summer in Seldovia! ❤️`},
+ {title:"It's Official! This cozy cabin is now officially recorded and ready for its next chapter!",excerpt:"Congratulations to the new owners, here's to new beginnings, warm spaces, and a lifetime of memories waiting to be made!",date:"Jun 12, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-06-12.jpg",body:`It's Official! This cozy cabin is now officially recorded and ready for its next chapter! Congratulations to the new owners, here's to new beginnings, warm spaces, and a lifetime of memories waiting to be made! 🪵🔑`},
+ {title:"Should You Consider the Needs of Your Pets When Purchasing a Home?",excerpt:"Definitely! Our pets are more than just animals, they're family.",date:"Jun 11, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-06-11.jpg",body:`Should You Consider the Needs of Your Pets When Purchasing a Home?
+Definitely! Our pets are more than just animals, they're family. 🐱🐕
+
+When searching for your next home, it's important to think about how the space will work for them too.
+
+✨ Does the yard offer enough room to play?
+✨ Are there nearby trails or beaches for walks and adventures?
+✨ Is there space indoors for them to rest, play, or feel safe during storms or fireworks?
+✨ Is the location pet-friendly and safe from traffic?
+
+A home that suits your lifestyle and supports your pets' well-being makes for a happier household all around. Whether you're looking for wide open spaces or a cozy cottage by the water, keeping your pets in mind ensures you're making the best choice for the whole family—two-legged and four-legged alike! 🐾💛
+
+Thinking of making a move with your pets in mind? Let's find the perfect place together. Give me a call today!`},
+ {title:"Hello, Seldovia! Welcome to Week 23 of 2025!",excerpt:"June is rolling along with fresh adventures, community gatherings, and fun for all ages.",date:"Jun 10, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-06-10.jpg",body:`Hello, Seldovia! Welcome to Week 23 of 2025!
+
+June is rolling along with fresh adventures, community gatherings, and fun for all ages—be sure to check out what's happening this week!
+
+Upcoming Events
+
+🎒 SVT Kids Summer Program – Hike days, Outdoor days, Activity days. Check the flier for all the details!
+
+🎟️ SBE Booster Club Paddleboard Raffle – Tickets available June 7th through July 26th at Booster Club Activities, Seldovia Coffee Roasters, and Seldovia Liquor Store.
+
+Saturday, June 14, 2025
+Flag Day Breakfast Potluck at Jack and Aiva's Restaurant. Call (907) 406-0044 with any questions or to get involved.
+
+Weekly Activities
+
+Seldovia Village Tribe (SVT)
+• Fitness Center – Weekdays, 8:00–10:00 AM and 1:00–2:00 PM (Monday, Wednesday, Friday)
+• Basketball Practice (Grades K–5) – 3:15–4:30 PM at SBE Gym
+• Open Swim – Tuesdays, 3:15–5:00 PM
+
+Sea Otter Community Center (SOCC)
+• Percussion & Dance Classes with Eddie Wood – See the flier for dates and times
+• Yoga – Tuesdays & Thursdays, 10:00–11:00 AM
+• Workout with Lisa – Weekdays, 9:00–9:45 AM
+• Adult Ceramics Studio – Tuesdays, Thursdays & Fridays. Only $25 for 3 weeks—no registration required!
+
+Seldovia Public Library – Spring Hours
+• Monday: 2:00–4:00 PM
+• Tuesday: 2:00–7:00 PM
+• Wednesday: 2:00–4:00 PM
+• Thursday: 2:00–4:00 PM
+• Saturday: 2:00–5:00 PM
+
+Church Services
+
+Seldovia Bible Chapel
+• Sunday School – Sundays, 9:45–10:45 AM
+• Morning Worship – Sundays, 11:00 AM
+• Chapel Teens Ground Zero (Grades 7–12) – Sundays, 3:00 PM
+• Tuesday Evening Bible Studies: Men's: 7:00 PM (Fellowship Hall); Women's: 7:00 PM (Church)
+
+St. Nicholas Russian Orthodox Church
+• Vespers – Saturdays, 5:00–6:00 PM (Contact Ginny Glenn at 970-404-1249)
+• Sunday Service – 10:00 AM
+
+Grace Haven Community Church
+• Sunday Worship – 10:00 AM
+
+Stay connected and check out the daily calendar at Seldovia.com for the latest updates! Thinking about real estate in Seldovia? Visit www.SeldoviaProperty.com—if something catches your eye, I'm always here to help, your Seldovia Connection!`},
+ {title:"Celebrating the joy of friendship on this special day!",excerpt:"Happy National Best Friends Day to the ones who've always been there through thick and thin.",date:"Jun 8, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-06-08.jpg",body:`Celebrating the joy of friendship on this special day! 💗 Happy National Best Friends Day to the ones who've always been there through thick and thin. Here's to the laughs, the memories, and the endless adventures with our ride-or-die crews! ✨`},
+ {title:"In honor of National Black Bear Day, we're giving a nod to one of our most iconic (and shy!) neighbors.",excerpt:"Black bears are a treasured part of Seldovia's wild beauty.",date:"Jun 7, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-06-07.jpg",body:`In honor of National Black Bear Day, we're giving a nod to one of our most iconic (and shy!) neighbors. From wandering the forests to snacking on berries, black bears are a treasured part of Seldovia's wild beauty.
+
+Let's celebrate them with respect, curiosity, and care—for the bears, and the wild spaces they call home. 🖤🌲`},
+ {title:"Friday is #NationalDonutDay!",excerpt:"Why not surprise the kids with some yummy donuts?",date:"Jun 6, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-06-06.jpg",body:`Friday is #NationalDonutDay! 🍩 Why not surprise the kids with some yummy donuts? Home-made or shipped in from Homer - we love these FAT BOMBS! 😋✨`},
+ {title:"Lace up those sneakers and hit the ground running—it's National Running Day!",excerpt:"Today is all about celebrating the joy of movement.",date:"Jun 4, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-06-04.jpg",body:`Lace up those sneakers and hit the ground running—it's National Running Day! ✨
+
+Whether you're a seasoned marathoner or just starting your running journey, today is all about celebrating the joy of movement. Let's embrace the rhythm of our footsteps and the wind in our hair. Let's make every stride count and chase those endorphins! Happy Running, everyone! 🏃`},
+ {title:"Happy National Egg Day!",excerpt:"Here in Seldovia, we're celebrating the freshest kind, straight from the coop!",date:"Jun 3, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-06-03.jpg",body:`Happy National Egg Day! 🥚
+
+Here in Seldovia, we're celebrating the freshest kind, straight from the coop! Whether scrambled, poached, or sunny-side up, there's nothing like local eggs from happy hens right here in our community. 🍳💛`},
+ {title:"Hello, Seldovia! Happy June and welcome to a new week full of connection, discovery, and summertime fun!",excerpt:"The Seldovia Chinook Challenge is happening now through July 3!",date:"Jun 2, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-06-02_2.jpg",body:`Hello, Seldovia! Happy June and welcome to a new week full of connection, discovery, and summertime fun!
+
+Upcoming Events:
+
+🎣 Seldovia Chinook Challenge – Happening now through July 3, 2025
+Cast your line and compete for the biggest catch—good luck, anglers! Sign up at the Harbor Master's office.
+
+Tuesday, June 3, 2025
+• SVT Thrive: Medicinal Herbalism – 12:30–1:30 PM in the Elder's Room at ATC
+
+Wednesday, June 4, 2025
+• Seldovia Planning Commission Regular Meeting – 6:00 PM at Council Chambers
+• Seldovia Chamber Membership Meeting – 1:15 PM at Jack and Aiva's Restaurant
+
+Weekly Activities
+
+Seldovia Village Tribe (SVT)
+• Basketball Practice (Grades K–5) – Thursdays, 3:15–4:30 PM at SBE Gym
+• Open Swim – Tuesdays, 3:15–5:00 PM
+
+Sea Otter Community Center (SOCC)
+• Yoga – Tuesdays & Thursdays, 10:00 AM
+• Workout with Lisa – Weekdays, 9:00–9:45 AM
+• Adult Ceramics Studio – Tuesdays, Thursdays & Fridays. Only $25 for 3 weeks—no registration needed!
+
+Seldovia Public Library – Spring Hours
+• Monday: 2:00–4:00 PM
+• Tuesday: 2:00–7:00 PM
+• Wednesday: 2:00–4:00 PM
+• Thursday: 2:00–4:00 PM
+• Saturday: 2:00–5:00 PM
+
+Church Services
+
+Seldovia Bible Chapel
+• Sunday School – Sundays, 9:45–10:45 AM
+• Morning Worship – Sundays, 11:00 AM
+• Chapel Teens Ground Zero (Grades 7–12) – Sundays, 3:00 PM
+• Tuesday Evening Bible Studies – Men's: 7:00 PM (Fellowship Hall); Women's: 7:00 PM (Church)
+
+St. Nicholas Russian Orthodox Church
+• Vespers – Saturdays, 5:00–6:00 PM (Contact Ginny Glenn at 970-404-1249)
+• Sunday Service – 10:00 AM
+
+Grace Haven Community Church
+• Sunday Worship – 10:00 AM
+
+Stay connected and check out the daily calendar at Seldovia.com for the latest updates! Thinking about real estate in Seldovia? Visit www.SeldoviaProperty.com, if something catches your eye, I'm always here to help, your Seldovia Connection! 🌞✨`},
+ {title:"Dreaming of waterfront living? Check out this stunning timber frame home in Seldovia, Alaska!",excerpt:"Built in 2017, this gorgeous property boasts over 4,600 square feet of luxurious space, including 6 spacious bedrooms and a giant loft.",date:"Jun 2, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-06-02.jpg",body:`Dreaming of waterfront living? Check out this stunning timber frame home in Seldovia, Alaska! Built in 2017, this gorgeous property boasts over 4,600 square feet of luxurious space, including 6 spacious bedrooms and a giant loft perfect for gatherings. Fully furnished with custom amenities - just bring your toothbrush and your kayak!
+
+Imagine cooking in your commercial kitchen or enjoying a drink at your custom bar while soaking in breathtaking views! With beach access and over an acre of land, the possibilities are endless—think lodge potential or your personal retreat.
+
+What would you love most about living in a home like this? Share your thoughts in the comments! 🌊💬 #SeldoviaLiving #WaterfrontHome #AlaskaRealEstate #SeldoviaProperty #Seldovia`},
+ {title:"Hello, June!",excerpt:"Longer days, warmer breezes, and endless adventures await in Seldovia! What's first on your summer bucket list?",date:"Jun 1, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-06-01.jpg",body:`Hello, June! 🌞
+
+Longer days, warmer breezes, and endless adventures await in Seldovia! What's first on your summer bucket list?`},
  {title:"Hello, Seldovia! Welcome to Week 21 of 2025!",excerpt:"We're heading into the final week of May with sunshine, celebration, and community connection!",date:"May 26, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-05-26.jpg",body:`Hello, Seldovia! Welcome to Week 21 of 2025!
 
 We're heading into the final week of May with sunshine, celebration, and community connection!
