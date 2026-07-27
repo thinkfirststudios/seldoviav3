@@ -1959,6 +1959,317 @@ www.Seldovia.com 🌊✨
 Today we celebrate the hard work, dedication, and spirit of those who keep our community strong. Whether you're casting a line, enjoying the trails, or simply soaking up the last days of summer, we hope you take this time to relax and recharge—you've earned it! 💙
 
 Here's to the workers, dreamers, and doers thank you for all that you do. 🙌`},
+ {title:"Hello, Seldovia! Welcome to Week 13 of 2025!",excerpt:"The Tustumena is back in Seldovia this week, and there's plenty more to look forward to.",date:"Mar 31, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-03-31.jpg",body:`Hello, Seldovia! Welcome to Week 13 of 2025!
+
+The Tustumena is back in Seldovia this week, and there's plenty more to look forward to—from local meetings and fun gatherings to outdoor adventures. Mark your calendars and don't miss out!
+
+Upcoming Events
+
+Monday, March 31, 2025
+• Seldovia Chamber of Commerce – Deadline for the 4th of July Coordinator Application
+
+Wednesday, April 2, 2025
+• Joint Worksession – Safe Streets 4 All. Seldovia City Council & Planning Commission – 5:00 PM @ Council Chambers
+• Seldovia Planning Commission Regular Meeting – 6:00 PM @ Council Chambers
+• SOCC - Mental Health First Aid Classes for Teens (April 2, 3 & 4) 12-3pm at the Sea Otter Community Center
+
+Thursday, April 3, 2025
+• Tustumena is back in Seldovia!
+• SVT - Knitting Class with Honeybee Nordenson – 6:00–8:00 PM @ Corner Room, ATC (For ages 12 and up. Sign up at svt.org/events/knitting-class)
+
+Friday, April 4, 2025
+• Linwood Bar & Grill Free Bingo – 6:00 PM. Join us for 10 rounds of bingo with fun local prizes donated by the Linwood and other businesses in town. Thanks, Haley, for running the games while Jackie is away—so much fun ahead!
+
+Stay connected and check out the daily calendar at Seldovia.com for the latest updates!
+
+Thinking about real estate in Seldovia? Visit www.SeldoviaProperty.com—if something catches your eye, I'm always here to help! 😄🏡`},
+ {title:"3 things I won't do as your real estate agent.",excerpt:"Pressure a client, hide important details, or overpromise and underdeliver.",date:"Mar 30, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-03-30.jpg",body:`1. Pressure a Client Into a Decision – Buying or selling a home is a big deal, and my job is to guide and educate, not push.
+
+2. Hide Important Property Details – Transparency is key! I believe in honesty, even if it means a tougher conversation.
+
+3. Overpromise & Underdeliver – I set realistic expectations and work hard to exceed them, not just say what people want to hear.`},
+ {title:"Cottage charm, modern lines, or right on the water — which is at the top of your list?",excerpt:"It can be hard to choose since every style comes with its own perks!",date:"Mar 29, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-03-29.jpg",body:`It can be hard to choose since every style comes with its own perks! But if you had to pick, are you all about the cozy charm of a cottage, the sleek lines of modern design, or do you really need to just be on the water?
+
+Whatever your preference, share what's at the top of your list! And if you're ready to house hunt, reach out—together, we can find a place that feels like home to you. 😊✨`},
+ {title:"As a home seller, understanding counteroffers is key to maximizing your return.",excerpt:"A counteroffer opens the door for negotiation and can pave the way for a successful sale.",date:"Mar 28, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-03-28.jpg",body:`As a home seller, understanding counteroffers is key to maximizing your return. If the first offer doesn't meet expectations, a counteroffer opens the door for negotiation. This clearly documented process can create opportunities for better terms and pave the way for a successful sale. 🌲🧳📚
+
+Navigating the nuances of negotiation can make all the difference in achieving your selling goals. Whether it's adjusting the price, timelines, or inclusions, every detail counts.
+
+Ready to refine your selling strategies and make the most of your offers? Let's connect!`},
+ {title:"Should you sell “as is”?",excerpt:"If your home needs major repairs and you're not up for the work—or you need to sell fast—selling “as is” might be the move.",date:"Mar 27, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-03-27.jpg",body:`Should you sell "as is"?
+
+If your home needs major repairs and you're not up for the work—or you need to sell fast—selling "as is" might be the move. But if it's currently in decent shape, putting in a little extra work could get you a higher price!
+
+Unsure about which approach is right for you? Reach out for some expert guidance! 🌲☁️`},
+ {title:"Here's why Jakolof Bay deserves a place on your Seldovia bucket list!",excerpt:"Stunning natural beauty, outdoor adventures, and a fisherman's paradise.",date:"Mar 26, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-03-26.jpg",body:`Here's why Jakolof Bay deserves a place on your Seldovia bucket list! 🌿✨
+
+1. Stunning Natural Beauty
+Jakolof Bay is surrounded by towering forests, rugged mountains, and the sparkling waters of Kachemak Bay. The peaceful atmosphere and incredible scenery make it the perfect place to relax, unwind, and reconnect with nature.
+
+2. Outdoor Adventures Await
+For outdoor enthusiasts, Jakolof Bay is a dream come true! Kayak along the shoreline, go hiking on nearby trails, or drop a fishing line into the bay. You might even spot sea otters, seals, or eagles soaring overhead.
+
+3. A Fisherman's Paradise
+If you love fishing, Jakolof Bay is the place to be. The area is rich with halibut, salmon, and rockfish, making it an excellent spot to reel in a fresh catch. Whether you're an experienced angler or a beginner, the waters here won't disappoint.`},
+ {title:"A house is just a structure, but a home is where you feel comfortable, happy, and truly yourself.",excerpt:"If you're looking for a place that gives you that feeling, let's talk!",date:"Mar 25, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-03-25.jpg",body:`A house is just a structure, but a home is where you feel comfortable, happy, and truly yourself. If you're looking for a place that gives you that feeling, let's talk! 😊`},
+ {title:"Many people think working in real estate is just about selling houses, but there's so much more to it than that.",excerpt:"What's something about real estate you've always been curious about?",date:"Mar 24, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-03-24_2.jpg",body:`Many people think working in real estate is just about selling houses, but there's so much more to it than that. 👇
+
+1. You Work Around the Clock – There's no 9-to-5 schedule! Real estate can be a 24/7 job, with calls, showings, and negotiations happening early mornings, evenings, and weekends.
+
+2. Every Transaction is Unique – No two sales are the same! Each property, client, and negotiation presents its own challenges and learning opportunities.
+
+3. You Wear Many Hats – A real estate agent is also a marketer, negotiator, advisor, problem solver, and sometimes even a therapist!
+
+4. You Have to Know More Than Just Houses – A good agent understands zoning laws, market trends, local amenities, home repairs, staging, and even lending options.
+
+5. It's Incredibly Rewarding – Helping people find their dream home or make a successful sale is one of the best feelings, making all the hard work and long hours worth it!
+
+What's something about real estate you've always been curious about? Drop your questions below!`},
+ {title:"Hello, Seldovia! Welcome to Week 12 of 2025!",excerpt:"Spring is in the air, and we've got a week full of exciting community events, meetings, and activities for all ages.",date:"Mar 24, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-03-24.jpg",body:`Hello, Seldovia! Welcome to Week 12 of 2025!
+
+Spring is in the air, and we've got a week full of exciting community events, meetings, and activities for all ages. Mark your calendars and join in!
+
+Upcoming Events
+Monday, March 24, 2025
+• Seldovia City Council Regular Meeting – 6:00 PM @ Council Chambers
+• SOCC - Arts & Crafts Club – 3:15–5:00 PM (Sign-up required at seldoviasocc@gmail.com. Limit 10 students.)
+
+Tuesday, March 25, 2025
+• Seldovia Volunteer Fire & EMS Board Meeting – 6:00 PM @ Multi-Purpose Building
+• SOCC Games (All Ages) – 1:00–3:00 PM (Sign-up via email: seldoviasocc@gmail.com)
+
+Wednesday, March 26, 2025
+• SBE Track Meeting with Coach Jen Swick – 3:15 PM @ SBE Common Areas (This was originally scheduled for the 24th but was moved to the 26th.)
+• Seldovia City Council Budget Worksession – 6:00 PM @ Council Chambers
+
+Thursday, March 27, 2025
+• Seldovia Public Library Book Club – Orbital by Samantha Harvey, 6:30–8:00 PM. (This is a quick read and a beautiful love letter to Planet Earth.)
+
+Friday, March 28, 2025
+• Linwood Bar & Grill Free Bingo – 6:00 PM. Join us for 10 rounds of bingo with fun local prizes donated by the Linwood and other businesses in town. Thanks, Haley, for running the games while Jackie is away—so much fun ahead!
+
+Seldovia Village Tribe (SVT) Weekly Activities
+• Open Swim – Tuesdays, 3:15–5:00 PM & Fridays, 6:00–8:00 PM
+• Outdoor Walking – Thursdays, 2:00 PM (Meet at Alaska Tribal Cache Building) – All abilities welcome!
+• After School Time (Grades K-5) – Mondays, Wednesdays, Fridays, 3:15–5:00 PM @ Corner Room, ATC
+• Fitness Center – Weekdays, 8:00–10:00 AM & 1:00–2:00 PM (Monday, Wednesday, Friday)
+• Open Gym – Fridays, 6:00–8:00 PM
+
+Sea Otter Community Center (SOCC) Weekly Activities
+• Arts & Crafts – Mondays & Wednesdays, 10:00 AM–12:00 PM (Sign-up required at seldoviasocc@gmail.com. Limit 10 students.)
+• Workout with Lisa – Weekdays, 9:00–9:45 AM
+• SOCC Games (All Ages) – Tuesdays, 1:00–3:00 PM
+• Take a Hike with Ms. Lisa – Thursdays, 1:00–3:00 PM
+• Chess Club – Thursdays, 3:15–5:00 PM
+
+Seldovia Bible Chapel Weekly Activities
+• Morning Worship – Sundays, 11:00 AM
+• Sunday School – Sundays, 9:45–10:45 AM
+• Chapel Teens Ground Zero (Grades 7-12) – Sundays, 3:00 PM (Fun, refreshments, and Bible study for teens.)
+• Tuesday Evening Bible Studies: Men's Bible Study – 7:00 PM | Church Fellowship Hall; Women's Bible Study – 7:00 PM | Church
+
+St. Nicholas Russian Orthodox Church
+• Vespers Service – Every Saturday, 5:00–6:00 PM (Contact Ginny Glenn at 970-404-1249 for more info.)
+• Sunday Service – 10:00 AM
+
+Seldovia Public Library Spring Schedule
+• Thursday: 2:00–4:00 PM
+• Saturday: 2:00–5:00 PM
+• Tuesday: 2:00–7:00 PM
+
+Stay connected and check out the daily calendar at Seldovia.com for the latest updates! Thinking about real estate in Seldovia? Visit www.SeldoviaProperty.com—if something catches your eye, I'm always here to help! 😄🏡`},
+ {title:"Welcoming the season of renewal with open arms! Happy Spring!",excerpt:"Welcoming the season of renewal with open arms! Happy Spring!",date:"Mar 20, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-03-20.jpg",body:`Welcoming the season of renewal with open arms! Happy Spring! 🌷🌞`},
+ {title:"If you could recommend just ONE must-visit spot, what would it be?",excerpt:"Drop your top pick in the comments!",date:"Mar 19, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-03-19.jpg",body:`If you could recommend just ONE must-visit spot, what would it be? Drop your top pick in the comments! 🗺️✨`},
+ {title:"Hello, Seldovia! Welcome to Week 11 of 2025!",excerpt:"Spring is just around the corner, and there's plenty happening in town!",date:"Mar 17, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-03-17_2.jpg",body:`Hello, Seldovia! Welcome to Week 11 of 2025!
+
+Spring is just around the corner, and there's plenty happening in town! From book clubs to open gym nights, there's something for everyone. Check out this week's events and activities!
+
+Seldovia Public Library Spring hours - Open Thursday 2-4 PM, Saturday 2-5 PM, and Tuesday 2-7 PM.
+
+Upcoming Events
+
+Monday, March 17, 2025
+Happy St. Patrick's Day! 🍀
+
+Tuesday, March 18, 2025
+• Susan B. English School PAC Meeting – Our pool is at risk of closing due to budget cuts. We're sending a letter to the school board in opposition—your voice matters! Join us to help keep our pool open. We'll also discuss the middle school track season. Interested in coaching? Contact Mr. Druce ASAP!
+
+Wednesday, March 19, 2025
+• SOCC Open Club Day is CANCELLED.
+• SVT BINGO, 6-8pm at the Alaska Tribal Cache Building.
+
+Thursday, March 20, 2025
+• Seldovia Public Library Book Club – 6:30-8:00 PM. Meet downstairs in the Archive Reading Room. Please access the library via the back door on Lipke Lane (opposite Hopkins' house).
+• KPC "Know Your Land 2025" – 6:00-7:00 PM. All sessions held in person at the KPC Kachemak Bay campus and on Zoom. Hosted in Seldovia with Caley Gasch LIVE. To attend virtually, register for the Zoom here: bit.ly/KnowYourLand2025
+• SVT Children's Library Elder's Reading – 11:00 AM-12:00 PM in the Corner Gathering Room at the Alaska Cache Building
+
+Friday, March 21, 2025
+• Linwood Bar & Grill Free Bingo – 6:00 PM. Join us for 10 rounds of exciting bingo featuring fun local prizes donated by the Linwood and other businesses in town. Thanks, Haley, for running the games while Jackie is away! So. Much. Fun!
+
+Seldovia Village Tribe (SVT) Weekly Activities
+• Open Swim – Tuesdays, 3:15–5:00 PM & Fridays, 6:00–8:00 PM
+• Outdoor Walking – Thursdays at 2:00 PM (Meet at Alaska Tribal Cache Building) – All abilities welcome!
+• After School Time (Grades K-5) – Fridays, 3:15–5:00 PM at the Corner Room @ ATC
+• Fitness Center – Weekdays, 8:00–10:00 AM & 1:00–2:00 PM (Monday, Wednesday, Friday)
+• Open Gym – Fridays, 6:00–8:00 PM
+
+Weekly Activities at Sea Otter Community Center (SOCC)
+• Arts & Crafts Club – Mondays, 3:15–5:00 PM | March 10 & 12, 10:00 AM–12:00 PM
+• Workout with Lisa – Weekdays, 9:00–9:45 AM
+• SOCC Games (All Ages) – 1:00–3:00 PM
+• 1st–3rd Grade Girls Cheer Club – Wednesdays & Thursdays, 3:15–4:15 PM
+• Take a Hike with Ms. Lisa – Thursdays, 1:00–3:00 PM
+• Chess Club – Thursdays, any time between 3:15–5:00 PM
+
+Seldovia Bible Chapel Weekly Activities
+• Morning Worship – Sundays, 11:00 AM
+• Sunday School – Sundays, 9:45–10:45 AM
+• Chapel Teens Ground Zero (Grades 7-12) – Sundays, 3:00 PM (Fun, refreshments, and Bible study for teens)
+• Tuesday Evening Bible Studies: Men's Bible Study – 7:00 PM | Church Fellowship Hall; Women's Bible Study – 7:00 PM | Church
+
+St. Nicholas Russian Orthodox Church
+Have you heard the bells? Thanks Ginny for ringing them before and after each service! It is so nice to hear them ringing in town!
+• Vespers Service – Every Saturday, 5:00–6:00 PM (Contact Ginny Glenn at 970-404-1249 for more information)
+• Sunday Service – 10:00 AM
+
+Check out the DAILY CALENDAR at Seldovia.com for new programs and updates.
+
+While you're at it, take a look at the latest in the Seldovia real estate market at www.SeldoviaProperty.com. If anything catches your eye, give me a call—I'm always here to help as your Seldovia Connection!`},
+ {title:"Happy St. Patrick's Day!",excerpt:"In honor of the big day, this is your friendly reminder to wear green... and don't get pinched!",date:"Mar 17, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-03-17.jpg",body:`Happy St. Patrick's Day! ☘️
+
+In honor of the big day, this is your friendly reminder to wear green... and don't get pinched! 😆`},
+ {title:"Looks like winter decided to stick around a little longer!",excerpt:"Looks like winter decided to stick around a little longer!",date:"Mar 14, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-03-14.jpg",body:`Looks like winter decided to stick around a little longer! ❄️`},
+ {title:"Poppin' into a day filled with fluffy kernels and buttery goodness!",excerpt:"Happy Popcorn Lovers Day to all the snack enthusiasts out there.",date:"Mar 13, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-03-13.jpg",body:`Poppin' into a day filled with fluffy kernels and buttery goodness! 🍿❤️
+
+Happy Popcorn Lovers Day to all the snack enthusiasts out there. Grab your favorite movie, a bucket of popcorn, and let's celebrate the art of snacking in style! 🎬✨`},
+ {title:"My view of the moon this morning!",excerpt:"My view of the moon this morning!",date:"Mar 11, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-03-11.jpg",body:`My view of the moon this morning! 🌙✨
+
+#seldovia #seldoviaalaska #seldoviaak #seldoviaproperty #alaska #alaskalife #alaskaliving #moonset`},
+ {title:"Week 10 of 2025 — weekly activities across Seldovia.",excerpt:"SVT, Sea Otter Community Center, Bible Chapel, St. Nicholas Church, and library schedules.",date:"Mar 10, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-03-10_3.jpg",body:`Seldovia Village Tribe (SVT) Weekly Activities:
+• Open Swim – Tuesdays, 3:15–5:00 PM & Fridays, 6:00–8:00 PM
+• Outdoor Walking – Thursdays at 2:00 PM (Meet at Alaska Tribal Cache Building) – All abilities welcome!
+• After School Time (Grades K-5) – Fridays, 3:15–5:00 PM at the Corner Room @ ATC
+• Fitness Center – Weekdays, 8:00–10:00 AM & 1:00–2:00 PM (Monday, Wednesday, Friday)
+• Open Gym – Fridays, 6:00–8:00 PM
+
+Weekly Activities at Sea Otter Community Center (SOCC):
+• Arts & Crafts Club – Mondays, 3:15–5:00 PM | March 10 & 12, 10:00 AM–12:00 PM
+• Workout with Lisa – Weekdays, 9:00–9:45 AM
+• 1st–3rd Grade Girls Cheer Club – Wednesdays & Thursdays, 3:15–4:15 PM
+• Take a Hike with Ms. Lisa – Thursdays, 1:00–3:00 PM
+• Chess Club – Thursdays, any time between 3:15–5:00 PM
+
+Seldovia Bible Chapel Weekly Activities:
+• Morning Worship – Sundays, 11:00 AM
+• Sunday School – Sundays, 9:45–10:45 AM
+• Chapel Teens Ground Zero (Grades 7-12) – Sundays, 3:00 PM (Fun, refreshments, and Bible study for teens)
+• Tuesday Evening Bible Studies: Men's Bible Study – 7:00 PM | Church Fellowship Hall; Women's Bible Study – 7:00 PM | Church
+
+St. Nicholas Russian Orthodox Church:
+• Vespers Service every Saturday – 5:00–6:00 PM (Contact Ginny Glenn at 970-404-1249 for more information)
+• Sunday Service - 10am
+
+Seldovia Public Library Schedule:
+Check out the photo for details!
+
+Enjoy the week, Seldovia! 😊`},
+ {title:"Hello, Seldovia! Welcome to Week 10 of 2025!",excerpt:"Spring Break is here! Wishing all the Susan B. English students a fun and relaxing week.",date:"Mar 10, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-03-10_2.jpg",body:`Hello, Seldovia! Welcome to Week 10 of 2025!
+
+Spring Break is here! Wishing all the Susan B. English students a fun and relaxing week. Check out what's happening around town and make the most of it!
+
+Upcoming Events
+
+Monday, March 10, 2025
+• SVT Spring Break Outdoor Fun – 1:00–3:00 PM at Susan B. English School
+• Seldovia City Council Regular Meeting – 6:00 PM at Council Chambers
+
+Tuesday, March 11, 2025
+• Seldovia City Council Work session (Council Training) – 3:00 PM at Council Chambers
+
+Wednesday, March 12, 2025
+• SOCC Teen Night, 7-10pm. Snacks, Music & Games!
+
+Friday, March 14, 2025
+• SVT Spring Break Movie Time – 1:00–3:00 PM at Seldovia Conference Center
+• 6:00pm - Join us for 10 rounds of exciting bingo featuring fun local prizes donated by the Linwood and other businesses in town. Thanks Haley for running the games while Jackie is away! So. Much. Fun!
+
+Saturday, March 15, 2025
+• SBE Basketball Scrimmage – Doors open at 3:45 PM, game starts at 4:00 PM
+
+Check out the DAILY CALENDAR at Seldovia.com for new programs and updates.
+
+While you're at it, take a look at the latest in the Seldovia real estate market at www.SeldoviaProperty.com. If anything catches your eye, give me a call—I'm always here to help as your Seldovia Connection!`},
+ {title:"According to the National Association of Realtors, the top reason people move is to be closer to family and friends.",excerpt:"If you're considering changing up your living situation, reach out today!",date:"Mar 10, 2025",read:"1 min",cat:"Real Estate",img:"images/gazette/2025-03-10.jpg",body:`According to the National Association of Realtors, the top reason people move is to be closer to family and friends. 👨‍👩‍👧‍👦
+
+Other key factors include wanting more space, wanting to scale down, and seeking a more desirable neighborhood.
+
+If you're considering changing up your living situation, reach out today, and let's work together to find the right home for you! 🥰💗`},
+ {title:"Don't forget to set your clocks one hour ahead tonight for Daylight Savings Time.",excerpt:"More sunlight and longer evenings await, so let's make the most of the extra daylight.",date:"Mar 9, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-03-09.jpg",body:`⏰ Don't forget to set your clocks one hour ahead tonight for Daylight Savings Time. More sunlight and longer evenings await, so let's make the most of the extra daylight.
+
+🕰️ Don't be late for your Sunday morning activities! 😊`},
+ {title:"We celebrate the incredible women who not only build homes but also dreams.",excerpt:"Happy International Women's Day to the strong, inspiring women who make the world a better place.",date:"Mar 8, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-03-08.jpg",body:`We celebrate the incredible women who not only build homes but also dreams. 🌲🌞 Happy International Women's Day to the strong, inspiring women who make the world a better place. 💪❤️`},
+ {title:"On National Dentist Day, we're all smiles as we recognize the dental professionals who keep our grins healthy and our spirits high!",excerpt:"Share your dental care tips or a shout-out to your dentist who keeps your smile shining bright.",date:"Mar 6, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-03-06.jpg",body:`On National Dentist Day, we're all smiles as we recognize the dental professionals who keep our grins healthy and our spirits high! 🦷 Share your dental care tips or a shout-out to your dentist who keeps your smile shining bright. 😁`},
+ {title:"Hello, Seldovia! Welcome to Week 9 of 2025!",excerpt:"March is here, and there are plenty of great events and activities happening around town!",date:"Mar 3, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-03-03.jpg",body:`Hello, Seldovia! Welcome to Week 9 of 2025!
+
+March is here, and there are plenty of great events and activities happening around town! Stay connected and enjoy what our community has to offer.
+
+Upcoming Events
+
+Monday, March 3, 2025
+• SVT Fire Prevention Presentation – Join HERE: https://svt.zoom.us/j/89200631373
+
+Tuesday, March 4, 2025
+• SVT Gentle Exercise with Jenifer Dickson. Seldovia Conference Center | 11:30 AM – 12:30 PM
+• SVT - Thrive "Crunchy Cruciferous". Kitchen at ATC in Seldovia | 12:30 – 1:30 PM
+
+Wednesday, March 5, 2025
+• Seldovia Planning Commission Regular Meeting. Council Chambers | 6:00 PM
+• SVT Bingo. Seldovia Conference Center | 6:00 – 8:00 PM
+
+• Linwood Bar & Grill - Free Bingo, Fridays at 6:00 PM. Join us for 10 rounds of exciting bingo featuring fun local prizes donated by the Linwood and other businesses in town. A big thank you to Jackie for organizing this community favorite!
+
+Seldovia Village Tribe (SVT) Weekly Activities
+• Open Swim – Tuesdays, 3:15–5:00 PM & Fridays, 6:00–8:00 PM
+• Outdoor Walking – Thursdays at 2:00 PM (Meet at Alaska Tribal Cache Building) – All abilities welcome!
+• After School Time (Grades K-5) – Fridays, 3:15–5:00 PM, at the Corner Room @ ATC
+• Fitness Center – Weekdays, 8:00–10:00 AM & 1:00–2:00 PM (Monday, Wednesday, Friday)
+
+Seldovia Bible Chapel Weekly Activities
+• Morning Worship – Sundays, 11:00 AM
+• Sunday School – Sundays, 9:45–10:45 AM
+• Chapel Teens Ground Zero (Grades 7-12) – Sundays, 3:00 PM (Fun, refreshments, and Bible study for teens)
+• Tuesday Evening Bible Studies: Men's Bible Study – 7:00 PM | Church Fellowship Hall; Women's Bible Study – 7:00 PM | Church
+
+Susan B. English School Weekly Activities
+Pool Schedule – Check out the photo for details!
+
+Seldovia Public Library Winter Schedule
+Check out the photo for details!
+
+Stay warm, stay active, and enjoy another wonderful week in Seldovia! 😊
+
+Check out the DAILY CALENDAR at Seldovia.com for new programs and updates.
+
+While you're at it, take a look at the latest in the Seldovia real estate market at www.SeldoviaProperty.com. If anything catches your eye, give me a call—I'm always here to help as your Seldovia Connection!`},
+ {title:"Here are some key factors to consider when deciding if Seldovia living is the perfect fit.",excerpt:"Do you love the outdoors, a tight-knit community, a slower pace, limited accessibility, and self-sufficiency?",date:"Mar 2, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-03-02.jpg",body:`Here are some key factors to consider when deciding if Seldovia living is the perfect fit.
+
+1. Do You Love the Outdoors? 🌿
+Seldovia is a paradise for outdoor enthusiasts. Whether you enjoy fishing, kayaking, hiking, or simply taking in breathtaking ocean views, the town offers endless opportunities for adventure. If you thrive in nature and appreciate a more rugged lifestyle, Seldovia could be a great match.
+
+2. Are You Looking for a Tight-Knit Community? 👩‍👩‍👧‍👦
+With a small population, Seldovia has a close and welcoming community. Neighbors support each other, and local events bring residents together. If you value meaningful connections and enjoy being part of a community that looks out for one another, you'll feel right at home.
+
+3. Can You Adapt to a Slower Pace? 🚶‍♀️
+Life in Seldovia moves at a different rhythm. There are no big-box stores or fast-food chains—just local businesses, stunning landscapes, and peaceful surroundings. If you prefer the hustle and bustle of city life, Seldovia might feel too remote, but if you seek tranquility, it could be exactly what you need.
+
+4. Are You Comfortable with Limited Accessibility? ✈️🛥
+Seldovia is only accessible by boat or plane, which means travel requires extra planning. If you're someone who enjoys convenience and frequent travel, this could be a challenge. However, if you embrace the idea of a more remote lifestyle and enjoy the journey as much as the destination, Seldovia has its own rewards.
+
+5. Do You Appreciate Self-Sufficiency? 🪵
+Living in Seldovia often means relying on yourself and the community. Whether it's gathering firewood, fishing for your own food, or making do with limited shopping options, self-sufficiency is a valued skill. If you enjoy a hands-on lifestyle and problem-solving, Seldovia living could be a fulfilling experience.`},
+ {title:"Please share your favorite recipe or creation!",excerpt:"Our annual Salmonberry Delights Contest will be held here in Seldovia on August 6th!",date:"Mar 1, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-03-01.jpg",body:`Please Share your favorite recipe or creation! 👇
+
+Remember - our annual Salmonberry Delights Contest will be held here in Seldovia on August 6th - stay tuned for more information! 😊✨`},
  {title:"Thank You Paul & Lori!",excerpt:"I am incredibly lucky to work with such amazing clients, and today, I want to give a special shoutout to Paul & Lori!",date:"Feb 28, 2025",read:"1 min",cat:"Kind Words",img:"images/gazette/2025-02-28.jpg",body:`Thank You Paul & Lori! 🙏
 
 I am incredibly lucky to work with such amazing clients, and today, I want to give a special shoutout to Paul & Lori! Receiving your thoughtful gift was such a wonderful surprise! 💗`},
