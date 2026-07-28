@@ -370,9 +370,12 @@ body:not([data-page="realestate"]) .howband::before{content:""; position:absolut
 .post{background:var(--sheet); border:1px solid var(--line); border-radius:var(--radius); overflow:clip; box-shadow:var(--shadow); color:inherit; display:flex; flex-direction:column;}
 /* uniform blog cards — consistent image size, clamped text, Read more to expand */
 .post-media{position:relative; aspect-ratio:16/10; background:var(--surface-2);}
-/* full image (contain) so flyers/graphics aren't cropped — cards stay uniform via fixed aspect box */
-.post-media .post-photo{position:absolute; inset:0; width:100%; height:100%; object-fit:contain; display:block;}
-.post-media svg{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;}
+/* uniform card thumbnails (cover), cropped from the top so flyer/graphic headlines stay visible.
+   The FULL uncropped image shows on the post detail page. */
+.post-media .post-photo,.post-media svg{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center top; display:block;}
+/* post detail page — show the FULL image, never cropped */
+.post-detail-media{margin-top:.6rem; text-align:center;}
+.post-detail-media img{display:block; max-width:100%; max-height:75vh; width:auto; height:auto; margin:0 auto; border-radius:var(--radius); box-shadow:var(--shadow);}
 .post-body{padding:1rem 1.1rem 1.15rem; display:flex; flex-direction:column; gap:.4rem;}
 .kicker{font-size:.7rem; text-transform:uppercase; letter-spacing:.1em; font-weight:800; color:var(--accent-ink);}
 .post-body h4{font-size:1.14rem; font-family:var(--serif);}

@@ -4214,7 +4214,7 @@ if($("#postDetail")){
   const bodyHtml=(post.body||post.excerpt||"").trim().split(/\n{2,}/).map(x=>`<p>${esc(x.trim()).replace(/\n/g,"<br>")}</p>`).join("");
   $("#postDetail").innerHTML=`
     <a class="back-link" href="gazette.html">← All posts</a>
-    <div class="listing-hero" style="aspect-ratio:16/9"><img src="${post.img}" alt="${esc(post.title)}" onerror="this.closest('.listing-hero').classList.add('place-media-blank');this.remove()"></div>
+    ${post.img?`<div class="post-detail-media"><img src="${post.img}" alt="${esc(post.title)}" onerror="this.closest('.post-detail-media').style.display='none'"></div>`:""}
     <span class="eyebrow" style="margin-top:1.2rem">${esc(post.cat||"Blog")}</span>
     <h1 style="margin:.15rem 0;font-family:var(--serif)">${esc(post.title)}</h1>
     <div class="listing-city">${esc(post.date)}</div>
