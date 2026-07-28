@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Parisienne&family=Nunito+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Nunito+Sans:wght@400;500;600;700;800&display=swap');
+/* LoveStory — Jenny's purchased brush script (desktop TTFs, used for headings/hero) */
+@font-face{ font-family:"Lovestory"; src:url("fonts/lovestory/lovestory-solid.ttf") format("truetype"); font-weight:400; font-style:normal; font-display:swap; }
+@font-face{ font-family:"Lovestory Alt"; src:url("fonts/lovestory/lovestory-alt-solid.ttf") format("truetype"); font-weight:400; font-style:normal; font-display:swap; }
+@font-face{ font-family:"Lovestory Serif"; src:url("fonts/lovestory/lovestory-serif.ttf") format("truetype"); font-weight:400; font-style:normal; font-display:swap; }
 /* ============================================================
    Seldovia.com — WATERCOLOR / COASTAL direction (community side)
    Warm driftwood-paper ground, Kachemak-bay teal + spruce + sage,
@@ -26,7 +30,7 @@
   --serif:"Fraunces", Georgia, "Times New Roman", serif;
   /* Lovestory-style calligraphy. PROD: if Lovestory is licensed, drop the files in
      fonts/ and add an @font-face — then just change this first family name. */
-  --script:"Parisienne", "Segoe Script", "Bradley Hand", cursive;
+  --script:"Lovestory", "Segoe Script", "Bradley Hand", cursive;
   --sans:"Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 :root[data-theme="light"]{
