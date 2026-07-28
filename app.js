@@ -113,7 +113,7 @@ document.body.insertAdjacentHTML("beforeend", `
 </svg>`);
 
 /* ============================================================ MOCK DATA ============================================================ */
-const CATEGORIES=[{b:"Stay",s:"Lodges & cabins",key:"lodging"},{b:"Eat & Drink",s:"Dining & cafés",key:"dining"},{b:"Charters & Tours",s:"On the water",key:"charters"},{b:"Cafés",s:"Coffee & bakery",key:"dining"},{b:"Arts & Galleries",s:"Local makers",key:"arts"},{b:"Outdoors & Trails",s:"Hikes & beaches",key:"outdoors"},{b:"Beauty & Wellness",s:"Spa & self-care",key:"wellness"},{b:"Events",s:"What's on",key:"events"}];
+const CATEGORIES=[{b:"Stay",s:"Lodges & cabins",key:"lodging"},{b:"Eat & Drink",s:"Dining & cafés",key:"dining"},{b:"Charters & Tours",s:"On the water",key:"charters"},{b:"Arts & Galleries",s:"Local makers",key:"arts"},{b:"Outdoors & Trails",s:"Hikes & beaches",key:"outdoors"},{b:"Beauty & Wellness",s:"Spa & self-care",key:"wellness"},{b:"Calendar",s:"What's on",key:"events"}];
 // REAL Seldovia places — sourced from the existing seldovia.com business directory.
 // No star ratings or review counts: we don't have real review data, so we don't invent it.
 const PLACES=[
@@ -4159,7 +4159,8 @@ if($("#quickcats")) $("#quickcats").innerHTML=[["Restaurants","dining"],["Lodgin
 // category tiles
 if($("#catGrid")) $("#catGrid").innerHTML=CATEGORIES.map((c,i)=>{
   const img=`images/categories/cat-${i}.jpg`;
-  return `<a class="cat-tile" href="explore.html?cat=${c.key}" aria-label="${esc(c.b)}"><img class="cat-photo" src="${img}" alt="" loading="lazy" width="600" height="600"><span class="cap"><b>${esc(c.b)}</b><span>${esc(c.s)}</span></span></a>`;}).join("");
+  const href=c.key==="events"?"calendar.html":`explore.html?cat=${c.key}`;
+  return `<a class="cat-tile" href="${href}" aria-label="${esc(c.b)}"><img class="cat-photo" src="${img}" alt="" loading="lazy" width="600" height="600"><span class="cap"><b>${esc(c.b)}</b><span>${esc(c.s)}</span></span></a>`;}).join("");
 
 // feature media
 if($("#featureMedia")) $("#featureMedia").innerHTML=`<img class="feature-photo" src="${flickr(900,700,"harbor,mountains,alaska",7)}" alt="" loading="lazy" width="900" height="700">`;

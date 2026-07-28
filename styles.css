@@ -160,8 +160,10 @@ h2.title{font-size:clamp(1.9rem,4vw,2.9rem);}
 body[data-page="realestate"] .masthead{background:var(--accent); border-bottom-color:var(--accent-ink); box-shadow:none;}
 .masthead-inner{max-width:var(--maxw); margin-inline:auto; display:flex; align-items:center; gap:1rem; padding:.4rem clamp(16px,4vw,40px); min-height:76px;}
 .brand{display:flex; align-items:center; gap:.55rem; text-decoration:none; flex-shrink:0;}
-.brand .brand-logo{height:62px; width:auto; display:block; object-fit:contain;}
-@media (max-width:520px){ .brand .brand-logo{height:48px;} .masthead-inner{min-height:62px;} }
+.brand .brand-logo{height:80px; width:auto; display:block; object-fit:contain;}
+@media (max-width:520px){ .brand .brand-logo{height:56px;} .masthead-inner{min-height:70px;} }
+/* Seldovia Property logo atop the Real Estate page hero */
+.re-brand-logo{display:block; height:auto; width:min(320px,72vw); margin:0 auto 1rem; border-radius:12px;}
 .brand .mark{width:32px; height:32px;}
 .brand .word{font-weight:800; font-size:1.18rem; color:var(--heading); letter-spacing:-.02em; line-height:1;}
 .brand .word b{color:var(--accent-ink);}
@@ -368,7 +370,9 @@ body:not([data-page="realestate"]) .howband::before{content:""; position:absolut
 .post{background:var(--sheet); border:1px solid var(--line); border-radius:var(--radius); overflow:clip; box-shadow:var(--shadow); color:inherit; display:flex; flex-direction:column;}
 /* uniform blog cards — consistent image size, clamped text, Read more to expand */
 .post-media{position:relative; aspect-ratio:16/10; background:var(--surface-2);}
-.post-media .post-photo,.post-media svg{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;}
+/* full image (contain) so flyers/graphics aren't cropped — cards stay uniform via fixed aspect box */
+.post-media .post-photo{position:absolute; inset:0; width:100%; height:100%; object-fit:contain; display:block;}
+.post-media svg{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;}
 .post-body{padding:1rem 1.1rem 1.15rem; display:flex; flex-direction:column; gap:.4rem;}
 .kicker{font-size:.7rem; text-transform:uppercase; letter-spacing:.1em; font-weight:800; color:var(--accent-ink);}
 .post-body h4{font-size:1.14rem; font-family:var(--serif);}
@@ -443,7 +447,7 @@ body:not([data-page="realestate"]) .howband::before{content:""; position:absolut
 .sponsor-strip{overflow:hidden; border:1px solid var(--line); border-radius:var(--radius); background:var(--sheet); box-shadow:var(--shadow);}
 .sponsor-track{display:flex; will-change:transform;}
 .sponsor{flex:0 0 auto; width:210px; padding:1.4rem 1.2rem; border-left:1px solid var(--line); text-align:center; text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:.5rem; justify-content:center;}
-.sponsor .logo{width:54px; height:54px; border-radius:14px; display:grid; place-items:center; color:#fff; font-weight:800; font-size:1.3rem;}
+.sponsor .logo{width:38px; height:38px; border-radius:11px; display:grid; place-items:center; color:#fff; font-weight:800; font-size:1rem;}
 .sponsor .s-name{font-weight:700; color:var(--heading); font-size:.94rem;}
 .sponsor .s-cat{font-size:.74rem; color:var(--text-soft);}
 .sponsor:hover .s-name{color:var(--accent-ink);}
