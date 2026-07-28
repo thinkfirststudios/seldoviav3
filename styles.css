@@ -157,11 +157,11 @@ h2.title{font-size:clamp(1.9rem,4vw,2.9rem);}
 
 /* ============================================================ HEADER */
 .masthead{position:sticky; top:0; z-index:60; background:var(--sheet); border-bottom:1px solid var(--line); box-shadow:0 2px 10px -6px rgba(60,50,32,.18);}
-body[data-page="realestate"] .masthead{background:var(--accent); border-bottom-color:var(--accent-ink); box-shadow:none;}
+body[data-page="realestate"] .masthead{background:linear-gradient(90deg,#ffffff 0%,#ffffff 22%,var(--accent) 100%); border-bottom-color:var(--accent-ink); box-shadow:none;}
 .masthead-inner{max-width:var(--maxw); margin-inline:auto; display:flex; align-items:center; gap:1rem; padding:.4rem clamp(16px,4vw,40px); min-height:76px;}
 .brand{display:flex; align-items:center; gap:.55rem; text-decoration:none; flex-shrink:0;}
-.brand .brand-logo{height:80px; width:auto; display:block; object-fit:contain;}
-@media (max-width:520px){ .brand .brand-logo{height:56px;} .masthead-inner{min-height:70px;} }
+.brand .brand-logo{height:104px; width:auto; display:block; object-fit:contain;}
+@media (max-width:520px){ .brand .brand-logo{height:64px;} .masthead-inner{min-height:78px;} }
 /* Seldovia Property logo atop the Real Estate page hero */
 .re-brand-logo{display:block; height:auto; width:min(320px,72vw); margin:0 auto 1rem; border-radius:12px;}
 .brand .mark{width:32px; height:32px;}
@@ -369,7 +369,7 @@ body:not([data-page="realestate"]) .howband::before{content:""; position:absolut
 @media (max-width:600px){ .grid3{grid-template-columns:1fr;} }
 .post{background:var(--sheet); border:1px solid var(--line); border-radius:var(--radius); overflow:clip; box-shadow:var(--shadow); color:inherit; display:flex; flex-direction:column;}
 /* uniform blog cards — consistent image size, clamped text, Read more to expand */
-.post-media{position:relative; aspect-ratio:16/10; background:var(--surface-2);}
+.post-media{position:relative; aspect-ratio:3/4; background:var(--surface-2);}
 /* uniform card thumbnails (cover), cropped from the top so flyer/graphic headlines stay visible.
    The FULL uncropped image shows on the post detail page. */
 .post-media .post-photo,.post-media svg{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center top; display:block;}
