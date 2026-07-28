@@ -616,3 +616,18 @@ footer.site a{color:rgba(255,255,255,.82); text-decoration:none;} footer.site a:
 .jphoto figcaption{font-size:.86rem; color:var(--text-soft); line-height:1.35;}
 .jphoto figcaption b{color:var(--heading); font-weight:700;}
 @media (max-width:720px){ .today-feature{grid-template-columns:1fr;} }
+
+/* ============ SELDOVIA TODAY BAR ============ */
+.today-bar{background:linear-gradient(90deg,var(--band) 0%,#35564444 100%),var(--band); color:#fff;}
+body[data-page="realestate"] .today-bar{background:var(--accent-ink);}
+.today-inner{max-width:var(--maxw); margin-inline:auto; padding:.6rem clamp(16px,4vw,56px);
+  display:flex; align-items:center; gap:clamp(14px,2.4vw,32px); flex-wrap:wrap;}
+.today-title{font-family:var(--serif); font-weight:700; font-size:1.02rem; letter-spacing:.01em; opacity:.95; padding-right:.4rem; border-right:1px solid rgba(255,255,255,.25);}
+.today-item{display:flex; align-items:center; gap:.5rem;}
+.ti-ico{font-size:1.15rem; line-height:1;}
+.ti-body{display:flex; flex-direction:column; line-height:1.15;}
+.ti-label{font-size:.66rem; text-transform:uppercase; letter-spacing:.08em; opacity:.7;}
+.ti-value{font-size:.9rem; font-weight:700;}
+.ti-value .ti-sub{font-weight:400; opacity:.78; font-size:.82em;}
+.today-item a{color:#fff; text-decoration:underline; text-underline-offset:2px; font-weight:700;}
+@media (max-width:560px){ .today-title{border-right:0; width:100%;} .today-inner{gap:12px 20px;} }
