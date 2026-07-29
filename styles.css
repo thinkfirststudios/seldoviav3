@@ -653,3 +653,8 @@ body[data-page="realestate"] .today-bar{background:var(--accent-ink);}
 .wc-body h4{font-family:var(--serif); font-size:1.15rem; color:var(--heading);}
 .wc-body p{font-size:.9rem; color:var(--text-soft); margin:.3rem 0 .7rem; line-height:1.4;}
 .wc-live{font-weight:800; color:var(--accent-ink); font-size:.9rem;}
+
+/* ============ CALENDAR EMBED ============ */
+.cal-embed{background:var(--sheet); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); overflow:clip;}
+.cal-embed iframe{display:block; width:100%; height:min(78vh,760px); border:0;}
+.cal-note{font-size:.86rem; color:var(--text-soft); margin-top:.7rem; text-align:center;}
