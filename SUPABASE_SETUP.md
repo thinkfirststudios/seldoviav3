@@ -1,7 +1,12 @@
 # Seldovia.com — backend setup (one time, ~10 minutes)
 
-This gives Jenny a login where she posts a **daily photo**, **blog posts**, etc., and
-they appear on the live site automatically. Free tier is plenty for this.
+This gives Jenny a login where she posts a **daily photo**, **blog posts**, **bulletin
+notices**, and **listings**, and they appear on the live site automatically. Free tier
+is plenty for this.
+
+> **Already did the first setup?** Just do two things again: (1) re-run **`supabase-setup.sql`**
+> in the SQL Editor — it now also creates the `bulletin` and `listings` tables and is safe
+> to re-run, and (2) add one more **public** Storage bucket named **`listings`**. That's it.
 
 ## 1. Create the project
 1. Go to **https://supabase.com** → sign in (or sign up) → **New project**.
@@ -13,9 +18,10 @@ they appear on the live site automatically. Free tier is plenty for this.
 2. Open the file **`supabase-setup.sql`** (in this folder), copy ALL of it, paste, click **Run**.
    - It's fine to run more than once — it won't duplicate anything.
 
-## 3. Create the two photo buckets
+## 3. Create the three photo buckets
 1. Left sidebar → **Storage** → **New bucket** → name **`gallery`** → tick **"Public bucket"** → Save.
 2. **New bucket** again → name **`blog`** → tick **"Public bucket"** → Save.
+3. **New bucket** again → name **`listings`** → tick **"Public bucket"** → Save.
    *(If you created the buckets AFTER running the SQL, that's fine — the storage
    policies in the SQL already cover them. If you get a policy error, just re-run
    the SQL after making the buckets.)*
