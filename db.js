@@ -6,8 +6,8 @@
    The publishable key is PUBLIC by design (it ships in the frontend);
    security is enforced by Row-Level Security, not by hiding this key.
    Never put the service_role / secret key here. */
-const SUPABASE_URL = "PASTE_PROJECT_URL_HERE";
-const SUPABASE_KEY = "PASTE_PUBLISHABLE_ANON_KEY_HERE";
+const SUPABASE_URL = "https://ycnbgyewuyietkhjxorz.supabase.co";
+const SUPABASE_KEY = "sb_publishable_UVnfz14d7L3vnbPWxYrYVg_3oY3GWdo";
 
 // Until real values are pasted, window.db stays null and the whole site
 // gracefully falls back to its built-in photos/posts.
