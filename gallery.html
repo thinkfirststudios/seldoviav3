@@ -6,7 +6,7 @@
 <meta name="description" content="The Seldovia Photo Journal — a daily photo diary of Seldovia, Alaska through the seasons.">
 <meta name="theme-color" content="#F8E6DD">
 <title>Photo Journal — Seldovia</title>
-<link rel="stylesheet" href="styles.css?v=5">
+<link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body data-page="gallery">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -15,6 +15,19 @@
 
   <!-- Photo Journal (daily photos from the admin). Falls back to the static gallery below. -->
   <section class="section wrap"><div id="journalApp"></div></section>
+
+  <!-- SELDOVIA WEBCAMS — cards link to the live cams (swap to inline embeds once feed URLs are confirmed) -->
+  <section class="section wrap">
+    <div class="section-head"><span class="eyebrow">Live Views</span><h2 class="title">Seldovia webcams</h2><p>Peek in on the harbor and the bay, live.</p></div>
+    <div class="webcam-grid">
+      <a class="webcam-card" href="https://www.seldovia.com/about-our-community/webcams-around-seldovia/" target="_blank" rel="noopener">
+        <div class="wc-shot">⚓</div><div class="wc-body"><h4>Harbor Cam</h4><p>The boats, the docks, and the day-to-day of Seldovia Harbor.</p><span class="wc-live">Watch live →</span></div></a>
+      <a class="webcam-card" href="https://www.seldovia.com/about-our-community/webcams-around-seldovia/" target="_blank" rel="noopener">
+        <div class="wc-shot">⛴️</div><div class="wc-body"><h4>City Dock Cam</h4><p>The AMHS ferry dock and the water on Kachemak Bay.</p><span class="wc-live">Watch live →</span></div></a>
+      <a class="webcam-card" href="https://www.seldovia.com/about-our-community/webcams-around-seldovia/" target="_blank" rel="noopener">
+        <div class="wc-shot">🌊</div><div class="wc-body"><h4>Seldovia Bay Cam</h4><p>A wide look out across the bay and the light on the water.</p><span class="wc-live">Watch live →</span></div></a>
+    </div>
+  </section>
 
   <!-- Static fallback gallery — shown until daily photos exist -->
   <section class="section wrap" id="staticGallery"><div class="masonry" id="masonry"></div></section>

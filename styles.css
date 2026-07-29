@@ -643,3 +643,13 @@ body[data-page="realestate"] .today-bar{background:var(--accent-ink);}
 .fw-note{font-size:.9rem; color:var(--text-soft); margin-top:.6rem;}
 .fw-note a{font-weight:700;}
 @media (max-width:520px){ .fw-routes{grid-template-columns:1fr;} }
+
+/* ============ SELDOVIA WEBCAMS ============ */
+.webcam-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:clamp(16px,2.4vw,24px);}
+.webcam-card{display:flex; flex-direction:column; text-decoration:none; background:var(--sheet); border:1px solid var(--line); border-radius:var(--radius); overflow:clip; box-shadow:var(--shadow); transition:transform .16s, box-shadow .2s;}
+.webcam-card:hover{transform:translateY(-3px); box-shadow:var(--shadow-lg);}
+.wc-shot{aspect-ratio:16/10; display:grid; place-items:center; font-size:2.6rem; background:linear-gradient(135deg,var(--accent-soft),var(--surface-2)); color:var(--accent-ink);}
+.wc-body{padding:1rem 1.1rem 1.2rem;}
+.wc-body h4{font-family:var(--serif); font-size:1.15rem; color:var(--heading);}
+.wc-body p{font-size:.9rem; color:var(--text-soft); margin:.3rem 0 .7rem; line-height:1.4;}
+.wc-live{font-weight:800; color:var(--accent-ink); font-size:.9rem;}
