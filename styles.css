@@ -159,7 +159,7 @@ h2.title{font-size:clamp(1.9rem,4vw,2.9rem);}
 
 /* ============================================================ HEADER */
 .masthead{position:sticky; top:0; z-index:60; background:var(--sheet); border-bottom:1px solid var(--line); box-shadow:0 2px 10px -6px rgba(60,50,32,.18);}
-body[data-page="realestate"] .masthead{background:linear-gradient(90deg,#ffffff 0%,#ffffff 22%,var(--accent) 100%); border-bottom-color:var(--accent-ink); box-shadow:none;}
+/* RE nav is the same clean white bar as every other page (the pink lives in the "Seldovia Today" line + page accents). */
 .masthead-inner{max-width:var(--maxw); margin-inline:auto; display:flex; align-items:center; gap:1rem; padding:.4rem clamp(16px,4vw,40px); min-height:76px;}
 .brand{display:flex; align-items:center; gap:.55rem; text-decoration:none; flex-shrink:0;}
 .brand .brand-logo{height:104px; width:auto; display:block; object-fit:contain;}
@@ -174,15 +174,11 @@ nav.mainnav{display:flex; gap:.1rem; margin-left:.6rem;}
 nav.mainnav a{font-size:.9rem; font-weight:700; color:var(--text); text-decoration:none; padding:.5rem .62rem; border-radius:var(--radius-pill); white-space:nowrap; transition:background .15s,color .15s;}
 nav.mainnav a:hover{background:var(--surface-2); color:var(--accent-ink);}
 nav.mainnav a.active{background:var(--accent-soft); color:var(--accent-ink);}
-body[data-page="realestate"] nav.mainnav a{color:#fff;}
-body[data-page="realestate"] nav.mainnav a:hover{background:rgba(255,255,255,.16); color:#fff;}
-body[data-page="realestate"] nav.mainnav a.active{background:#fff; color:var(--accent-ink);}
+body[data-page="realestate"] nav.mainnav a.active{background:var(--accent-soft); color:var(--accent-ink);}
 .head-actions{display:flex; align-items:center; gap:.5rem; margin-left:auto;}
 .icon-btn{width:42px; height:42px; border-radius:50%; border:1px solid var(--line); background:var(--sheet); color:var(--text); display:grid; place-items:center; cursor:pointer;}
 .icon-btn:hover{border-color:var(--accent); color:var(--accent-ink);}
 .add-listing{display:inline-flex;}
-body[data-page="realestate"] .masthead .btn-primary{background:#fff; color:var(--accent-ink); box-shadow:0 8px 18px -10px rgba(0,0,0,.45);}
-body[data-page="realestate"] .masthead .btn-primary:hover{background:#fff2f9; color:var(--accent-ink);}
 #menuBtn{display:none;}
 @media (max-width:1120px){ nav.mainnav{display:none;} #menuBtn{display:grid;} .add-listing{display:none;} }
 
@@ -631,3 +627,19 @@ body[data-page="realestate"] .today-bar{background:var(--accent-ink);}
 .ti-value .ti-sub{font-weight:400; opacity:.78; font-size:.82em;}
 .today-item a{color:#fff; text-decoration:underline; text-underline-offset:2px; font-weight:700;}
 @media (max-width:560px){ .today-title{border-right:0; width:100%;} .today-inner{gap:12px 20px;} }
+
+/* ============ TODAY'S FERRY WIDGET ============ */
+.ferry-card{background:var(--sheet); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:clamp(1.1rem,2.4vw,1.6rem);}
+.fw-head{display:flex; align-items:center; gap:.9rem; flex-wrap:wrap;}
+.fw-ico{font-size:2rem; line-height:1;}
+.fw-head h3{font-family:var(--serif); font-size:1.25rem; color:var(--heading); line-height:1.15;}
+.fw-status{margin-left:auto; font-size:.78rem; font-weight:800; text-transform:uppercase; letter-spacing:.05em; padding:.32rem .7rem; border-radius:var(--radius-pill);}
+.fw-status.is-on{background:var(--open-bg); color:var(--open);}
+.fw-status.is-off{background:var(--surface-2); color:var(--text-soft);}
+.fw-routes{display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1.1rem 0 .3rem;}
+.fw-route{background:var(--surface-2); border-radius:var(--radius-s); padding:.8rem 1rem;}
+.fw-route h4{font-size:.82rem; text-transform:uppercase; letter-spacing:.05em; color:var(--text-soft); margin-bottom:.25rem;}
+.fw-route p{font-family:var(--serif); font-size:1.15rem; font-weight:700; color:var(--heading);}
+.fw-note{font-size:.9rem; color:var(--text-soft); margin-top:.6rem;}
+.fw-note a{font-weight:700;}
+@media (max-width:520px){ .fw-routes{grid-template-columns:1fr;} }

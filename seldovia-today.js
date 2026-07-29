@@ -1,73 +1,91 @@
-/* "Seldovia Today" bar — live temperature (Open-Meteo) + next tide (NOAA station
-   9455500, in Seldovia) + today's ferry (season schedule + booking link).
-   All times computed in Alaska time so it's correct for any visitor. No API keys. */
+/* "Seldovia Today" bar — live Alaska time + temperature (Open-Meteo) + today's
+   high & low tides (NOAA station 9455500, in Seldovia) + ferry. Also renders a
+   full ferry-schedule widget into #ferryWidget when present (home page).
+   All client-side, no API keys, all times in Alaska time. */
 (function(){
   const el=document.querySelector("#seldoviaToday");
-  if(!el) return;
+  const ferryBox=document.querySelector("#ferryWidget");
+  if(!el && !ferryBox) return;
+
   const LAT=59.4386, LON=-151.7133, STATION="9455500";
   const FERRY_URL="https://seldoviabayferry.com/ferry-schedule/";
   // Summer 2026 — Kachemak Voyager. Update seasonally. Sailing days Thu–Mon.
-  const FERRY={ days:[0,1,4,5,6], depart:["9:00 AM","4:30 PM"], note:"Thu–Mon" }; // 0=Sun … 6=Sat
+  const FERRY={ days:[0,1,4,5,6], seldovia:["9:00 AM","4:30 PM"], homer:["11:00 AM","6:30 PM"],
+    note:"Thu–Mon", price:"$38 one-way", dur:"~45 min", vessel:"Kachemak Voyager" };
 
-  // --- Alaska "now" parts ---
-  const akParts=(()=>{
+  const akParts=()=>{
     const f=new Intl.DateTimeFormat("en-US",{timeZone:"America/Anchorage",weekday:"short",
       year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",hour12:false});
     const p={}; f.formatToParts(new Date()).forEach(x=>p[x.type]=x.value);
     const wd={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[p.weekday];
     return {y:+p.year,m:+p.month,d:+p.day,hh:+(p.hour==="24"?0:p.hour),mm:+p.minute,wd};
-  })();
-  const nowMin=akParts.hh*60+akParts.mm;
-  const ymd=`${akParts.y}${String(akParts.m).padStart(2,"0")}${String(akParts.d).padStart(2,"0")}`;
+  };
+  const to12=hm=>{ const [H,Mi]=hm.split(":").map(Number); const ap=H>=12?"PM":"AM"; return `${((H+11)%12)+1}:${String(Mi).padStart(2,"0")} ${ap}`; };
+  const sailingToday=()=>FERRY.days.includes(akParts().wd);
 
-  const WMO={0:["Clear","☀️"],1:["Mainly clear","🌤️"],2:["Partly cloudy","⛅"],3:["Overcast","☁️"],
-    45:["Fog","🌫️"],48:["Fog","🌫️"],51:["Drizzle","🌦️"],53:["Drizzle","🌦️"],55:["Drizzle","🌦️"],
-    61:["Light rain","🌧️"],63:["Rain","🌧️"],65:["Heavy rain","🌧️"],66:["Freezing rain","🌧️"],67:["Freezing rain","🌧️"],
-    71:["Light snow","🌨️"],73:["Snow","🌨️"],75:["Heavy snow","❄️"],77:["Snow","🌨️"],
-    80:["Showers","🌦️"],81:["Showers","🌧️"],82:["Heavy showers","🌧️"],85:["Snow showers","🌨️"],86:["Snow showers","🌨️"],
-    95:["Thunderstorm","⛈️"],96:["Thunderstorm","⛈️"],99:["Thunderstorm","⛈️"]};
+  /* ---------- The bar ---------- */
+  if(el){
+    const item=(id,icon,label,value)=>`<div class="today-item" id="${id}"><span class="ti-ico">${icon}</span><span class="ti-body"><span class="ti-label">${label}</span><span class="ti-value">${value}</span></span></div>`;
+    const ferryVal = sailingToday()
+      ? `${FERRY.seldovia.join(" · ")} <a href="${FERRY_URL}" target="_blank" rel="noopener">book →</a>`
+      : `Runs ${FERRY.note} · <a href="${FERRY_URL}" target="_blank" rel="noopener">schedule →</a>`;
+    el.innerHTML=`<div class="today-inner">
+      <span class="today-title">Seldovia&nbsp;Today</span>
+      ${item("ti-time","🕐","Alaska time","…")}
+      ${item("ti-temp","🌡️","Right now","…")}
+      ${item("ti-tide","🌊","Tides today","…")}
+      ${item("ti-ferry","⛴️","Ferry",ferryVal)}
+    </div>`;
 
-  const item=(icon,label,value)=>`<div class="today-item"><span class="ti-ico">${icon}</span><span class="ti-body"><span class="ti-label">${label}</span><span class="ti-value">${value}</span></span></div>`;
+    // Live clock
+    const tick=()=>{ const box=el.querySelector("#ti-time .ti-value"); if(box)
+      box.textContent=new Intl.DateTimeFormat("en-US",{timeZone:"America/Anchorage",hour:"numeric",minute:"2-digit",hour12:true}).format(new Date())+" AKT"; };
+    tick(); setInterval(tick, 30000);
 
-  // Ferry (synchronous)
-  let ferryHtml;
-  if(FERRY.days.includes(akParts.wd)){
-    ferryHtml=item("⛴️","Ferry today",`${FERRY.depart.join(" · ")} <a href="${FERRY_URL}" target="_blank" rel="noopener">schedule →</a>`);
-  }else{
-    ferryHtml=item("⛴️","Ferry",`Runs ${FERRY.note} · <a href="${FERRY_URL}" target="_blank" rel="noopener">schedule →</a>`);
+    // Weather
+    fetch(`https://api.open-meteo.com/v1/forecast?latitude=${LAT}&longitude=${LON}&current=temperature_2m,weather_code&temperature_unit=fahrenheit&timezone=America%2FAnchorage`)
+      .then(r=>r.json()).then(j=>{
+        const WMO={0:["Clear","☀️"],1:["Mainly clear","🌤️"],2:["Partly cloudy","⛅"],3:["Overcast","☁️"],45:["Fog","🌫️"],48:["Fog","🌫️"],51:["Drizzle","🌦️"],53:["Drizzle","🌦️"],55:["Drizzle","🌦️"],61:["Light rain","🌧️"],63:["Rain","🌧️"],65:["Heavy rain","🌧️"],66:["Freezing rain","🌧️"],67:["Freezing rain","🌧️"],71:["Light snow","🌨️"],73:["Snow","🌨️"],75:["Heavy snow","❄️"],77:["Snow","🌨️"],80:["Showers","🌦️"],81:["Showers","🌧️"],82:["Heavy showers","🌧️"],85:["Snow showers","🌨️"],86:["Snow showers","🌨️"],95:["Thunderstorm","⛈️"],96:["Thunderstorm","⛈️"],99:["Thunderstorm","⛈️"]};
+        const t=Math.round(j.current.temperature_2m); const [desc,icon]=WMO[j.current.weather_code]||["","🌡️"];
+        const box=el.querySelector("#ti-temp");
+        box.querySelector(".ti-ico").textContent=icon;
+        box.querySelector(".ti-value").innerHTML=`${t}°F <span class="ti-sub">${desc}</span>`;
+      }).catch(()=>{ const b=el.querySelector("#ti-temp"); if(b) b.remove(); });
+
+    // Tides — next high AND next low
+    const ak=akParts();
+    const ymd=`${ak.y}${String(ak.m).padStart(2,"0")}${String(ak.d).padStart(2,"0")}`;
+    fetch(`https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=predictions&application=seldovia_com&datum=MLLW&station=${STATION}&time_zone=lst_ldt&units=english&interval=hilo&format=json&begin_date=${ymd}&range=48`)
+      .then(r=>r.json()).then(j=>{
+        const preds=(j.predictions||[]).map(p=>{ const [d,tm]=p.t.split(" "); const [Y,M,D]=d.split("-").map(Number); const [h,mi]=tm.split(":").map(Number);
+          return {abs:(Y*366+M*31+D)*1440+h*60+mi, type:p.type, v:Math.round(+p.v*10)/10, hm:tm}; });
+        const nowAbs=(ak.y*366+ak.m*31+ak.d)*1440 + ak.hh*60+ak.mm;
+        const hi=preds.find(p=>p.abs>nowAbs && p.type==="H");
+        const lo=preds.find(p=>p.abs>nowAbs && p.type==="L");
+        const box=el.querySelector("#ti-tide");
+        if(!hi && !lo){ box.remove(); return; }
+        const parts=[];
+        if(hi) parts.push(`<b>▲ ${to12(hi.hm)}</b> <span class="ti-sub">${hi.v} ft</span>`);
+        if(lo) parts.push(`<b>▼ ${to12(lo.hm)}</b> <span class="ti-sub">${lo.v} ft</span>`);
+        box.querySelector(".ti-value").innerHTML=parts.join(" · ");
+      }).catch(()=>{ const b=el.querySelector("#ti-tide"); if(b) b.remove(); });
   }
 
-  el.innerHTML=`<div class="today-inner">
-    <span class="today-title">Seldovia&nbsp;Today</span>
-    <div class="today-item" id="ti-temp"><span class="ti-ico">🌡️</span><span class="ti-body"><span class="ti-label">Right now</span><span class="ti-value">…</span></span></div>
-    <div class="today-item" id="ti-tide"><span class="ti-ico">🌊</span><span class="ti-body"><span class="ti-label">Next tide</span><span class="ti-value">…</span></span></div>
-    ${ferryHtml}
-  </div>`;
-
-  // Weather
-  fetch(`https://api.open-meteo.com/v1/forecast?latitude=${LAT}&longitude=${LON}&current=temperature_2m,weather_code&temperature_unit=fahrenheit&timezone=America%2FAnchorage`)
-    .then(r=>r.json()).then(j=>{
-      const t=Math.round(j.current.temperature_2m);
-      const [desc,icon]=WMO[j.current.weather_code]||["",""];
-      const box=el.querySelector("#ti-temp");
-      box.querySelector(".ti-ico").textContent=icon||"🌡️";
-      box.querySelector(".ti-value").innerHTML=`${t}°F <span class="ti-sub">${desc}</span>`;
-    }).catch(()=>{ el.querySelector("#ti-temp").remove(); });
-
-  // Tides — request ~36h so there's always a "next"
-  fetch(`https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=predictions&application=seldovia_com&datum=MLLW&station=${STATION}&time_zone=lst_ldt&units=english&interval=hilo&format=json&begin_date=${ymd}&range=36`)
-    .then(r=>r.json()).then(j=>{
-      const preds=(j.predictions||[]).map(p=>{
-        const [d,tm]=p.t.split(" "); const [Y,M,D]=d.split("-").map(Number); const [h,mi]=tm.split(":").map(Number);
-        return {abs:(Y*366+M*31+D)*1440 + h*60+mi, day:`${Y}${String(M).padStart(2,"0")}${String(D).padStart(2,"0")}`,
-                min:h*60+mi, type:p.type, v:Math.round(+p.v*10)/10, hm:tm};
-      });
-      const nowAbs=(akParts.y*366+akParts.m*31+akParts.d)*1440 + nowMin;
-      const next=preds.find(p=>p.abs>nowAbs);
-      const box=el.querySelector("#ti-tide");
-      if(!next){ box.remove(); return; }
-      const [H,Mi]=next.hm.split(":").map(Number); const ap=H>=12?"PM":"AM"; const h12=((H+11)%12)+1;
-      const kind=next.type==="H"?"High":"Low";
-      box.querySelector(".ti-value").innerHTML=`${kind} ${h12}:${String(Mi).padStart(2,"0")} ${ap} <span class="ti-sub">${next.v} ft</span>`;
-    }).catch(()=>{ el.querySelector("#ti-tide").remove(); });
+  /* ---------- Home-page ferry widget ---------- */
+  if(ferryBox){
+    const running=sailingToday();
+    ferryBox.innerHTML=`
+      <div class="ferry-card">
+        <div class="fw-head">
+          <span class="fw-ico">⛴️</span>
+          <div><span class="eyebrow">Getting here</span><h3>Today's Ferry — ${FERRY.vessel}</h3></div>
+          <span class="fw-status ${running?"is-on":"is-off"}">${running?"Sailing today":"No sailings today"}</span>
+        </div>
+        <div class="fw-routes">
+          <div class="fw-route"><h4>Seldovia → Homer</h4><p>${FERRY.seldovia.join(" · ")}</p></div>
+          <div class="fw-route"><h4>Homer → Seldovia</h4><p>${FERRY.homer.join(" · ")}</p></div>
+        </div>
+        <p class="fw-note">${FERRY.price} · ${FERRY.dur} · Runs ${FERRY.note}. Buy tickets on board — no reservation needed. <a href="${FERRY_URL}" target="_blank" rel="noopener">Full schedule &amp; info →</a></p>
+      </div>`;
+  }
 })();
