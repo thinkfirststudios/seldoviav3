@@ -365,7 +365,11 @@ body:not([data-page="realestate"]) .howband::before{content:""; position:absolut
 .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(16px,2.2vw,24px); align-items:start;}
 @media (max-width:900px){ .grid3{grid-template-columns:repeat(2,1fr);} }
 @media (max-width:600px){ .grid3{grid-template-columns:1fr;} }
-.post{background:var(--sheet); border:1px solid var(--line); border-radius:var(--radius); overflow:clip; box-shadow:var(--shadow); color:inherit; display:flex; flex-direction:column;}
+.post{background:var(--sheet); border:1px solid var(--line); border-radius:var(--radius); overflow:clip; box-shadow:var(--shadow); color:inherit; display:flex; flex-direction:column; min-width:0;}
+/* prevent a long unbreakable word/URL in one card from stretching its grid column and pushing the page sideways */
+.grid3>*{min-width:0;}
+.post-body{min-width:0;}
+.post-body h4,.post-text{overflow-wrap:anywhere;}
 /* uniform blog cards — consistent image size, clamped text, Read more to expand */
 .post-media{position:relative; aspect-ratio:3/4; background:var(--surface-2);}
 /* uniform card thumbnails (cover), cropped from the top so flyer/graphic headlines stay visible.
