@@ -17,8 +17,8 @@
 
   db.from("photos").select("*").order("taken_on",{ascending:false})
     .then(({data,error})=>{
-      if(error || !data || !data.length) return; // keep static fallback
-      const staticSec=document.querySelector("#staticGallery"); if(staticSec) staticSec.style.display="none";
+      if(error || !data || !data.length) return; // keep static gallery as-is
+      // The built-in "More Seldovia photos" gallery below stays visible (nothing is removed).
 
       const today=data[0];
       const curMonth=new Date().getMonth(); // 0-11
