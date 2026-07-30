@@ -1,4 +1,4 @@
-/* Seldovia.com admin — Jenny signs in to post a daily photo, a blog post, a
+/* Seldovia.com admin — Jenny signs in to post/edit a daily photo, a blog post, a
    bulletin notice, or a real-estate listing. Everything writes to Supabase
    (see db.js / SUPABASE_SETUP.md). If the backend isn't configured yet, this
    shows a friendly setup notice. */
@@ -10,6 +10,22 @@
   const fmtDate=d=>{ if(!d) return ""; const [y,m,day]=d.split("-"); return `${MONTHS[+m-1]} ${+day}, ${y}`; };
   const todayISO=()=>{ const d=new Date(); return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`; };
   const slugify=s=>String(s).toLowerCase().trim().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"").slice(0,60);
+
+  const BLOG_CATS=["Community","Events","Living Here","Real Estate","Business","Outdoors","Announcements"];
+  const BUL_CATS=["Notice","Event","For Sale","Free","Wanted","Service","Lost & Found","Volunteer"];
+
+  // Category <select> with an "Other…" escape hatch that reveals a text box.
+  function catField(id, options){
+    return `<select id="${id}">${options.map(o=>`<option>${esc(o)}</option>`).join("")}<option value="__other">Other…</option></select>
+      <input id="${id}-other" type="text" placeholder="Type a category" style="margin-top:.45rem" hidden>`;
+  }
+  function wireCat(id){ const sel=$("#"+id), other=$("#"+id+"-other");
+    sel.addEventListener("change",()=>{ const o=sel.value==="__other"; other.hidden=!o; if(o) other.focus(); }); }
+  function readCat(id, fallback){ const sel=$("#"+id); return sel.value==="__other" ? ($("#"+id+"-other").value.trim()||fallback) : sel.value; }
+  function fillCat(id, value, options){ const sel=$("#"+id), other=$("#"+id+"-other");
+    if(value && options.includes(value)){ sel.value=value; other.hidden=true; other.value=""; }
+    else if(value){ sel.value="__other"; other.hidden=false; other.value=value; }
+    else { sel.selectedIndex=0; other.hidden=true; other.value=""; } }
 
   function compressImage(file, maxW, quality){
     return new Promise((resolve,reject)=>{
@@ -77,92 +93,110 @@
   }
 
   /* ---------------- DAILY PHOTO ---------------- */
+  let editPhoto=null;
   function renderPhotoTab(){
     $("#tab-photo").innerHTML=`
       <form class="info-block" id="photoForm" style="max-width:640px">
-        <h4>Add today's photo</h4>
+        <h4 id="ph-head">Add today's photo</h4>
         <p style="color:var(--text-soft);font-size:.92rem;margin:.3rem 0 1rem">It appears at the top of the Photo Journal, then settles into that month's gallery.</p>
         <div class="row-2" style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem">
           <div class="field"><label for="ph-date">Date the photo is for</label><input id="ph-date" type="date" required></div>
           <div class="field"><label for="ph-cap">Caption</label><input id="ph-cap" placeholder="Morning light on the harbor"></div>
         </div>
-        <div class="field"><label for="ph-img">Photo <span class="req">*</span></label><input id="ph-img" type="file" accept="image/*" required><span class="hint">Auto-resized on upload.</span></div>
-        <button class="btn btn-primary" type="submit" id="ph-btn">Post photo</button>
+        <div class="field"><label for="ph-img">Photo <span class="req">*</span></label><input id="ph-img" type="file" accept="image/*" required><span class="hint" id="ph-imghint">Auto-resized on upload.</span></div>
+        <div style="display:flex;gap:.5rem;align-items:center;flex-wrap:wrap">
+          <button class="btn btn-primary" type="submit" id="ph-btn">Post photo</button>
+          <button class="btn btn-ghost" type="button" id="ph-cancel" hidden>Cancel edit</button>
+        </div>
         <p id="ph-msg" class="form-note"></p>
       </form>
       <h3 class="listing-h" style="margin-top:2rem">Recent photos</h3>
       <div id="photoList"><p style="color:var(--text-soft)">Loading…</p></div>`;
     $("#ph-date").value=todayISO();
     $("#photoForm").addEventListener("submit",onPostPhoto);
+    $("#ph-cancel").addEventListener("click",resetPhoto);
     loadPhotos();
   }
+  function resetPhoto(){ editPhoto=null; $("#photoForm").reset(); $("#ph-date").value=todayISO();
+    $("#ph-img").required=true; $("#ph-imghint").textContent="Auto-resized on upload.";
+    $("#ph-head").textContent="Add today's photo"; $("#ph-btn").textContent="Post photo"; $("#ph-cancel").hidden=true; }
+  function fillPhoto(p){ editPhoto=p.id; $("#ph-date").value=p.taken_on; $("#ph-cap").value=p.caption||"";
+    $("#ph-img").required=false; $("#ph-imghint").textContent="Leave empty to keep the current photo.";
+    $("#ph-head").textContent="Edit photo"; $("#ph-btn").textContent="Save changes"; $("#ph-cancel").hidden=false;
+    $("#photoForm").scrollIntoView({behavior:"smooth",block:"start"}); }
   async function onPostPhoto(e){
     e.preventDefault();
     const btn=$("#ph-btn"), msg=$("#ph-msg");
-    btn.disabled=true; msg.style.color="var(--text-soft)"; msg.textContent="Uploading photo…";
+    btn.disabled=true; msg.style.color="var(--text-soft)"; msg.textContent=editPhoto?"Saving…":"Uploading photo…";
     try{
       const file=$("#ph-img").files[0];
-      if(!file) throw new Error("Please choose a photo.");
-      const image_url=await uploadImage("gallery", file, "photo");
-      const {error}=await db.from("photos").insert({taken_on:$("#ph-date").value, caption:$("#ph-cap").value.trim()||null, image_url});
-      if(error) throw error;
-      msg.style.color="var(--open)"; msg.textContent="Posted! It's live in the Photo Journal.";
-      $("#photoForm").reset(); $("#ph-date").value=todayISO();
-      loadPhotos();
+      const row={ taken_on:$("#ph-date").value, caption:$("#ph-cap").value.trim()||null };
+      if(file){ msg.textContent="Uploading photo…"; row.image_url=await uploadImage("gallery", file, "photo"); }
+      if(editPhoto){ const {error}=await db.from("photos").update(row).eq("id",editPhoto); if(error) throw error; }
+      else { if(!file) throw new Error("Please choose a photo."); const {error}=await db.from("photos").insert(row); if(error) throw error; }
+      msg.style.color="var(--open)"; msg.textContent=editPhoto?"Saved!":"Posted! It's live in the Photo Journal.";
+      resetPhoto(); loadPhotos();
     }catch(err){ msg.style.color="var(--accent-ink)"; msg.textContent="Error: "+(err.message||err); }
     finally{ btn.disabled=false; }
   }
   async function loadPhotos(){
     const list=$("#photoList");
-    const {data,error}=await db.from("photos").select("*").order("taken_on",{ascending:false}).limit(24);
+    const {data,error}=await db.from("photos").select("*").order("taken_on",{ascending:false}).limit(48);
     if(error){ list.innerHTML=`<p style="color:var(--accent-ink)">${esc(error.message)}</p>`; return; }
     if(!data.length){ list.innerHTML='<p style="color:var(--text-soft)">No photos yet.</p>'; return; }
     list.innerHTML=`<div class="admin-photo-grid">`+data.map(p=>`<figure class="admin-photo">
       <img src="${esc(p.image_url)}" alt="${esc(p.caption||"")}" loading="lazy">
       <figcaption>${esc(fmtDate(p.taken_on))}${p.caption?" · "+esc(p.caption):""}</figcaption>
-      <button class="btn btn-ghost" data-del="${p.id}" type="button">Delete</button></figure>`).join("")+`</div>`;
-    bindDelete(list,"photos",loadPhotos);
+      <div class="admin-row-btns"><button class="btn btn-ghost" data-edit="${p.id}" type="button">Edit</button><button class="btn btn-ghost" data-del="${p.id}" type="button">Delete</button></div></figure>`).join("")+`</div>`;
+    bindEdit(list,data,fillPhoto); bindDelete(list,"photos",loadPhotos);
   }
 
   /* ---------------- BLOG POST ---------------- */
+  let editPost=null;
   function renderBlogTab(){
     $("#tab-blog").innerHTML=`
       <form class="info-block" id="postForm" style="max-width:640px">
-        <h4>Write a blog post</h4>
+        <h4 id="p-head">Write a blog post</h4>
         <div class="field"><label for="p-title">Title <span class="req">*</span></label><input id="p-title" required></div>
         <div class="row-2" style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem">
           <div class="field"><label for="p-date">Date</label><input id="p-date" type="date" required></div>
-          <div class="field"><label for="p-cat">Category</label><input id="p-cat" placeholder="Community, Events, Real Estate…"></div>
+          <div class="field"><label for="p-cat">Category</label>${catField("p-cat",BLOG_CATS)}</div>
         </div>
         <div class="field"><label for="p-body">Post</label><textarea id="p-body" rows="7" placeholder="Write your post…"></textarea></div>
-        <div class="field"><label for="p-img">Photo <span class="opt">(optional)</span></label><input id="p-img" type="file" accept="image/*"></div>
-        <button class="btn btn-primary" type="submit" id="pubBtn">Publish post</button>
+        <div class="field"><label for="p-img">Photo <span class="opt">(optional)</span></label><input id="p-img" type="file" accept="image/*"><span class="hint" id="p-imghint"></span></div>
+        <div style="display:flex;gap:.5rem;align-items:center;flex-wrap:wrap">
+          <button class="btn btn-primary" type="submit" id="pubBtn">Publish post</button>
+          <button class="btn btn-ghost" type="button" id="p-cancel" hidden>Cancel edit</button>
+        </div>
         <p id="postMsg" class="form-note"></p>
       </form>
       <h3 class="listing-h" style="margin-top:2rem">Published posts</h3>
       <div id="postList"><p style="color:var(--text-soft)">Loading…</p></div>`;
-    $("#p-date").value=todayISO();
+    $("#p-date").value=todayISO(); wireCat("p-cat");
     $("#postForm").addEventListener("submit",onPublish);
+    $("#p-cancel").addEventListener("click",resetPost);
     loadPosts();
   }
+  function resetPost(){ editPost=null; $("#postForm").reset(); $("#p-date").value=todayISO(); fillCat("p-cat","",BLOG_CATS);
+    $("#p-imghint").textContent=""; $("#p-head").textContent="Write a blog post"; $("#pubBtn").textContent="Publish post"; $("#p-cancel").hidden=true; }
+  function fillPost(p){ editPost=p.id; $("#p-title").value=p.title||""; $("#p-date").value=p.post_date; fillCat("p-cat",p.category,BLOG_CATS);
+    $("#p-body").value=p.body||""; $("#p-imghint").textContent=p.image_url?"Leave empty to keep the current photo.":"";
+    $("#p-head").textContent="Edit post"; $("#pubBtn").textContent="Save changes"; $("#p-cancel").hidden=false;
+    $("#postForm").scrollIntoView({behavior:"smooth",block:"start"}); }
   async function onPublish(e){
     e.preventDefault();
     const btn=$("#pubBtn"), msg=$("#postMsg");
-    btn.disabled=true; msg.style.color="var(--text-soft)"; msg.textContent="Publishing…";
+    btn.disabled=true; msg.style.color="var(--text-soft)"; msg.textContent=editPost?"Saving…":"Publishing…";
     try{
-      const title=$("#p-title").value.trim();
       const body=$("#p-body").value.trim();
-      const post_date=$("#p-date").value;
-      const category=$("#p-cat").value.trim()||"Blog";
-      const excerpt=body.length>180?body.slice(0,177).trim()+"…":body;
-      let image_url=null;
+      const row={ title:$("#p-title").value.trim(), body, post_date:$("#p-date").value,
+        category:readCat("p-cat","Blog"), excerpt:body.length>180?body.slice(0,177).trim()+"…":body, published:true };
       const file=$("#p-img").files[0];
-      if(file){ msg.textContent="Uploading photo…"; image_url=await uploadImage("blog", file, "post"); }
-      const {error}=await db.from("posts").insert({title,body,excerpt,category,post_date,image_url,published:true});
-      if(error) throw error;
-      msg.style.color="var(--open)"; msg.textContent="Published! It's live on the blog.";
-      $("#postForm").reset(); $("#p-date").value=todayISO();
-      loadPosts();
+      if(file){ msg.textContent="Uploading photo…"; row.image_url=await uploadImage("blog", file, "post"); }
+      if(editPost){ const {error}=await db.from("posts").update(row).eq("id",editPost); if(error) throw error; }
+      else { const {error}=await db.from("posts").insert(row); if(error) throw error; }
+      msg.style.color="var(--open)"; msg.textContent=editPost?"Saved!":"Published! It's live on the blog.";
+      resetPost(); loadPosts();
     }catch(err){ msg.style.color="var(--accent-ink)"; msg.textContent="Error: "+(err.message||err); }
     finally{ btn.disabled=false; }
   }
@@ -174,18 +208,19 @@
     list.innerHTML=data.map(p=>`<div class="dir-item" style="align-items:center">
       ${p.image_url?`<img class="d-photo" src="${esc(p.image_url)}" alt="" style="border-radius:8px">`:'<div class="d-ico">✎</div>'}
       <div class="d-main"><div class="d-cat">${esc(fmtDate(p.post_date))} · ${esc(p.category||'')}</div><h4>${esc(p.title)}</h4></div>
-      <button class="btn btn-ghost" data-del="${p.id}" type="button" style="min-height:38px;padding:.4rem .8rem">Delete</button></div>`).join("");
-    bindDelete(list,"posts",loadPosts);
+      <div class="admin-row-btns"><button class="btn btn-ghost" data-edit="${p.id}" type="button">Edit</button><button class="btn btn-ghost" data-del="${p.id}" type="button">Delete</button></div></div>`).join("");
+    bindEdit(list,data,fillPost); bindDelete(list,"posts",loadPosts);
   }
 
   /* ---------------- BULLETIN ---------------- */
+  let editBul=null;
   function renderBulletinTab(){
     $("#tab-bulletin").innerHTML=`
       <form class="info-block" id="bulForm" style="max-width:640px">
-        <h4>Post a bulletin notice</h4>
+        <h4 id="b-head">Post a bulletin notice</h4>
         <div class="field"><label for="b-title">Title <span class="req">*</span></label><input id="b-title" required></div>
         <div class="row-2" style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem">
-          <div class="field"><label for="b-cat">Category</label><input id="b-cat" placeholder="Notice, Event, For Sale, Service…"></div>
+          <div class="field"><label for="b-cat">Category</label>${catField("b-cat",BUL_CATS)}</div>
           <div class="field"><label for="b-by">Posted by</label><input id="b-by" placeholder="Your name / group"></div>
         </div>
         <div class="row-2" style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem">
@@ -193,27 +228,38 @@
           <div class="field"><label for="b-link">Flyer / link <span class="opt">(optional)</span></label><input id="b-link" type="url" placeholder="https://…"></div>
         </div>
         <div class="field"><label for="b-body">Details</label><textarea id="b-body" rows="4" placeholder="What's happening…"></textarea></div>
-        <button class="btn btn-primary" type="submit" id="b-btn">Post notice</button>
+        <div style="display:flex;gap:.5rem;align-items:center;flex-wrap:wrap">
+          <button class="btn btn-primary" type="submit" id="b-btn">Post notice</button>
+          <button class="btn btn-ghost" type="button" id="b-cancel" hidden>Cancel edit</button>
+        </div>
         <p id="b-msg" class="form-note"></p>
       </form>
       <h3 class="listing-h" style="margin-top:2rem">Posted notices</h3>
       <div id="bulList"><p style="color:var(--text-soft)">Loading…</p></div>`;
+    wireCat("b-cat");
     $("#bulForm").addEventListener("submit",onPostBulletin);
+    $("#b-cancel").addEventListener("click",resetBul);
     loadBulletin();
   }
+  function resetBul(){ editBul=null; $("#bulForm").reset(); fillCat("b-cat","",BUL_CATS);
+    $("#b-head").textContent="Post a bulletin notice"; $("#b-btn").textContent="Post notice"; $("#b-cancel").hidden=true; }
+  function fillBul(n){ editBul=n.id; $("#b-title").value=n.title||""; fillCat("b-cat",n.category,BUL_CATS); $("#b-by").value=n.posted_by||"";
+    $("#b-date").value=n.starts_on||""; $("#b-link").value=n.link||""; $("#b-body").value=n.body||"";
+    $("#b-head").textContent="Edit notice"; $("#b-btn").textContent="Save changes"; $("#b-cancel").hidden=false;
+    $("#bulForm").scrollIntoView({behavior:"smooth",block:"start"}); }
   async function onPostBulletin(e){
     e.preventDefault();
     const btn=$("#b-btn"), msg=$("#b-msg");
-    btn.disabled=true; msg.style.color="var(--text-soft)"; msg.textContent="Posting…";
+    btn.disabled=true; msg.style.color="var(--text-soft)"; msg.textContent="Saving…";
     try{
-      const row={ title:$("#b-title").value.trim(), category:$("#b-cat").value.trim()||"Notice",
+      const row={ title:$("#b-title").value.trim(), category:readCat("b-cat","Notice"),
         posted_by:$("#b-by").value.trim()||null, starts_on:$("#b-date").value||null,
         link:$("#b-link").value.trim()||null, body:$("#b-body").value.trim()||null, published:true };
       if(!row.title) throw new Error("Please add a title.");
-      const {error}=await db.from("bulletin").insert(row);
-      if(error) throw error;
-      msg.style.color="var(--open)"; msg.textContent="Posted! It's live on the bulletin board.";
-      $("#bulForm").reset(); loadBulletin();
+      if(editBul){ const {error}=await db.from("bulletin").update(row).eq("id",editBul); if(error) throw error; }
+      else { const {error}=await db.from("bulletin").insert(row); if(error) throw error; }
+      msg.style.color="var(--open)"; msg.textContent=editBul?"Saved!":"Posted! It's live on the bulletin board.";
+      resetBul(); loadBulletin();
     }catch(err){ msg.style.color="var(--accent-ink)"; msg.textContent="Error: "+(err.message||err); }
     finally{ btn.disabled=false; }
   }
@@ -225,15 +271,16 @@
     list.innerHTML=data.map(n=>`<div class="dir-item" style="align-items:center">
       <div class="d-ico">📌</div>
       <div class="d-main"><div class="d-cat">${esc(n.category||'')}${n.starts_on?" · "+esc(fmtDate(n.starts_on)):""}${n.link?' · 🔗 link':''}</div><h4>${esc(n.title)}</h4></div>
-      <button class="btn btn-ghost" data-del="${n.id}" type="button" style="min-height:38px;padding:.4rem .8rem">Delete</button></div>`).join("");
-    bindDelete(list,"bulletin",loadBulletin);
+      <div class="admin-row-btns"><button class="btn btn-ghost" data-edit="${n.id}" type="button">Edit</button><button class="btn btn-ghost" data-del="${n.id}" type="button">Delete</button></div></div>`).join("");
+    bindEdit(list,data,fillBul); bindDelete(list,"bulletin",loadBulletin);
   }
 
   /* ---------------- LISTINGS ---------------- */
+  let editLst=null;
   function renderListingTab(){
     $("#tab-listing").innerHTML=`
       <form class="info-block" id="lstForm" style="max-width:680px">
-        <h4>Add a real-estate listing</h4>
+        <h4 id="l-head">Add a real-estate listing</h4>
         <div class="field"><label for="l-addr">Address <span class="req">*</span></label><input id="l-addr" required placeholder="230 Kachemak St"></div>
         <div class="row-3" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:.6rem">
           <div class="field"><label for="l-price">Price</label><input id="l-price" placeholder="$475,000"></div>
@@ -247,40 +294,58 @@
           <div class="field"><label for="l-sqft">Sq ft</label><input id="l-sqft" placeholder="1,122"></div>
         </div>
         <div class="field"><label for="l-desc">Description</label><textarea id="l-desc" rows="5" placeholder="Tell buyers about it…"></textarea></div>
-        <div class="field"><label for="l-img">Main photo <span class="req">*</span></label><input id="l-img" type="file" accept="image/*" required></div>
-        <div class="field"><label for="l-more">More photos <span class="opt">(optional, pick several)</span></label><input id="l-more" type="file" accept="image/*" multiple></div>
+        <div class="field"><label for="l-img">Main photo <span class="req">*</span></label><input id="l-img" type="file" accept="image/*" required><span class="hint" id="l-imghint"></span></div>
+        <div class="field"><label for="l-more">More photos <span class="opt">(optional, pick several)</span></label><input id="l-more" type="file" accept="image/*" multiple><span class="hint" id="l-morehint"></span></div>
         <div class="field"><label for="l-video">Video link <span class="opt">(optional — YouTube/Vimeo)</span></label><input id="l-video" type="url" placeholder="https://…"></div>
-        <button class="btn btn-primary" type="submit" id="l-btn">Publish listing</button>
+        <div style="display:flex;gap:.5rem;align-items:center;flex-wrap:wrap">
+          <button class="btn btn-primary" type="submit" id="l-btn">Publish listing</button>
+          <button class="btn btn-ghost" type="button" id="l-cancel" hidden>Cancel edit</button>
+        </div>
         <p id="l-msg" class="form-note"></p>
       </form>
       <h3 class="listing-h" style="margin-top:2rem">Published listings</h3>
       <div id="lstList"><p style="color:var(--text-soft)">Loading…</p></div>`;
     $("#l-date").value=todayISO();
     $("#lstForm").addEventListener("submit",onPostListing);
+    $("#l-cancel").addEventListener("click",resetLst);
     loadListings();
   }
+  function resetLst(){ editLst=null; $("#lstForm").reset(); $("#l-date").value=todayISO(); $("#l-img").required=true;
+    $("#l-imghint").textContent=""; $("#l-morehint").textContent="";
+    $("#l-head").textContent="Add a real-estate listing"; $("#l-btn").textContent="Publish listing"; $("#l-cancel").hidden=true; }
+  function fillLst(l){ editLst=l; $("#l-addr").value=l.address||""; $("#l-price").value=l.price||""; $("#l-status").value=l.status||"For Sale";
+    $("#l-date").value=l.listed_on||todayISO(); $("#l-beds").value=l.beds||""; $("#l-baths").value=l.baths||""; $("#l-sqft").value=l.sqft||"";
+    $("#l-desc").value=l.description||""; $("#l-img").required=false;
+    $("#l-imghint").textContent="Leave empty to keep the current main photo.";
+    const n=Array.isArray(l.photos)?l.photos.length:0; $("#l-morehint").textContent=n?`${n} extra photo(s) on file — new picks are added to them.`:"";
+    $("#l-head").textContent="Edit listing"; $("#l-btn").textContent="Save changes"; $("#l-cancel").hidden=false;
+    $("#lstForm").scrollIntoView({behavior:"smooth",block:"start"}); }
   async function onPostListing(e){
     e.preventDefault();
     const btn=$("#l-btn"), msg=$("#l-msg");
-    btn.disabled=true; msg.style.color="var(--text-soft)"; msg.textContent="Uploading photos…";
+    btn.disabled=true; msg.style.color="var(--text-soft)"; msg.textContent="Uploading…";
     try{
       const addr=$("#l-addr").value.trim();
       if(!addr) throw new Error("Please add an address.");
-      const main=$("#l-img").files[0];
-      if(!main) throw new Error("Please add a main photo.");
-      const image_url=await uploadImage("listings", main, "listing");
-      const extra=[...$("#l-more").files];
-      const photos=[];
-      for(let i=0;i<extra.length;i++){ msg.textContent=`Uploading photo ${i+2}…`; photos.push(await uploadImage("listings", extra[i], "listing")); }
       const row={ address:addr, slug:slugify(addr), price:$("#l-price").value.trim()||null,
         status:$("#l-status").value, listed_on:$("#l-date").value||todayISO(),
         beds:$("#l-beds").value.trim()||null, baths:$("#l-baths").value.trim()||null, sqft:$("#l-sqft").value.trim()||null,
-        description:$("#l-desc").value.trim()||null, image_url, photos, video_url:$("#l-video").value.trim()||null, published:true };
-      const {error}=await db.from("listings").insert(row);
-      if(error) throw error;
-      msg.style.color="var(--open)"; msg.textContent="Published! It's live on the Real Estate page.";
-      $("#lstForm").reset(); $("#l-date").value=todayISO();
-      loadListings();
+        description:$("#l-desc").value.trim()||null, video_url:$("#l-video").value.trim()||null, published:true };
+      const main=$("#l-img").files[0];
+      if(main){ msg.textContent="Uploading main photo…"; row.image_url=await uploadImage("listings", main, "listing"); }
+      else if(!editLst){ throw new Error("Please add a main photo."); }
+      const extra=[...$("#l-more").files]; const newPhotos=[];
+      for(let i=0;i<extra.length;i++){ msg.textContent=`Uploading extra photo ${i+1}…`; newPhotos.push(await uploadImage("listings", extra[i], "listing")); }
+      if(editLst){
+        const existing=Array.isArray(editLst.photos)?editLst.photos:[];
+        row.photos=existing.concat(newPhotos);
+        const {error}=await db.from("listings").update(row).eq("id",editLst.id); if(error) throw error;
+      } else {
+        row.photos=newPhotos;
+        const {error}=await db.from("listings").insert(row); if(error) throw error;
+      }
+      msg.style.color="var(--open)"; msg.textContent=editLst?"Saved!":"Published! It's live on the Real Estate page.";
+      resetLst(); loadListings();
     }catch(err){ msg.style.color="var(--accent-ink)"; msg.textContent="Error: "+(err.message||err); }
     finally{ btn.disabled=false; }
   }
@@ -292,11 +357,16 @@
     list.innerHTML=data.map(l=>`<div class="dir-item" style="align-items:center">
       ${l.image_url?`<img class="d-photo" src="${esc(l.image_url)}" alt="" style="border-radius:8px">`:'<div class="d-ico">🏡</div>'}
       <div class="d-main"><div class="d-cat">${esc(l.status||'')} · ${esc(fmtDate(l.listed_on))}${Array.isArray(l.photos)&&l.photos.length?` · ${l.photos.length+1} photos`:''}</div><h4>${esc(l.address)} — ${esc(l.price||'')}</h4></div>
-      <button class="btn btn-ghost" data-del="${l.id}" type="button" style="min-height:38px;padding:.4rem .8rem">Delete</button></div>`).join("");
-    bindDelete(list,"listings",loadListings);
+      <div class="admin-row-btns"><button class="btn btn-ghost" data-edit="${l.id}" type="button">Edit</button><button class="btn btn-ghost" data-del="${l.id}" type="button">Delete</button></div></div>`).join("");
+    bindEdit(list,data,fillLst); bindDelete(list,"listings",loadListings);
   }
 
   /* ---------------- shared ---------------- */
+  function bindEdit(scope, data, fill){
+    scope.querySelectorAll("[data-edit]").forEach(b=>b.addEventListener("click",()=>{
+      const row=data.find(r=>r.id===b.dataset.edit); if(row) fill(row);
+    }));
+  }
   function bindDelete(scope, table, reload){
     scope.querySelectorAll("[data-del]").forEach(b=>b.addEventListener("click",async()=>{
       if(!confirm("Delete this?")) return;
