@@ -4141,16 +4141,8 @@ const SPONSORS=[{name:"Boardwalk Hotel",cat:"Lodging",c:"#663015"},{name:"Jack a
 
 /* ============================================================ RENDER (each guarded — runs only if its container exists on this page) ============================================================ */
 function stars(r){const full=Math.round(r); return "★★★★★".slice(0,full)+"☆☆☆☆☆".slice(0,5-full);}
-// ---- On-theme placeholder photos (LoremFlickr, keyworded per item) ----
-// PROD: replace these keyworded placeholders with real Seldovia photography.
-const flickr=(w,h,tags,lock)=>`https://loremflickr.com/${w}/${h}/${tags}?lock=${lock}`;
-const TAGS_BY_KEY={lodging:"cabin,forest,alaska",dining:"seafood,harbor,alaska",charters:"boat,ocean,alaska",arts:"art,gallery,coast",outdoors:"trail,forest,mountains",wellness:"spa,forest,nature",events:"festival,outdoor,community"};
-// self-hosted category photos by place key (PROD: real place photos)
+// self-hosted category photos by place key
 const PLACE_IMG={lodging:"images/categories/cat-0.jpg",dining:"images/categories/cat-1.jpg",charters:"images/categories/cat-2.jpg",arts:"images/categories/cat-4.jpg",outdoors:"images/categories/cat-5.jpg",wellness:"images/categories/cat-6.jpg",events:"images/categories/cat-7.jpg"};
-// Category tiles use hand-verified tag+lock pairs (specific-concept flickr tags
-// are unreliable, so each was previewed and locked to a good image).
-const CAT_TAGS=[{t:"log-cabin,alaska",l:1},{t:"seafood,dinner,plate",l:3},{t:"fishing-boat,harbor",l:1},{t:"latte,coffee",l:2},{t:"mural,streetart",l:1},{t:"mountains,hiking",l:1},{t:"spa,wellness",l:1},{t:"fireworks,night",l:2}];
-const GAL_TAGS=["harbor,fog,alaska","boardwalk,coast,alaska","seaplane,bay,alaska","berries,forest,trail","otter,sea,wildlife","wildflowers,mountains,alaska","fishing,dock,harbor","sunset,coast,alaska","kayak,water,alaska"];
 
 // hero quick-cats
 if($("#quickcats")) $("#quickcats").innerHTML=[["Restaurants","dining"],["Lodging","lodging"],["Charters","charters"],["Trails","outdoors"],["Arts","arts"],["Events","events"]].map(([label,key])=>
@@ -4163,7 +4155,7 @@ if($("#catGrid")) $("#catGrid").innerHTML=CATEGORIES.map((c,i)=>{
   return `<a class="cat-tile" href="${href}" aria-label="${esc(c.b)}"><img class="cat-photo" src="${img}" alt="" loading="lazy" width="600" height="600"><span class="cap"><b>${esc(c.b)}</b><span>${esc(c.s)}</span></span></a>`;}).join("");
 
 // feature media
-if($("#featureMedia")) $("#featureMedia").innerHTML=`<img class="feature-photo" src="${flickr(900,700,"harbor,mountains,alaska",7)}" alt="" loading="lazy" width="900" height="700">`;
+if($("#featureMedia")) $("#featureMedia").innerHTML=`<img class="feature-photo" src="images/photos/220627_SeldoviaHarbor_Melody.jpg" alt="Seldovia Harbor at first light" loading="lazy" width="1200" height="1200">`;
 
 // places (directory highlights) with tabs — reads ?cat= from URL for deep-links
 const PLACE_TABS=[["all","All"],["dining","Dining"],["lodging","Lodging"],["charters","Charters"],["outdoors","Outdoors"],["arts","Arts"]];
