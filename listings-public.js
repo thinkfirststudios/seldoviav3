@@ -32,7 +32,7 @@
             <div class="place-body">
               <div style="display:flex;justify-content:space-between;align-items:baseline;gap:.6rem"><span class="price" style="font-size:1.15rem">${esc(l.price||"")}</span><span style="font-size:.82rem;color:var(--accent-ink);font-weight:700">Details →</span></div>
               <h4>${esc(l.address)}</h4>
-              <div class="place-loc" style="gap:1rem"><span><b style="color:var(--heading)">${esc(l.beds||"—")}</b> bd</span><span><b style="color:var(--heading)">${esc(l.baths||"—")}</b> ba</span><span><b style="color:var(--heading)">${esc(l.sqft||"—")}</b> sqft</span></div>
+              <div class="place-loc" style="gap:1rem">${(l.beds||l.baths)?`<span><b style="color:var(--heading)">${esc(l.beds||"—")}</b> bd</span><span><b style="color:var(--heading)">${esc(l.baths||"—")}</b> ba</span><span><b style="color:var(--heading)">${esc(l.sqft||"—")}</b> sqft</span>`:`<span><b style="color:var(--heading)">Land</b></span>${l.sqft?`<span><b style="color:var(--heading)">${esc(l.sqft)}</b> sq ft lot</span>`:""}`}</div>
               <div class="listing-date">Listed ${esc(fmt(l.listed_on))}</div>
             </div>
           </a>`).join("");
@@ -50,6 +50,7 @@
       .then(({data})=>{
         if(!data || !data.length) return;
         const l=data[0];
+        const isLand = !l.beds && !l.baths;
         document.title=`${l.address} — Seldovia Property`;
         const descHtml=(l.description||"").split(/\n\n+/).map(p=>`<p>${esc(p.trim())}</p>`).join("");
         const photos=Array.isArray(l.photos)?l.photos:[];
@@ -58,14 +59,14 @@
           <div class="listing-hero"><img src="${esc(l.image_url||"")}" alt="${esc(l.address)}" onerror="this.closest('.listing-hero').classList.add('place-media-blank');this.remove()"><span class="badge-open">${esc(l.status||"For Sale")}</span></div>
           <div class="listing-top">
             <div><div class="price" style="font-size:1.9rem">${esc(l.price||"")}</div><h1 style="margin:.15rem 0 0">${esc(l.address)}</h1><div class="listing-city">${esc(l.city||"Seldovia, AK")}</div><div class="listing-date">Listed ${esc(fmt(l.listed_on))}</div></div>
-            <a class="btn btn-primary" href="contact.html">Ask about this home</a>
+            <a class="btn btn-primary" href="contact.html">${isLand?"Ask about this property":"Ask about this home"}</a>
           </div>
           <div class="listing-stats">
-            <div><b>${esc(l.beds||"—")}</b><span>Beds</span></div>
-            <div><b>${esc(l.baths||"—")}</b><span>Baths</span></div>
-            <div><b>${esc(l.sqft||"—")}</b><span>Sq Ft</span></div>
+            ${isLand
+              ? `<div><b>Land</b><span>Property Type</span></div>${l.sqft?`<div><b>${esc(l.sqft)}</b><span>Sq Ft Lot</span></div>`:""}`
+              : `<div><b>${esc(l.beds||"—")}</b><span>Beds</span></div><div><b>${esc(l.baths||"—")}</b><span>Baths</span></div><div><b>${esc(l.sqft||"—")}</b><span>Sq Ft</span></div>`}
           </div>
-          ${l.description?`<h3 class="listing-h">About this home</h3><div class="listing-desc">${descHtml}</div>`:""}
+          ${l.description?`<h3 class="listing-h">${isLand?"About this property":"About this home"}</h3><div class="listing-desc">${descHtml}</div>`:""}
           ${photos.length?`<h3 class="listing-h">Photos</h3><div class="listing-gallery">${photos.map(u=>`<img src="${esc(u)}" loading="lazy" alt="${esc(l.address)}">`).join("")}</div>`:""}
           ${l.video_url?`<h3 class="listing-h">Video</h3>${videoEmbed(l.video_url)}`:""}
           <div class="re-cta" style="margin-top:2.2rem"><div><h3>Interested in ${esc(l.address)}?</h3><p>Reach out to Jenny for a showing, more photos, or the full disclosure packet.</p></div><a class="btn btn-primary" href="contact.html">Contact Jenny</a></div>`;
