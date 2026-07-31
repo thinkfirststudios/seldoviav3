@@ -28,7 +28,7 @@
         if(error || !data || !data.length) return;
         const cards=data.map(l=>`
           <a class="place" href="listing.html?id=${encodeURIComponent(l.slug||l.id)}">
-            <div class="place-media"><img class="place-photo" src="${esc(l.image_url||"")}" alt="${esc(l.address)}" loading="lazy" width="600" height="400" onerror="this.closest('.place-media').classList.add('place-media-blank');this.remove()"><span class="badge-open">${esc(l.status||"For Sale")}</span></div>
+            <div class="place-media"><img class="place-photo" src="${(window.LISTING_PHOTOS&&LISTING_PHOTOS[l.slug]&&LISTING_PHOTOS[l.slug][0])||esc(l.image_url||'')}" alt="${esc(l.address)}" loading="lazy" width="600" height="400" onerror="this.closest('.place-media').classList.add('place-media-blank');this.remove()"><span class="badge-open">${esc(l.status||"For Sale")}</span></div>
             <div class="place-body">
               <div style="display:flex;justify-content:space-between;align-items:baseline;gap:.6rem"><span class="price" style="font-size:1.15rem">${esc(l.price||"")}</span><span style="font-size:.82rem;color:var(--accent-ink);font-weight:700">Details →</span></div>
               <h4>${esc(l.address)}</h4>
@@ -53,10 +53,13 @@
         const isLand = !l.beds && !l.baths;
         document.title=`${l.address} — Seldovia Property`;
         const descHtml=(l.description||"").split(/\n\n+/).map(p=>`<p>${esc(p.trim())}</p>`).join("");
-        const photos=Array.isArray(l.photos)?l.photos:[];
+        // Prefer photos from a matching images/listings/<slug>/ folder; else use the admin-uploaded ones.
+        const fp=(window.LISTING_PHOTOS&&LISTING_PHOTOS[l.slug])||null;
+        const heroImg=fp?fp[0]:(l.image_url||"");
+        const photos=fp?fp.slice(1):(Array.isArray(l.photos)?l.photos:[]);
         box.innerHTML=`
           <a class="back-link" href="real-estate.html">← All listings</a>
-          <div class="listing-hero"><img src="${esc(l.image_url||"")}" alt="${esc(l.address)}" onerror="this.closest('.listing-hero').classList.add('place-media-blank');this.remove()"><span class="badge-open">${esc(l.status||"For Sale")}</span></div>
+          <div class="listing-hero"><img src="${esc(heroImg)}" alt="${esc(l.address)}" onerror="this.closest('.listing-hero').classList.add('place-media-blank');this.remove()"><span class="badge-open">${esc(l.status||"For Sale")}</span></div>
           <div class="listing-top">
             <div><div class="price" style="font-size:1.9rem">${esc(l.price||"")}</div><h1 style="margin:.15rem 0 0">${esc(l.address)}</h1><div class="listing-city">${esc(l.city||"Seldovia, AK")}</div><div class="listing-date">Listed ${esc(fmt(l.listed_on))}</div></div>
             <a class="btn btn-primary" href="contact.html">${isLand?"Ask about this property":"Ask about this home"}</a>

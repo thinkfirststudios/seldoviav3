@@ -4221,7 +4221,7 @@ if($("#masonry")) $("#masonry").innerHTML=GALLERY.map((im,i)=>{
 
 // real estate listings
 if($("#reGrid")) $("#reGrid").innerHTML=LISTINGS.map((l,i)=>`
-  <a class="place" href="listing.html?id=${encodeURIComponent(l.slug)}"><div class="place-media"><img class="place-photo" src="${l.img}" alt="${esc(l.addr)}" loading="lazy" width="600" height="400" onerror="this.closest('.place-media').classList.add('place-media-blank');this.remove()"><span class="badge-open">${esc(l.status)}</span></div>
+  <a class="place" href="listing.html?id=${encodeURIComponent(l.slug)}"><div class="place-media"><img class="place-photo" src="${(window.LISTING_PHOTOS&&LISTING_PHOTOS[l.slug]&&LISTING_PHOTOS[l.slug][0])||l.img}" alt="${esc(l.addr)}" loading="lazy" width="600" height="400" onerror="this.closest('.place-media').classList.add('place-media-blank');this.remove()"><span class="badge-open">${esc(l.status)}</span></div>
   <div class="place-body">
     <div style="display:flex;justify-content:space-between;align-items:baseline;gap:.6rem"><span class="price" style="font-size:1.15rem">${esc(l.price)}</span><span style="font-size:.82rem;color:var(--accent-ink);font-weight:700">Details →</span></div>
     <h4>${esc(l.addr)}</h4>
@@ -4246,13 +4246,15 @@ if($("#reGrid")){
 if($("#listingDetail")){
   const id=new URLSearchParams(location.search).get("id");
   const l=LISTINGS.find(x=>x.slug===id)||LISTINGS[0];
+  const lPhotos=(window.LISTING_PHOTOS&&LISTING_PHOTOS[l.slug])||null;
+  const heroImg=lPhotos?lPhotos[0]:l.img;
   const chips=a=>a&&a.length?`<div class="spec-chips">${a.map(x=>`<span class="spec-chip">${esc(x)}</span>`).join("")}</div>`:"";
   const dl=(label,val)=>val?`<div class="dl-row"><dt>${esc(label)}</dt><dd>${esc(val)}</dd></div>`:"";
   const descHtml=(l.desc||"").split(/\n\n+/).map(p=>`<p>${esc(p.trim())}</p>`).join("");
   document.title=`${l.addr} — Seldovia Property`;
   $("#listingDetail").innerHTML=`
     <a class="back-link" href="real-estate.html">← All listings</a>
-    <div class="listing-hero"><img src="${l.img}" alt="${esc(l.addr)}" onerror="this.closest('.listing-hero').classList.add('place-media-blank');this.remove()"><span class="badge-open">${esc(l.status)}</span></div>
+    <div class="listing-hero"><img src="${heroImg}" alt="${esc(l.addr)}" onerror="this.closest('.listing-hero').classList.add('place-media-blank');this.remove()"><span class="badge-open">${esc(l.status)}</span></div>
     <div class="listing-top">
       <div><div class="price" style="font-size:1.9rem">${esc(l.price)}</div><h1 style="margin:.15rem 0 0">${esc(l.addr)}</h1><div class="listing-city">${esc(l.city||"Seldovia, AK")}</div></div>
       <a class="btn btn-primary" href="contact.html">Ask about this home</a>
@@ -4265,6 +4267,7 @@ if($("#listingDetail")){
       ${l.payment?`<div><b>${esc(l.payment)}</b><span>Est. payment</span></div>`:""}
     </div>
     ${l.highlights?`<h3 class="listing-h">Highlights</h3>${chips(l.highlights)}`:""}
+    ${lPhotos&&lPhotos.length>1?`<h3 class="listing-h">Photos</h3><div class="listing-gallery">${lPhotos.slice(1).map(u=>`<img src="${u}" loading="lazy" alt="${esc(l.addr)}">`).join("")}</div>`:""}
     ${l.desc?`<h3 class="listing-h">About this home</h3><div class="listing-desc">${descHtml}</div>`:""}
     ${(l.homeType||l.yearBuilt||l.lot||l.zoning)?`<h3 class="listing-h">Home details</h3>
       <dl class="listing-dl">${dl("Home type",l.homeType)}${dl("Year built",l.yearBuilt)}${dl("Lot",l.lot)}${dl("Zoning",l.zoning)}${dl("Interior",l.sqft?l.sqft+" sq ft":"")}</dl>
