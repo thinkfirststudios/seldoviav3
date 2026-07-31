@@ -33,7 +33,7 @@
               <div style="display:flex;justify-content:space-between;align-items:baseline;gap:.6rem"><span class="price" style="font-size:1.15rem">${esc(l.price||"")}</span><span style="font-size:.82rem;color:var(--accent-ink);font-weight:700">Details →</span></div>
               <h4>${esc(l.address)}</h4>
               <div class="place-loc" style="gap:1rem">${(l.beds||l.baths)?`<span><b style="color:var(--heading)">${esc(l.beds||"—")}</b> bd</span><span><b style="color:var(--heading)">${esc(l.baths||"—")}</b> ba</span><span><b style="color:var(--heading)">${esc(l.sqft||"—")}</b> sqft</span>`:`<span><b style="color:var(--heading)">Land</b></span>${l.sqft?`<span><b style="color:var(--heading)">${esc(l.sqft)}</b> sq ft lot</span>`:""}`}</div>
-              <div class="listing-date">Listed ${esc(fmt(l.listed_on))}</div>
+              ${l.listed_on?`<div class="listing-date">Listed ${esc(fmt(l.listed_on))}</div>`:""}
             </div>
           </a>`).join("");
         grid.insertAdjacentHTML("afterbegin", cards);
@@ -61,7 +61,7 @@
           <a class="back-link" href="real-estate.html">← All listings</a>
           <div class="listing-hero"><img src="${esc(heroImg)}" alt="${esc(l.address)}" onerror="this.closest('.listing-hero').classList.add('place-media-blank');this.remove()"><span class="badge-open">${esc(l.status||"For Sale")}</span></div>
           <div class="listing-top">
-            <div><div class="price" style="font-size:1.9rem">${esc(l.price||"")}</div><h1 style="margin:.15rem 0 0">${esc(l.address)}</h1><div class="listing-city">${esc(l.city||"Seldovia, AK")}</div><div class="listing-date">Listed ${esc(fmt(l.listed_on))}</div></div>
+            <div><div class="price" style="font-size:1.9rem">${esc(l.price||"")}</div><h1 style="margin:.15rem 0 0">${esc(l.address)}</h1><div class="listing-city">${esc(l.city||"Seldovia, AK")}</div>${l.listed_on?`<div class="listing-date">Listed ${esc(fmt(l.listed_on))}</div>`:""}</div>
             <a class="btn btn-primary" href="contact.html">${isLand?"Ask about this property":"Ask about this home"}</a>
           </div>
           <div class="listing-stats">
