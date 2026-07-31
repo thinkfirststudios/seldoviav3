@@ -55,6 +55,26 @@
       }).join("");
 
       app.innerHTML=html;
+
+      // click-to-enlarge lightbox (reuses the site .lightbox styles), with prev/next over every journal photo
+      const imgs=[...app.querySelectorAll("img")];
+      if(!imgs.length) return;
+      document.body.insertAdjacentHTML("beforeend", `<div class="lightbox" id="journalLightbox" role="dialog" aria-modal="true" aria-hidden="true">
+        <button class="lb-close" aria-label="Close">&#10005;</button>
+        <button class="lb-nav lb-prev" aria-label="Previous photo">&#8249;</button>
+        <figure class="lb-fig"><img class="lb-img" alt=""><figcaption class="lb-cap"></figcaption></figure>
+        <button class="lb-nav lb-next" aria-label="Next photo">&#8250;</button>
+      </div>`);
+      const lb=document.querySelector("#journalLightbox"), lbImg=lb.querySelector(".lb-img"), lbCap=lb.querySelector(".lb-cap");
+      let cur=0;
+      const show=i=>{ cur=(i+imgs.length)%imgs.length; const im=imgs[cur]; lbImg.src=im.src; lbImg.alt=im.alt||""; lbCap.textContent=im.alt||""; lb.classList.add("open"); lb.setAttribute("aria-hidden","false"); document.body.style.overflow="hidden"; };
+      const close=()=>{ lb.classList.remove("open"); lb.setAttribute("aria-hidden","true"); document.body.style.overflow=""; };
+      lb.querySelector(".lb-close").addEventListener("click",close);
+      lb.querySelector(".lb-prev").addEventListener("click",e=>{e.stopPropagation(); show(cur-1);});
+      lb.querySelector(".lb-next").addEventListener("click",e=>{e.stopPropagation(); show(cur+1);});
+      lb.addEventListener("click",e=>{ if(e.target===lb||e.target.classList.contains("lb-fig")) close(); });
+      document.addEventListener("keydown",e=>{ if(!lb.classList.contains("open"))return; if(e.key==="Escape")close(); else if(e.key==="ArrowLeft")show(cur-1); else if(e.key==="ArrowRight")show(cur+1); });
+      imgs.forEach((im,i)=>{ im.style.cursor="zoom-in"; im.addEventListener("click",()=>show(i)); });
     })
     .catch(()=>{}); // network error → static fallback stays
 })();
