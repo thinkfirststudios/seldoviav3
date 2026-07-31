@@ -16,6 +16,7 @@
   <section class="section wrap">
     <div class="contact-grid">
       <form class="stack info-block" id="contactForm" novalidate>
+        <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; opacity:0; height:0; width:0;">
         <div class="form-2col">
           <div class="field"><label for="cName">Name</label><input id="cName" name="name" required></div>
           <div class="field"><label for="cEmail">Email</label><input id="cEmail" type="email" name="email" required></div>
@@ -24,7 +25,7 @@
           <select id="cTopic" name="topic"><option>General / community question</option><option>List my business</option><option>Submit a bulletin notice</option><option>Become a sponsor</option><option>Real estate — buying</option><option>Real estate — selling &amp; valuation</option></select>
         </div>
         <div class="field"><label for="cMsg">Message</label><textarea id="cMsg" name="message" placeholder="Tell us a little…" required></textarea></div>
-        <div style="display:flex; align-items:center; gap:1rem; flex-wrap:wrap"><button class="btn btn-primary" type="submit">Send message</button><span class="form-note">Prototype form — <span class="sample-flag">wired to email/CRM in production</span></span></div>
+        <div style="display:flex; align-items:center; gap:1rem; flex-wrap:wrap"><button class="btn btn-primary" type="submit">Send message</button><span class="form-note">We usually reply within a day.</span></div>
       </form>
       <div>
         <div class="info-block">
@@ -55,6 +56,8 @@
     </div>
   </section>
 </main>
-<script src="app.js?v=4"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="db.js?v=5"></script>
+<script src="app.js?v=5"></script>
 </body>
 </html>

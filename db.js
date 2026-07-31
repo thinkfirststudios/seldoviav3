@@ -14,3 +14,9 @@ const SUPABASE_KEY = "sb_publishable_UVnfz14d7L3vnbPWxYrYVg_3oY3GWdo";
 window.db = (SUPABASE_URL.indexOf("http") === 0 && window.supabase)
   ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY)
   : null;
+
+/* Contact form email delivery via Web3Forms (free, no monthly cost).
+   Get a key: go to https://web3forms.com, enter the email that should RECEIVE
+   the messages (Jenny's), and paste the access key they email you below.
+   Until it's set, the contact form still saves to the admin inbox. */
+window.WEB3FORMS_KEY = "PASTE_WEB3FORMS_ACCESS_KEY_HERE";

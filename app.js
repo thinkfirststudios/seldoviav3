@@ -4446,7 +4446,30 @@ function setDrawer(o){drawer.classList.toggle("open",o); menuBtn.setAttribute("a
 menuBtn.addEventListener("click",()=>setDrawer(true));
 drawer.addEventListener("click",e=>{if(e.target.matches("[data-close], [data-close] *"))setDrawer(false);});
 document.addEventListener("keydown",e=>{if(e.key==="Escape")setDrawer(false);});
-if($("#contactForm")) $("#contactForm").addEventListener("submit",e=>{e.preventDefault(); if(!$("#cName").value||!$("#cEmail").value||!$("#cMsg").value){toast("Please add your name, email, and a message."); return;} e.target.reset(); toast("Thanks! Your message is on its way (demo).");});
+if($("#contactForm")) $("#contactForm").addEventListener("submit",async e=>{
+  e.preventDefault();
+  const form=e.target;
+  if(form.website && form.website.value) return; // honeypot: silently drop bots
+  const name=$("#cName").value.trim(), email=$("#cEmail").value.trim(), msg=$("#cMsg").value.trim();
+  const topic=$("#cTopic")?$("#cTopic").value:"";
+  if(!name||!email||!msg){ toast("Please add your name, email, and a message."); return; }
+  const btn=form.querySelector('button[type="submit"]'); if(btn){ btn.disabled=true; }
+  let ok=false;
+  try{
+    // 1) save to the admin inbox (Supabase)
+    if(window.db){ const {error}=await db.from("messages").insert({name,email,topic,message:msg}); if(!error) ok=true; }
+    // 2) email Jenny via Web3Forms (if configured)
+    const key=window.WEB3FORMS_KEY;
+    if(key && key.indexOf("PASTE_")!==0){
+      const r=await fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},
+        body:JSON.stringify({access_key:key, subject:`Seldovia.com contact — ${topic||"General"}`, name, email, topic, message:msg, from_name:"Seldovia.com"})});
+      if(r.ok) ok=true;
+    }
+    if(ok){ form.reset(); toast("Thanks! Your message has been sent."); }
+    else { toast("Couldn't send just now — please call or email us directly."); }
+  }catch(_){ toast("Couldn't send just now — please call or email us directly."); }
+  finally{ if(btn) btn.disabled=false; }
+});
 let toastT; function toast(msg){const el=$("#toast"); el.textContent=msg; el.classList.add("show"); clearTimeout(toastT); toastT=setTimeout(()=>el.classList.remove("show"),2600);}
 function tickTime(){try{const s=new Intl.DateTimeFormat("en-US",{timeZone:"America/Anchorage",hour:"numeric",minute:"2-digit"}).format(new Date()); const ft=$("#footTime"); if(ft)ft.textContent=s+" AKT";}catch(_){}}
 tickTime(); setInterval(tickTime,30000);

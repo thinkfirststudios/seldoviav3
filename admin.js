@@ -74,6 +74,7 @@
     {key:"blog",     label:"✍️ Blog Post",   render:renderBlogTab},
     {key:"bulletin", label:"📌 Bulletin",    render:renderBulletinTab},
     {key:"listing",  label:"🏡 Listings",    render:renderListingTab},
+    {key:"messages", label:"📨 Messages",    render:renderMessagesTab},
   ];
   function renderApp(){
     app.innerHTML=`
@@ -359,6 +360,33 @@
       <div class="d-main"><div class="d-cat">${esc(l.status||'')} · ${esc(fmtDate(l.listed_on))}${Array.isArray(l.photos)&&l.photos.length?` · ${l.photos.length+1} photos`:''}</div><h4>${esc(l.address)} — ${esc(l.price||'')}</h4></div>
       <div class="admin-row-btns"><button class="btn btn-ghost" data-edit="${l.id}" type="button">Edit</button><button class="btn btn-ghost" data-del="${l.id}" type="button">Delete</button></div></div>`).join("");
     bindEdit(list,data,fillLst); bindDelete(list,"listings",loadListings);
+  }
+
+  /* ---------------- MESSAGES (contact-form inbox) ---------------- */
+  function renderMessagesTab(){
+    $("#tab-messages").innerHTML=`
+      <p style="color:var(--text-soft);margin:0 0 1rem">Messages people send from the Contact page land here.</p>
+      <div id="msgList"><p style="color:var(--text-soft)">Loading…</p></div>`;
+    loadMessages();
+  }
+  async function loadMessages(){
+    const list=$("#msgList");
+    const {data,error}=await db.from("messages").select("*").order("created_at",{ascending:false});
+    if(error){ list.innerHTML=`<p style="color:var(--accent-ink)">${esc(error.message)}</p>`; return; }
+    if(!data.length){ list.innerHTML='<p style="color:var(--text-soft)">No messages yet.</p>'; return; }
+    const fmtTs=t=>{ const d=t.slice(0,10); return fmtDate(d); };
+    list.innerHTML=data.map(m=>`<div class="info-block" style="margin-bottom:.9rem">
+      <div style="display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:baseline">
+        <h4 style="margin:0">${esc(m.name||"(no name)")} ${m.topic?`<span class="d-cat" style="font-weight:700">· ${esc(m.topic)}</span>`:""}</h4>
+        <span style="font-size:.8rem;color:var(--muted)">${esc(fmtTs(m.created_at))}</span>
+      </div>
+      <div style="font-size:.88rem;color:var(--accent-ink);margin:.15rem 0 .5rem">${esc(m.email||"")}</div>
+      <p style="margin:0;white-space:pre-wrap">${esc(m.message||"")}</p>
+      <div style="display:flex;gap:.5rem;margin-top:.8rem">
+        ${m.email?`<a class="btn btn-ghost" style="min-height:36px;padding:.35rem .75rem" href="mailto:${esc(m.email)}?subject=Re:%20Seldovia.com">Reply</a>`:""}
+        <button class="btn btn-ghost" data-del="${m.id}" type="button" style="min-height:36px;padding:.35rem .75rem">Delete</button>
+      </div></div>`).join("");
+    bindDelete(list,"messages",loadMessages);
   }
 
   /* ---------------- shared ---------------- */
