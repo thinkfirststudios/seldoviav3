@@ -16,28 +16,6 @@
   <!-- Photo Journal (daily photos from the admin). Falls back to the static gallery below. -->
   <section class="section wrap"><div id="journalApp"></div></section>
 
-  <!-- SELDOVIA WEBCAMS — live HLS streams from WebCOOS (SECOORA/AOOS) -->
-  <section class="section wrap">
-    <div class="section-head"><span class="eyebrow">Live Views</span><h2 class="title">Seldovia webcams</h2><p>Peek in on the docks, live right now.</p></div>
-    <div class="webcam-grid">
-      <div class="webcam-card">
-        <div class="wc-player">
-          <video class="wc-video" data-hls="https://stage-ams.srv.axds.co/stream/adaptive/aoos/seldovia_dock/hls.m3u8" muted autoplay playsinline loop poster="https://s3.axds.co/static-assets/webcoos/backend/prod/media/cache/uploads/camera/seldovia_dock/seldovia_dock_highlight-crop-c0-5__0-5-800x400-70.jpg"></video>
-          <span class="wc-badge">● LIVE</span>
-        </div>
-        <div class="wc-body"><h4>Seldovia City Dock</h4><p>The harbor and boats on Seldovia Bay. <a href="https://webcoos.org/cameras/seldovia_dock/" target="_blank" rel="noopener">Full screen ↗</a></p></div>
-      </div>
-      <div class="webcam-card">
-        <div class="wc-player">
-          <video class="wc-video" data-hls="https://stage-ams.srv.axds.co/stream/adaptive/aoos/kasitsna_dock/hls.m3u8" muted autoplay playsinline loop poster="https://s3.axds.co/static-assets/webcoos/backend/prod/media/cache/uploads/camera/kasitsna_dock/kasitsna_dock_highlight-crop-c0-5__0-5-800x400-70.jpg"></video>
-          <span class="wc-badge">● LIVE</span>
-        </div>
-        <div class="wc-body"><h4>Kasitsna Bay Dock</h4><p>Across the bay at the Kasitsna Bay Lab. <a href="https://webcoos.org/cameras/kasitsna_dock/" target="_blank" rel="noopener">Full screen ↗</a></p></div>
-      </div>
-    </div>
-    <p class="wc-credit">Live feeds courtesy of <a href="https://webcoos.org" target="_blank" rel="noopener">WebCOOS</a> · AOOS / SECOORA.</p>
-  </section>
-
   <!-- Built-in "around the bay" gallery — always kept below the daily journal -->
   <section class="section wrap" id="staticGallery">
     <div class="section-head"><span class="eyebrow">Around the Bay</span><h2 class="title">More Seldovia photos</h2></div>
@@ -48,7 +26,5 @@
 <script src="db.js?v=5"></script>
 <script src="app.js?v=8"></script>
 <script src="photojournal.js?v=6"></script>
-<script src="hls.min.js"></script>
-<script src="webcams.js?v=1"></script>
 </body>
 </html>
