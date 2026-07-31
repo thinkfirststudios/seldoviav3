@@ -16,8 +16,9 @@
   <!-- Photo Journal (daily photos from the admin). Falls back to the static gallery below. -->
   <section class="section wrap"><div id="journalApp"></div></section>
 
-  <!-- SELDOVIA WEBCAMS — live HLS streams from WebCOOS (SECOORA/AOOS) -->
-  <section class="section wrap">
+  <!-- SELDOVIA WEBCAMS — live HLS streams from WebCOOS (SECOORA/AOOS).
+       photojournal.js relocates this to sit right under the Daily Photo. -->
+  <section class="section wrap" id="webcamsSection">
     <div class="section-head"><span class="eyebrow">Live Views</span><h2 class="title">Seldovia webcams</h2><p>Peek in on the docks, live right now.</p></div>
     <div class="webcam-grid">
       <div class="webcam-card">
@@ -47,7 +48,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="db.js?v=5"></script>
 <script src="app.js?v=8"></script>
-<script src="photojournal.js?v=6"></script>
+<script src="photojournal.js?v=7"></script>
 <script src="hls.min.js"></script>
 <script src="webcams.js?v=1"></script>
 </body>

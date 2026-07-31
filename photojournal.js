@@ -56,6 +56,10 @@
 
       app.innerHTML=html;
 
+      // Move the webcams section up to sit right under the Daily Photo (Jenny's ask).
+      const wc=document.querySelector("#webcamsSection"), feat=app.querySelector(".today-feature");
+      if(wc && feat) feat.insertAdjacentElement("afterend", wc);
+
       // click-to-enlarge lightbox (reuses the site .lightbox styles), with prev/next over every journal photo
       const imgs=[...app.querySelectorAll("img")];
       if(!imgs.length) return;
