@@ -167,7 +167,7 @@ From breathtaking views and walkable downtown locations to established income po
 ✨ Live where you work. Build your dream. Experience the best of coastal Alaska.
 
 📩 Ready to learn more or schedule a showing? Contact Jenny today and discover which opportunity is the perfect fit for your future!`},
- {title:"230 Kachemak Street — a historic waterfront legacy",excerpt:"One of Seldovia's iconic historic waterfront properties — approximately 0.20 acres, nearly 4× larger than many neighboring waterfront lots.",date:"Jul 15, 2026",read:"1 min",cat:"Real Estate",img:"images/listings/230-kachemak-st.jpg",body:`📍 230 Kachemak Street, Seldovia, AK 99663
+ {title:"230 Kachemak Street — a historic waterfront legacy",excerpt:"One of Seldovia's iconic historic waterfront properties — approximately 0.20 acres, nearly 4× larger than many neighboring waterfront lots.",date:"Jul 15, 2026",read:"1 min",cat:"Real Estate",img:"images/listings/230-kachemak-st/230-kachemak-st.jpg",body:`📍 230 Kachemak Street, Seldovia, AK 99663
 🏡 One of Seldovia's iconic historic waterfront properties
 🌊 Approximately 0.20 acres—nearly 4× larger than many neighboring waterfront lots
 📍 Prime location along Seldovia's iconic waterfront
@@ -183,7 +183,7 @@ From breathtaking views and walkable downtown locations to established income po
 ❤️ A rare chance to own a truly one-of-a-kind waterfront legacy property
 
 📞 Call Jenny Chissus with Seldovia Property at (907) 406-0044`},
- {title:"195 Lookout Aly — sunny corner lot with slough & harbor views",excerpt:"A charming 1,376 sq. ft. Lindal Cedar Home on a sunny corner lot overlooking Seldovia Slough, Main Street & the harbor beyond.",date:"Jul 14, 2026",read:"1 min",cat:"Real Estate",img:"images/listings/195-lookout-aly.jpg",body:`📍 195 Lookout Aly, Seldovia, AK 99663
+ {title:"195 Lookout Aly — sunny corner lot with slough & harbor views",excerpt:"A charming 1,376 sq. ft. Lindal Cedar Home on a sunny corner lot overlooking Seldovia Slough, Main Street & the harbor beyond.",date:"Jul 14, 2026",read:"1 min",cat:"Real Estate",img:"images/listings/195-lookout-aly/195-lookout-aly.jpg",body:`📍 195 Lookout Aly, Seldovia, AK 99663
 ☀️ Sunny corner lot with slough & harbor views
 🌊 Overlooks Seldovia Slough, Main Street & the harbor beyond
 🏡 Charming 1,376 sq. ft. Lindal Cedar Home
@@ -232,7 +232,7 @@ Retirement here isn't the end of the journey, it's the beginning of your greates
  {title:"Happy Fourth of July — 250 years of freedom",excerpt:"Today marks 250 years of celebrating the ideals of freedom, independence, and the enduring spirit that unites communities across the nation.",date:"Jul 4, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-07-04.jpg",body:`Today marks 250 years of celebrating the ideals of freedom, independence, and the enduring spirit that unites communities across the nation. As we gather with family, friends, and neighbors, may we take a moment to appreciate the people, places, and traditions that make this day so meaningful.
 
 From all of us, we wish you a safe, happy, and memorable Independence Day filled with laughter, celebration, and spectacular fireworks. Happy Fourth of July!`},
- {title:"New listing: 3108 Jakolof Bay Road",excerpt:"A cozy open-concept cabin on 3 private acres overlooking the Barbara Creek area, with breathtaking views of Kachemak Bay, the Homer Spit & the lights of Homer.",date:"Jul 3, 2026",read:"1 min",cat:"Real Estate",img:"images/listings/3108-jakolof-bay-rd.jpg",body:`📍 3108 Jakolof Bay Road, Seldovia, AK 99663
+ {title:"New listing: 3108 Jakolof Bay Road",excerpt:"A cozy open-concept cabin on 3 private acres overlooking the Barbara Creek area, with breathtaking views of Kachemak Bay, the Homer Spit & the lights of Homer.",date:"Jul 3, 2026",read:"1 min",cat:"Real Estate",img:"images/listings/3108-jakolof-bay-rd/3108-jakolof-bay-rd.jpg",body:`📍 3108 Jakolof Bay Road, Seldovia, AK 99663
 🌲 Cozy open-concept cabin on 3 private acres
 🌅 Overlooks the Barbara Creek area with breathtaking views of Kachemak Bay, the Homer Spit & the lights of Homer
 🛏️ Loft bedroom with living area, new kitchen & bathroom below
