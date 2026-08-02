@@ -3999,14 +3999,7 @@ const DIRECTORY=[
  {name:"Winter Watch",cat:"Services",phone:"(907) 406-0775",url:"https://www.SeldoviaWinterWatch.com",spon:false}
 ];
 // REAL community announcements — sourced from the seldovia.com community news feed.
-const NOTES=[
- {cat:"Announcement",title:"Seldovia Booster Club Annual Auction",body:"The Seldovia Sea Otters Booster Club invites the community to an evening of great food, exciting auctions, and a cash raffle supporting local middle and high school students.",by:"Sea Otters Booster Club",when:"Jul 23"},
- {cat:"Civic",title:"City Council Work Session — July 27",body:"Residents are invited to the Council Work Session on Monday, July 27 at 5:00 p.m., in person at the Council Chambers, 260 Seldovia Street.",by:"City of Seldovia",when:"Jul 22"},
- {cat:"Class",title:"Kuspuk Sewing Class",body:"Learn to sew a traditional Kuspuk in a three-day class led by Angel Oliveira. New sewers and experienced hands are both welcome.",by:"Community Class",when:"Jul 20"},
- {cat:"Announcement",title:"Susan B. English Community Pool — summer schedule",body:"Lap swim, water aerobics, family swim, and free community swim sessions run throughout the week all summer long.",by:"Susan B. English School",when:"Jul 15"},
- {cat:"Jobs",title:"SVT Health & Wellness is hiring",body:"Healthcare professionals wanted for positions in Seldovia and Homer.",by:"Seldovia Village Tribe",when:"Jul 10"},
- {cat:"Notice",title:"Road closure — C Street",body:"C Street is closed to through traffic. Please plan an alternate route.",by:"City of Seldovia",when:"Jul 7"}
-];
+const NOTES=[] /* migrated to Supabase (seed-bulletin.sql) — all bulletin notices now managed + editable in the admin, rendered by bulletin-public.js */;
 // REAL client testimonials, verbatim from Jenny's published client-testimonial graphics.
 // Never add invented quotes here — the section self-hides when this array is empty.
 const TESTIMONIALS=[
