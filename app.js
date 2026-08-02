@@ -4296,11 +4296,14 @@ function scoreMatch(it,q){const hay=(it.title+" "+it.desc+" "+it.kw+" "+it.type)
   q.forEach(tok=>{if(!tok)return; const t=it.title.toLowerCase(); if(t.startsWith(tok))s+=6; else if(t.includes(tok))s+=4; if(hay.includes(tok))s+=2; else if(hay.split(/\W+/).some(w=>w.startsWith(tok)))s+=1;}); return s;}
 function runSearch(raw){const q=raw.toLowerCase().trim().split(/\s+/).filter(Boolean); if(!q.length)return[]; return INDEX.map(it=>({it,s:scoreMatch(it,q)})).filter(x=>x.s>0).sort((a,b)=>b.s-a.s).slice(0,8).map(x=>x.it);}
 function hl(text,raw){const q=raw.trim().split(/\s+/).filter(Boolean).map(t=>t.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")); if(!q.length)return esc(text); return esc(text).replace(new RegExp("("+q.join("|")+")","ig"),"<mark>$1</mark>");}
+// The hero results box is position:fixed so it escapes the hero's overflow:clip (was hidden
+// on mobile / clipped on desktop). Anchor it under the search card each time it shows.
+function placeBox(box){ if(!box||!box.classList.contains("hero-results"))return; const card=box.previousElementSibling; if(!card)return; const r=card.getBoundingClientRect(); box.style.left=r.left+"px"; box.style.top=(r.bottom+8)+"px"; box.style.width=r.width+"px"; }
 function renderResults(box,raw){const res=runSearch(raw);
   if(!raw.trim()){box.classList.remove("show"); box.innerHTML=""; return;}
-  if(!res.length){box.innerHTML=`<div class="r-empty">No results for "${esc(raw)}". Try "ferry," "cabin," or "market."</div>`; box.classList.add("show"); return;}
-  box.innerHTML=res.map((r,i)=>`<a class="r-item ${i===0?'active':''}" href="${r.href}" role="option"><span class="r-type">${esc(r.type)}</span><span><span class="r-title">${hl(r.title,raw)}</span><span class="r-desc">${hl(r.desc,raw)}</span></span></a>`).join("");
-  box.classList.add("show");}
+  if(!res.length){box.innerHTML=`<div class="r-empty">No results for "${esc(raw)}". Try "ferry," "cabin," or "market."</div>`;}
+  else box.innerHTML=res.map((r,i)=>`<a class="r-item ${i===0?'active':''}" href="${r.href}" role="option"><span class="r-type">${esc(r.type)}</span><span><span class="r-title">${hl(r.title,raw)}</span><span class="r-desc">${hl(r.desc,raw)}</span></span></a>`).join("");
+  box.classList.add("show"); placeBox(box);}
 function wireSearch(inputId,boxId){const input=document.getElementById(inputId),box=document.getElementById(boxId); if(!input||!box)return; let idx=0;
   input.addEventListener("input",()=>{idx=0; renderResults(box,input.value);});
   input.addEventListener("focus",()=>{if(input.value)renderResults(box,input.value);});
@@ -4309,7 +4312,8 @@ function wireSearch(inputId,boxId){const input=document.getElementById(inputId),
     else if(e.key==="Enter"){if(items[idx]){e.preventDefault(); items[idx].click();}}
     else if(e.key==="Escape"){box.classList.remove("show"); input.blur();}});
   box.addEventListener("click",()=>setTimeout(()=>box.classList.remove("show"),60));
-  document.addEventListener("click",e=>{if(!input.contains(e.target)&&!box.contains(e.target))box.classList.remove("show");});}
+  document.addEventListener("click",e=>{if(!input.contains(e.target)&&!box.contains(e.target))box.classList.remove("show");});
+  ["scroll","resize"].forEach(ev=>window.addEventListener(ev,()=>{if(box.classList.contains("show"))placeBox(box);},{passive:true}));}
 wireSearch("navSearch","navResults");
 wireSearch("heroSearch","heroResults");
 if($("#heroSearchBtn")) $("#heroSearchBtn").addEventListener("click",()=>{const v=$("#heroSearch").value; if(v)renderResults($("#heroResults"),v); else $("#heroSearch").focus();});
