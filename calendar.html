@@ -11,16 +11,35 @@
 <body data-page="calendar">
 <a class="skip-link" href="#main">Skip to content</a>
 <main id="main">
-  <div class="page-hero"><div class="wrap"><span class="eyebrow">Community Calendar</span><h1>What’s happening around town</h1><p>Seldovia’s live community calendar — meetings, markets, music, and more. Switch between Schedule, Week, and Month up top.</p></div></div>
+  <div class="page-hero"><div class="wrap"><span class="eyebrow">Community Calendar</span><h1>What’s happening around town</h1><p>Seldovia’s live community calendar — meetings, markets, music, and more. Switch between Schedule and Month up top.</p></div></div>
 
   <section class="section wrap">
-    <div class="cal-embed">
+    <div class="cal-toolbar">
+      <div class="tabs" role="tablist" style="margin-bottom:0; border-bottom:0; padding-bottom:0">
+        <button id="viewAgenda" class="tab" aria-pressed="true">Schedule</button>
+        <button id="viewMonth" class="tab" aria-pressed="false">Month</button>
+      </div>
+      <span id="calHint" class="cal-hint">Upcoming events in Seldovia</span>
+    </div>
+
+    <div id="agenda" class="agenda"><div id="agendaScroll" class="agenda-scroll"></div></div>
+
+    <div id="monthgrid" class="monthgrid">
+      <div class="mg-head"><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span></div>
+      <div id="mgBody" class="mg-body"></div>
+    </div>
+
+    <!-- Fallback: the plain Google embed, shown only if the API key isn't set or the fetch fails. -->
+    <div id="calFallback" class="cal-embed" hidden>
       <iframe title="Seldovia Community Calendar" loading="lazy"
         src="https://calendar.google.com/calendar/embed?ctz=America%2FAnchorage&amp;mode=AGENDA&amp;showTitle=0&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;showTabs=1&amp;showNav=1&amp;showDate=1&amp;color=%231d6b78&amp;src=YjdhMDI4NGYxNzMwOTVkMDRkMmVkMjEyOTJiZjJiNmEwNWU2ODU5MTRiZDMyNDNkYjg0ODBjZWJjYWVjMTFjNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t"></iframe>
     </div>
+
     <p class="cal-note">Powered by Seldovia’s community Google Calendar. To add or change an event, contact the calendar keeper.</p>
   </section>
 </main>
-<script src="app.js?v=13"></script>
+<script src="db.js?v=6"></script>
+<script src="app.js?v=14"></script>
+<script src="calendar.js?v=1"></script>
 </body>
 </html>

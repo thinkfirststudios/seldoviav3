@@ -4259,25 +4259,9 @@ const DOW=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday
 const parseD=s=>{const[y,m,d]=s.split("-").map(Number); return{y,m:m-1,d};};
 const fmtDayLabel=s=>{const{y,m,d}=parseD(s); const dt=new Date(y,m,d); return `${DOW[dt.getDay()]}, ${MONTHS[m]} ${d}`;};
 const fmt12=t=>{if(!t)return "All day"; let[h,mi]=t.split(":").map(Number); const ap=h>=12?"PM":"AM"; h=h%12||12; return `${h}:${String(mi).padStart(2,"0")} ${ap}`;};
-if($("#agendaScroll")){
-  const byDay={}; EVENTS.forEach(e=>{(byDay[e.d]??=[]).push(e);});
-  $("#agendaScroll").innerHTML=Object.keys(byDay).sort().map(day=>`<div class="agenda-day">${esc(fmtDayLabel(day))}</div>
-    ${byDay[day].sort((a,b)=>a.t.localeCompare(b.t)).map(e=>`<div class="event"><div class="ev-time">${esc(fmt12(e.t))}<small>${esc(e.dur)}</small></div>
-      <div><div class="ev-title">${esc(e.title)}</div><div class="ev-where">${esc(e.where)}</div></div>
-      <div class="col-right"><span class="ev-cat">${esc(e.cat)}</span><button class="add-cal" data-title="${esc(e.title)}">+ Add</button></div></div>`).join("")}`).join("");
-  const y=2026,m=6, first=new Date(y,m,1).getDay(), dim=new Date(y,m+1,0).getDate(), prevDim=new Date(y,m,0).getDate();
-  const evMap={}; EVENTS.forEach(e=>{const{y:ey,m:em,d:ed}=parseD(e.d); if(ey===y&&em===m)(evMap[ed]??=[]).push(e);});
-  let cells=""; for(let i=0;i<first;i++)cells+=`<div class="mg-cell out"><span class="d">${prevDim-first+i+1}</span></div>`;
-  for(let d=1;d<=dim;d++){const evs=evMap[d]||[]; const pips=evs.slice(0,2).map(e=>`<span class="pip">${esc(fmt12(e.t))} ${esc(e.title)}</span>`).join(""); const more=evs.length>2?`<span class="pip">+${evs.length-2} more</span>`:"";
-    cells+=`<div class="mg-cell ${evs.length?'has':''}"><span class="d">${d}</span>${pips}${more}</div>`;}
-  const trail=(7-((first+dim)%7))%7; for(let i=1;i<=trail;i++)cells+=`<div class="mg-cell out"><span class="d">${i}</span></div>`;
-  $("#mgBody").innerHTML=cells;
-  const setCalView=v=>{const ag=v==="agenda"; $("#viewAgenda").setAttribute("aria-pressed",ag); $("#viewMonth").setAttribute("aria-pressed",!ag);
-    $("#agenda").classList.toggle("hide",!ag); $("#monthgrid").classList.toggle("show",!ag);
-    $("#calHint").innerHTML=ag?'Upcoming events in Seldovia':'July 2026';};
-  $("#viewAgenda").addEventListener("click",()=>setCalView("agenda"));
-  $("#viewMonth").addEventListener("click",()=>setCalView("month"));
-}
+/* The community calendar page is now rendered by calendar.js from the real Google
+   Calendar (agenda + month grid), falling back to the Google embed. EVENTS below is
+   kept only to feed the global search index. */
 document.addEventListener("click",e=>{const b=e.target.closest(".add-cal"); if(b){e.preventDefault(); toast(`"${b.dataset.title}" — saved to your calendar (demo)`);}});
 
 /* ============================================================ GLOBAL SEARCH ============================================================ */
