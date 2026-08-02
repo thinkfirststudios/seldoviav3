@@ -123,7 +123,7 @@ const PLACES=[
  {name:"Between Beaches",cat:"Lodging",key:"lodging",phone:"(907) 290-6785"},
  {name:"Alaska Dancing Eagles Cabin Rental",cat:"Cabin Rental",key:"lodging",phone:"(907) 360-6363",url:"https://www.dancingeagles.com"},
  {name:"Jack and Aiva's Restaurant",cat:"Restaurant",key:"dining",phone:"(907) 234-7440"},
- {name:"Thyme on the Boardwalk",cat:"Dining",key:"dining",phone:"(907) 440-2213",url:"https://www.ThymeOnTheBoardwalk.com"},
+ {name:"Thyme on the Boardwalk",cat:"Restaurant",key:"dining",phone:"(907) 440-2213",url:"https://www.ThymeOnTheBoardwalk.com"},
  {name:"Linwood Bar & Grill",cat:"Bar & Grill",key:"dining"},
  {name:"Crabpot Grocery",cat:"Grocery",key:"dining",phone:"(907) 234-7435"},
  {name:"Alaska Free Diver",cat:"Charters & Tours",key:"charters",phone:"(907) 205-7963",url:"https://www.AlaskaFreeDiver.com"},
@@ -131,8 +131,8 @@ const PLACES=[
  {name:"Mako's Water Taxi",cat:"Water Taxi",key:"charters",phone:"(907) 235-9055"},
  {name:"Otterbahn Trail",cat:"Trail",key:"outdoors"},
  {name:"Outside Beach Park",cat:"Beach & Park",key:"outdoors"},
- {name:"Seldovia Sea Glass",cat:"Local Art",key:"arts"},
- {name:"Seldovia Outdoor Rentals & Gifts",cat:"Gifts & Rentals",key:"arts",phone:"(907) 302-0320"}
+ {name:"Seldovia Sea Glass",cat:"Gifts",key:"outdoors"},
+ {name:"Seldovia Outdoor Rentals & Gifts",cat:"Gifts & Rentals",key:"outdoors",phone:"(907) 302-0320"}
 ];
 // Jenny's Seldovia Blog — recovered posts (original titles, dates, images preserved). PROD: managed via admin.
 const GAZETTE=[
@@ -4015,7 +4015,7 @@ const TESTIMONIALS=[
 ];
 // REAL Seldovia businesses. These are not paid sponsors — the strip spotlights local
 // businesses. Swap in genuine sponsors once Jenny sells that space.
-const SPONSORS=[{name:"Boardwalk Hotel",cat:"Lodging",c:"#663015"},{name:"Jack and Aiva's",cat:"Restaurant",c:"#DF1284"},{name:"Thyme on the Boardwalk",cat:"Dining",c:"#7f8a6b"},{name:"Smokey Bay Air",cat:"Air Taxi",c:"#4f5a3d"},{name:"Crabpot Grocery",cat:"Grocery",c:"#a8683a"},{name:"Alaska Free Diver",cat:"Charters & Tours",c:"#b0357e"},{name:"Mako's Water Taxi",cat:"Water Taxi",c:"#1d6b78"},{name:"Seldovia Fishing Adventures",cat:"Fishing Charters",c:"#2c4a3a"}];
+const SPONSORS=[{name:"Boardwalk Hotel",cat:"Lodging",c:"#663015"},{name:"Jack and Aiva's",cat:"Restaurant",c:"#DF1284"},{name:"Thyme on the Boardwalk",cat:"Restaurant",c:"#7f8a6b"},{name:"Smokey Bay Air",cat:"Air Taxi",c:"#4f5a3d"},{name:"Crabpot Grocery",cat:"Grocery",c:"#a8683a"},{name:"Alaska Free Diver",cat:"Charters & Tours",c:"#b0357e"},{name:"Mako's Water Taxi",cat:"Water Taxi",c:"#1d6b78"},{name:"Seldovia Fishing Adventures",cat:"Fishing Charters",c:"#2c4a3a"}];
 
 /* ============================================================ RENDER (each guarded — runs only if its container exists on this page) ============================================================ */
 function stars(r){const full=Math.round(r); return "★★★★★".slice(0,full)+"☆☆☆☆☆".slice(0,5-full);}
@@ -4023,7 +4023,7 @@ function stars(r){const full=Math.round(r); return "★★★★★".slice(0,ful
 const PLACE_IMG={lodging:"images/categories/cat-0.jpg",dining:"images/categories/cat-1.jpg",charters:"images/categories/cat-2.jpg",arts:"images/categories/cat-4.jpg",outdoors:"images/categories/cat-5.jpg",wellness:"images/categories/cat-6.jpg",events:"images/categories/cat-7.jpg"};
 
 // hero quick-cats
-if($("#quickcats")) $("#quickcats").innerHTML=[["Restaurants","dining"],["Lodging","lodging"],["Charters","charters"],["Trails","outdoors"],["Arts","arts"],["Events","events"]].map(([label,key])=>
+if($("#quickcats")) $("#quickcats").innerHTML=[["Restaurants","dining"],["Lodging","lodging"],["Charters","charters"],["Trails","outdoors"],["Events","events"]].map(([label,key])=>
   `<a class="quickcat" href="explore.html?cat=${key}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/></svg>${esc(label)}</a>`).join("");
 
 // category tiles
@@ -4036,7 +4036,7 @@ if($("#catGrid")) $("#catGrid").innerHTML=CATEGORIES.map((c,i)=>{
 if($("#featureMedia")) $("#featureMedia").innerHTML=`<img class="feature-photo" src="images/photos/220627_SeldoviaHarbor_Melody.jpg" alt="Seldovia Harbor at first light" loading="lazy" width="1200" height="1200">`;
 
 // places (directory highlights) with tabs — reads ?cat= from URL for deep-links
-const PLACE_TABS=[["all","All"],["dining","Dining"],["lodging","Lodging"],["charters","Charters"],["outdoors","Outdoors"],["arts","Arts"]];
+const PLACE_TABS=[["all","All"],["dining","Where to Eat"],["lodging","Lodging"],["charters","Charters"],["outdoors","Outdoors"]];
 let placeTab=(new URLSearchParams(location.search).get("cat"))||"all";
 if(!PLACE_TABS.some(([k])=>k===placeTab)) placeTab="all";
 function renderPlaces(){

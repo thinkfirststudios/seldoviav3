@@ -159,7 +159,11 @@ h2.title{font-size:clamp(1.9rem,4vw,2.9rem);}
 
 /* ============================================================ HEADER */
 .masthead{position:sticky; top:0; z-index:60; background:var(--sheet); border-bottom:1px solid var(--line); box-shadow:0 2px 10px -6px rgba(60,50,32,.18);}
-/* RE nav is the same clean white bar as every other page (the pink lives in the "Seldovia Today" line + page accents). */
+/* Real Estate nav: Jenny's white-to-pink gradient (left white -> right pink). Nav text stays
+   dark so it's readable the whole way across; the strong pink sits under the right-side icons. */
+body[data-page="realestate"] .masthead{ background:linear-gradient(90deg,#ffffff 0%,#ffffff 32%,#fbd0e6 68%,#f3a4d0 100%); border-bottom-color:#f0b3d6; }
+body[data-page="realestate"] nav.mainnav a{ color:var(--heading); }
+body[data-page="realestate"] nav.mainnav a:hover{ background:rgba(255,255,255,.55); }
 .masthead-inner{max-width:var(--maxw); margin-inline:auto; display:flex; align-items:center; gap:1rem; padding:.4rem clamp(16px,4vw,40px); min-height:76px;}
 .brand{display:flex; align-items:center; gap:.55rem; text-decoration:none; flex-shrink:0;}
 .brand .brand-logo{height:104px; width:auto; display:block; object-fit:contain;}
