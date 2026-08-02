@@ -120,7 +120,7 @@ const PLACES=[
  {name:"Boardwalk Hotel",cat:"Hotel",key:"lodging",phone:"(907) 234-7816",url:"https://www.SeldoviaHotel.com"},
  {name:"Sea Parrot Inn",cat:"Inn",key:"lodging",phone:"(844) 377-7829",url:"https://www.seaparrotinn.com"},
  {name:"Seldovia Suites",cat:"Lodging",key:"lodging",phone:"(907) 234-3700"},
- {name:"Between Beaches",cat:"Lodging",key:"lodging",phone:"(907) 290-6785"},
+ {name:"Between Beaches",cat:"Lodging",key:"lodging",phone:"(907) 290-6785",url:"https://betweenbeachesalaska.com"},
  {name:"Alaska Dancing Eagles Cabin Rental",cat:"Cabin Rental",key:"lodging",phone:"(907) 360-6363",url:"https://www.dancingeagles.com"},
  {name:"Jack and Aiva's Restaurant",cat:"Restaurant",key:"dining",phone:"(907) 234-7440"},
  {name:"Thyme on the Boardwalk",cat:"Restaurant",key:"dining",phone:"(907) 440-2213",url:"https://www.ThymeOnTheBoardwalk.com"},
@@ -128,11 +128,11 @@ const PLACES=[
  {name:"Crabpot Grocery",cat:"Grocery",key:"dining",phone:"(907) 234-7435"},
  {name:"Alaska Free Diver",cat:"Charters & Tours",key:"charters",phone:"(907) 205-7963",url:"https://www.AlaskaFreeDiver.com"},
  {name:"Seldovia Fishing Adventures",cat:"Fishing Charters",key:"charters",phone:"(907) 234-7417",url:"https://www.fishhalibut.com"},
- {name:"Mako's Water Taxi",cat:"Water Taxi",key:"charters",phone:"(907) 235-9055"},
+ {name:"Mako's Water Taxi",cat:"Water Taxi",key:"charters",phone:"(907) 235-9055",url:"https://www.makoswatertaxi.com"},
  {name:"Otterbahn Trail",cat:"Trail",key:"outdoors"},
  {name:"Outside Beach Park",cat:"Beach & Park",key:"outdoors"},
  {name:"Seldovia Sea Glass",cat:"Gifts",key:"outdoors"},
- {name:"Seldovia Outdoor Rentals & Gifts",cat:"Gifts & Rentals",key:"outdoors",phone:"(907) 302-0320"}
+ {name:"Seldovia Outdoor Rentals & Gifts",cat:"Gifts & Rentals",key:"outdoors",phone:"(907) 302-0320",url:"https://seldovia.fun"}
 ];
 // Jenny's Seldovia Blog — recovered posts (original titles, dates, images preserved). PROD: managed via admin.
 const GAZETTE=[
