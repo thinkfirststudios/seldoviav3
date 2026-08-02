@@ -4013,7 +4013,7 @@ const SPONSORS=[{name:"Boardwalk Hotel",cat:"Lodging",c:"#663015"},{name:"Jack a
 /* ============================================================ RENDER (each guarded — runs only if its container exists on this page) ============================================================ */
 function stars(r){const full=Math.round(r); return "★★★★★".slice(0,full)+"☆☆☆☆☆".slice(0,5-full);}
 // self-hosted category photos by place key
-const PLACE_IMG={lodging:"images/categories/cat-0.jpg",dining:"images/categories/cat-1.jpg",charters:"images/categories/cat-2.jpg",arts:"images/categories/cat-4.jpg",outdoors:"images/categories/cat-5.jpg",wellness:"images/categories/cat-6.jpg",events:"images/categories/cat-7.jpg"};
+const PLACE_IMG={lodging:"images/categories/cat-0.jpg?v=2",dining:"images/categories/cat-1.jpg?v=2",charters:"images/categories/cat-2.jpg?v=2",outdoors:"images/categories/cat-3.jpg?v=2",wellness:"images/categories/cat-4.jpg?v=2",events:"images/categories/cat-5.jpg?v=2"};
 
 // hero quick-cats
 if($("#quickcats")) $("#quickcats").innerHTML=[["Restaurants","dining"],["Lodging","lodging"],["Charters","charters"],["Trails","outdoors"],["Events","events"]].map(([label,key])=>
@@ -4021,7 +4021,7 @@ if($("#quickcats")) $("#quickcats").innerHTML=[["Restaurants","dining"],["Lodgin
 
 // category tiles
 if($("#catGrid")) $("#catGrid").innerHTML=CATEGORIES.map((c,i)=>{
-  const img=`images/categories/cat-${i}.jpg`;
+  const img=`images/categories/cat-${i}.jpg?v=2`;
   const href=c.key==="events"?"calendar.html":`explore.html?cat=${c.key}`;
   return `<a class="cat-tile" href="${href}" aria-label="${esc(c.b)}"><img class="cat-photo" src="${img}" alt="" loading="lazy" width="600" height="600"><span class="cap"><b>${esc(c.b)}</b><span>${esc(c.s)}</span></span></a>`;}).join("");
 
