@@ -20,24 +20,28 @@
       if(error || !data || !data.length) return; // keep static gallery as-is
       // The built-in "More Seldovia photos" gallery below stays visible (nothing is removed).
 
-      const today=data[0];
-      const curMonth=new Date().getMonth(); // 0-11
-      const seasonal=data.filter(p=>(+p.taken_on.split("-")[1]-1)===curMonth && p.id!==today.id);
+      const akToday=new Date().toLocaleDateString("en-CA",{timeZone:"America/Anchorage"}); // YYYY-MM-DD in Alaska
+      const newest=data[0];
+      // Only feature a photo in "Seldovia Today" if it was actually posted TODAY. Otherwise
+      // the hero is skipped and every photo simply lives in the gallery below (nothing stale up top).
+      const featured=(newest.taken_on===akToday)?newest:null;
+      const curMonth=+akToday.split("-")[1]-1; // 0-11, Alaska time
+      const seasonal=data.filter(p=>(+p.taken_on.split("-")[1]-1)===curMonth && (!featured||p.id!==featured.id));
 
-      // group everything by YYYY-MM, newest month first
+      // group everything by YYYY-MM, newest month first (the newest photo still lives in its month here)
       const groups={};
       data.forEach(p=>{ const [y,m]=p.taken_on.split("-"); (groups[`${y}-${m}`]=groups[`${y}-${m}`]||[]).push(p); });
       const keys=Object.keys(groups).sort().reverse();
 
-      let html=`
+      let html = featured ? `
         <section class="today-feature">
-          <div class="today-media"><img src="${esc(today.image_url)}" alt="${esc(today.caption||"Seldovia today")}"></div>
+          <div class="today-media"><img src="${esc(featured.image_url)}" alt="${esc(featured.caption||"Seldovia today")}"></div>
           <div class="today-cap">
             <span class="eyebrow">Seldovia Today</span>
-            <h2>${esc(today.caption||"A moment from around the bay")}</h2>
-            <div class="today-date">${esc(fmt(today.taken_on))}</div>
+            <h2>${esc(featured.caption||"A moment from around the bay")}</h2>
+            <div class="today-date">${esc(fmt(featured.taken_on))}</div>
           </div>
-        </section>`;
+        </section>` : "";
 
       if(seasonal.length){
         html+=`<section class="journal-section">
@@ -56,9 +60,12 @@
 
       app.innerHTML=html;
 
-      // Move the webcams section up to sit right under the Daily Photo (Jenny's ask).
-      const wc=document.querySelector("#webcamsSection"), feat=app.querySelector(".today-feature");
-      if(wc && feat) feat.insertAdjacentElement("afterend", wc);
+      // Move the webcams up under the Daily Photo — or to the very top when no photo is
+      // featured today — so they stay prominent either way (Jenny's ask).
+      const wc=document.querySelector("#webcamsSection");
+      if(wc){ const feat=app.querySelector(".today-feature");
+        if(feat) feat.insertAdjacentElement("afterend", wc);
+        else app.insertAdjacentElement("afterbegin", wc); }
 
       // click-to-enlarge lightbox (reuses the site .lightbox styles), with prev/next over every journal photo
       const imgs=[...app.querySelectorAll("img")];

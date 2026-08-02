@@ -577,7 +577,7 @@ footer.site a{color:rgba(255,255,255,.82); text-decoration:none;} footer.site a:
 @keyframes slideSponsors{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
 .sponsor-track{animation:slideSponsors 44s linear infinite;}
 .sponsor-strip:hover .sponsor-track{animation-play-state:paused;}
-@media (prefers-reduced-motion: reduce){ .sponsor-track{animation:none;} }
+@media (prefers-reduced-motion: reduce){ .sponsor-track{animation:none;} .sponsor-strip{overflow-x:auto; -webkit-overflow-scrolling:touch;} }
 
 /* auto-scrolling photo gallery */
 .gallery-strip{position:relative; overflow:hidden; -webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent); mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);}
@@ -589,7 +589,7 @@ footer.site a{color:rgba(255,255,255,.82); text-decoration:none;} footer.site a:
 .gallery-photo img{width:100%; height:100%; object-fit:cover; display:block;}
 .gallery-photo figcaption{position:absolute; left:0; right:0; bottom:0; padding:1.4rem .85rem .7rem; color:#fff; font-size:.82rem; font-weight:600; background:linear-gradient(180deg,transparent,rgba(0,0,0,.7));}
 @keyframes slideGallery{ from{transform:translateX(0);} to{transform:translateX(calc(-50% - 8px));} }
-@media (prefers-reduced-motion: reduce){ .gallery-track{animation:none; overflow-x:auto;} }
+@media (prefers-reduced-motion: reduce){ .gallery-track{animation:none;} .gallery-strip{overflow-x:auto; -webkit-overflow-scrolling:touch;} }
 
 /* ============ ADMIN PANEL ============ */
 .admin-tabs{display:inline-flex; gap:.35rem; background:var(--surface-2); padding:.3rem; border-radius:var(--radius-pill);}
