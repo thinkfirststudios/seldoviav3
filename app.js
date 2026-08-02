@@ -4261,7 +4261,7 @@ document.addEventListener("click",e=>{const b=e.target.closest(".add-cal"); if(b
 const INDEX=[
   ...PLACES.map(p=>({type:"Place",title:p.name,desc:p.phone?`${p.cat} · ${p.phone}`:p.cat,href:"explore.html",kw:p.cat+" "+p.key})),
   ...LISTINGS.map(l=>({type:"Real Estate",title:l.name,desc:l.cat,href:"real-estate.html",kw:l.cat})),
-  ...CATEGORIES.map(c=>({type:"Category",title:c.b,desc:c.s,href:"explore.html?cat="+c.key,kw:c.key})),
+  ...CATEGORIES.map(c=>({type:"Category",title:c.b,desc:c.s,href:"explore.html?cat="+c.key,kw:c.key+" "+({lodging:"stay sleep hotel inn cabin lodge rental bnb bed",dining:"food eat restaurant cafe coffee meal dine breakfast lunch dinner drinks",charters:"fishing charter tour boat halibut salmon kayak wildlife water taxi",outdoors:"hike trail beach outdoors nature kayak walk park",wellness:"spa wellness massage salon beauty hair self care",events:"event calendar festival music market meeting concert"}[c.key]||"")})),
   ...GAZETTE.map(g=>({type:"Jenny's Blog",title:g.title,desc:g.excerpt,href:"gazette.html",kw:g.cat})),
   ...EVENTS.map(e=>({type:"Event",title:e.title,desc:`${fmtDayLabel(e.d)} · ${e.where}`,href:"calendar.html",kw:e.cat+" "+e.where})),
   ...DIRECTORY.map(d=>({type:"Directory",title:d.name,desc:`${d.cat} · ${d.phone}`,href:"phone-book.html",kw:d.cat})),
@@ -4270,7 +4270,9 @@ const INDEX=[
   {type:"Info",title:"Ferry schedule (AMHS)",desc:"Alaska Marine Highway sailings to and from Homer.",href:"calendar.html",kw:"ferry amhs tustumena schedule boat"},
 ];
 function scoreMatch(it,q){const hay=(it.title+" "+it.desc+" "+it.kw+" "+it.type).toLowerCase(); let s=0;
-  q.forEach(tok=>{if(!tok)return; const t=it.title.toLowerCase(); if(t.startsWith(tok))s+=6; else if(t.includes(tok))s+=4; if(hay.includes(tok))s+=2; else if(hay.split(/\W+/).some(w=>w.startsWith(tok)))s+=1;}); return s;}
+  q.forEach(tok=>{if(!tok)return; const t=it.title.toLowerCase(); if(t.startsWith(tok))s+=6; else if(t.includes(tok))s+=4; if(hay.includes(tok))s+=2; else if(hay.split(/\W+/).some(w=>w.startsWith(tok)))s+=1;});
+  // Surface categories/places/listings above blog posts for the same query (e.g. "food" -> Where to Eat).
+  if(s>0)s+=({Category:5,Place:3,"Real Estate":3,Directory:1,Info:2,Guide:2}[it.type]||0); return s;}
 function runSearch(raw){const q=raw.toLowerCase().trim().split(/\s+/).filter(Boolean); if(!q.length)return[]; return INDEX.map(it=>({it,s:scoreMatch(it,q)})).filter(x=>x.s>0).sort((a,b)=>b.s-a.s).slice(0,8).map(x=>x.it);}
 function hl(text,raw){const q=raw.trim().split(/\s+/).filter(Boolean).map(t=>t.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")); if(!q.length)return esc(text); return esc(text).replace(new RegExp("("+q.join("|")+")","ig"),"<mark>$1</mark>");}
 // The hero results box is position:fixed so it escapes the hero's overflow:clip (was hidden
