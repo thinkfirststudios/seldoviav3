@@ -14,9 +14,9 @@ for (const folder of fs.readdirSync(ROOT)) {
   const files = fs.readdirSync(dir).filter(f => IMG.test(f));
   const rank = f => {
     const stem = f.replace(IMG, "");
-    if (stem === folder) return [0, 0, f];                 // base = primary
-    const m = stem.match(new RegExp("^" + folder.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "-(\\d+)"));
-    if (m) return [1, parseInt(m[1], 10), f];              // "-N" numeric
+    if (stem === folder) return [0, 0, f];                 // base = primary/cover
+    const m = stem.match(/(\d+)(?!.*\d)/);                 // the LAST number in the name (e.g. -seldovia-ak-10)
+    if (m) return [1, parseInt(m[1], 10), f];              // order by that number
     return [2, 0, f];                                       // anything else
   };
   files.sort((a, b) => { const ra = rank(a), rb = rank(b); return ra[0]-rb[0] || ra[1]-rb[1] || ra[2].localeCompare(rb[2]); });
