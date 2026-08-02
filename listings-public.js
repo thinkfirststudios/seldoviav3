@@ -23,21 +23,26 @@
   /* ---- Real Estate carousel ---- */
   const grid=document.querySelector("#reGrid");
   if(grid){
-    db.from("listings").select("*").eq("published",true).order("listed_on",{ascending:false,nullsFirst:false})
-      .then(({data,error})=>{
-        if(error || !data || !data.length) return;
-        const cards=data.map(l=>`
-          <a class="place" href="listing.html?id=${encodeURIComponent(l.slug||l.id)}">
-            <div class="place-media"><img class="place-photo" src="${(window.LISTING_PHOTOS&&LISTING_PHOTOS[l.slug]&&LISTING_PHOTOS[l.slug][0])||esc(l.image_url||'')}" alt="${esc(l.address)}" loading="lazy" width="600" height="400" onerror="this.closest('.place-media').classList.add('place-media-blank');this.remove()"><span class="badge-open">${esc(l.status||"For Sale")}</span></div>
+    const isSold=l=>String(l.status||"").toLowerCase()==="sold";
+    const card=l=>`
+          <a class="place${isSold(l)?" place-sold":""}" href="listing.html?id=${encodeURIComponent(l.slug||l.id)}">
+            <div class="place-media"><img class="place-photo" src="${(window.LISTING_PHOTOS&&LISTING_PHOTOS[l.slug]&&LISTING_PHOTOS[l.slug][0])||esc(l.image_url||'')}" alt="${esc(l.address)}" loading="lazy" width="600" height="400" onerror="this.closest('.place-media').classList.add('place-media-blank');this.remove()"><span class="badge-open${isSold(l)?" badge-sold":""}">${esc(l.status||"For Sale")}</span></div>
             <div class="place-body">
               <div style="display:flex;justify-content:space-between;align-items:baseline;gap:.6rem"><span class="price" style="font-size:1.15rem">${esc(l.price||"")}</span><span style="font-size:.82rem;color:var(--accent-ink);font-weight:700">Details →</span></div>
               <h4>${esc(l.address)}</h4>
               <div class="place-loc" style="gap:1rem">${(l.beds||l.baths)?`<span><b style="color:var(--heading)">${esc(l.beds||"—")}</b> bd</span><span><b style="color:var(--heading)">${esc(l.baths||"—")}</b> ba</span><span><b style="color:var(--heading)">${esc(l.sqft||"—")}</b> sqft</span>`:`<span><b style="color:var(--heading)">Land</b></span>${l.sqft?`<span><b style="color:var(--heading)">${esc(l.sqft)}</b> sq ft lot</span>`:""}`}</div>
-              ${l.listed_on?`<div class="listing-date">Listed ${esc(fmt(l.listed_on))}</div>`:""}
+              ${l.listed_on?`<div class="listing-date">${isSold(l)?"":"Listed "}${esc(fmt(l.listed_on))}</div>`:""}
             </div>
-          </a>`).join("");
-        grid.insertAdjacentHTML("afterbegin", cards);
+          </a>`;
+    db.from("listings").select("*").eq("published",true).order("listed_on",{ascending:false,nullsFirst:false})
+      .then(({data,error})=>{
+        if(error || !data || !data.length) return;
+        const active=data.filter(l=>!isSold(l)), sold=data.filter(isSold);
+        grid.insertAdjacentHTML("afterbegin", active.map(card).join(""));
         grid.dispatchEvent(new Event("scroll")); // nudge carousel arrows to recompute
+        // Recently sold → its own section (kept out of active inventory, realtor best practice)
+        const soldGrid=document.querySelector("#soldGrid"), soldSec=document.querySelector("#soldSection");
+        if(soldGrid && sold.length){ soldGrid.innerHTML=sold.map(card).join(""); if(soldSec) soldSec.style.display=""; }
       }).catch(()=>{});
   }
 
