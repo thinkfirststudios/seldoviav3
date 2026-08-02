@@ -158,6 +158,26 @@ Home details: Single Family (mixed-use) · Built 1983 · 19,166 sq ft lot (front
 Schools: Susan B. English Elementary & Middle School · Susan B. English High School.$d$
 where slug='251-main-st';
 
+-- 57739 Kachemak Bay -------------------------------------------------------
+update public.listings set
+  price='$400,000', beds='3', baths='1', sqft='1,399', status='For Sale', listed_on='2025-09-07',
+  description=$d$Gorgeous turn-key off-grid cabin with unobstructed views of Kachemak Bay and the mountains. Completely self-sufficient with all the modern conveniences, powered by solar arrays and dual generators — no utility bills, no grid dependency. Recently reduced $50,000. A must-see!
+
+Perched high above the water along the shores of Kachemak Bay, this exceptional waterfront property offers over 600 feet of bay beachfront plus 600+ feet along the tranquil inside lagoon. Dawn breaks with golden light over the bay, and from your turn-key cabin you savor panoramic views of the water and the mountains beyond. Fish from the pebbled beach, comb the tide lines for sea glass and driftwood, or launch one of the three included sea kayaks to glide the bay and spot sea otters. Lace up for hikes along trails where wild blueberries and salmonberries ripen in summer.
+
+The main cabin is your headquarters — cozy, fully equipped, and sold turn-key with most of the furniture. Cook fresh salmon on the gas barbecue or smoke it in the gas smoker (six propane bottles included), and preserve your bounty with the chest freezer and vacuum packer. Two charming guest cabins host your crew: a 12x16 with two twin bunks and a futon (sleeps up to 6), and a roomier 12x20 with a queen below and a queen loft (sleeps 4 more).
+
+The property is secured by a 55-year lease through the Seldovia Native Association, with an option to renew for another 55 years — good through October 1, 2103. Off-grid means no electric, water, or sewer bill; the two annual fees are the SNA lease (2025: $2,520.34) and property taxes (2025: $1,285.98). The sale includes an arsenal of tools and equipment (chainsaw, table saw, brush cutter, log splitter, power washer, and more), a Canycom track transport vehicle, Honda and Northern Lights generators, and a 2003 Jetcraft jet boat with trailer for quick trips to Seldovia.
+
+Water & power: fresh water is gravity-fed from a waterfall about 1/4 mile up the hill through a collective arrangement into 300 gallons of holding tanks, then to an in-cabin storage tank with a 12V pump, pressure tank, and instant tankless propane water heater — residential-equivalent pressure and instant hot water. A crib-style septic system serves the cabin. A Northern Lights 6kW diesel generator (remote-start) and four 120-amp solar panels charge a fresh 2025 deep-cycle battery bank through a Xantrex inverter/charger for reliable 12V and 110V power.
+
+Highlights: Fronts a bay or harbor · Bluff on lot · Vaulted ceiling · Heated spa · Hilly lot · Fireplace · 600+ ft of bay beachfront · Turn-key, fully off-grid.
+
+Home details: Single Family (cabin) · Built 1996 · 1.68-acre leased lot · Not zoned · Off-grid solar + dual generators · EV home charger · Bay, unobstructed & city-light views · Est. annual taxes $1,286.
+
+Schools: Susan B. English Elementary & Middle School · Susan B. English High School.$d$
+where slug='57739-kachemak-bay';
+
 -- 351 Shoreline Dr — RECENTLY SOLD (new record) ----------------------------
 insert into public.listings (address, slug, city, price, beds, baths, sqft, status, listed_on, description, published)
 select '351 Shoreline Dr','351-shoreline-dr','Seldovia, AK 99663','$195,000','1','1','665','Sold','2026-06-27',
