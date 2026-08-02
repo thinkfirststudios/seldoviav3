@@ -57,9 +57,20 @@
         const fp=(window.LISTING_PHOTOS&&LISTING_PHOTOS[l.slug])||null;
         const heroImg=fp?fp[0]:(l.image_url||"");
         const photos=fp?fp.slice(1):(Array.isArray(l.photos)?l.photos:[]);
+        const allImgs=[heroImg, ...photos].filter(Boolean);
+        // Main image becomes a swipe-right carousel of ALL photos (no need to scroll down).
+        const heroBlock = allImgs.length>1
+          ? `<div class="listing-carousel" data-count="${allImgs.length}">
+               <div class="lc-track">${allImgs.map((u,i)=>`<img src="${esc(u)}" alt="${esc(l.address)} — photo ${i+1}"${i?' loading="lazy"':""}>`).join("")}</div>
+               <button class="lc-btn lc-prev" type="button" aria-label="Previous photo">‹</button>
+               <button class="lc-btn lc-next" type="button" aria-label="Next photo">›</button>
+               <span class="badge-open">${esc(l.status||"For Sale")}</span>
+               <span class="lc-count"><span class="lc-cur">1</span>/${allImgs.length}</span>
+             </div>`
+          : `<div class="listing-hero"><img src="${esc(heroImg)}" alt="${esc(l.address)}" onerror="this.closest('.listing-hero').classList.add('place-media-blank');this.remove()"><span class="badge-open">${esc(l.status||"For Sale")}</span></div>`;
         box.innerHTML=`
           <a class="back-link" href="real-estate.html">← All listings</a>
-          <div class="listing-hero"><img src="${esc(heroImg)}" alt="${esc(l.address)}" onerror="this.closest('.listing-hero').classList.add('place-media-blank');this.remove()"><span class="badge-open">${esc(l.status||"For Sale")}</span></div>
+          ${heroBlock}
           <div class="listing-top">
             <div><div class="price" style="font-size:1.9rem">${esc(l.price||"")}</div><h1 style="margin:.15rem 0 0">${esc(l.address)}</h1><div class="listing-city">${esc(l.city||"Seldovia, AK")}</div>${l.listed_on?`<div class="listing-date">Listed ${esc(fmt(l.listed_on))}</div>`:""}</div>
             <a class="btn btn-primary" href="contact.html">${isLand?"Ask about this property":"Ask about this home"}</a>
@@ -70,9 +81,18 @@
               : `<div><b>${esc(l.beds||"—")}</b><span>Beds</span></div><div><b>${esc(l.baths||"—")}</b><span>Baths</span></div><div><b>${esc(l.sqft||"—")}</b><span>Sq Ft</span></div>`}
           </div>
           ${l.description?`<h3 class="listing-h">${isLand?"About this property":"About this home"}</h3><div class="listing-desc">${descHtml}</div>`:""}
-          ${photos.length?`<h3 class="listing-h">Photos</h3><div class="listing-gallery">${photos.map(u=>`<img src="${esc(u)}" loading="lazy" alt="${esc(l.address)}">`).join("")}</div>`:""}
           ${l.video_url?`<h3 class="listing-h">Video</h3>${videoEmbed(l.video_url)}`:""}
           <div class="re-cta" style="margin-top:2.2rem"><div><h3>Interested in ${esc(l.address)}?</h3><p>Reach out to Jenny for a showing, more photos, or the full disclosure packet.</p></div><a class="btn btn-primary" href="contact.html">Contact Jenny</a></div>`;
+
+        // Wire the photo carousel: arrows + live counter (swipe/scroll works natively).
+        const car=box.querySelector(".listing-carousel");
+        if(car){
+          const track=car.querySelector(".lc-track"), cur=car.querySelector(".lc-cur"), n=+car.dataset.count;
+          const go=dir=>track.scrollBy({left:dir*track.clientWidth, behavior:"smooth"});
+          car.querySelector(".lc-prev").addEventListener("click",()=>go(-1));
+          car.querySelector(".lc-next").addEventListener("click",()=>go(1));
+          track.addEventListener("scroll",()=>{ const i=Math.min(n,Math.max(1,Math.round(track.scrollLeft/track.clientWidth)+1)); if(cur) cur.textContent=i; },{passive:true});
+        }
       }).catch(()=>{});
   }
 })();
