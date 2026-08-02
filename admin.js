@@ -352,7 +352,7 @@
   }
   async function loadListings(){
     const list=$("#lstList");
-    const {data,error}=await db.from("listings").select("*").order("listed_on",{ascending:false});
+    const {data,error}=await db.from("listings").select("*").order("listed_on",{ascending:false,nullsFirst:false});
     if(error){ list.innerHTML=`<p style="color:var(--accent-ink)">${esc(error.message)}</p>`; return; }
     if(!data.length){ list.innerHTML='<p style="color:var(--text-soft)">No listings yet.</p>'; return; }
     list.innerHTML=data.map(l=>`<div class="dir-item" style="align-items:center">
