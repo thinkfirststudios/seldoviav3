@@ -23,7 +23,7 @@
   /* ---- Real Estate carousel ---- */
   const grid=document.querySelector("#reGrid");
   if(grid){
-    db.from("listings").select("*").eq("published",true).order("listed_on",{ascending:false,nullsFirst:false})
+    db.from("listings").select("*").eq("published",true).order("created_at",{ascending:false})
       .then(({data,error})=>{
         if(error || !data || !data.length) return;
         const cards=data.map(l=>`
