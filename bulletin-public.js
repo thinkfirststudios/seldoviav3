@@ -1,7 +1,7 @@
-/* Public bulletin board — pulls the recent community notices LIVE from the Seldovia.com
-   WordPress "Bulletin Board" category (REST API, category 1247, CORS-enabled). Each panel
-   links to the original post on Seldovia.com, and the board auto-updates whenever Jenny
-   posts there. If the WordPress feed is unreachable, it falls back to the Supabase notices. */
+/* Public bulletin board — pulls community notices LIVE from Seldovia.com's WordPress
+   (Bulletin Board 1247 + Community 1140 + Events & Community 2788 + In the News... 560 +
+   News 2247), newest first, each panel linking to the original post. A "Load more" button
+   pages through the full archive. Falls back to Supabase notices if WordPress is unreachable. */
 (function(){
   const board=document.querySelector("#board");
   if(!board) return;
@@ -12,23 +12,42 @@
   const fmtISO=d=>{ const dt=new Date(d); return isNaN(dt)?"":`${MON[dt.getMonth()]} ${dt.getDate()}, ${dt.getFullYear()}`; };
   const fmtDB=d=>{ if(!d) return ""; const [y,m,day]=d.split("-"); return `${MON[+m-1]} ${+day}, ${y}`; };
 
-  // Community feed = Bulletin Board (1247) + Community (1140) + Events & Community (2788)
-  // + In the News... (560) + News (2247). Posts in ANY of these, newest first.
-  const WP="https://www.seldovia.com/wp-json/wp/v2/posts?categories=1247,1140,2788,560,2247&per_page=50&_fields=id,date,title,excerpt,link";
+  const BASE="https://www.seldovia.com/wp-json/wp/v2/posts?categories=1247,1140,2788,560,2247&per_page=30&orderby=date&order=desc&_fields=id,date,title,excerpt,link";
+  let page=0, totalPages=1, loading=false;
 
-  function renderWP(posts){
-    board.innerHTML = posts.map(p=>{
-      const title=strip(p.title && p.title.rendered || "");
-      let ex=strip(p.excerpt && p.excerpt.rendered || "");
-      if(ex.length>210) ex=ex.slice(0,210).replace(/\s+\S*$/,"")+"…";
-      return `<a class="note note-link" href="${esc(p.link)}" target="_blank" rel="noopener">
-        <span class="n-cat">Bulletin</span>
-        <h4>${esc(title)}</h4>
-        ${ex?`<p>${esc(ex)}</p>`:""}
-        <div class="n-foot"><span>Seldovia.com</span><span>${esc(fmtISO(p.date))}</span></div>
-        <span class="n-open">Read more →</span></a>`;
-    }).join("");
+  function card(p){
+    const title=strip(p.title && p.title.rendered || "");
+    let ex=strip(p.excerpt && p.excerpt.rendered || "");
+    if(ex.length>210) ex=ex.slice(0,210).replace(/\s+\S*$/,"")+"…";
+    return `<a class="note note-link" href="${esc(p.link)}" target="_blank" rel="noopener">
+      <span class="n-cat">Bulletin</span>
+      <h4>${esc(title)}</h4>
+      ${ex?`<p>${esc(ex)}</p>`:""}
+      <div class="n-foot"><span>Seldovia.com</span><span>${esc(fmtISO(p.date))}</span></div>
+      <span class="n-open">Read more →</span></a>`;
   }
+
+  // "Load more" button lives just under the board
+  const moreWrap=document.createElement("div");
+  moreWrap.className="center-link"; moreWrap.style.marginTop="1.6rem"; moreWrap.style.display="none";
+  const btn=document.createElement("button");
+  btn.type="button"; btn.className="btn btn-ghost"; btn.textContent="Load more";
+  moreWrap.appendChild(btn);
+  board.insertAdjacentElement("afterend", moreWrap);
+
+  function loadMore(){
+    if(loading || page>=totalPages) return;
+    loading=true; page++; btn.textContent="Loading…";
+    fetch(BASE+"&page="+page)
+      .then(r=>{ totalPages=parseInt(r.headers.get("x-wp-totalpages")||totalPages,10)||1; if(!r.ok) throw 0; return r.json(); })
+      .then(posts=>{
+        if(Array.isArray(posts) && posts.length) board.insertAdjacentHTML("beforeend", posts.map(card).join(""));
+        loading=false; btn.textContent="Load more";
+        moreWrap.style.display = page>=totalPages ? "none" : "";
+      })
+      .catch(()=>{ loading=false; page--; if(page===0) fallbackSupabase(); else { btn.textContent="Load more"; } });
+  }
+  btn.addEventListener("click", loadMore);
 
   function fallbackSupabase(){
     if(!window.db) return;
@@ -47,8 +66,5 @@
       }).catch(()=>{});
   }
 
-  fetch(WP).then(r=>r.ok?r.json():Promise.reject()).then(posts=>{
-    if(Array.isArray(posts) && posts.length) renderWP(posts);
-    else fallbackSupabase();
-  }).catch(fallbackSupabase);
+  loadMore(); // first page
 })();
