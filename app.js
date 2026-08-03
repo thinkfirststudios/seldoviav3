@@ -4331,3 +4331,22 @@ let toastT; function toast(msg){const el=$("#toast"); el.textContent=msg; el.cla
 function tickTime(){try{const s=new Intl.DateTimeFormat("en-US",{timeZone:"America/Anchorage",hour:"numeric",minute:"2-digit"}).format(new Date()); const ft=$("#footTime"); if(ft)ft.textContent=s+" AKT";}catch(_){}}
 tickTime(); setInterval(tickTime,30000);
 if($("#year")) $("#year").textContent=new Date().getFullYear();
+
+/* Roll the whole site over to the new day at Alaska midnight (daily photo, tides, seasonal
+   band, "what's on this week") for pages left open past 12am. Skips the admin, and defers
+   if someone is typing in a form so it never interrupts. */
+(function(){
+  const page=document.body && document.body.getAttribute("data-page");
+  if(page==="admin") return;
+  function msToAkMidnight(){
+    const now=new Date();
+    const ak=new Date(now.toLocaleString("en-US",{timeZone:"America/Anchorage"}));
+    const next=new Date(ak); next.setHours(24,0,10,0); // 12:00:10am, a touch past midnight
+    return Math.max(1000, next-ak);
+  }
+  setTimeout(function fire(){
+    const a=document.activeElement, typing=a && /^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName);
+    if(typing){ setTimeout(fire, 60000); return; }        // wait a minute if they're typing
+    location.reload();
+  }, msToAkMidnight());
+})();
