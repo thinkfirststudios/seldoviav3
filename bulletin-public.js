@@ -12,7 +12,9 @@
   const fmtISO=d=>{ const dt=new Date(d); return isNaN(dt)?"":`${MON[dt.getMonth()]} ${dt.getDate()}, ${dt.getFullYear()}`; };
   const fmtDB=d=>{ if(!d) return ""; const [y,m,day]=d.split("-"); return `${MON[+m-1]} ${+day}, ${y}`; };
 
-  const WP="https://www.seldovia.com/wp-json/wp/v2/posts?categories=1247&per_page=24&_fields=id,date,title,excerpt,link";
+  // Community feed = Bulletin Board (1247) + Community (1140) + Events & Community (2788)
+  // + In the News... (560) + News (2247). Posts in ANY of these, newest first.
+  const WP="https://www.seldovia.com/wp-json/wp/v2/posts?categories=1247,1140,2788,560,2247&per_page=30&_fields=id,date,title,excerpt,link";
 
   function renderWP(posts){
     board.innerHTML = posts.map(p=>{
