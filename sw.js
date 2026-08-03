@@ -1,39 +1,20 @@
-/* Seldovia.com service worker — network-first so live updates always win,
-   with a cache fallback for offline / installable-app behavior.
-   Bump CACHE when you want to guarantee old caches are cleared. */
-const CACHE = "seldovia-v3-2";
-const SHELL = [
-  "index.html", "styles.css", "app.js",
-  "explore.html", "calendar.html", "gazette.html", "post.html", "gallery.html",
-  "real-estate.html", "listing.html", "phone-book.html", "directory-add.html", "thanks.html",
-  "bulletin.html", "contact.html",
-  "images/seldovia-property-logo.jpg", "images/icon-192.png", "images/icon-512.png"
-];
+/* KILL-SWITCH service worker. This site no longer uses a service worker for caching
+   (it was causing stale-cache problems). Any browser that still has an old one registered
+   will fetch this file on its next update check, install it, and then this version deletes
+   every cache, unregisters itself, and reloads open pages once so they load fresh from the
+   network. After that, no service worker is involved at all. */
+self.addEventListener("install", () => self.skipWaiting());
 
-self.addEventListener("install", e => {
-  self.skipWaiting();
-  e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL).catch(() => {})));
+self.addEventListener("activate", event => {
+  event.waitUntil((async () => {
+    try {
+      const keys = await caches.keys();
+      await Promise.all(keys.map(k => caches.delete(k)));   // wipe all cached content
+      await self.registration.unregister();                // remove this service worker
+      const clients = await self.clients.matchAll({ type: "window" });
+      clients.forEach(c => c.navigate(c.url));              // reload open tabs once, uncached
+    } catch (_) {}
+  })());
 });
 
-self.addEventListener("activate", e => {
-  e.waitUntil(
-    caches.keys().then(keys => Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k))))
-      .then(() => self.clients.claim())
-  );
-});
-
-self.addEventListener("fetch", e => {
-  const req = e.request;
-  if (req.method !== "GET" || new URL(req.url).origin !== self.location.origin) return;
-  // Network-first with revalidation ({cache:"no-cache"} bypasses a stale
-  // browser HTTP cache so updated app.js/HTML/CSS always win); cached fallback offline.
-  e.respondWith(
-    fetch(req, { cache: "no-cache" })
-      .then(res => {
-        const copy = res.clone();
-        caches.open(CACHE).then(c => c.put(req, copy)).catch(() => {});
-        return res;
-      })
-      .catch(() => caches.match(req).then(hit => hit || caches.match("index.html")))
-  );
-});
+/* No fetch handler — every request goes straight to the network. */
