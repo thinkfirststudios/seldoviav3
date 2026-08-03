@@ -14,7 +14,7 @@
 
   // Community feed = Bulletin Board (1247) + Community (1140) + Events & Community (2788)
   // + In the News... (560) + News (2247). Posts in ANY of these, newest first.
-  const WP="https://www.seldovia.com/wp-json/wp/v2/posts?categories=1247,1140,2788,560,2247&per_page=30&_fields=id,date,title,excerpt,link";
+  const WP="https://www.seldovia.com/wp-json/wp/v2/posts?categories=1247,1140,2788,560,2247&per_page=50&_fields=id,date,title,excerpt,link";
 
   function renderWP(posts){
     board.innerHTML = posts.map(p=>{
