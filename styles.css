@@ -229,6 +229,24 @@ body:not([data-page="realestate"]) .hero h1{font-size:clamp(3.2rem,8.6vw,5.9rem)
 body[data-page="realestate"] h2.title,
 body[data-page="realestate"] .page-hero h1{ font-family:var(--script); font-weight:400; letter-spacing:.01em; text-wrap:balance; -webkit-text-stroke:1.4px currentColor; paint-order:stroke fill; }
 /* === END REAL ESTATE brush headings === */
+
+/* === WATERCOLOR HEADINGS (Jenny: the "watercolor brush stroke" she originally planned,
+   on ALL main headings across every page). We fill the brush letterforms with a real
+   watercolor wash from the Lovestory kit (background-clip:text). Color is controlled so it
+   stays readable: a navy wash on light backgrounds, and a soft-white wash for the home-hero
+   title that sits on the photo. Textures live at images/wc-heading*.png (regenerate from the
+   Lovestory washes to retexture). TO REVERT to the plain brush headings, delete this whole
+   block — nothing else depends on it. === */
+.hero h1, h2.title, .page-hero h1{
+  background-image:url("images/wc-heading.png?v=1");
+  background-size:cover; background-position:center; background-repeat:no-repeat;
+  -webkit-background-clip:text; background-clip:text;
+  -webkit-text-fill-color:transparent; color:transparent;
+  -webkit-text-stroke:0;
+}
+body[data-page="home"] .hero h1{ background-image:url("images/wc-heading-light.png?v=1"); }
+/* === END WATERCOLOR HEADINGS === */
+
 body:not([data-page="realestate"]) h2.title{font-size:clamp(2.5rem,5.6vw,3.9rem); line-height:1.1;}
 body:not([data-page="realestate"]) .page-hero h1{font-size:clamp(2.7rem,6.2vw,4.2rem); line-height:1.1;}
 .hero-search{position:relative; z-index:2; margin:clamp(24px,4vw,36px) auto 0; max-width:840px; transform:translateY(clamp(20px,3vw,34px));}
