@@ -242,7 +242,7 @@ body[data-page="realestate"] .page-hero h1{ font-family:var(--script); font-weig
 .wc-h img{ display:block; width:auto; height:auto; max-width:100%; }
 h2.title.wc-h img{ margin:0 auto; max-height:clamp(40px, 7vw, 78px); }   /* centered section titles */
 h2.title.wc-h.wc-left img{ margin:0; max-height:clamp(34px, 5vw, 60px); }/* left-aligned (sponsors) */
-.page-hero h1.wc-h img{ max-height:clamp(48px, 8.5vw, 94px); }
+.page-hero h1.wc-h img{ margin:0 auto; max-height:clamp(48px, 8.5vw, 94px); }
 body[data-page="home"] .hero h1.wc-h{ margin-top:.4rem; }
 body[data-page="home"] .hero h1.wc-h img{ max-width:min(96%, 880px); filter:drop-shadow(0 3px 22px rgba(0,0,0,.45)); }
 /* === END WATERCOLOR HEADINGS === */
