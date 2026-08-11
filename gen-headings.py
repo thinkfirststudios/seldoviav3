@@ -31,11 +31,31 @@ PX   = 340  # glyph em size in px -> high-res for retina; CSS scales down
 NS   = "{http://www.w3.org/2000/svg}"
 XLINK= "{http://www.w3.org/1999/xlink}"
 
-# text, color-mode, output filename
+# text, color-mode, output filename.  "white" = hero on a photo; "ink" = dark on light bg.
 MANIFEST = [
-    ("Discover Everything Seldovia", "white", "hero-discover.png"),
-    ("How can I help?",              "ink",   "how-can-i-help.png"),
-    ("Seldovia in photos",          "ink",   "seldovia-in-photos.png"),
+    # home
+    ("Discover Everything Seldovia",            "white", "hero-discover.png"),
+    ("How can I help?",                         "ink",   "how-can-i-help.png"),
+    ("Seldovia in photos",                      "ink",   "seldovia-in-photos.png"),
+    ("The local businesses we're grateful for", "ink",   "sponsors-grateful.png"),
+    # real estate
+    ("Finding your place on the bay",           "ink",   "re-finding-your-place.png"),
+    ("Recently sold",                           "ink",   "recently-sold.png"),
+    ("What my clients say",                      "ink",   "what-my-clients-say.png"),
+    # photo journal
+    ("A daily diary of Seldovia",               "ink",   "gallery-daily-diary.png"),
+    ("Seldovia webcams",                        "ink",   "seldovia-webcams.png"),
+    ("More Seldovia photos",                    "ink",   "more-seldovia-photos.png"),
+    # bulletin
+    ("Notices, happenings & friendly fliers",   "ink",   "bulletin-notices.png"),
+    # explore / phone book / calendar / directory / gazette / contact / thanks
+    ("Most popular things to do",               "ink",   "explore-most-popular.png"),
+    ("Neighbors & local businesses",            "ink",   "phonebook-neighbors.png"),
+    ("What's happening around town",            "ink",   "calendar-whats-happening.png"),
+    ("Add your listing",                        "ink",   "directory-add-listing.png"),
+    ("Notes & stories from Seldovia",           "ink",   "gazette-notes-stories.png"),
+    ("Say hello",                               "ink",   "contact-say-hello.png"),
+    ("Thank you!",                              "ink",   "thanks-thankyou.png"),
 ]
 
 def build_font():
@@ -83,6 +103,7 @@ def recolor(im, mode):
     return im
 
 def render(F, text, mode, px=PX):
+    text = text.replace("’", "'")  # curly apostrophe -> straight (font has only straight)
     S = px / F['upm']
     cmap, order, hmtx = F['cmap'], F['order'], F['hmtx']
     glyphs, penx = [], 0.0

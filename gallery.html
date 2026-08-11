@@ -6,12 +6,12 @@
 <meta name="description" content="The Seldovia Photo Journal — a daily photo diary of Seldovia, Alaska through the seasons.">
 <meta name="theme-color" content="#F8E6DD">
 <title>Photo Journal — Seldovia</title>
-<link rel="stylesheet" href="styles.css?v=25">
+<link rel="stylesheet" href="styles.css?v=26">
 </head>
 <body data-page="gallery">
 <a class="skip-link" href="#main">Skip to content</a>
 <main id="main">
-  <div class="page-hero"><div class="wrap"><span class="eyebrow">Photo Journal</span><h1>A daily diary of Seldovia</h1><p>A new photo most days — the harbor, the light, and little moments around the bay.</p></div></div>
+  <div class="page-hero"><div class="wrap"><span class="eyebrow">Photo Journal</span><h1 class="wc-h"><img src="images/headings/gallery-daily-diary.png?v=1" alt="A daily diary of Seldovia"></h1><p>A new photo most days — the harbor, the light, and little moments around the bay.</p></div></div>
 
   <!-- Photo Journal (daily photos from the admin). Falls back to the static gallery below. -->
   <section class="section wrap"><div id="journalApp"></div></section>
@@ -19,7 +19,7 @@
   <!-- SELDOVIA WEBCAMS — live HLS streams from WebCOOS (SECOORA/AOOS).
        photojournal.js relocates this to sit right under the Daily Photo. -->
   <section class="section wrap" id="webcamsSection">
-    <div class="section-head"><span class="eyebrow">Live Views</span><h2 class="title">Seldovia webcams</h2><p>Peek in on the docks, live right now.</p></div>
+    <div class="section-head"><span class="eyebrow">Live Views</span><h2 class="title wc-h"><img src="images/headings/seldovia-webcams.png?v=1" alt="Seldovia webcams"></h2><p>Peek in on the docks, live right now.</p></div>
     <div class="webcam-grid">
       <div class="webcam-card">
         <div class="wc-player">
@@ -41,7 +41,7 @@
 
   <!-- Built-in "around the bay" gallery — always kept below the daily journal -->
   <section class="section wrap" id="staticGallery">
-    <div class="section-head"><span class="eyebrow">Around the Bay</span><h2 class="title">More Seldovia photos</h2></div>
+    <div class="section-head"><span class="eyebrow">Around the Bay</span><h2 class="title wc-h"><img src="images/headings/more-seldovia-photos.png?v=1" alt="More Seldovia photos"></h2></div>
     <div class="masonry" id="masonry"></div>
   </section>
 </main>
