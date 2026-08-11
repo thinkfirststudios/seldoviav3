@@ -230,21 +230,17 @@ body[data-page="realestate"] h2.title,
 body[data-page="realestate"] .page-hero h1{ font-family:var(--script); font-weight:400; letter-spacing:.01em; text-wrap:balance; -webkit-text-stroke:1.4px currentColor; paint-order:stroke fill; }
 /* === END REAL ESTATE brush headings === */
 
-/* === WATERCOLOR HEADINGS (Jenny: the "watercolor brush stroke" she originally planned,
-   on ALL main headings across every page). We fill the brush letterforms with a real
-   watercolor wash from the Lovestory kit (background-clip:text). Color is controlled so it
-   stays readable: a navy wash on light backgrounds, and a soft-white wash for the home-hero
-   title that sits on the photo. Textures live at images/wc-heading*.png (regenerate from the
-   Lovestory washes to retexture). TO REVERT to the plain brush headings, delete this whole
-   block — nothing else depends on it. === */
-.hero h1, h2.title, .page-hero h1{
-  background-image:url("images/wc-heading.png?v=1");
-  background-size:cover; background-position:center; background-repeat:no-repeat;
-  -webkit-background-clip:text; background-clip:text;
-  -webkit-text-fill-color:transparent; color:transparent;
-  -webkit-text-stroke:0;
-}
-body[data-page="home"] .hero h1{ background-image:url("images/wc-heading-light.png?v=1"); }
+/* === WATERCOLOR HEADINGS (Jenny's real "watercolor brush stroke" Lovestory look). The
+   textured glyphs are extracted from the Lovestory SVG font and composited into per-heading
+   PNGs by gen-headings.py -> images/headings/. In the HTML the heading keeps its real text
+   (as the <img> alt, for SEO + screen readers) and shows the watercolor image. TO REVERT,
+   change the heading markup back to plain text and delete this block. === */
+.wc-h{ line-height:0; }
+.wc-h img{ display:block; width:auto; height:auto; max-width:100%; }
+h2.title.wc-h img{ margin:0 auto; max-width:min(100%, 640px); }        /* centered section titles */
+.page-hero h1.wc-h img{ max-width:min(100%, 620px); }
+body[data-page="home"] .hero h1.wc-h{ margin-top:.4rem; }
+body[data-page="home"] .hero h1.wc-h img{ max-width:min(96%, 880px); filter:drop-shadow(0 3px 22px rgba(0,0,0,.45)); }
 /* === END WATERCOLOR HEADINGS === */
 
 body:not([data-page="realestate"]) h2.title{font-size:clamp(2.5rem,5.6vw,3.9rem); line-height:1.1;}
