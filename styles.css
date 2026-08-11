@@ -216,17 +216,18 @@ body:not([data-page="realestate"]) .page-hero h1{font-family:var(--script); font
 /* Jenny asked for a THICKER brush stroke on the Lovestory script. It ships only one
    weight, so we faux-bolden by stroking the glyphs in their own color (paint-order keeps
    the fill crisp on top). Bump the px value for even heavier. */
-.eyebrow, .hero-badge,
+.eyebrow, .hero-badge{ -webkit-text-stroke:.7px currentColor; paint-order:stroke fill; }
+/* Main headings — heavier brush stroke (Jenny wanted them thicker). Bump/drop this one px value to taste. */
 body:not([data-page="realestate"]) .hero h1,
 body:not([data-page="realestate"]) h2.title,
-body:not([data-page="realestate"]) .page-hero h1{ -webkit-text-stroke:.7px currentColor; paint-order:stroke fill; }
+body:not([data-page="realestate"]) .page-hero h1{ -webkit-text-stroke:1.4px currentColor; paint-order:stroke fill; }
 body:not([data-page="realestate"]) .hero h1{font-size:clamp(3.2rem,8.6vw,5.9rem); line-height:1.04; margin-top:.5rem; text-shadow:0 3px 26px rgba(0,0,0,.5);}
 
 /* === REAL ESTATE brush headings (Jenny wanted the watercolor headings on every page,
    including Real Estate). TO REVERT to the clean serif look on the RE page, delete this
    whole block — nothing else depends on it. === */
 body[data-page="realestate"] h2.title,
-body[data-page="realestate"] .page-hero h1{ font-family:var(--script); font-weight:400; letter-spacing:.01em; text-wrap:balance; -webkit-text-stroke:.7px currentColor; paint-order:stroke fill; }
+body[data-page="realestate"] .page-hero h1{ font-family:var(--script); font-weight:400; letter-spacing:.01em; text-wrap:balance; -webkit-text-stroke:1.4px currentColor; paint-order:stroke fill; }
 /* === END REAL ESTATE brush headings === */
 body:not([data-page="realestate"]) h2.title{font-size:clamp(2.5rem,5.6vw,3.9rem); line-height:1.1;}
 body:not([data-page="realestate"]) .page-hero h1{font-size:clamp(2.7rem,6.2vw,4.2rem); line-height:1.1;}
