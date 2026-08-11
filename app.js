@@ -17,8 +17,9 @@ const PAGE=document.body.dataset.page||"home";
 (function(){
   const head=document.head;
   const add=(rel,href)=>{const l=document.createElement("link"); l.rel=rel; l.href=href; head.appendChild(l);};
-  if(!document.querySelector('link[rel="manifest"]')) add("manifest","manifest.json");
-  add("apple-touch-icon","images/icon-180.png");
+  if(!document.querySelector('link[rel="manifest"]')) add("manifest","manifest.json?v=2");
+  add("apple-touch-icon","images/icon-180.png?v=2");
+  add("icon","images/favicon-64.png?v=2");
   if("serviceWorker" in navigator){
     navigator.serviceWorker.getRegistrations().then(rs=>rs.forEach(r=>r.unregister())).catch(()=>{});
     if(window.caches) caches.keys().then(ks=>ks.forEach(k=>caches.delete(k))).catch(()=>{});
