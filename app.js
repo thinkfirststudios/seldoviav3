@@ -114,26 +114,59 @@ document.body.insertAdjacentHTML("beforeend", `
 </svg>`);
 
 /* ============================================================ MOCK DATA ============================================================ */
-const CATEGORIES=[{b:"Stay",s:"Lodges & cabins",key:"lodging"},{b:"Where to Eat",s:"Restaurants & cafés",key:"dining"},{b:"Charters & Tours",s:"On the water",key:"charters"},{b:"Outdoors & Trails",s:"Hikes & beaches",key:"outdoors"},{b:"Beauty & Wellness",s:"Spa & self-care",key:"wellness"},{b:"Calendar",s:"What's on",key:"events"}];
+// 8 home categories (Jenny's groupings). Order maps to images/categories/cat-0..7.jpg.
+const CATEGORIES=[{b:"About",s:"Location, history & our story",key:"about"},{b:"Travel",s:"Getting to Seldovia",key:"travel"},{b:"Stay",s:"Lodging & cabins",key:"stay"},{b:"Eat",s:"Restaurants, bar & stores",key:"eat"},{b:"Shop",s:"Shops, gifts & nursery",key:"shop"},{b:"Activities",s:"Tours, charters & trails",key:"activities"},{b:"Services",s:"Local trades & help",key:"services"},{b:"Life in Seldovia",s:"Organizations & services",key:"life"}];
 // REAL Seldovia places — sourced from the existing seldovia.com business directory.
 // No star ratings or review counts: we don't have real review data, so we don't invent it.
+// Explore directory — all Seldovia businesses, grouped into the 8 categories (key).
 const PLACES=[
- {name:"Boardwalk Hotel",cat:"Hotel",key:"lodging",phone:"(907) 234-7816",url:"https://www.SeldoviaHotel.com"},
- {name:"Sea Parrot Inn",cat:"Inn",key:"lodging",phone:"(844) 377-7829",url:"https://www.seaparrotinn.com"},
- {name:"Seldovia Suites",cat:"Lodging",key:"lodging",phone:"(907) 234-3700"},
- {name:"Between Beaches",cat:"Lodging",key:"lodging",phone:"(907) 290-6785",url:"https://betweenbeachesalaska.com"},
- {name:"Alaska Dancing Eagles Cabin Rental",cat:"Cabin Rental",key:"lodging",phone:"(907) 360-6363",url:"https://www.dancingeagles.com"},
- {name:"Jack and Aiva's Restaurant",cat:"Restaurant",key:"dining",phone:"(907) 234-7440"},
- {name:"Thyme on the Boardwalk",cat:"Restaurant",key:"dining",phone:"(907) 440-2213",url:"https://www.ThymeOnTheBoardwalk.com"},
- {name:"Linwood Bar & Grill",cat:"Bar & Grill",key:"dining"},
- {name:"Crabpot Grocery",cat:"Grocery",key:"dining",phone:"(907) 234-7435"},
- {name:"Alaska Free Diver",cat:"Charters & Tours",key:"charters",phone:"(907) 205-7963",url:"https://www.AlaskaFreeDiver.com"},
- {name:"Seldovia Fishing Adventures",cat:"Fishing Charters",key:"charters",phone:"(907) 234-7417",url:"https://www.fishhalibut.com"},
- {name:"Mako's Water Taxi",cat:"Water Taxi",key:"charters",phone:"(907) 235-9055",url:"https://www.makoswatertaxi.com"},
- {name:"Otterbahn Trail",cat:"Trail",key:"outdoors"},
- {name:"Outside Beach Park",cat:"Beach & Park",key:"outdoors"},
- {name:"Seldovia Sea Glass",cat:"Gifts",key:"outdoors"},
- {name:"Seldovia Outdoor Rentals & Gifts",cat:"Gifts & Rentals",key:"outdoors",phone:"(907) 302-0320",url:"https://seldovia.fun"}
+ // Travel
+ {name:"Alaska Marine Highway System",cat:"Ferry",key:"travel",phone:"(800) 642-0066"},
+ {name:"Smokey Bay Air",cat:"Air Taxi",key:"travel",phone:"(907) 234-8511",url:"https://www.SmokeyBayAir.com"},
+ {name:"Mako's Water Taxi",cat:"Water Taxi",key:"travel",phone:"(907) 235-9055",url:"https://www.makoswatertaxi.com"},
+ {name:"Halo Cab",cat:"Taxi",key:"travel",phone:"(907) 205-7828"},
+ {name:"Kar-a-Van Transfer",cat:"Transfer",key:"travel",phone:"(907) 234-7802"},
+ // Stay
+ {name:"Boardwalk Hotel",cat:"Hotel",key:"stay",phone:"(907) 234-7816",url:"https://www.SeldoviaHotel.com"},
+ {name:"Sea Parrot Inn",cat:"Inn",key:"stay",phone:"(844) 377-7829",url:"https://www.seaparrotinn.com"},
+ {name:"Seldovia Suites",cat:"Suites",key:"stay",phone:"(907) 234-3700"},
+ {name:"Seldovia Harbor Inn",cat:"Inn",key:"stay",phone:"(907) 202-3095"},
+ {name:"Between Beaches",cat:"Lodging",key:"stay",phone:"(907) 290-6785",url:"https://betweenbeachesalaska.com"},
+ {name:"Alaska Dancing Eagles Cabin Rental",cat:"Cabin Rental",key:"stay",phone:"(907) 360-6363",url:"https://www.dancingeagles.com"},
+ {name:"Asta Waterfront Suite",cat:"Suite",key:"stay",phone:"(907) 231-6522"},
+ {name:"Aero Tech Lodge",cat:"Lodge",key:"stay",phone:"(907) 234-6200"},
+ {name:"The Great Escape — Alaskan Vacation Rentals",cat:"Vacation Rentals",key:"stay",url:"https://www.greatescapealaska.com"},
+ // Eat
+ {name:"Jack and Aiva's Restaurant",cat:"Restaurant",key:"eat",phone:"(907) 234-7440"},
+ {name:"Thyme on the Boardwalk",cat:"Restaurant",key:"eat",phone:"(907) 440-2213",url:"https://www.ThymeOnTheBoardwalk.com"},
+ {name:"Linwood Bar & Grill",cat:"Bar & Grill",key:"eat"},
+ // Shop
+ {name:"Crabpot Grocery",cat:"Grocery",key:"shop",phone:"(907) 234-7435"},
+ {name:"Seldovia Sea Glass",cat:"Gifts & Art",key:"shop"},
+ // Activities
+ {name:"Alaska Free Diver",cat:"Diving & Tours",key:"activities",phone:"(907) 205-7963",url:"https://www.AlaskaFreeDiver.com"},
+ {name:"Seldovia Fishing Adventures",cat:"Fishing Charters",key:"activities",phone:"(907) 234-7417",url:"https://www.fishhalibut.com"},
+ {name:"Seldovia Outdoor Rentals & Gifts",cat:"Rentals & Gifts",key:"activities",phone:"(907) 302-0320",url:"https://seldovia.fun"},
+ {name:"Otterbahn Trail",cat:"Trail",key:"activities"},
+ {name:"Outside Beach Park",cat:"Beach & Park",key:"activities"},
+ // Services
+ {name:"Family First Construction",cat:"Construction",key:"services",phone:"(907) 310-6419"},
+ {name:"Fathoms Hair & Nail Salon",cat:"Salon",key:"services",phone:"(907) 726-7255"},
+ {name:"Red Mountain Marine",cat:"Marine",key:"services",phone:"(907) 399-8230"},
+ {name:"Seldovia Fuel and Lube",cat:"Fuel & Marine",key:"services",phone:"(907) 234-7622"},
+ {name:"Seldovia Property",cat:"Real Estate",key:"services",phone:"(907) 234-8000",url:"https://www.SeldoviaProperty.com"},
+ {name:"Winter Watch",cat:"Property Care",key:"services",phone:"(907) 406-0775",url:"https://www.SeldoviaWinterWatch.com"},
+ // Life in Seldovia
+ {name:"City of Seldovia",cat:"City Government",key:"life",phone:"(907) 234-7643"},
+ {name:"Seldovia Village Tribe",cat:"Tribe",key:"life",phone:"(907) 234-7898"},
+ {name:"Seldovia Native Association",cat:"Native Association",key:"life",phone:"(907) 234-7625"},
+ {name:"Seldovia Chamber of Commerce",cat:"Chamber of Commerce",key:"life",phone:"(907) 234-7612"},
+ {name:"Seldovia Health and Wellness",cat:"Health & Wellness",key:"life",phone:"(907) 435-3262"},
+ {name:"Seldovia Public Library",cat:"Library",key:"life",phone:"(907) 234-7662"},
+ {name:"Susan B English School",cat:"School",key:"life",phone:"(907) 234-7616"},
+ {name:"Seldovia Sea Otter Community Center",cat:"Community Center",key:"life",phone:"(907) 234-4110"},
+ {name:"Seldovia Police Department",cat:"Police",key:"life",phone:"(907) 234-7640"},
+ {name:"United States Post Office — Seldovia",cat:"Post Office",key:"life",phone:"(907) 234-7831"}
 ];
 // Jenny's Seldovia Blog — recovered posts (original titles, dates, images preserved). PROD: managed via admin.
 const GAZETTE=[
@@ -3961,43 +3994,43 @@ const MEMBERS=[];
 // seldovia.com WordPress site (37 approved + publicly-visible organizations).
 // Entries marked "unlisted" on the old site are intentionally NOT included.
 const DIRECTORY=[
- {name:"Aero Tech Lodge",cat:"Lodging",phone:"(907) 234-6200",spon:false},
- {name:"Alaska Dancing Eagles Cabin Rental",cat:"Lodging",phone:"(907) 360-6363",url:"https://www.dancingeagles.com",spon:false},
- {name:"Alaska Free Diver",cat:"Charters & Tours",phone:"(907) 205-7963",url:"https://www.AlaskaFreeDiver.com",spon:false},
- {name:"Alaska Marine Highway System",cat:"Transportation",phone:"(800) 642-0066",spon:false},
- {name:"Asta Waterfront Suite",cat:"Lodging",phone:"(907) 231-6522",spon:false},
- {name:"Between Beaches",cat:"Lodging",phone:"(907) 290-6785",spon:false},
- {name:"Boardwalk Hotel",cat:"Lodging",phone:"(907) 234-7816",url:"https://www.SeldoviaHotel.com",spon:false},
- {name:"City of Seldovia",cat:"Community",phone:"(907) 234-7643",spon:false},
- {name:"Crabpot Grocery",cat:"Shopping",phone:"(907) 234-7435",spon:false},
- {name:"Family First Construction",cat:"Services",phone:"(907) 310-6419",spon:false},
- {name:"Fathoms Hair & Nail Salon",cat:"Beauty & Wellness",phone:"(907) 726-7255",spon:false},
- {name:"Halo Cab",cat:"Transportation",phone:"(907) 205-7828",spon:false},
- {name:"Jack and Aiva's Restaurant",cat:"Food & Drink",phone:"(907) 234-7440",spon:false},
- {name:"Kar-a-Van Transfer",cat:"Transportation",phone:"(907) 234-7802",spon:false},
- {name:"Mako's Water Taxi",cat:"Transportation",phone:"(907) 235-9055",spon:false},
- {name:"Red Mountain Marine",cat:"Marine",phone:"(907) 399-8230",spon:false},
- {name:"Sea Parrot Inn",cat:"Lodging",phone:"(844) 377-7829",url:"https://www.seaparrotinn.com",spon:false},
- {name:"Seldovia Chamber of Commerce",cat:"Community",phone:"(907) 234-7612",spon:false},
- {name:"Seldovia Fishing Adventures",cat:"Charters & Tours",phone:"(907) 234-7417",url:"https://www.fishhalibut.com",spon:false},
- {name:"Seldovia Fuel and Lube",cat:"Marine",phone:"(907) 234-7622",spon:false},
- {name:"Seldovia Harbor Inn",cat:"Lodging",phone:"(907) 202-3095",spon:false},
- {name:"Seldovia Health and Wellness",cat:"Health",phone:"(907) 435-3262",spon:false},
- {name:"Seldovia Native Association",cat:"Community",phone:"(907) 234-7625",spon:false},
- {name:"Seldovia Outdoor Rentals & Gifts",cat:"Shopping",phone:"(907) 302-0320",spon:false},
- {name:"Seldovia Police Department",cat:"Community",phone:"(907) 234-7640",spon:false},
- {name:"Seldovia Property",cat:"Real Estate",phone:"(907) 234-8000",url:"https://www.SeldoviaProperty.com",spon:false},
- {name:"Seldovia Public Library",cat:"Community",phone:"(907) 234-7662",spon:false},
- {name:"Seldovia Sea Glass",cat:"Shopping",phone:"",spon:false},
- {name:"Seldovia Sea Otter Community Center",cat:"Community",phone:"(907) 234-4110",spon:false},
- {name:"Seldovia Suites",cat:"Lodging",phone:"(907) 234-3700",spon:false},
- {name:"Seldovia Village Tribe",cat:"Community",phone:"(907) 234-7898",spon:false},
- {name:"Smokey Bay Air",cat:"Transportation",phone:"(907) 234-8511",url:"https://www.SmokeyBayAir.com",spon:false},
- {name:"Susan B English School",cat:"Community",phone:"(907) 234-7616",spon:false},
- {name:"The Great Escape — Alaskan Vacation Rentals",cat:"Lodging",phone:"",url:"https://www.greatescapealaska.com",spon:false},
- {name:"Thyme on the Boardwalk",cat:"Food & Drink",phone:"(907) 440-2213",url:"https://www.ThymeOnTheBoardwalk.com",spon:false},
- {name:"United States Post Office — Seldovia",cat:"Community",phone:"(907) 234-7831",spon:false},
- {name:"Winter Watch",cat:"Services",phone:"(907) 406-0775",url:"https://www.SeldoviaWinterWatch.com",spon:false}
+ {name:"Aero Tech Lodge",cat:"Lodging",k:"stay",phone:"(907) 234-6200",spon:false},
+ {name:"Alaska Dancing Eagles Cabin Rental",cat:"Cabin Rental",k:"stay",phone:"(907) 360-6363",url:"https://www.dancingeagles.com",spon:false},
+ {name:"Alaska Free Diver",cat:"Diving & Tours",k:"activities",phone:"(907) 205-7963",url:"https://www.AlaskaFreeDiver.com",spon:false},
+ {name:"Alaska Marine Highway System",cat:"Ferry",k:"travel",phone:"(800) 642-0066",spon:false},
+ {name:"Asta Waterfront Suite",cat:"Lodging",k:"stay",phone:"(907) 231-6522",spon:false},
+ {name:"Between Beaches",cat:"Lodging",k:"stay",phone:"(907) 290-6785",spon:false},
+ {name:"Boardwalk Hotel",cat:"Hotel",k:"stay",phone:"(907) 234-7816",url:"https://www.SeldoviaHotel.com",spon:false},
+ {name:"City of Seldovia",cat:"City Government",k:"life",phone:"(907) 234-7643",spon:false},
+ {name:"Crabpot Grocery",cat:"Grocery",k:"shop",phone:"(907) 234-7435",spon:false},
+ {name:"Family First Construction",cat:"Construction",k:"services",phone:"(907) 310-6419",spon:false},
+ {name:"Fathoms Hair & Nail Salon",cat:"Salon",k:"services",phone:"(907) 726-7255",spon:false},
+ {name:"Halo Cab",cat:"Taxi",k:"travel",phone:"(907) 205-7828",spon:false},
+ {name:"Jack and Aiva's Restaurant",cat:"Restaurant",k:"eat",phone:"(907) 234-7440",spon:false},
+ {name:"Kar-a-Van Transfer",cat:"Transfer",k:"travel",phone:"(907) 234-7802",spon:false},
+ {name:"Mako's Water Taxi",cat:"Water Taxi",k:"travel",phone:"(907) 235-9055",spon:false},
+ {name:"Red Mountain Marine",cat:"Marine",k:"services",phone:"(907) 399-8230",spon:false},
+ {name:"Sea Parrot Inn",cat:"Inn",k:"stay",phone:"(844) 377-7829",url:"https://www.seaparrotinn.com",spon:false},
+ {name:"Seldovia Chamber of Commerce",cat:"Chamber of Commerce",k:"life",phone:"(907) 234-7612",spon:false},
+ {name:"Seldovia Fishing Adventures",cat:"Fishing Charters",k:"activities",phone:"(907) 234-7417",url:"https://www.fishhalibut.com",spon:false},
+ {name:"Seldovia Fuel and Lube",cat:"Fuel & Marine",k:"services",phone:"(907) 234-7622",spon:false},
+ {name:"Seldovia Harbor Inn",cat:"Inn",k:"stay",phone:"(907) 202-3095",spon:false},
+ {name:"Seldovia Health and Wellness",cat:"Health & Wellness",k:"life",phone:"(907) 435-3262",spon:false},
+ {name:"Seldovia Native Association",cat:"Native Association",k:"life",phone:"(907) 234-7625",spon:false},
+ {name:"Seldovia Outdoor Rentals & Gifts",cat:"Rentals & Gifts",k:"activities",phone:"(907) 302-0320",spon:false},
+ {name:"Seldovia Police Department",cat:"Police",k:"life",phone:"(907) 234-7640",spon:false},
+ {name:"Seldovia Property",cat:"Real Estate",k:"services",phone:"(907) 234-8000",url:"https://www.SeldoviaProperty.com",spon:false},
+ {name:"Seldovia Public Library",cat:"Library",k:"life",phone:"(907) 234-7662",spon:false},
+ {name:"Seldovia Sea Glass",cat:"Gifts & Art",k:"shop",phone:"",spon:false},
+ {name:"Seldovia Sea Otter Community Center",cat:"Community Center",k:"life",phone:"(907) 234-4110",spon:false},
+ {name:"Seldovia Suites",cat:"Suites",k:"stay",phone:"(907) 234-3700",spon:false},
+ {name:"Seldovia Village Tribe",cat:"Tribe",k:"life",phone:"(907) 234-7898",spon:false},
+ {name:"Smokey Bay Air",cat:"Air Taxi",k:"travel",phone:"(907) 234-8511",url:"https://www.SmokeyBayAir.com",spon:false},
+ {name:"Susan B English School",cat:"School",k:"life",phone:"(907) 234-7616",spon:false},
+ {name:"The Great Escape — Alaskan Vacation Rentals",cat:"Vacation Rentals",k:"stay",phone:"",url:"https://www.greatescapealaska.com",spon:false},
+ {name:"Thyme on the Boardwalk",cat:"Restaurant",k:"eat",phone:"(907) 440-2213",url:"https://www.ThymeOnTheBoardwalk.com",spon:false},
+ {name:"United States Post Office — Seldovia",cat:"Post Office",k:"life",phone:"(907) 234-7831",spon:false},
+ {name:"Winter Watch",cat:"Property Care",k:"services",phone:"(907) 406-0775",url:"https://www.SeldoviaWinterWatch.com",spon:false}
 ];
 // REAL community announcements — sourced from the seldovia.com community news feed.
 const NOTES=[] /* migrated to Supabase (seed-bulletin.sql) — all bulletin notices now managed + editable in the admin, rendered by bulletin-public.js */;
@@ -4014,27 +4047,36 @@ const SPONSORS=[{name:"Boardwalk Hotel",cat:"Lodging",c:"#663015"},{name:"Jack a
 /* ============================================================ RENDER (each guarded — runs only if its container exists on this page) ============================================================ */
 function stars(r){const full=Math.round(r); return "★★★★★".slice(0,full)+"☆☆☆☆☆".slice(0,5-full);}
 // self-hosted category photos by place key
-const PLACE_IMG={lodging:"images/categories/cat-0.jpg?v=2",dining:"images/categories/cat-1.jpg?v=2",charters:"images/categories/cat-2.jpg?v=2",outdoors:"images/categories/cat-3.jpg?v=2",wellness:"images/categories/cat-4.jpg?v=2",events:"images/categories/cat-5.jpg?v=2"};
+const PLACE_IMG={about:"images/categories/cat-0.jpg?v=2",travel:"images/categories/cat-1.jpg?v=2",stay:"images/categories/cat-2.jpg?v=2",eat:"images/categories/cat-3.jpg?v=2",shop:"images/categories/cat-4.jpg?v=2",activities:"images/categories/cat-5.jpg?v=2",services:"images/categories/cat-6.jpg?v=2",life:"images/categories/cat-7.jpg?v=2"};
 
 // hero quick-cats
-if($("#quickcats")) $("#quickcats").innerHTML=[["Restaurants","dining"],["Lodging","lodging"],["Charters","charters"],["Trails","outdoors"],["Events","events"]].map(([label,key])=>
+if($("#quickcats")) $("#quickcats").innerHTML=[["Eat","eat"],["Stay","stay"],["Activities","activities"],["Travel","travel"],["Shop","shop"]].map(([label,key])=>
   `<a class="quickcat" href="explore.html?cat=${key}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/></svg>${esc(label)}</a>`).join("");
 
 // category tiles
 if($("#catGrid")) $("#catGrid").innerHTML=CATEGORIES.map((c,i)=>{
   const img=`images/categories/cat-${i}.jpg?v=2`;
-  const href=c.key==="events"?"calendar.html":`explore.html?cat=${c.key}`;
+  const href=`explore.html?cat=${c.key}`;
   return `<a class="cat-tile" href="${href}" aria-label="${esc(c.b)}"><img class="cat-photo" src="${img}" alt="" loading="lazy" width="600" height="600"><span class="cap"><b>${esc(c.b)}</b><span>${esc(c.s)}</span></span></a>`;}).join("");
 
 // feature media
 if($("#featureMedia")) $("#featureMedia").innerHTML=`<img class="feature-photo" src="images/photos/220627_SeldoviaHarbor_Melody.jpg" alt="Seldovia Harbor at first light" loading="lazy" width="1200" height="1200">`;
 
 // places (directory highlights) with tabs — reads ?cat= from URL for deep-links
-const PLACE_TABS=[["all","All"],["dining","Where to Eat"],["lodging","Lodging"],["charters","Charters"],["outdoors","Outdoors"]];
+const PLACE_TABS=[["all","All"],["travel","Travel"],["stay","Stay"],["eat","Eat"],["shop","Shop"],["activities","Activities"],["services","Services"],["life","Life"]];
 let placeTab=(new URLSearchParams(location.search).get("cat"))||"all";
-if(!PLACE_TABS.some(([k])=>k===placeTab)) placeTab="all";
+if(!PLACE_TABS.some(([k])=>k===placeTab) && placeTab!=="about") placeTab="all";
 function renderPlaces(){
   if(!$("#placeGrid")) return;
+  if(placeTab==="about"){
+    $("#placeGrid").innerHTML=`<div class="about-card">
+      <h3>About Seldovia</h3>
+      <p>Seldovia is a small town on the south shore of Kachemak Bay, across the water from Homer, Alaska. There is no road in — you arrive by ferry, small plane, or water taxi — which is a big part of what keeps it quiet, close-knit, and genuinely off the beaten path.</p>
+      <p>The name comes from the Russian "Seldevoy," meaning "herring bay," a nod to the fishing heritage that still runs deep here. Wander the historic boardwalk, watch the boats in the harbor, hike the Otterbahn, and settle into the slower rhythm of one of Alaska's best kept secrets.</p>
+      <p style="margin-top:1rem"><a class="btn btn-primary" href="explore.html">Browse the directory →</a></p>
+    </div>`;
+    return;
+  }
   const rows=PLACES.filter(p=>placeTab==="all"||p.key===placeTab);
   $("#placeGrid").innerHTML=rows.map(p=>`
     <a class="place" href="${p.url?esc(p.url):'phone-book.html'}"${p.url?' target="_blank" rel="noopener"':''}>
@@ -4172,8 +4214,8 @@ if($("#dirList")){
   const PEOPLE=MEMBERS.map(m=>({...m,type:"person"}));
   const BIZ=DIRECTORY.map(d=>({...d,type:"biz"}));
   const ALL=[...PEOPLE,...BIZ];
-  const bizCats=[...new Set(DIRECTORY.map(d=>d.cat))];
-  const CHIPS=["All","People","Businesses",...bizCats];
+  const CATL=[["travel","Travel"],["stay","Stay"],["eat","Eat"],["shop","Shop"],["activities","Activities"],["services","Services"],["life","Life in Seldovia"]];
+  const CHIPS=["All","People","Businesses",...CATL.map(c=>c[1])];
   let dirCat="All", dirQuery="";
   $("#dirChips").innerHTML=CHIPS.map((c,i)=>`<button class="chip" aria-pressed="${i===0}" data-cat="${esc(c)}">${esc(c)}</button>`).join("");
 
@@ -4192,10 +4234,11 @@ if($("#dirList")){
       <div class="d-main"><div class="d-cat">${esc(d.cat)}</div><h4>${esc(d.name)}</h4><div class="d-contact">${bits.join(" · ")}</div>${site}</div>
       ${d.spon?'<span class="spon-flag">★ Sponsor</span>':''}</div>`;};
 
-  const renderDir=()=>{const q=dirQuery.trim().toLowerCase();
+  const renderDir=()=>{const q=dirQuery.trim().toLowerCase(); const qd=q.replace(/\D/g,"");
+    const catKey=(CATL.find(c=>c[1]===dirCat)||[])[0];
     const rows=ALL.filter(r=>{
-      const inCat = dirCat==="All" || (dirCat==="People"&&r.type==="person") || (dirCat==="Businesses"&&r.type==="biz") || (r.type==="biz"&&r.cat===dirCat);
-      const inQ = !q || r.name.toLowerCase().includes(q) || (r.cat||"").toLowerCase().includes(q) || (r.addr||"").toLowerCase().includes(q);
+      const inCat = dirCat==="All" || (dirCat==="People"&&r.type==="person") || (dirCat==="Businesses"&&r.type==="biz") || (r.type==="biz"&&r.k===catKey);
+      const inQ = !q || r.name.toLowerCase().includes(q) || (r.cat||"").toLowerCase().includes(q) || (r.addr||"").toLowerCase().includes(q) || (qd.length>=3 && (r.phone||"").replace(/\D/g,"").includes(qd));
       return inCat && inQ;
     });
     const empty = (!q && (dirCat==="People"||(dirCat==="All"&&!PEOPLE.length)) && !PEOPLE.length)
@@ -4262,7 +4305,7 @@ document.addEventListener("click",e=>{const b=e.target.closest(".add-cal"); if(b
 const INDEX=[
   ...PLACES.map(p=>({type:"Place",title:p.name,desc:p.phone?`${p.cat} · ${p.phone}`:p.cat,href:"explore.html",kw:p.cat+" "+p.key})),
   ...LISTINGS.map(l=>({type:"Real Estate",title:l.name,desc:l.cat,href:"real-estate.html",kw:l.cat})),
-  ...CATEGORIES.map(c=>({type:"Category",title:c.b,desc:c.s,href:"explore.html?cat="+c.key,kw:c.key+" "+({lodging:"stay sleep hotel inn cabin lodge rental bnb bed",dining:"food eat restaurant cafe coffee meal dine breakfast lunch dinner drinks",charters:"fishing charter tour boat halibut salmon kayak wildlife water taxi",outdoors:"hike trail beach outdoors nature kayak walk park",wellness:"spa wellness massage salon beauty hair self care",events:"event calendar festival music market meeting concert"}[c.key]||"")})),
+  ...CATEGORIES.map(c=>({type:"Category",title:c.b,desc:c.s,href:"explore.html?cat="+c.key,kw:c.key+" "+({about:"about history location story seldovia town kachemak bay herring",travel:"travel ferry air taxi water taxi plane amhs smokey bay mako halibut cove get to seldovia transportation",stay:"stay sleep lodging hotel inn cabin lodge rental bnb bed suites vacation",eat:"food eat restaurant cafe bar grill grocery store meal dine breakfast lunch dinner drinks",shop:"shop store gift gifts nursery plants boutique sea glass grocery",activities:"activities tour charter fishing diving kayak trail hike beach rentals things to do outdoors",services:"services construction salon marine fuel real estate property care trades help",life:"life community organization tribe city church school library clinic emergency police post office chamber"}[c.key]||"")})),
   ...GAZETTE.map(g=>({type:"Jenny's Blog",title:g.title,desc:g.excerpt,href:"gazette.html",kw:g.cat})),
   ...EVENTS.map(e=>({type:"Event",title:e.title,desc:`${fmtDayLabel(e.d)} · ${e.where}`,href:"calendar.html",kw:e.cat+" "+e.where})),
   ...DIRECTORY.map(d=>({type:"Directory",title:d.name,desc:`${d.cat} · ${d.phone}`,href:"phone-book.html",kw:d.cat})),

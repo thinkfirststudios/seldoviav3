@@ -248,6 +248,9 @@ h2.title.wc-h.wc-left img{ margin:0; max-height:clamp(40px, 6vw, 72px); } /* lef
 body[data-page="home"] .hero h1.wc-h{ margin-top:.4rem; }
 body[data-page="home"] .hero h1.wc-h img{ max-width:min(98%, 1040px); filter:drop-shadow(0 3px 22px rgba(0,0,0,.45)); }
 /* === END WATERCOLOR HEADINGS === */
+.about-card{background:var(--sheet); border:1px solid var(--line); border-radius:var(--radius); padding:clamp(1.4rem,3vw,2.4rem); box-shadow:var(--shadow); max-width:760px;}
+.about-card h3{font-family:var(--serif); font-size:clamp(1.5rem,3vw,2rem); color:var(--heading); margin-bottom:.7rem;}
+.about-card p{color:var(--text-soft); line-height:1.65; margin-top:.7rem;}
 
 body:not([data-page="realestate"]) h2.title{font-size:clamp(2.5rem,5.6vw,3.9rem); line-height:1.1;}
 body:not([data-page="realestate"]) .page-hero h1{font-size:clamp(2.7rem,6.2vw,4.2rem); line-height:1.1;}
