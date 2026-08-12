@@ -258,9 +258,11 @@
     try{
       const row={ title:$("#b-title").value.trim(), category:readCat("b-cat","Notice"),
         posted_by:$("#b-by").value.trim()||null, starts_on:$("#b-date").value||null,
-        link:$("#b-link").value.trim()||null, event_url:$("#b-event").value.trim()||null,
-        body:$("#b-body").value.trim()||null, published:true };
+        link:$("#b-link").value.trim()||null, body:$("#b-body").value.trim()||null, published:true };
       if(!row.title) throw new Error("Please add a title.");
+      // image_url + event_url only added when provided, so posting still works before
+      // seed-bulletin-cols.sql adds those columns (avoids "column does not exist").
+      const ev=$("#b-event").value.trim(); if(ev) row.event_url=ev;
       const file=$("#b-img").files[0];
       if(file){ msg.textContent="Uploading photo…"; row.image_url=await uploadImage("blog", file, "bulletin"); }
       if(editBul){ const {error}=await db.from("bulletin").update(row).eq("id",editBul); if(error) throw error; }
