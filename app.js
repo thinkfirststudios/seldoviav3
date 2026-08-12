@@ -4080,7 +4080,9 @@ function renderPlaces(){
   const rows=PLACES.filter(p=>placeTab==="all"||p.key===placeTab);
   $("#placeGrid").innerHTML=rows.map(p=>`
     <a class="place" href="${p.url?esc(p.url):'phone-book.html'}"${p.url?' target="_blank" rel="noopener"':''}>
-      <div class="place-media"><img class="place-photo" src="${PLACE_IMG[p.key]||'images/categories/cat-5.jpg'}" alt="" loading="lazy" width="600" height="400"></div>
+      <!-- C/D: business photo. Placeholder until Qwynny's square B&W watercolor images land;
+           set p.img to the real image (and p.imgColor for the sponsor color version). -->
+      <div class="place-media"><img class="place-photo" src="${p.img||'images/placeholder-business.png'}" alt="" loading="lazy" width="600" height="600"></div>
       <div class="place-body">
         <div class="rating"><span class="cat">${esc(p.cat)}</span></div>
         <h4>${esc(p.name)}</h4>
