@@ -139,7 +139,10 @@ body:not([data-page="realestate"]) .section-head::before{content:""; position:ab
   background:
     radial-gradient(40% 44% at 26% 46%, color-mix(in srgb,var(--sky) 46%, transparent) 0 58%, transparent 74%),
     radial-gradient(38% 40% at 76% 52%, color-mix(in srgb,var(--sage) 44%, transparent) 0 58%, transparent 74%);}
-.eyebrow{display:inline-flex; align-items:center; gap:.6rem; font-family:var(--script); font-size:1.65rem; font-weight:400; letter-spacing:.01em; text-transform:none; color:var(--accent); margin-bottom:.3rem; line-height:1.25;}
+/* Eyebrow (the little note above each title). Jenny asked for the Lovestory SERIF in
+   all-caps here so the small words stay legible (the brush script was too hard to read
+   at this size). */
+.eyebrow{display:inline-flex; align-items:center; gap:.7rem; font-family:"Lovestory Serif", Georgia, serif; font-size:1.04rem; font-weight:400; letter-spacing:.16em; text-transform:uppercase; color:var(--accent); margin-bottom:.5rem; line-height:1.3;}
 .eyebrow::before,.eyebrow::after{content:""; width:24px; height:2px; background:color-mix(in srgb,var(--accent) 45%, transparent); border-radius:2px;}
 h2.title{font-size:clamp(1.9rem,4vw,2.9rem);}
 .section-head p{color:var(--text-soft); margin-top:.7rem; font-size:1.02rem;}
@@ -216,7 +219,7 @@ body:not([data-page="realestate"]) .page-hero h1{font-family:var(--script); font
 /* Jenny asked for a THICKER brush stroke on the Lovestory script. It ships only one
    weight, so we faux-bolden by stroking the glyphs in their own color (paint-order keeps
    the fill crisp on top). Bump the px value for even heavier. */
-.eyebrow, .hero-badge{ -webkit-text-stroke:.7px currentColor; paint-order:stroke fill; }
+.hero-badge{ -webkit-text-stroke:.7px currentColor; paint-order:stroke fill; }
 /* Main headings — heavier brush stroke (Jenny wanted them thicker). Bump/drop this one px value to taste. */
 body:not([data-page="realestate"]) .hero h1,
 body:not([data-page="realestate"]) h2.title,
@@ -240,11 +243,11 @@ body[data-page="realestate"] .page-hero h1{ font-family:var(--script); font-weig
    would make short titles balloon and long ones shrink). max-width:100% keeps long
    ones on-screen on mobile. */
 .wc-h img{ display:block; width:auto; height:auto; max-width:100%; }
-h2.title.wc-h img{ margin:0 auto; max-height:clamp(40px, 7vw, 78px); }   /* centered section titles */
-h2.title.wc-h.wc-left img{ margin:0; max-height:clamp(34px, 5vw, 60px); }/* left-aligned (sponsors) */
-.page-hero h1.wc-h img{ margin:0 auto; max-height:clamp(48px, 8.5vw, 94px); }
+h2.title.wc-h img{ margin:0 auto; max-height:clamp(48px, 8.2vw, 92px); }   /* centered section titles (Jenny: a bit bigger) */
+h2.title.wc-h.wc-left img{ margin:0; max-height:clamp(40px, 6vw, 72px); } /* left-aligned (sponsors) */
+.page-hero h1.wc-h img{ margin:0 auto; max-height:clamp(56px, 10vw, 112px); }
 body[data-page="home"] .hero h1.wc-h{ margin-top:.4rem; }
-body[data-page="home"] .hero h1.wc-h img{ max-width:min(96%, 880px); filter:drop-shadow(0 3px 22px rgba(0,0,0,.45)); }
+body[data-page="home"] .hero h1.wc-h img{ max-width:min(98%, 1040px); filter:drop-shadow(0 3px 22px rgba(0,0,0,.45)); }
 /* === END WATERCOLOR HEADINGS === */
 
 body:not([data-page="realestate"]) h2.title{font-size:clamp(2.5rem,5.6vw,3.9rem); line-height:1.1;}
