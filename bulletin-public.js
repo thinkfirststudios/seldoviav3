@@ -1,7 +1,9 @@
-/* Public bulletin board — pulls community notices LIVE from Seldovia.com's WordPress
-   (Bulletin Board 1247 + Community 1140 + Events & Community 2788 + In the News... 560 +
-   News 2247), newest first, each panel linking to the original post. A "Load more" button
-   pages through the full archive. Falls back to Supabase notices if WordPress is unreachable. */
+/* Public bulletin board.
+   Seldovia's OWN notices (posted by Jenny/Qwynny in the admin -> Supabase `bulletin`)
+   show FIRST, each with an optional photo, a linked calendar event, and its own
+   shareable permalink (bulletin.html?post=<id>). After those, the LIVE community feed
+   from Seldovia.com's WordPress fills in, newest first, with "Load more" paging.
+   Everything is laid out as a horizontal, swipeable row (Qwynny's request). */
 (function(){
   const board=document.querySelector("#board");
   if(!board) return;
@@ -11,60 +13,112 @@
   const strip=h=>decode(String(h).replace(/<[^>]+>/g," ")).replace(/\s+/g," ").trim();
   const fmtISO=d=>{ const dt=new Date(d); return isNaN(dt)?"":`${MON[dt.getMonth()]} ${dt.getDate()}, ${dt.getFullYear()}`; };
   const fmtDB=d=>{ if(!d) return ""; const [y,m,day]=d.split("-"); return `${MON[+m-1]} ${+day}, ${y}`; };
+  const clip=(s,n)=>{ s=String(s||""); return s.length>n ? s.slice(0,n).replace(/\s+\S*$/,"")+"…" : s; };
 
-  const BASE="https://www.seldovia.com/wp-json/wp/v2/posts?categories=1247,1140,2788,560,2247&per_page=30&orderby=date&order=desc&_fields=id,date,title,excerpt,link";
-  let page=0, totalPages=1, loading=false;
+  /* ---- horizontal, swipeable layout (arrows + scroll-snap) ---- */
+  board.classList.add("board-row");
+  const carousel=document.createElement("div"); carousel.className="board-carousel";
+  board.parentNode.insertBefore(carousel, board);
+  const mkArrow=(dir,label)=>{ const b=document.createElement("button"); b.type="button"; b.className="board-arrow board-"+dir;
+    b.setAttribute("aria-label",label);
+    b.innerHTML=`<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="${dir==="prev"?"M15 18l-6-6 6-6":"M9 18l6-6-6-6"}"/></svg>`;
+    return b; };
+  const prev=mkArrow("prev","Previous notices"), next=mkArrow("next","More notices");
+  carousel.appendChild(prev); carousel.appendChild(board); carousel.appendChild(next);
+  const scrollBy=dir=>{ const card=board.querySelector(".note"); const w=card?card.offsetWidth+18:340; board.scrollBy({left:dir*w*1.5,behavior:"smooth"}); };
+  prev.addEventListener("click",()=>scrollBy(-1)); next.addEventListener("click",()=>scrollBy(1));
+  const syncArrows=()=>{ const max=board.scrollWidth-board.clientWidth-4;
+    prev.hidden=board.scrollLeft<=4; next.hidden=board.scrollLeft>=max || max<=0; };
+  board.addEventListener("scroll",syncArrows,{passive:true}); window.addEventListener("resize",syncArrows);
 
-  function card(p){
+  /* ---- cards ---- */
+  const ownPosts=[]; // keep Supabase rows for the ?post= detail view
+  function ownCard(n){
+    const permalink=`bulletin.html?post=${encodeURIComponent(n.id)}`;
+    const ev=n.event_url?`<a class="n-event" href="${esc(n.event_url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">📅 View event</a>`:"";
+    const img=n.image_url?`<div class="n-media"><img src="${esc(n.image_url)}" alt="" loading="lazy"></div>`:"";
+    return `<article class="note note-own" tabindex="0" role="link" data-post="${esc(n.id)}" data-permalink="${esc(permalink)}">
+      ${img}
+      <div class="n-body">
+        <span class="n-cat">${esc(n.category||"Notice")}</span>
+        <h4>${esc(n.title)}</h4>
+        ${n.body?`<p>${esc(clip(n.body,180))}</p>`:""}
+        ${ev}
+        <div class="n-foot"><span>${esc(n.posted_by||"Seldovia.com")}</span><span>${n.starts_on?esc(fmtDB(n.starts_on)):esc(fmtISO(n.created_at))}</span></div>
+        <span class="n-open">Open →</span>
+      </div></article>`;
+  }
+  function wpCard(p){
     const title=strip(p.title && p.title.rendered || "");
-    let ex=strip(p.excerpt && p.excerpt.rendered || "");
-    if(ex.length>210) ex=ex.slice(0,210).replace(/\s+\S*$/,"")+"…";
+    const ex=clip(strip(p.excerpt && p.excerpt.rendered || ""),200);
     return `<a class="note note-link" href="${esc(p.link)}" target="_blank" rel="noopener">
-      <span class="n-cat">Bulletin</span>
-      <h4>${esc(title)}</h4>
-      ${ex?`<p>${esc(ex)}</p>`:""}
-      <div class="n-foot"><span>Seldovia.com</span><span>${esc(fmtISO(p.date))}</span></div>
-      <span class="n-open">Read more →</span></a>`;
+      <div class="n-body">
+        <span class="n-cat">Community</span>
+        <h4>${esc(title)}</h4>
+        ${ex?`<p>${esc(ex)}</p>`:""}
+        <div class="n-foot"><span>Seldovia.com</span><span>${esc(fmtISO(p.date))}</span></div>
+        <span class="n-open">Read more →</span></div></a>`;
   }
 
-  // "Load more" button lives just under the board
+  /* ---- "Load more" (pages the WordPress archive) ---- */
   const moreWrap=document.createElement("div");
-  moreWrap.className="center-link"; moreWrap.style.marginTop="1.6rem"; moreWrap.style.display="none";
-  const btn=document.createElement("button");
-  btn.type="button"; btn.className="btn btn-ghost"; btn.textContent="Load more";
-  moreWrap.appendChild(btn);
-  board.insertAdjacentElement("afterend", moreWrap);
+  moreWrap.className="center-link"; moreWrap.style.marginTop="1.4rem"; moreWrap.style.display="none";
+  const btn=document.createElement("button"); btn.type="button"; btn.className="btn btn-ghost"; btn.textContent="Load more";
+  moreWrap.appendChild(btn); carousel.insertAdjacentElement("afterend", moreWrap);
 
-  function loadMore(){
-    if(loading || page>=totalPages) return;
-    loading=true; page++; btn.textContent="Loading…";
-    fetch(BASE+"&page="+page)
+  const WP="https://www.seldovia.com/wp-json/wp/v2/posts?categories=1247,1140,2788,560,2247&per_page=20&orderby=date&order=desc&_fields=id,date,title,excerpt,link";
+  let page=0, totalPages=1, loadingWP=false;
+  function loadWP(){
+    if(loadingWP || page>=totalPages) return;
+    loadingWP=true; page++; btn.textContent="Loading…";
+    fetch(WP+"&page="+page)
       .then(r=>{ totalPages=parseInt(r.headers.get("x-wp-totalpages")||totalPages,10)||1; if(!r.ok) throw 0; return r.json(); })
-      .then(posts=>{
-        if(Array.isArray(posts) && posts.length) board.insertAdjacentHTML("beforeend", posts.map(card).join(""));
-        loading=false; btn.textContent="Load more";
-        moreWrap.style.display = page>=totalPages ? "none" : "";
-      })
-      .catch(()=>{ loading=false; page--; if(page===0) fallbackSupabase(); else { btn.textContent="Load more"; } });
+      .then(posts=>{ if(Array.isArray(posts)&&posts.length) board.insertAdjacentHTML("beforeend", posts.map(wpCard).join(""));
+        loadingWP=false; btn.textContent="Load more"; moreWrap.style.display=page>=totalPages?"none":""; syncArrows(); })
+      .catch(()=>{ loadingWP=false; page--; btn.textContent="Load more"; });
   }
-  btn.addEventListener("click", loadMore);
+  btn.addEventListener("click", loadWP);
 
-  function fallbackSupabase(){
-    if(!window.db) return;
+  /* ---- detail view for a single own-post permalink ---- */
+  function openDetail(n){
+    if(!n) return;
+    const ov=document.createElement("div"); ov.className="bul-modal";
+    const ev=n.event_url?`<a class="btn btn-ghost" href="${esc(n.event_url)}" target="_blank" rel="noopener">📅 View calendar event</a>`:"";
+    const link=n.link?`<a class="btn btn-ghost" href="${esc(n.link)}" target="_blank" rel="noopener">Open flyer ↗</a>`:"";
+    ov.innerHTML=`<div class="bul-modal-card" role="dialog" aria-modal="true">
+      <button class="bul-close" aria-label="Close">×</button>
+      ${n.image_url?`<img class="bul-modal-img" src="${esc(n.image_url)}" alt="">`:""}
+      <span class="n-cat">${esc(n.category||"Notice")}</span>
+      <h3>${esc(n.title)}</h3>
+      <div class="bul-meta">${esc(n.posted_by||"Seldovia.com")}${n.starts_on?" · "+esc(fmtDB(n.starts_on)):""}</div>
+      ${n.body?`<p class="bul-body">${esc(n.body)}</p>`:""}
+      <div class="bul-actions">${ev}${link}<button class="btn btn-ghost bul-share" type="button">🔗 Copy link</button></div>
+    </div>`;
+    document.body.appendChild(ov); document.body.style.overflow="hidden";
+    const close=()=>{ ov.remove(); document.body.style.overflow=""; history.replaceState(null,"",location.pathname); };
+    ov.addEventListener("click",e=>{ if(e.target===ov||e.target.closest(".bul-close")) close(); });
+    document.addEventListener("keydown",function onEsc(e){ if(e.key==="Escape"){ close(); document.removeEventListener("keydown",onEsc);} });
+    ov.querySelector(".bul-share").addEventListener("click",()=>{
+      const url=location.origin+location.pathname+"?post="+encodeURIComponent(n.id);
+      navigator.clipboard&&navigator.clipboard.writeText(url); const b=ov.querySelector(".bul-share"); b.textContent="✓ Copied"; setTimeout(()=>b.textContent="🔗 Copy link",1500);
+    });
+  }
+  board.addEventListener("click",e=>{ const c=e.target.closest(".note-own"); if(!c) return;
+    const n=ownPosts.find(x=>String(x.id)===c.dataset.post); if(n){ history.replaceState(null,"","?post="+encodeURIComponent(n.id)); openDetail(n);} });
+  board.addEventListener("keydown",e=>{ if(e.key!=="Enter") return; const c=e.target.closest(".note-own"); if(!c) return;
+    const n=ownPosts.find(x=>String(x.id)===c.dataset.post); if(n) openDetail(n); });
+
+  /* ---- load: own posts (Supabase) first, then the WP community feed ---- */
+  function afterOwn(){
+    loadWP();
+    const wanted=new URLSearchParams(location.search).get("post");
+    if(wanted){ const n=ownPosts.find(x=>String(x.id)===wanted); if(n) openDetail(n); }
+  }
+  if(window.db){
     db.from("bulletin").select("*").eq("published",true).order("created_at",{ascending:false})
       .then(({data,error})=>{
-        if(error || !data || !data.length) return;
-        board.innerHTML = data.map(n=>{
-          const inner=`<span class="n-cat">${esc(n.category||"Notice")}</span>
-            <h4>${esc(n.title)}</h4>
-            ${n.body?`<p>${esc(n.body)}</p>`:""}
-            <div class="n-foot"><span>${esc(n.posted_by||"")}</span><span>${n.starts_on?esc(fmtDB(n.starts_on)):""}</span></div>`;
-          return n.link
-            ? `<a class="note note-link" href="${esc(n.link)}" target="_blank" rel="noopener">${inner}<span class="n-open">Open flyer →</span></a>`
-            : `<article class="note">${inner}</article>`;
-        }).join("");
-      }).catch(()=>{});
-  }
-
-  loadMore(); // first page
+        if(!error && data && data.length){ ownPosts.push(...data); board.innerHTML=data.map(ownCard).join(""); }
+        afterOwn();
+      }).catch(afterOwn);
+  } else { afterOwn(); }
 })();

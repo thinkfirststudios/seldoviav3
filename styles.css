@@ -747,6 +747,31 @@ body[data-page="realestate"] .today-bar{background:var(--accent-ink);}
 .note-link:hover{transform:translateY(-2px); box-shadow:var(--shadow-lg); border-color:var(--accent);}
 .n-open{display:inline-block; margin-top:.7rem; font-weight:800; font-size:.82rem; color:var(--accent-ink);}
 
+/* ---- Horizontal, swipeable bulletin row (Qwynny's request) ---- */
+.board-carousel{position:relative;}
+.board.board-row{columns:auto; display:flex; gap:18px; overflow-x:auto; scroll-snap-type:x proximity; padding:.4rem .2rem 1.1rem; -webkit-overflow-scrolling:touch;}
+.board.board-row .note{flex:0 0 300px; width:300px; max-width:82vw; margin:0; padding:0; overflow:hidden; scroll-snap-align:start; display:flex; flex-direction:column; text-decoration:none; color:inherit; transition:transform .12s, box-shadow .15s;}
+.board.board-row .note .n-body{padding:1.05rem 1.15rem 1.15rem;}
+.board.board-row .note.note-own{cursor:pointer;}
+.board.board-row .note:hover{transform:translateY(-2px); box-shadow:var(--shadow-lg);}
+.n-media{margin:0; background:var(--surface-2);}
+.n-media img{display:block; width:100%; aspect-ratio:16/10; object-fit:cover;}
+.n-event{display:inline-block; margin-top:.5rem; font-weight:700; font-size:.86rem; color:var(--accent-ink); text-decoration:none;}
+.n-event:hover{text-decoration:underline;}
+.board-arrow{position:absolute; top:44%; transform:translateY(-50%); width:44px; height:44px; border-radius:50%; display:grid; place-items:center; background:var(--sheet); color:var(--accent-ink); border:1px solid var(--line); box-shadow:var(--shadow-lg); cursor:pointer; z-index:4;}
+.board-prev{left:-8px;} .board-next{right:-8px;}
+.board-arrow[hidden]{display:none;}
+@media (max-width:560px){ .board-arrow{display:none;} }
+/* Bulletin single-post detail modal (shareable permalink) */
+.bul-modal{position:fixed; inset:0; z-index:100; background:rgba(20,15,10,.55); display:grid; place-items:center; padding:1rem; overflow:auto;}
+.bul-modal-card{background:var(--sheet); border-radius:var(--radius); max-width:560px; width:100%; padding:1.4rem 1.5rem 1.6rem; position:relative; box-shadow:var(--shadow-lg); max-height:90vh; overflow:auto;}
+.bul-modal-img{width:100%; max-height:340px; object-fit:cover; border-radius:12px; margin-bottom:1rem;}
+.bul-close{position:absolute; top:.6rem; right:.7rem; width:34px; height:34px; border-radius:50%; border:1px solid var(--line); background:var(--sheet); font-size:1.35rem; line-height:1; cursor:pointer; color:var(--text-soft);}
+.bul-modal-card h3{font-family:var(--serif); font-size:1.5rem; color:var(--heading); margin:.3rem 0 .2rem;}
+.bul-meta{font-size:.85rem; color:var(--muted); margin-bottom:.8rem;}
+.bul-body{color:var(--text); line-height:1.6; white-space:pre-wrap;}
+.bul-actions{display:flex; gap:.5rem; flex-wrap:wrap; margin-top:1.2rem;}
+
 /* ============ LISTINGS — date, photo gallery, video (Supabase listings) ============ */
 .listing-date{font-size:.8rem; font-weight:700; color:var(--muted); margin-top:.35rem;}
 .listing-gallery{display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:12px; margin-top:.4rem;}

@@ -226,9 +226,11 @@
         </div>
         <div class="row-2" style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem">
           <div class="field"><label for="b-date">Date <span class="opt">(optional)</span></label><input id="b-date" type="date"></div>
-          <div class="field"><label for="b-link">Flyer / link <span class="opt">(optional)</span></label><input id="b-link" type="url" placeholder="https://…"></div>
+          <div class="field"><label for="b-event">Calendar event link <span class="opt">(optional)</span></label><input id="b-event" type="url" placeholder="Paste a calendar event link"></div>
         </div>
+        <div class="field"><label for="b-link">Flyer / website link <span class="opt">(optional)</span></label><input id="b-link" type="url" placeholder="https://…"></div>
         <div class="field"><label for="b-body">Details</label><textarea id="b-body" rows="4" placeholder="What's happening…"></textarea></div>
+        <div class="field"><label for="b-img">Photo <span class="opt">(optional)</span></label><input id="b-img" type="file" accept="image/*"><span class="hint" id="b-imghint"></span></div>
         <div style="display:flex;gap:.5rem;align-items:center;flex-wrap:wrap">
           <button class="btn btn-primary" type="submit" id="b-btn">Post notice</button>
           <button class="btn btn-ghost" type="button" id="b-cancel" hidden>Cancel edit</button>
@@ -242,10 +244,11 @@
     $("#b-cancel").addEventListener("click",resetBul);
     loadBulletin();
   }
-  function resetBul(){ editBul=null; $("#bulForm").reset(); fillCat("b-cat","",BUL_CATS);
+  function resetBul(){ editBul=null; $("#bulForm").reset(); fillCat("b-cat","",BUL_CATS); $("#b-imghint").textContent="";
     $("#b-head").textContent="Post a bulletin notice"; $("#b-btn").textContent="Post notice"; $("#b-cancel").hidden=true; }
   function fillBul(n){ editBul=n.id; $("#b-title").value=n.title||""; fillCat("b-cat",n.category,BUL_CATS); $("#b-by").value=n.posted_by||"";
-    $("#b-date").value=n.starts_on||""; $("#b-link").value=n.link||""; $("#b-body").value=n.body||"";
+    $("#b-date").value=n.starts_on||""; $("#b-link").value=n.link||""; $("#b-event").value=n.event_url||""; $("#b-body").value=n.body||"";
+    $("#b-imghint").textContent=n.image_url?"Leave empty to keep the current photo.":"";
     $("#b-head").textContent="Edit notice"; $("#b-btn").textContent="Save changes"; $("#b-cancel").hidden=false;
     $("#bulForm").scrollIntoView({behavior:"smooth",block:"start"}); }
   async function onPostBulletin(e){
@@ -255,8 +258,11 @@
     try{
       const row={ title:$("#b-title").value.trim(), category:readCat("b-cat","Notice"),
         posted_by:$("#b-by").value.trim()||null, starts_on:$("#b-date").value||null,
-        link:$("#b-link").value.trim()||null, body:$("#b-body").value.trim()||null, published:true };
+        link:$("#b-link").value.trim()||null, event_url:$("#b-event").value.trim()||null,
+        body:$("#b-body").value.trim()||null, published:true };
       if(!row.title) throw new Error("Please add a title.");
+      const file=$("#b-img").files[0];
+      if(file){ msg.textContent="Uploading photo…"; row.image_url=await uploadImage("blog", file, "bulletin"); }
       if(editBul){ const {error}=await db.from("bulletin").update(row).eq("id",editBul); if(error) throw error; }
       else { const {error}=await db.from("bulletin").insert(row); if(error) throw error; }
       msg.style.color="var(--open)"; msg.textContent=editBul?"Saved!":"Posted! It's live on the bulletin board.";
@@ -270,8 +276,8 @@
     if(error){ list.innerHTML=`<p style="color:var(--accent-ink)">${esc(error.message)}</p>`; return; }
     if(!data.length){ list.innerHTML='<p style="color:var(--text-soft)">No notices yet.</p>'; return; }
     list.innerHTML=data.map(n=>`<div class="dir-item" style="align-items:center">
-      <div class="d-ico">📌</div>
-      <div class="d-main"><div class="d-cat">${esc(n.category||'')}${n.starts_on?" · "+esc(fmtDate(n.starts_on)):""}${n.link?' · 🔗 link':''}</div><h4>${esc(n.title)}</h4></div>
+      ${n.image_url?`<img class="d-photo" src="${esc(n.image_url)}" alt="" style="border-radius:8px">`:'<div class="d-ico">📌</div>'}
+      <div class="d-main"><div class="d-cat">${esc(n.category||'')}${n.starts_on?" · "+esc(fmtDate(n.starts_on)):""}${n.event_url?' · 📅 event':''}${n.link?' · 🔗 link':''}</div><h4>${esc(n.title)}</h4></div>
       <div class="admin-row-btns"><button class="btn btn-ghost" data-edit="${n.id}" type="button">Edit</button><button class="btn btn-ghost" data-del="${n.id}" type="button">Delete</button></div></div>`).join("");
     bindEdit(list,data,fillBul); bindDelete(list,"bulletin",loadBulletin);
   }
