@@ -4351,7 +4351,7 @@ function runSearch(raw){const q=raw.toLowerCase().trim().split(/\s+/).filter(Boo
 function hl(text,raw){const q=raw.trim().split(/\s+/).filter(Boolean).map(t=>t.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")); if(!q.length)return esc(text); return esc(text).replace(new RegExp("("+q.join("|")+")","ig"),"<mark>$1</mark>");}
 // The hero results box is position:fixed so it escapes the hero's overflow:clip (was hidden
 // on mobile / clipped on desktop). Anchor it under the search card each time it shows.
-function placeBox(box){ if(!box||!box.classList.contains("hero-results"))return; const card=box.previousElementSibling; if(!card)return; const r=card.getBoundingClientRect(); box.style.left=r.left+"px"; box.style.top=(r.bottom+8)+"px"; box.style.width=r.width+"px"; }
+function placeBox(box){ if(!box||!box.classList.contains("hero-results"))return; const card=document.querySelector(".hero-search-card"); if(!card)return; const r=card.getBoundingClientRect(); box.style.left=r.left+"px"; box.style.top=(r.bottom+8)+"px"; box.style.width=r.width+"px"; }
 function renderResults(box,raw){const res=runSearch(raw);
   if(!raw.trim()){box.classList.remove("show"); box.innerHTML=""; return;}
   if(!res.length){box.innerHTML=`<div class="r-empty">No results for "${esc(raw)}". Try "ferry," "cabin," or "market."</div>`;}
@@ -4368,6 +4368,9 @@ function wireSearch(inputId,boxId){const input=document.getElementById(inputId),
   document.addEventListener("click",e=>{if(!input.contains(e.target)&&!box.contains(e.target))box.classList.remove("show");});
   ["scroll","resize"].forEach(ev=>window.addEventListener(ev,()=>{if(box.classList.contains("show"))placeBox(box);},{passive:true}));}
 wireSearch("navSearch","navResults");
+// Move the hero results dropdown to <body> so it escapes the hero's overflow:clip AND the
+// .hero-search transform (a position:fixed box is trapped by any transformed ancestor).
+(function(){ const hb=document.getElementById("heroResults"); if(hb && hb.parentElement!==document.body) document.body.appendChild(hb); })();
 wireSearch("heroSearch","heroResults");
 if($("#heroSearchBtn")) $("#heroSearchBtn").addEventListener("click",()=>{const v=$("#heroSearch").value; if(v)renderResults($("#heroResults"),v); else $("#heroSearch").focus();});
 
