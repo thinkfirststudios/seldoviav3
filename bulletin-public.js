@@ -115,9 +115,14 @@
     if(wanted){ const n=ownPosts.find(x=>String(x.id)===wanted); if(n) openDetail(n); }
   }
   if(window.db){
-    db.from("bulletin").select("*").eq("published",true).order("created_at",{ascending:false})
+    db.from("bulletin").select("*").eq("published",true)
       .then(({data,error})=>{
-        if(!error && data && data.length){ ownPosts.push(...data); board.innerHTML=data.map(ownCard).join(""); }
+        if(!error && data && data.length){
+          // Order by the DATE shown on the card (starts_on, falling back to created_at), newest first.
+          const key=p=>String(p.starts_on || (p.created_at||"").slice(0,10) || "");
+          data.sort((a,b)=>key(b).localeCompare(key(a)));
+          ownPosts.push(...data); board.innerHTML=data.map(ownCard).join("");
+        }
         afterOwn();
       }).catch(afterOwn);
   } else { afterOwn(); }
