@@ -398,12 +398,19 @@
     bindDelete(list,"messages",loadMessages);
   }
 
-  /* ---------------- HOME EXTRA (which "of the day" shows on the home page) ---------------- */
+  /* ---------------- HOME EXTRA (which "of the day" shows + editable text) ---------------- */
   function renderSettingsTab(){
+    const D=window.EXTRA_DEFAULTS||{facts:"",words:"",fundays:""};
+    // modes whose text is editable -> settings key + label/hint for the textarea
+    const EDIT={
+      alaska_fact:{key:"facts",  label:"Alaska facts (one per line)",                   hint:"A different one shows each day."},
+      word:       {key:"words",  label:"Words (one per line, \"Word — meaning\")",       hint:"A different one shows each day."},
+      funday:     {key:"fundays",label:"Fun days (one per line, \"MM-DD Name\")",         hint:"Shows on the matching date. Keep it light — no political holidays."},
+    };
     $("#tab-settings").innerHTML=`
-      <form class="info-block" id="setForm" style="max-width:560px">
+      <form class="info-block" id="setForm" style="max-width:640px">
         <h4>Home page "of the day" widget</h4>
-        <p style="color:var(--text-soft);font-size:.92rem;margin:.3rem 0 1rem">Pick what shows in the little card under the top bar on the home page. Change it whenever you like.</p>
+        <p style="color:var(--text-soft);font-size:.92rem;margin:.3rem 0 1rem">Pick what shows in the little card under the top bar on the home page, and edit the wording for the ones that have text.</p>
         <div class="field"><label for="s-extra">Show</label>
           <select id="s-extra">
             <option value="alaska_fact">🧭 Alaska fact of the day</option>
@@ -412,16 +419,33 @@
             <option value="funday">🎉 Fun day of the day</option>
             <option value="none">— Nothing (hide it) —</option>
           </select></div>
+        <div id="extraEditor"></div>
         <button class="btn btn-primary" type="submit" id="s-btn">Save</button>
         <p id="s-msg" class="form-note"></p>
       </form>`;
-    db.from("settings").select("value").eq("key","home_extra").maybeSingle()
-      .then(({data})=>{ if(data&&data.value) $("#s-extra").value=data.value; }).catch(()=>{});
+    let cfg={};
+    const renderEditor=mode=>{
+      if(mode==="marine"){ $("#extraEditor").innerHTML=`<p class="hint" style="display:block;margin:.2rem 0 1rem">🌊 Marine weather is live from the National Weather Service — there's nothing to edit here.</p>`; return; }
+      const ed=EDIT[mode];
+      if(!ed){ $("#extraEditor").innerHTML=""; return; }
+      const val=(cfg[ed.key]!=null && cfg[ed.key]!=="") ? cfg[ed.key] : (D[ed.key]||"");
+      $("#extraEditor").innerHTML=`<div class="field"><label for="s-content">${esc(ed.label)}</label>
+        <textarea id="s-content" rows="10" style="font-size:.9rem;line-height:1.5">${esc(val)}</textarea>
+        <span class="hint">${esc(ed.hint)}</span></div>`;
+    };
+    db.from("settings").select("key,value")
+      .then(({data})=>{ if(data) data.forEach(r=>cfg[r.key]=r.value);
+        if(cfg.home_extra) $("#s-extra").value=cfg.home_extra; renderEditor($("#s-extra").value); })
+      .catch(()=>renderEditor($("#s-extra").value));
+    $("#s-extra").addEventListener("change",()=>renderEditor($("#s-extra").value));
     $("#setForm").addEventListener("submit",async e=>{ e.preventDefault();
       const msg=$("#s-msg"), btn=$("#s-btn"); btn.disabled=true; msg.style.color="var(--text-soft)"; msg.textContent="Saving…";
-      const {error}=await db.from("settings").upsert({key:"home_extra",value:$("#s-extra").value},{onConflict:"key"});
+      const mode=$("#s-extra").value, ed=EDIT[mode], ta=$("#s-content");
+      const rows=[{key:"home_extra",value:mode}];
+      if(ed && ta) rows.push({key:ed.key, value:ta.value});
+      const {error}=await db.from("settings").upsert(rows,{onConflict:"key"});
       if(error){ msg.style.color="var(--accent-ink)"; msg.textContent="Error: "+error.message+" (run seed-settings.sql once)"; }
-      else { msg.style.color="var(--open)"; msg.textContent="Saved! It's live on the home page."; }
+      else { msg.style.color="var(--open)"; msg.textContent="Saved! It's live on the home page."; cfg.home_extra=mode; if(ed&&ta) cfg[ed.key]=ta.value; }
       btn.disabled=false;
     });
   }
