@@ -4102,17 +4102,21 @@ function renderPlaces(){
     return;
   }
   const rows=PLACES.filter(p=>placeTab==="all"||p.key===placeTab);
-  $("#placeGrid").innerHTML=rows.map(p=>`
-    <a class="place" href="${p.url?esc(p.url):'phone-book.html'}"${p.url?' target="_blank" rel="noopener"':''}>
-      <!-- C/D: business photo. Placeholder until Qwynny's square B&W watercolor images land;
-           set p.img to the real image (and p.imgColor for the sponsor color version). -->
-      <div class="place-media"><img class="place-photo" src="${p.img||'images/placeholder-business.png'}" alt="" loading="lazy" width="600" height="600"></div>
-      <div class="place-body">
-        <div class="rating"><span class="cat">${esc(p.cat)}</span></div>
-        <h4>${esc(p.name)}</h4>
-        <div class="place-loc"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.3-7-11a7 7 0 0 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> Seldovia, AK${p.phone?` · ${esc(p.phone)}`:""}</div>
-      </div>
-    </a>`).join("");
+  const pin=`<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.3-7-11a7 7 0 0 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>`;
+  // Placeholder photo until Qwynny's square B&W watercolor images land (set p.img; p.imgColor for the sponsor color version).
+  const placeCard=p=>{
+    const media=`<div class="place-media"><img class="place-photo" src="${p.img||'images/placeholder-business.png'}" alt="" loading="lazy" width="600" height="600"></div>`;
+    const body=`<div class="place-body"><div class="rating"><span class="cat">${esc(p.cat)}</span></div><h4>${esc(p.name)}</h4>
+        <div class="place-loc">${pin} Seldovia, AK</div>`;
+    if(p.url){ // whole card links to the business website
+      return `<a class="place" href="${esc(p.url)}" target="_blank" rel="noopener">${media}${body}
+        <div class="place-contact">${p.phone?esc(p.phone)+" · ":""}<span class="place-web">Visit website ↗</span></div></div></a>`;
+    }
+    // no website → not a link; show a tappable phone (or nothing for trails/beaches)
+    const contact=p.phone?`<div class="place-contact"><a href="tel:${p.phone.replace(/[^\d]/g,"")}">📞 ${esc(p.phone)}</a></div>`:"";
+    return `<div class="place place-static">${media}${body}${contact}</div></div>`;
+  };
+  $("#placeGrid").innerHTML=rows.map(placeCard).join("");
 }
 if($("#placeTabs")){
   $("#placeTabs").innerHTML=PLACE_TABS.map(([k,l])=>`<button class="tab" data-key="${k}" aria-pressed="${k===placeTab}">${esc(l)}</button>`).join("");
