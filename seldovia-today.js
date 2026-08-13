@@ -22,19 +22,40 @@
   };
   const to12=hm=>{ const [H,Mi]=hm.split(":").map(Number); const ap=H>=12?"PM":"AM"; return `${((H+11)%12)+1}:${String(Mi).padStart(2,"0")} ${ap}`; };
   const sailingToday=()=>FERRY.days.includes(akParts().wd);
+  const fmtAK=dt=>new Intl.DateTimeFormat("en-US",{timeZone:"America/Anchorage",hour:"numeric",minute:"2-digit",hour12:true}).format(dt);
+
+  /* Sunrise/sunset (local astronomical calc — no API). Returns Date objects (UTC instants). */
+  function sunTimes(date,lat,lng){
+    const rad=Math.PI/180, dayMs=86400000, J1970=2440588, J2000=2451545;
+    const toJulian=d=>d.valueOf()/dayMs-0.5+J1970, fromJulian=j=>new Date((j+0.5-J1970)*dayMs);
+    const toDays=d=>toJulian(d)-J2000, e=rad*23.4397;
+    const Man=d=>rad*(357.5291+0.98560028*d);
+    const Lec=m=>m+rad*(1.9148*Math.sin(m)+0.02*Math.sin(2*m)+0.0003*Math.sin(3*m))+rad*102.9372+Math.PI;
+    const dec=l=>Math.asin(Math.sin(e)*Math.sin(l));
+    const cyc=(d,lw)=>Math.round(d-0.0009-lw/(2*Math.PI));
+    const appr=(Ht,lw,n)=>0.0009+(Ht+lw)/(2*Math.PI)+n;
+    const stJ=(ds,m,l)=>J2000+ds+0.0053*Math.sin(m)-0.0069*Math.sin(2*l);
+    const ha=(h,phi,d)=>Math.acos((Math.sin(h)-Math.sin(phi)*Math.sin(d))/(Math.cos(phi)*Math.cos(d)));
+    const lw=rad*-lng, phi=rad*lat, d=toDays(date), n=cyc(d,lw), ds=appr(0,lw,n);
+    const m=Man(ds), l=Lec(m), de=dec(l), Jnoon=stJ(ds,m,l), w=ha(rad*-0.833,phi,de);
+    if(isNaN(w)) return null;
+    const Jset=stJ(appr(w,lw,n),m,l), Jrise=Jnoon-(Jset-Jnoon);
+    return {sunrise:fromJulian(Jrise), sunset:fromJulian(Jset)};
+  }
 
   /* ---------- The bar ---------- */
   if(el){
     const item=(id,icon,label,value)=>`<div class="today-item" id="${id}"><span class="ti-ico">${icon}</span><span class="ti-body"><span class="ti-label">${label}</span><span class="ti-value">${value}</span></span></div>`;
-    const ferryVal = sailingToday()
-      ? `${FERRY.seldovia.join(" · ")} <a href="${FERRY_URL}" target="_blank" rel="noopener">book →</a>`
-      : `Runs ${FERRY.note} · <a href="${FERRY_URL}" target="_blank" rel="noopener">schedule →</a>`;
+    // Daylight (sunrise/sunset + hours) — replaces the ferry slot (Jenny: keep transport modes even).
+    let dayVal="…";
+    const st=sunTimes(new Date(), LAT, LON);
+    if(st){ const mins=Math.max(0,Math.round((st.sunset-st.sunrise)/60000)); dayVal=`↑ ${fmtAK(st.sunrise)} · ↓ ${fmtAK(st.sunset)} <span class="ti-sub">${Math.floor(mins/60)}h ${mins%60}m</span>`; }
     el.innerHTML=`<div class="today-inner">
       <span class="today-title">Seldovia&nbsp;Today</span>
       ${item("ti-time","🕐","Alaska time","…")}
       ${item("ti-temp","🌡️","Right now","…")}
       ${item("ti-tide","🌊","Tides today","…")}
-      ${item("ti-ferry","⛴️","Ferry",ferryVal)}
+      ${item("ti-sun","🌅","Daylight",dayVal)}
     </div>`;
 
     // Live clock
@@ -52,22 +73,19 @@
         box.querySelector(".ti-value").innerHTML=`${t}°F <span class="ti-sub">${desc}</span>`;
       }).catch(()=>{ const b=el.querySelector("#ti-temp"); if(b) b.remove(); });
 
-    // Tides — next high AND next low
+    // Tides — ALL of today's highs & lows (Jenny: both highs and both lows)
     const ak=akParts();
     const ymd=`${ak.y}${String(ak.m).padStart(2,"0")}${String(ak.d).padStart(2,"0")}`;
+    const todayStr=`${ak.y}-${String(ak.m).padStart(2,"0")}-${String(ak.d).padStart(2,"0")}`;
     fetch(`https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=predictions&application=seldovia_com&datum=MLLW&station=${STATION}&time_zone=lst_ldt&units=english&interval=hilo&format=json&begin_date=${ymd}&range=48`)
       .then(r=>r.json()).then(j=>{
-        const preds=(j.predictions||[]).map(p=>{ const [d,tm]=p.t.split(" "); const [Y,M,D]=d.split("-").map(Number); const [h,mi]=tm.split(":").map(Number);
-          return {abs:(Y*366+M*31+D)*1440+h*60+mi, type:p.type, v:Math.round(+p.v*10)/10, hm:tm}; });
-        const nowAbs=(ak.y*366+ak.m*31+ak.d)*1440 + ak.hh*60+ak.mm;
-        const hi=preds.find(p=>p.abs>nowAbs && p.type==="H");
-        const lo=preds.find(p=>p.abs>nowAbs && p.type==="L");
+        const today=(j.predictions||[]).filter(p=>String(p.t).startsWith(todayStr));
         const box=el.querySelector("#ti-tide");
-        if(!hi && !lo){ box.remove(); return; }
-        const parts=[];
-        if(hi) parts.push(`<b>▲ ${to12(hi.hm)}</b> <span class="ti-sub">${hi.v} ft</span>`);
-        if(lo) parts.push(`<b>▼ ${to12(lo.hm)}</b> <span class="ti-sub">${lo.v} ft</span>`);
-        box.querySelector(".ti-value").innerHTML=parts.join(" · ");
+        if(!today.length){ box.remove(); return; }
+        box.querySelector(".ti-value").innerHTML=today.map(p=>{
+          const tm=p.t.split(" ")[1]; const ar=p.type==="H"?"▲":"▼";
+          return `<b>${ar} ${to12(tm)}</b> <span class="ti-sub">${Math.round(+p.v*10)/10} ft</span>`;
+        }).join(" · ");
       }).catch(()=>{ const b=el.querySelector("#ti-tide"); if(b) b.remove(); });
   }
 

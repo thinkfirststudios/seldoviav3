@@ -25,13 +25,20 @@
       // Only feature a photo in "Seldovia Today" if it was actually posted TODAY. Otherwise
       // the hero is skipped and every photo simply lives in the gallery below (nothing stale up top).
       const featured=(newest.taken_on===akToday)?newest:null;
-      const curMonth=+akToday.split("-")[1]-1; // 0-11, Alaska time
-      const seasonal=data.filter(p=>(+p.taken_on.split("-")[1]-1)===curMonth && (!featured||p.id!==featured.id));
+      const [curY,curMo]=akToday.split("-").map(Number); const curMonth=curMo-1; // 0-11, Alaska time
+      const curKey=`${akToday.split("-")[0]}-${akToday.split("-")[1]}`; // e.g. 2026-08
+      const notFeat=p=>!featured||p.id!==featured.id;
 
-      // group everything by YYYY-MM, newest month first (the newest photo still lives in its month here)
+      // group everything by YYYY-MM
       const groups={};
       data.forEach(p=>{ const [y,m]=p.taken_on.split("-"); (groups[`${y}-${m}`]=groups[`${y}-${m}`]||[]).push(p); });
-      const keys=Object.keys(groups).sort().reverse();
+
+      // THIS month, current year (e.g. August 2026) — its own section at the very top
+      const curMonthPhotos=(groups[curKey]||[]).filter(notFeat);
+      // Same month in PRIOR years only (e.g. August 2025 and earlier) — a retrospective BELOW the current month
+      const seasonal=data.filter(p=>{ const [y,m]=p.taken_on.split("-").map(Number); return (m-1)===curMonth && y<curY && notFeat(p); });
+      // Remaining months, newest first, EXCLUDING the current month in any year (all shown above)
+      const keys=Object.keys(groups).sort().reverse().filter(k=>(+k.split("-")[1]-1)!==curMonth);
 
       let html = featured ? `
         <section class="today-feature">
@@ -43,6 +50,13 @@
           </div>
         </section>` : "";
 
+      // Current month (newest 2026 photos) FIRST
+      if(curMonthPhotos.length){
+        html+=`<section class="journal-section">
+          <div class="journal-month"><h3>${MON[curMonth]} ${curY}</h3></div>
+          <div class="journal-grid">${curMonthPhotos.map(fig).join("")}</div></section>`;
+      }
+      // Then the same month in prior years (2025 and earlier)
       if(seasonal.length){
         html+=`<section class="journal-section">
           <div class="section-head"><span class="eyebrow">This month over the years</span>
@@ -50,7 +64,7 @@
           <p>The same season, remembered across the years.</p></div>
           <div class="journal-grid">${seasonal.map(fig).join("")}</div></section>`;
       }
-
+      // Then every other month, newest first
       html+=keys.map(k=>{
         const [y,m]=k.split("-");
         return `<section class="journal-section">
