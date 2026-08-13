@@ -418,7 +418,7 @@
             <option value="alaska_fact">🧭 Alaska fact of the day</option>
             <option value="marine">🌊 Marine weather (wind &amp; seas)</option>
             <option value="word">📖 Word of the day</option>
-            <option value="funday">🎉 Fun day of the day</option>
+            <option value="funday">🎉 Fun day</option>
             <option value="none">— Nothing (hide it) —</option>
           </select></div>
         <div id="extraEditor"></div>
