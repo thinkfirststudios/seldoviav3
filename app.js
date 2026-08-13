@@ -166,7 +166,21 @@ const PLACES=[
  {name:"Susan B English School",cat:"School",key:"life",phone:"(907) 234-7616"},
  {name:"Seldovia Sea Otter Community Center",cat:"Community Center",key:"life",phone:"(907) 234-4110"},
  {name:"Seldovia Police Department",cat:"Police",key:"life",phone:"(907) 234-7640"},
- {name:"United States Post Office — Seldovia",cat:"Post Office",key:"life",phone:"(907) 234-7831"}
+ {name:"United States Post Office — Seldovia",cat:"Post Office",key:"life",phone:"(907) 234-7831"},
+ // More real Seldovia businesses (from the current seldovia.com merchants list + Jenny's email)
+ {name:"Rainbow Tours",cat:"Tours & Passenger Ferry",key:"travel",phone:"(907) 235-7272",url:"https://www.rainbowtours.net"},
+ {name:"True North Air",cat:"Air Taxi",key:"travel",phone:"(907) 952-2726"},
+ {name:"Seldovia Bay Ferry",cat:"Passenger Ferry",key:"travel",url:"https://seldoviabayferry.com"},
+ {name:"Perley's Rides",cat:"Taxi & Truck Rental",key:"travel",phone:"(907) 299-8223"},
+ {name:"Seldovia Nature Tours",cat:"Nature Tours",key:"activities",url:"https://www.seldovianaturetours.com"},
+ {name:"Rocky Ridge Trail",cat:"Trail",key:"activities"},
+ {name:"Tutka Bay Lagoon Trail",cat:"Trail",key:"activities"},
+ {name:"Graduation Peak Trail",cat:"Trail",key:"activities"},
+ {name:"Seldovia Salmonberry",cat:"Local Art & Gifts",key:"shop",phone:"(907) 632-9314"},
+ {name:"SVT Museum & Gift Shop",cat:"Museum & Gifts",key:"shop",phone:"(907) 234-7898",url:"https://svt.org"},
+ {name:"Seldovia Liquor Store",cat:"Beverages & Gifts",key:"shop",phone:"(907) 202-1938"},
+ {name:"Schooner Beach Studio",cat:"Cut-Paper Art",key:"shop",phone:"(541) 520-7331"},
+ {name:"Make it Reality",cat:"3D Printing & Laser",key:"services",phone:"(414) 367-9570"}
 ];
 // Jenny's Seldovia Blog — recovered posts (original titles, dates, images preserved). PROD: managed via admin.
 const GAZETTE=[
@@ -4030,7 +4044,17 @@ const DIRECTORY=[
  {name:"The Great Escape — Alaskan Vacation Rentals",cat:"Vacation Rentals",k:"stay",phone:"",url:"https://www.greatescapealaska.com",spon:false},
  {name:"Thyme on the Boardwalk",cat:"Restaurant",k:"eat",phone:"(907) 440-2213",url:"https://www.ThymeOnTheBoardwalk.com",spon:false},
  {name:"United States Post Office — Seldovia",cat:"Post Office",k:"life",phone:"(907) 234-7831",spon:false},
- {name:"Winter Watch",cat:"Property Care",k:"services",phone:"(907) 406-0775",url:"https://www.SeldoviaWinterWatch.com",spon:false}
+ {name:"Winter Watch",cat:"Property Care",k:"services",phone:"(907) 406-0775",url:"https://www.SeldoviaWinterWatch.com",spon:false},
+ {name:"Rainbow Tours",cat:"Tours & Passenger Ferry",k:"travel",phone:"(907) 235-7272",url:"https://www.rainbowtours.net",spon:false},
+ {name:"True North Air",cat:"Air Taxi",k:"travel",phone:"(907) 952-2726",spon:false},
+ {name:"Seldovia Bay Ferry",cat:"Passenger Ferry",k:"travel",url:"https://seldoviabayferry.com",spon:false},
+ {name:"Perley's Rides",cat:"Taxi & Truck Rental",k:"travel",phone:"(907) 299-8223",spon:false},
+ {name:"Seldovia Nature Tours",cat:"Nature Tours",k:"activities",url:"https://www.seldovianaturetours.com",spon:false},
+ {name:"Seldovia Salmonberry",cat:"Local Art & Gifts",k:"shop",phone:"(907) 632-9314",spon:false},
+ {name:"SVT Museum & Gift Shop",cat:"Museum & Gifts",k:"shop",phone:"(907) 234-7898",url:"https://svt.org",spon:false},
+ {name:"Seldovia Liquor Store",cat:"Beverages & Gifts",k:"shop",phone:"(907) 202-1938",spon:false},
+ {name:"Schooner Beach Studio",cat:"Cut-Paper Art",k:"shop",phone:"(541) 520-7331",spon:false},
+ {name:"Make it Reality",cat:"3D Printing & Laser",k:"services",phone:"(414) 367-9570",spon:false}
 ];
 // REAL community announcements — sourced from the seldovia.com community news feed.
 const NOTES=[] /* migrated to Supabase (seed-bulletin.sql) — all bulletin notices now managed + editable in the admin, rendered by bulletin-public.js */;
@@ -4214,7 +4238,7 @@ if($("#celebrations")){
 // directory / phone book — community members + businesses, privacy-first
 if($("#dirList")){
   const PEOPLE=MEMBERS.map(m=>({...m,type:"person"}));
-  const BIZ=DIRECTORY.map(d=>({...d,type:"biz"}));
+  const BIZ=DIRECTORY.map(d=>({...d,type:"biz"})).sort((a,b)=>a.name.localeCompare(b.name));
   const ALL=[...PEOPLE,...BIZ];
   const CATL=[["travel","Travel"],["stay","Stay"],["eat","Eat"],["shop","Shop"],["activities","Activities"],["services","Services"],["life","Life in Seldovia"]];
   const CHIPS=["All","People","Businesses",...CATL.map(c=>c[1])];
