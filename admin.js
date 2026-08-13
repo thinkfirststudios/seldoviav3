@@ -403,10 +403,12 @@
     const D=window.EXTRA_DEFAULTS||{facts:"",words:"",fundays:""};
     // modes whose text is editable -> settings key + label/hint for the textarea
     const EDIT={
-      alaska_fact:{key:"facts",  label:"Alaska facts (one per line)",                   hint:"A different one shows each day."},
-      word:       {key:"words",  label:"Words (one per line, \"Word — meaning\")",       hint:"A different one shows each day."},
-      funday:     {key:"fundays",label:"Fun days (one per line, \"MM-DD Name\")",         hint:"Shows on the matching date. Keep it light — no political holidays."},
+      alaska_fact:{key:"facts",  label:"Alaska facts",  ph:"Add a new Alaska fact…",                       hint:"A different one shows each day."},
+      word:       {key:"words",  label:"Words",         ph:"Word — meaning",                               hint:"Type each as \"Word — meaning\". A different one shows each day."},
+      funday:     {key:"fundays",label:"Fun days",      ph:"MM-DD Name  (e.g. 07-11 National Blueberry Muffin Day)", hint:"Shows on the matching date. Keep it light — no political holidays."},
     };
+    const esc2=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+    const rowHtml=t=>`<div class="ex-row"><input class="ex-item" type="text" value="${esc2(t)}"><button type="button" class="ex-rm" aria-label="Remove" title="Remove">×</button></div>`;
     $("#tab-settings").innerHTML=`
       <form class="info-block" id="setForm" style="max-width:640px">
         <h4>Home page "of the day" widget</h4>
@@ -425,13 +427,21 @@
       </form>`;
     let cfg={};
     const renderEditor=mode=>{
-      if(mode==="marine"){ $("#extraEditor").innerHTML=`<p class="hint" style="display:block;margin:.2rem 0 1rem">🌊 Marine weather is live from the National Weather Service — there's nothing to edit here.</p>`; return; }
+      const box2=$("#extraEditor");
+      if(mode==="marine"){ box2.innerHTML=`<p class="hint" style="display:block;margin:.2rem 0 1rem">🌊 Marine weather is live from the National Weather Service — there's nothing to edit here.</p>`; return; }
       const ed=EDIT[mode];
-      if(!ed){ $("#extraEditor").innerHTML=""; return; }
+      if(!ed){ box2.innerHTML=""; return; }
       const val=(cfg[ed.key]!=null && cfg[ed.key]!=="") ? cfg[ed.key] : (D[ed.key]||"");
-      $("#extraEditor").innerHTML=`<div class="field"><label for="s-content">${esc(ed.label)}</label>
-        <textarea id="s-content" rows="10" style="font-size:.9rem;line-height:1.5">${esc(val)}</textarea>
+      const items=String(val).split("\n").map(x=>x.trim()).filter(Boolean);
+      box2.innerHTML=`<div class="field"><label>${esc(ed.label)}</label>
+        <div id="ex-list" class="ex-list">${items.map(rowHtml).join("")}</div>
+        <div class="ex-add"><input id="ex-new" type="text" placeholder="${esc(ed.ph)}"><button type="button" class="btn btn-ghost" id="ex-addbtn">+ Add</button></div>
         <span class="hint">${esc(ed.hint)}</span></div>`;
+      const list=$("#ex-list"), inp=$("#ex-new");
+      list.addEventListener("click",e=>{ const b=e.target.closest(".ex-rm"); if(b) b.closest(".ex-row").remove(); });
+      const add=()=>{ const v=inp.value.trim(); if(!v) return; list.insertAdjacentHTML("beforeend", rowHtml(v)); inp.value=""; inp.focus(); list.scrollTop=list.scrollHeight; };
+      $("#ex-addbtn").addEventListener("click",add);
+      inp.addEventListener("keydown",e=>{ if(e.key==="Enter"){ e.preventDefault(); add(); } });
     };
     db.from("settings").select("key,value")
       .then(({data})=>{ if(data) data.forEach(r=>cfg[r.key]=r.value);
@@ -440,12 +450,12 @@
     $("#s-extra").addEventListener("change",()=>renderEditor($("#s-extra").value));
     $("#setForm").addEventListener("submit",async e=>{ e.preventDefault();
       const msg=$("#s-msg"), btn=$("#s-btn"); btn.disabled=true; msg.style.color="var(--text-soft)"; msg.textContent="Saving…";
-      const mode=$("#s-extra").value, ed=EDIT[mode], ta=$("#s-content");
-      const rows=[{key:"home_extra",value:mode}];
-      if(ed && ta) rows.push({key:ed.key, value:ta.value});
+      const mode=$("#s-extra").value, ed=EDIT[mode];
+      const rows=[{key:"home_extra",value:mode}]; let content=null;
+      if(ed){ content=[...document.querySelectorAll("#ex-list .ex-item")].map(i=>i.value.trim()).filter(Boolean).join("\n"); rows.push({key:ed.key, value:content}); }
       const {error}=await db.from("settings").upsert(rows,{onConflict:"key"});
       if(error){ msg.style.color="var(--accent-ink)"; msg.textContent="Error: "+error.message+" (run seed-settings.sql once)"; }
-      else { msg.style.color="var(--open)"; msg.textContent="Saved! It's live on the home page."; cfg.home_extra=mode; if(ed&&ta) cfg[ed.key]=ta.value; }
+      else { msg.style.color="var(--open)"; msg.textContent="Saved! It's live on the home page."; cfg.home_extra=mode; if(ed) cfg[ed.key]=content; }
       btn.disabled=false;
     });
   }

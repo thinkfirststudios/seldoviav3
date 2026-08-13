@@ -248,6 +248,15 @@ h2.title.wc-h.wc-left img{ margin:0; max-height:clamp(40px, 6vw, 72px); } /* lef
 body[data-page="home"] .hero h1.wc-h{ margin-top:.4rem; }
 body[data-page="home"] .hero h1.wc-h img{ max-width:min(98%, 1040px); filter:drop-shadow(0 3px 22px rgba(0,0,0,.45)); }
 /* === END WATERCOLOR HEADINGS === */
+/* Admin: list editor for the "of the day" content (add/remove rows) */
+.ex-list{display:flex; flex-direction:column; gap:.4rem; margin-bottom:.55rem; max-height:360px; overflow:auto; padding:.15rem;}
+.ex-row{display:flex; gap:.45rem; align-items:center;}
+.ex-row .ex-item{flex:1; min-width:0;}
+.ex-rm{flex:0 0 auto; width:34px; height:34px; border-radius:9px; border:1px solid var(--line); background:var(--sheet); color:var(--accent-ink); cursor:pointer; font-size:1.15rem; line-height:1;}
+.ex-rm:hover{background:var(--surface-2);}
+.ex-add{display:flex; gap:.5rem; align-items:center;}
+.ex-add input{flex:1; min-width:0;}
+
 /* Home "of the day" widget card */
 .extra-card{display:flex; gap:1rem; align-items:flex-start; background:var(--sheet); border:1px solid var(--line); border-radius:var(--radius); padding:1.1rem 1.3rem; box-shadow:var(--shadow);}
 .extra-ico{font-size:1.7rem; line-height:1; flex:0 0 auto; margin-top:.1rem;}
