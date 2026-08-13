@@ -75,6 +75,7 @@
     {key:"bulletin", label:"📌 Bulletin",    render:renderBulletinTab},
     {key:"listing",  label:"🏡 Listings",    render:renderListingTab},
     {key:"messages", label:"📨 Messages",    render:renderMessagesTab},
+    {key:"settings", label:"⚙️ Home Extra",  render:renderSettingsTab},
   ];
   function renderApp(){
     app.innerHTML=`
@@ -395,6 +396,34 @@
         <button class="btn btn-ghost" data-del="${m.id}" type="button" style="min-height:36px;padding:.35rem .75rem">Delete</button>
       </div></div>`).join("");
     bindDelete(list,"messages",loadMessages);
+  }
+
+  /* ---------------- HOME EXTRA (which "of the day" shows on the home page) ---------------- */
+  function renderSettingsTab(){
+    $("#tab-settings").innerHTML=`
+      <form class="info-block" id="setForm" style="max-width:560px">
+        <h4>Home page "of the day" widget</h4>
+        <p style="color:var(--text-soft);font-size:.92rem;margin:.3rem 0 1rem">Pick what shows in the little card under the top bar on the home page. Change it whenever you like.</p>
+        <div class="field"><label for="s-extra">Show</label>
+          <select id="s-extra">
+            <option value="alaska_fact">🧭 Alaska fact of the day</option>
+            <option value="marine">🌊 Marine weather (wind &amp; seas)</option>
+            <option value="word">📖 Word of the day</option>
+            <option value="funday">🎉 Fun day of the day</option>
+            <option value="none">— Nothing (hide it) —</option>
+          </select></div>
+        <button class="btn btn-primary" type="submit" id="s-btn">Save</button>
+        <p id="s-msg" class="form-note"></p>
+      </form>`;
+    db.from("settings").select("value").eq("key","home_extra").maybeSingle()
+      .then(({data})=>{ if(data&&data.value) $("#s-extra").value=data.value; }).catch(()=>{});
+    $("#setForm").addEventListener("submit",async e=>{ e.preventDefault();
+      const msg=$("#s-msg"), btn=$("#s-btn"); btn.disabled=true; msg.style.color="var(--text-soft)"; msg.textContent="Saving…";
+      const {error}=await db.from("settings").upsert({key:"home_extra",value:$("#s-extra").value},{onConflict:"key"});
+      if(error){ msg.style.color="var(--accent-ink)"; msg.textContent="Error: "+error.message+" (run seed-settings.sql once)"; }
+      else { msg.style.color="var(--open)"; msg.textContent="Saved! It's live on the home page."; }
+      btn.disabled=false;
+    });
   }
 
   /* ---------------- shared ---------------- */

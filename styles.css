@@ -248,6 +248,14 @@ h2.title.wc-h.wc-left img{ margin:0; max-height:clamp(40px, 6vw, 72px); } /* lef
 body[data-page="home"] .hero h1.wc-h{ margin-top:.4rem; }
 body[data-page="home"] .hero h1.wc-h img{ max-width:min(98%, 1040px); filter:drop-shadow(0 3px 22px rgba(0,0,0,.45)); }
 /* === END WATERCOLOR HEADINGS === */
+/* Home "of the day" widget card */
+.extra-card{display:flex; gap:1rem; align-items:flex-start; background:var(--sheet); border:1px solid var(--line); border-radius:var(--radius); padding:1.1rem 1.3rem; box-shadow:var(--shadow);}
+.extra-ico{font-size:1.7rem; line-height:1; flex:0 0 auto; margin-top:.1rem;}
+.extra-main{min-width:0;}
+.extra-body{color:var(--text); line-height:1.55; margin-top:.15rem;}
+.extra-body p{margin:0;}
+.extra-link{margin-top:.5rem; font-size:.88rem; font-weight:700;}
+.extra-link a{color:var(--accent-ink); text-decoration:none;}
 .about-card{background:var(--sheet); border:1px solid var(--line); border-radius:var(--radius); padding:clamp(1.4rem,3vw,2.4rem); box-shadow:var(--shadow); max-width:760px;}
 .about-card h3{font-family:var(--serif); font-size:clamp(1.5rem,3vw,2rem); color:var(--heading); margin-bottom:.7rem;}
 .about-card p{color:var(--text-soft); line-height:1.65; margin-top:.7rem;}
