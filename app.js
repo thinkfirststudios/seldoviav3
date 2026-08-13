@@ -4336,7 +4336,6 @@ const INDEX=[
   ...PLACES.map(p=>({type:"Place",title:p.name,desc:p.phone?`${p.cat} · ${p.phone}`:p.cat,href:"explore.html",kw:p.cat+" "+p.key})),
   ...LISTINGS.map(l=>({type:"Real Estate",title:l.name,desc:l.cat,href:"real-estate.html",kw:l.cat})),
   ...CATEGORIES.map(c=>({type:"Category",title:c.b,desc:c.s,href:"explore.html?cat="+c.key,kw:c.key+" "+({about:"about history location story seldovia town kachemak bay herring",travel:"travel ferry air taxi water taxi plane amhs smokey bay mako halibut cove get to seldovia transportation",stay:"stay sleep lodging hotel inn cabin lodge rental bnb bed suites vacation",eat:"food eat restaurant cafe bar grill grocery store meal dine breakfast lunch dinner drinks",shop:"shop store gift gifts nursery plants boutique sea glass grocery",activities:"activities tour charter fishing diving kayak trail hike beach rentals things to do outdoors",services:"services construction salon marine fuel real estate property care trades help",life:"life community organization tribe city church school library clinic emergency police post office chamber"}[c.key]||"")})),
-  ...GAZETTE.map(g=>({type:"Jenny's Blog",title:g.title,desc:g.excerpt,href:"gazette.html",kw:g.cat})),
   ...EVENTS.map(e=>({type:"Event",title:e.title,desc:`${fmtDayLabel(e.d)} · ${e.where}`,href:"calendar.html",kw:e.cat+" "+e.where})),
   ...DIRECTORY.map(d=>({type:"Directory",title:d.name,desc:`${d.cat} · ${d.phone}`,href:"phone-book.html",kw:d.cat})),
   ...NOTES.map(n=>({type:"Bulletin",title:n.title,desc:n.body,href:"bulletin.html",kw:n.cat})),
