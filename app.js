@@ -37,7 +37,8 @@ window.addEventListener("error", e=>{
 const NAV=[
   ["explore.html","Explore","explore"],
   ["calendar.html","Calendar","calendar"],
-  ["gazette.html","Jenny's Blog","gazette"],
+  ["gazette.html","Blog","gazette"],
+  ["webcams.html","Webcams","webcams"],
   ["gallery.html","Gallery","gallery"],
   ["real-estate.html","Real Estate","realestate"],
   ["phone-book.html","Phone Book","phonebook"],
@@ -82,7 +83,7 @@ const FOOTER=`
         <p>A warm, community-first guide to our little town on Kachemak Bay. Made as a gift to Seldovia.</p>
         <div class="foot-util"><span>Tide: High 14.2 ft</span><span>Ferry: 3:15 PM</span><span>54&deg;F</span><span id="footTime">&mdash;:&mdash;</span></div>
       </div>
-      <div class="foot-col"><h4>Explore</h4><ul><li><a href="explore.html">Directory</a></li><li><a href="gazette.html">Jenny's Blog</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="calendar.html">Calendar</a></li></ul></div>
+      <div class="foot-col"><h4>Explore</h4><ul><li><a href="explore.html">Directory</a></li><li><a href="gazette.html">Blog</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="calendar.html">Calendar</a></li></ul></div>
       <div class="foot-col"><h4>Community</h4><ul><li><a href="phone-book.html">Phone Book</a></li><li><a href="bulletin.html">News</a></li><li><a href="index.html#sponsors">Sponsors</a></li><li><a href="contact.html">Contact</a></li></ul></div>
       <div class="foot-col"><h4>Real Estate</h4><ul><li><a href="real-estate.html">Featured listings</a></li><li><a href="real-estate.html">Buying guide</a></li><li><a href="real-estate.html">Selling guide</a></li><li><a href="contact.html">Home valuation</a></li></ul></div>
     </div>
@@ -115,7 +116,7 @@ document.body.insertAdjacentHTML("beforeend", `
 
 /* ============================================================ MOCK DATA ============================================================ */
 // 8 home categories (Jenny's groupings). Order maps to images/categories/cat-0..7.jpg.
-const CATEGORIES=[{b:"About",s:"Location, history & our story",key:"about"},{b:"Travel",s:"Getting to Seldovia",key:"travel"},{b:"Stay",s:"Lodging & cabins",key:"stay"},{b:"Eat",s:"Restaurants, bar & stores",key:"eat"},{b:"Shop",s:"Shops, gifts & nursery",key:"shop"},{b:"Activities",s:"Tours, charters & trails",key:"activities"},{b:"Services",s:"Local trades & help",key:"services"},{b:"Life in Seldovia",s:"Organizations & services",key:"life"}];
+const CATEGORIES=[{b:"Location + History",s:"About Seldovia",key:"about"},{b:"Travel",s:"Getting to Seldovia",key:"travel"},{b:"Lodging + Camping",s:"Places to stay",key:"stay"},{b:"Eat",s:"Restaurants, bar & stores",key:"eat"},{b:"Shop + Gifts",s:"Shops, gifts & nursery",key:"shop"},{b:"Activities",s:"Tours, charters & trails",key:"activities"},{b:"Services",s:"Local trades & help",key:"services"},{b:"Organization + Public Services",s:"Community & services",key:"life"}];
 // REAL Seldovia places — sourced from the existing seldovia.com business directory.
 // No star ratings or review counts: we don't have real review data, so we don't invent it.
 // Explore directory — all Seldovia businesses, grouped into the 8 categories (key).
@@ -4114,7 +4115,7 @@ if($("#catGrid")) $("#catGrid").innerHTML=CATEGORIES.map((c,i)=>{
 if($("#featureMedia")) $("#featureMedia").innerHTML=`<img class="feature-photo" src="images/photos/220627_SeldoviaHarbor_Melody.jpg" alt="Seldovia Harbor at first light" loading="lazy" width="1200" height="1200">`;
 
 // places (directory highlights) with tabs — reads ?cat= from URL for deep-links
-const PLACE_TABS=[["all","All"],["travel","Travel"],["stay","Stay"],["eat","Eat"],["shop","Shop"],["activities","Activities"],["services","Services"],["life","Life"]];
+const PLACE_TABS=[["all","All"],["travel","Travel"],["stay","Lodging + Camping"],["eat","Eat"],["shop","Shop + Gifts"],["activities","Activities"],["services","Services"],["life","Public Services"]];
 let placeTab=(new URLSearchParams(location.search).get("cat"))||"all";
 if(!PLACE_TABS.some(([k])=>k===placeTab) && placeTab!=="about") placeTab="all";
 function renderPlaces(){

@@ -37,6 +37,8 @@ MANIFEST = [
     ("Discover Everything Seldovia",            "white", "hero-discover.png"),
     ("How can I help?",                         "ink",   "how-can-i-help.png"),
     ("Seldovia in photos",                      "ink",   "seldovia-in-photos.png"),
+    ("Discover Seldovia",                       "ink",   "discover-seldovia.png"),
+    ("Sponsors",                                "ink",   "sponsors.png"),
     ("The local businesses we're grateful for", "ink",   "sponsors-grateful.png"),
     # real estate
     ("Finding your place on the bay",           "ink",   "re-finding-your-place.png"),
