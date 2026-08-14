@@ -123,7 +123,7 @@ const CATEGORIES=[{b:"Location + History",s:"About Seldovia",key:"about"},{b:"Tr
 const PLACES=[
  // Travel
  {name:"Alaska Marine Highway System",cat:"Ferry",key:"travel",phone:"(800) 642-0066"},
- {name:"Smokey Bay Air",cat:"Air Taxi",key:"travel",phone:"(907) 234-8511",url:"https://www.SmokeyBayAir.com"},
+ {name:"Smokey Bay Air",cat:"Air Taxi",key:"travel",phone:"(907) 531-0602",url:"https://www.SmokeyBayAir.com"},
  {name:"Mako's Water Taxi",cat:"Water Taxi",key:"travel",phone:"(907) 235-9055",url:"https://www.makoswatertaxi.com"},
  {name:"Halo Cab",cat:"Taxi",key:"travel",phone:"(907) 205-7828"},
  {name:"Kar-a-Van Transfer",cat:"Transfer",key:"travel",phone:"(907) 234-7802"},
@@ -140,7 +140,7 @@ const PLACES=[
  // Eat
  {name:"Jack and Aiva's Restaurant",cat:"Restaurant",key:"eat",phone:"(907) 234-7440"},
  {name:"Thyme on the Boardwalk",cat:"Restaurant",key:"eat",phone:"(907) 440-2213",url:"https://www.ThymeOnTheBoardwalk.com"},
- {name:"Linwood Bar & Grill",cat:"Bar & Grill",key:"eat"},
+ {name:"Linwood Bar & Grill",cat:"Bar & Grill",key:"eat",phone:"(907) 630-0573"},
  // Shop
  {name:"Crabpot Grocery",cat:"Grocery",key:"shop",phone:"(907) 234-7435"},
  {name:"Seldovia Sea Glass",cat:"Gifts & Art",key:"shop"},
@@ -210,6 +210,12 @@ const BIZ_IMG={
  "Otter Cove Ice Cream at the Boardwalk Hotel":"otter-cove-ice-cream-at-the-boardwalk-hotel","Eternal Buzz":"eternal-buzz"
 };
 const bizPhoto=(p,color)=>{ const s=BIZ_IMG[p.name]; return s?`images/businesses/${s}-${color?"color":"bw"}.jpg`:(p.img||"images/placeholder-business.png"); };
+// Category letter badge (top-right of each Explore card), per Jenny's key:
+// L Lodging, T Travel, B Business, E Eat, S Shops, A Activity, O Organization, G Government
+const CAT_BADGE={travel:"T",stay:"L",eat:"E",shop:"S",activities:"A",services:"B",life:"O",about:""};
+const BADGE_LABEL={L:"Lodging",T:"Travel",B:"Business",E:"Eat",S:"Shops",A:"Activity",O:"Organization",G:"Government"};
+const GOVT_BIZ=new Set(["City of Seldovia","Seldovia Police Department","United States Post Office — Seldovia","Seldovia Public Library","Susan B English School"]);
+const placeBadge=p=>{ let b=CAT_BADGE[p.key]||""; if(p.key==="life"&&GOVT_BIZ.has(p.name)) b="G"; return b; };
 // Jenny's Seldovia Blog — recovered posts (original titles, dates, images preserved). PROD: managed via admin.
 const GAZETTE=[
  {title:"Thank you, Jennifer!",excerpt:"Jennifer, thank you so much for your kind words! It makes me so happy to hear how pleased you are with your Seldovia investment and my service.",date:"Jul 17, 2026",read:"1 min",cat:"Kind Words",img:"images/gazette/2026-07-17.jpg",body:`Jennifer, thank you so much for your kind words! It makes me so happy to hear how pleased you are with your Seldovia investment and my service.
@@ -4067,7 +4073,7 @@ const DIRECTORY=[
  {name:"Seldovia Sea Otter Community Center",cat:"Community Center",k:"life",phone:"(907) 234-4110",spon:false},
  {name:"Seldovia Suites",cat:"Suites",k:"stay",phone:"(907) 234-3700",spon:false},
  {name:"Seldovia Village Tribe",cat:"Tribe",k:"life",phone:"(907) 234-7898",spon:false},
- {name:"Smokey Bay Air",cat:"Air Taxi",k:"travel",phone:"(907) 234-8511",url:"https://www.SmokeyBayAir.com",spon:false},
+ {name:"Smokey Bay Air",cat:"Air Taxi",k:"travel",phone:"(907) 531-0602",url:"https://www.SmokeyBayAir.com",spon:false},
  {name:"Susan B English School",cat:"School",k:"life",phone:"(907) 234-7616",spon:false},
  {name:"The Great Escape — Alaskan Vacation Rentals",cat:"Vacation Rentals",k:"stay",phone:"",url:"https://www.greatescapealaska.com",spon:false},
  {name:"Thyme on the Boardwalk",cat:"Restaurant",k:"eat",phone:"(907) 440-2213",url:"https://www.ThymeOnTheBoardwalk.com",spon:false},
@@ -4133,7 +4139,8 @@ function renderPlaces(){
   const pin=`<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.3-7-11a7 7 0 0 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>`;
   // Placeholder photo until Qwynny's square B&W watercolor images land (set p.img; p.imgColor for the sponsor color version).
   const placeCard=p=>{
-    const media=`<div class="place-media"><img class="place-photo" src="${bizPhoto(p)}" alt="" loading="lazy" width="600" height="600" onerror="this.src='images/placeholder-business.png'"></div>`;
+    const bdg=placeBadge(p);
+    const media=`<div class="place-media"><img class="place-photo" src="${bizPhoto(p)}" alt="" loading="lazy" width="600" height="600" onerror="this.src='images/placeholder-business.png'">${bdg?`<span class="place-badge" title="${esc(BADGE_LABEL[bdg]||"")}">${bdg}</span>`:""}</div>`;
     const body=`<div class="place-body"><div class="rating"><span class="cat">${esc(p.cat)}</span></div><h4>${esc(p.name)}</h4>
         <div class="place-loc">${pin} Seldovia, AK</div>`;
     if(p.url){ // whole card links to the business website
