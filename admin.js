@@ -72,7 +72,7 @@
   const TABS=[
     {key:"photo",    label:"📷 Daily Photo", render:renderPhotoTab},
     {key:"blog",     label:"✍️ Blog Post",   render:renderBlogTab},
-    {key:"bulletin", label:"📌 Bulletin",    render:renderBulletinTab},
+    {key:"bulletin", label:"📰 News",        render:renderBulletinTab},
     {key:"listing",  label:"🏡 Listings",    render:renderListingTab},
     {key:"messages", label:"📨 Messages",    render:renderMessagesTab},
     {key:"settings", label:"⚙️ Home Extra",  render:renderSettingsTab},
@@ -219,7 +219,7 @@
   function renderBulletinTab(){
     $("#tab-bulletin").innerHTML=`
       <form class="info-block" id="bulForm" style="max-width:640px">
-        <h4 id="b-head">Post a bulletin notice</h4>
+        <h4 id="b-head">Post a news item</h4>
         <div class="field"><label for="b-title">Title <span class="req">*</span></label><input id="b-title" required></div>
         <div class="row-2" style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem">
           <div class="field"><label for="b-cat">Category</label>${catField("b-cat",BUL_CATS)}</div>
@@ -246,7 +246,7 @@
     loadBulletin();
   }
   function resetBul(){ editBul=null; $("#bulForm").reset(); fillCat("b-cat","",BUL_CATS); $("#b-imghint").textContent="";
-    $("#b-head").textContent="Post a bulletin notice"; $("#b-btn").textContent="Post notice"; $("#b-cancel").hidden=true; }
+    $("#b-head").textContent="Post a news item"; $("#b-btn").textContent="Post notice"; $("#b-cancel").hidden=true; }
   function fillBul(n){ editBul=n.id; $("#b-title").value=n.title||""; fillCat("b-cat",n.category,BUL_CATS); $("#b-by").value=n.posted_by||"";
     $("#b-date").value=n.starts_on||""; $("#b-link").value=n.link||""; $("#b-event").value=n.event_url||""; $("#b-body").value=n.body||"";
     $("#b-imghint").textContent=n.image_url?"Leave empty to keep the current photo.":"";
