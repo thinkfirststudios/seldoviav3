@@ -276,6 +276,13 @@ body[data-page="home"] .hero h1.wc-h img{ max-width:min(98%, 1040px); filter:dro
 
 /* Home "of the day" widget card */
 .extra-card{display:flex; gap:1rem; align-items:flex-start; background:var(--sheet); border:1px solid var(--line); border-radius:var(--radius); padding:1.1rem 1.3rem; box-shadow:var(--shadow);}
+/* Combined "of the day" + "this week" into one box (Jenny) */
+.home-duo{display:grid; grid-template-columns:1fr 1fr; background:var(--sheet); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden;}
+.home-duo > div{min-width:0; display:flex;}
+.home-duo > div > *{width:100%;}
+.home-duo > div:first-child{border-right:1px solid var(--line);}
+.home-duo .extra-card, .home-duo .today-sched{background:transparent; border:0; box-shadow:none; border-radius:0;}
+@media (max-width:640px){ .home-duo{grid-template-columns:1fr;} .home-duo > div:first-child{border-right:0; border-bottom:1px solid var(--line);} }
 .extra-ico{font-size:1.7rem; line-height:1; flex:0 0 auto; margin-top:.1rem;}
 .extra-main{min-width:0;}
 .extra-body{color:var(--text); line-height:1.55; margin-top:.15rem;}

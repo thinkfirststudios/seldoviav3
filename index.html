@@ -6,7 +6,7 @@
 <meta name="description" content="Seldovia.com — discover everything about the little town of Seldovia, Alaska, on Kachemak Bay. Directory, events, gallery, news, and real estate.">
 <meta name="theme-color" content="#F8E6DD">
 <title>Seldovia.com — Discover Everything Seldovia, Alaska</title>
-<link rel="stylesheet" href="styles.css?v=35">
+<link rel="stylesheet" href="styles.css?v=36">
 </head>
 <body data-page="home">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -36,11 +36,13 @@
     </div>
   </section>
 
-  <!-- TODAY EXTRA — admin picks which "of the day" shows: Alaska fact / marine weather / word / fun day (home-extra.js) -->
-  <section class="section wrap" style="padding-bottom:0"><div id="todayExtra"></div></section>
-
-  <!-- DAILY SCHEDULE WIDGET — what's on this week (home-schedule.js, from Google Calendar) -->
-  <section class="section wrap" style="padding-bottom:0"><div id="todaySchedule"></div></section>
+  <!-- Combined home box (Jenny): "of the day" widget + this week's schedule, side by side -->
+  <section class="section wrap" style="padding-bottom:0">
+    <div class="home-duo">
+      <div id="todayExtra"></div>
+      <div id="todaySchedule"></div>
+    </div>
+  </section>
 
   <!-- CATEGORIES -->
   <section class="section wrap">
