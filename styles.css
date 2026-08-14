@@ -200,6 +200,16 @@ body[data-page="realestate"] .page-hero{background:linear-gradient(160deg, #fde6
 .page-hero .eyebrow{justify-content:center;}
 .page-hero h1{font-size:clamp(1.9rem,4vw,2.8rem); color:var(--heading);}
 .page-hero p{color:var(--text-soft); margin-top:.6rem; max-width:56ch; margin-inline:auto;}
+/* Photo-banner page hero (Jenny: a gorgeous Seldovia banner on every page). Set the image
+   with style="--banner:url('...')" and use the WHITE heading; overlay keeps text readable. */
+.page-hero.banner{position:relative; background:#33414d; border-bottom:0; color:#fff; overflow:clip; padding:clamp(52px,8vw,104px) 0 clamp(40px,6vw,76px);}
+.page-hero.banner::before{content:""; position:absolute; inset:0; z-index:0; background-image:var(--banner); background-size:cover; background-position:center;}
+.page-hero.banner::after{content:""; position:absolute; inset:0; z-index:0; background:linear-gradient(180deg, rgba(15,12,10,.44) 0%, rgba(15,12,10,.26) 45%, rgba(15,12,10,.58) 100%);}
+.page-hero.banner .wrap{position:relative; z-index:1;}
+.page-hero.banner .eyebrow{color:#fff;}
+.page-hero.banner .eyebrow::before,.page-hero.banner .eyebrow::after{background:rgba(255,255,255,.65);}
+.page-hero.banner p{color:#f3ede2; text-shadow:0 1px 12px rgba(0,0,0,.45);}
+.page-hero.banner h1.wc-h img{filter:drop-shadow(0 3px 20px rgba(0,0,0,.5));}
 
 /* ============================================================ HOME HERO (real Seldovia photo) */
 .hero{position:relative; padding:clamp(14px,2.4vw,24px) clamp(14px,2.4vw,24px) 0;}

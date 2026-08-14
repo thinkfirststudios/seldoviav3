@@ -56,6 +56,16 @@ MANIFEST = [
     ("Notes & stories from Seldovia",           "ink",   "gazette-notes-stories.png"),
     ("Say hello",                               "ink",   "contact-say-hello.png"),
     ("Thank you!",                              "ink",   "thanks-thankyou.png"),
+    # WHITE versions of the page-hero titles, for the photo-banner treatment (readable on photos)
+    ("Notices, happenings & friendly fliers",   "white", "bulletin-notices-white.png"),
+    ("A daily diary of Seldovia",               "white", "gallery-daily-diary-white.png"),
+    ("Finding your place on the bay",           "white", "re-finding-your-place-white.png"),
+    ("Say hello",                               "white", "contact-say-hello-white.png"),
+    ("Most popular things to do",               "white", "explore-most-popular-white.png"),
+    ("Neighbors & local businesses",            "white", "phonebook-neighbors-white.png"),
+    ("What's happening around town",            "white", "calendar-whats-happening-white.png"),
+    ("Add your listing",                        "white", "directory-add-listing-white.png"),
+    ("Notes & stories from Seldovia",           "white", "gazette-notes-stories-white.png"),
 ]
 
 def build_font():
