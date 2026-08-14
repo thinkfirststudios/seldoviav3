@@ -153,7 +153,7 @@ const PLACES=[
  {name:"Family First Construction",cat:"Construction",key:"services",phone:"(907) 310-6419"},
  {name:"Fathoms Hair & Nail Salon",cat:"Salon",key:"services",phone:"(907) 726-7255"},
  {name:"Red Mountain Marine",cat:"Marine",key:"services",phone:"(907) 399-8230"},
- {name:"Seldovia Fuel and Lube",cat:"Fuel & Marine",key:"services",phone:"(907) 234-7622"},
+ {name:"Seldovia Fuel and Hardware",cat:"Fuel & Hardware",key:"services",phone:"(907) 234-7622"},
  {name:"Seldovia Property",cat:"Real Estate",key:"services",phone:"(907) 234-8000",url:"https://www.SeldoviaProperty.com"},
  {name:"Winter Watch",cat:"Property Care",key:"services",phone:"(907) 406-0775",url:"https://www.SeldoviaWinterWatch.com"},
  // Life in Seldovia
@@ -180,8 +180,35 @@ const PLACES=[
  {name:"SVT Museum & Gift Shop",cat:"Museum & Gifts",key:"shop",phone:"(907) 234-7898",url:"https://svt.org"},
  {name:"Seldovia Liquor Store",cat:"Beverages & Gifts",key:"shop",phone:"(907) 202-1938"},
  {name:"Schooner Beach Studio",cat:"Cut-Paper Art",key:"shop",phone:"(541) 520-7331"},
- {name:"Make it Reality",cat:"3D Printing & Laser",key:"services",phone:"(414) 367-9570"}
+ {name:"Make it Reality",cat:"3D Printing & Laser",key:"services",phone:"(414) 367-9570"},
+ // Lodging + eateries added with Qwynny's Canva photos
+ {name:"Herring Bay Lodge",cat:"Lodge",key:"stay"},
+ {name:"Treehouse Cove Lodge",cat:"Lodge",key:"stay"},
+ {name:"Breezy's by the Bay",cat:"Lodging",key:"stay"},
+ {name:"Alaska Grizzly Air B&B Rentals",cat:"B&B & Rentals",key:"stay"},
+ {name:"House on the Rock B&B",cat:"Bed & Breakfast",key:"stay"},
+ {name:"Thyme on the Boardwalk Waterfront Cottage",cat:"Waterfront Cottage",key:"stay"},
+ {name:"Otter Cove Ice Cream at the Boardwalk Hotel",cat:"Ice Cream",key:"eat"},
+ {name:"Eternal Buzz",cat:"Coffee & Treats",key:"eat"}
 ];
+// Business photos from Qwynny's Canva set. Default shows the B&W version;
+// <slug>-color.jpg is the color upgrade for sponsors (future admin swap).
+const BIZ_IMG={
+ "Smokey Bay Air":"smokey-bay-air","Halo Cab":"halo-cab","True North Air":"true-north-air","Perley's Rides":"perley-s-rides",
+ "Sea Parrot Inn":"sea-parrot-inn","Seldovia Suites":"central-suites-of-seldovia-seldovia-suites","Seldovia Harbor Inn":"seldovia-harbor-inn",
+ "Alaska Dancing Eagles Cabin Rental":"alaska-dancing-eagles-cabin-rental","Asta Waterfront Suite":"asta-waterfront-suite",
+ "The Great Escape — Alaskan Vacation Rentals":"great-escape-alaska-vacation-rentals",
+ "Jack and Aiva's Restaurant":"jack-aiva-s-restaurant","Thyme on the Boardwalk":"thyme-on-the-boardwalk","Linwood Bar & Grill":"linwood-bar-grill",
+ "Crabpot Grocery":"crabpot-grocery","Seldovia Salmonberry":"seldovia-salmonberry","SVT Museum & Gift Shop":"svt-museum-gift-shop","Seldovia Liquor Store":"seldovia-liquor-store",
+ "Alaska Free Diver":"alaska-freediver","Seldovia Fishing Adventures":"seldovia-fishing-adventures","Seldovia Outdoor Rentals & Gifts":"seldovia-outdoor-rentals",
+ "Fathoms Hair & Nail Salon":"fathoms-hair-salon","Seldovia Fuel and Hardware":"seldovia-fuel-and-hardware","Winter Watch":"winter-watch","Make it Reality":"make-it-reality",
+ "Seldovia Public Library":"seldovia-public-library",
+ "Herring Bay Lodge":"herring-bay-lodge","Treehouse Cove Lodge":"treehouse-cove-lodge","Breezy's by the Bay":"breezy-s-by-the-bay",
+ "Alaska Grizzly Air B&B Rentals":"alaska-grizzly-air-b-b-rentals","House on the Rock B&B":"seldovia-fishing-adventures-house-on-the-rock-b-b",
+ "Thyme on the Boardwalk Waterfront Cottage":"thyme-on-the-boardwalk-waterfront-cottage",
+ "Otter Cove Ice Cream at the Boardwalk Hotel":"otter-cove-ice-cream-at-the-boardwalk-hotel","Eternal Buzz":"eternal-buzz"
+};
+const bizPhoto=(p,color)=>{ const s=BIZ_IMG[p.name]; return s?`images/businesses/${s}-${color?"color":"bw"}.jpg`:(p.img||"images/placeholder-business.png"); };
 // Jenny's Seldovia Blog — recovered posts (original titles, dates, images preserved). PROD: managed via admin.
 const GAZETTE=[
  {title:"Thank you, Jennifer!",excerpt:"Jennifer, thank you so much for your kind words! It makes me so happy to hear how pleased you are with your Seldovia investment and my service.",date:"Jul 17, 2026",read:"1 min",cat:"Kind Words",img:"images/gazette/2026-07-17.jpg",body:`Jennifer, thank you so much for your kind words! It makes me so happy to hear how pleased you are with your Seldovia investment and my service.
@@ -4027,7 +4054,7 @@ const DIRECTORY=[
  {name:"Sea Parrot Inn",cat:"Inn",k:"stay",phone:"(844) 377-7829",url:"https://www.seaparrotinn.com",spon:false},
  {name:"Seldovia Chamber of Commerce",cat:"Chamber of Commerce",k:"life",phone:"(907) 234-7612",spon:false},
  {name:"Seldovia Fishing Adventures",cat:"Fishing Charters",k:"activities",phone:"(907) 234-7417",url:"https://www.fishhalibut.com",spon:false},
- {name:"Seldovia Fuel and Lube",cat:"Fuel & Marine",k:"services",phone:"(907) 234-7622",spon:false},
+ {name:"Seldovia Fuel and Hardware",cat:"Fuel & Hardware",k:"services",phone:"(907) 234-7622",spon:false},
  {name:"Seldovia Harbor Inn",cat:"Inn",k:"stay",phone:"(907) 202-3095",spon:false},
  {name:"Seldovia Health and Wellness",cat:"Health & Wellness",k:"life",phone:"(907) 435-3262",spon:false},
  {name:"Seldovia Native Association",cat:"Native Association",k:"life",phone:"(907) 234-7625",spon:false},
@@ -4079,7 +4106,7 @@ if($("#quickcats")) $("#quickcats").innerHTML=[["Eat","eat"],["Stay","stay"],["A
 
 // category tiles
 if($("#catGrid")) $("#catGrid").innerHTML=CATEGORIES.map((c,i)=>{
-  const img=`images/categories/cat-${i}.jpg?v=2`;
+  const img=`images/categories/cat-${i}.jpg?v=3`;
   const href=`explore.html?cat=${c.key}`;
   return `<a class="cat-tile" href="${href}" aria-label="${esc(c.b)}"><img class="cat-photo" src="${img}" alt="" loading="lazy" width="600" height="600"><span class="cap"><b>${esc(c.b)}</b><span>${esc(c.s)}</span></span></a>`;}).join("");
 
@@ -4105,7 +4132,7 @@ function renderPlaces(){
   const pin=`<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.3-7-11a7 7 0 0 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>`;
   // Placeholder photo until Qwynny's square B&W watercolor images land (set p.img; p.imgColor for the sponsor color version).
   const placeCard=p=>{
-    const media=`<div class="place-media"><img class="place-photo" src="${p.img||'images/placeholder-business.png'}" alt="" loading="lazy" width="600" height="600"></div>`;
+    const media=`<div class="place-media"><img class="place-photo" src="${bizPhoto(p)}" alt="" loading="lazy" width="600" height="600" onerror="this.src='images/placeholder-business.png'"></div>`;
     const body=`<div class="place-body"><div class="rating"><span class="cat">${esc(p.cat)}</span></div><h4>${esc(p.name)}</h4>
         <div class="place-loc">${pin} Seldovia, AK</div>`;
     if(p.url){ // whole card links to the business website
