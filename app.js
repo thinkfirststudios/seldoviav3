@@ -4385,7 +4385,12 @@ function runSearch(raw){const q=raw.toLowerCase().trim().split(/\s+/).filter(Boo
 function hl(text,raw){const q=raw.trim().split(/\s+/).filter(Boolean).map(t=>t.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")); if(!q.length)return esc(text); return esc(text).replace(new RegExp("("+q.join("|")+")","ig"),"<mark>$1</mark>");}
 // The hero results box is position:fixed so it escapes the hero's overflow:clip (was hidden
 // on mobile / clipped on desktop). Anchor it under the search card each time it shows.
-function placeBox(box){ if(!box||!box.classList.contains("hero-results"))return; const card=document.querySelector(".hero-search-card"); if(!card)return; const r=card.getBoundingClientRect(); box.style.left=r.left+"px"; box.style.top=(r.bottom+8)+"px"; box.style.width=r.width+"px"; }
+function placeBox(box){ if(!box) return;
+  const anchor = box.id==="navResults" ? document.getElementById("navSearch") : document.querySelector(".hero-search-card");
+  if(!anchor) return; const r=anchor.getBoundingClientRect();
+  const w = box.id==="navResults" ? Math.max(r.width, 300) : r.width;
+  box.style.position="fixed"; box.style.top=(r.bottom+8)+"px"; box.style.width=w+"px";
+  box.style.left = (box.id==="navResults" ? Math.max(8, r.right - w) : r.left) + "px"; }
 function renderResults(box,raw){const res=runSearch(raw);
   if(!raw.trim()){box.classList.remove("show"); box.innerHTML=""; return;}
   if(!res.length){box.innerHTML=`<div class="r-empty">No results for "${esc(raw)}". Try "ferry," "cabin," or "market."</div>`;}
@@ -4401,10 +4406,11 @@ function wireSearch(inputId,boxId){const input=document.getElementById(inputId),
   box.addEventListener("click",()=>setTimeout(()=>box.classList.remove("show"),60));
   document.addEventListener("click",e=>{if(!input.contains(e.target)&&!box.contains(e.target))box.classList.remove("show");});
   ["scroll","resize"].forEach(ev=>window.addEventListener(ev,()=>{if(box.classList.contains("show"))placeBox(box);},{passive:true}));}
+// Float BOTH search dropdowns on <body> so nothing (sticky header stacking context,
+// transforms, overflow:clip) can trap or clip them — fixes the top-right nav search
+// and the hero search alike.
+["heroResults","navResults"].forEach(id=>{ const b=document.getElementById(id); if(b && b.parentElement!==document.body) document.body.appendChild(b); });
 wireSearch("navSearch","navResults");
-// Move the hero results dropdown to <body> so it escapes the hero's overflow:clip AND the
-// .hero-search transform (a position:fixed box is trapped by any transformed ancestor).
-(function(){ const hb=document.getElementById("heroResults"); if(hb && hb.parentElement!==document.body) document.body.appendChild(hb); })();
 wireSearch("heroSearch","heroResults");
 if($("#heroSearchBtn")) $("#heroSearchBtn").addEventListener("click",()=>{const v=$("#heroSearch").value; if(v)renderResults($("#heroResults"),v); else $("#heroSearch").focus();});
 

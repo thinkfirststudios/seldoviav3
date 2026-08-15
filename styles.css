@@ -73,6 +73,12 @@ body:not([data-page="realestate"]){
 body:not([data-page="realestate"])::before{content:""; position:fixed; inset:0; z-index:-1; pointer-events:none; opacity:.5; mix-blend-mode:multiply;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");}
 @media (prefers-reduced-motion: reduce){ body:not([data-page="realestate"]){ background-attachment:scroll; } }
+/* Blog page (Jenny): drop the watercolor washes, and pull the content in so there's
+   less empty space on the sides. */
+body[data-page="gazette"]{background:var(--page);}
+body[data-page="gazette"]::before{display:none;}
+body[data-page="gazette"] .grid3::before{display:none;}
+body[data-page="gazette"] .section.wrap{padding-inline:clamp(12px,2.5vw,28px);}
 h1,h2,h3,h4{margin:0; color:var(--heading); font-family:var(--serif); font-weight:600; line-height:1.14; letter-spacing:-.005em; text-wrap:balance;}
 p{margin:0;}
 a{color:var(--accent-ink); text-underline-offset:2px;}
