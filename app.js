@@ -139,7 +139,7 @@ const PLACES=[
  {name:"The Great Escape — Alaskan Vacation Rentals",cat:"Vacation Rentals",key:"stay",url:"https://www.greatescapealaska.com"},
  // Eat
  {name:"Jack and Aiva's Restaurant",cat:"Restaurant",key:"eat",phone:"(907) 234-7440"},
- {name:"Thyme on the Boardwalk",cat:"Restaurant",key:"eat",phone:"(907) 440-2213",url:"https://www.ThymeOnTheBoardwalk.com"},
+ {name:"Thyme on the Boardwalk",cat:"Gift Shop & Nursery",key:"shop",phone:"(907) 440-2213",url:"https://www.ThymeOnTheBoardwalk.com"},
  {name:"Linwood Bar & Grill",cat:"Bar & Grill",key:"eat",phone:"(907) 630-0573"},
  // Shop
  {name:"Crabpot Grocery",cat:"Grocery",key:"shop",phone:"(907) 234-7435"},
@@ -4074,7 +4074,7 @@ const DIRECTORY=[
  {name:"Smokey Bay Air",cat:"Air Taxi",k:"travel",phone:"(907) 531-0602",url:"https://www.SmokeyBayAir.com",spon:false},
  {name:"Susan B English School",cat:"School",k:"life",phone:"(907) 234-7616",spon:false},
  {name:"The Great Escape — Alaskan Vacation Rentals",cat:"Vacation Rentals",k:"stay",phone:"",url:"https://www.greatescapealaska.com",spon:false},
- {name:"Thyme on the Boardwalk",cat:"Restaurant",k:"eat",phone:"(907) 440-2213",url:"https://www.ThymeOnTheBoardwalk.com",spon:false},
+ {name:"Thyme on the Boardwalk",cat:"Gift Shop & Nursery",k:"shop",phone:"(907) 440-2213",url:"https://www.ThymeOnTheBoardwalk.com",spon:false},
  {name:"United States Post Office — Seldovia",cat:"Post Office",k:"life",phone:"(907) 234-7831",spon:false},
  {name:"Winter Watch",cat:"Property Care",k:"services",phone:"(907) 406-0775",url:"https://www.SeldoviaWinterWatch.com",spon:false},
  {name:"Rainbow Tours",cat:"Tours & Passenger Ferry",k:"travel",phone:"(907) 235-7272",url:"https://www.rainbowtours.net",spon:false},
