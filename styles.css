@@ -79,6 +79,10 @@ body[data-page="gazette"]{background:var(--page);}
 body[data-page="gazette"]::before{display:none;}
 body[data-page="gazette"] .grid3::before{display:none;}
 body[data-page="gazette"] .section.wrap{padding-inline:clamp(12px,2.5vw,28px);}
+/* Phone book page: no watercolor washes (Jenny) */
+body[data-page="phonebook"]{background:var(--page);}
+body[data-page="phonebook"]::before{display:none;}
+body[data-page="phonebook"] .dir-list::before{display:none;}
 h1,h2,h3,h4{margin:0; color:var(--heading); font-family:var(--serif); font-weight:600; line-height:1.14; letter-spacing:-.005em; text-wrap:balance;}
 p{margin:0;}
 a{color:var(--accent-ink); text-underline-offset:2px;}
@@ -804,6 +808,11 @@ body[data-page="realestate"] .today-bar{background:var(--accent-ink);}
 .board.board-row .note:hover{transform:translateY(-2px); box-shadow:var(--shadow-lg);}
 .n-media{margin:0; background:var(--surface-2);}
 .n-media img{display:block; width:100%; aspect-ratio:16/10; object-fit:cover;}
+/* News pinboard cards (masonry board, like the blog) */
+.board .note{padding:0; overflow:hidden;}
+.board .note .n-body{padding:1.05rem 1.15rem 1.15rem;}
+.board .note.note-own{cursor:pointer;}
+.board .note:hover{box-shadow:var(--shadow-lg);}
 .n-event{display:inline-block; margin-top:.5rem; font-weight:700; font-size:.86rem; color:var(--accent-ink); text-decoration:none;}
 .n-event:hover{text-decoration:underline;}
 .board-arrow{position:absolute; top:44%; transform:translateY(-50%); width:44px; height:44px; border-radius:50%; display:grid; place-items:center; background:var(--sheet); color:var(--accent-ink); border:1px solid var(--line); box-shadow:var(--shadow-lg); cursor:pointer; z-index:4;}

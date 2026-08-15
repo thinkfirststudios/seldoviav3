@@ -151,7 +151,6 @@ const PLACES=[
  {name:"Otterbahn Trail",cat:"Trail",key:"activities"},
  {name:"Outside Beach Park",cat:"Beach & Park",key:"activities"},
  // Services
- {name:"Family First Construction",cat:"Construction",key:"services",phone:"(907) 310-6419"},
  {name:"Fathoms Hair & Nail Salon",cat:"Salon",key:"services",phone:"(907) 726-7255"},
  {name:"Red Mountain Marine",cat:"Marine",key:"services",phone:"(907) 399-8230"},
  {name:"Seldovia Fuel and Hardware",cat:"Fuel & Hardware",key:"services",phone:"(907) 234-7622"},
@@ -4051,7 +4050,6 @@ const DIRECTORY=[
  {name:"Boardwalk Hotel",cat:"Hotel",k:"stay",phone:"(907) 234-7816",url:"https://www.SeldoviaHotel.com",spon:false},
  {name:"City of Seldovia",cat:"City Government",k:"life",phone:"(907) 234-7643",spon:false},
  {name:"Crabpot Grocery",cat:"Grocery",k:"shop",phone:"(907) 234-7435",spon:false},
- {name:"Family First Construction",cat:"Construction",k:"services",phone:"(907) 310-6419",spon:false},
  {name:"Fathoms Hair & Nail Salon",cat:"Salon",k:"services",phone:"(907) 726-7255",spon:false},
  {name:"Halo Cab",cat:"Taxi",k:"travel",phone:"(907) 205-7828",spon:false},
  {name:"Jack and Aiva's Restaurant",cat:"Restaurant",k:"eat",phone:"(907) 234-7440",spon:false},
@@ -4279,8 +4277,18 @@ if($("#dirList")){
   const PEOPLE=MEMBERS.map(m=>({...m,type:"person"}));
   const BIZ=DIRECTORY.map(d=>({...d,type:"biz"})).sort((a,b)=>a.name.localeCompare(b.name));
   const ALL=[...PEOPLE,...BIZ];
-  const CATL=[["travel","Travel"],["stay","Stay"],["eat","Eat"],["shop","Shop"],["activities","Activities"],["services","Services"],["life","Life in Seldovia"]];
-  const CHIPS=["All","People","Businesses",...CATL.map(c=>c[1])];
+  // Phone-book category chips (Jenny's order/labels). Organization vs Government split the "life" key.
+  const CATL=[
+    {label:"Lodging",         test:r=>r.k==="stay"},
+    {label:"Eating",          test:r=>r.k==="eat"},
+    {label:"Travel",          test:r=>r.k==="travel"},
+    {label:"Shopping",        test:r=>r.k==="shop"},
+    {label:"Activities",      test:r=>r.k==="activities"},
+    {label:"Life in Seldovia",test:r=>r.k==="services"},
+    {label:"Organization",    test:r=>r.k==="life" && !GOVT_BIZ.has(r.name)},
+    {label:"Government",       test:r=>r.k==="life" && GOVT_BIZ.has(r.name)},
+  ];
+  const CHIPS=["All","People","Businesses",...CATL.map(c=>c.label)];
   let dirCat="All", dirQuery="";
   $("#dirChips").innerHTML=CHIPS.map((c,i)=>`<button class="chip" aria-pressed="${i===0}" data-cat="${esc(c)}">${esc(c)}</button>`).join("");
 
@@ -4300,9 +4308,9 @@ if($("#dirList")){
       ${d.spon?'<span class="spon-flag">★ Sponsor</span>':''}</div>`;};
 
   const renderDir=()=>{const q=dirQuery.trim().toLowerCase(); const qd=q.replace(/\D/g,"");
-    const catKey=(CATL.find(c=>c[1]===dirCat)||[])[0];
+    const catDef=CATL.find(c=>c.label===dirCat);
     const rows=ALL.filter(r=>{
-      const inCat = dirCat==="All" || (dirCat==="People"&&r.type==="person") || (dirCat==="Businesses"&&r.type==="biz") || (r.type==="biz"&&r.k===catKey);
+      const inCat = dirCat==="All" || (dirCat==="People"&&r.type==="person") || (dirCat==="Businesses"&&r.type==="biz") || (r.type==="biz"&&catDef&&catDef.test(r));
       const inQ = !q || r.name.toLowerCase().includes(q) || (r.cat||"").toLowerCase().includes(q) || (r.addr||"").toLowerCase().includes(q) || (qd.length>=3 && (r.phone||"").replace(/\D/g,"").includes(qd));
       return inCat && inQ;
     });

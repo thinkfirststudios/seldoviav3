@@ -1,9 +1,8 @@
-/* Public bulletin board.
-   Seldovia's OWN notices (posted by Jenny/Qwynny in the admin -> Supabase `bulletin`)
-   show FIRST, each with an optional photo, a linked calendar event, and its own
-   shareable permalink (bulletin.html?post=<id>). After those, the LIVE community feed
-   from Seldovia.com's WordPress fills in, newest first, with "Load more" paging.
-   Everything is laid out as a horizontal, swipeable row (Qwynny's request). */
+/* Public News board (Jenny: a pinboard, like the blog).
+   Seldovia's OWN notices (posted in the admin -> Supabase `bulletin`) show FIRST, each with
+   an optional photo, a linked calendar event, and its own shareable permalink
+   (bulletin.html?post=<id>). After those, the LIVE community feed from Seldovia.com's
+   WordPress fills in, newest first, with "Load more" paging. Laid out as a masonry pinboard. */
 (function(){
   const board=document.querySelector("#board");
   if(!board) return;
@@ -15,34 +14,16 @@
   const fmtDB=d=>{ if(!d) return ""; const [y,m,day]=d.split("-"); return `${MON[+m-1]} ${+day}, ${y}`; };
   const clip=(s,n)=>{ s=String(s||""); return s.length>n ? s.slice(0,n).replace(/\s+\S*$/,"")+"…" : s; };
 
-  /* ---- horizontal, swipeable layout (arrows + scroll-snap) ---- */
-  board.classList.add("board-row");
-  const carousel=document.createElement("div"); carousel.className="board-carousel";
-  board.parentNode.insertBefore(carousel, board);
-  const mkArrow=(dir,label)=>{ const b=document.createElement("button"); b.type="button"; b.className="board-arrow board-"+dir;
-    b.setAttribute("aria-label",label);
-    b.innerHTML=`<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="${dir==="prev"?"M15 18l-6-6 6-6":"M9 18l6-6-6-6"}"/></svg>`;
-    return b; };
-  const prev=mkArrow("prev","Previous notices"), next=mkArrow("next","More notices");
-  carousel.appendChild(prev); carousel.appendChild(board); carousel.appendChild(next);
-  const scrollBy=dir=>{ const card=board.querySelector(".note"); const w=card?card.offsetWidth+18:340; board.scrollBy({left:dir*w*1.5,behavior:"smooth"}); };
-  prev.addEventListener("click",()=>scrollBy(-1)); next.addEventListener("click",()=>scrollBy(1));
-  const syncArrows=()=>{ const max=board.scrollWidth-board.clientWidth-4;
-    prev.hidden=board.scrollLeft<=4; next.hidden=board.scrollLeft>=max || max<=0; };
-  board.addEventListener("scroll",syncArrows,{passive:true}); window.addEventListener("resize",syncArrows);
-
-  /* ---- cards ---- */
   const ownPosts=[]; // keep Supabase rows for the ?post= detail view
   function ownCard(n){
-    const permalink=`bulletin.html?post=${encodeURIComponent(n.id)}`;
     const ev=n.event_url?`<a class="n-event" href="${esc(n.event_url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">📅 View event</a>`:"";
     const img=n.image_url?`<div class="n-media"><img src="${esc(n.image_url)}" alt="" loading="lazy"></div>`:"";
-    return `<article class="note note-own" tabindex="0" role="link" data-post="${esc(n.id)}" data-permalink="${esc(permalink)}">
+    return `<article class="note note-own" tabindex="0" role="link" data-post="${esc(n.id)}">
       ${img}
       <div class="n-body">
         <span class="n-cat">${esc(n.category||"Notice")}</span>
         <h4>${esc(n.title)}</h4>
-        ${n.body?`<p>${esc(clip(n.body,180))}</p>`:""}
+        ${n.body?`<p>${esc(clip(n.body,220))}</p>`:""}
         ${ev}
         <div class="n-foot"><span>${esc(n.posted_by||"Seldovia.com")}</span><span>${n.starts_on?esc(fmtDB(n.starts_on)):esc(fmtISO(n.created_at))}</span></div>
         <span class="n-open">Open →</span>
@@ -50,7 +31,7 @@
   }
   function wpCard(p){
     const title=strip(p.title && p.title.rendered || "");
-    const ex=clip(strip(p.excerpt && p.excerpt.rendered || ""),200);
+    const ex=clip(strip(p.excerpt && p.excerpt.rendered || ""),220);
     return `<a class="note note-link" href="${esc(p.link)}" target="_blank" rel="noopener">
       <div class="n-body">
         <span class="n-cat">Community</span>
@@ -60,11 +41,11 @@
         <span class="n-open">Read more →</span></div></a>`;
   }
 
-  /* ---- "Load more" (pages the WordPress archive) ---- */
+  /* "Load more" pages the WordPress archive */
   const moreWrap=document.createElement("div");
   moreWrap.className="center-link"; moreWrap.style.marginTop="1.4rem"; moreWrap.style.display="none";
   const btn=document.createElement("button"); btn.type="button"; btn.className="btn btn-ghost"; btn.textContent="Load more";
-  moreWrap.appendChild(btn); carousel.insertAdjacentElement("afterend", moreWrap);
+  moreWrap.appendChild(btn); board.insertAdjacentElement("afterend", moreWrap);
 
   const WP="https://www.seldovia.com/wp-json/wp/v2/posts?categories=1247,1140,2788,560,2247&per_page=20&orderby=date&order=desc&_fields=id,date,title,excerpt,link";
   let page=0, totalPages=1, loadingWP=false;
@@ -74,12 +55,12 @@
     fetch(WP+"&page="+page)
       .then(r=>{ totalPages=parseInt(r.headers.get("x-wp-totalpages")||totalPages,10)||1; if(!r.ok) throw 0; return r.json(); })
       .then(posts=>{ if(Array.isArray(posts)&&posts.length) board.insertAdjacentHTML("beforeend", posts.map(wpCard).join(""));
-        loadingWP=false; btn.textContent="Load more"; moreWrap.style.display=page>=totalPages?"none":""; syncArrows(); })
+        loadingWP=false; btn.textContent="Load more"; moreWrap.style.display=page>=totalPages?"none":""; })
       .catch(()=>{ loadingWP=false; page--; btn.textContent="Load more"; });
   }
   btn.addEventListener("click", loadWP);
 
-  /* ---- detail view for a single own-post permalink ---- */
+  /* detail view for an own-post permalink */
   function openDetail(n){
     if(!n) return;
     const ov=document.createElement("div"); ov.className="bul-modal";
@@ -108,7 +89,6 @@
   board.addEventListener("keydown",e=>{ if(e.key!=="Enter") return; const c=e.target.closest(".note-own"); if(!c) return;
     const n=ownPosts.find(x=>String(x.id)===c.dataset.post); if(n) openDetail(n); });
 
-  /* ---- load: own posts (Supabase) first, then the WP community feed ---- */
   function afterOwn(){
     loadWP();
     const wanted=new URLSearchParams(location.search).get("post");
@@ -118,7 +98,6 @@
     db.from("bulletin").select("*").eq("published",true)
       .then(({data,error})=>{
         if(!error && data && data.length){
-          // Order by the DATE shown on the card (starts_on, falling back to created_at), newest first.
           const key=p=>String(p.starts_on || (p.created_at||"").slice(0,10) || "");
           data.sort((a,b)=>key(b).localeCompare(key(a)));
           ownPosts.push(...data); board.innerHTML=data.map(ownCard).join("");
