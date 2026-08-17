@@ -6,3 +6,4 @@ node_modules/
 # raw listing photo drops — optimized .jpg versions are committed instead
 images/listings/*.png
 images/canva/
+images/headers/*.png
