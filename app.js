@@ -4144,6 +4144,23 @@ if($("#featureMedia")) $("#featureMedia").innerHTML=`<img class="feature-photo" 
 const PLACE_TABS=[["all","All"],["travel","Travel"],["stay","Lodging + Camping"],["eat","Eat"],["shop","Shop + Gifts"],["activities","Activities"],["services","Services"],["life","Public Services"]];
 let placeTab=(new URLSearchParams(location.search).get("cat"))||"all";
 if(!PLACE_TABS.some(([k])=>k===placeTab) && placeTab!=="about") placeTab="all";
+// Business owners + blurbs pulled from Jenny's old Seldovia.com directory (Connections).
+// Keyed by the PLACES name. Only Sea Glass had a written blurb; the rest await Jenny.
+const BIZ_OWNER={
+  "Alaska Dancing Eagles Cabin Rental":"Kris & Judith Lethin","Alaska Free Diver":"Chris & Amelia Pollack",
+  "Asta Waterfront Suite":"Sandy Bridge","Between Beaches":"Kristi McLean","Boardwalk Hotel":"Jeremiah and Angela Campbell",
+  "Crabpot Grocery":"Chris & Tata Wheeler","Fathoms Hair & Nail Salon":"Meggie Langvardt","Halo Cab":"Bobbi Gese",
+  "Jack and Aiva's Restaurant":"John Kennedy","Kar-a-Van Transfer":"Russ & Sandy Geagel","Mako's Water Taxi":"Mako Haggarty",
+  "Sea Parrot Inn":"Tim and Mary Pedlow","Seldovia Fishing Adventures":"Chris & Ashley Keithley",
+  "Seldovia Fuel and Hardware":"Dan Blodgett","Seldovia Harbor Inn":"Cory & Dawhn Bodyfelt",
+  "Seldovia Outdoor Rentals & Gifts":"Jeremiah & Angela Campbell","Seldovia Property":"Jenny Chissus",
+  "Seldovia Sea Glass":"Sarah Chambers","Seldovia Suites":"Cory & Dawhn Bodyfelt",
+  "The Great Escape — Alaskan Vacation Rentals":"Sean Christman","Thyme on the Boardwalk":"Suzie Stranik",
+  "Winter Watch":"Paul \"Sonny\" Chissus Jr."
+};
+const BIZ_BLURB={
+  "Seldovia Sea Glass":"Beautifully handcrafted pendants made with ocean-tumbled Seldovia glass. Created here in Seldovia by local artist Sarah Chambers."
+};
 function renderPlaces(){
   if(!$("#placeGrid")) return;
   if(placeTab==="about"){
@@ -4161,8 +4178,10 @@ function renderPlaces(){
   const placeCard=p=>{
     const bdg=placeBadge(p);
     const media=`<div class="place-media"><img class="place-photo" src="${bizPhoto(p)}" alt="" loading="lazy" width="600" height="600" onerror="this.src='images/placeholder-business.png'">${bdg?`<span class="place-badge" title="${esc(BADGE_LABEL[bdg]||"")}">${bdg}</span>`:""}</div>`;
+    const owner=(p.key!=="life") ? BIZ_OWNER[p.name] : "";
+    const blurb=BIZ_BLURB[p.name];
     const body=`<div class="place-body"><div class="rating"><span class="cat">${esc(p.cat)}</span></div><h4>${esc(p.name)}</h4>
-        <div class="place-loc">${pin} Seldovia, AK</div>`;
+        <div class="place-loc">${pin} Seldovia, AK</div>${owner?`<div class="place-owner">👤 ${esc(owner)}</div>`:""}${blurb?`<p class="place-blurb">${esc(blurb)}</p>`:""}`;
     if(p.url){ // whole card links to the business website
       return `<a class="place" href="${esc(p.url)}" target="_blank" rel="noopener">${media}${body}
         <div class="place-contact">${p.phone?esc(p.phone)+" · ":""}<span class="place-web">Visit website ↗</span></div></div></a>`;

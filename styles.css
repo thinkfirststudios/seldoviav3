@@ -398,6 +398,8 @@ body:not([data-page="realestate"]) .page-hero h1{font-size:clamp(2.7rem,6.2vw,4.
 .rating b{color:var(--heading);}
 .place-body h4{font-size:1.12rem;}
 .place-loc{display:flex; align-items:center; gap:.35rem; font-size:.85rem; color:var(--muted);}
+.place-owner{font-size:.82rem; color:var(--text-soft); font-weight:600;}
+.place-blurb{font-size:.86rem; color:var(--text-soft); line-height:1.42; margin-top:.1rem;}
 .place-loc svg{color:var(--sage);}
 
 .howband{background:var(--band); color:rgba(255,255,255,.86); border-radius:clamp(18px,2.6vw,26px); padding:clamp(30px,5vw,60px) clamp(20px,4vw,52px); text-align:center; background-image:radial-gradient(circle at 20% 20%, rgba(255,255,255,.06) 0 8px, transparent 9px); background-size:34px 34px;}
