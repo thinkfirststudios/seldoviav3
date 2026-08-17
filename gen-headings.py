@@ -41,7 +41,7 @@ MANIFEST = [
     ("Sponsors",                                "ink",   "sponsors.png"),
     ("The local businesses we're grateful for", "ink",   "sponsors-grateful.png"),
     # real estate
-    ("Finding your place on the bay",           "ink",   "re-finding-your-place.png"),
+    ("Finding your place on Kachemak Bay",       "ink",   "re-finding-your-place.png"),
     ("Recently sold",                           "ink",   "recently-sold.png"),
     ("What my clients say",                      "ink",   "what-my-clients-say.png"),
     # photo journal
@@ -61,7 +61,7 @@ MANIFEST = [
     # WHITE versions of the page-hero titles, for the photo-banner treatment (readable on photos)
     ("Notices, happenings & friendly fliers",   "white", "bulletin-notices-white.png"),
     ("A daily diary of Seldovia",               "white", "gallery-daily-diary-white.png"),
-    ("Finding your place on the bay",           "white", "re-finding-your-place-white.png"),
+    ("Finding your place on Kachemak Bay",       "white", "re-finding-your-place-white.png"),
     ("Say hello",                               "white", "contact-say-hello-white.png"),
     ("Most popular things to do",               "white", "explore-most-popular-white.png"),
     ("Neighbors & local businesses",            "white", "phonebook-neighbors-white.png"),
