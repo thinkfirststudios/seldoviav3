@@ -206,7 +206,9 @@ const BIZ_IMG={
  "Thyme on the Boardwalk Waterfront Cottage":"thyme-on-the-boardwalk-waterfront-cottage",
  "Otter Cove Ice Cream at the Boardwalk Hotel":"otter-cove-ice-cream-at-the-boardwalk-hotel","Eternal Buzz":"eternal-buzz"
 };
-const bizPhoto=(p,color)=>{ const s=BIZ_IMG[p.name]; return s?`images/businesses/${s}-${color?"color":"bw"}.jpg`:(p.img||"images/placeholder-business.png"); };
+// Jenny's own uploaded business photos (admin -> settings.explore_photos), name -> url. Wins over the built-in image.
+const EXPLORE_PHOTOS={};
+const bizPhoto=(p,color)=>{ if(EXPLORE_PHOTOS[p.name]) return EXPLORE_PHOTOS[p.name]; const s=BIZ_IMG[p.name]; return s?`images/businesses/${s}-${color?"color":"bw"}.jpg`:(p.img||"images/placeholder-business.png"); };
 // Category letter badge (top-right of each Explore card), per Jenny's key:
 // L Lodging, T Travel, B Business, E Eat, S Shops, A Activity, O Organization, G Government
 const CAT_BADGE={travel:"T",stay:"L",eat:"E",shop:"S",activities:"A",services:"B",life:"O",about:""};
@@ -236,7 +238,7 @@ function applyExploreOverrides(map){
   PLACES.forEach(p=>{ const t=map[p.name], c=t&&CAT_BY_TOKEN[t]; if(c){ p.key=c.key; p._govt=c.govt; } });
 }
 // Exposed so the admin panel can list businesses and edit their categories.
-window.EXPLORE={ get PLACES(){return PLACES;}, EXPLORE_CATS, CAT_BY_TOKEN, baseToken };
+window.EXPLORE={ get PLACES(){return PLACES;}, EXPLORE_CATS, CAT_BY_TOKEN, baseToken, bizPhoto };
 // Jenny's Seldovia Blog — recovered posts (original titles, dates, images preserved). PROD: managed via admin.
 const GAZETTE=[
  {title:"Thank you, Jennifer!",excerpt:"Jennifer, thank you so much for your kind words! It makes me so happy to hear how pleased you are with your Seldovia investment and my service.",date:"Jul 17, 2026",read:"1 min",cat:"Kind Words",img:"images/gazette/2026-07-17.jpg",body:`Jennifer, thank you so much for your kind words! It makes me so happy to hear how pleased you are with your Seldovia investment and my service.
@@ -4197,8 +4199,11 @@ if($("#placeTabs")){
 }
 // Explore page: apply Jenny's saved category overrides (if any) before the first paint.
 if($("#placeGrid") && window.db){
-  db.from("settings").select("value").eq("key","explore_overrides").maybeSingle()
-    .then(({data})=>{ try{ if(data&&data.value) applyExploreOverrides(JSON.parse(data.value)); }catch(e){} renderPlaces(); })
+  db.from("settings").select("key,value").in("key",["explore_overrides","explore_photos"])
+    .then(({data})=>{ (data||[]).forEach(r=>{ try{
+        if(r.key==="explore_overrides" && r.value) applyExploreOverrides(JSON.parse(r.value));
+        if(r.key==="explore_photos" && r.value) Object.assign(EXPLORE_PHOTOS, JSON.parse(r.value));
+      }catch(e){} }); renderPlaces(); })
     .catch(()=>renderPlaces());
 } else { renderPlaces(); }
 

@@ -77,7 +77,7 @@
     {key:"messages", label:"📨 Messages",    render:renderMessagesTab},
     {key:"settings", label:"⚙️ Home Extra",  render:renderSettingsTab},
     {key:"feature",  label:"⭐ Explore Card", render:renderFeatureTab},
-    {key:"bizcat",   label:"🏷️ Categories",   render:renderExploreCatsTab},
+    {key:"bizcat",   label:"🏪 Businesses",    render:renderExploreCatsTab},
   ];
   function renderApp(){
     app.innerHTML=`
@@ -521,8 +521,8 @@
     const biz=[...EX.PLACES].sort((a,b)=>a.name.localeCompare(b.name));
     host.innerHTML=`
       <div class="info-block" style="max-width:720px">
-        <h4>Explore page categories</h4>
-        <p style="color:var(--text-soft);font-size:.92rem;margin:.3rem 0 1rem">Set the category for any business on the Explore page. It controls which filter it shows under and the letter badge in the top corner of its card. Changes go live right away.</p>
+        <h4>Explore businesses</h4>
+        <p style="color:var(--text-soft);font-size:.92rem;margin:.3rem 0 1rem">Set each business's category (the filter it shows under and its corner letter), and upload a photo for its card with the 📷 button. Great for the businesses still showing a placeholder. Changes go live right away.</p>
         <input id="bc-search" type="search" placeholder="Search businesses…" style="width:100%;padding:.6rem .8rem;border:1px solid var(--line);border-radius:10px;margin-bottom:1rem">
         <div id="bc-list" style="display:flex;flex-direction:column;gap:.5rem;max-height:60vh;overflow:auto"></div>
         <div style="display:flex;gap:.8rem;align-items:center;margin-top:1rem">
@@ -530,19 +530,31 @@
           <p id="bc-msg" class="form-note"></p>
         </div>
       </div>`;
-    let overrides={};
-    const rowHtml=p=>{ const eff=overrides[p.name]||EX.baseToken(p);
-      return `<div class="dir-item" style="align-items:center;gap:.8rem">
-        <div class="d-main" style="min-width:0"><h4 style="margin:0;font-size:.98rem">${esc(p.name)}</h4><div class="d-cat">${esc(p.cat||"")}</div></div>
-        <select class="bc-sel" data-name="${esc(p.name)}" style="flex:none;padding:.4rem .5rem;border:1px solid var(--line);border-radius:8px;max-width:230px">${optsFor(eff)}</select>
+    let overrides={}, photos={};
+    const rowHtml=p=>{ const eff=overrides[p.name]||EX.baseToken(p); const src=photos[p.name]||EX.bizPhoto(p);
+      return `<div class="dir-item" style="align-items:center;gap:.7rem">
+        <div class="bc-thumb" data-name="${esc(p.name)}" style="width:52px;height:52px;flex:none;border-radius:8px;overflow:hidden;background:var(--surface-2);border:1px solid var(--line)"><img src="${esc(src)}" alt="" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'"></div>
+        <div class="d-main" style="min-width:0;flex:1"><h4 style="margin:0;font-size:.95rem">${esc(p.name)}</h4><div class="d-cat">${esc(p.cat||"")}</div></div>
+        <select class="bc-sel" data-name="${esc(p.name)}" style="flex:none;padding:.4rem .5rem;border:1px solid var(--line);border-radius:8px;max-width:170px">${optsFor(eff)}</select>
+        <label class="btn btn-ghost" style="flex:none;cursor:pointer;padding:.4rem .55rem" title="Upload a photo">📷<input type="file" class="bc-photo" data-name="${esc(p.name)}" accept="image/*" hidden></label>
       </div>`; };
     const draw=f=>{ const q=(f||"").toLowerCase();
       $("#bc-list").innerHTML=biz.filter(p=>!q||p.name.toLowerCase().includes(q)||(p.cat||"").toLowerCase().includes(q)).map(rowHtml).join("")||`<p class="form-note">No matches.</p>`; };
-    db.from("settings").select("value").eq("key","explore_overrides").maybeSingle()
-      .then(({data})=>{ if(data&&data.value){ try{ overrides=JSON.parse(data.value)||{}; }catch(e){} } draw(""); })
+    db.from("settings").select("key,value").in("key",["explore_overrides","explore_photos"])
+      .then(({data})=>{ (data||[]).forEach(r=>{ try{ if(r.key==="explore_overrides"&&r.value) overrides=JSON.parse(r.value)||{}; if(r.key==="explore_photos"&&r.value) photos=JSON.parse(r.value)||{}; }catch(e){} }); draw(""); })
       .catch(()=>draw(""));
     $("#bc-search").addEventListener("input",e=>draw(e.target.value));
-    $("#bc-list").addEventListener("change",e=>{ const s=e.target.closest(".bc-sel"); if(!s) return;
+    $("#bc-list").addEventListener("change",async e=>{
+      const f=e.target.closest(".bc-photo");
+      if(f){ const file=f.files[0]; if(!file) return; const name=f.dataset.name, msg=$("#bc-msg");
+        msg.style.color="var(--text-soft)"; msg.textContent=`Uploading photo for ${name}…`;
+        try{ const url=await uploadImage("gallery", file, "biz"); photos[name]=url;
+          const {error}=await db.from("settings").upsert({key:"explore_photos",value:JSON.stringify(photos)},{onConflict:"key"}); if(error) throw error;
+          const thumb=[...$("#bc-list").querySelectorAll(".bc-thumb")].find(t=>t.dataset.name===name); if(thumb) thumb.innerHTML=`<img src="${url}" alt="" style="width:100%;height:100%;object-fit:cover">`;
+          msg.style.color="var(--open)"; msg.textContent=`${name} photo saved. It's live on Explore.`;
+        }catch(err){ msg.style.color="var(--accent-ink)"; msg.textContent="Error: "+(err.message||err); }
+        return; }
+      const s=e.target.closest(".bc-sel"); if(!s) return;
       const name=s.dataset.name, p=biz.find(x=>x.name===name); if(!p) return;
       if(s.value===EX.baseToken(p)) delete overrides[name]; else overrides[name]=s.value; });
     $("#bc-save").addEventListener("click",async()=>{
