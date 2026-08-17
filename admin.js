@@ -76,6 +76,7 @@
     {key:"listing",  label:"🏡 Listings",    render:renderListingTab},
     {key:"messages", label:"📨 Messages",    render:renderMessagesTab},
     {key:"settings", label:"⚙️ Home Extra",  render:renderSettingsTab},
+    {key:"feature",  label:"⭐ Explore Card", render:renderFeatureTab},
   ];
   function renderApp(){
     app.innerHTML=`
@@ -457,6 +458,56 @@
       if(error){ msg.style.color="var(--accent-ink)"; msg.textContent="Error: "+error.message+" (run seed-settings.sql once)"; }
       else { msg.style.color="var(--open)"; msg.textContent="Saved! It's live on the home page."; cfg.home_extra=mode; if(ed) cfg[ed.key]=content; }
       btn.disabled=false;
+    });
+  }
+
+  /* ---------------- EXPLORE FEATURE CARD ---------------- */
+  function renderFeatureTab(){
+    // Defaults MUST match the hard-coded card in explore.html.
+    const DEF={
+      eyebrow:"Local Favorite",
+      title:"Best of the Boardwalk",
+      body:"The historic boardwalk is the heart of Seldovia — homes on stilts above the tide, little galleries, and the best cinnamon rolls in town. Stroll it once and you’ll understand why folks never leave.",
+      btnLabel:"Browse the phone book",
+      btnLink:"phone-book.html",
+      image:""
+    };
+    $("#tab-feature").innerHTML=`
+      <form class="info-block" id="featForm" style="max-width:640px">
+        <h4>Explore page "Local Favorite" card</h4>
+        <p style="color:var(--text-soft);font-size:.92rem;margin:.3rem 0 1rem">This is the highlighted card near the bottom of the Explore page. Change any of it here — it goes live right away.</p>
+        <div class="field"><label for="f-eyebrow">Small label</label><input id="f-eyebrow" placeholder="Local Favorite"></div>
+        <div class="field"><label for="f-title">Title</label><input id="f-title" placeholder="Best of the Boardwalk"></div>
+        <div class="field"><label for="f-body">Text</label><textarea id="f-body" rows="5" placeholder="Write the card text…"></textarea></div>
+        <div class="row-2" style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem">
+          <div class="field"><label for="f-btnlabel">Button label</label><input id="f-btnlabel" placeholder="Browse the phone book"></div>
+          <div class="field"><label for="f-btnlink">Button link</label><input id="f-btnlink" placeholder="phone-book.html"></div>
+        </div>
+        <span class="hint" style="display:block;margin:-.4rem 0 1rem">Leave the button label empty to hide the button.</span>
+        <div class="field"><label for="f-img">Photo <span class="opt">(optional)</span></label><input id="f-img" type="file" accept="image/*"><span class="hint" id="f-imghint"></span></div>
+        <button class="btn btn-primary" type="submit" id="f-btn">Save</button>
+        <p id="f-msg" class="form-note"></p>
+      </form>`;
+    let cur={...DEF};
+    db.from("settings").select("value").eq("key","explore_feature").maybeSingle()
+      .then(({data})=>{ if(data&&data.value){ try{ cur={...DEF,...JSON.parse(data.value)}; }catch(e){} }
+        $("#f-eyebrow").value=cur.eyebrow||""; $("#f-title").value=cur.title||""; $("#f-body").value=cur.body||"";
+        $("#f-btnlabel").value=cur.btnLabel||""; $("#f-btnlink").value=cur.btnLink||"";
+        $("#f-imghint").textContent=cur.image?"A photo is set. Choose a new one to replace it.":"Uses the harbor photo unless you set one here."; })
+      .catch(()=>{});
+    $("#featForm").addEventListener("submit",async e=>{ e.preventDefault();
+      const msg=$("#f-msg"), btn=$("#f-btn"); btn.disabled=true; msg.style.color="var(--text-soft)"; msg.textContent="Saving…";
+      try{
+        const val={ eyebrow:$("#f-eyebrow").value.trim(), title:$("#f-title").value.trim(), body:$("#f-body").value.trim(),
+          btnLabel:$("#f-btnlabel").value.trim(), btnLink:$("#f-btnlink").value.trim(), image:cur.image||"" };
+        const file=$("#f-img").files[0];
+        if(file){ msg.textContent="Uploading photo…"; val.image=await uploadImage("blog", file, "feature"); }
+        const {error}=await db.from("settings").upsert({key:"explore_feature",value:JSON.stringify(val)},{onConflict:"key"});
+        if(error) throw error;
+        cur=val; $("#f-imghint").textContent=cur.image?"A photo is set. Choose a new one to replace it.":"Uses the harbor photo unless you set one here.";
+        msg.style.color="var(--open)"; msg.textContent="Saved! It's live on the Explore page.";
+      }catch(err){ msg.style.color="var(--accent-ink)"; msg.textContent="Error: "+(err.message||err); }
+      finally{ btn.disabled=false; }
     });
   }
 
