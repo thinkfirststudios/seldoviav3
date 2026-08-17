@@ -42,7 +42,6 @@ const NAV=[
   ["gallery.html","Gallery","gallery"],
   ["real-estate.html","Real Estate","realestate"],
   ["phone-book.html","Phone Book","phonebook"],
-  ["bulletin.html","News","bulletin"],
   ["contact.html","Contact","contact"],
 ];
 const navLinks=(cls="")=>NAV.map(([href,label,key])=>`<a class="${cls} ${key===PAGE?'active':''}" href="${href}">${label}</a>`).join("");
@@ -84,7 +83,7 @@ const FOOTER=`
         <div class="foot-util"><span>Tide: High 14.2 ft</span><span>Ferry: 3:15 PM</span><span>54&deg;F</span><span id="footTime">&mdash;:&mdash;</span></div>
       </div>
       <div class="foot-col"><h4>Explore</h4><ul><li><a href="explore.html">Directory</a></li><li><a href="gazette.html">Blog</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="calendar.html">Calendar</a></li></ul></div>
-      <div class="foot-col"><h4>Community</h4><ul><li><a href="phone-book.html">Phone Book</a></li><li><a href="bulletin.html">News</a></li><li><a href="index.html#sponsors">Sponsors</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="foot-col"><h4>Community</h4><ul><li><a href="phone-book.html">Phone Book</a></li><li><a href="gazette.html">News</a></li><li><a href="index.html#sponsors">Sponsors</a></li><li><a href="contact.html">Contact</a></li></ul></div>
       <div class="foot-col"><h4>Real Estate</h4><ul><li><a href="real-estate.html">Featured listings</a></li><li><a href="real-estate.html">Buying guide</a></li><li><a href="real-estate.html">Selling guide</a></li><li><a href="contact.html">Home valuation</a></li></ul></div>
     </div>
     <div class="foot-bottom">
@@ -4207,18 +4206,13 @@ if($("#placeGrid") && window.db){
 const slugify=s=>String(s).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"").slice(0,64);
 const postBodyHtml=t=>"<p>"+esc((t||"").trim()).replace(/\n{2,}/g,"</p><p>").replace(/\n/g,"<br>")+"</p>";
 if($("#gazetteGrid")){
-  $("#gazetteGrid").innerHTML=GAZETTE.map(g=>`<article class="post">
-    ${g.img?`<div class="post-media"><img class="post-photo" src="${g.img}" alt="${esc(g.title)}" loading="lazy" onerror="this.closest('.post-media').style.display='none'"></div>`:""}
-    <div class="post-body"><span class="kicker">${esc(g.cat)}</span><h4>${esc(g.title)}</h4>
+  $("#gazetteGrid").innerHTML=GAZETTE.map(g=>{ const url="post.html?p="+slugify(g.title); const ex=(g.excerpt||g.body||"").trim().slice(0,180);
+    return `<article class="post">
+    ${g.img?`<a class="post-media" href="${url}"><img class="post-photo" src="${g.img}" alt="${esc(g.title)}" loading="lazy" onerror="this.closest('.post-media').style.display='none'"></a>`:""}
+    <div class="post-body"><span class="kicker">${esc(g.cat)}</span><h4><a href="${url}">${esc(g.title)}</a></h4>
     <div class="post-meta"><span>${esc(g.date)}</span></div>
-    <div class="post-text clamp">${postBodyHtml(g.body||g.excerpt)}</div>
-    <button class="show-more" type="button">Read more</button></div></article>`).join("");
-  // reveal full text inline; hide the button when the text already fits
-  $$("#gazetteGrid .post").forEach(card=>{
-    const text=card.querySelector(".post-text"), btn=card.querySelector(".show-more");
-    if(text.scrollHeight<=text.clientHeight+4){ btn.remove(); return; }
-    btn.addEventListener("click",()=>{ const clamped=text.classList.toggle("clamp"); btn.textContent=clamped?"Read more":"Read less"; });
-  });
+    <div class="post-text clamp">${esc(ex)}${ex.length>=180?"…":""}</div>
+    <a class="show-more" href="${url}">Read more →</a></div></article>`; }).join("");
 }
 
 // single blog post page (post.html?p=slug)
@@ -4427,7 +4421,7 @@ const INDEX=[
   ...CATEGORIES.map(c=>({type:"Category",title:c.b,desc:c.s,href:"explore.html?cat="+c.key,kw:c.key+" "+({about:"about history location story seldovia town kachemak bay herring",travel:"travel ferry air taxi water taxi plane amhs smokey bay mako halibut cove get to seldovia transportation",stay:"stay sleep lodging hotel inn cabin lodge rental bnb bed suites vacation",eat:"food eat restaurant cafe bar grill grocery store meal dine breakfast lunch dinner drinks",shop:"shop store gift gifts nursery plants boutique sea glass grocery",activities:"activities tour charter fishing diving kayak trail hike beach rentals things to do outdoors",services:"services construction salon marine fuel real estate property care trades help",life:"life community organization tribe city church school library clinic emergency police post office chamber"}[c.key]||"")})),
   ...EVENTS.map(e=>({type:"Event",title:e.title,desc:`${fmtDayLabel(e.d)} · ${e.where}`,href:"calendar.html",kw:e.cat+" "+e.where})),
   ...DIRECTORY.map(d=>({type:"Directory",title:d.name,desc:`${d.cat} · ${d.phone}`,href:"phone-book.html",kw:d.cat})),
-  ...NOTES.map(n=>({type:"Bulletin",title:n.title,desc:n.body,href:"bulletin.html",kw:n.cat})),
+  ...NOTES.map(n=>({type:"News",title:n.title,desc:n.body,href:"gazette.html",kw:n.cat})),
   {type:"Guide",title:"Getting to Seldovia",desc:"Ferry, floatplane, and water-taxi options from Homer.",href:"explore.html",kw:"ferry floatplane water taxi homer travel arrive"},
   {type:"Info",title:"Ferry schedule (AMHS)",desc:"Alaska Marine Highway sailings to and from Homer.",href:"calendar.html",kw:"ferry amhs tustumena schedule boat"},
 ];

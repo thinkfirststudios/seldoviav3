@@ -471,7 +471,10 @@ body:not([data-page="realestate"]) .howband::before{content:""; position:absolut
 .post-body{min-width:0;}
 .post-body h4,.post-text{overflow-wrap:anywhere;}
 /* uniform blog cards — consistent image size, clamped text, Read more to expand */
-.post-media{position:relative; aspect-ratio:3/4; background:#fff;}
+.post-media{position:relative; aspect-ratio:3/4; background:#fff; display:block; text-decoration:none;}
+.post h4 a{color:inherit; text-decoration:none;}
+.post h4 a:hover{color:var(--accent-ink);}
+a.show-more{text-decoration:none; display:inline-block;}
 /* Show the WHOLE image inside the card — shrink to fit with white letterboxing
    above/below (or beside) so tall flyers/graphics are never cropped. */
 .post-media .post-photo{position:absolute; inset:0; width:100%; height:100%; object-fit:contain; display:block;}
