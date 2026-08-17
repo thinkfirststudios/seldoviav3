@@ -70,6 +70,7 @@ MANIFEST = [
     ("What's happening around town",            "white", "calendar-whats-happening-white.png"),
     ("Add your listing",                        "white", "directory-add-listing-white.png"),
     ("Notes & stories from Seldovia",           "white", "gazette-notes-stories-white.png"),
+    ("Seldovia webcams",                         "white", "seldovia-webcams-white.png"),
 ]
 
 # Photo Journal "{Month} in Seldovia" headings (dynamic per current month).
