@@ -15,6 +15,9 @@
   const clip=(s,n)=>{ s=String(s||""); return s.length>n ? s.slice(0,n).replace(/\s+\S*$/,"")+"…" : s; };
   const norm=s=>String(s||"").trim().toLowerCase().replace(/\s+/g," ");
   const seen=new Set(); // dedup by title across own notices + the WP feed (stops repeats)
+  const items=[];       // every card (own + WP) merged, so the whole board stays in ONE date order
+  const dayOf=v=>String(v||"").slice(0,10);
+  function paint(){ items.sort((a,b)=>dayOf(b.when).localeCompare(dayOf(a.when))); board.innerHTML=items.map(it=>it.html).join(""); }
 
   const ownPosts=[]; // keep Supabase rows for the ?post= detail view
   function ownCard(n){
@@ -59,7 +62,7 @@
       .then(posts=>{
         if(Array.isArray(posts)&&posts.length){
           const fresh=posts.filter(p=>{ const t=norm(strip((p.title&&p.title.rendered)||"")); if(!t||seen.has(t)) return false; seen.add(t); return true; });
-          if(fresh.length) board.insertAdjacentHTML("beforeend", fresh.map(wpCard).join(""));
+          if(fresh.length){ fresh.forEach(p=>items.push({when:dayOf(p.date), html:wpCard(p)})); paint(); }
         }
         loadingWP=false; btn.textContent="Load more"; moreWrap.style.display=page>=totalPages?"none":""; })
       .catch(()=>{ loadingWP=false; page--; btn.textContent="Load more"; });
@@ -107,7 +110,9 @@
           const key=p=>String(p.starts_on || (p.created_at||"").slice(0,10) || "");
           data.sort((a,b)=>key(b).localeCompare(key(a)));
           data.forEach(p=>seen.add(norm(p.title))); // WP feed won't repeat an own notice
-          ownPosts.push(...data); board.innerHTML=data.map(ownCard).join("");
+          ownPosts.push(...data);
+          data.forEach(p=>items.push({when:p.starts_on||dayOf(p.created_at), html:ownCard(p)}));
+          paint();
         }
         afterOwn();
       }).catch(afterOwn);
