@@ -400,6 +400,10 @@ body:not([data-page="realestate"]) .page-hero h1{font-size:clamp(2.7rem,6.2vw,4.
 .place-loc{display:flex; align-items:center; gap:.35rem; font-size:.85rem; color:var(--muted);}
 .place-owner{font-size:.82rem; color:var(--text-soft); font-weight:600;}
 .place-blurb{font-size:.86rem; color:var(--text-soft); line-height:1.42; margin-top:.1rem;}
+/* flash a card when arriving from a search suggestion (?find=) */
+.search-hit{outline:3px solid var(--accent-ink); outline-offset:3px; border-radius:var(--radius-s); animation:searchHit 2.4s ease forwards;}
+@keyframes searchHit{0%,55%{outline-color:var(--accent-ink);} 100%{outline-color:transparent;}}
+@media (prefers-reduced-motion:reduce){ .search-hit{animation:none;} }
 .place-loc svg{color:var(--sage);}
 
 .howband{background:var(--band); color:rgba(255,255,255,.86); border-radius:clamp(18px,2.6vw,26px); padding:clamp(30px,5vw,60px) clamp(20px,4vw,52px); text-align:center; background-image:radial-gradient(circle at 20% 20%, rgba(255,255,255,.06) 0 8px, transparent 9px); background-size:34px 34px;}

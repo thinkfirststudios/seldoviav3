@@ -4162,6 +4162,19 @@ const BIZ_OWNER={
 const BIZ_BLURB={
   "Seldovia Sea Glass":"Beautifully handcrafted pendants made with ocean-tumbled Seldovia glass. Created here in Seldovia by local artist Sarah Chambers."
 };
+// When arriving from a search suggestion (?find=Name), scroll to that card and flash it.
+let _findScrolled=false;
+function scrollToFind(containerSel){
+  const find=new URLSearchParams(location.search).get("find"); if(!find) return false;
+  const name=decodeURIComponent(find).trim().toLowerCase();
+  const cont=document.querySelector(containerSel); if(!cont) return false;
+  const h=[...cont.querySelectorAll("h4")].find(x=>x.textContent.trim().toLowerCase()===name);
+  if(!h) return false;
+  const card=h.closest("article,.place,.dir-item,li")||h.parentElement;
+  card.scrollIntoView({behavior:"smooth",block:"center"}); card.classList.add("search-hit");
+  setTimeout(()=>card.classList.remove("search-hit"),2400);
+  return true;
+}
 function renderPlaces(){
   if(!$("#placeGrid")) return;
   if(placeTab==="about"){
@@ -4192,6 +4205,7 @@ function renderPlaces(){
     return `<div class="place place-static">${media}${body}${contact}</div></div>`;
   };
   $("#placeGrid").innerHTML=rows.map(placeCard).join("");
+  if(!_findScrolled) requestAnimationFrame(()=>{ if(scrollToFind("#placeGrid")) _findScrolled=true; });
 }
 if($("#placeTabs")){
   $("#placeTabs").innerHTML=PLACE_TABS.map(([k,l])=>`<button class="tab" data-key="${k}" aria-pressed="${k===placeTab}">${esc(l)}</button>`).join("");
@@ -4364,6 +4378,7 @@ if($("#dirList")){
       : `<div class="dir-empty">No matches — try another word or category.</div>`;
     $("#dirList").innerHTML=rows.length?rows.map(r=>r.type==="person"?personCard(r):bizCard(r)).join(""):empty;};
   renderDir();
+  requestAnimationFrame(()=>scrollToFind("#dirList"));
   $("#dirChips").addEventListener("click",e=>{const b=e.target.closest(".chip"); if(!b)return; dirCat=b.dataset.cat; $$("#dirChips .chip").forEach(c=>c.setAttribute("aria-pressed",c===b)); renderDir();});
   $("#dirSearch").addEventListener("input",e=>{dirQuery=e.target.value; renderDir();});
 }
@@ -4421,11 +4436,11 @@ document.addEventListener("click",e=>{const b=e.target.closest(".add-cal"); if(b
 
 /* ============================================================ GLOBAL SEARCH ============================================================ */
 const INDEX=[
-  ...PLACES.map(p=>({type:"Place",title:p.name,desc:p.phone?`${p.cat} · ${p.phone}`:p.cat,href:"explore.html",kw:p.cat+" "+p.key})),
+  ...PLACES.map(p=>({type:"Place",title:p.name,desc:p.phone?`${p.cat} · ${p.phone}`:p.cat,href:"explore.html?cat="+p.key+"&find="+encodeURIComponent(p.name),kw:p.cat+" "+p.key})),
   ...LISTINGS.map(l=>({type:"Real Estate",title:l.name,desc:l.cat,href:"real-estate.html",kw:l.cat})),
   ...CATEGORIES.map(c=>({type:"Category",title:c.b,desc:c.s,href:"explore.html?cat="+c.key,kw:c.key+" "+({about:"about history location story seldovia town kachemak bay herring",travel:"travel ferry air taxi water taxi plane amhs smokey bay mako halibut cove get to seldovia transportation",stay:"stay sleep lodging hotel inn cabin lodge rental bnb bed suites vacation",eat:"food eat restaurant cafe bar grill grocery store meal dine breakfast lunch dinner drinks",shop:"shop store gift gifts nursery plants boutique sea glass grocery",activities:"activities tour charter fishing diving kayak trail hike beach rentals things to do outdoors",services:"services construction salon marine fuel real estate property care trades help",life:"life community organization tribe city church school library clinic emergency police post office chamber"}[c.key]||"")})),
   ...EVENTS.map(e=>({type:"Event",title:e.title,desc:`${fmtDayLabel(e.d)} · ${e.where}`,href:"calendar.html",kw:e.cat+" "+e.where})),
-  ...DIRECTORY.map(d=>({type:"Directory",title:d.name,desc:`${d.cat} · ${d.phone}`,href:"phone-book.html",kw:d.cat})),
+  ...DIRECTORY.map(d=>({type:"Directory",title:d.name,desc:`${d.cat} · ${d.phone}`,href:"phone-book.html?find="+encodeURIComponent(d.name),kw:d.cat})),
   ...NOTES.map(n=>({type:"News",title:n.title,desc:n.body,href:"gazette.html",kw:n.cat})),
   {type:"Guide",title:"Getting to Seldovia",desc:"Ferry, floatplane, and water-taxi options from Homer.",href:"explore.html",kw:"ferry floatplane water taxi homer travel arrive"},
   {type:"Info",title:"Ferry schedule (AMHS)",desc:"Alaska Marine Highway sailings to and from Homer.",href:"calendar.html",kw:"ferry amhs tustumena schedule boat"},
