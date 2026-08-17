@@ -14,8 +14,7 @@
   <div class="page-hero"><div class="wrap"><span class="eyebrow">Community Directory</span><h1 class="wc-h"><img src="images/headings/directory-add-listing.png?v=1" alt="Add your listing"></h1><p>Individuals, couples, families, businesses, and organizations — all welcome. Choose what to share; each field can be public or kept private. Jenny reviews every listing before it goes live. No account, no login.</p></div></div>
 
   <section class="section wrap">
-    <form class="signup-form dir-form" name="directory-listing" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" action="/thanks.html">
-      <input type="hidden" name="form-name" value="directory-listing">
+    <form class="signup-form dir-form" id="dirForm" name="directory-listing" enctype="multipart/form-data">
       <p class="hp" hidden><label>Leave this empty: <input name="bot-field"></label></p>
 
       <div class="form-note">Fields marked <span class="req">*</span> are required. Everything else is optional — and next to personal details you'll see a <strong>Public / Private</strong> switch so you control exactly what neighbors can see.</div>
@@ -128,7 +127,10 @@
     </form>
   </section>
 </main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="db.js?v=6"></script>
 <script src="app.js?v=34"></script>
+<script src="directory-submit.js?v=1"></script>
 <script>
 (function(){
   const sel=document.getElementById("d-type");

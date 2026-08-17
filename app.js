@@ -4432,12 +4432,22 @@ if($("#contactForm")) $("#contactForm").addEventListener("submit",async e=>{
   e.preventDefault();
   const form=e.target;
   if(form.website && form.website.value) return; // honeypot: silently drop bots
-  const name=$("#cName").value.trim(), email=$("#cEmail").value.trim(), msg=$("#cMsg").value.trim();
+  const name=$("#cName").value.trim(), email=$("#cEmail").value.trim(); let msg=$("#cMsg").value.trim();
   const topic=$("#cTopic")?$("#cTopic").value:"";
   if(!name||!email||!msg){ toast("Please add your name, email, and a message."); return; }
   const btn=form.querySelector('button[type="submit"]'); if(btn){ btn.disabled=true; }
   let ok=false;
   try{
+    // optional attachment (flier / photo) -> public uploads bucket, link appended to the message
+    const fileInput=$("#cFile"), file=fileInput && fileInput.files && fileInput.files[0];
+    if(file && window.db){
+      try{
+        const ext=(file.name.split(".").pop()||"jpg").toLowerCase().replace(/[^a-z0-9]/g,"")||"jpg";
+        const path=`contact/${Date.now()}-${Math.round(1e6*Math.random())}.${ext}`;
+        const {error:upErr}=await db.storage.from("uploads").upload(path,file,{contentType:file.type||"application/octet-stream"});
+        if(!upErr){ const {data:pub}=db.storage.from("uploads").getPublicUrl(path); if(pub&&pub.publicUrl) msg+=`\n\nAttachment: ${pub.publicUrl}`; }
+      }catch(_){}
+    }
     // 1) save to the admin inbox (Supabase)
     if(window.db){ const {error}=await db.from("messages").insert({name,email,topic,message:msg}); if(!error) ok=true; }
     // 2) email Jenny via Web3Forms (if configured)
