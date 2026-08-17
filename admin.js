@@ -77,6 +77,7 @@
     {key:"messages", label:"📨 Messages",    render:renderMessagesTab},
     {key:"settings", label:"⚙️ Home Extra",  render:renderSettingsTab},
     {key:"feature",  label:"⭐ Explore Card", render:renderFeatureTab},
+    {key:"bizcat",   label:"🏷️ Categories",   render:renderExploreCatsTab},
   ];
   function renderApp(){
     app.innerHTML=`
@@ -507,6 +508,48 @@
         cur=val; $("#f-imghint").textContent=cur.image?"A photo is set. Choose a new one to replace it.":"Uses the harbor photo unless you set one here.";
         msg.style.color="var(--open)"; msg.textContent="Saved! It's live on the Explore page.";
       }catch(err){ msg.style.color="var(--accent-ink)"; msg.textContent="Error: "+(err.message||err); }
+      finally{ btn.disabled=false; }
+    });
+  }
+
+  /* ---------------- EXPLORE CATEGORIES (fix business badges) ---------------- */
+  function renderExploreCatsTab(){
+    const EX=window.EXPLORE, host=$("#tab-bizcat");
+    if(!EX||!EX.PLACES){ host.innerHTML=`<p class="form-note">Couldn't load the business list. Try reloading the page.</p>`; return; }
+    const cats=EX.EXPLORE_CATS;
+    const optsFor=sel=>cats.map(c=>`<option value="${c.token}"${c.token===sel?" selected":""}>${esc(c.label)}</option>`).join("");
+    const biz=[...EX.PLACES].sort((a,b)=>a.name.localeCompare(b.name));
+    host.innerHTML=`
+      <div class="info-block" style="max-width:720px">
+        <h4>Explore page categories</h4>
+        <p style="color:var(--text-soft);font-size:.92rem;margin:.3rem 0 1rem">Set the category for any business on the Explore page. It controls which filter it shows under and the letter badge in the top corner of its card. Changes go live right away.</p>
+        <input id="bc-search" type="search" placeholder="Search businesses…" style="width:100%;padding:.6rem .8rem;border:1px solid var(--line);border-radius:10px;margin-bottom:1rem">
+        <div id="bc-list" style="display:flex;flex-direction:column;gap:.5rem;max-height:60vh;overflow:auto"></div>
+        <div style="display:flex;gap:.8rem;align-items:center;margin-top:1rem">
+          <button class="btn btn-primary" id="bc-save" type="button">Save changes</button>
+          <p id="bc-msg" class="form-note"></p>
+        </div>
+      </div>`;
+    let overrides={};
+    const rowHtml=p=>{ const eff=overrides[p.name]||EX.baseToken(p);
+      return `<div class="dir-item" style="align-items:center;gap:.8rem">
+        <div class="d-main" style="min-width:0"><h4 style="margin:0;font-size:.98rem">${esc(p.name)}</h4><div class="d-cat">${esc(p.cat||"")}</div></div>
+        <select class="bc-sel" data-name="${esc(p.name)}" style="flex:none;padding:.4rem .5rem;border:1px solid var(--line);border-radius:8px;max-width:230px">${optsFor(eff)}</select>
+      </div>`; };
+    const draw=f=>{ const q=(f||"").toLowerCase();
+      $("#bc-list").innerHTML=biz.filter(p=>!q||p.name.toLowerCase().includes(q)||(p.cat||"").toLowerCase().includes(q)).map(rowHtml).join("")||`<p class="form-note">No matches.</p>`; };
+    db.from("settings").select("value").eq("key","explore_overrides").maybeSingle()
+      .then(({data})=>{ if(data&&data.value){ try{ overrides=JSON.parse(data.value)||{}; }catch(e){} } draw(""); })
+      .catch(()=>draw(""));
+    $("#bc-search").addEventListener("input",e=>draw(e.target.value));
+    $("#bc-list").addEventListener("change",e=>{ const s=e.target.closest(".bc-sel"); if(!s) return;
+      const name=s.dataset.name, p=biz.find(x=>x.name===name); if(!p) return;
+      if(s.value===EX.baseToken(p)) delete overrides[name]; else overrides[name]=s.value; });
+    $("#bc-save").addEventListener("click",async()=>{
+      const msg=$("#bc-msg"), btn=$("#bc-save"); btn.disabled=true; msg.style.color="var(--text-soft)"; msg.textContent="Saving…";
+      try{ const {error}=await db.from("settings").upsert({key:"explore_overrides",value:JSON.stringify(overrides)},{onConflict:"key"}); if(error) throw error;
+        msg.style.color="var(--open)"; msg.textContent="Saved! It's live on the Explore page."; }
+      catch(err){ msg.style.color="var(--accent-ink)"; msg.textContent="Error: "+(err.message||err); }
       finally{ btn.disabled=false; }
     });
   }

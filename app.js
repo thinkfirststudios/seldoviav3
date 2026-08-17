@@ -151,9 +151,8 @@ const PLACES=[
  {name:"Otterbahn Trail",cat:"Trail",key:"activities"},
  {name:"Outside Beach Park",cat:"Beach & Park",key:"activities"},
  // Services
- {name:"Fathoms Hair & Nail Salon",cat:"Salon",key:"services",phone:"(907) 726-7255"},
- {name:"Red Mountain Marine",cat:"Marine",key:"services",phone:"(907) 399-8230"},
- {name:"Seldovia Fuel and Hardware",cat:"Fuel & Hardware",key:"services",phone:"(907) 234-7622"},
+ {name:"Fathoms Hair & Nail Salon",cat:"Salon",key:"shop",phone:"(907) 726-7255"},
+  {name:"Seldovia Fuel and Hardware",cat:"Fuel & Hardware",key:"services",phone:"(907) 234-7622"},
  {name:"Seldovia Property",cat:"Real Estate",key:"services",phone:"(907) 234-8000",url:"https://www.SeldoviaProperty.com"},
  {name:"Winter Watch",cat:"Property Care",key:"services",phone:"(907) 406-0775",url:"https://www.SeldoviaWinterWatch.com"},
  // Life in Seldovia
@@ -161,7 +160,7 @@ const PLACES=[
  {name:"Seldovia Village Tribe",cat:"Tribe",key:"life",phone:"(907) 234-7898"},
  {name:"Seldovia Native Association",cat:"Native Association",key:"life",phone:"(907) 234-7625"},
  {name:"Seldovia Chamber of Commerce",cat:"Chamber of Commerce",key:"life",phone:"(907) 234-7612"},
- {name:"Seldovia Health and Wellness",cat:"Health & Wellness",key:"life",phone:"(907) 435-3262"},
+ {name:"Seldovia Health and Wellness",cat:"Health & Wellness",key:"services",phone:"(907) 435-3262"},
  {name:"Seldovia Public Library",cat:"Library",key:"life",phone:"(907) 234-7662"},
  {name:"Susan B English School",cat:"School",key:"life",phone:"(907) 234-7616"},
  {name:"Seldovia Sea Otter Community Center",cat:"Community Center",key:"life",phone:"(907) 234-4110"},
@@ -213,8 +212,32 @@ const bizPhoto=(p,color)=>{ const s=BIZ_IMG[p.name]; return s?`images/businesses
 // L Lodging, T Travel, B Business, E Eat, S Shops, A Activity, O Organization, G Government
 const CAT_BADGE={travel:"T",stay:"L",eat:"E",shop:"S",activities:"A",services:"B",life:"O",about:""};
 const BADGE_LABEL={L:"Lodging",T:"Travel",B:"Business",E:"Eat",S:"Shops",A:"Activity",O:"Organization",G:"Government"};
-const GOVT_BIZ=new Set(["City of Seldovia","Seldovia Police Department","United States Post Office — Seldovia","Seldovia Public Library","Susan B English School"]);
-const placeBadge=p=>{ let b=CAT_BADGE[p.key]||""; if(p.key==="life"&&GOVT_BIZ.has(p.name)) b="G"; return b; };
+const GOVT_BIZ=new Set(["City of Seldovia","Seldovia Police Department","United States Post Office — Seldovia","Susan B English School"]);
+// p._govt (set by an admin override) wins; otherwise fall back to the GOVT_BIZ list.
+const placeBadge=p=>{ let b=CAT_BADGE[p.key]||""; if(p.key==="life"){ const g=(p._govt!==undefined)?p._govt:GOVT_BIZ.has(p.name); if(g) b="G"; } return b; };
+// Category tokens Jenny can pick from in the admin ("🏷️ Explore Categories").
+// Government is a flavor of "life" (Public Services) that shows a G badge.
+const EXPLORE_CATS=[
+  {token:"about",     label:"Location + History",              key:"about",      govt:false},
+  {token:"travel",    label:"Travel",                          key:"travel",     govt:false},
+  {token:"stay",      label:"Lodging + Camping",               key:"stay",       govt:false},
+  {token:"eat",       label:"Eat",                             key:"eat",        govt:false},
+  {token:"shop",      label:"Shop + Gifts",                    key:"shop",       govt:false},
+  {token:"activities",label:"Activities",                      key:"activities", govt:false},
+  {token:"services",  label:"Services / Business",             key:"services",   govt:false},
+  {token:"life",      label:"Organization + Public Services",  key:"life",       govt:false},
+  {token:"govt",      label:"Government",                       key:"life",       govt:true},
+];
+const CAT_BY_TOKEN=Object.fromEntries(EXPLORE_CATS.map(c=>[c.token,c]));
+// The business's category token from the built-in data (before any admin override).
+function baseToken(p){ return p.key==="life" ? (GOVT_BIZ.has(p.name)?"govt":"life") : p.key; }
+// Apply Jenny's saved overrides ({ "<business name>": "<token>" }) onto PLACES.
+function applyExploreOverrides(map){
+  if(!map) return;
+  PLACES.forEach(p=>{ const t=map[p.name], c=t&&CAT_BY_TOKEN[t]; if(c){ p.key=c.key; p._govt=c.govt; } });
+}
+// Exposed so the admin panel can list businesses and edit their categories.
+window.EXPLORE={ get PLACES(){return PLACES;}, EXPLORE_CATS, CAT_BY_TOKEN, baseToken };
 // Jenny's Seldovia Blog — recovered posts (original titles, dates, images preserved). PROD: managed via admin.
 const GAZETTE=[
  {title:"Thank you, Jennifer!",excerpt:"Jennifer, thank you so much for your kind words! It makes me so happy to hear how pleased you are with your Seldovia investment and my service.",date:"Jul 17, 2026",read:"1 min",cat:"Kind Words",img:"images/gazette/2026-07-17.jpg",body:`Jennifer, thank you so much for your kind words! It makes me so happy to hear how pleased you are with your Seldovia investment and my service.
@@ -4055,13 +4078,12 @@ const DIRECTORY=[
  {name:"Jack and Aiva's Restaurant",cat:"Restaurant",k:"eat",phone:"(907) 234-7440",spon:false},
  {name:"Kar-a-Van Transfer",cat:"Transfer",k:"travel",phone:"(907) 234-7802",spon:false},
  {name:"Mako's Water Taxi",cat:"Water Taxi",k:"travel",phone:"(907) 235-9055",spon:false},
- {name:"Red Mountain Marine",cat:"Marine",k:"services",phone:"(907) 399-8230",spon:false},
- {name:"Sea Parrot Inn",cat:"Inn",k:"stay",phone:"(844) 377-7829",url:"https://www.seaparrotinn.com",spon:false},
+  {name:"Sea Parrot Inn",cat:"Inn",k:"stay",phone:"(844) 377-7829",url:"https://www.seaparrotinn.com",spon:false},
  {name:"Seldovia Chamber of Commerce",cat:"Chamber of Commerce",k:"life",phone:"(907) 234-7612",spon:false},
  {name:"Seldovia Fishing Adventures",cat:"Fishing Charters",k:"activities",phone:"(907) 234-7417",url:"https://www.fishhalibut.com",spon:false},
  {name:"Seldovia Fuel and Hardware",cat:"Fuel & Hardware",k:"services",phone:"(907) 234-7622",spon:false},
  {name:"Seldovia Harbor Inn",cat:"Inn",k:"stay",phone:"(907) 202-3095",spon:false},
- {name:"Seldovia Health and Wellness",cat:"Health & Wellness",k:"life",phone:"(907) 435-3262",spon:false},
+ {name:"Seldovia Health and Wellness",cat:"Health & Wellness",k:"services",phone:"(907) 435-3262",spon:false},
  {name:"Seldovia Native Association",cat:"Native Association",k:"life",phone:"(907) 234-7625",spon:false},
  {name:"Seldovia Outdoor Rentals & Gifts",cat:"Rentals & Gifts",k:"activities",phone:"(907) 302-0320",spon:false},
  {name:"Seldovia Police Department",cat:"Police",k:"life",phone:"(907) 234-7640",spon:false},
@@ -4155,7 +4177,12 @@ if($("#placeTabs")){
   $("#placeTabs").innerHTML=PLACE_TABS.map(([k,l])=>`<button class="tab" data-key="${k}" aria-pressed="${k===placeTab}">${esc(l)}</button>`).join("");
   $("#placeTabs").addEventListener("click",e=>{const b=e.target.closest(".tab"); if(!b)return; placeTab=b.dataset.key; $$("#placeTabs .tab").forEach(t=>t.setAttribute("aria-pressed",t===b)); renderPlaces();});
 }
-renderPlaces();
+// Explore page: apply Jenny's saved category overrides (if any) before the first paint.
+if($("#placeGrid") && window.db){
+  db.from("settings").select("value").eq("key","explore_overrides").maybeSingle()
+    .then(({data})=>{ try{ if(data&&data.value) applyExploreOverrides(JSON.parse(data.value)); }catch(e){} renderPlaces(); })
+    .catch(()=>renderPlaces());
+} else { renderPlaces(); }
 
 // gazette — real recovered posts; each card opens a full post page
 const slugify=s=>String(s).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"").slice(0,64);
