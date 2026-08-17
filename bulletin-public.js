@@ -13,6 +13,8 @@
   const fmtISO=d=>{ const dt=new Date(d); return isNaN(dt)?"":`${MON[dt.getMonth()]} ${dt.getDate()}, ${dt.getFullYear()}`; };
   const fmtDB=d=>{ if(!d) return ""; const [y,m,day]=d.split("-"); return `${MON[+m-1]} ${+day}, ${y}`; };
   const clip=(s,n)=>{ s=String(s||""); return s.length>n ? s.slice(0,n).replace(/\s+\S*$/,"")+"…" : s; };
+  const norm=s=>String(s||"").trim().toLowerCase().replace(/\s+/g," ");
+  const seen=new Set(); // dedup by title across own notices + the WP feed (stops repeats)
 
   const ownPosts=[]; // keep Supabase rows for the ?post= detail view
   function ownCard(n){
@@ -54,7 +56,11 @@
     loadingWP=true; page++; btn.textContent="Loading…";
     fetch(WP+"&page="+page)
       .then(r=>{ totalPages=parseInt(r.headers.get("x-wp-totalpages")||totalPages,10)||1; if(!r.ok) throw 0; return r.json(); })
-      .then(posts=>{ if(Array.isArray(posts)&&posts.length) board.insertAdjacentHTML("beforeend", posts.map(wpCard).join(""));
+      .then(posts=>{
+        if(Array.isArray(posts)&&posts.length){
+          const fresh=posts.filter(p=>{ const t=norm(strip((p.title&&p.title.rendered)||"")); if(!t||seen.has(t)) return false; seen.add(t); return true; });
+          if(fresh.length) board.insertAdjacentHTML("beforeend", fresh.map(wpCard).join(""));
+        }
         loadingWP=false; btn.textContent="Load more"; moreWrap.style.display=page>=totalPages?"none":""; })
       .catch(()=>{ loadingWP=false; page--; btn.textContent="Load more"; });
   }
@@ -100,6 +106,7 @@
         if(!error && data && data.length){
           const key=p=>String(p.starts_on || (p.created_at||"").slice(0,10) || "");
           data.sort((a,b)=>key(b).localeCompare(key(a)));
+          data.forEach(p=>seen.add(norm(p.title))); // WP feed won't repeat an own notice
           ownPosts.push(...data); board.innerHTML=data.map(ownCard).join("");
         }
         afterOwn();

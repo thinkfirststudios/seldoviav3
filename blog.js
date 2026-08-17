@@ -10,9 +10,23 @@
   const fmt=d=>{ if(!d) return ""; const [y,m,day]=d.split("-"); return `${MONTHS[+m-1]} ${+day}, ${y}`; };
   const bodyHtml=t=>"<p>"+esc((t||"").trim()).replace(/\n{2,}/g,"</p><p>").replace(/\n/g,"<br>")+"</p>";
 
+  // Key a post by title + date so we never show the same one twice.
+  const norm=s=>String(s||"").trim().toLowerCase().replace(/\s+/g," ");
+  const keyOf=(title,dateText)=>norm(title)+"|"+norm(dateText);
+
   db.from("posts").select("*").eq("published",true).order("post_date",{ascending:false})
     .then(({data,error})=>{
       if(error || !data || !data.length) return; // built-in posts stay
+      // Skip any DB post that already exists in the built-in archive (or is a
+      // duplicate of another DB post). This is what stops the duplicate photos.
+      const existing=new Set([...grid.querySelectorAll(".post")].map(card=>{
+        const t=card.querySelector("h4"), d=card.querySelector(".post-meta span");
+        return keyOf(t?t.textContent:"", d?d.textContent:"");
+      }));
+      const seen=new Set();
+      data=data.filter(p=>{ const k=keyOf(p.title,fmt(p.post_date));
+        if(existing.has(k)||seen.has(k)) return false; seen.add(k); return true; });
+      if(!data.length) return;
       const html=data.map(p=>`<article class="post">
         ${p.image_url?`<div class="post-media"><img class="post-photo" src="${esc(p.image_url)}" alt="${esc(p.title)}" loading="lazy" onerror="this.closest('.post-media').style.display='none'"></div>`:""}
         <div class="post-body"><span class="kicker">${esc(p.category||'Blog')}</span><h4>${esc(p.title)}</h4>

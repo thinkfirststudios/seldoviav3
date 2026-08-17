@@ -538,8 +538,10 @@ body:not([data-page="realestate"]) .howband::before{content:""; position:absolut
 .dl-row dd{margin:0; color:var(--heading); font-weight:700; text-align:right;}
 .listing-schools{margin:0; padding-left:1.1rem; color:var(--text-soft); line-height:1.7;}
 
-.board{columns:3 250px; column-gap:16px;}
-@media (max-width:600px){ .board{columns:1;} }
+/* Row-major grid so cards read newest -> oldest left-to-right, top-to-bottom
+   (a vertical-column masonry scrambles the date order when read across). */
+.board{display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:16px; align-items:start;}
+@media (max-width:600px){ .board{grid-template-columns:1fr;} }
 .note{break-inside:avoid; margin:0 0 16px; background:var(--sheet); border:1px solid var(--line); border-radius:var(--radius-s); padding:1.1rem; box-shadow:var(--shadow); position:relative;}
 .note .n-cat{font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; font-weight:800; color:var(--sage);}
 .note h4{margin:.35rem 0 .4rem; font-size:1.1rem;}
@@ -809,7 +811,7 @@ body[data-page="realestate"] .today-bar{background:var(--accent-ink);}
 .n-media{margin:0; background:var(--surface-2);}
 .n-media img{display:block; width:100%; aspect-ratio:16/10; object-fit:cover;}
 /* News pinboard cards (masonry board, like the blog) */
-.board .note{padding:0; overflow:hidden;}
+.board .note{padding:0; overflow:hidden; margin:0;}
 .board .note .n-body{padding:1.05rem 1.15rem 1.15rem;}
 .board .note.note-own{cursor:pointer;}
 .board .note:hover{box-shadow:var(--shadow-lg);}
