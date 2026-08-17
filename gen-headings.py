@@ -70,6 +70,11 @@ MANIFEST = [
     ("Notes & stories from Seldovia",           "white", "gazette-notes-stories-white.png"),
 ]
 
+# Photo Journal "{Month} in Seldovia" headings (dynamic per current month).
+_MONTHS = ["January","February","March","April","May","June","July","August",
+           "September","October","November","December"]
+MANIFEST += [(f"{m} in Seldovia", "ink", f"month-seldovia-{i+1}.png") for i, m in enumerate(_MONTHS)]
+
 def build_font():
     f = TTFont(FONT)
     return dict(

@@ -60,7 +60,7 @@
       if(seasonal.length){
         html+=`<section class="journal-section">
           <div class="section-head"><span class="eyebrow">This month over the years</span>
-          <h2 class="title">${MON[curMonth]} in Seldovia</h2>
+          <h2 class="title wc-h"><img src="images/headings/month-seldovia-${curMonth+1}.png?v=1" alt="${esc(MON[curMonth])} in Seldovia"></h2>
           <p>The same season, remembered across the years.</p></div>
           <div class="journal-grid">${seasonal.map(fig).join("")}</div></section>`;
       }
