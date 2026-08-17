@@ -13,6 +13,28 @@
 <main id="main">
   <div class="page-hero"><div class="wrap"><span class="eyebrow">Explore Seldovia</span><h1 class="wc-h"><img src="images/headings/explore-most-popular.png?v=1" alt="Most popular things to do"></h1><p>Community-loved spots around town — filter by what you’re in the mood for.</p></div></div>
 
+  <!-- SELDOVIA TRAILS — guides pulled from the 2011 Seldovia Visitor guide, hosted locally -->
+  <style>
+    .trail-grid{display:flex; flex-wrap:wrap; justify-content:center; gap:18px;}
+    .trail-card{display:block; width:240px; max-width:80vw; background:var(--sheet); border:1px solid var(--line); border-radius:14px; overflow:hidden; box-shadow:var(--shadow); text-decoration:none; color:inherit; transition:transform .12s ease, box-shadow .15s ease;}
+    .trail-card:hover{transform:translateY(-3px); box-shadow:var(--shadow-lg);}
+    .trail-card img{display:block; width:100%; height:auto;}
+    .trail-name{display:block; padding:.7rem 1rem; font-weight:700; text-align:center; color:var(--heading);}
+  </style>
+  <section class="section wrap" id="trails">
+    <div class="section-head">
+      <span class="eyebrow">Get Outside</span>
+      <h2 class="title wc-h"><img src="images/headings/explore-trails.png?v=1" alt="Seldovia trails"></h2>
+      <p>Trail guides from around town. Tap a map to open it full size.</p>
+    </div>
+    <div class="trail-grid">
+      <a class="trail-card" href="images/trails/otterbahn.png" target="_blank" rel="noopener"><img src="images/trails/otterbahn.png" alt="Otterbahn Trail guide map and description" loading="lazy"><span class="trail-name">Otterbahn Trail</span></a>
+      <a class="trail-card" href="images/trails/rocky-ridge.png" target="_blank" rel="noopener"><img src="images/trails/rocky-ridge.png" alt="Rocky Ridge Trail guide map and description" loading="lazy"><span class="trail-name">Rocky Ridge Trail</span></a>
+      <a class="trail-card" href="images/trails/tutka-red-mountain.png" target="_blank" rel="noopener"><img src="images/trails/tutka-red-mountain.png" alt="Tutka Bay and Red Mountain Trails guide map and description" loading="lazy"><span class="trail-name">Tutka Bay &amp; Red Mountain</span></a>
+      <a class="trail-card" href="images/trails/graduation-peak.png" target="_blank" rel="noopener"><img src="images/trails/graduation-peak.png" alt="Graduation Peak Trail guide map and description" loading="lazy"><span class="trail-name">Graduation Peak</span></a>
+    </div>
+  </section>
+
   <section class="section wrap">
     <div class="tabs" id="placeTabs" role="group" aria-label="Filter listings"></div>
     <div class="place-grid" id="placeGrid"></div>
@@ -27,28 +49,6 @@
         <a class="btn btn-primary" id="featBtn" href="phone-book.html">Browse the phone book</a>
       </div>
       <div class="feature-media" id="featureMedia" aria-hidden="true"></div>
-    </div>
-  </section>
-
-  <!-- SELDOVIA TRAILS — guides pulled from the 2011 Seldovia Visitor guide, hosted locally -->
-  <style>
-    .trail-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:18px;}
-    .trail-card{display:block; background:var(--sheet); border:1px solid var(--line); border-radius:14px; overflow:hidden; box-shadow:var(--shadow); text-decoration:none; color:inherit; transition:transform .12s ease, box-shadow .15s ease;}
-    .trail-card:hover{transform:translateY(-3px); box-shadow:var(--shadow-lg);}
-    .trail-card img{display:block; width:100%; height:auto;}
-    .trail-name{display:block; padding:.7rem 1rem; font-weight:700; text-align:center; color:var(--heading);}
-  </style>
-  <section class="section wrap" id="trails" style="padding-top:0">
-    <div class="section-head">
-      <span class="eyebrow">Get Outside</span>
-      <h2 class="title wc-h"><img src="images/headings/explore-trails.png?v=1" alt="Seldovia trails"></h2>
-      <p>Trail guides from around town. Tap a map to open it full size.</p>
-    </div>
-    <div class="trail-grid">
-      <a class="trail-card" href="images/trails/otterbahn.png" target="_blank" rel="noopener"><img src="images/trails/otterbahn.png" alt="Otterbahn Trail guide map and description" loading="lazy"><span class="trail-name">Otterbahn Trail</span></a>
-      <a class="trail-card" href="images/trails/rocky-ridge.png" target="_blank" rel="noopener"><img src="images/trails/rocky-ridge.png" alt="Rocky Ridge Trail guide map and description" loading="lazy"><span class="trail-name">Rocky Ridge Trail</span></a>
-      <a class="trail-card" href="images/trails/tutka-red-mountain.png" target="_blank" rel="noopener"><img src="images/trails/tutka-red-mountain.png" alt="Tutka Bay and Red Mountain Trails guide map and description" loading="lazy"><span class="trail-name">Tutka Bay &amp; Red Mountain</span></a>
-      <a class="trail-card" href="images/trails/graduation-peak.png" target="_blank" rel="noopener"><img src="images/trails/graduation-peak.png" alt="Graduation Peak Trail guide map and description" loading="lazy"><span class="trail-name">Graduation Peak</span></a>
     </div>
   </section>
 </main>
