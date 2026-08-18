@@ -214,13 +214,13 @@ body[data-page="realestate"] .page-hero{background:linear-gradient(160deg, #fde6
    with style="--banner:url('...')" and use the WHITE heading; overlay keeps text readable. */
 .page-hero.banner{position:relative; background:#33414d; border-bottom:0; color:#fff; overflow:clip; padding:clamp(52px,8vw,104px) 0 clamp(40px,6vw,76px);}
 .page-hero.banner::before{content:""; position:absolute; inset:0; z-index:0; background-image:var(--banner); background-size:cover; background-position:center;}
-/* Stronger scrim (vignette + wash) so white headings read over Qwynny's header images. */
-.page-hero.banner::after{content:""; position:absolute; inset:0; z-index:0; background:radial-gradient(ellipse 76% 135% at 50% 50%, rgba(6,4,3,.6) 0%, rgba(6,4,3,.46) 42%, rgba(6,4,3,.14) 100%);}
+/* Light scrim so the header photo stays vibrant; headings/text carry their own shadow (Jenny). */
+.page-hero.banner::after{content:""; position:absolute; inset:0; z-index:0; background:radial-gradient(ellipse 84% 130% at 50% 50%, rgba(8,6,4,.36) 0%, rgba(8,6,4,.24) 45%, rgba(8,6,4,.05) 100%);}
 .page-hero.banner .wrap{position:relative; z-index:1;}
-.page-hero.banner .eyebrow{color:#fff; text-shadow:0 1px 6px rgba(0,0,0,.6);}
-.page-hero.banner .eyebrow::before,.page-hero.banner .eyebrow::after{background:rgba(255,255,255,.65);}
-.page-hero.banner p{color:#f3ede2; text-shadow:0 1px 8px rgba(0,0,0,.7);}
-.page-hero.banner h1.wc-h img{filter:drop-shadow(0 2px 5px rgba(0,0,0,.92)) drop-shadow(0 8px 24px rgba(0,0,0,.55));}
+.page-hero.banner .eyebrow{color:#fff; text-shadow:0 1px 3px rgba(0,0,0,.9), 0 1px 8px rgba(0,0,0,.5);}
+.page-hero.banner .eyebrow::before,.page-hero.banner .eyebrow::after{background:rgba(255,255,255,.7);}
+.page-hero.banner p{color:#fff; text-shadow:0 1px 3px rgba(0,0,0,.9), 0 1px 10px rgba(0,0,0,.55);}
+.page-hero.banner h1.wc-h img{filter:drop-shadow(0 1px 2px rgba(0,0,0,.98)) drop-shadow(0 2px 8px rgba(0,0,0,.78)) drop-shadow(0 8px 22px rgba(0,0,0,.45));}
 body[data-page="realestate"] .page-hero.banner{background:#33414d; border-bottom-color:transparent;}
 .page-hero.banner .re-brand-logo{position:relative; z-index:1; filter:drop-shadow(0 2px 6px rgba(0,0,0,.4));}
 
@@ -228,9 +228,9 @@ body[data-page="realestate"] .page-hero.banner{background:#33414d; border-bottom
 .hero{position:relative; padding:clamp(14px,2.4vw,24px) clamp(14px,2.4vw,24px) 0;}
 .hero-media{position:relative; border-radius:clamp(16px,2.4vw,26px); overflow:clip; min-height:clamp(440px,56vw,600px); display:grid; place-items:center; isolation:isolate; padding-bottom:clamp(8px,2vw,16px);
   background:#54636e url("images/hero-seldovia.jpg") center 42%/cover no-repeat;}
-/* Stronger, more even scrim so the white heading + search stay readable over Qwynny's header image. */
-.hero-media::after{content:""; position:absolute; inset:0; z-index:0; background:radial-gradient(ellipse 78% 90% at 50% 46%, rgba(6,4,3,.64) 0%, rgba(6,4,3,.48) 40%, rgba(6,4,3,.14) 100%);}
-.hero-text{position:relative; z-index:1; text-align:center; color:#fff; text-shadow:0 1px 8px rgba(0,0,0,.72); padding:clamp(30px,6vw,64px) clamp(18px,4vw,40px) 0; max-width:820px; margin-inline:auto;}
+/* Light scrim so Qwynny's photo stays vibrant; the heading rides on its own shadow (Jenny). */
+.hero-media::after{content:""; position:absolute; inset:0; z-index:0; background:radial-gradient(ellipse 82% 82% at 50% 46%, rgba(8,6,4,.4) 0%, rgba(8,6,4,.26) 45%, rgba(8,6,4,.04) 100%);}
+.hero-text{position:relative; z-index:1; text-align:center; color:#fff; text-shadow:0 1px 3px rgba(0,0,0,.9), 0 2px 12px rgba(0,0,0,.6); padding:clamp(30px,6vw,64px) clamp(18px,4vw,40px) 0; max-width:820px; margin-inline:auto;}
 .hero-badge{display:inline-flex; align-items:center; gap:.5rem; font-family:"Lovestory Serif", Georgia, serif; font-size:.82rem; letter-spacing:.14em; text-transform:uppercase; font-weight:400; color:#fff; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.28); padding:.42rem 1.15rem; border-radius:var(--radius-pill); backdrop-filter:blur(4px); line-height:1.35;}
 .hero-badge svg{color:#ffe8b8;}
 .hero h1{color:#fff; font-size:clamp(2.3rem,6.2vw,4.1rem); line-height:1.03; margin-top:1rem; text-shadow:0 2px 30px rgba(0,0,0,.45);}
@@ -270,7 +270,7 @@ h2.title.wc-h img{ margin:0 auto; max-height:clamp(48px, 8.2vw, 92px); }   /* ce
 h2.title.wc-h.wc-left img{ margin:0; max-height:clamp(40px, 6vw, 72px); } /* left-aligned (sponsors) */
 .page-hero h1.wc-h img{ margin:0 auto; max-height:clamp(56px, 10vw, 112px); }
 body[data-page="home"] .hero h1.wc-h{ margin-top:.4rem; }
-body[data-page="home"] .hero h1.wc-h img{ max-width:min(98%, 1040px); filter:drop-shadow(0 2px 5px rgba(0,0,0,.92)) drop-shadow(0 10px 28px rgba(0,0,0,.6)); }
+body[data-page="home"] .hero h1.wc-h img{ max-width:min(98%, 1040px); filter:drop-shadow(0 1px 2px rgba(0,0,0,.98)) drop-shadow(0 2px 8px rgba(0,0,0,.8)) drop-shadow(0 12px 26px rgba(0,0,0,.5)); }
 /* === END WATERCOLOR HEADINGS === */
 /* Admin: list editor for the "of the day" content (add/remove rows) */
 .ex-list{display:flex; flex-direction:column; gap:.4rem; margin-bottom:.55rem; max-height:360px; overflow:auto; padding:.15rem;}
