@@ -39,6 +39,7 @@ MANIFEST = [
     ("Seldovia in photos",                      "ink",   "seldovia-in-photos.png"),
     ("Discover Seldovia",                       "ink",   "discover-seldovia.png"),
     ("Sponsors",                                "ink",   "sponsors.png"),
+    ("Photo contest sponsors",                  "ink",   "photo-contest-sponsors.png"),
     ("The local businesses we're grateful for", "ink",   "sponsors-grateful.png"),
     # explore trails
     ("Seldovia trails",                          "ink",   "explore-trails.png"),
