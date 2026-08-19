@@ -71,8 +71,7 @@
 
   const TABS=[
     {key:"photo",    label:"📷 Daily Photo", render:renderPhotoTab},
-    {key:"blog",     label:"✍️ Blog Post",   render:renderBlogTab},
-    {key:"bulletin", label:"📰 News",        render:renderBulletinTab},
+    {key:"blog",     label:"✍️ Seldovia Blog", render:renderBlogTab},
     {key:"listing",  label:"🏡 Listings",    render:renderListingTab},
     {key:"messages", label:"📨 Messages",    render:renderMessagesTab},
     {key:"settings", label:"⚙️ Home Extra",  render:renderSettingsTab},
@@ -167,6 +166,7 @@
           <div class="field"><label for="p-cat">Category</label>${catField("p-cat",BLOG_CATS)}</div>
         </div>
         <div class="field"><label for="p-body">Post</label><textarea id="p-body" rows="7" placeholder="Write your post…"></textarea></div>
+        <div class="field"><label for="p-link">Web link <span class="opt">(optional)</span></label><input id="p-link" type="url" placeholder="https://"><span class="hint">Adds a "Visit website" button on the post that opens in a new tab.</span></div>
         <div class="field"><label for="p-img">Photo <span class="opt">(optional)</span></label><input id="p-img" type="file" accept="image/*"><span class="hint" id="p-imghint"></span></div>
         <div style="display:flex;gap:.5rem;align-items:center;flex-wrap:wrap">
           <button class="btn btn-primary" type="submit" id="pubBtn">Publish post</button>
@@ -184,7 +184,7 @@
   function resetPost(){ editPost=null; $("#postForm").reset(); $("#p-date").value=todayISO(); fillCat("p-cat","",BLOG_CATS);
     $("#p-imghint").textContent=""; $("#p-head").textContent="Write a blog post"; $("#pubBtn").textContent="Publish post"; $("#p-cancel").hidden=true; }
   function fillPost(p){ editPost=p.id; $("#p-title").value=p.title||""; $("#p-date").value=p.post_date; fillCat("p-cat",p.category,BLOG_CATS);
-    $("#p-body").value=p.body||""; $("#p-imghint").textContent=p.image_url?"Leave empty to keep the current photo.":"";
+    $("#p-body").value=p.body||""; $("#p-link").value=p.link||""; $("#p-imghint").textContent=p.image_url?"Leave empty to keep the current photo.":"";
     $("#p-head").textContent="Edit post"; $("#pubBtn").textContent="Save changes"; $("#p-cancel").hidden=false;
     $("#postForm").scrollIntoView({behavior:"smooth",block:"start"}); }
   async function onPublish(e){
@@ -193,7 +193,7 @@
     btn.disabled=true; msg.style.color="var(--text-soft)"; msg.textContent=editPost?"Saving…":"Publishing…";
     try{
       const body=$("#p-body").value.trim();
-      const row={ title:$("#p-title").value.trim(), body, post_date:$("#p-date").value,
+      const row={ title:$("#p-title").value.trim(), body, post_date:$("#p-date").value, link:$("#p-link").value.trim()||null,
         category:readCat("p-cat","Blog"), excerpt:body.length>180?body.slice(0,177).trim()+"…":body, published:true };
       const file=$("#p-img").files[0];
       if(file){ msg.textContent="Uploading photo…"; row.image_url=await uploadImage("blog", file, "post"); }

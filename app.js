@@ -4246,18 +4246,34 @@ if($("#gazetteGrid")){
 
 // single blog post page (post.html?p=slug)
 if($("#postDetail")){
-  const want=new URLSearchParams(location.search).get("p");
-  const post=GAZETTE.find(g=>slugify(g.title)===want)||GAZETTE[0];
-  document.title=`${post.title} — Jenny's Blog`;
-  const bodyHtml=(post.body||post.excerpt||"").trim().split(/\n{2,}/).map(x=>`<p>${esc(x.trim()).replace(/\n/g,"<br>")}</p>`).join("");
-  $("#postDetail").innerHTML=`
-    <a class="back-link" href="gazette.html">← All posts</a>
-    ${post.img?`<div class="post-detail-media"><img src="${post.img}" alt="${esc(post.title)}" onerror="this.closest('.post-detail-media').style.display='none'"></div>`:""}
-    <span class="eyebrow" style="margin-top:1.2rem">${esc(post.cat||"Blog")}</span>
-    <h1 style="margin:.15rem 0;font-family:var(--serif)">${esc(post.title)}</h1>
-    <div class="listing-city">${esc(post.date)}</div>
-    <div class="listing-desc" style="margin-top:1.3rem">${bodyHtml}</div>
-    <p style="margin-top:2rem"><a class="btn btn-primary" href="gazette.html">← Back to Jenny's Blog</a></p>`;
+  const params=new URLSearchParams(location.search), pid=params.get("id");
+  const paras=t=>(t||"").trim().split(/\n{2,}/).map(x=>`<p>${esc(x.trim()).replace(/\n/g,"<br>")}</p>`).join("");
+  const showPost=o=>{ // {title,cat,date,img,body,link}
+    document.title=`${o.title} — Seldovia Blog`;
+    const media=o.img?`<div class="post-detail-media"><a href="${esc(o.img)}" target="_blank" rel="noopener" title="View full size"><img src="${esc(o.img)}" alt="${esc(o.title)}" onerror="this.closest('.post-detail-media').style.display='none'"></a></div>`:"";
+    const linkBtn=o.link?`<p style="margin-top:1.6rem"><a class="btn btn-primary" href="${esc(o.link)}" target="_blank" rel="noopener">Visit website ↗</a></p>`:"";
+    $("#postDetail").innerHTML=`
+      <a class="back-link" href="gazette.html">← All posts</a>
+      ${media}
+      <span class="eyebrow" style="margin-top:1.2rem">${esc(o.cat||"Blog")}</span>
+      <h1 style="margin:.15rem 0;font-family:var(--serif)">${esc(o.title)}</h1>
+      <div class="listing-city">${esc(o.date)}</div>
+      <div class="listing-desc" style="margin-top:1.3rem">${paras(o.body)}</div>
+      ${linkBtn}
+      <p style="margin-top:2rem"><a class="btn btn-ghost" href="gazette.html">← Back to the Seldovia Blog</a></p>`;
+  };
+  if(pid && window.db){
+    const MON=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    db.from("posts").select("*").eq("id",pid).maybeSingle().then(({data})=>{
+      if(!data){ $("#postDetail").innerHTML=`<a class="back-link" href="gazette.html">← All posts</a><p style="margin-top:1rem">That post could not be found.</p>`; return; }
+      let date=""; if(data.post_date){ const [y,m,d]=data.post_date.split("-"); date=`${MON[+m-1]} ${+d}, ${y}`; }
+      showPost({ title:data.title, cat:data.category, date, img:data.image_url, body:data.body||data.excerpt, link:data.link });
+    }).catch(()=>{});
+  } else {
+    const want=params.get("p");
+    const post=GAZETTE.find(g=>slugify(g.title)===want)||GAZETTE[0];
+    showPost({ title:post.title, cat:post.cat, date:post.date, img:post.img, body:post.body||post.excerpt });
+  }
 }
 
 // gallery

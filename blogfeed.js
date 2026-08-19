@@ -36,7 +36,8 @@
     const items = [];
     posts.forEach(p => items.push({
       when: p.post_date || "", cat: p.category || "Blog", title: p.title,
-      date: fmtDB(p.post_date), img: p.image_url, excerpt: clip(p.body || p.excerpt, 180)
+      date: fmtDB(p.post_date), img: p.image_url, excerpt: clip(p.body || p.excerpt, 180),
+      href: "post.html?id=" + p.id
     }));
     bul.forEach(n => { const when = n.starts_on || (n.created_at||"").slice(0,10);
       items.push({
