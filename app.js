@@ -37,9 +37,9 @@ window.addEventListener("error", e=>{
 const NAV=[
   ["explore.html","Explore","explore"],
   ["calendar.html","Calendar","calendar"],
-  ["gazette.html","Blog","gazette"],
+  ["gazette.html","Seldovia Blog","gazette"],
   ["webcams.html","Webcams","webcams"],
-  ["gallery.html","Gallery","gallery"],
+  ["gallery.html","Photos","gallery"],
   ["real-estate.html","Real Estate","realestate"],
   ["phone-book.html","Phone Book","phonebook"],
   ["contact.html","Contact","contact"],
@@ -82,8 +82,8 @@ const FOOTER=`
         <p>A warm, community-first guide to our little town on Kachemak Bay. Made as a gift to Seldovia.</p>
         <div class="foot-util"><span>Tide: High 14.2 ft</span><span>Ferry: 3:15 PM</span><span>54&deg;F</span><span id="footTime">&mdash;:&mdash;</span></div>
       </div>
-      <div class="foot-col"><h4>Explore</h4><ul><li><a href="explore.html">Directory</a></li><li><a href="gazette.html">Blog</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="calendar.html">Calendar</a></li></ul></div>
-      <div class="foot-col"><h4>Community</h4><ul><li><a href="phone-book.html">Phone Book</a></li><li><a href="gazette.html">News</a></li><li><a href="index.html#sponsors">Sponsors</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="foot-col"><h4>Explore</h4><ul><li><a href="explore.html">Directory</a></li><li><a href="gazette.html">Seldovia Blog</a></li><li><a href="gallery.html">Photos</a></li><li><a href="calendar.html">Calendar</a></li></ul></div>
+      <div class="foot-col"><h4>Community</h4><ul><li><a href="phone-book.html">Phone Book</a></li><li><a href="index.html#sponsors">Sponsors</a></li><li><a href="contact.html">Contact</a></li></ul></div>
       <div class="foot-col"><h4>Real Estate</h4><ul><li><a href="real-estate.html">Featured listings</a></li><li><a href="real-estate.html">Buying guide</a></li><li><a href="real-estate.html">Selling guide</a></li><li><a href="contact.html">Home valuation</a></li></ul></div>
     </div>
     <div class="foot-bottom">
