@@ -4121,7 +4121,17 @@ const TESTIMONIALS=[
 ];
 // REAL Seldovia businesses. These are not paid sponsors — the strip spotlights local
 // businesses. Swap in genuine sponsors once Jenny sells that space.
-const SPONSORS=[{name:"Boardwalk Hotel",cat:"Lodging",c:"#663015",url:"https://www.SeldoviaHotel.com"},{name:"Jack and Aiva's",cat:"Restaurant",c:"#DF1284"},{name:"Thyme on the Boardwalk",cat:"Restaurant",c:"#7f8a6b",url:"https://www.ThymeOnTheBoardwalk.com"},{name:"Smokey Bay Air",cat:"Air Taxi",c:"#4f5a3d",url:"https://www.SmokeyBayAir.com"},{name:"Crabpot Grocery",cat:"Grocery",c:"#a8683a"},{name:"Alaska Free Diver",cat:"Charters & Tours",c:"#b0357e",url:"https://www.AlaskaFreeDiver.com"},{name:"Mako's Water Taxi",cat:"Water Taxi",c:"#1d6b78",url:"https://www.makoswatertaxi.com"},{name:"Seldovia Fishing Adventures",cat:"Fishing Charters",c:"#2c4a3a",url:"https://www.fishhalibut.com"}];
+// Photo Contest Sponsors — ad graphics in images/ads (Jenny). Add url to make a slide clickable.
+const SPONSORS=[
+  {name:"Breezy's by the Bay",img:"breezys.jpg"},
+  {name:"True North Air",img:"true-north-air.jpg"},
+  {name:"Seldovia Suites",img:"seldovia-suites.jpg"},
+  {name:"The Kenai Airport Hotel",img:"kenai-airport-hotel.jpg"},
+  {name:"Homer Sign Company",img:"homer-sign-company.jpg"},
+  {name:"Alaska Bus Company",img:"alaska-bus-company.jpg"},
+  {name:"Thyme on the Boardwalk",img:"thyme-on-the-boardwalk.jpg",url:"https://www.ThymeOnTheBoardwalk.com"},
+  {name:"Seldovia Outdoor Rentals",img:"seldovia-outdoor-rentals.jpg",url:"https://seldovia.fun"}
+];
 
 /* ============================================================ RENDER (each guarded — runs only if its container exists on this page) ============================================================ */
 function stars(r){const full=Math.round(r); return "★★★★★".slice(0,full)+"☆☆☆☆☆".slice(0,5-full);}
@@ -4394,7 +4404,7 @@ if($("#quoteGrid")){
 }
 
 // sponsors
-if($("#sponsorTrack")){const spHTML=SPONSORS.map(s=>{const href=s.url||"phone-book.html";const ext=s.url?' target="_blank" rel="noopener"':'';return `<a class="sponsor" href="${href}"${ext} aria-label="${esc(s.name)} — ${esc(s.cat)}"><span class="logo" style="background:${s.c}">${esc(s.name[0])}</span><span class="s-name">${esc(s.name)}</span><span class="s-cat">${esc(s.cat)}</span></a>`;}).join(""); $("#sponsorTrack").innerHTML=spHTML+spHTML;}
+if($("#sponsorTrack")){const spHTML=SPONSORS.map(s=>{const tag=s.url?"a":"div"; const attr=s.url?` href="${s.url}" target="_blank" rel="noopener"`:""; return `<${tag} class="sponsor sponsor-ad"${attr} aria-label="${esc(s.name)}"><img src="images/ads/${s.img}" alt="${esc(s.name)}" loading="lazy"></${tag}>`;}).join(""); $("#sponsorTrack").innerHTML=spHTML+spHTML;}
 
 // home photo gallery (auto-scroll)
 const galFig=(g,i)=>`<figure class="gallery-photo" tabindex="0" data-idx="${i}"><img src="${g.img}" alt="${esc(g.cap)}" loading="lazy" width="600" height="450"><figcaption>${esc(g.cap)}</figcaption></figure>`;
