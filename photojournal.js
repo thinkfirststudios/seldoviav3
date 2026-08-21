@@ -21,6 +21,9 @@
       // The built-in "More Seldovia photos" gallery below stays visible (nothing is removed).
 
       const akToday=new Date().toLocaleDateString("en-CA",{timeZone:"America/Anchorage"}); // YYYY-MM-DD in Alaska
+      // Scheduling (Qwynny): a photo dated in the future stays hidden until that day arrives.
+      data=data.filter(p=>!p.taken_on || p.taken_on<=akToday);
+      if(!data.length) return; // all upcoming -> keep the static gallery
       const newest=data[0];
       // Only feature a photo in "Seldovia Today" if it was actually posted TODAY. Otherwise
       // the hero is skipped and every photo simply lives in the gallery below (nothing stale up top).

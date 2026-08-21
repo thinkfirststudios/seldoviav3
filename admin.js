@@ -101,7 +101,7 @@
     $("#tab-photo").innerHTML=`
       <form class="info-block" id="photoForm" style="max-width:640px">
         <h4 id="ph-head">Add today's photo</h4>
-        <p style="color:var(--text-soft);font-size:.92rem;margin:.3rem 0 1rem">It appears at the top of the Photo Journal, then settles into that month's gallery.</p>
+        <p style="color:var(--text-soft);font-size:.92rem;margin:.3rem 0 1rem">It appears at the top of the Photo Journal on its date, then settles into that month's gallery. Pick a <strong>future date to schedule it</strong> — it stays hidden until that day.</p>
         <div class="row-2" style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem">
           <div class="field"><label for="ph-date">Date the photo is for</label><input id="ph-date" type="date" required></div>
           <div class="field"><label for="ph-cap">Caption</label><input id="ph-cap" placeholder="Morning light on the harbor"></div>
@@ -137,7 +137,8 @@
       if(file){ msg.textContent="Uploading photo…"; row.image_url=await uploadImage("gallery", file, "photo"); }
       if(editPhoto){ const {error}=await db.from("photos").update(row).eq("id",editPhoto); if(error) throw error; }
       else { if(!file) throw new Error("Please choose a photo."); const {error}=await db.from("photos").insert(row); if(error) throw error; }
-      msg.style.color="var(--open)"; msg.textContent=editPhoto?"Saved!":"Posted! It's live in the Photo Journal.";
+      const scheduled=row.taken_on>todayISO();
+      msg.style.color="var(--open)"; msg.textContent=editPhoto?"Saved!":(scheduled?`Scheduled for ${fmtDate(row.taken_on)} — it will appear that day.`:"Posted! It's live in the Photo Journal.");
       resetPhoto(); loadPhotos();
     }catch(err){ msg.style.color="var(--accent-ink)"; msg.textContent="Error: "+(err.message||err); }
     finally{ btn.disabled=false; }
@@ -149,7 +150,7 @@
     if(!data.length){ list.innerHTML='<p style="color:var(--text-soft)">No photos yet.</p>'; return; }
     list.innerHTML=`<div class="admin-photo-grid">`+data.map(p=>`<figure class="admin-photo">
       <img src="${esc(p.image_url)}" alt="${esc(p.caption||"")}" loading="lazy">
-      <figcaption>${esc(fmtDate(p.taken_on))}${p.caption?" · "+esc(p.caption):""}</figcaption>
+      <figcaption>${esc(fmtDate(p.taken_on))}${p.taken_on>todayISO()?` · <span style="color:var(--accent-ink);font-weight:700">Scheduled</span>`:""}${p.caption?" · "+esc(p.caption):""}</figcaption>
       <div class="admin-row-btns"><button class="btn btn-ghost" data-edit="${p.id}" type="button">Edit</button><button class="btn btn-ghost" data-del="${p.id}" type="button">Delete</button></div></figure>`).join("")+`</div>`;
     bindEdit(list,data,fillPhoto); bindDelete(list,"photos",loadPhotos);
   }
