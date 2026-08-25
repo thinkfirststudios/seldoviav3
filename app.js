@@ -4254,7 +4254,9 @@ if($("#gazetteGrid")){
 // single blog post page (post.html?p=slug)
 if($("#postDetail")){
   const params=new URLSearchParams(location.search), pid=params.get("id");
-  const paras=t=>(t||"").trim().split(/\n{2,}/).map(x=>`<p>${esc(x.trim()).replace(/\n/g,"<br>")}</p>`).join("");
+  // Inline links in the post body, written markdown-style: [text](url). Opens in a new tab.
+  const mdLinks=s=>s.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g,(m,txt,url)=>/^(https?:\/\/|\/|mailto:|#|[\w.-]+\.html)/i.test(url)?`<a href="${url}" target="_blank" rel="noopener">${txt}</a>`:m);
+  const paras=t=>(t||"").trim().split(/\n{2,}/).map(x=>`<p>${mdLinks(esc(x.trim()).replace(/\n/g,"<br>"))}</p>`).join("");
   const showPost=o=>{ // {title,cat,date,img,body,link}
     document.title=`${o.title} — Seldovia Blog`;
     const media=o.img?`<div class="post-detail-media"><a href="${esc(o.img)}" target="_blank" rel="noopener" title="View full size"><img src="${esc(o.img)}" alt="${esc(o.title)}" onerror="this.closest('.post-detail-media').style.display='none'"></a></div>`:"";

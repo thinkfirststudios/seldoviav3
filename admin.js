@@ -171,7 +171,7 @@
           <div class="field"><label for="p-date">Date</label><input id="p-date" type="date" required></div>
           <div class="field"><label for="p-cat">Category</label>${catField("p-cat",BLOG_CATS)}</div>
         </div>
-        <div class="field"><label for="p-body">Post</label><textarea id="p-body" rows="7" placeholder="Write your post…"></textarea></div>
+        <div class="field"><label for="p-body">Post</label><textarea id="p-body" rows="7" placeholder="Write your post…"></textarea><span class="hint">To link a word or phrase, write it like <code>[click here](https://example.com)</code> — it becomes a clickable link that opens in a new tab.</span></div>
         <div class="field"><label for="p-link">Web link <span class="opt">(optional)</span></label><input id="p-link" type="url" placeholder="https://"><span class="hint">Adds a "Visit website" button on the post that opens in a new tab.</span></div>
         <div class="field"><label for="p-img">Photo <span class="opt">(optional)</span></label><input id="p-img" type="file" accept="image/*"><span class="hint" id="p-imghint"></span></div>
         <div style="display:flex;gap:.5rem;align-items:center;flex-wrap:wrap">
