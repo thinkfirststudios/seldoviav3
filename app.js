@@ -44,12 +44,15 @@ const NAV=[
   ["phone-book.html","Phone Book","phonebook"],
   ["contact.html","Contact","contact"],
 ];
-const navLinks=(cls="")=>NAV.map(([href,label,key])=>`<a class="${cls} ${key===PAGE?'active':''}" href="${href}">${label}</a>`).join("");
+// From the admin, open the public site in ONE reusable preview tab so the admin
+// stays open and Jenny/Qwynny never have to back-arrow their way home (Qwynny).
+const _preview = PAGE==="admin" ? ' target="seldoviaPreview" rel="noopener"' : '';
+const navLinks=(cls="")=>NAV.map(([href,label,key])=>`<a class="${cls} ${key===PAGE?'active':''}"${_preview} href="${href}">${label}</a>`).join("");
 
 const HEADER=`
 <header class="masthead">
   <div class="masthead-inner">
-    <a class="brand" href="index.html" aria-label="Seldovia.com home">
+    <a class="brand" href="index.html"${_preview} aria-label="Seldovia.com home">
       <img class="brand-logo" src="images/logo-header.png" alt="Seldovia.com — Alaska's Best Kept Secret" width="620" height="413">
     </a>
     <nav class="mainnav" aria-label="Primary">${navLinks()}</nav>
@@ -68,7 +71,7 @@ const HEADER=`
 <div class="drawer" id="drawer" aria-hidden="true">
   <div class="drawer-scrim" data-close></div>
   <nav class="drawer-panel" aria-label="Mobile">
-    <a class="${PAGE==='home'?'active':''}" href="index.html" data-close>Home</a>
+    <a class="${PAGE==='home'?'active':''}"${_preview} href="index.html" data-close>Home</a>
     ${navLinks("").replace(/<a /g,'<a data-close ')}
   </nav>
 </div>`;
@@ -96,6 +99,10 @@ const FOOTER=`
 
 document.body.insertAdjacentHTML("afterbegin", HEADER);
 document.body.insertAdjacentHTML("beforeend", FOOTER);
+// From the admin, every link to the public site opens the ONE reusable preview
+// tab, so the admin stays put and you never back-arrow home (Qwynny).
+if(PAGE==="admin") document.querySelectorAll('a[href]').forEach(a=>{ const h=a.getAttribute("href")||"";
+  if(/\.html($|[?#])/.test(h) && !/^https?:/.test(h) && !h.startsWith("admin") && !a.target){ a.target="seldoviaPreview"; a.rel="noopener"; } });
 
 /* Watercolor filter — displaces shape edges into organic, bleeding washes.
    Used by .splash-wrap/.wc-splash decorations (community pages). */
