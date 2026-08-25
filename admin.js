@@ -52,8 +52,13 @@
         <b>SUPABASE_SETUP.md</b>, paste the two values into <b>db.js</b>, and this page turns on.</p></div>`;
       return;
     }
-    db.auth.getSession().then(({data:{session}})=>{ session?renderApp():renderLogin(); });
-    db.auth.onAuthStateChange((_e,s)=>{ s?renderApp():renderLogin(); });
+    // Only (re)render when the signed-in state actually FLIPS. Supabase fires
+    // onAuthStateChange on token refresh / tab focus too; re-rendering then would
+    // wipe whatever's typed in a form (Qwynny). So ignore same-state events.
+    let authed=null;
+    const apply=s=>{ const now=!!s; if(now===authed) return; authed=now; now?renderApp():renderLogin(); };
+    db.auth.getSession().then(({data:{session}})=>apply(session));
+    db.auth.onAuthStateChange((_e,s)=>apply(s));
   }
 
   function renderLogin(){
@@ -198,8 +203,11 @@
         category:readCat("p-cat","Blog"), excerpt:body.length>180?body.slice(0,177).trim()+"…":body, published:true };
       const file=$("#p-img").files[0];
       if(file){ msg.textContent="Uploading photo…"; row.image_url=await uploadImage("blog", file, "post"); }
-      if(editPost){ const {error}=await db.from("posts").update(row).eq("id",editPost); if(error) throw error; }
-      else { const {error}=await db.from("posts").insert(row); if(error) throw error; }
+      const save=r=> editPost ? db.from("posts").update(r).eq("id",editPost) : db.from("posts").insert(r);
+      let {error}=await save(row);
+      // If the posts.link column hasn't been added yet, save without it so publishing still works.
+      if(error && (error.code==="PGRST204" || /link/i.test(error.message||""))){ const {link,...r2}=row; ({error}=await save(r2)); }
+      if(error) throw error;
       msg.style.color="var(--open)"; msg.textContent=editPost?"Saved!":"Published! It's live on the blog.";
       resetPost(); loadPosts();
     }catch(err){ msg.style.color="var(--accent-ink)"; msg.textContent="Error: "+(err.message||err); }
