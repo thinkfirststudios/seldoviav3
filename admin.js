@@ -172,7 +172,7 @@
           <div class="field"><label for="p-cat">Category</label>${catField("p-cat",BLOG_CATS)}</div>
         </div>
         <div class="field"><label for="p-body">Post</label>
-          <div style="display:flex;gap:.4rem;align-items:center;margin-bottom:.35rem"><button type="button" class="btn btn-ghost" id="p-linkbtn" style="padding:.3rem .7rem;font-size:.85rem">🔗 Add link</button><span class="hint" style="margin:0">Select a word first, then click to make it clickable.</span></div>
+          <div style="display:flex;gap:.4rem;align-items:center;margin-bottom:.35rem"><button type="button" class="btn btn-ghost" id="p-linkbtn" style="padding:.3rem .7rem;font-size:.85rem">🔗 Add link</button><span class="hint" style="margin:0">Highlight the exact word you want to link (just that one spot), then click.</span></div>
           <textarea id="p-body" rows="7" placeholder="Write your post…"></textarea><span class="hint">Tip: to link a word by hand, write it like <code>[click here](https://example.com)</code> — it opens in a new tab.</span></div>
         <div class="field"><label for="p-link">Web link <span class="opt">(optional)</span></label><input id="p-link" type="url" placeholder="https://"><span class="hint">Adds a "Visit website" button on the post that opens in a new tab.</span></div>
         <div class="field"><label for="p-img">Photo <span class="opt">(optional)</span></label><input id="p-img" type="file" accept="image/*"><span class="hint" id="p-imghint"></span></div>
@@ -193,16 +193,16 @@
   // "🔗 Add link" — wraps the selected word(s) in [text](url) so Jenny doesn't type markdown by hand.
   function insertBlogLink(){
     const ta=$("#p-body"); const s=ta.selectionStart, e=ta.selectionEnd;
-    let text=ta.value.slice(s,e).trim();
-    if(!text){ text=(window.prompt("What word or words should be the link?")||"").trim(); if(!text) return; }
-    let url=(window.prompt("Paste the web address (URL) to link to:")||"").trim();
+    const sel=ta.value.slice(s,e);
+    // Require a selection so ONLY that one spot is linked — not every copy of the word.
+    if(!sel.trim()){ window.alert("First highlight the exact word (or words) you want to link — just that one spot. Then click 🔗 Add link.\n\nOther copies of the same word stay plain text."); ta.focus(); return; }
+    let url=(window.prompt(`Link "${sel.trim()}" to what web address (URL)?`)||"").trim();
     if(!url || url==="https://") return;
     url=url.replace(/^(https?:\/\/)+/i, m=>m.slice(m.toLowerCase().lastIndexOf("http"))); // collapse a doubled "https://https://"
     if(!/^(https?:\/\/|mailto:|\/|#)/i.test(url)) url="https://"+url; // be forgiving: add https:// if they omit it
-    const md=`[${text}](${url})`;
-    // If text was selected, replace it; otherwise insert at the cursor.
-    const hadSel=e>s;
-    ta.value = ta.value.slice(0,s) + md + ta.value.slice(hadSel?e:s);
+    // Wrap exactly the selected characters, at this position only.
+    const md=`[${sel}](${url})`;
+    ta.value = ta.value.slice(0,s) + md + ta.value.slice(e);
     const caret=s+md.length; ta.focus(); ta.setSelectionRange(caret,caret);
   }
   function resetPost(){ editPost=null; $("#postForm").reset(); $("#p-date").value=todayISO(); fillCat("p-cat","",BLOG_CATS);
