@@ -495,6 +495,13 @@ a.show-more{text-decoration:none; display:inline-block;}
 .post-text.clamp{display:-webkit-box; -webkit-line-clamp:5; -webkit-box-orient:vertical; overflow:hidden;}
 .show-more{align-self:flex-start; margin-top:.25rem; background:none; border:0; padding:0; color:var(--accent-ink); font-weight:800; font-size:.85rem; cursor:pointer; font-family:inherit;}
 .show-more:hover{text-decoration:underline;}
+/* Blog search + pagination */
+.blog-tools{display:flex; align-items:center; gap:.75rem; flex-wrap:wrap; margin-bottom:1.4rem;}
+.blog-tools #blogSearch{flex:1 1 260px; max-width:460px; padding:.7rem 1rem; font:inherit; font-size:1rem; color:var(--text); background:var(--surface,#fff); border:1px solid rgba(0,0,0,.16); border-radius:999px; box-shadow:0 1px 2px rgba(0,0,0,.04);}
+.blog-tools #blogSearch:focus{outline:none; border-color:var(--accent-ink); box-shadow:0 0 0 3px rgba(30,90,120,.15);}
+.blog-count{color:var(--text-soft); font-size:.9rem; white-space:nowrap;}
+.blog-more{display:flex; justify-content:center; margin-top:1.8rem;}
+.blog-more .btn{min-width:220px;}
 
 .masonry{columns:4 210px; column-gap:16px;}
 .masonry figure{break-inside:avoid; margin:0 0 16px; border-radius:var(--radius-s); overflow:clip; position:relative; box-shadow:var(--shadow);}
