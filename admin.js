@@ -195,8 +195,9 @@
     const ta=$("#p-body"); const s=ta.selectionStart, e=ta.selectionEnd;
     let text=ta.value.slice(s,e).trim();
     if(!text){ text=(window.prompt("What word or words should be the link?")||"").trim(); if(!text) return; }
-    let url=(window.prompt("Paste the web address (URL) to link to:","https://")||"").trim();
+    let url=(window.prompt("Paste the web address (URL) to link to:")||"").trim();
     if(!url || url==="https://") return;
+    url=url.replace(/^(https?:\/\/)+/i, m=>m.slice(m.toLowerCase().lastIndexOf("http"))); // collapse a doubled "https://https://"
     if(!/^(https?:\/\/|mailto:|\/|#)/i.test(url)) url="https://"+url; // be forgiving: add https:// if they omit it
     const md=`[${text}](${url})`;
     // If text was selected, replace it; otherwise insert at the cursor.

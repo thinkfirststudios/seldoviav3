@@ -18,8 +18,9 @@
   const clip = (s,n) => { s=strip(s); return s.length>n ? s.slice(0,n).replace(/\s+\S*$/,"")+"…" : s; };
   // Excerpt that keeps inline [text](url) links clickable in the card preview.
   // CSS (.post-text.clamp, 5 lines) trims it visually, so links never get cut mid-way.
+  const fixUrl = u => u.replace(/^(https?:\/\/)+/i, m=>m.slice(m.toLowerCase().lastIndexOf("http"))); // collapse doubled https://https://
   const mdExcerpt = raw => esc(strip(raw)).replace(/\[([^\]]+)\]\(([^)\s]+)\)/g,(m,txt,url)=>
-    /^(https?:\/\/|mailto:|\/|#|[\w.-]+\.html)/i.test(url)?`<a href="${url}" target="_blank" rel="noopener">${txt}</a>`:m);
+    /^(https?:\/\/|mailto:|\/|#|[\w.-]+\.html)/i.test(url)?`<a href="${fixUrl(url)}" target="_blank" rel="noopener">${txt}</a>`:m);
 
   // titles already in the built-in archive, so we never show one twice
   const seen = new Set([...grid.querySelectorAll(".post h4")].map(h => norm(h.textContent)));
