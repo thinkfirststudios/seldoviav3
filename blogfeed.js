@@ -16,6 +16,10 @@
   const fmtISO = d => { const dt=new Date(d); return isNaN(dt)?"":`${MON[dt.getMonth()]} ${dt.getDate()}, ${dt.getFullYear()}`; };
   const norm = s => String(s||"").trim().toLowerCase().replace(/\s+/g," ");
   const clip = (s,n) => { s=strip(s); return s.length>n ? s.slice(0,n).replace(/\s+\S*$/,"")+"…" : s; };
+  // Excerpt that keeps inline [text](url) links clickable in the card preview.
+  // CSS (.post-text.clamp, 5 lines) trims it visually, so links never get cut mid-way.
+  const mdExcerpt = raw => esc(strip(raw)).replace(/\[([^\]]+)\]\(([^)\s]+)\)/g,(m,txt,url)=>
+    /^(https?:\/\/|mailto:|\/|#|[\w.-]+\.html)/i.test(url)?`<a href="${url}" target="_blank" rel="noopener">${txt}</a>`:m);
 
   // titles already in the built-in archive, so we never show one twice
   const seen = new Set([...grid.querySelectorAll(".post h4")].map(h => norm(h.textContent)));
@@ -26,7 +30,8 @@
                 : it.img ? `<div class="post-media"><img class="post-photo" src="${esc(it.img)}" alt="${esc(it.title)}" loading="lazy" onerror="this.closest('.post-media').style.display='none'"></div>` : "";
     const title = it.href ? `<h4><a${linkAttr}>${esc(it.title)}</a></h4>` : `<h4>${esc(it.title)}</h4>`;
     const more = it.href ? `<a class="show-more"${linkAttr}>${esc(it.moreLabel||"Read more →")}</a>` : "";
-    return `<article class="post">${media}<div class="post-body"><span class="kicker">${esc(it.cat||"Blog")}</span>${title}<div class="post-meta"><span>${esc(it.date)}</span></div><div class="post-text clamp">${esc(it.excerpt||"")}</div>${more}</div></article>`;
+    const body = it.md ? mdExcerpt(it.excerpt) : esc(it.excerpt||"");
+    return `<article class="post">${media}<div class="post-body"><span class="kicker">${esc(it.cat||"Blog")}</span>${title}<div class="post-meta"><span>${esc(it.date)}</span></div><div class="post-text clamp">${body}</div>${more}</div></article>`;
   }
 
   Promise.all([
@@ -36,7 +41,7 @@
     const items = [];
     posts.forEach(p => items.push({
       when: p.post_date || "", cat: p.category || "Blog", title: p.title,
-      date: fmtDB(p.post_date), img: p.image_url, excerpt: clip(p.body || p.excerpt, 180),
+      date: fmtDB(p.post_date), img: p.image_url, excerpt: p.body || p.excerpt || "", md: true,
       href: "post.html?id=" + p.id
     }));
     bul.forEach(n => { const when = n.starts_on || (n.created_at||"").slice(0,10);
