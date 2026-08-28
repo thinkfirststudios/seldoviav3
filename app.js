@@ -4379,7 +4379,7 @@ if($("#dirList")){
     {label:"Travel",          test:r=>r.k==="travel"},
     {label:"Shopping",        test:r=>r.k==="shop"},
     {label:"Activities",      test:r=>r.k==="activities"},
-    {label:"Life in Seldovia",test:r=>r.k==="services"},
+    // "Life in Seldovia" chip removed per Jenny — those service entries are just businesses (show under Businesses/All).
     {label:"Organization",    test:r=>r.k==="life" && !GOVT_BIZ.has(r.name)},
     {label:"Government",       test:r=>r.k==="life" && GOVT_BIZ.has(r.name)},
   ];

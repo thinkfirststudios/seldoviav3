@@ -695,7 +695,7 @@ footer.site a{color:rgba(255,255,255,.82); text-decoration:none;} footer.site a:
 .skip-link:focus{left:0;}
 
 @keyframes slideSponsors{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
-.sponsor-track{animation:slideSponsors 44s linear infinite;}
+.sponsor-track{animation:slideSponsors 28s linear infinite;}
 .sponsor-strip:hover .sponsor-track{animation-play-state:paused;}
 @media (prefers-reduced-motion: reduce){ .sponsor-track{animation:none;} .sponsor-strip{overflow-x:auto; -webkit-overflow-scrolling:touch;} }
 
@@ -795,6 +795,7 @@ body[data-page="realestate"] .today-bar{background:var(--accent-ink);}
 .wc-body p a{color:var(--accent-ink); font-weight:700; text-decoration:none; white-space:nowrap;}
 .wc-credit{font-size:.8rem; color:var(--text-soft); margin-top:1rem; text-align:center;}
 .wc-credit a{color:var(--accent-ink); text-decoration:none; font-weight:600;}
+.wc-credit-lg{font-size:1rem; margin-top:.5rem; color:var(--text); max-width:60ch; margin-left:auto; margin-right:auto;}
 
 /* ============ CALENDAR EMBED ============ */
 .cal-embed{background:var(--sheet); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); overflow:clip;}
