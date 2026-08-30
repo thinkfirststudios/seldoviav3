@@ -79,6 +79,7 @@
     {key:"blog",     label:"✍️ Seldovia Blog", render:renderBlogTab},
     {key:"listing",  label:"🏡 Listings",    render:renderListingTab},
     {key:"messages", label:"📨 Messages",    render:renderMessagesTab},
+    {key:"submissions", label:"📇 Phone Book", render:renderSubmissionsTab},
     {key:"settings", label:"⚙️ Home Extra",  render:renderSettingsTab},
     {key:"feature",  label:"⭐ Explore Card", render:renderFeatureTab},
     {key:"bizcat",   label:"🏪 Businesses",    render:renderExploreCatsTab},
@@ -99,6 +100,43 @@
     }));
     TABS.forEach(t=>t.render());
   }
+
+  /* ---------------- PHONE BOOK SUBMISSIONS (Jenny #29) ---------------- */
+  function renderSubmissionsTab(){
+    $("#tab-submissions").innerHTML=`<h4>Phone book submissions</h4>
+      <p style="color:var(--text-soft);font-size:.92rem;margin:.3rem 0 1rem">Neighbors and businesses who added themselves through the site. Approve to publish them to the phone book, or delete. Individuals' privacy choices (public/private per field) are shown in parentheses.</p>
+      <div id="subList"><p style="color:var(--text-soft)">Loading…</p></div>`;
+    loadSubmissions();
+  }
+  async function loadSubmissions(){
+    const list=$("#subList");
+    const {data,error}=await db.from("directory_submissions").select("*").order("created_at",{ascending:false});
+    if(error){ list.innerHTML=`<p style="color:var(--accent-ink)">${esc(error.message)}</p>`; return; }
+    if(!data.length){ list.innerHTML=`<p style="color:var(--text-soft)">No submissions yet.</p>`; return; }
+    const pending=data.filter(s=>s.status!=="approved").length;
+    list.innerHTML=(pending?`<p style="color:var(--accent-ink);font-weight:700;margin-bottom:.8rem">${pending} awaiting review</p>`:"")+data.map(subCard).join("");
+    list.querySelectorAll("[data-approve]").forEach(b=>b.addEventListener("click",()=>setSubStatus(b.dataset.approve,"approved")));
+    list.querySelectorAll("[data-del]").forEach(b=>b.addEventListener("click",()=>delSub(b.dataset.del)));
+  }
+  function subCard(s){
+    const d=s.data||{}; const isBiz=s.listing_type==="business";
+    const priv=v=>v?` (${esc(v)})`:"";
+    const rows=isBiz
+      ? [["Business",d.business_name],["Owner",d.business_owner],["Category",d.business_category],["Phone",d.business_phone],["Email",d.business_email],["Address",d.business_address],["Hours",d.business_hours],["Tags",d.tags],["Description",d.business_desc]]
+      : [["Name",d.name],["Phone",(d.phone||"")+priv(d.phone_privacy)],["Email",(d.email||"")+priv(d.email_privacy)],["Address",(d.address||"")+priv(d.address_privacy)]];
+    const info=rows.filter(([k,v])=>v&&String(v).trim()).map(([k,v])=>`<div><b style="color:var(--heading)">${esc(k)}:</b> ${esc(String(v))}</div>`).join("");
+    const badge=s.status==="approved"?`<span style="color:var(--open);font-weight:700">✓ Approved</span>`:`<span style="color:var(--accent-ink);font-weight:700">● Pending</span>`;
+    return `<div class="info-block" style="margin-bottom:1rem">
+      <div style="display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center">
+        <h4 style="margin:0">${esc(s.display_name||"(no name)")} <span style="font-size:.8rem;color:var(--text-soft);font-weight:400">· ${esc(s.listing_type||"")}</span></h4>${badge}</div>
+      ${s.photo_url?`<img src="${esc(s.photo_url)}" alt="" style="max-width:160px;border-radius:8px;margin:.5rem 0">`:""}
+      <div style="font-size:.9rem;line-height:1.7;margin:.6rem 0">${info}</div>
+      <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+        ${s.status!=="approved"?`<button class="btn btn-primary" type="button" data-approve="${s.id}">Approve</button>`:`<button class="btn btn-ghost" type="button" data-approve="${s.id}" disabled>Approved</button>`}
+        <button class="btn btn-ghost" type="button" data-del="${s.id}">Delete</button></div></div>`;
+  }
+  async function setSubStatus(id,status){ const {error}=await db.from("directory_submissions").update({status}).eq("id",id); if(error){alert(error.message);return;} loadSubmissions(); }
+  async function delSub(id){ if(!confirm("Delete this submission? This can't be undone."))return; const {error}=await db.from("directory_submissions").delete().eq("id",id); if(error){alert(error.message);return;} loadSubmissions(); }
 
   /* ---------------- DAILY PHOTO ---------------- */
   let editPhoto=null;
