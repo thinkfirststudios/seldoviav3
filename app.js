@@ -4464,7 +4464,12 @@ if($("#board")) $("#board").innerHTML=NOTES.map(n=>`<article class="note"><span 
 // Renders only when there are REAL testimonials; the section hides itself while empty.
 if($("#quoteGrid")){
   if(!TESTIMONIALS.length){ const sec=$("#quoteGrid").closest("section"); if(sec) sec.style.display="none"; }
-  else $("#quoteGrid").innerHTML=TESTIMONIALS.map(t=>`<div class="quote"><span class="qmark">&rdquo;</span><div class="quote-head"><span class="avatar" style="background:${t.c}">${esc(t.name[0])}</span><span><b>${esc(t.name)}</b><span>${esc(t.role)}</span></span></div><p>${esc(t.t)}</p></div>`).join("");
+  else {
+    const cards=TESTIMONIALS.map(t=>`<div class="quote"><span class="qmark">&rdquo;</span><div class="quote-head"><span class="avatar" style="background:${t.c}">${esc(t.name[0])}</span><span><b>${esc(t.name)}</b><span>${esc(t.role)}</span></span></div><p>${esc(t.t)}</p></div>`).join("");
+    // Jenny #14: testimonials scroll by gently (pauses on hover). Duplicated for a seamless loop.
+    $("#quoteGrid").className="quote-strip";
+    $("#quoteGrid").innerHTML=`<div class="quote-track">${cards}${cards}</div>`;
+  }
 }
 
 // sponsors
