@@ -122,7 +122,7 @@ document.body.insertAdjacentHTML("beforeend", `
 
 /* ============================================================ MOCK DATA ============================================================ */
 // 8 home categories (Jenny's groupings). Order maps to images/categories/cat-0..7.jpg.
-const CATEGORIES=[{b:"Location + History",s:"About Seldovia",key:"about"},{b:"Travel",s:"Getting to Seldovia",key:"travel"},{b:"Lodging + Camping",s:"Places to stay",key:"stay"},{b:"Eat",s:"Restaurants, bar & stores",key:"eat"},{b:"Shop + Gifts",s:"Shops, gifts & nursery",key:"shop"},{b:"Activities",s:"Tours, charters & trails",key:"activities"},{b:"Services",s:"Local trades & help",key:"services"},{b:"Organization + Public Services",s:"Community & services",key:"life"}];
+const CATEGORIES=[{b:"About",s:"Location & history",key:"about"},{b:"Travel",s:"Getting to Seldovia",key:"travel"},{b:"Lodging + Camping",s:"Places to stay",key:"stay"},{b:"Eat",s:"Restaurants, bar & stores",key:"eat"},{b:"Shop + Gifts",s:"Shops, gifts & nursery",key:"shop"},{b:"Activities",s:"Tours, charters & trails",key:"activities"},{b:"Businesses",s:"Local trades & services",key:"services"},{b:"Organizations",s:"Public & Govt.",key:"life"}];
 // REAL Seldovia places — sourced from the existing seldovia.com business directory.
 // No star ratings or review counts: we don't have real review data, so we don't invent it.
 // Explore directory — all Seldovia businesses, grouped into the 8 categories (key).
