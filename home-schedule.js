@@ -1,42 +1,35 @@
-/* Home "What's on today" widget — Jenny wanted the daily schedule on the home page.
-   Pulls the next several days of events from the community Google Calendar (same key/id
-   as the calendar page). Until the API key is set, or if it fails, it shows a tidy
-   link to the full calendar rather than anything broken. */
+/* Home "What's on this week" widget (Jenny #25) — pulls the next ~2 weeks of events
+   from the community Tockify calendar (calname "seldovia", same calendar the Calendar
+   page embeds). Tockify's API has no CORS header, so we read it through a public proxy
+   and ALWAYS fall back to a tidy link if anything fails — never anything broken. */
 (function(){
   const box=document.querySelector("#todaySchedule");
   if(!box) return;
-  const KEY=window.GCAL_KEY, CID=window.GCAL_ID;
   const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-  const DOW=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
-  const MON3=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-  const pad=n=>String(n).padStart(2,"0");
-  const fmt12=t=>{ if(!t) return "All day"; let[h,mi]=t.split(":").map(Number); const ap=h>=12?"PM":"AM"; h=h%12||12; return `${h}:${pad(mi)} ${ap}`; };
+  const AKZ="America/Anchorage";
+  const akDay=m=>new Intl.DateTimeFormat("en-US",{timeZone:AKZ,weekday:"short",month:"short",day:"numeric"}).format(new Date(m));
+  const akTime=m=>new Intl.DateTimeFormat("en-US",{timeZone:AKZ,hour:"numeric",minute:"2-digit"}).format(new Date(m));
   const calLink=`<a class="ts-all" href="calendar.html">Full community calendar →</a>`;
-
   const shell=inner=>`<div class="today-sched">
       <div class="ts-head"><span class="eyebrow">Around Town</span><h3>What’s on this week</h3></div>
       ${inner}</div>`;
   const fallback=msg=>{ box.innerHTML=shell(`<p class="ts-empty">${esc(msg)}</p>${calLink}`); };
 
-  if(!KEY || KEY.indexOf("PASTE")===0){ fallback("Meetings, markets, music and more — see the community calendar."); return; }
-
-  const now=new Date();
-  const timeMin=new Date(now.getFullYear(),now.getMonth(),now.getDate()).toISOString();
-  const timeMax=new Date(now.getFullYear(),now.getMonth(),now.getDate()+7,23,59,59).toISOString();
-  const url=`https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(CID)}/events`
-    +`?key=${encodeURIComponent(KEY)}&singleEvents=true&orderBy=startTime&maxResults=20`
-    +`&timeMin=${encodeURIComponent(timeMin)}&timeMax=${encodeURIComponent(timeMax)}`;
+  const now=Date.now(), end=now+14*24*60*60*1000;
+  const tock=`https://tockify.com/api/ngevent?max=20&longForm=false&calname=seldovia&startms=${now}&endms=${end}`;
+  const url=`https://api.allorigins.win/raw?url=${encodeURIComponent(tock)}`;
 
   fetch(url).then(r=>r.ok?r.json():Promise.reject()).then(data=>{
-    const items=(data.items||[]).filter(it=>it.status!=="cancelled");
-    if(!items.length){ fallback("Nothing scheduled in the next few days — check the full calendar."); return; }
-    const rows=items.slice(0,6).map(it=>{
-      const s=it.start||{}, allDay=!s.dateTime, dt=new Date(s.dateTime||s.date);
-      const day=`${DOW[dt.getDay()]} ${MON3[dt.getMonth()]} ${dt.getDate()}`;
-      const time=allDay?"All day":fmt12(`${pad(dt.getHours())}:${pad(dt.getMinutes())}`);
-      return `<li class="ts-item"><span class="ts-when"><b>${esc(day)}</b><small>${esc(time)}</small></span>
-        <span class="ts-title">${esc(it.summary||"Community event")}</span></li>`;
+    const items=(data.events||[])
+      .filter(e=>e && e.when && e.when.start && e.when.start.millis)
+      .sort((a,b)=>a.when.start.millis-b.when.start.millis);
+    if(!items.length){ fallback("Nothing scheduled in the next couple weeks — see the full calendar."); return; }
+    const rows=items.slice(0,6).map(e=>{
+      const m=e.when.start.millis, allDay=e.when.allDay;
+      const title=(e.content&&e.content.summary&&e.content.summary.text)||"Community event";
+      return `<li class="ts-item"><span class="ts-when"><b>${esc(akDay(m))}</b><small>${esc(allDay?"All day":akTime(m))}</small></span>
+        <span class="ts-title">${esc(title)}</span></li>`;
     }).join("");
     box.innerHTML=shell(`<ul class="ts-list">${rows}</ul>${calLink}`);
-  }).catch(()=>fallback("See the community calendar for what’s happening around town."));
+  }).catch(()=>fallback("Meetings, markets, music and more — see the community calendar."));
 })();
