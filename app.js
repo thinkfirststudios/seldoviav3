@@ -4235,7 +4235,9 @@ function renderPlaces(){
     </div>`;
     return;
   }
-  const rows=PLACES.filter(p=>placeTab==="all"||p.key===placeTab).sort((a,b)=>a.name.localeCompare(b.name));
+  // Businesses first (alphabetical); trails & beaches sink to the bottom (Jenny #3).
+  const isTrail=p=>p.cat==="Trail"||p.cat==="Beach & Park";
+  const rows=PLACES.filter(p=>placeTab==="all"||p.key===placeTab).sort((a,b)=>{const ta=isTrail(a),tb=isTrail(b); return ta!==tb?(ta?1:-1):a.name.localeCompare(b.name);});
   const pin=`<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.3-7-11a7 7 0 0 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>`;
   // Placeholder photo until Qwynny's square B&W watercolor images land (set p.img; p.imgColor for the sponsor color version).
   const placeCard=p=>{

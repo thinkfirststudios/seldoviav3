@@ -60,16 +60,8 @@ body[data-page="realestate"]{
 html{scroll-behavior:smooth;}
 @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
 body{margin:0; background:var(--page); color:var(--text); font-family:var(--sans); font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;}
-/* watercolor washes — soft bay/spruce/sage bleeding across the paper (community pages only) */
-body:not([data-page="realestate"]){
-  background:
-    radial-gradient(72vw 48vw at -6% -6%, color-mix(in srgb, var(--bay) 22%, transparent), transparent 58%),
-    radial-gradient(60vw 46vw at 107% 6%, color-mix(in srgb, var(--spruce) 20%, transparent), transparent 55%),
-    radial-gradient(55vw 42vw at 96% 62%, color-mix(in srgb, var(--sky) 20%, transparent), transparent 56%),
-    radial-gradient(70vw 50vw at 8% 96%, color-mix(in srgb, var(--sage) 22%, transparent), transparent 58%),
-    var(--page);
-  background-attachment:fixed;
-}
+/* Watercolor page washes removed site-wide — clean solid ground (Jenny #7/#24). */
+body:not([data-page="realestate"]){ background:var(--page); }
 /* faint paper grain for a hand-made, watercolor feel */
 body:not([data-page="realestate"])::before{content:""; position:fixed; inset:0; z-index:-1; pointer-events:none; opacity:.5; mix-blend-mode:multiply;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");}
@@ -112,22 +104,9 @@ body:not([data-page="realestate"]) .grid3,
 body:not([data-page="realestate"]) .dir-list,
 body:not([data-page="realestate"]) .quote-grid,
 body:not([data-page="realestate"]) .board{position:relative; isolation:isolate;}
-body:not([data-page="realestate"]) .cat-grid::before,
-body:not([data-page="realestate"]) .grid3::before,
-body:not([data-page="realestate"]) .dir-list::before,
-body:not([data-page="realestate"]) .quote-grid::before,
-body:not([data-page="realestate"]) .board::before{
-  content:""; position:absolute; inset:-56px -44px; z-index:-1; pointer-events:none; opacity:.85;
-  filter:url(#wcEdge);
-  background:
-    radial-gradient(22% 26% at 4% 12%, color-mix(in srgb,var(--bay) 62%, transparent) 0 58%, transparent 74%),
-    radial-gradient(20% 24% at 50% 3%, color-mix(in srgb,var(--sky) 55%, transparent) 0 58%, transparent 74%),
-    radial-gradient(22% 26% at 97% 16%, color-mix(in srgb,var(--spruce) 60%, transparent) 0 58%, transparent 74%),
-    radial-gradient(20% 26% at 99% 62%, color-mix(in srgb,var(--bay) 50%, transparent) 0 58%, transparent 74%),
-    radial-gradient(22% 26% at 78% 97%, color-mix(in srgb,var(--sage) 62%, transparent) 0 58%, transparent 74%),
-    radial-gradient(20% 24% at 34% 99%, color-mix(in srgb,var(--spruce) 52%, transparent) 0 58%, transparent 74%),
-    radial-gradient(20% 26% at 2% 70%, color-mix(in srgb,var(--sage) 55%, transparent) 0 58%, transparent 74%);
-}
+/* Card-group watercolor blobs removed site-wide (Jenny #7/#24). */
+body .cat-grid::before, body .grid3::before, body .dir-list::before,
+body .quote-grid::before, body .board::before{ display:none !important; }
 @media (prefers-reduced-motion: reduce){ .wc-defs{display:none;} }
 
 /* softer lines: drop hard hairline borders on community cards, let soft shadow do the work */
@@ -143,13 +122,8 @@ body:not([data-page="realestate"]) .cel-card{border-color:transparent; box-shado
 #postDetail .listing-desc{max-width:74ch;}
 .section{padding-block:clamp(44px,6vw,76px);}
 .section-head{text-align:center; max-width:56ch; margin:0 auto clamp(28px,4vw,44px);}
-/* watercolor swash behind section headings */
-body:not([data-page="realestate"]) .section-head{position:relative; isolation:isolate;}
-body:not([data-page="realestate"]) .section-head::before{content:""; position:absolute; z-index:-1; left:50%; top:-18px; transform:translateX(-50%);
-  width:min(560px,104%); height:132%; pointer-events:none; opacity:.5; filter:url(#wcEdge);
-  background:
-    radial-gradient(40% 44% at 26% 46%, color-mix(in srgb,var(--sky) 46%, transparent) 0 58%, transparent 74%),
-    radial-gradient(38% 40% at 76% 52%, color-mix(in srgb,var(--sage) 44%, transparent) 0 58%, transparent 74%);}
+/* Section-heading watercolor swash removed site-wide (Jenny #7/#24). */
+body .section-head::before{ display:none !important; }
 /* Eyebrow (the little note above each title). Jenny asked for the Lovestory SERIF in
    all-caps here so the small words stay legible (the brush script was too hard to read
    at this size). */

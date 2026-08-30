@@ -6,7 +6,7 @@
 <meta name="description" content="Explore Seldovia — the most popular things to do, filtered by dining, lodging, charters, outdoors, and arts.">
 <meta name="theme-color" content="#F8E6DD">
 <title>Explore Seldovia — Directory of Places</title>
-<link rel="stylesheet" href="styles.css?v=54">
+<link rel="stylesheet" href="styles.css?v=55">
 </head>
 <body data-page="explore">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -21,19 +21,7 @@
     .trail-card img{display:block; width:100%; height:auto;}
     .trail-name{display:block; padding:.7rem 1rem; font-weight:700; text-align:center; color:var(--heading);}
   </style>
-  <section class="section wrap" id="trails">
-    <div class="section-head">
-      <span class="eyebrow">Get Outside</span>
-      <h2 class="title wc-h"><img src="images/headings/explore-trails.png?v=1" alt="Seldovia trails"></h2>
-      <p>Trail guides from around town. Tap a map to open it full size.</p>
-    </div>
-    <div class="trail-grid">
-      <a class="trail-card" href="images/trails/otterbahn.png" target="_blank" rel="noopener"><img src="images/trails/otterbahn.png" alt="Otterbahn Trail guide map and description" loading="lazy"><span class="trail-name">Otterbahn Trail</span></a>
-      <a class="trail-card" href="images/trails/rocky-ridge.png" target="_blank" rel="noopener"><img src="images/trails/rocky-ridge.png" alt="Rocky Ridge Trail guide map and description" loading="lazy"><span class="trail-name">Rocky Ridge Trail</span></a>
-      <a class="trail-card" href="images/trails/tutka-red-mountain.png" target="_blank" rel="noopener"><img src="images/trails/tutka-red-mountain.png" alt="Tutka Bay and Red Mountain Trails guide map and description" loading="lazy"><span class="trail-name">Tutka Bay &amp; Red Mountain</span></a>
-      <a class="trail-card" href="images/trails/graduation-peak.png" target="_blank" rel="noopener"><img src="images/trails/graduation-peak.png" alt="Graduation Peak Trail guide map and description" loading="lazy"><span class="trail-name">Graduation Peak</span></a>
-    </div>
-  </section>
+  <!-- Trails section moved to the bottom of the page (Jenny #3) -->
 
   <section class="section wrap">
     <div class="tabs" id="placeTabs" role="group" aria-label="Filter listings"></div>
@@ -51,10 +39,25 @@
       <div class="feature-media" id="featureMedia" aria-hidden="true"></div>
     </div>
   </section>
+
+  <!-- SELDOVIA TRAILS — at the bottom so the business listings lead (Jenny #3) -->
+  <section class="section wrap" id="trails">
+    <div class="section-head">
+      <span class="eyebrow">Get Outside</span>
+      <h2 class="title wc-h"><img src="images/headings/explore-trails.png?v=1" alt="Seldovia trails"></h2>
+      <p>Trail guides from around town. Tap a map to open it full size.</p>
+    </div>
+    <div class="trail-grid">
+      <a class="trail-card" href="images/trails/otterbahn.png" target="_blank" rel="noopener"><img src="images/trails/otterbahn.png" alt="Otterbahn Trail guide map and description" loading="lazy"><span class="trail-name">Otterbahn Trail</span></a>
+      <a class="trail-card" href="images/trails/rocky-ridge.png" target="_blank" rel="noopener"><img src="images/trails/rocky-ridge.png" alt="Rocky Ridge Trail guide map and description" loading="lazy"><span class="trail-name">Rocky Ridge Trail</span></a>
+      <a class="trail-card" href="images/trails/tutka-red-mountain.png" target="_blank" rel="noopener"><img src="images/trails/tutka-red-mountain.png" alt="Tutka Bay and Red Mountain Trails guide map and description" loading="lazy"><span class="trail-name">Tutka Bay &amp; Red Mountain</span></a>
+      <a class="trail-card" href="images/trails/graduation-peak.png" target="_blank" rel="noopener"><img src="images/trails/graduation-peak.png" alt="Graduation Peak Trail guide map and description" loading="lazy"><span class="trail-name">Graduation Peak</span></a>
+    </div>
+  </section>
 </main>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="db.js?v=6"></script>
-<script src="app.js?v=49"></script>
+<script src="app.js?v=50"></script>
 <script src="feature.js?v=1"></script>
 </body>
 </html>
