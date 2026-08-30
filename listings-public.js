@@ -98,6 +98,25 @@
           car.querySelector(".lc-next").addEventListener("click",()=>go(1));
           track.addEventListener("scroll",()=>{ const i=Math.min(n,Math.max(1,Math.round(track.scrollLeft/track.clientWidth)+1)); if(cur) cur.textContent=i; },{passive:true});
         }
+
+        // #11: click any listing photo to open a full-screen lightbox and scroll through the big versions.
+        if(allImgs.length){
+          document.body.insertAdjacentHTML("beforeend",`<div class="lightbox" id="reLightbox" role="dialog" aria-modal="true" aria-hidden="true">
+            <button class="lb-close" aria-label="Close">&#10005;</button>
+            <button class="lb-nav lb-prev" aria-label="Previous photo">&#8249;</button>
+            <figure class="lb-fig"><img class="lb-img" alt=""></figure>
+            <button class="lb-nav lb-next" aria-label="Next photo">&#8250;</button>
+          </div>`);
+          const lb=document.getElementById("reLightbox"), lbImg=lb.querySelector(".lb-img"); let li=0;
+          const show=i=>{ li=(i+allImgs.length)%allImgs.length; lbImg.src=allImgs[li]; lb.classList.add("open"); lb.setAttribute("aria-hidden","false"); document.body.style.overflow="hidden"; };
+          const close=()=>{ lb.classList.remove("open"); lb.setAttribute("aria-hidden","true"); document.body.style.overflow=""; };
+          lb.querySelector(".lb-close").addEventListener("click",close);
+          lb.querySelector(".lb-prev").addEventListener("click",e=>{e.stopPropagation(); show(li-1);});
+          lb.querySelector(".lb-next").addEventListener("click",e=>{e.stopPropagation(); show(li+1);});
+          lb.addEventListener("click",e=>{ if(e.target===lb||e.target.classList.contains("lb-fig")) close(); });
+          document.addEventListener("keydown",e=>{ if(!lb.classList.contains("open"))return; if(e.key==="Escape")close(); else if(e.key==="ArrowLeft")show(li-1); else if(e.key==="ArrowRight")show(li+1); });
+          box.querySelectorAll(".lc-track img, .listing-hero img").forEach((im,i)=>{ im.style.cursor="zoom-in"; im.addEventListener("click",()=>show(i)); });
+        }
       }).catch(()=>{});
   }
 })();
