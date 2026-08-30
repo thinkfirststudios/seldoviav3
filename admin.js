@@ -111,6 +111,7 @@
           <div class="field"><label for="ph-date">Date the photo is for</label><input id="ph-date" type="date" required></div>
           <div class="field"><label for="ph-cap">Caption</label><input id="ph-cap" placeholder="Morning light on the harbor"></div>
         </div>
+        <div class="field"><label for="ph-tags">Tags <span class="opt">(optional)</span></label><input id="ph-tags" placeholder="harbor, sunset, eagles"><span class="hint">Comma-separated words so this photo is easy to find in the photo search.</span></div>
         <div class="field"><label for="ph-img">Photo <span class="req">*</span></label><input id="ph-img" type="file" accept="image/*" required><span class="hint" id="ph-imghint">Auto-resized on upload.</span></div>
         <div style="display:flex;gap:.5rem;align-items:center;flex-wrap:wrap">
           <button class="btn btn-primary" type="submit" id="ph-btn">Post photo</button>
@@ -128,7 +129,7 @@
   function resetPhoto(){ editPhoto=null; $("#photoForm").reset(); $("#ph-date").value=todayISO();
     $("#ph-img").required=true; $("#ph-imghint").textContent="Auto-resized on upload.";
     $("#ph-head").textContent="Add today's photo"; $("#ph-btn").textContent="Post photo"; $("#ph-cancel").hidden=true; }
-  function fillPhoto(p){ editPhoto=p.id; $("#ph-date").value=p.taken_on; $("#ph-cap").value=p.caption||"";
+  function fillPhoto(p){ editPhoto=p.id; $("#ph-date").value=p.taken_on; $("#ph-cap").value=p.caption||""; $("#ph-tags").value=p.tags||"";
     $("#ph-img").required=false; $("#ph-imghint").textContent="Leave empty to keep the current photo.";
     $("#ph-head").textContent="Edit photo"; $("#ph-btn").textContent="Save changes"; $("#ph-cancel").hidden=false;
     $("#photoForm").scrollIntoView({behavior:"smooth",block:"start"}); }
@@ -138,10 +139,14 @@
     btn.disabled=true; msg.style.color="var(--text-soft)"; msg.textContent=editPhoto?"Saving…":"Uploading photo…";
     try{
       const file=$("#ph-img").files[0];
-      const row={ taken_on:$("#ph-date").value, caption:$("#ph-cap").value.trim()||null };
+      const row={ taken_on:$("#ph-date").value, caption:$("#ph-cap").value.trim()||null, tags:$("#ph-tags").value.trim()||null };
       if(file){ msg.textContent="Uploading photo…"; row.image_url=await uploadImage("gallery", file, "photo"); }
-      if(editPhoto){ const {error}=await db.from("photos").update(row).eq("id",editPhoto); if(error) throw error; }
-      else { if(!file) throw new Error("Please choose a photo."); const {error}=await db.from("photos").insert(row); if(error) throw error; }
+      if(!editPhoto && !file) throw new Error("Please choose a photo.");
+      const save=r=> editPhoto ? db.from("photos").update(r).eq("id",editPhoto) : db.from("photos").insert(r);
+      let {error}=await save(row);
+      // If the photos.tags column hasn't been added yet, save without it so posting still works.
+      if(error && (error.code==="PGRST204" || /tags|column/i.test(error.message||""))){ const {tags,...r2}=row; ({error}=await save(r2)); }
+      if(error) throw error;
       const scheduled=row.taken_on>todayISO();
       msg.style.color="var(--open)"; msg.textContent=editPhoto?"Saved!":(scheduled?`Scheduled for ${fmtDate(row.taken_on)} — it will appear that day.`:"Posted! It's live in the Photo Journal.");
       resetPhoto(); loadPhotos();

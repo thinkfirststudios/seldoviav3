@@ -739,6 +739,11 @@ footer.site a{color:rgba(255,255,255,.82); text-decoration:none;} footer.site a:
 .req{color:var(--accent-ink);} .opt{color:var(--text-soft); font-weight:400; font-size:.85em;}
 
 /* ============ PHOTO JOURNAL ============ */
+/* Photo Journal search (Jenny #8/#18) */
+.journal-search{display:flex; align-items:center; gap:.75rem; flex-wrap:wrap; margin-bottom:1.6rem;}
+.journal-search input{flex:1 1 280px; max-width:480px; padding:.7rem 1rem; font:inherit; font-size:1rem; color:var(--text); background:var(--sheet); border:1px solid rgba(0,0,0,.16); border-radius:999px; box-shadow:0 1px 2px rgba(0,0,0,.04);}
+.journal-search input:focus{outline:none; border-color:var(--accent-ink); box-shadow:0 0 0 3px rgba(30,90,120,.15);}
+.jsearch-count{color:var(--text-soft); font-size:.9rem; white-space:nowrap;}
 .today-feature{display:grid; grid-template-columns:1.4fr 1fr; gap:clamp(18px,3vw,40px); align-items:center; margin-bottom:2.4rem;}
 .today-media{position:relative;}
 .today-media img{display:block; margin-inline:auto; max-width:100%; max-height:80vh; width:auto; height:auto; border-radius:calc(var(--radius) + 6px);
