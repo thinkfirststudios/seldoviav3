@@ -755,9 +755,9 @@ body[data-page="realestate"] .today-bar{background:var(--accent-ink);}
 .today-item{display:flex; align-items:center; gap:.5rem;}
 .ti-ico{font-size:1.15rem; line-height:1;}
 .ti-body{display:flex; flex-direction:column; line-height:1.15;}
-.ti-label{font-size:.66rem; text-transform:uppercase; letter-spacing:.08em; opacity:.7;}
+.ti-label{font-size:.66rem; text-transform:uppercase; letter-spacing:.08em; opacity:.9; font-weight:700;}
 .ti-value{font-size:.9rem; font-weight:700;}
-.ti-value .ti-sub{font-weight:400; opacity:.78; font-size:.82em;}
+.ti-value .ti-sub{font-weight:700; opacity:.92; font-size:.82em;}
 .today-item a{color:#fff; text-decoration:underline; text-underline-offset:2px; font-weight:700;}
 @media (max-width:560px){ .today-title{border-right:0; width:100%;} .today-inner{gap:12px 20px;} }
 

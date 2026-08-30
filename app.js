@@ -194,7 +194,11 @@ const PLACES=[
  {name:"House on the Rock B&B",cat:"Bed & Breakfast",key:"stay"},
  {name:"Thyme on the Boardwalk Waterfront Cottage",cat:"Waterfront Cottage",key:"stay"},
  {name:"Otter Cove Ice Cream at the Boardwalk Hotel",cat:"Ice Cream",key:"eat"},
- {name:"Eternal Buzz",cat:"Coffee & Treats",key:"eat"}
+ {name:"Eternal Buzz",cat:"Coffee & Treats",key:"eat"},
+ // Out of Town — regional businesses & sponsors (Jenny #16)
+ {name:"Alaska Bus Company",cat:"Bus & Charter",key:"outoftown"},
+ {name:"Homer Sign Company",cat:"Signs & Printing",key:"outoftown"},
+ {name:"Kenai Airport Inn",cat:"Lodging · Kenai",key:"outoftown"}
 ];
 // Business photos from Qwynny's Canva set. Default shows the B&W version;
 // <slug>-color.jpg is the color upgrade for sponsors (future admin swap).
@@ -4159,7 +4163,7 @@ if($("#catGrid")) $("#catGrid").innerHTML=CATEGORIES.map((c,i)=>{
 if($("#featureMedia")) $("#featureMedia").innerHTML=`<img class="feature-photo" src="images/photos/220627_SeldoviaHarbor_Melody.jpg" alt="Seldovia Harbor at first light" loading="lazy" width="1200" height="1200">`;
 
 // places (directory highlights) with tabs — reads ?cat= from URL for deep-links
-const PLACE_TABS=[["all","All"],["travel","Travel"],["stay","Lodging + Camping"],["eat","Eat"],["shop","Shop + Gifts"],["activities","Activities"],["services","Services"],["life","Public Services"]];
+const PLACE_TABS=[["all","All"],["travel","Travel"],["stay","Lodging + Camping"],["eat","Eat"],["shop","Shop + Gifts"],["activities","Activities"],["services","Services"],["life","Public Services"],["outoftown","Out of Town"]];
 let placeTab=(new URLSearchParams(location.search).get("cat"))||"all";
 if(!PLACE_TABS.some(([k])=>k===placeTab) && placeTab!=="about") placeTab="all";
 // Business owners + blurbs pulled from Jenny's old Seldovia.com directory (Connections).
