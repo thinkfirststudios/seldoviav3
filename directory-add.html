@@ -6,7 +6,7 @@
 <meta name="description" content="Add your listing to the Seldovia community directory — people, families, businesses, and organizations. Share only what you're comfortable with.">
 <meta name="theme-color" content="#F8E6DD">
 <title>Add a Listing — Seldovia Community Directory</title>
-<link rel="stylesheet" href="styles.css?v=59">
+<link rel="stylesheet" href="styles.css?v=60">
 </head>
 <body data-page="phonebook">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -19,17 +19,18 @@
 
       <div class="form-note">Fields marked <span class="req">*</span> are required. Everything else is optional — and next to personal details you'll see a <strong>Public / Private</strong> switch so you control exactly what neighbors can see.</div>
 
-      <!-- STEP 1: listing type -->
+      <!-- STEP 1: listing type — visible tabs so it's obvious you pick one to reveal the fields (Jenny #28) -->
       <div class="field">
-        <label for="d-type">What are you adding? <span class="req">*</span></label>
-        <select id="d-type" name="listing_type" required>
-          <option value="">Choose one…</option>
-          <option value="individual">Individual</option>
-          <option value="couple">Couple</option>
-          <option value="family">Family</option>
-          <option value="business">Business</option>
-          <option value="organization">Organization</option>
-        </select>
+        <label>What are you adding? <span class="req">*</span></label>
+        <div class="type-tabs" id="d-type-tabs" role="group" aria-label="Listing type">
+          <button type="button" data-type="individual" aria-pressed="false">Individual</button>
+          <button type="button" data-type="couple" aria-pressed="false">Couple</button>
+          <button type="button" data-type="family" aria-pressed="false">Family</button>
+          <button type="button" data-type="business" aria-pressed="false">Business</button>
+          <button type="button" data-type="organization" aria-pressed="false">Organization</button>
+        </div>
+        <input type="hidden" name="listing_type" id="d-type">
+        <p class="hint" id="d-type-hint">👆 Pick one above — the fields to fill in will appear below.</p>
       </div>
 
       <!-- ===================== INDIVIDUAL ===================== -->
@@ -129,22 +130,32 @@
 </main>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="db.js?v=6"></script>
-<script src="app.js?v=52"></script>
+<script src="app.js?v=53"></script>
 <script src="directory-submit.js?v=1"></script>
 <script>
 (function(){
-  const sel=document.getElementById("d-type");
+  const hidden=document.getElementById("d-type");
+  const tabs=[...document.querySelectorAll("#d-type-tabs button")];
   const groups=[...document.querySelectorAll(".type-group")];
+  const hint=document.getElementById("d-type-hint");
   function update(){
-    const v=sel.value;
+    const v=hidden.value;
     groups.forEach(g=>{
       const on = g.classList.contains("type-any") ? !!v : g.dataset.type===v;
       g.hidden=!on;
       // disabled fields don't submit or validate, so hidden groups stay out of the way
       g.querySelectorAll("input,select,textarea,button").forEach(f=>{ f.disabled=!on; });
     });
+    if(hint) hint.style.display=v?"none":"";
   }
-  sel.addEventListener("change",update); update();
+  tabs.forEach(b=>b.addEventListener("click",()=>{
+    hidden.value=b.dataset.type;
+    tabs.forEach(t=>t.setAttribute("aria-pressed", t===b?"true":"false"));
+    tabs.forEach(t=>t.classList.toggle("is-active", t===b));
+    update();
+    const g=document.querySelector('.type-group[data-type="'+b.dataset.type+'"]'); if(g) g.scrollIntoView({behavior:"smooth",block:"nearest"});
+  }));
+  update();
 })();
 </script>
 </body>

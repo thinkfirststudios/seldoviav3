@@ -4409,7 +4409,7 @@ if($("#celebrations")){
 if($("#dirList")){
   const PEOPLE=MEMBERS.map(m=>({...m,type:"person"}));
   const BIZ=DIRECTORY.map(d=>({...d,type:"biz"})).sort((a,b)=>a.name.localeCompare(b.name));
-  const ALL=[...PEOPLE,...BIZ];
+  let ALL=[...PEOPLE,...BIZ];
   // Phone-book category chips (Jenny's order/labels). Organization vs Government split the "life" key.
   const CATL=[
     {label:"Lodging",         test:r=>r.k==="stay"},
@@ -4452,6 +4452,18 @@ if($("#dirList")){
       : `<div class="dir-empty">No matches — try another word or category.</div>`;
     $("#dirList").innerHTML=rows.length?rows.map(r=>r.type==="person"?personCard(r):bizCard(r)).join(""):empty;};
   renderDir();
+  // Jenny #29: fold approved neighbor/business submissions into the phone book (respecting each person's privacy choices).
+  if(window.db){ db.from("directory_submissions").select("*").eq("status","approved").then(({data})=>{
+    if(!data||!data.length) return;
+    const subs=data.map(s=>{ const d=s.data||{};
+      return s.listing_type==="business"
+        ? {type:"biz", name:s.display_name||d.business_name, cat:d.business_category||"Business", phone:d.business_phone||"", spon:false}
+        : {type:"person", name:s.display_name||d.name, photo:s.photo_url||"", addr:(d.address_privacy==="public"&&d.address)?d.address:"", phone:(d.phone_privacy==="public"&&d.phone)?d.phone:""};
+    }).filter(x=>x.name);
+    const sp=subs.filter(x=>x.type==="person"), sb=subs.filter(x=>x.type==="biz");
+    ALL=[...PEOPLE, ...sp, ...[...BIZ, ...sb].sort((a,b)=>a.name.localeCompare(b.name))];
+    renderDir();
+  }).catch(()=>{}); }
   requestAnimationFrame(()=>scrollToFind("#dirList"));
   $("#dirChips").addEventListener("click",e=>{const b=e.target.closest(".chip"); if(!b)return; dirCat=b.dataset.cat; $$("#dirChips .chip").forEach(c=>c.setAttribute("aria-pressed",c===b)); renderDir();});
   $("#dirSearch").addEventListener("input",e=>{dirQuery=e.target.value; renderDir();});

@@ -510,6 +510,11 @@ a.show-more{text-decoration:none; display:inline-block;}
 .sr-date{color:var(--text-soft); font-size:.8rem; white-space:nowrap; flex:0 0 auto;}
 .r-item.r-all{border-top:1px solid var(--line); font-weight:700;}
 .r-item.r-all .r-title{color:var(--accent-ink);}
+/* Directory-add listing-type tabs (Jenny #28) */
+.type-tabs{display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.45rem;}
+.type-tabs button{padding:.55rem 1.15rem; font:inherit; font-weight:700; color:var(--text); background:var(--sheet); border:1.5px solid var(--line); border-radius:999px; cursor:pointer; transition:background .12s, color .12s, border-color .12s;}
+.type-tabs button:hover{border-color:var(--accent-ink);}
+.type-tabs button.is-active{background:var(--accent-ink); color:#fff; border-color:var(--accent-ink);}
 
 .masonry{columns:4 210px; column-gap:16px;}
 .masonry figure{break-inside:avoid; margin:0 0 16px; border-radius:var(--radius-s); overflow:clip; position:relative; box-shadow:var(--shadow);}
