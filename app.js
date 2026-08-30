@@ -189,7 +189,7 @@ const PLACES=[
  // Lodging + eateries added with Qwynny's Canva photos
  {name:"Herring Bay Lodge",cat:"Lodge",key:"stay"},
  {name:"Treehouse Cove Lodge",cat:"Lodge",key:"stay"},
- {name:"Breezy's by the Bay",cat:"Lodging",key:"stay"},
+ {name:"Breezy's by the Bay",cat:"Restaurant",key:"eat"},
  {name:"Alaska Grizzly Air B&B Rentals",cat:"B&B & Rentals",key:"stay"},
  {name:"House on the Rock B&B",cat:"Bed & Breakfast",key:"stay"},
  {name:"Thyme on the Boardwalk Waterfront Cottage",cat:"Waterfront Cottage",key:"stay"},
@@ -4174,10 +4174,42 @@ const BIZ_OWNER={
   "Seldovia Outdoor Rentals & Gifts":"Jeremiah & Angela Campbell","Seldovia Property":"Jenny Chissus",
   "Seldovia Sea Glass":"Sarah Chambers","Seldovia Suites":"Cory & Dawhn Bodyfelt",
   "The Great Escape — Alaskan Vacation Rentals":"Sean Christman","Thyme on the Boardwalk":"Suzie Stranik",
-  "Winter Watch":"Paul \"Sonny\" Chissus Jr."
+  "Winter Watch":"Paul \"Sonny\" Chissus Jr.",
+  // Added from the /to-do/ pages (Jenny's copy):
+  "Linwood Bar & Grill":"Stephanie","Otter Cove Ice Cream at the Boardwalk Hotel":"Angela & Jeremiah Campbell",
+  "Eternal Buzz":"Bobby","Breezy's by the Bay":"Josh & Brie","Make it Reality":"Henry",
+  "Schooner Beach Studio":"Valisa","Seldovia Salmonberry":"Savanna","Seldovia Liquor Store":"Chaz & Jen",
+  "True North Air":"Ronnie Fiscus"
 };
+// Blurbs are Jenny's own copy, pulled verbatim (lightly tidied) from the seldovia.com
+// /to-do/ pages. Keyed by the exact PLACES name. Do not invent — leave a business out
+// rather than guess.
 const BIZ_BLURB={
-  "Seldovia Sea Glass":"Beautifully handcrafted pendants made with ocean-tumbled Seldovia glass. Created here in Seldovia by local artist Sarah Chambers."
+  "Seldovia Sea Glass":"Beautifully handcrafted pendants made with ocean-tumbled Seldovia glass. Created here in Seldovia by local artist Sarah Chambers.",
+  "Breezy's by the Bay":"Right across from the small boat harbor — smash burgers, subs, soups, pastries and fresh bread sub sandwiches!",
+  "Crabpot Grocery":"Grocery items, household goods, fresh produce — a little bit of everything!",
+  "Eternal Buzz":"Breakfast fare to-go, a drive-up window, coffee & teas.",
+  "Jack and Aiva's Restaurant":"Breakfast and lunch right in the center of town, with lots of deck dining overlooking the harbor. Summer only.",
+  "Linwood Bar & Grill":"Harbor view, dinner, carry-out, bar & ATM. Serving lunch and dinner.",
+  "Otter Cove Ice Cream at the Boardwalk Hotel":"Hand-dipped ice cream, frozen chocolate-dipped bananas, gourmet ice cream bars & more.",
+  "Seldovia Fuel and Hardware":"Espresso, Tuesday donuts, hot dogs, paninis and treats — plus gasoline, diesel, propane, a hardware store, snacks, groceries and fishing supplies.",
+  "Halo Cab":"Local transportation services.",
+  "Kar-a-Van Transfer":"Motor freight shipping into and out of Seldovia.",
+  "Smokey Bay Air":"Air taxi and charter service — passengers and courier between Homer, Seldovia, Port Graham and Nanwalek. Just a 15-minute flight from Homer.",
+  "True North Air":"Direct flights between Anchorage and Seldovia for passengers and freight — plus a shopping service in Anchorage!",
+  "Perley's Rides":"Reliable taxi service and truck rental in Seldovia!",
+  "Alaska Free Diver":"Alaska's home for wild ocean swimming, spearfishing & freediving. Sales, rentals & general info.",
+  "Seldovia Fishing Adventures":"Family-friendly halibut fishing charters and B&B, established in 1985 — a Seldovia staple bringing guests from all over Alaska and the lower 48.",
+  "Seldovia Outdoor Rentals & Gifts":"Golf carts, bicycle rental and an ice cream shop at the Boardwalk Hotel. Open all summer.",
+  "Fathoms Hair & Nail Salon":"Haircuts, colors, waxing, spa manicures and pedicures.",
+  "Seldovia Property":"Serving your real estate needs in Seldovia since 2004!",
+  "Winter Watch":"Snow plowing, home security and watching, and construction services.",
+  "Seldovia Salmonberry":"Gifts, local art, pottery, paintings, jewelry and Seldovia caps & sweatshirts, in a sweet little shop near the historic boardwalk.",
+  "SVT Museum & Gift Shop":"Seldovia history & wildlife information, clothing, cards & art.",
+  "Seldovia Liquor Store":"Liquor, beverages, snacks and gifts.",
+  "Schooner Beach Studio":"Cut-paper artist — water access only. Visitors welcome, but BYOB (bring your own boat)!",
+  "Make it Reality":"3D printing and laser creations — bringing imagination to life.",
+  "Thyme on the Boardwalk":"Boutique and garden nursery — veggies & flowers, tools, yard decor, soil, and many beautiful, quality gift items."
 };
 // When arriving from a search suggestion (?find=Name), scroll to that card and flash it.
 let _findScrolled=false;
