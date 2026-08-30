@@ -503,6 +503,24 @@ a.show-more{text-decoration:none; display:inline-block;}
 .blog-count{color:var(--text-soft); font-size:.9rem; white-space:nowrap;}
 .blog-more{display:flex; justify-content:center; margin-top:1.8rem;}
 .blog-more .btn{min-width:220px;}
+/* Search results page */
+.search-page{max-width:920px; margin-inline:auto;}
+.search-head h1{font-family:var(--serif); font-size:clamp(1.8rem,4vw,2.6rem); color:var(--heading); text-align:center;}
+.search-box{display:flex; align-items:center; gap:.5rem; background:var(--sheet); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:.4rem .4rem .4rem 1rem; margin:1.2rem auto 0; max-width:660px;}
+.search-box .s-icon{color:var(--text-soft); display:flex;}
+.search-box input{flex:1; border:0; background:none; font:inherit; font-size:1rem; color:var(--text); outline:none; padding:.55rem 0;}
+.search-summary{text-align:center; color:var(--text-soft); margin-top:1.1rem; font-size:1.02rem;}
+.search-summary b{color:var(--heading);}
+.sr-q{color:var(--accent-ink); font-weight:600;}
+.sr-group{margin-top:2rem;}
+.sr-h{font-family:var(--serif); font-size:1.15rem; color:var(--heading); border-bottom:1px solid var(--line); padding-bottom:.4rem; margin:0 0 .3rem; display:flex; align-items:center; gap:.55rem;}
+.sr-count{font-size:.72rem; font-weight:800; color:var(--text-soft); background:var(--surface-2); border-radius:999px; padding:.08rem .55rem;}
+.sr-item{display:flex; align-items:center; gap:.9rem; padding:.8rem .4rem; border-bottom:1px solid var(--line); text-decoration:none; color:inherit;}
+.sr-item:hover{background:var(--surface-2);}
+.sr-main{flex:1; display:flex; flex-direction:column; min-width:0;}
+.sr-date{color:var(--text-soft); font-size:.8rem; white-space:nowrap; flex:0 0 auto;}
+.r-item.r-all{border-top:1px solid var(--line); font-weight:700;}
+.r-item.r-all .r-title{color:var(--accent-ink);}
 
 .masonry{columns:4 210px; column-gap:16px;}
 .masonry figure{break-inside:avoid; margin:0 0 16px; border-radius:var(--radius-s); overflow:clip; position:relative; box-shadow:var(--shadow);}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Search Seldovia.com — places, businesses, events, and the full Seldovia news archive.">
+<meta name="theme-color" content="#F8E6DD">
+<title>Search — Seldovia.com</title>
+<link rel="stylesheet" href="styles.css?v=53">
+</head>
+<body data-page="search">
+<a class="skip-link" href="#main">Skip to content</a>
+<main id="main">
+  <section class="section wrap search-page">
+    <div class="search-head">
+      <h1>Search Seldovia.com</h1>
+      <form id="searchPageForm" class="search-box" role="search">
+        <span class="s-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span>
+        <input type="search" id="searchPageInput" placeholder="Search everything in Seldovia…" aria-label="Search Seldovia.com" autocomplete="off">
+        <button class="btn btn-primary" type="submit">Search</button>
+      </form>
+      <div id="searchSummary" class="search-summary" aria-live="polite"></div>
+    </div>
+    <div id="searchResults" class="search-results"></div>
+  </section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="db.js?v=6"></script>
+<script src="app.js?v=47"></script>
+</body>
+</html>

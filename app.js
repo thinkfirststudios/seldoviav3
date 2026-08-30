@@ -4497,15 +4497,16 @@ function placeBox(box){ if(!box) return;
   box.style.left = (box.id==="navResults" ? Math.max(8, r.right - w) : r.left) + "px"; }
 function renderResults(box,raw){const res=runSearch(raw);
   if(!raw.trim()){box.classList.remove("show"); box.innerHTML=""; return;}
-  if(!res.length){box.innerHTML=`<div class="r-empty">No results for "${esc(raw)}". Try "ferry," "cabin," or "market."</div>`;}
-  else box.innerHTML=res.map((r,i)=>`<a class="r-item ${i===0?'active':''}" href="${r.href}" role="option"><span class="r-type">${esc(r.type)}</span><span><span class="r-title">${hl(r.title,raw)}</span><span class="r-desc">${hl(r.desc,raw)}</span></span></a>`).join("");
+  const allLink=`<a class="r-item r-all" href="search.html?q=${encodeURIComponent(raw.trim())}" role="option"><span class="r-type">All</span><span><span class="r-title">See all results for “${esc(raw.trim())}” →</span></span></a>`;
+  if(!res.length){box.innerHTML=`<div class="r-empty">No quick matches for "${esc(raw)}".</div>`+allLink;}
+  else box.innerHTML=res.map((r,i)=>`<a class="r-item ${i===0?'active':''}" href="${r.href}" role="option"><span class="r-type">${esc(r.type)}</span><span><span class="r-title">${hl(r.title,raw)}</span><span class="r-desc">${hl(r.desc,raw)}</span></span></a>`).join("")+allLink;
   box.classList.add("show"); placeBox(box);}
 function wireSearch(inputId,boxId){const input=document.getElementById(inputId),box=document.getElementById(boxId); if(!input||!box)return; let idx=0;
   input.addEventListener("input",()=>{idx=0; renderResults(box,input.value);});
   input.addEventListener("focus",()=>{if(input.value)renderResults(box,input.value);});
   input.addEventListener("keydown",e=>{const items=$$(".r-item",box);
     if(e.key==="ArrowDown"||e.key==="ArrowUp"){e.preventDefault(); if(!items.length)return; idx=e.key==="ArrowDown"?Math.min(idx+1,items.length-1):Math.max(idx-1,0); items.forEach((it,i)=>it.classList.toggle("active",i===idx)); items[idx].scrollIntoView({block:"nearest"});}
-    else if(e.key==="Enter"){if(items[idx]){e.preventDefault(); items[idx].click();}}
+    else if(e.key==="Enter"){e.preventDefault(); const v=input.value.trim(); if(v) location.href="search.html?q="+encodeURIComponent(v);}
     else if(e.key==="Escape"){box.classList.remove("show"); input.blur();}});
   box.addEventListener("click",()=>setTimeout(()=>box.classList.remove("show"),60));
   document.addEventListener("click",e=>{if(!input.contains(e.target)&&!box.contains(e.target))box.classList.remove("show");});
@@ -4516,7 +4517,40 @@ function wireSearch(inputId,boxId){const input=document.getElementById(inputId),
 ["heroResults","navResults"].forEach(id=>{ const b=document.getElementById(id); if(b && b.parentElement!==document.body) document.body.appendChild(b); });
 wireSearch("navSearch","navResults");
 wireSearch("heroSearch","heroResults");
-if($("#heroSearchBtn")) $("#heroSearchBtn").addEventListener("click",()=>{const v=$("#heroSearch").value; if(v)renderResults($("#heroResults"),v); else $("#heroSearch").focus();});
+if($("#heroSearchBtn")) $("#heroSearchBtn").addEventListener("click",()=>{const v=$("#heroSearch").value.trim(); if(v) location.href="search.html?q="+encodeURIComponent(v); else $("#heroSearch").focus();});
+
+// ---- Full search RESULTS PAGE (search.html?q=) — static site index + the blog/news archive (DB) ----
+if($("#searchResults")){
+  const params=new URLSearchParams(location.search);
+  const q=(params.get("q")||"").trim();
+  const input=$("#searchPageInput"), summary=$("#searchSummary"), box=$("#searchResults");
+  if(input) input.value=q;
+  document.title = q ? `“${q}” — Search Seldovia.com` : "Search — Seldovia.com";
+  const MON3=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  const srDate=d=>{ if(!d)return""; const [y,m,day]=String(d).split("-"); return `${MON3[+m-1]} ${+day}, ${y}`; };
+  const allStatic=raw=>{const qq=raw.toLowerCase().trim().split(/\s+/).filter(Boolean); if(!qq.length)return[]; return INDEX.map(it=>({it,s:scoreMatch(it,qq)})).filter(x=>x.s>0).sort((a,b)=>b.s-a.s).map(x=>x.it);};
+  const groupHTML=(type,items,raw)=>`<section class="sr-group"><h2 class="sr-h">${esc(type)}<span class="sr-count">${items.length}</span></h2>`
+    + items.map(r=>`<a class="sr-item" href="${esc(r.href)}"><span class="r-type">${esc(r.type)}</span><span class="sr-main"><span class="r-title">${hl(r.title,raw)}</span>${r.desc?`<span class="r-desc">${hl(String(r.desc),raw)}</span>`:""}</span>${r.date?`<span class="sr-date">${esc(srDate(r.date))}</span>`:""}</a>`).join("")
+    + `</section>`;
+  if($("#searchPageForm")) $("#searchPageForm").addEventListener("submit",e=>{e.preventDefault(); const v=(input.value||"").trim(); location.href="search.html?q="+encodeURIComponent(v);});
+  if(!q){ summary.innerHTML=`<span class="sr-hint">Search for a place, business, event, trail, or anything in Seldovia’s story — including the full news archive.</span>`; }
+  else {
+    const stat=allStatic(q).filter(r=>r.type!=="News"); // blog/news comes from the DB below
+    const ORDER=["Category","Place","Real Estate","Directory","Event","Guide","Info"];
+    const groups={}; stat.forEach(r=>{ (groups[r.type]=groups[r.type]||[]).push(r); });
+    summary.innerHTML=`<span class="sr-hint">Searching “${esc(q)}”…</span>`;
+    const like="%"+q.replace(/[%,()]/g," ")+"%";
+    const dbP = window.db ? db.from("posts").select("id,title,excerpt,body,post_date").eq("published",true).or(`title.ilike.${like},body.ilike.${like}`).order("post_date",{ascending:false}).limit(60) : Promise.resolve({data:[]});
+    Promise.resolve(dbP).then(r=>(r&&r.data)||[]).catch(()=>[]).then(posts=>{
+      const blog=posts.map(p=>({type:"Blog & News",title:p.title,desc:(p.excerpt||String(p.body||"").slice(0,140)),href:"post.html?id="+p.id,date:p.post_date}));
+      const total=stat.length+blog.length;
+      summary.innerHTML = total ? `<b>${total.toLocaleString()}</b> result${total===1?"":"s"} for <span class="sr-q">“${esc(q)}”</span>` : `No results for <span class="sr-q">“${esc(q)}”</span>. Try “ferry”, “cabin”, or “market”.`;
+      let html=""; ORDER.forEach(t=>{ if(groups[t]&&groups[t].length) html+=groupHTML(t,groups[t],q); });
+      if(blog.length) html+=groupHTML("Blog & News",blog,q);
+      box.innerHTML=html;
+    });
+  }
+}
 
 /* ============================================================ MISC UI ============================================================ */
 const drawer=$("#drawer"),menuBtn=$("#menuBtn");
