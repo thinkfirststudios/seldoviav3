@@ -4141,7 +4141,8 @@ const SPONSORS=[
   {name:"Homer Sign Company",img:"homer-sign-company.jpg"},
   {name:"Alaska Bus Company",img:"alaska-bus-company.jpg"},
   {name:"Thyme on the Boardwalk",img:"thyme-on-the-boardwalk.jpg",url:"https://www.ThymeOnTheBoardwalk.com"},
-  {name:"Seldovia Outdoor Rentals",img:"seldovia-outdoor-rentals.jpg",url:"https://seldovia.fun"}
+  {name:"Seldovia Outdoor Rentals",img:"seldovia-outdoor-rentals.jpg",url:"https://seldovia.fun"},
+  {name:"Herring Bay Lodge",img:"herring-bay-lodge.jpg"}
 ];
 
 /* ============================================================ RENDER (each guarded — runs only if its container exists on this page) ============================================================ */
