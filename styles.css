@@ -417,6 +417,10 @@ body:not([data-page="realestate"]) .howband::before{content:""; position:absolut
 .jenny-card{display:grid; grid-template-columns:minmax(200px,300px) 1fr; gap:clamp(20px,3vw,40px); align-items:center; background:var(--surface-2); border:1px solid var(--line); border-radius:clamp(18px,2.6vw,26px); overflow:clip; padding:clamp(18px,3vw,32px);}
 @media (max-width:680px){ .jenny-card{grid-template-columns:1fr; text-align:center; justify-items:center;} }
 .jenny-card img{border-radius:var(--radius); box-shadow:var(--shadow-lg); width:100%; max-width:300px; aspect-ratio:4/5; object-fit:cover; object-position:top; transform:scaleX(-1);} /* flipped per Jenny #12 */
+/* Jenny's full bio (#13) — verbatim from her homes.com profile */
+.re-bio{max-width:74ch; margin:1.8rem auto 0; color:var(--text); font-size:1.02rem; line-height:1.72;}
+.re-bio p{margin:0 0 1rem;}
+.re-bio-h{font-family:var(--serif); color:var(--heading); font-size:clamp(1.35rem,2.6vw,1.75rem); margin:2.1rem 0 .7rem;}
 .jenny-card h3{font-size:clamp(1.5rem,3vw,2rem);}
 .jenny-card p{color:var(--text-soft); margin-top:.7rem; font-size:1rem;}
 .jenny-card .jenny-contact{margin-top:1rem; display:flex; gap:1.2rem; flex-wrap:wrap; font-weight:700; color:var(--heading);}
