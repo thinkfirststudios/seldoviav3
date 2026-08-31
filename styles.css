@@ -595,9 +595,11 @@ a.show-more{text-decoration:none; display:inline-block;}
 .quote p{color:var(--text-soft); font-size:.94rem;}
 /* Testimonials gentle auto-scroll (Jenny #14) — pauses on hover so they can be read */
 .quote-strip{overflow:hidden; -webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent); mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);}
-.quote-track{display:flex; gap:clamp(16px,2.2vw,24px); width:max-content; animation:slideQuotes 42s linear infinite;}
+.quote-track{display:flex; align-items:flex-start; gap:clamp(16px,2.2vw,24px); width:max-content; animation:slideQuotes 60s linear infinite;}
 .quote-strip:hover .quote-track{animation-play-state:paused;}
 .quote-track .quote{flex:0 0 auto; width:min(430px,82vw);}
+.quote-text p{margin:0 0 .6rem;} .quote-text p:last-child{margin-bottom:0;}
+.quote-stars{color:#f1b02e; letter-spacing:3px; font-size:1.05rem; margin-top:.7rem;}
 @keyframes slideQuotes{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
 @media (prefers-reduced-motion: reduce){ .quote-track{animation:none;} .quote-strip{overflow-x:auto;} }
 
