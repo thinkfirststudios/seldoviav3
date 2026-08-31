@@ -47,9 +47,10 @@
 
   let offset = 0, total = 0, loading = false, done = false, query = "", token = 0;
 
+  const msg = t => `<p class="blog-msg" style="grid-column:1/-1;text-align:center;color:var(--text-soft);padding:1.4rem">${t}</p>`;
   async function load(reset){
     if(loading) return; loading = true;
-    if(reset){ done = false; }
+    if(reset){ done = false; grid.innerHTML = msg("Loading posts…"); } // take over the grid immediately (no static flash / race)
     if(done){ loading = false; return; }
     const myToken = reset ? ++token : token;
     const start = reset ? 0 : offset;
@@ -58,15 +59,16 @@
     if(query){ const like = "%" + query.replace(/[%,()]/g, " ") + "%"; q = q.or(`title.ilike.${like},body.ilike.${like}`); }
     q = q.order("post_date", { ascending: false }).range(start, start + PAGE - 1);
 
-    let res; try { res = await q; } catch { loading = false; return; }
+    let res; try { res = await q; } catch(e){ console.error("[blogfeed] fetch failed", e); loading = false; if(reset) grid.innerHTML = msg("Couldn't load posts — please refresh."); return; }
     loading = false;
     if(myToken !== token) return;              // a newer search superseded this one
-    if(res.error){ moreBtn.hidden = true; return; }
+    if(res.error){ console.error("[blogfeed] query error", res.error); if(reset) grid.innerHTML = msg("Couldn't load posts — please refresh."); moreBtn.hidden = true; return; }
 
     const data = res.data || [];
     total = res.count ?? total;
-    if(reset){ offset = 0; grid.innerHTML = ""; } // take over from the static fallback
-    grid.insertAdjacentHTML("beforeend", data.map(p => card(item(p))).join(""));
+    let html = ""; try { html = data.map(p => card(item(p))).join(""); } catch(e){ console.error("[blogfeed] render error", e); loading = false; if(reset) grid.innerHTML = msg("There was a problem displaying the posts."); return; }
+    if(reset){ offset = 0; grid.innerHTML = html || msg(query ? `No posts match “${esc(query)}”` : "No posts yet."); }
+    else grid.insertAdjacentHTML("beforeend", html);
     offset += data.length;
     done = offset >= total || !data.length;
     moreBtn.hidden = done;

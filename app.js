@@ -4287,7 +4287,9 @@ if($("#placeGrid") && window.db){
 // gazette — real recovered posts; each card opens a full post page
 const slugify=s=>String(s).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"").slice(0,64);
 const postBodyHtml=t=>"<p>"+esc((t||"").trim()).replace(/\n{2,}/g,"</p><p>").replace(/\n/g,"<br>")+"</p>";
-if($("#gazetteGrid")){
+// On the blog page, blogfeed.js renders the grid from the database (archive + new posts).
+// Only render the static fallback here when blogfeed is NOT on the page, so the two don't race.
+if($("#gazetteGrid") && !document.querySelector('script[src*="blogfeed"]')){
   $("#gazetteGrid").innerHTML=GAZETTE.map(g=>{ const url="post.html?p="+slugify(g.title); const ex=(g.excerpt||g.body||"").trim().slice(0,180);
     return `<article class="post">
     ${g.img?`<a class="post-media" href="${url}"><img class="post-photo" src="${g.img}" alt="${esc(g.title)}" loading="lazy" onerror="this.closest('.post-media').style.display='none'"></a>`:""}
