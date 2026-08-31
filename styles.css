@@ -421,6 +421,8 @@ body:not([data-page="realestate"]) .howband::before{content:""; position:absolut
 .re-bio{max-width:74ch; margin:1.8rem auto 0; color:var(--text); font-size:1.02rem; line-height:1.72;}
 .re-bio p{margin:0 0 1rem;}
 .re-bio-h{font-family:var(--serif); color:var(--heading); font-size:clamp(1.35rem,2.6vw,1.75rem); margin:2.1rem 0 .7rem;}
+.re-more-btn{background:none; border:0; padding:0; margin:.2rem 0 1rem; color:var(--accent-ink); font-weight:800; font-size:.95rem; cursor:pointer; font-family:inherit;}
+.re-more-btn:hover{text-decoration:underline;}
 .jenny-card h3{font-size:clamp(1.5rem,3vw,2rem);}
 .jenny-card p{color:var(--text-soft); margin-top:.7rem; font-size:1rem;}
 .jenny-card .jenny-contact{margin-top:1rem; display:flex; gap:1.2rem; flex-wrap:wrap; font-weight:700; color:var(--heading);}

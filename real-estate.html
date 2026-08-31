@@ -38,6 +38,8 @@
         <span class="eyebrow">Your Seldovia Connection</span>
         <h3>Meet Jenny Chissus</h3>
         <p>As a full-time Seldovia resident and the Broker/Owner of Seldovia Property since 2004, I love helping people discover what life here is really like. Whether you're wondering about our school, weather, zoning, utilities, neighborhoods, tides, local services, or simply what it's like to live in a small Alaska community, you can ask me. If I don't know the answer, I'll find it.</p>
+        <p>Buying or selling property is a big decision, especially in a remote community. My goal is to make the process straightforward, answer your questions honestly, and help you feel confident every step of the way.</p>
+        <button type="button" class="re-more-btn" id="jennyMoreBtn" aria-expanded="false" aria-controls="jennyMore">Read more about Jenny ↓</button>
         <div class="jenny-contact">
           <span>📞 <a href="tel:+19074060044">907-406-0044</a></span>
           <span>🌐 <a href="https://www.seldoviaproperty.com" target="_blank" rel="noopener">SeldoviaProperty.com</a></span>
@@ -46,8 +48,7 @@
       </div>
     </div>
 
-    <div class="re-bio">
-      <p>Buying or selling property is a big decision, especially in a remote community. My goal is to make the process straightforward, answer your questions honestly, and help you feel confident every step of the way.</p>
+    <div class="re-bio" id="jennyMore" hidden>
       <p>If you're thinking about buying in Seldovia, I'm here to help with every property on the market, regardless of which brokerage has the listing. I'll help you compare properties, understand the area, and find the one that best fits your goals.</p>
       <p>If you're selling, I'd be honored to be your "gal on the ground." Because I live here year-round, I can keep an eye on your property, capture current photos in every season, coordinate showings, and make sure your home or land is presented accurately and professionally. I believe every property has a story worth telling, and I enjoy showcasing what makes each one special.</p>
       <p>As the longtime webmaster of Seldovia.com, I also have the opportunity to introduce people not only to your property, but to the community itself. Buyers aren't just purchasing land or a home—they're choosing a lifestyle. Helping them understand what makes Seldovia such a special place is one of my favorite parts of my job.</p>
@@ -64,6 +65,9 @@
       <p>I care deeply about this community because it's home. Every person I help has the potential to become not just another client, but a future neighbor and friend. That perspective guides everything I do. Whether you're buying your first property in Seldovia, looking for a vacation cabin, investing in waterfront land, or preparing to sell, I'd be honored to help you every step of the way.</p>
       <p>Welcome to Seldovia. I look forward to helping you discover whether this little corner of Alaska is the right fit!</p>
     </div>
+    <script>
+    (function(){var b=document.getElementById("jennyMoreBtn"),m=document.getElementById("jennyMore");if(b&&m){b.addEventListener("click",function(){var open=!m.hidden;m.hidden=open;b.setAttribute("aria-expanded",String(!open));b.textContent=open?"Read more about Jenny ↓":"Show less ↑";if(!open)m.scrollIntoView({behavior:"smooth",block:"nearest"});});}})();
+    </script>
   </section>
 
   <!-- 3) TESTIMONIALS — real-estate client reviews -->
@@ -79,7 +83,7 @@
         <h4>🧭 Buying in Seldovia</h4>
         <p style="color:var(--text-soft); font-size:.94rem; margin-top:.5rem">New to boat-and-plane living? We’ll walk you through water access, well &amp; septic, barge logistics, and life off the road system.</p>
         <ul><li>Waterfront, cabins &amp; buildable parcels</li><li>Local lenders who get remote property</li><li>Honest guidance on access &amp; seasons</li></ul>
-        <a class="btn btn-ghost" href="contact.html" style="margin-top:1rem">Talk with a local agent</a>
+        <a class="btn btn-ghost" href="contact.html" style="margin-top:1rem">Talk with Jenny, your local agent!</a>
       </div>
       <div class="info-block">
         <h4>🏡 Selling your property</h4>
