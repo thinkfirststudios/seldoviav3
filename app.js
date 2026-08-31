@@ -4164,7 +4164,7 @@ if($("#quickcats")) $("#quickcats").innerHTML=[["Eat","eat"],["Stay","stay"],["A
 // category tiles
 if($("#catGrid")) $("#catGrid").innerHTML=CATEGORIES.map((c,i)=>{
   const img=`images/categories/cat-${i}.jpg?v=3`;
-  const href=`explore.html?cat=${c.key}`;
+  const href = c.key==="about" ? "about.html" : `explore.html?cat=${c.key}`;
   return `<a class="cat-tile" href="${href}" aria-label="${esc(c.b)}"><img class="cat-photo" src="${img}" alt="" loading="lazy" width="600" height="600"><span class="cap"><b>${esc(c.b)}</b><span>${esc(c.s)}</span></span></a>`;}).join("");
 
 // feature media
