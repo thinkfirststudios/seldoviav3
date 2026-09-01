@@ -166,7 +166,12 @@ nav.mainnav a{font-size:.9rem; font-weight:700; color:var(--text); text-decorati
 nav.mainnav a:hover{background:var(--surface-2); color:var(--accent-ink);}
 nav.mainnav a.active{background:var(--accent-soft); color:var(--accent-ink);}
 body[data-page="realestate"] nav.mainnav a.active{background:var(--accent-soft); color:var(--accent-ink);}
+/* Brushstroke tagline (Jenny) — "Alaska's Best Kept Secret" in the Lovestory script,
+   pushed to the right of the nav. margin-left:auto sends it (and the search) to the right edge.
+   Hidden once the header tightens so it never crowds the nav/search on smaller screens. */
+.brand-tag{font-family:var(--script); font-weight:400; font-size:clamp(1.5rem,2.5vw,2.4rem); line-height:1; color:var(--heading); white-space:nowrap; margin-left:auto; padding:0 clamp(.6rem,2vw,1.6rem); align-self:center;}
 .head-actions{display:flex; align-items:center; gap:.5rem; margin-left:auto;}
+@media (max-width:1300px){ .brand-tag{display:none;} }
 .icon-btn{width:42px; height:42px; border-radius:50%; border:1px solid var(--line); background:var(--sheet); color:var(--text); display:grid; place-items:center; cursor:pointer;}
 .icon-btn:hover{border-color:var(--accent); color:var(--accent-ink);}
 .add-listing{display:inline-flex;}

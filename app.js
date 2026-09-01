@@ -56,6 +56,7 @@ const HEADER=`
       <img class="brand-logo" src="images/logo-header.png" alt="Seldovia.com — Alaska's Best Kept Secret" width="620" height="413">
     </a>
     <nav class="mainnav" aria-label="Primary">${navLinks()}</nav>
+    <span class="brand-tag">Alaska&rsquo;s Best Kept Secret</span>
     <div class="head-actions">
       <div class="navsearch" role="search">
         <span class="s-icon" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span>
