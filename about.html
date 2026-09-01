@@ -23,7 +23,9 @@
   .tl-row:first-child{border-top:0;}
   .tl-year{font-family:var(--serif); font-weight:700; color:var(--accent-ink); font-size:1.05rem;}
   .tl-text{color:var(--text); font-size:.98rem; line-height:1.6;}
-  .about-map{background:var(--surface-2); border:1px dashed var(--line); border-radius:var(--radius); padding:clamp(2rem,5vw,3.5rem); text-align:center; color:var(--text-soft);}
+  .about-map-fig{margin:0; text-align:center;}
+  .about-map-fig img{width:100%; max-width:720px; height:auto; border-radius:var(--radius); box-shadow:var(--shadow-lg); cursor:zoom-in; margin-inline:auto;}
+  .about-map-fig figcaption{color:var(--text-soft); font-size:.92rem; margin-top:.9rem; max-width:60ch; margin-inline:auto;}
   @media (max-width:520px){ .tl-row{grid-template-columns:64px 1fr; gap:.7rem;} }
 </style>
 </head>
@@ -46,10 +48,12 @@
   <!-- MAP (Jenny is sending a revised map to drop in here) -->
   <section class="section wrap" style="padding-top:0">
     <div class="section-head"><span class="eyebrow">Find your way</span><h2 class="title" style="font-family:var(--serif);color:var(--heading)">Seldovia Map</h2></div>
-    <div class="about-map">
-      <p style="font-size:1.05rem;margin:0">🗺️ A Seldovia town map is on the way.</p>
-      <p style="margin:.5rem 0 0">Meanwhile, explore the <a href="phone-book.html">community phone book</a> and the <a href="explore.html">business directory</a>.</p>
-    </div>
+    <figure class="about-map-fig">
+      <a href="images/seldovia-map.png" target="_blank" rel="noopener" title="View the full-size map">
+        <img src="images/seldovia-map.png" alt="Watercolor map of the Kenai Peninsula showing Seldovia at the tip of Kachemak Bay, across the water from Homer" loading="lazy" width="1000" height="1000">
+      </a>
+      <figcaption>The Kenai Peninsula extends from Anchorage down to Seldovia, at the tip of Kachemak Bay across from Homer. Tap the map to view it full size.</figcaption>
+    </figure>
   </section>
 
   <!-- TOWN TOUR -->
