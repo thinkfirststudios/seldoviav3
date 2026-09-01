@@ -4147,7 +4147,7 @@ const SPONSORS=[
   {name:"Breezy's by the Bay",img:"breezys.jpg"},
   {name:"True North Air",img:"true-north-air.jpg"},
   {name:"Seldovia Suites",img:"seldovia-suites.jpg"},
-  {name:"The Kenai Airport Hotel",img:"kenai-airport-hotel.jpg"},
+  {name:"Kenai Airport Inn",img:"kenai-airport-hotel.jpg"},
   {name:"Homer Sign Company",img:"homer-sign-company.jpg"},
   {name:"Alaska Bus Company",img:"alaska-bus-company.jpg"},
   {name:"Thyme on the Boardwalk",img:"thyme-on-the-boardwalk.jpg",url:"https://www.ThymeOnTheBoardwalk.com"},
