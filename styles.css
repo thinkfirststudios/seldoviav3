@@ -381,6 +381,10 @@ body[data-page="realestate"] .re-track{grid-auto-columns:calc((100% - 2.3*var(--
 .place-media svg,.place-media .place-photo{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;}
 .place-badge{position:absolute; top:9px; right:9px; z-index:2; width:30px; height:30px; border-radius:50%; background:rgba(255,255,255,.94); color:var(--accent-ink); font-weight:800; font-size:.92rem; display:grid; place-items:center; box-shadow:0 1px 4px rgba(0,0,0,.25); letter-spacing:0;}
 .place-media-blank{background:linear-gradient(150deg,#f2ece7 0%,#e7ded2 100%);}
+/* Seasonal Open/Closed sign on the corner of an Explore card (Jenny) */
+.place-sign{position:absolute; top:10px; left:10px; z-index:2; font-weight:800; font-size:.7rem; letter-spacing:.04em; text-transform:uppercase; padding:.3rem .62rem; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,.3); border:2px solid #fff; line-height:1;}
+.place-sign-open{background:#1f9d55; color:#fff;}
+.place-sign-closed{background:#6b7280; color:#fff;}
 .badge-open{position:absolute; top:12px; left:12px; background:var(--open-bg); color:var(--open); font-size:.72rem; font-weight:800; padding:.28rem .6rem; border-radius:7px;}
 .badge-sold{background:#b23b3b; color:#fff; text-transform:uppercase; letter-spacing:.04em;}
 .place-sold .place-photo{filter:saturate(.72) brightness(.98);}

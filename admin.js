@@ -592,7 +592,7 @@
     host.innerHTML=`
       <div class="info-block" style="max-width:720px">
         <h4>Explore businesses</h4>
-        <p style="color:var(--text-soft);font-size:.92rem;margin:.3rem 0 1rem">Set each business's category (the filter it shows under and its corner letter), and upload a photo for its card with the 📷 button. Great for the businesses still showing a placeholder. Changes go live right away.</p>
+        <p style="color:var(--text-soft);font-size:.92rem;margin:.3rem 0 1rem">For each business you can set the category (the filter tab and corner letter), edit the small <strong>text above the name</strong>, add an Open or Closed <strong>seasonal sign</strong> to its card corner, and upload a photo with the 📷 button. Set the Sign to None to remove it. Click Save changes and it goes live on Explore.</p>
         <input id="bc-search" type="search" placeholder="Search businesses…" style="width:100%;padding:.6rem .8rem;border:1px solid var(--line);border-radius:10px;margin-bottom:1rem">
         <div id="bc-list" style="display:flex;flex-direction:column;gap:.5rem;max-height:60vh;overflow:auto"></div>
         <div style="display:flex;gap:.8rem;align-items:center;margin-top:1rem">
@@ -600,18 +600,25 @@
           <p id="bc-msg" class="form-note"></p>
         </div>
       </div>`;
-    let overrides={}, photos={};
+    let overrides={}, photos={}, meta={};
     const rowHtml=p=>{ const eff=overrides[p.name]||EX.baseToken(p); const src=photos[p.name]||EX.bizPhoto(p);
-      return `<div class="dir-item" style="align-items:center;gap:.7rem">
-        <div class="bc-thumb" data-name="${esc(p.name)}" style="width:52px;height:52px;flex:none;border-radius:8px;overflow:hidden;background:var(--surface-2);border:1px solid var(--line)"><img src="${esc(src)}" alt="" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'"></div>
-        <div class="d-main" style="min-width:0;flex:1"><h4 style="margin:0;font-size:.95rem">${esc(p.name)}</h4><div class="d-cat">${esc(p.cat||"")}</div></div>
-        <select class="bc-sel" data-name="${esc(p.name)}" style="flex:none;padding:.4rem .5rem;border:1px solid var(--line);border-radius:8px;max-width:170px">${optsFor(eff)}</select>
-        <label class="btn btn-ghost" style="flex:none;cursor:pointer;padding:.4rem .55rem" title="Upload a photo">📷<input type="file" class="bc-photo" data-name="${esc(p.name)}" accept="image/*" hidden></label>
+      const m=meta[p.name]||{}; const lbl=(m.label!=null?m.label:(p.cat||"")); const st=m.status||"";
+      return `<div class="dir-item bc-row" style="flex-direction:column;align-items:stretch;gap:.5rem">
+        <div style="display:flex;align-items:center;gap:.7rem">
+          <div class="bc-thumb" data-name="${esc(p.name)}" style="width:52px;height:52px;flex:none;border-radius:8px;overflow:hidden;background:var(--surface-2);border:1px solid var(--line)"><img src="${esc(src)}" alt="" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'"></div>
+          <div class="d-main" style="min-width:0;flex:1"><h4 style="margin:0;font-size:.95rem">${esc(p.name)}</h4></div>
+          <select class="bc-sel" data-name="${esc(p.name)}" style="flex:none;padding:.4rem .5rem;border:1px solid var(--line);border-radius:8px;max-width:160px">${optsFor(eff)}</select>
+          <label class="btn btn-ghost" style="flex:none;cursor:pointer;padding:.4rem .55rem" title="Upload a photo">📷<input type="file" class="bc-photo" data-name="${esc(p.name)}" accept="image/*" hidden></label>
+        </div>
+        <div style="display:flex;gap:.7rem;align-items:center;flex-wrap:wrap;padding-left:60px">
+          <label style="font-size:.8rem;color:var(--text-soft);display:flex;align-items:center;gap:.35rem">Text above name <input class="bc-label" data-name="${esc(p.name)}" value="${esc(lbl)}" placeholder="e.g. Restaurant" style="padding:.35rem .5rem;border:1px solid var(--line);border-radius:8px;width:170px"></label>
+          <label style="font-size:.8rem;color:var(--text-soft);display:flex;align-items:center;gap:.35rem">Sign <select class="bc-status" data-name="${esc(p.name)}" style="padding:.35rem .5rem;border:1px solid var(--line);border-radius:8px"><option value=""${st===""?" selected":""}>None</option><option value="open"${st==="open"?" selected":""}>Open</option><option value="closed"${st==="closed"?" selected":""}>Closed</option></select></label>
+        </div>
       </div>`; };
     const draw=f=>{ const q=(f||"").toLowerCase();
       $("#bc-list").innerHTML=biz.filter(p=>!q||p.name.toLowerCase().includes(q)||(p.cat||"").toLowerCase().includes(q)).map(rowHtml).join("")||`<p class="form-note">No matches.</p>`; };
-    db.from("settings").select("key,value").in("key",["explore_overrides","explore_photos"])
-      .then(({data})=>{ (data||[]).forEach(r=>{ try{ if(r.key==="explore_overrides"&&r.value) overrides=JSON.parse(r.value)||{}; if(r.key==="explore_photos"&&r.value) photos=JSON.parse(r.value)||{}; }catch(e){} }); draw(""); })
+    db.from("settings").select("key,value").in("key",["explore_overrides","explore_photos","explore_meta"])
+      .then(({data})=>{ (data||[]).forEach(r=>{ try{ if(r.key==="explore_overrides"&&r.value) overrides=JSON.parse(r.value)||{}; if(r.key==="explore_photos"&&r.value) photos=JSON.parse(r.value)||{}; if(r.key==="explore_meta"&&r.value) meta=JSON.parse(r.value)||{}; }catch(e){} }); draw(""); })
       .catch(()=>draw(""));
     $("#bc-search").addEventListener("input",e=>draw(e.target.value));
     $("#bc-list").addEventListener("change",async e=>{
@@ -624,12 +631,17 @@
           msg.style.color="var(--open)"; msg.textContent=`${name} photo saved. It's live on Explore.`;
         }catch(err){ msg.style.color="var(--accent-ink)"; msg.textContent="Error: "+(err.message||err); }
         return; }
+      const stSel=e.target.closest(".bc-status");
+      if(stSel){ const name=stSel.dataset.name; meta[name]=meta[name]||{}; if(stSel.value) meta[name].status=stSel.value; else delete meta[name].status; if(!meta[name].status && meta[name].label==null) delete meta[name]; return; }
+      const lb=e.target.closest(".bc-label");
+      if(lb){ const name=lb.dataset.name, pp=biz.find(x=>x.name===name); const v=lb.value.trim(); meta[name]=meta[name]||{}; if(v && v!==(pp&&pp.cat)) meta[name].label=v; else delete meta[name].label; if(!meta[name].status && meta[name].label==null) delete meta[name]; return; }
       const s=e.target.closest(".bc-sel"); if(!s) return;
       const name=s.dataset.name, p=biz.find(x=>x.name===name); if(!p) return;
       if(s.value===EX.baseToken(p)) delete overrides[name]; else overrides[name]=s.value; });
     $("#bc-save").addEventListener("click",async()=>{
       const msg=$("#bc-msg"), btn=$("#bc-save"); btn.disabled=true; msg.style.color="var(--text-soft)"; msg.textContent="Saving…";
       try{ const {error}=await db.from("settings").upsert({key:"explore_overrides",value:JSON.stringify(overrides)},{onConflict:"key"}); if(error) throw error;
+        const {error:e2}=await db.from("settings").upsert({key:"explore_meta",value:JSON.stringify(meta)},{onConflict:"key"}); if(e2) throw e2;
         msg.style.color="var(--open)"; msg.textContent="Saved! It's live on the Explore page."; }
       catch(err){ msg.style.color="var(--accent-ink)"; msg.textContent="Error: "+(err.message||err); }
       finally{ btn.disabled=false; }

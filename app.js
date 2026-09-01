@@ -219,6 +219,9 @@ const BIZ_IMG={
 };
 // Jenny's own uploaded business photos (admin -> settings.explore_photos), name -> url. Wins over the built-in image.
 const EXPLORE_PHOTOS={};
+// Jenny's per-business edits (admin -> settings.explore_meta): name -> {label, status}.
+// label overrides the small category text above the name; status "open"/"closed" shows a sign.
+const EXPLORE_META={};
 const bizPhoto=(p,color)=>{ if(EXPLORE_PHOTOS[p.name]) return EXPLORE_PHOTOS[p.name]; const s=BIZ_IMG[p.name]; return s?`images/businesses/${s}-${color?"color":"bw"}.jpg`:(p.img||"images/placeholder-business.png"); };
 // Category letter badge (top-right of each Explore card), per Jenny's key:
 // L Lodging, T Travel, B Business, E Eat, S Shops, A Activity, O Organization, G Government
@@ -4254,10 +4257,14 @@ function renderPlaces(){
   // Placeholder photo until Qwynny's square B&W watercolor images land (set p.img; p.imgColor for the sponsor color version).
   const placeCard=p=>{
     const bdg=placeBadge(p);
-    const media=`<div class="place-media"><img class="place-photo" src="${bizPhoto(p)}" alt="" loading="lazy" width="600" height="600" onerror="this.src='images/placeholder-business.png'">${bdg?`<span class="place-badge" title="${esc(BADGE_LABEL[bdg]||"")}">${bdg}</span>`:""}</div>`;
+    const meta=EXPLORE_META[p.name]||{};
+    const catLabel=meta.label||p.cat;                       // Jenny can edit the small text above the name
+    const st=meta.status;                                    // "open" / "closed" seasonal sign (Jenny toggles)
+    const sign=(st==="open"||st==="closed")?`<span class="place-sign place-sign-${st}">${st==="open"?"Open":"Closed"}</span>`:"";
+    const media=`<div class="place-media"><img class="place-photo" src="${bizPhoto(p)}" alt="" loading="lazy" width="600" height="600" onerror="this.src='images/placeholder-business.png'">${sign}${bdg?`<span class="place-badge" title="${esc(BADGE_LABEL[bdg]||"")}">${bdg}</span>`:""}</div>`;
     const owner=(p.key!=="life") ? BIZ_OWNER[p.name] : "";
     const blurb=BIZ_BLURB[p.name];
-    const body=`<div class="place-body"><div class="rating"><span class="cat">${esc(p.cat)}</span></div><h4>${esc(p.name)}</h4>
+    const body=`<div class="place-body"><div class="rating"><span class="cat">${esc(catLabel)}</span></div><h4>${esc(p.name)}</h4>
         <div class="place-loc">${pin} Seldovia, AK</div>${owner?`<div class="place-owner">👤 ${esc(owner)}</div>`:""}${blurb?`<p class="place-blurb">${esc(blurb)}</p>`:""}`;
     if(p.url){ // whole card links to the business website
       return `<a class="place" href="${esc(p.url)}" target="_blank" rel="noopener">${media}${body}
@@ -4276,10 +4283,11 @@ if($("#placeTabs")){
 }
 // Explore page: apply Jenny's saved category overrides (if any) before the first paint.
 if($("#placeGrid") && window.db){
-  db.from("settings").select("key,value").in("key",["explore_overrides","explore_photos"])
+  db.from("settings").select("key,value").in("key",["explore_overrides","explore_photos","explore_meta"])
     .then(({data})=>{ (data||[]).forEach(r=>{ try{
         if(r.key==="explore_overrides" && r.value) applyExploreOverrides(JSON.parse(r.value));
         if(r.key==="explore_photos" && r.value) Object.assign(EXPLORE_PHOTOS, JSON.parse(r.value));
+        if(r.key==="explore_meta" && r.value) Object.assign(EXPLORE_META, JSON.parse(r.value));
       }catch(e){} }); renderPlaces(); })
     .catch(()=>renderPlaces());
 } else { renderPlaces(); }
