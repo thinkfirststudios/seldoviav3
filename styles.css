@@ -62,9 +62,8 @@ html{scroll-behavior:smooth;}
 body{margin:0; background:var(--page); color:var(--text); font-family:var(--sans); font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;}
 /* Watercolor page washes removed site-wide — clean solid ground (Jenny #7/#24). */
 body:not([data-page="realestate"]){ background:var(--page); }
-/* faint paper grain for a hand-made, watercolor feel */
-body:not([data-page="realestate"])::before{content:""; position:fixed; inset:0; z-index:-1; pointer-events:none; opacity:.5; mix-blend-mode:multiply;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");}
+/* Paper grain / watercolor texture removed site-wide (Jenny) — clean flat background */
+body:not([data-page="realestate"])::before{display:none;}
 @media (prefers-reduced-motion: reduce){ body:not([data-page="realestate"]){ background-attachment:scroll; } }
 /* Blog page (Jenny): drop the watercolor washes, and pull the content in so there's
    less empty space on the sides. */
