@@ -4654,27 +4654,41 @@ if($("#searchResults")){
     const stat=allStatic(q).filter(r=>r.type!=="News"); // blog/news comes from the DB below
     const ORDER=["Category","Place","Real Estate","Directory","Event","Guide","Info"];
     const groups={}; stat.forEach(r=>{ (groups[r.type]=groups[r.type]||[]).push(r); });
-    summary.innerHTML=`<span class="sr-hint">Searching “${esc(q)}”…</span>`;
+
+    // Render the INSTANT (static) results immediately so the page never sits on "Searching…"
+    // while the DB and (slow, proxied) calendar feed load. Each source fills its slot as it returns.
+    let statHtml=""; ORDER.forEach(t=>{ if(groups[t]&&groups[t].length) statHtml+=groupHTML(t,groups[t],q); });
+    box.innerHTML=`<div id="srStatic">${statHtml}</div><div id="srCal"></div><div id="srBlog"></div>`;
+    let nStat=stat.length, nBlog=0, nEv=0, done=0;
+    const setCount=()=>{ const total=nStat+nBlog+nEv;
+      if(total) summary.innerHTML=`<b>${total.toLocaleString()}</b> result${total===1?"":"s"} for <span class="sr-q">“${esc(q)}”</span>`;
+      else if(done>=2) summary.innerHTML=`No results for <span class="sr-q">“${esc(q)}”</span>. Try “ferry”, “cabin”, or “market”.`;
+      else summary.innerHTML=`<span class="sr-hint">Searching “${esc(q)}”…</span>`; };
+    setCount();
+
+    // Blog & News from the DB (fast).
     const like="%"+q.replace(/[%,()]/g," ")+"%";
     const dbP = window.db ? db.from("posts").select("id,title,excerpt,body,post_date").eq("published",true).or(`title.ilike.${like},body.ilike.${like}`).order("post_date",{ascending:false}).limit(60) : Promise.resolve({data:[]});
-    // Community calendar events (Jenny #26). Tockify has no CORS header -> read via a proxy; filter client-side by the query.
+    Promise.resolve(dbP).then(r=>(r&&r.data)||[]).catch(()=>[]).then(posts=>{
+      const blog=posts.map(p=>({type:"Blog & News",title:p.title,desc:(p.excerpt||String(p.body||"").slice(0,140)),href:"post.html?id="+p.id,date:p.post_date}));
+      nBlog=blog.length; const el=$("#srBlog"); if(el) el.innerHTML=blog.length?groupHTML("Blog & News",blog,q):"";
+      done++; setCount();
+    });
+
+    // Community calendar (Jenny #26). Tockify has no CORS header -> read via a proxy that can be slow,
+    // so it's time-boxed to 5s and never blocks the rest of the results.
     const nowMs=Date.now(), endMs=nowMs+180*24*60*60*1000;
     const tockUrl=`https://tockify.com/api/ngevent?max=200&longForm=false&calname=seldovia&startms=${nowMs}&endms=${endMs}`;
-    const tockP=fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(tockUrl)}`).then(r=>r.ok?r.json():{events:[]}).catch(()=>({events:[]}));
     const evDate=m=>new Intl.DateTimeFormat("en-US",{timeZone:"America/Anchorage",weekday:"short",month:"short",day:"numeric",year:"numeric"}).format(new Date(m));
-    Promise.all([Promise.resolve(dbP).then(r=>(r&&r.data)||[]).catch(()=>[]), tockP]).then(([posts,tock])=>{
-      const blog=posts.map(p=>({type:"Blog & News",title:p.title,desc:(p.excerpt||String(p.body||"").slice(0,140)),href:"post.html?id="+p.id,date:p.post_date}));
-      const ql=q.toLowerCase();
+    const ql=q.toLowerCase();
+    const raceTimeout=(p,ms)=>Promise.race([p,new Promise(res=>setTimeout(()=>res({events:[]}),ms))]);
+    raceTimeout(fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(tockUrl)}`).then(r=>r.ok?r.json():{events:[]}).catch(()=>({events:[]})),5000).then(tock=>{
       const events=(tock&&tock.events||[]).filter(e=>e&&e.when&&e.when.start&&e.when.start.millis)
         .filter(e=>(((e.content&&e.content.summary&&e.content.summary.text)||"")+" "+((e.content&&e.content.description&&e.content.description.text)||"")).toLowerCase().includes(ql))
         .sort((a,b)=>a.when.start.millis-b.when.start.millis).slice(0,12)
         .map(e=>({type:"Community Calendar",title:(e.content&&e.content.summary&&e.content.summary.text)||"Community event",desc:evDate(e.when.start.millis),href:"calendar.html"}));
-      const total=stat.length+blog.length+events.length;
-      summary.innerHTML = total ? `<b>${total.toLocaleString()}</b> result${total===1?"":"s"} for <span class="sr-q">“${esc(q)}”</span>` : `No results for <span class="sr-q">“${esc(q)}”</span>. Try “ferry”, “cabin”, or “market”.`;
-      let html=""; ORDER.forEach(t=>{ if(groups[t]&&groups[t].length) html+=groupHTML(t,groups[t],q); });
-      if(events.length) html+=groupHTML("Community Calendar",events,q);
-      if(blog.length) html+=groupHTML("Blog & News",blog,q);
-      box.innerHTML=html;
+      nEv=events.length; const el=$("#srCal"); if(el) el.innerHTML=events.length?groupHTML("Community Calendar",events,q):"";
+      done++; setCount();
     });
   }
 }
@@ -4685,6 +4699,11 @@ function setDrawer(o){drawer.classList.toggle("open",o); menuBtn.setAttribute("a
 menuBtn.addEventListener("click",()=>setDrawer(true));
 drawer.addEventListener("click",e=>{if(e.target.matches("[data-close], [data-close] *"))setDrawer(false);});
 document.addEventListener("keydown",e=>{if(e.key==="Escape")setDrawer(false);});
+// Preselect the contact "What's this about?" topic from ?topic= (e.g. the home "Become a sponsor"
+// button links to contact.html?topic=sponsor). Matches an option by keyword, case-insensitive.
+if($("#cTopic")){ const t=(new URLSearchParams(location.search).get("topic")||"").toLowerCase();
+  if(t){ const sel=$("#cTopic"), opt=[...sel.options].find(o=>o.text.toLowerCase().includes(t));
+    if(opt){ sel.value=opt.value; } } }
 if($("#contactForm")) $("#contactForm").addEventListener("submit",async e=>{
   e.preventDefault();
   const form=e.target;
