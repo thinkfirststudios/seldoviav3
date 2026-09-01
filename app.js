@@ -4154,6 +4154,7 @@ const SPONSORS=[
   {name:"Seldovia Outdoor Rentals",img:"seldovia-outdoor-rentals.jpg",url:"https://seldovia.fun"},
   {name:"Herring Bay Lodge",img:"herring-bay-lodge.jpg"}
 ];
+if(window.EXPLORE) window.EXPLORE.SPONSORS=SPONSORS; // let the admin seed its Sponsors editor from the built-in list
 
 /* ============================================================ RENDER (each guarded — runs only if its container exists on this page) ============================================================ */
 function stars(r){const full=Math.round(r); return "★★★★★".slice(0,full)+"☆☆☆☆☆".slice(0,5-full);}
@@ -4504,7 +4505,34 @@ if($("#quoteGrid")){
 }
 
 // sponsors
-if($("#sponsorTrack")){const spHTML=SPONSORS.map(s=>{const tag=s.url?"a":"div"; const attr=s.url?` href="${s.url}" target="_blank" rel="noopener"`:""; return `<${tag} class="sponsor sponsor-ad"${attr} aria-label="${esc(s.name)}"><img src="images/ads/${s.img}" alt="${esc(s.name)}" loading="lazy"></${tag}>`;}).join(""); $("#sponsorTrack").innerHTML=spHTML+spHTML;}
+if($("#sponsorTrack")){
+  const track=$("#sponsorTrack"), strip=track.closest(".sponsor-strip"), car=track.closest(".sponsor-carousel");
+  const spImg=s=>/^(https?:|\/)/.test(s.img||"")?s.img:"images/ads/"+(s.img||"");
+  const cardHtml=s=>{ const inner=`<img src="${esc(spImg(s))}" alt="${esc(s.name||"")}" loading="lazy" onerror="this.closest('.sponsor').style.display='none'">`;
+    return s.url?`<a class="sponsor sponsor-ad" href="${esc(s.url)}" target="_blank" rel="noopener" aria-label="${esc(s.name||"Sponsor")}">${inner}</a>`
+               :`<div class="sponsor sponsor-ad" aria-label="${esc(s.name||"Sponsor")}">${inner}</div>`; };
+  const paint=list=>{ const html=list.map(cardHtml).join(""); track.innerHTML=html+html; }; // duplicated for seamless auto-loop
+  paint(SPONSORS);
+  // Jenny's edited sponsors + links (admin -> settings.sponsors) override the built-in list.
+  if(window.db){ db.from("settings").select("value").eq("key","sponsors").maybeSingle()
+    .then(({data})=>{ if(data&&data.value){ try{ const arr=JSON.parse(data.value); if(Array.isArray(arr)&&arr.length) paint(arr); }catch(e){} } }).catch(()=>{}); }
+  // Gentle auto-scroll that also allows manual scroll (swipe/trackpad) and prev/next arrows.
+  if(strip){
+    const reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let paused=reduce, resumeT;
+    const nudge=()=>{ paused=true; clearTimeout(resumeT); resumeT=setTimeout(()=>{ if(!reduce) paused=false; },3000); };
+    strip.addEventListener("pointerenter",()=>{ if(!reduce) paused=true; });
+    strip.addEventListener("pointerleave",()=>{ if(!reduce) paused=false; });
+    strip.addEventListener("wheel",nudge,{passive:true}); strip.addEventListener("pointerdown",nudge);
+    const step=()=>{ if(!paused && strip.scrollWidth>strip.clientWidth+4){ strip.scrollLeft+=0.5; const half=strip.scrollWidth/2; if(strip.scrollLeft>=half) strip.scrollLeft-=half; } requestAnimationFrame(step); };
+    requestAnimationFrame(step);
+    if(car){ const by=()=>Math.max(240, strip.clientWidth*0.7);
+      const prev=car.querySelector(".sp-prev"), next=car.querySelector(".sp-next");
+      if(prev) prev.addEventListener("click",()=>{ nudge(); strip.scrollBy({left:-by(),behavior:"smooth"}); });
+      if(next) next.addEventListener("click",()=>{ nudge(); strip.scrollBy({left:by(),behavior:"smooth"}); });
+    }
+  }
+}
 
 // home photo gallery (auto-scroll)
 const galFig=(g,i)=>`<figure class="gallery-photo" tabindex="0" data-idx="${i}"><img src="${g.img}" alt="${esc(g.cap)}" loading="lazy" width="600" height="450"><figcaption>${esc(g.cap)}</figcaption></figure>`;

@@ -83,6 +83,7 @@
     {key:"settings", label:"⚙️ Home Extra",  render:renderSettingsTab},
     {key:"feature",  label:"⭐ Explore Card", render:renderFeatureTab},
     {key:"bizcat",   label:"🏪 Businesses",    render:renderExploreCatsTab},
+    {key:"sponsors", label:"🎟️ Sponsors",     render:renderSponsorsTab},
   ];
   function renderApp(){
     app.innerHTML=`
@@ -646,6 +647,51 @@
       catch(err){ msg.style.color="var(--accent-ink)"; msg.textContent="Error: "+(err.message||err); }
       finally{ btn.disabled=false; }
     });
+  }
+
+  /* ---------------- SPONSORS (Jenny) ---------------- */
+  function renderSponsorsTab(){
+    const EX=window.EXPLORE, host=$("#tab-sponsors");
+    host.innerHTML=`<div class="info-block" style="max-width:640px">
+      <h4>Sponsor ads</h4>
+      <p style="color:var(--text-soft);font-size:.92rem;margin:.3rem 0 1rem">These show in the scrolling sponsor strip on the home page. Edit the name, add a clickable link (opens when someone clicks the ad), upload a new ad image with 📷, or add/remove sponsors. Click Save changes.</p>
+      <div id="sp-list" style="display:flex;flex-direction:column;gap:.6rem"></div>
+      <div style="display:flex;gap:.6rem;margin-top:1rem;flex-wrap:wrap;align-items:center">
+        <button class="btn btn-ghost" id="sp-add" type="button">+ Add sponsor</button>
+        <button class="btn btn-primary" id="sp-save" type="button">Save changes</button>
+        <p id="sp-msg" class="form-note"></p>
+      </div></div>`;
+    let sponsors=[];
+    const spImg=s=>/^(https?:|\/)/.test(s.img||"")?s.img:"images/ads/"+(s.img||"");
+    const rowHtml=(s,i)=>`<div class="dir-item sp-row" style="align-items:center;gap:.7rem">
+      <div class="sp-thumb" style="width:56px;height:56px;flex:none;border-radius:8px;overflow:hidden;background:var(--surface-2);border:1px solid var(--line)"><img src="${esc(spImg(s))}" alt="" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'"></div>
+      <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:.35rem">
+        <input class="sp-name" data-i="${i}" value="${esc(s.name||"")}" placeholder="Sponsor name" style="padding:.4rem .5rem;border:1px solid var(--line);border-radius:8px">
+        <input class="sp-url" data-i="${i}" value="${esc(s.url||"")}" placeholder="https://link-when-clicked.com (optional)" style="padding:.4rem .5rem;border:1px solid var(--line);border-radius:8px">
+      </div>
+      <label class="btn btn-ghost" style="flex:none;cursor:pointer;padding:.4rem .55rem" title="Upload ad image">📷<input type="file" class="sp-photo" data-i="${i}" accept="image/*" hidden></label>
+      <button class="btn btn-ghost sp-del" data-i="${i}" type="button" style="flex:none;color:var(--accent-ink)" title="Remove sponsor">✕</button>
+    </div>`;
+    const draw=()=>{ $("#sp-list").innerHTML=sponsors.map(rowHtml).join("")||`<p class="form-note">No sponsors yet — add one below.</p>`; };
+    db.from("settings").select("value").eq("key","sponsors").maybeSingle().then(({data})=>{
+      if(data&&data.value){ try{ sponsors=JSON.parse(data.value)||[]; }catch(e){ sponsors=[]; } }
+      if(!sponsors.length && EX&&EX.SPONSORS) sponsors=EX.SPONSORS.map(s=>({...s}));
+      draw();
+    }).catch(()=>{ if(EX&&EX.SPONSORS) sponsors=EX.SPONSORS.map(s=>({...s})); draw(); });
+    host.addEventListener("input",e=>{ const n=e.target.closest(".sp-name"), u=e.target.closest(".sp-url");
+      if(n) sponsors[+n.dataset.i].name=n.value; if(u) sponsors[+u.dataset.i].url=u.value.trim(); });
+    host.addEventListener("change",async e=>{ const f=e.target.closest(".sp-photo"); if(!f) return; const file=f.files[0]; if(!file) return;
+      const i=+f.dataset.i, msg=$("#sp-msg"); msg.style.color="var(--text-soft)"; msg.textContent="Uploading image…";
+      try{ const url=await uploadImage("blog", file, "sponsor"); sponsors[i].img=url; draw(); msg.style.color="var(--open)"; msg.textContent="Image uploaded — remember to Save."; }
+      catch(err){ msg.style.color="var(--accent-ink)"; msg.textContent="Error: "+(err.message||err); } });
+    host.addEventListener("click",e=>{ const d=e.target.closest(".sp-del"); if(d){ sponsors.splice(+d.dataset.i,1); draw(); } });
+    $("#sp-add").addEventListener("click",()=>{ sponsors.push({name:"",img:"",url:""}); draw(); });
+    $("#sp-save").addEventListener("click",async()=>{ const msg=$("#sp-msg"), btn=$("#sp-save"); btn.disabled=true; msg.style.color="var(--text-soft)"; msg.textContent="Saving…";
+      try{ const clean=sponsors.filter(s=>s.img).map(s=>({name:s.name||"",img:s.img,url:(s.url||"").trim()||undefined}));
+        const {error}=await db.from("settings").upsert({key:"sponsors",value:JSON.stringify(clean)},{onConflict:"key"}); if(error) throw error;
+        msg.style.color="var(--open)"; msg.textContent="Saved! It's live on the home page."; }
+      catch(err){ msg.style.color="var(--accent-ink)"; msg.textContent="Error: "+(err.message||err); }
+      finally{ btn.disabled=false; } });
   }
 
   /* ---------------- shared ---------------- */
