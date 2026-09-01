@@ -4524,8 +4524,11 @@ if($("#sponsorTrack")){
   const track=$("#sponsorTrack"), strip=track.closest(".sponsor-strip"), car=track.closest(".sponsor-carousel");
   const spImg=s=>/^(https?:|\/)/.test(s.img||"")?s.img:"images/ads/"+(s.img||"");
   const cardHtml=s=>{ const inner=`<img src="${esc(spImg(s))}" alt="${esc(s.name||"")}" loading="lazy" onerror="this.closest('.sponsor').style.display='none'">`;
-    return s.url?`<a class="sponsor sponsor-ad" href="${esc(s.url)}" target="_blank" rel="noopener" aria-label="${esc(s.name||"Sponsor")}">${inner}</a>`
-               :`<div class="sponsor sponsor-ad" aria-label="${esc(s.name||"Sponsor")}">${inner}</div>`; };
+    // Every sponsor is clickable: its own website if Jenny set one (admin), otherwise an
+    // on-site search for the business name so the click always lands somewhere useful.
+    const href=s.url||("search.html?q="+encodeURIComponent(s.name||""));
+    const ext=/^https?:/i.test(href);
+    return `<a class="sponsor sponsor-ad" href="${esc(href)}"${ext?' target="_blank" rel="noopener"':''} aria-label="${esc(s.name||"Sponsor")}">${inner}</a>`; };
   const paint=list=>{ const html=list.map(cardHtml).join(""); track.innerHTML=html+html; }; // duplicated for seamless auto-loop
   paint(SPONSORS);
   // Jenny's edited sponsors + links (admin -> settings.sponsors) override the built-in list.
