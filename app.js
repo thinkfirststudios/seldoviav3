@@ -4510,6 +4510,11 @@ if($("#quoteGrid")){
     // Jenny #14: testimonials scroll by gently (pauses on hover). Duplicated for a seamless loop.
     $("#quoteGrid").className="quote-strip";
     $("#quoteGrid").innerHTML=`<div class="quote-track">${cards}${cards}</div>`;
+    // Jenny: keep the scroll slow and steady no matter how many testimonials there are.
+    // Duration is derived from the real track width so speed stays a constant ~26px/sec.
+    requestAnimationFrame(()=>{ const trk=$("#quoteGrid").querySelector(".quote-track");
+      if(trk){ const oneSet=trk.scrollWidth/2; const pxPerSec=26;
+        trk.style.animationDuration=Math.max(60, Math.round(oneSet/pxPerSec))+"s"; } });
   }
 }
 
