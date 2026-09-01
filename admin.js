@@ -604,6 +604,7 @@
     let overrides={}, photos={}, meta={};
     const rowHtml=p=>{ const eff=overrides[p.name]||EX.baseToken(p); const src=photos[p.name]||EX.bizPhoto(p);
       const m=meta[p.name]||{}; const lbl=(m.label!=null?m.label:(p.cat||"")); const st=m.status||"";
+      const desc=(m.desc!=null?m.desc:((EX.BIZ_BLURB&&EX.BIZ_BLURB[p.name])||""));
       return `<div class="dir-item bc-row" style="flex-direction:column;align-items:stretch;gap:.5rem">
         <div style="display:flex;align-items:center;gap:.7rem">
           <div class="bc-thumb" data-name="${esc(p.name)}" style="width:52px;height:52px;flex:none;border-radius:8px;overflow:hidden;background:var(--surface-2);border:1px solid var(--line)"><img src="${esc(src)}" alt="" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'"></div>
@@ -615,6 +616,7 @@
           <label style="font-size:.8rem;color:var(--text-soft);display:flex;align-items:center;gap:.35rem">Text above name <input class="bc-label" data-name="${esc(p.name)}" value="${esc(lbl)}" placeholder="e.g. Restaurant" style="padding:.35rem .5rem;border:1px solid var(--line);border-radius:8px;width:170px"></label>
           <label style="font-size:.8rem;color:var(--text-soft);display:flex;align-items:center;gap:.35rem">Sign <select class="bc-status" data-name="${esc(p.name)}" style="padding:.35rem .5rem;border:1px solid var(--line);border-radius:8px"><option value=""${st===""?" selected":""}>None</option><option value="open"${st==="open"?" selected":""}>Open</option><option value="closed"${st==="closed"?" selected":""}>Closed</option></select></label>
         </div>
+        <div style="padding-left:60px"><label style="font-size:.8rem;color:var(--text-soft);display:block">Description <textarea class="bc-desc" data-name="${esc(p.name)}" rows="2" placeholder="Short description shown on the card" style="width:100%;margin-top:.25rem;padding:.45rem .55rem;border:1px solid var(--line);border-radius:8px;font:inherit;resize:vertical">${esc(desc)}</textarea></label></div>
       </div>`; };
     const draw=f=>{ const q=(f||"").toLowerCase();
       $("#bc-list").innerHTML=biz.filter(p=>!q||p.name.toLowerCase().includes(q)||(p.cat||"").toLowerCase().includes(q)).map(rowHtml).join("")||`<p class="form-note">No matches.</p>`; };
@@ -632,10 +634,13 @@
           msg.style.color="var(--open)"; msg.textContent=`${name} photo saved. It's live on Explore.`;
         }catch(err){ msg.style.color="var(--accent-ink)"; msg.textContent="Error: "+(err.message||err); }
         return; }
+      const clean=n=>{ if(meta[n] && !meta[n].status && meta[n].label==null && meta[n].desc==null) delete meta[n]; };
       const stSel=e.target.closest(".bc-status");
-      if(stSel){ const name=stSel.dataset.name; meta[name]=meta[name]||{}; if(stSel.value) meta[name].status=stSel.value; else delete meta[name].status; if(!meta[name].status && meta[name].label==null) delete meta[name]; return; }
+      if(stSel){ const name=stSel.dataset.name; meta[name]=meta[name]||{}; if(stSel.value) meta[name].status=stSel.value; else delete meta[name].status; clean(name); return; }
       const lb=e.target.closest(".bc-label");
-      if(lb){ const name=lb.dataset.name, pp=biz.find(x=>x.name===name); const v=lb.value.trim(); meta[name]=meta[name]||{}; if(v && v!==(pp&&pp.cat)) meta[name].label=v; else delete meta[name].label; if(!meta[name].status && meta[name].label==null) delete meta[name]; return; }
+      if(lb){ const name=lb.dataset.name, pp=biz.find(x=>x.name===name); const v=lb.value.trim(); meta[name]=meta[name]||{}; if(v && v!==(pp&&pp.cat)) meta[name].label=v; else delete meta[name].label; clean(name); return; }
+      const dq=e.target.closest(".bc-desc");
+      if(dq){ const name=dq.dataset.name; const base=(EX.BIZ_BLURB&&EX.BIZ_BLURB[name])||""; const v=dq.value.trim(); meta[name]=meta[name]||{}; if(v && v!==base) meta[name].desc=v; else delete meta[name].desc; clean(name); return; }
       const s=e.target.closest(".bc-sel"); if(!s) return;
       const name=s.dataset.name, p=biz.find(x=>x.name===name); if(!p) return;
       if(s.value===EX.baseToken(p)) delete overrides[name]; else overrides[name]=s.value; });

@@ -83,7 +83,7 @@ const FOOTER=`
       <div class="foot-col foot-brand">
         <span class="word">Seldovia.com</span>
         <p>A warm, community-first guide to our little town on Kachemak Bay. Made as a gift to Seldovia.</p>
-        <div class="foot-util"><span>Tide: High 14.2 ft</span><span>Ferry: 3:15 PM</span><span>54&deg;F</span><span id="footTime">&mdash;:&mdash;</span></div>
+        <div class="foot-util"><span id="footTime">&mdash;:&mdash;</span></div>
       </div>
       <div class="foot-col"><h4>Explore</h4><ul><li><a href="explore.html">Directory</a></li><li><a href="gazette.html">Seldovia Blog</a></li><li><a href="gallery.html">Photos</a></li><li><a href="calendar.html">Calendar</a></li></ul></div>
       <div class="foot-col"><h4>Community</h4><ul><li><a href="phone-book.html">Phone Book</a></li><li><a href="index.html#sponsors">Sponsors</a></li><li><a href="contact.html">Contact</a></li></ul></div>
@@ -4227,6 +4227,7 @@ const BIZ_BLURB={
   "Make it Reality":"3D printing and laser creations — bringing imagination to life.",
   "Thyme on the Boardwalk":"Boutique and garden nursery — veggies & flowers, tools, yard decor, soil, and many beautiful, quality gift items."
 };
+if(window.EXPLORE) window.EXPLORE.BIZ_BLURB=BIZ_BLURB; // so the admin can pre-fill the description editor
 // When arriving from a search suggestion (?find=Name), scroll to that card and flash it.
 let _findScrolled=false;
 function scrollToFind(containerSel){
@@ -4264,7 +4265,7 @@ function renderPlaces(){
     const sign=(st==="open"||st==="closed")?`<span class="place-sign place-sign-${st}">${st==="open"?"Open":"Closed"}</span>`:"";
     const media=`<div class="place-media"><img class="place-photo" src="${bizPhoto(p)}" alt="" loading="lazy" width="600" height="600" onerror="this.src='images/placeholder-business.png'">${sign}${bdg?`<span class="place-badge" title="${esc(BADGE_LABEL[bdg]||"")}">${bdg}</span>`:""}</div>`;
     const owner=(p.key!=="life") ? BIZ_OWNER[p.name] : "";
-    const blurb=BIZ_BLURB[p.name];
+    const blurb=meta.desc||BIZ_BLURB[p.name];   // Jenny can edit the description in the admin (explore_meta.desc)
     const body=`<div class="place-body"><div class="rating"><span class="cat">${esc(catLabel)}</span></div><h4>${esc(p.name)}</h4>
         <div class="place-loc">${pin} Seldovia, AK</div>${owner?`<div class="place-owner">👤 ${esc(owner)}</div>`:""}${blurb?`<p class="place-blurb">${esc(blurb)}</p>`:""}`;
     if(p.url){ // whole card links to the business website
@@ -4363,11 +4364,19 @@ if($("#reGrid")){
   if(car){
     const prev=car.querySelector(".car-prev"), next=car.querySelector(".car-next");
     const update=()=>{const max=track.scrollWidth-track.clientWidth-2; prev.hidden=track.scrollLeft<=2; next.hidden=track.scrollLeft>=max;};
-    prev.addEventListener("click",()=>track.scrollBy({left:-track.clientWidth,behavior:"smooth"}));
-    next.addEventListener("click",()=>track.scrollBy({left:track.clientWidth,behavior:"smooth"}));
+    let paused=false, resumeT;
+    const nudge=()=>{ paused=true; clearTimeout(resumeT); resumeT=setTimeout(()=>paused=false,6000); };
+    prev.addEventListener("click",()=>{ nudge(); track.scrollBy({left:-track.clientWidth,behavior:"smooth"}); });
+    next.addEventListener("click",()=>{ nudge(); track.scrollBy({left:track.clientWidth,behavior:"smooth"}); });
     track.addEventListener("scroll",update,{passive:true});
+    track.addEventListener("pointerenter",()=>paused=true); track.addEventListener("pointerleave",()=>paused=false);
+    track.addEventListener("wheel",nudge,{passive:true}); track.addEventListener("pointerdown",nudge);
     window.addEventListener("resize",update);
     update();
+    // Rolling: auto-advance through the listings, looping back to the start (Jenny).
+    const reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if(!reduce) setInterval(()=>{ if(paused) return; const max=track.scrollWidth-track.clientWidth-2; if(max<4) return;
+      if(track.scrollLeft>=max-2) track.scrollTo({left:0,behavior:"smooth"}); else track.scrollBy({left:track.clientWidth*0.9,behavior:"smooth"}); }, 4500);
   }
 }
 

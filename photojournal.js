@@ -11,8 +11,10 @@
   const MON=["January","February","March","April","May","June","July","August","September","October","November","December"];
   const MON3=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
   const fmt=d=>{ if(!d) return ""; const [y,m,day]=d.split("-"); return `${MON3[+m-1]} ${+day}, ${y}`; };
-  // Searchable text per photo: full + short month name, year, caption, tags (Jenny #8/#9/#18).
-  const searchText=p=>{ const [y,m]=String(p.taken_on||"").split("-"); return `${MON[+m-1]||""} ${MON3[+m-1]||""} ${y||""} ${p.caption||""} ${p.tags||""}`.toLowerCase(); };
+  // Searchable text per photo: day, month (full + short), year, full date, caption, tags (Jenny).
+  const searchText=p=>{ const iso=String(p.taken_on||""); const [y,m,d]=iso.split("-"); const mi=+m-1;
+    return [MON[mi], MON3[mi], (+d||""), y, iso, `${MON3[mi]||""} ${+d||""}, ${y||""}`, p.caption, p.tags]
+      .filter(Boolean).join(" ").toLowerCase(); };
   const fig=p=>`<figure class="jphoto" data-s="${esc(searchText(p))}">
       <img src="${esc(p.image_url)}" alt="${esc(p.caption||"")}" loading="lazy">
       <figcaption><b>${esc(fmt(p.taken_on))}</b>${p.caption?" · "+esc(p.caption):""}</figcaption></figure>`;
@@ -77,7 +79,7 @@
           <div class="journal-grid">${groups[k].map(fig).join("")}</div></section>`;
       }).join("");
 
-      const searchBox=`<div class="journal-search"><input type="search" id="journalSearch" placeholder="Search photos — month, year, caption, or tag…" aria-label="Search photos"><span class="jsearch-count" id="journalSearchCount"></span></div>`;
+      const searchBox=`<div class="journal-search"><input type="search" id="journalSearch" placeholder="Search photos — day, month, year, caption, or tag…" aria-label="Search photos"><span class="jsearch-count" id="journalSearchCount"></span></div>`;
       app.innerHTML=searchBox+html;
       // #8/#18: filter the journal by month, year, caption, or tag.
       (function(){ const js=document.querySelector("#journalSearch"), jsc=document.querySelector("#journalSearchCount"); if(!js) return;
