@@ -15,11 +15,17 @@
       ${inner}</div>`;
   const fallback=msg=>{ box.innerHTML=shell(`<p class="ts-empty">${esc(msg)}</p>${calLink}`); };
 
+  // Render a graceful default IMMEDIATELY so the column is never blank while the (sometimes
+  // slow/hanging) proxy loads. Events replace it if/when they arrive.
+  fallback("Meetings, markets, music and more — see the community calendar.");
+
   const now=Date.now(), end=now+14*24*60*60*1000;
   const tock=`https://tockify.com/api/ngevent?max=20&longForm=false&calname=seldovia&startms=${now}&endms=${end}`;
   const url=`https://api.allorigins.win/raw?url=${encodeURIComponent(tock)}`;
 
-  fetch(url).then(r=>r.ok?r.json():Promise.reject()).then(data=>{
+  // The proxy can hang without ever erroring, so time-box it — otherwise the .catch never fires.
+  const withTimeout=(p,ms)=>Promise.race([p,new Promise((_,rej)=>setTimeout(()=>rej(new Error("timeout")),ms))]);
+  withTimeout(fetch(url).then(r=>r.ok?r.json():Promise.reject()),6000).then(data=>{
     const items=(data.events||[])
       .filter(e=>e && e.when && e.when.start && e.when.start.millis)
       .sort((a,b)=>a.when.start.millis-b.when.start.millis);
@@ -31,5 +37,5 @@
         <span class="ts-title">${esc(title)}</span></li>`;
     }).join("");
     box.innerHTML=shell(`<ul class="ts-list">${rows}</ul>${calLink}`);
-  }).catch(()=>fallback("Meetings, markets, music and more — see the community calendar."));
+  }).catch(()=>{ /* default fallback already shown above */ });
 })();
