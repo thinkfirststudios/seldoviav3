@@ -4186,7 +4186,7 @@ const BIZ_OWNER={
   "Crabpot Grocery":"Chris & Tata Wheeler","Fathoms Hair & Nail Salon":"Meggie Langvardt","Halo Cab":"Bobbi Gese",
   "Jack and Aiva's Restaurant":"John Kennedy","Kar-a-Van Transfer":"Russ & Sandy Geagel","Mako's Water Taxi":"Mako Haggarty",
   "Sea Parrot Inn":"Tim and Mary Pedlow","Seldovia Fishing Adventures":"Chris & Ashley Keithley",
-  "Seldovia Fuel and Hardware":"Dan Blodgett","Seldovia Harbor Inn":"Cory & Dawhn Bodyfelt",
+  "Seldovia Fuel and Hardware":"Josh & Marcia","Seldovia Harbor Inn":"Cory & Dawhn Bodyfelt",
   "Seldovia Outdoor Rentals & Gifts":"Jeremiah & Angela Campbell","Seldovia Property":"Jenny Chissus",
   "Seldovia Sea Glass":"Sarah Chambers","Seldovia Suites":"Cory & Dawhn Bodyfelt",
   "The Great Escape — Alaskan Vacation Rentals":"Sean Christman","Thyme on the Boardwalk":"Suzie Stranik",
