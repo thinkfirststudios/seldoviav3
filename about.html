@@ -8,9 +8,15 @@
 <title>About Seldovia — History, Town Tour & Map</title>
 <link rel="stylesheet" href="styles.css?v=69">
 <style>
-  .about-prose{max-width:70ch; margin-inline:auto; font-size:1.02rem; line-height:1.72;}
-  .about-prose h2{font-family:var(--serif); color:var(--heading); font-size:clamp(1.5rem,3vw,2rem); margin-bottom:.6rem;}
+  .about-prose{max-width:74ch; margin-inline:auto; font-size:1.05rem; line-height:1.72;}
+  /* Section headings in the Lovestory brushstroke, consistent with the rest of the site (Jenny). */
+  .about-h, .about-prose h2{font-family:var(--script); font-weight:400; color:var(--heading); font-size:clamp(2.1rem,4.6vw,3.1rem); line-height:1.06; margin-bottom:.5rem;}
   .about-prose p{margin:0 0 1rem;}
+  /* Two-column map block ("Where is Seldovia?" beside the map), like the original site. */
+  .about-map-two{display:grid; grid-template-columns:1.02fr .98fr; gap:clamp(26px,4vw,54px); align-items:center; max-width:var(--maxw); margin-inline:auto;}
+  .about-map-two .map-text p{color:var(--text-soft); font-size:1.05rem; line-height:1.7; margin:.4rem 0 0; max-width:48ch;}
+  @media (max-width:760px){ .about-map-two{grid-template-columns:1fr; gap:1.4rem;} }
+  .about-wide{max-width:var(--maxw); margin-inline:auto;}
   .fact-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:clamp(14px,2vw,22px); margin:1.4rem 0;}
   .fact{background:var(--sheet); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:1.1rem 1.2rem;}
   .fact b{display:block; font-family:var(--serif); color:var(--heading); font-size:1.05rem; margin-bottom:.2rem;}
@@ -45,21 +51,27 @@
     </div>
   </section>
 
-  <!-- MAP (Jenny is sending a revised map to drop in here) -->
+  <!-- MAP (two columns: title + text beside the map, like the original site) -->
   <section class="section wrap" style="padding-top:0">
-    <div class="section-head"><span class="eyebrow">Find your way</span><h2 class="title" style="font-family:var(--serif);color:var(--heading)">Seldovia Map</h2></div>
-    <figure class="about-map-fig">
-      <a href="images/seldovia-map.png" target="_blank" rel="noopener" title="View the full-size map">
-        <img src="images/seldovia-map.png" alt="Watercolor map of the Kenai Peninsula showing Seldovia at the tip of Kachemak Bay, across the water from Homer" loading="lazy" width="1000" height="1000">
-      </a>
-      <figcaption>The Kenai Peninsula extends from Anchorage down to Seldovia, at the tip of Kachemak Bay across from Homer. Tap the map to view it full size.</figcaption>
-    </figure>
+    <div class="about-map-two">
+      <div class="map-text">
+        <span class="eyebrow">Find your way</span>
+        <h2 class="about-h">Where is Seldovia?</h2>
+        <p>Seldovia sits at the tip of Kachemak Bay, across the water from Homer at the southern end of the Kenai Peninsula, which reaches all the way down from Anchorage. There is no road in, so you will arrive by air, by passenger tour boat in the summer, or on the Alaska Marine Highway ferry.</p>
+      </div>
+      <figure class="about-map-fig">
+        <a href="images/seldovia-map.png" target="_blank" rel="noopener" title="View the full-size map">
+          <img src="images/seldovia-map.png" alt="Watercolor map of the Kenai Peninsula showing Seldovia at the tip of Kachemak Bay, across the water from Homer" loading="lazy" width="1000" height="1000">
+        </a>
+        <figcaption>Tap the map to view it full size.</figcaption>
+      </figure>
+    </div>
   </section>
 
   <!-- TOWN TOUR -->
   <section class="section wrap" style="padding-top:0">
-    <div class="section-head"><span class="eyebrow">Get your bearings</span><h2 class="title" style="font-family:var(--serif);color:var(--heading)">Town Tour</h2></div>
-    <div class="about-prose" style="max-width:820px">
+    <div class="section-head"><span class="eyebrow">Get your bearings</span><h2 class="title about-h">Town Tour</h2></div>
+    <div class="about-wide">
       <div class="fact-grid">
         <div class="fact"><b>Established</b><span>Town settled in the late 1800s · City incorporated 1945</span></div>
         <div class="fact"><b>Population</b><span>2010 Census: 255 in-town, 165 out-of-town residents — and 50 or so resident eagles!</span></div>
@@ -80,7 +92,7 @@
 
   <!-- HISTORY -->
   <section class="section wrap" style="padding-top:0">
-    <div class="section-head"><span class="eyebrow">Herring Bay</span><h2 class="title" style="font-family:var(--serif);color:var(--heading)">History of Seldovia</h2></div>
+    <div class="section-head"><span class="eyebrow">Herring Bay</span><h2 class="title about-h">History of Seldovia</h2></div>
     <div class="about-prose" style="max-width:820px">
       <p>Seldovia has a rich history. The <a href="https://svt.org/our-story/" target="_blank" rel="noopener">Seldovia Village Tribe</a> holds a wealth of information about the history of our community, and we're grateful to have it available. For more historical and anthropological information about Seldovia and her people, visit the <strong>Seldovia Visitors' Museum</strong>, right off the small boat ramp on the corner of Main Street. Admission is complimentary.</p>
     </div>
