@@ -4316,7 +4316,14 @@ if($("#postDetail")){
   // Inline links in the post body, written markdown-style: [text](url). Opens in a new tab.
   const fixUrl=u=>u.replace(/^(https?:\/\/)+/i,m=>m.slice(m.toLowerCase().lastIndexOf("http"))); // collapse doubled https://https://
   const mdLinks=s=>s.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g,(m,txt,url)=>/^(https?:\/\/|\/|mailto:|#|[\w.-]+\.html)/i.test(url)?`<a href="${fixUrl(url)}" target="_blank" rel="noopener">${txt}</a>`:m);
-  const paras=t=>(t||"").trim().split(/\n{2,}/).map(x=>`<p>${mdLinks(esc(x.trim()).replace(/\n/g,"<br>"))}</p>`).join("");
+  // Inline images in a post body: ![alt](url). Lets Jenny spread photos through the story (must run
+  // BEFORE mdLinks, since ![x](y) contains the link pattern [x](y)).
+  const mdImg=s=>s.replace(/!\[([^\]]*)\]\(([^)\s]+)\)/g,(m,alt,url)=>/^(https?:\/\/|\/|images\/)/i.test(url)?`<img class="post-inline-img" src="${url.replace(/"/g,"&quot;")}" alt="${alt.replace(/"/g,"&quot;")}" loading="lazy">`:m);
+  const paras=t=>(t||"").trim().split(/\n{2,}/).map(x=>{
+      const withImg=mdImg(esc(x.trim()));
+      const html=mdLinks(withImg).replace(/\n/g,"<br>");
+      return /^(?:<img\b[^>]*>\s*)+$/.test(withImg.trim()) ? html : `<p>${html}</p>`; // image-only block: no <p> wrapper
+    }).join("");
   const showPost=o=>{ // {title,cat,date,img,body,link}
     document.title=`${o.title} — Seldovia Blog`;
     const media=o.img?`<div class="post-detail-media"><a href="${esc(o.img)}" target="_blank" rel="noopener" title="View full size"><img src="${esc(o.img)}" alt="${esc(o.title)}" onerror="this.closest('.post-detail-media').style.display='none'"></a></div>`:"";

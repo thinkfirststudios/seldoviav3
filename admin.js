@@ -216,8 +216,9 @@
           <div class="field"><label for="p-cat">Category</label>${catField("p-cat",BLOG_CATS)}</div>
         </div>
         <div class="field"><label for="p-body">Post</label>
-          <div style="display:flex;gap:.4rem;align-items:center;margin-bottom:.35rem"><button type="button" class="btn btn-ghost" id="p-linkbtn" style="padding:.3rem .7rem;font-size:.85rem">🔗 Add link</button><span class="hint" style="margin:0">Highlight the exact word you want to link (just that one spot), then click.</span></div>
-          <textarea id="p-body" rows="7" placeholder="Write your post…"></textarea><span class="hint">Tip: to link a word by hand, write it like <code>[click here](https://example.com)</code> — it opens in a new tab.</span></div>
+          <div style="display:flex;gap:.4rem;align-items:center;margin-bottom:.35rem;flex-wrap:wrap"><button type="button" class="btn btn-ghost" id="p-linkbtn" style="padding:.3rem .7rem;font-size:.85rem">🔗 Add link</button><button type="button" class="btn btn-ghost" id="p-imgbtn" style="padding:.3rem .7rem;font-size:.85rem">🖼️ Add photo to the story</button><span class="hint" style="margin:0">Click in the story where you want a photo, then “Add photo to the story.”</span></div>
+          <input type="file" id="p-storyimg" accept="image/*" hidden>
+          <textarea id="p-body" rows="7" placeholder="Write your post…"></textarea><span class="hint">Photos drop in as <code>![](…)</code> on their own line — move that line up or down to place the photo anywhere in the story.</span></div>
         <div class="field"><label for="p-link">Web link <span class="opt">(optional)</span></label><input id="p-link" type="url" placeholder="https://"><span class="hint">Adds a "Visit website" button on the post that opens in a new tab.</span></div>
         <div class="field"><label for="p-img">Photo <span class="opt">(optional)</span></label><input id="p-img" type="file" accept="image/*"><span class="hint" id="p-imghint"></span></div>
         <div style="display:flex;gap:.5rem;align-items:center;flex-wrap:wrap">
@@ -232,7 +233,24 @@
     $("#postForm").addEventListener("submit",onPublish);
     $("#p-cancel").addEventListener("click",resetPost);
     $("#p-linkbtn").addEventListener("click",insertBlogLink);
+    $("#p-imgbtn").addEventListener("click",()=>$("#p-storyimg").click());
+    $("#p-storyimg").addEventListener("change",onStoryImagePicked);
     loadPosts();
+  }
+  // "🖼️ Add photo to the story" — uploads a photo and drops ![](url) at the cursor in the body,
+  // so Jenny can spread multiple photos through the post wherever she likes.
+  async function onStoryImagePicked(e){
+    const file=e.target.files[0]; if(!file) return;
+    const ta=$("#p-body"), btn=$("#p-imgbtn"), old=btn.textContent;
+    btn.disabled=true; btn.textContent="Uploading…";
+    try{
+      const url=await uploadImage("blog", file, "post");
+      const token=`\n\n![](${url})\n\n`;
+      const s=(ta.selectionStart!=null)?ta.selectionStart:ta.value.length;
+      ta.value=ta.value.slice(0,s)+token+ta.value.slice(s);
+      const caret=s+token.length; ta.focus(); ta.setSelectionRange(caret,caret);
+    }catch(err){ window.alert("Could not add the photo: "+(err.message||err)); }
+    finally{ btn.disabled=false; btn.textContent=old; e.target.value=""; }
   }
   // "🔗 Add link" — wraps the selected word(s) in [text](url) so Jenny doesn't type markdown by hand.
   function insertBlogLink(){
@@ -261,8 +279,10 @@
     btn.disabled=true; msg.style.color="var(--text-soft)"; msg.textContent=editPost?"Saving…":"Publishing…";
     try{
       const body=$("#p-body").value.trim();
+      // Card excerpt: strip inline-image markup and reduce links to their text so cards stay clean.
+      const plain=body.replace(/!\[[^\]]*\]\([^)]*\)/g,"").replace(/\[([^\]]+)\]\([^)]*\)/g,"$1").replace(/\s+/g," ").trim();
       const row={ title:$("#p-title").value.trim(), body, post_date:$("#p-date").value, link:$("#p-link").value.trim()||null,
-        category:readCat("p-cat","Blog"), excerpt:body.length>180?body.slice(0,177).trim()+"…":body, published:true };
+        category:readCat("p-cat","Blog"), excerpt:plain.length>180?plain.slice(0,177).trim()+"…":plain, published:true };
       const file=$("#p-img").files[0];
       if(file){ msg.textContent="Uploading photo…"; row.image_url=await uploadImage("blog", file, "post"); }
       const save=r=> editPost ? db.from("posts").update(r).eq("id",editPost) : db.from("posts").insert(r);
@@ -359,7 +379,30 @@
   }
 
   /* ---------------- LISTINGS ---------------- */
-  let editLst=null;
+  let editLst=null, lstPhotos=[];
+  // Reorderable thumbnails of a listing's "More Photos" (Qwynny: spread text slides among property photos).
+  function renderLstPhotos(){
+    const wrap=$("#l-photos-wrap"), box=$("#l-photos");
+    if(!box) return;
+    if(!lstPhotos.length){ wrap.hidden=true; box.innerHTML=""; return; }
+    wrap.hidden=false;
+    box.innerHTML=lstPhotos.map((u,i)=>`<div class="lst-ph" data-i="${i}">
+        <img src="${esc(u)}" alt="Photo ${i+1}" loading="lazy">
+        <div class="lst-ph-btns">
+          <button type="button" data-move="${i}" data-dir="-1" title="Move earlier" ${i===0?"disabled":""}>◀</button>
+          <span class="lst-ph-n">${i+1}</span>
+          <button type="button" data-move="${i}" data-dir="1" title="Move later" ${i===lstPhotos.length-1?"disabled":""}>▶</button>
+          <button type="button" data-rm="${i}" title="Remove" class="lst-ph-rm">✕</button>
+        </div></div>`).join("");
+    box.querySelectorAll("[data-move]").forEach(b=>b.addEventListener("click",()=>{
+      const i=+b.dataset.move, dir=+b.dataset.dir, j=i+dir;
+      if(j<0||j>=lstPhotos.length) return;
+      [lstPhotos[i],lstPhotos[j]]=[lstPhotos[j],lstPhotos[i]]; renderLstPhotos();
+    }));
+    box.querySelectorAll("[data-rm]").forEach(b=>b.addEventListener("click",()=>{
+      lstPhotos.splice(+b.dataset.rm,1); renderLstPhotos();
+    }));
+  }
   function renderListingTab(){
     $("#tab-listing").innerHTML=`
       <form class="info-block" id="lstForm" style="max-width:680px">
@@ -379,6 +422,7 @@
         <div class="field"><label for="l-desc">Description</label><textarea id="l-desc" rows="5" placeholder="Tell buyers about it…"></textarea></div>
         <div class="field"><label for="l-img">Main photo <span class="req">*</span></label><input id="l-img" type="file" accept="image/*" required><span class="hint" id="l-imghint"></span></div>
         <div class="field"><label for="l-more">More photos <span class="opt">(optional, pick several)</span></label><input id="l-more" type="file" accept="image/*" multiple><span class="hint" id="l-morehint"></span></div>
+        <div class="field" id="l-photos-wrap" hidden><label>Arrange the “More Photos” order</label><div id="l-photos" class="lst-photos"></div><span class="hint">Use ◀ ▶ to reorder (spread text slides among the property photos), ✕ to remove. Newly picked photos are added to the end — save, then reopen to slot them in.</span></div>
         <div class="field"><label for="l-video">Video link <span class="opt">(optional — YouTube/Vimeo)</span></label><input id="l-video" type="url" placeholder="https://…"></div>
         <div style="display:flex;gap:.5rem;align-items:center;flex-wrap:wrap">
           <button class="btn btn-primary" type="submit" id="l-btn">Publish listing</button>
@@ -393,14 +437,15 @@
     $("#l-cancel").addEventListener("click",resetLst);
     loadListings();
   }
-  function resetLst(){ editLst=null; $("#lstForm").reset(); $("#l-date").value=todayISO(); $("#l-img").required=true;
-    $("#l-imghint").textContent=""; $("#l-morehint").textContent="";
+  function resetLst(){ editLst=null; lstPhotos=[]; $("#lstForm").reset(); $("#l-date").value=todayISO(); $("#l-img").required=true;
+    $("#l-imghint").textContent=""; $("#l-morehint").textContent=""; renderLstPhotos();
     $("#l-head").textContent="Add a real-estate listing"; $("#l-btn").textContent="Publish listing"; $("#l-cancel").hidden=true; }
   function fillLst(l){ editLst=l; $("#l-addr").value=l.address||""; $("#l-price").value=l.price||""; $("#l-status").value=l.status||"For Sale";
     $("#l-date").value=l.listed_on||todayISO(); $("#l-beds").value=l.beds||""; $("#l-baths").value=l.baths||""; $("#l-sqft").value=l.sqft||"";
     $("#l-desc").value=l.description||""; $("#l-img").required=false;
     $("#l-imghint").textContent="Leave empty to keep the current main photo.";
-    const n=Array.isArray(l.photos)?l.photos.length:0; $("#l-morehint").textContent=n?`${n} extra photo(s) on file — new picks are added to them.`:"";
+    lstPhotos=Array.isArray(l.photos)?l.photos.slice():[]; renderLstPhotos();
+    const n=lstPhotos.length; $("#l-morehint").textContent=n?`${n} extra photo(s) on file — arrange them below; new picks are added to the end.`:"";
     $("#l-head").textContent="Edit listing"; $("#l-btn").textContent="Save changes"; $("#l-cancel").hidden=false;
     $("#lstForm").scrollIntoView({behavior:"smooth",block:"start"}); }
   async function onPostListing(e){
@@ -420,8 +465,8 @@
       const extra=[...$("#l-more").files]; const newPhotos=[];
       for(let i=0;i<extra.length;i++){ msg.textContent=`Uploading extra photo ${i+1}…`; newPhotos.push(await uploadImage("listings", extra[i], "listing")); }
       if(editLst){
-        const existing=Array.isArray(editLst.photos)?editLst.photos:[];
-        row.photos=existing.concat(newPhotos);
+        // lstPhotos = the current (reordered / trimmed) extras; new uploads append to the end.
+        row.photos=lstPhotos.concat(newPhotos);
         const {error}=await db.from("listings").update(row).eq("id",editLst.id); if(error) throw error;
       } else {
         row.photos=newPhotos;
