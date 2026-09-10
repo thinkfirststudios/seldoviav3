@@ -380,20 +380,24 @@
 
   /* ---------------- LISTINGS ---------------- */
   let editLst=null, lstPhotos=[];
-  // Reorderable thumbnails of a listing's "More Photos" (Qwynny: spread text slides among property photos).
+  // Reorderable thumbnails of a listing's "More Photos" (Qwynny: spread text slides among property
+  // photos). Drag-and-drop to move (fast for long galleries), big previews so text slides are legible,
+  // plus arrows as a precise/touch fallback and ✕ to remove.
   function renderLstPhotos(){
     const wrap=$("#l-photos-wrap"), box=$("#l-photos");
     if(!box) return;
     if(!lstPhotos.length){ wrap.hidden=true; box.innerHTML=""; return; }
     wrap.hidden=false;
-    box.innerHTML=lstPhotos.map((u,i)=>`<div class="lst-ph" data-i="${i}">
-        <img src="${esc(u)}" alt="Photo ${i+1}" loading="lazy">
+    box.innerHTML=lstPhotos.map((u,i)=>`<div class="lst-ph" draggable="true" data-i="${i}">
+        <img src="${esc(u)}" alt="Photo ${i+1}" loading="lazy" draggable="false">
         <div class="lst-ph-btns">
+          <span class="lst-ph-grip" title="Drag to reorder">⠿</span>
           <button type="button" data-move="${i}" data-dir="-1" title="Move earlier" ${i===0?"disabled":""}>◀</button>
           <span class="lst-ph-n">${i+1}</span>
           <button type="button" data-move="${i}" data-dir="1" title="Move later" ${i===lstPhotos.length-1?"disabled":""}>▶</button>
           <button type="button" data-rm="${i}" title="Remove" class="lst-ph-rm">✕</button>
         </div></div>`).join("");
+    // Arrows (precise / touch fallback)
     box.querySelectorAll("[data-move]").forEach(b=>b.addEventListener("click",()=>{
       const i=+b.dataset.move, dir=+b.dataset.dir, j=i+dir;
       if(j<0||j>=lstPhotos.length) return;
@@ -402,6 +406,24 @@
     box.querySelectorAll("[data-rm]").forEach(b=>b.addEventListener("click",()=>{
       lstPhotos.splice(+b.dataset.rm,1); renderLstPhotos();
     }));
+    // Drag and drop (fast reorder)
+    let from=null;
+    box.querySelectorAll(".lst-ph").forEach(card=>{
+      card.addEventListener("dragstart",e=>{ from=+card.dataset.i; card.classList.add("dragging");
+        e.dataTransfer.effectAllowed="move"; try{ e.dataTransfer.setData("text/plain",String(from)); }catch(_){}} );
+      card.addEventListener("dragend",()=>{ from=null; box.querySelectorAll(".lst-ph").forEach(c=>c.classList.remove("dragging","drop-before","drop-after")); });
+      card.addEventListener("dragover",e=>{ e.preventDefault(); e.dataTransfer.dropEffect="move";
+        const r=card.getBoundingClientRect(); const after=(e.clientX-r.left)>r.width/2;
+        card.classList.toggle("drop-after",after); card.classList.toggle("drop-before",!after); });
+      card.addEventListener("dragleave",()=>card.classList.remove("drop-before","drop-after"));
+      card.addEventListener("drop",e=>{ e.preventDefault(); if(from===null) return;
+        const j=+card.dataset.i, r=card.getBoundingClientRect(), after=(e.clientX-r.left)>r.width/2;
+        if(j===from){ renderLstPhotos(); return; }
+        const item=lstPhotos.splice(from,1)[0];
+        let target=j; if(from<j) target=j-1; if(after) target+=1;
+        target=Math.max(0,Math.min(target,lstPhotos.length));
+        lstPhotos.splice(target,0,item); renderLstPhotos(); });
+    });
   }
   function renderListingTab(){
     $("#tab-listing").innerHTML=`
@@ -422,7 +444,7 @@
         <div class="field"><label for="l-desc">Description</label><textarea id="l-desc" rows="5" placeholder="Tell buyers about it…"></textarea></div>
         <div class="field"><label for="l-img">Main photo <span class="req">*</span></label><input id="l-img" type="file" accept="image/*" required><span class="hint" id="l-imghint"></span></div>
         <div class="field"><label for="l-more">More photos <span class="opt">(optional, pick several)</span></label><input id="l-more" type="file" accept="image/*" multiple><span class="hint" id="l-morehint"></span></div>
-        <div class="field" id="l-photos-wrap" hidden><label>Arrange the “More Photos” order</label><div id="l-photos" class="lst-photos"></div><span class="hint">Use ◀ ▶ to reorder (spread text slides among the property photos), ✕ to remove. Newly picked photos are added to the end — save, then reopen to slot them in.</span></div>
+        <div class="field" id="l-photos-wrap" hidden><label>Arrange the “More Photos” order</label><div id="l-photos" class="lst-photos"></div><span class="hint">Drag a photo to reorder it (or use ◀ ▶ for a single step), ✕ to remove. Spread the text slides among the property photos. Newly picked photos are added to the end — save, then reopen to slot them in.</span></div>
         <div class="field"><label for="l-video">Video link <span class="opt">(optional — YouTube/Vimeo)</span></label><input id="l-video" type="url" placeholder="https://…"></div>
         <div style="display:flex;gap:.5rem;align-items:center;flex-wrap:wrap">
           <button class="btn btn-primary" type="submit" id="l-btn">Publish listing</button>
