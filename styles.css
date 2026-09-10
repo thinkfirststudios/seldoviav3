@@ -156,8 +156,8 @@ h2.title{font-size:clamp(1.9rem,4vw,2.9rem);}
 @media (max-width:900px){ .brand .brand-logo{height:104px;} }
 @media (max-width:520px){ .brand .brand-logo{height:80px;} .masthead-inner{min-height:78px;} }
 /* Seldovia Property logo atop the Real Estate page hero */
-/* Jenny's colored brokerage logo sits on a soft light card so the brown/black reads on the dark hero. */
-.re-brand-logo{display:block; height:auto; width:min(300px,70vw); box-sizing:border-box; margin:0 auto 1rem; border-radius:14px; background:rgba(255,253,249,.95); padding:1rem 1.5rem; box-shadow:0 6px 22px rgba(0,0,0,.3);}
+/* Jenny's colored brokerage logo, directly on the hero photo (no card). */
+.re-brand-logo{display:block; height:auto; width:min(320px,72vw); margin:0 auto 1rem;}
 .brand .mark{width:32px; height:32px;}
 .brand .word{font-weight:800; font-size:1.18rem; color:var(--heading); letter-spacing:-.02em; line-height:1;}
 .brand .word b{color:var(--accent-ink);}
@@ -210,7 +210,7 @@ body[data-page="realestate"] .page-hero{background:linear-gradient(160deg, #fde6
 .hero .wc-h, .page-hero.banner .wc-h{position:relative; isolation:isolate;}
 .hero .wc-h::before, .page-hero.banner .wc-h::before{content:""; position:absolute; inset:-16% -10%; z-index:-1; background:radial-gradient(ellipse at center, rgba(8,6,4,.62) 0%, rgba(8,6,4,.42) 42%, rgba(8,6,4,0) 72%); filter:blur(24px); pointer-events:none;}
 body[data-page="realestate"] .page-hero.banner{background:#33414d; border-bottom-color:transparent;}
-.page-hero.banner .re-brand-logo{position:relative; z-index:1;}
+.page-hero.banner .re-brand-logo{position:relative; z-index:1; filter:drop-shadow(0 2px 8px rgba(0,0,0,.55));}
 
 /* ============================================================ HOME HERO (real Seldovia photo) */
 .hero{position:relative; max-width:var(--maxw); margin-inline:auto; padding:clamp(14px,2.4vw,24px) var(--gutter) 0;}
