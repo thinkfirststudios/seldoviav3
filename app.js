@@ -83,12 +83,12 @@ const FOOTER=`
     <div class="foot-grid">
       <div class="foot-col foot-brand">
         <span class="word">Seldovia.com</span>
-        <p>A warm, community-first guide to our little town on Kachemak Bay. Made as a gift to Seldovia.</p>
+        <p>A warm, community-first guide to our little town on Kachemak Bay.</p>
         <div class="foot-util"><span id="footTime">&mdash;:&mdash;</span></div>
       </div>
       <div class="foot-col"><h4>Explore</h4><ul><li><a href="explore.html">Directory</a></li><li><a href="gazette.html">Seldovia Blog</a></li><li><a href="gallery.html">Photos</a></li><li><a href="calendar.html">Calendar</a></li></ul></div>
       <div class="foot-col"><h4>Community</h4><ul><li><a href="phone-book.html">Phone Book</a></li><li><a href="index.html#sponsors">Sponsors</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-      <div class="foot-col"><h4>Real Estate</h4><ul><li><a href="real-estate.html">Featured listings</a></li><li><a href="real-estate.html">Buying guide</a></li><li><a href="real-estate.html">Selling guide</a></li><li><a href="contact.html">Home valuation</a></li></ul></div>
+      <div class="foot-col"><h4>Real Estate</h4><ul><li><a href="real-estate.html">Featured listings</a></li><li><a href="contact.html?topic=real%20estate">Home valuation</a></li></ul></div>
     </div>
     <div class="foot-bottom">
       <p class="disclaimer">&copy; <span id="year">2026</span> Seldovia.com — a community project. Real estate services provided by Seldovia Property, a licensed Alaska real estate brokerage (Jenny Chissus, Broker/Owner). Listing information believed reliable but not guaranteed; Alaska is a non-disclosure state. Equal Housing Opportunity.</p>
@@ -4263,7 +4263,7 @@ function renderPlaces(){
     const meta=EXPLORE_META[p.name]||{};
     const catLabel=meta.label||p.cat;                       // Jenny can edit the small text above the name
     const st=meta.status;                                    // "open" / "closed" seasonal sign (Jenny toggles)
-    const sign=(st==="open"||st==="closed")?`<span class="place-sign place-sign-${st}">${st==="open"?"Open":"Closed"}</span>`:"";
+    const sign=(st==="open"||st==="closed")?`<span class="place-sign place-sign-${st}">${st==="open"?"Open all year":"Summer only"}</span>`:"";
     const media=`<div class="place-media"><img class="place-photo" src="${bizPhoto(p)}" alt="" loading="lazy" width="600" height="600" onerror="this.src='images/placeholder-business.png'">${sign}${bdg?`<span class="place-badge" title="${esc(BADGE_LABEL[bdg]||"")}">${bdg}</span>`:""}</div>`;
     const owner=(p.key!=="life") ? BIZ_OWNER[p.name] : "";
     const blurb=meta.desc||BIZ_BLURB[p.name];   // Jenny can edit the description in the admin (explore_meta.desc)
