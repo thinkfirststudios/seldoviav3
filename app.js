@@ -86,7 +86,7 @@ const FOOTER=`
         <p>A warm, community-first guide to our little town on Kachemak Bay.</p>
         <div class="foot-util"><span id="footTime">&mdash;:&mdash;</span></div>
       </div>
-      <div class="foot-col"><h4>Explore</h4><ul><li><a href="explore.html">Directory</a></li><li><a href="gazette.html">Seldovia Blog</a></li><li><a href="gallery.html">Photos</a></li><li><a href="calendar.html">Calendar</a></li></ul></div>
+      <div class="foot-col"><h4>Explore</h4><ul><li><a href="explore.html">Directory</a></li><li><a href="explore.html#trails">Trails</a></li><li><a href="gazette.html">Seldovia Blog</a></li><li><a href="gallery.html">Photos</a></li><li><a href="calendar.html">Calendar</a></li></ul></div>
       <div class="foot-col"><h4>Community</h4><ul><li><a href="phone-book.html">Phone Book</a></li><li><a href="index.html#sponsors">Sponsors</a></li><li><a href="contact.html">Contact</a></li></ul></div>
       <div class="foot-col"><h4>Real Estate</h4><ul><li><a href="real-estate.html">Featured listings</a></li><li><a href="contact.html?topic=real%20estate">Home valuation</a></li></ul></div>
     </div>

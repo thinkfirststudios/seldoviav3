@@ -122,8 +122,9 @@ body:not([data-page="realestate"]) .cel-card{border-color:transparent; box-shado
 .wrap{max-width:var(--maxw); margin-inline:auto; padding-inline:var(--gutter);}
 /* Keep long-form reading columns comfortable even on the wider layout */
 #postDetail .listing-desc{max-width:74ch;}
-.section{padding-block:clamp(30px,4.4vw,58px);}
-.section-head{text-align:center; max-width:56ch; margin:0 auto clamp(28px,4vw,44px);}
+.section{padding-block:clamp(22px,3.2vw,42px);} /* tightened vertical rhythm — less scrolling (Jenny) */
+.section-head{text-align:center; max-width:56ch; margin:0 auto clamp(20px,3vw,34px);}
+#trails{scroll-margin-top:90px;} /* so a #trails jump link isn't hidden under the sticky header */
 /* Section-heading watercolor swash removed site-wide (Jenny #7/#24). */
 body .section-head::before{ display:none !important; }
 /* Eyebrow (the little note above each title). Jenny asked for the Lovestory SERIF in
