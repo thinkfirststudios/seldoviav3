@@ -6,7 +6,7 @@
 <meta name="description" content="Seldovia real estate — featured waterfront cabins, homes, and parcels, plus friendly help buying or selling with Jenny Chissus of Seldovia Property.">
 <meta name="theme-color" content="#F8E6DD">
 <title>Real Estate — Seldovia Property</title>
-<link rel="stylesheet" href="styles.css?v=75">
+<link rel="stylesheet" href="styles.css?v=76">
 </head>
 <body data-page="realestate">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -73,7 +73,15 @@
   <!-- 3) TESTIMONIALS — real-estate client reviews -->
   <section class="section wrap" style="padding-top:0">
     <div class="section-head"><span class="eyebrow">Kind Words</span><h2 class="title wc-h"><img src="images/headings/what-my-clients-say.png?v=1" alt="What my clients say"></h2></div>
-    <div class="quote-grid" id="quoteGrid"></div>
+    <div class="re-carousel">
+      <button class="car-arrow car-prev" type="button" aria-label="Previous testimonials" hidden>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div id="quoteGrid"></div>
+      <button class="car-arrow car-next" type="button" aria-label="More testimonials" hidden>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
   </section>
 
   <!-- 4 & 5) BUYING + SELLING, then 6) VALUATION CTA. NOTE: Jenny is sending new copy for these three boxes. -->
@@ -102,14 +110,22 @@
   <!-- 7) RECENTLY SOLD — realtor track record, kept separate from active listings -->
   <section class="section wrap" id="soldSection" style="padding-top:0; display:none">
     <div class="section-head"><span class="eyebrow">Track Record</span><h2 class="title wc-h"><img src="images/headings/recently-sold.png?v=1" alt="Recently sold"></h2><p>A few of the Seldovia properties Jenny has recently helped close.</p></div>
-    <div class="re-carousel"><div class="re-track" id="soldGrid"></div></div>
+    <div class="re-carousel">
+      <button class="car-arrow car-prev" type="button" aria-label="Previous sold listings" hidden>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div class="re-track" id="soldGrid"></div>
+      <button class="car-arrow car-next" type="button" aria-label="More sold listings" hidden>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
   </section>
 </main>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="db.js?v=6"></script>
 <script src="listing-photos.js?v=1"></script>
-<script src="app.js?v=69"></script>
+<script src="app.js?v=70"></script>
 <script src="seldovia-today.js?v=6"></script>
-<script src="listings-public.js?v=13"></script>
+<script src="listings-public.js?v=14"></script>
 </body>
 </html>

@@ -635,6 +635,15 @@ a.show-more{text-decoration:none; display:inline-block;}
 .quote-stars{color:#f1b02e; letter-spacing:3px; font-size:1.05rem; margin-top:.7rem;}
 @keyframes slideQuotes{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
 @media (prefers-reduced-motion: reduce){ .quote-track{animation:none;} .quote-strip{overflow-x:auto;} }
+/* Testimonials carousel — equal-height cards with "Read more", arrow navigation (Jenny). */
+.quote-row{display:flex; align-items:flex-start; gap:clamp(16px,2.2vw,24px); overflow-x:auto; scroll-snap-type:x proximity; scrollbar-width:none; -ms-overflow-style:none; padding-bottom:.4rem;}
+.quote-row::-webkit-scrollbar{display:none;}
+.quote-row .quote{flex:0 0 min(430px,82vw); scroll-snap-align:start;}
+.quote-row .quote-text{max-height:12em; overflow:hidden; position:relative;}
+.quote-row .quote.expanded .quote-text{max-height:none;}
+.quote-row .quote:not(.expanded) .quote-text::after{content:""; position:absolute; left:0; right:0; bottom:0; height:2.4em; background:linear-gradient(transparent,var(--sheet)); pointer-events:none;}
+.quote-more{margin-top:.5rem; background:none; border:0; color:var(--accent-ink); font-weight:700; cursor:pointer; padding:.1rem 0; font:inherit;}
+.quote-more:hover{text-decoration:underline;}
 
 .sponsor-carousel{position:relative;}
 .sponsor-strip{overflow-x:auto; overflow-y:hidden; border:1px solid var(--line); border-radius:var(--radius); background:var(--sheet); box-shadow:var(--shadow); scrollbar-width:none; -webkit-overflow-scrolling:touch;}

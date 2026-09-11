@@ -37,12 +37,17 @@
     db.from("listings").select("*").eq("published",true).order("listed_on",{ascending:false,nullsFirst:false})
       .then(({data,error})=>{
         if(error || !data || !data.length) return;
-        const active=data.filter(l=>!isSold(l)), sold=data.filter(isSold);
+        // Available first, Pending last (Jenny: don't lead with pendings that aren't buyable).
+        // Stable sort keeps the DB's newest-first order within each group.
+        const pending=l=>/pending/i.test(l.status||"");
+        const active=data.filter(l=>!isSold(l)).sort((a,b)=>(pending(a)?1:0)-(pending(b)?1:0));
+        const sold=data.filter(isSold);
         grid.insertAdjacentHTML("afterbegin", active.map(card).join(""));
         grid.dispatchEvent(new Event("scroll")); // nudge carousel arrows to recompute
         // Recently sold → its own section (kept out of active inventory, realtor best practice)
         const soldGrid=document.querySelector("#soldGrid"), soldSec=document.querySelector("#soldSection");
-        if(soldGrid && sold.length){ soldGrid.innerHTML=sold.map(card).join(""); if(soldSec) soldSec.style.display=""; }
+        if(soldGrid && sold.length){ soldGrid.innerHTML=sold.map(card).join(""); if(soldSec) soldSec.style.display="";
+          if(window.initReCarousel) window.initReCarousel(soldGrid, {autoplay:false}); } // arrows appear only when >3
       }).catch(()=>{});
   }
 

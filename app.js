@@ -4366,27 +4366,29 @@ if($("#reGrid")) $("#reGrid").innerHTML=LISTINGS.map((l,i)=>`
     <div class="place-loc" style="gap:1rem"><span><b style="color:var(--heading)">${esc(l.beds)}</b> bd</span><span><b style="color:var(--heading)">${esc(l.baths)}</b> ba</span><span><b style="color:var(--heading)">${esc(l.sqft)}</b> sqft</span></div>
   </div></a>`).join("");
 
-// listings carousel — 3 per view, arrow navigation
-if($("#reGrid")){
-  const track=$("#reGrid"), car=track.closest(".re-carousel");
-  if(car){
-    const prev=car.querySelector(".car-prev"), next=car.querySelector(".car-next");
-    const update=()=>{const max=track.scrollWidth-track.clientWidth-2; prev.hidden=track.scrollLeft<=2; next.hidden=track.scrollLeft>=max;};
-    let paused=false, resumeT;
-    const nudge=()=>{ paused=true; clearTimeout(resumeT); resumeT=setTimeout(()=>paused=false,6000); };
-    prev.addEventListener("click",()=>{ nudge(); track.scrollBy({left:-track.clientWidth,behavior:"smooth"}); });
-    next.addEventListener("click",()=>{ nudge(); track.scrollBy({left:track.clientWidth,behavior:"smooth"}); });
-    track.addEventListener("scroll",update,{passive:true});
-    track.addEventListener("pointerenter",()=>paused=true); track.addEventListener("pointerleave",()=>paused=false);
-    track.addEventListener("wheel",nudge,{passive:true}); track.addEventListener("pointerdown",nudge);
-    window.addEventListener("resize",update);
-    update();
-    // Rolling: auto-advance through the listings, looping back to the start (Jenny).
-    const reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if(!reduce) setInterval(()=>{ if(paused) return; const max=track.scrollWidth-track.clientWidth-2; if(max<4) return;
-      if(track.scrollLeft>=max-2) track.scrollTo({left:0,behavior:"smooth"}); else track.scrollBy({left:track.clientWidth*0.9,behavior:"smooth"}); }, 4500);
-  }
-}
+// listings carousel — 3 per view, arrow navigation. Reusable so the Recently-Sold strip gets
+// the same arrows (they auto-hide when the content fits, so a button only appears when >3). (Jenny)
+window.initReCarousel=function(track, opts){
+  opts=opts||{};
+  const car=track.closest(".re-carousel"); if(!car || car.dataset.carInit) return;
+  const prev=car.querySelector(".car-prev"), next=car.querySelector(".car-next"); if(!prev||!next) return;
+  car.dataset.carInit="1";
+  const update=()=>{const max=track.scrollWidth-track.clientWidth-2; prev.hidden=track.scrollLeft<=2; next.hidden=track.scrollLeft>=max;};
+  let paused=false, resumeT;
+  const nudge=()=>{ paused=true; clearTimeout(resumeT); resumeT=setTimeout(()=>paused=false,6000); };
+  prev.addEventListener("click",()=>{ nudge(); track.scrollBy({left:-track.clientWidth,behavior:"smooth"}); });
+  next.addEventListener("click",()=>{ nudge(); track.scrollBy({left:track.clientWidth,behavior:"smooth"}); });
+  track.addEventListener("scroll",update,{passive:true});
+  track.addEventListener("pointerenter",()=>paused=true); track.addEventListener("pointerleave",()=>paused=false);
+  track.addEventListener("wheel",nudge,{passive:true}); track.addEventListener("pointerdown",nudge);
+  window.addEventListener("resize",update);
+  update();
+  // Rolling: auto-advance through the listings, looping back to the start (Jenny).
+  const reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(opts.autoplay && !reduce) setInterval(()=>{ if(paused) return; const max=track.scrollWidth-track.clientWidth-2; if(max<4) return;
+    if(track.scrollLeft>=max-2) track.scrollTo({left:0,behavior:"smooth"}); else track.scrollBy({left:track.clientWidth*0.9,behavior:"smooth"}); }, 4500);
+};
+if($("#reGrid")) window.initReCarousel($("#reGrid"), {autoplay:true});
 
 // single listing detail page (listing.html?id=slug)
 if($("#listingDetail") && LISTINGS.length){
@@ -4514,15 +4516,17 @@ if($("#quoteGrid")){
   if(!TESTIMONIALS.length){ const sec=$("#quoteGrid").closest("section"); if(sec) sec.style.display="none"; }
   else {
     const paras=s=>String(s).split(/\n\n+/).map(x=>`<p>${esc(x.trim())}</p>`).join("");
-    const cards=TESTIMONIALS.map(t=>`<div class="quote"><span class="qmark">&rdquo;</span><div class="quote-head"><span class="avatar" style="background:${t.c}">${esc(t.name[0])}</span><span><b>${esc(t.name)}</b><span>${esc(t.role)}</span></span></div><div class="quote-text">${paras(t.t)}</div><div class="quote-stars" aria-label="Five out of five stars">★★★★★</div></div>`).join("");
-    // Jenny #14: testimonials scroll by gently (pauses on hover). Duplicated for a seamless loop.
-    $("#quoteGrid").className="quote-strip";
-    $("#quoteGrid").innerHTML=`<div class="quote-track">${cards}${cards}</div>`;
-    // Jenny: keep the scroll slow and steady no matter how many testimonials there are.
-    // Duration is derived from the real track width so speed stays a constant ~26px/sec.
-    requestAnimationFrame(()=>{ const trk=$("#quoteGrid").querySelector(".quote-track");
-      if(trk){ const oneSet=trk.scrollWidth/2; const pxPerSec=26;
-        trk.style.animationDuration=Math.max(60, Math.round(oneSet/pxPerSec))+"s"; } });
+    // Jenny: equal-height cards (long ones get "Read more") + prev/next arrows (easier on the phone).
+    const cards=TESTIMONIALS.map(t=>`<div class="quote"><span class="qmark">&rdquo;</span><div class="quote-head"><span class="avatar" style="background:${t.c}">${esc(t.name[0])}</span><span><b>${esc(t.name)}</b><span>${esc(t.role)}</span></span></div><div class="quote-text">${paras(t.t)}</div><button type="button" class="quote-more" hidden>Read more</button><div class="quote-stars" aria-label="Five out of five stars">★★★★★</div></div>`).join("");
+    $("#quoteGrid").className="quote-row re-track";
+    $("#quoteGrid").innerHTML=cards;
+    requestAnimationFrame(()=>{
+      // Reveal "Read more" only on cards whose text is actually clamped; it expands that card.
+      $$("#quoteGrid .quote").forEach(q=>{ const txt=q.querySelector(".quote-text"), btn=q.querySelector(".quote-more");
+        if(txt && btn && txt.scrollHeight>txt.clientHeight+4){ btn.hidden=false;
+          btn.addEventListener("click",()=>{ const open=q.classList.toggle("expanded"); btn.textContent=open?"Read less":"Read more"; }); } });
+      if(window.initReCarousel) window.initReCarousel($("#quoteGrid"), {autoplay:true});
+    });
   }
 }
 
