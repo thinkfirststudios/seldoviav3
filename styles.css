@@ -431,9 +431,10 @@ body:not([data-page="realestate"]) .howband::before{content:""; position:absolut
 @media (max-width:680px){ .jenny-card{grid-template-columns:1fr; text-align:center; justify-items:center;} }
 .jenny-card img{border-radius:var(--radius); box-shadow:var(--shadow-lg); width:100%; max-width:300px; aspect-ratio:4/5; object-fit:cover; object-position:top; transform:scaleX(-1);} /* flipped per Jenny #12 */
 /* Jenny's full bio (#13) — verbatim from her homes.com profile */
-.re-bio{max-width:74ch; margin:1.8rem auto 0; color:var(--text); font-size:1.02rem; line-height:1.72;}
-.re-bio p{margin:0 0 1rem;}
-.re-bio-h{font-family:var(--serif); color:var(--heading); font-size:clamp(1.35rem,2.6vw,1.75rem); margin:2.1rem 0 .7rem;}
+/* Jenny's "Read more" bio opens full width in readable columns (part of the main story, not a skinny center column). */
+.re-bio{max-width:none; margin:1.6rem 0 0; color:var(--text); font-size:1.02rem; line-height:1.72; columns:2 26rem; column-gap:clamp(30px,4vw,58px);}
+.re-bio p{margin:0 0 1rem; break-inside:avoid;}
+.re-bio-h{font-family:var(--serif); color:var(--heading); font-size:clamp(1.35rem,2.6vw,1.75rem); margin:2.1rem 0 .7rem; column-span:all;}
 .re-more-btn{background:none; border:0; padding:0; margin:.2rem 0 1rem; color:var(--accent-ink); font-weight:800; font-size:.95rem; cursor:pointer; font-family:inherit;}
 .re-more-btn:hover{text-decoration:underline;}
 .jenny-card h3{font-size:clamp(1.5rem,3vw,2rem);}

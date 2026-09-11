@@ -62,4 +62,15 @@
     document.addEventListener("visibilitychange", function(){ if(!document.hidden) refresh(); });
   });
 
+  /* ---------- Click the preview to view it full screen (Jenny) ---------- */
+  function goFullscreen(el){
+    var r = el.requestFullscreen || el.webkitRequestFullscreen || el.webkitEnterFullscreen || el.msRequestFullscreen;
+    if(r){ try { r.call(el); } catch(e){} }
+  }
+  Array.prototype.slice.call(document.querySelectorAll(".wc-video, .wc-snap")).forEach(function(el){
+    el.style.cursor = "zoom-in";
+    el.title = "Click to view full screen";
+    el.addEventListener("click", function(){ goFullscreen(el); });
+  });
+
 })();
