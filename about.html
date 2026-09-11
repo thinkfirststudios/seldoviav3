@@ -6,11 +6,15 @@
 <meta name="description" content="About Seldovia, Alaska — the natural beauty, a town tour, demographics and weather, and the rich history of our boardwalk town on Kachemak Bay.">
 <meta name="theme-color" content="#F8E6DD">
 <title>About Seldovia — History, Town Tour & Map</title>
-<link rel="stylesheet" href="styles.css?v=73">
+<link rel="stylesheet" href="styles.css?v=74">
 <style>
   .about-prose{max-width:74ch; margin-inline:auto; font-size:1.05rem; line-height:1.72;}
   /* Section headings in the Lovestory brushstroke, consistent with the rest of the site (Jenny). */
-  .about-h, .about-prose h2{font-family:var(--script); font-weight:400; color:var(--heading); font-size:clamp(2.1rem,4.6vw,3.1rem); line-height:1.06; margin-bottom:.5rem;}
+  .about-h, .about-prose h2{font-family:var(--script); font-weight:400; color:var(--heading); font-size:clamp(2.3rem,5vw,3.6rem); line-height:1.06; margin-bottom:.5rem;}
+  /* Natural-beauty text fills the page width in readable newspaper columns (Jenny: no narrow center column). */
+  .about-full{max-width:var(--maxw); columns:2 24rem; column-gap:clamp(30px,4vw,58px);}
+  .about-full h2{column-span:all; margin-bottom:.7rem;}
+  .about-full p{margin:0 0 1rem; break-inside:avoid;}
   .about-prose p{margin:0 0 1rem;}
   /* Two-column map block ("Where is Seldovia?" beside the map), like the original site. */
   .about-map-two{display:grid; grid-template-columns:1.02fr .98fr; gap:clamp(26px,4vw,54px); align-items:center; max-width:var(--maxw); margin-inline:auto;}
@@ -40,19 +44,8 @@
 <main id="main">
   <div class="page-hero banner" style="--banner:url('images/headers/01_Home.jpg')"><div class="wrap"><span class="eyebrow">Alaska's Best Kept Secret</span><h1 class="wc-h">About Seldovia</h1><p>The natural beauty, a town tour, and the rich history of our little boardwalk town on Kachemak Bay.</p></div></div>
 
-  <!-- NATURAL BEAUTY -->
+  <!-- MAP (two columns) — at the top: bright and cheery is the first thing you see (Jenny) -->
   <section class="section wrap">
-    <div class="about-prose">
-      <h2>Back to the natural beauty of Alaska!</h2>
-      <p>We invite you to a tranquil place where the majesty of glorious mountains, expansive sandy beaches and extensive trails lead you through lush forests and up to the mountain tops — where views of Cook Inlet will take your breath away. The only way to get to Seldovia is by air, passenger tour boats (summertime) or the Alaska Marine Highway ferry, which means you will be here on purpose, and you decided that the extra effort to get off the road system would be worthwhile. You will not be disappointed.</p>
-      <p>If you are out on our waters, you may often come across orca or humpback whales, many playful sea otters, puffins, and plenty of eagles — and of course the ordinary seagull who is fat with the plentiful salmon scavenging at the fish cleaning table at Seldovia's small boat harbor.</p>
-      <p>Be sure to visit our <a href="webcams.html">Webcams Around Seldovia</a> to view live images from the small boat harbor, the city dock, and the docks across the bay. Thanks to those who sponsor those cameras and keep them live on the internet!</p>
-      <p>We know you will love the many incredible beauties of Seldovia: our breathtaking scenery, abundant wildlife, and authentic people!</p>
-    </div>
-  </section>
-
-  <!-- MAP (two columns: title + text beside the map, like the original site) -->
-  <section class="section wrap" style="padding-top:0">
     <div class="about-map-two">
       <div class="map-text">
         <span class="eyebrow">Find your way</span>
@@ -65,6 +58,17 @@
         </a>
         <figcaption>Tap the map to view it full size.</figcaption>
       </figure>
+    </div>
+  </section>
+
+  <!-- NATURAL BEAUTY (full width across the page, per Jenny — no narrow center column) -->
+  <section class="section wrap" style="padding-top:0">
+    <div class="about-prose about-full">
+      <h2>Back to the natural beauty of Alaska!</h2>
+      <p>We invite you to a tranquil place where the majesty of glorious mountains, expansive sandy beaches and extensive trails lead you through lush forests and up to the mountain tops — where views of Cook Inlet will take your breath away. The only way to get to Seldovia is by air, passenger tour boats (summertime) or the Alaska Marine Highway ferry, which means you will be here on purpose, and you decided that the extra effort to get off the road system would be worthwhile. You will not be disappointed.</p>
+      <p>If you are out on our waters, you may often come across orca or humpback whales, many playful sea otters, puffins, and plenty of eagles — and of course the ordinary seagull who is fat with the plentiful salmon scavenging at the fish cleaning table at Seldovia's small boat harbor.</p>
+      <p>Be sure to visit our <a href="webcams.html">Webcams Around Seldovia</a> to view live images from the small boat harbor, the city dock, and the docks across the bay. Thanks to those who sponsor those cameras and keep them live on the internet!</p>
+      <p>We know you will love the many incredible beauties of Seldovia: our breathtaking scenery, abundant wildlife, and authentic people!</p>
     </div>
   </section>
 

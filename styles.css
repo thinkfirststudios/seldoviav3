@@ -57,6 +57,7 @@ body[data-page="realestate"]{
 }
 
 *{box-sizing:border-box;}
+[hidden]{display:none!important;} /* the hidden attribute must always win, even over display:flex/grid (fixes photo-search filtering) */
 html{scroll-behavior:smooth;}
 @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
 body{margin:0; background:var(--page); color:var(--text); font-family:var(--sans); font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;}
