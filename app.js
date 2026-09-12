@@ -161,7 +161,7 @@ const PLACES=[
  {name:"Fathoms Hair & Nail Salon",cat:"Salon",key:"shop",phone:"(907) 726-7255"},
   {name:"Seldovia Fuel and Hardware",cat:"Fuel & Hardware",key:"services",phone:"(907) 234-7622"},
  {name:"Seldovia Property",cat:"Real Estate",key:"services",phone:"(907) 234-8000",url:"https://www.SeldoviaProperty.com"},
- {name:"Winter Watch",cat:"Property Care",key:"services",phone:"(907) 406-0775",url:"https://www.SeldoviaWinterWatch.com"},
+ {name:"Winter Watch",cat:"Property Care",key:"services",phone:"(907) 406-0775",url:"winter-watch.html"},
  // Life in Seldovia
  {name:"City of Seldovia",cat:"City Government",key:"life",phone:"(907) 234-7643"},
  {name:"Seldovia Village Tribe",cat:"Tribe",key:"life",phone:"(907) 234-7898"},
@@ -4114,7 +4114,7 @@ const DIRECTORY=[
  {name:"The Great Escape — Alaskan Vacation Rentals",cat:"Vacation Rentals",k:"stay",phone:"",url:"https://www.greatescapealaska.com",spon:false},
  {name:"Thyme on the Boardwalk",cat:"Gift Shop & Nursery",k:"shop",phone:"(907) 440-2213",url:"https://www.ThymeOnTheBoardwalk.com",spon:false},
  {name:"United States Post Office — Seldovia",cat:"Post Office",k:"life",phone:"(907) 234-7831",spon:false},
- {name:"Winter Watch",cat:"Property Care",k:"services",phone:"(907) 406-0775",url:"https://www.SeldoviaWinterWatch.com",spon:false},
+ {name:"Winter Watch",cat:"Property Care",k:"services",phone:"(907) 406-0775",url:"winter-watch.html",spon:false},
  {name:"Rainbow Tours",cat:"Tours & Passenger Ferry",k:"travel",phone:"(907) 235-7272",url:"https://www.rainbowtours.net",spon:false},
  {name:"True North Air",cat:"Air Taxi",k:"travel",phone:"(907) 952-2726",spon:false},
  {name:"Seldovia Bay Ferry",cat:"Passenger Ferry",k:"travel",url:"https://seldoviabayferry.com",spon:false},
