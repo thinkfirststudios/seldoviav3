@@ -82,10 +82,14 @@
         const today=(j.predictions||[]).filter(p=>String(p.t).startsWith(todayStr));
         const box=el.querySelector("#ti-tide");
         if(!today.length){ box.remove(); return; }
-        box.querySelector(".ti-value").innerHTML=today.map(p=>{
-          const tm=p.t.split(" ")[1]; const ar=p.type==="H"?"▲":"▼";
-          return `<b>${ar} ${to12(tm)}</b> <span class="ti-sub">${Math.round(+p.v*10)/10} ft</span>`;
-        }).join(" · ");
+        // Two even rows: all the highs on one line, all the lows on the next (Jenny).
+        const fmtSet=arr=>arr.map(p=>{ const tm=p.t.split(" ")[1];
+          return `<b>${to12(tm)}</b> <span class="ti-sub">${Math.round(+p.v*10)/10} ft</span>`; }).join(" · ");
+        const highs=today.filter(p=>p.type==="H"), lows=today.filter(p=>p.type==="L");
+        const rows=[];
+        if(highs.length) rows.push(`<span class="ti-tide-row">▲ ${fmtSet(highs)}</span>`);
+        if(lows.length)  rows.push(`<span class="ti-tide-row">▼ ${fmtSet(lows)}</span>`);
+        box.querySelector(".ti-value").innerHTML=rows.join("");
       }).catch(()=>{ const b=el.querySelector("#ti-tide"); if(b) b.remove(); });
   }
 
