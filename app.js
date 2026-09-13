@@ -199,7 +199,42 @@ const PLACES=[
  // Out of Town — regional businesses & sponsors (Jenny #16)
  {name:"Alaska Bus Company",cat:"Bus & Charter",key:"outoftown"},
  {name:"Homer Sign Company",cat:"Signs & Printing",key:"outoftown"},
- {name:"Kenai Airport Inn",cat:"Lodging · Kenai",key:"outoftown"}
+ {name:"Kenai Airport Inn",cat:"Lodging · Kenai",key:"outoftown"},
+ // === Added 2026-09-12 — Jenny's "missing from the old site" list (categories to confirm) ===
+ // Organizations
+ {name:"Seldovia Arts Council",cat:"Arts Organization",key:"life"},
+ {name:"Seldovia House",cat:"Senior Housing",key:"life"},
+ {name:"Seldovia Bible Chapel",cat:"Church",key:"life"},
+ {name:"Grace Haven Fellowship",cat:"Church",key:"life"},
+ {name:"Russian Orthodox Church",cat:"Church",key:"life"},
+ {name:"Seldovia Landfill",cat:"Public Service",key:"life"},
+ {name:"SVT Ch'anik'na Children's Program",cat:"Children's Program",key:"life"},
+ // Activities — parks & recreation
+ {name:"Seldovia Pavilion",cat:"Park",key:"activities"},
+ {name:"Hogenson Park",cat:"Park",key:"activities"},
+ {name:"Main Street Park",cat:"Park",key:"activities"},
+ {name:"Central Park",cat:"Park",key:"activities"},
+ {name:"Lollipop Park",cat:"Park",key:"activities"},
+ {name:"Pieren Park",cat:"Park",key:"activities"},
+ {name:"Mermaid Park",cat:"Park",key:"activities"},
+ {name:"Susan B English Playground & Ballfield",cat:"Playground & Ballfield",key:"activities"},
+ {name:"Clay Studio at Susan B English",cat:"Clay Studio",key:"activities"},
+ {name:"SVT Fitness Center",cat:"Fitness Center",key:"activities"},
+ {name:"Seldovia Community Garden",cat:"Community Garden",key:"activities"},
+ // Businesses
+ {name:"Seldovia Conference Center",cat:"Conference Center",key:"services"},
+ {name:"Seldovia Fishing Adventures Gift Shop",cat:"Gift Shop",key:"shop"},
+ {name:"Kasitsna Bay Laboratory",cat:"Marine Research Lab",key:"services",phone:"(907) 235-4042",url:"kasitsna-bay.html"},
+ {name:"Dillon & Dillon Construction",cat:"Construction",key:"services"},
+ {name:"Black Spruce Equipment Rental & Milling",cat:"Equipment Rental & Milling",key:"services"},
+ {name:"Bay Watch Vacation Rental",cat:"Vacation Rental",key:"stay"},
+ {name:"Lazy Crow Inn",cat:"Inn",key:"stay"},
+ {name:"Seldovia Wilderness RV Park",cat:"RV Park",key:"stay"},
+ {name:"Cole's Vending",cat:"Vending",key:"services"},
+ {name:"SVT Gift Shop",cat:"Gift Shop",key:"shop"},
+ {name:"HBL Kayak Rental",cat:"Kayak Rental",key:"activities"},
+ // Out of Town
+ {name:"Tutka Bay Lodge",cat:"Lodge · Kachemak Bay",key:"outoftown"}
 ];
 // Business photos from Qwynny's Canva set. Default shows the B&W version;
 // <slug>-color.jpg is the color upgrade for sponsors (future admin swap).
@@ -4124,7 +4159,38 @@ const DIRECTORY=[
  {name:"SVT Museum & Gift Shop",cat:"Museum & Gifts",k:"shop",phone:"(907) 234-7898",url:"https://svt.org",spon:false},
  {name:"Seldovia Liquor Store",cat:"Beverages & Gifts",k:"shop",phone:"(907) 202-1938",spon:false},
  {name:"Schooner Beach Studio",cat:"Cut-Paper Art",k:"shop",phone:"(541) 520-7331",spon:false},
- {name:"Make it Reality",cat:"3D Printing & Laser",k:"services",phone:"(414) 367-9570",spon:false}
+ {name:"Make it Reality",cat:"3D Printing & Laser",k:"services",phone:"(414) 367-9570",spon:false},
+ // === Added 2026-09-12 — Jenny's "missing from the old site" list (details to confirm) ===
+ {name:"Seldovia Arts Council",cat:"Arts Organization",k:"life",spon:false},
+ {name:"Seldovia House",cat:"Senior Housing",k:"life",spon:false},
+ {name:"Seldovia Bible Chapel",cat:"Church",k:"life",spon:false},
+ {name:"Grace Haven Fellowship",cat:"Church",k:"life",spon:false},
+ {name:"Russian Orthodox Church",cat:"Church",k:"life",spon:false},
+ {name:"Seldovia Landfill",cat:"Public Service",k:"life",spon:false},
+ {name:"SVT Ch'anik'na Children's Program",cat:"Children's Program",k:"life",spon:false},
+ {name:"Seldovia Pavilion",cat:"Park",k:"activities",spon:false},
+ {name:"Hogenson Park",cat:"Park",k:"activities",spon:false},
+ {name:"Main Street Park",cat:"Park",k:"activities",spon:false},
+ {name:"Central Park",cat:"Park",k:"activities",spon:false},
+ {name:"Lollipop Park",cat:"Park",k:"activities",spon:false},
+ {name:"Pieren Park",cat:"Park",k:"activities",spon:false},
+ {name:"Mermaid Park",cat:"Park",k:"activities",spon:false},
+ {name:"Susan B English Playground & Ballfield",cat:"Playground & Ballfield",k:"activities",spon:false},
+ {name:"Clay Studio at Susan B English",cat:"Clay Studio",k:"activities",spon:false},
+ {name:"SVT Fitness Center",cat:"Fitness Center",k:"activities",spon:false},
+ {name:"Seldovia Community Garden",cat:"Community Garden",k:"activities",spon:false},
+ {name:"Seldovia Conference Center",cat:"Conference Center",k:"services",spon:false},
+ {name:"Seldovia Fishing Adventures Gift Shop",cat:"Gift Shop",k:"shop",spon:false},
+ {name:"Kasitsna Bay Laboratory",cat:"Marine Research Lab",k:"services",phone:"(907) 235-4042",url:"kasitsna-bay.html",spon:false},
+ {name:"Dillon & Dillon Construction",cat:"Construction",k:"services",spon:false},
+ {name:"Black Spruce Equipment Rental & Milling",cat:"Equipment Rental & Milling",k:"services",spon:false},
+ {name:"Bay Watch Vacation Rental",cat:"Vacation Rental",k:"stay",spon:false},
+ {name:"Lazy Crow Inn",cat:"Inn",k:"stay",spon:false},
+ {name:"Seldovia Wilderness RV Park",cat:"RV Park",k:"stay",spon:false},
+ {name:"Cole's Vending",cat:"Vending",k:"services",spon:false},
+ {name:"SVT Gift Shop",cat:"Gift Shop",k:"shop",spon:false},
+ {name:"HBL Kayak Rental",cat:"Kayak Rental",k:"activities",spon:false},
+ {name:"Tutka Bay Lodge",cat:"Lodge · Kachemak Bay",k:"outoftown",spon:false}
 ];
 // REAL community announcements — sourced from the seldovia.com community news feed.
 const NOTES=[] /* migrated to Supabase (seed-bulletin.sql) — all bulletin notices now managed + editable in the admin, rendered by bulletin-public.js */;
