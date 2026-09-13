@@ -3,22 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Winter Watch — Seldovia home, property, and boat watch services by Paul 'Sonny' Chissus. Weekly checks, snow removal, winterization, repairs, and 24-hour emergency care while you're away.">
+<meta name="description" content="Winter Watch — Seldovia home, property, and boat watch by Paul 'Sonny' Chissus. Weekly checks, snow removal, winterization, repairs, construction, and 24-hour emergency care while you're away.">
 <meta name="theme-color" content="#F8E6DD">
 <title>Winter Watch — Seldovia Home & Boat Watch</title>
 <link rel="stylesheet" href="styles.css?v=78">
 <style>
-  .ww-hero-h{font-family:var(--script); font-weight:400; color:#fff; font-size:clamp(3rem,8vw,5rem); line-height:1; margin:.2rem 0; text-shadow:0 2px 8px rgba(0,0,0,.55), 0 8px 26px rgba(0,0,0,.4);}
-  .ww-lead{font-size:1.18rem; line-height:1.7; color:var(--heading); font-weight:600; max-width:60ch;}
-  .ww-prose{max-width:66ch; font-size:1.05rem; line-height:1.72; color:var(--text-soft);}
-  .ww-prose p{margin:0 0 1rem;}
-  .ww-h{font-family:var(--script); font-weight:400; color:var(--heading); font-size:clamp(2.1rem,4.6vw,3rem); line-height:1.06; margin-bottom:.4rem;}
-  .ww-services{list-style:none; margin:1.2rem 0 0; padding:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:.6rem clamp(20px,3vw,40px); max-width:var(--maxw);}
-  .ww-services li{position:relative; padding-left:1.7rem; color:var(--text); line-height:1.5;}
-  .ww-services li::before{content:"❄"; position:absolute; left:0; top:.05rem; color:var(--accent-ink);}
-  .ww-price{max-width:var(--maxw);}
-  .ww-price li{margin-bottom:.5rem; color:var(--text-soft);}
-  .ww-contact{display:flex; flex-wrap:wrap; gap:1.4rem 2.4rem; margin-top:.6rem;}
+  /* Higher specificity than .page-hero h1 so the brushstroke stays WHITE on the dark banner. */
+  .page-hero.banner .ww-hero-h{font-family:var(--script); font-weight:400; color:#fff; -webkit-text-stroke:0; font-size:clamp(3rem,8vw,5rem); line-height:1; margin:.2rem 0; text-shadow:0 2px 8px rgba(0,0,0,.55), 0 8px 26px rgba(0,0,0,.45);}
+  .ww-lead{font-size:1.2rem; line-height:1.7; color:var(--heading); font-weight:600; max-width:64ch;}
+  .ww-prose{max-width:70ch; font-size:1.05rem; line-height:1.74; color:var(--text-soft);}
+  .ww-prose p{margin:0 0 1.1rem;}
+  .ww-h{font-family:var(--script); font-weight:400; color:var(--heading); font-size:clamp(2.1rem,4.6vw,3rem); line-height:1.06; margin-bottom:.5rem;}
+  .ww-benefits{list-style:none; margin:1rem 0 0; padding:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:.55rem clamp(20px,3vw,44px); max-width:var(--maxw);}
+  .ww-benefits li{position:relative; padding-left:1.7rem; color:var(--text); line-height:1.5;}
+  .ww-benefits li::before{content:"❄"; position:absolute; left:0; top:.05rem; color:var(--accent-ink);}
+  .ww-form{max-width:640px; display:grid; gap:.8rem; margin-top:.4rem;}
+  .ww-form .row-2{display:grid; grid-template-columns:1fr 1fr; gap:.8rem;}
+  @media (max-width:520px){ .ww-form .row-2{grid-template-columns:1fr;} }
+  .ww-form label{display:block; font-size:.85rem; color:var(--text-soft); margin-bottom:.25rem;}
+  .ww-form input, .ww-form textarea{width:100%; padding:.6rem .7rem; border:1px solid var(--line); border-radius:10px; font:inherit; background:var(--sheet); color:var(--text);}
+  .ww-contact{display:flex; flex-wrap:wrap; gap:1.2rem 2.4rem; margin-top:.6rem;}
   .ww-contact div b{display:block; font-family:var(--serif); color:var(--heading); font-size:.95rem; margin-bottom:.15rem;}
   .ww-contact a{color:var(--accent-ink); text-decoration:none; font-weight:700;}
 </style>
@@ -37,67 +41,117 @@
   <!-- INTRO — Sonny's own words (verbatim from Seldovia.com) -->
   <section class="section wrap">
     <div class="ww-prose">
-      <p class="ww-lead">Winter Watch makes your Seldovia home and property our top priority! When it comes to the care and maintenance of your home, possessions, and boats while you're away — it's essential to know we've got you covered!</p>
-      <p>I am Paul "Sonny" Chissus, owner of Winter Watch in Seldovia, Alaska. With over 35 years of construction experience, we bring the knowledge and expertise to take care of any maintenance or repair issue that may come up with a home during your absence.</p>
-      <p>Besides my construction experience, I have lived on and worked on boats my whole life — that is my passion!</p>
+      <p class="ww-lead">Winter Watch makes your Seldovia home and property our top priority!</p>
+      <p>When it comes to the care and maintenance of your home, possessions, and boats while you're away — it's essential to know we've got you covered! We've built our reputation on the attentive monitoring and care of your investments during your absence.</p>
     </div>
   </section>
 
-  <!-- SERVICES -->
+  <!-- WHAT WE DO -->
   <section class="section wrap" style="padding-top:0">
-    <div class="section-head"><span class="eyebrow">What we do</span><h2 class="ww-h">Services</h2></div>
-    <ul class="ww-services">
-      <li>Weekly property checks, inside and out</li>
-      <li>Heat, water, and security monitoring</li>
-      <li>Snow removal from roofs and decking</li>
-      <li>Snow plowing for property access</li>
-      <li>Winterization and de-winterization</li>
-      <li>Small repairs and home renovations</li>
-      <li>Remodeling and additions</li>
-      <li>Boat monitoring and maintenance</li>
-      <li>24-hour emergency maintenance</li>
-      <li>Storm damage assessments</li>
-      <li>Fuel and propane level checks</li>
-      <li>Electric meter monitoring</li>
-    </ul>
-  </section>
-
-  <!-- PRICING -->
-  <section class="section wrap" style="padding-top:0">
-    <div class="section-head"><span class="eyebrow">Simple &amp; fair</span><h2 class="ww-h">Pricing</h2></div>
-    <ul class="ww-price">
-      <li>Weekly checks run <b>$30–50</b>, with small additional fees for outbuildings, cars, RVs, or boats.</li>
-      <li>Snow removal and plowing are billed as needed.</li>
-      <li>Winterization and de-winterization are handled with any coordination costs included.</li>
-      <li>Custom pricing is available for commercial properties and properties beyond the road system.</li>
-    </ul>
-  </section>
-
-  <!-- ABOUT / CREDENTIALS -->
-  <section class="section wrap" style="padding-top:0">
+    <div class="section-head"><span class="eyebrow">Looking after Seldovia</span><h2 class="ww-h">What we do</h2></div>
     <div class="ww-prose">
-      <h2 class="ww-h">Experienced, licensed &amp; local</h2>
-      <p>Sonny is a licensed and bonded general contractor with over 35 years of construction experience and a lifetime of boating know-how. Winter Watch serves Seldovia to Jakolof Bay, including properties off the road system.</p>
+      <p>Do you own a home or boat in Seldovia? Are you often traveling far from Seldovia, either for business or pleasure, or perhaps the whole winter? How fabulous would it be to have someone responsible, honest, reliable, and capable looking after your investment here in Seldovia while you are away?</p>
+      <p>That is what we do. I am Paul "Sonny" Chissus, owner of Winter Watch in Seldovia, Alaska. With over 38 years of construction experience, we bring the knowledge and expertise to take care of any maintenance or repair issue that may come up with a home during your absence. If it is outside my area of expertise, then I know how to find the right person for the job. That can often be a tricky thing in a remote town like Seldovia!</p>
+      <p>Besides my construction experience, I have lived on and worked on boats my whole life — that is my passion! We own a 32-foot Westsail that is living in our small boat harbor here in Seldovia, so you will often find me down on the docks checking up on her! We have completely renovated her, from bulkheads to bowsprit — she has had a complete overhaul! We are hoping to take her to warmer waters someday, but for now, she is safe and close by in our Seldovia marina.</p>
+      <p>Winter Watch offers a myriad of services, from weekly checks — interior or exterior or both of your home or boat — to small repairs and home renovations, to remodels and additions. From the small "fixes" to the large jobs, we can take care of your Seldovia home and boat needs. Winter Watch is primarily a construction company. As a sole proprietor, I am a licensed and bonded general contractor with home construction, cabin building &amp; remodeling experience.</p>
+    </div>
+  </section>
+
+  <!-- MORE ABOUT THE SERVICE -->
+  <section class="section wrap" style="padding-top:0">
+    <div class="section-head"><span class="eyebrow">The details</span><h2 class="ww-h">More about my Winter Watch service</h2></div>
+    <div class="ww-prose">
+      <p>I provide weekly checks (and keep written documentation) to keep an eye on heat and water, and manage security checks and snow removal to avoid potential freeze-ups and costly disasters. As a full-time resident of Seldovia, I pride myself on handling whatever needs to be done promptly to secure your property.</p>
+      <p>Weekly checks range from $30–50 with additional small fees for outbuildings, cars, RVs, or boats also stored on the property that require extra care. In big snow winters, there are additional fees related to snow removal (from roofs or decking) or snow plowing access as desired by the homeowner or recommended by me for the security of your property.</p>
+      <p>I also provide the management of winterization and de-winterization for homes, which may also include meeting with licensed plumbers and the City of Seldovia maintenance crew to turn on/off the water at additional costs.</p>
+      <p>As one can imagine, each property requires different care — from the size of the home, number of bathrooms, kitchens, whether it is a commercial property, in town or out the road, outbuildings, etc. Each property's requirements are reviewed with the homeowner upon acceptance of the Application for Service, so that a custom plan may be created depending on the needs and desires of the home or business owner.</p>
+      <p>There may be times when you request a check on your property that is outside the scope of the regular weekly check, or after a big storm or snowfall. At my discretion, an additional visit may be required to ensure the security of your property. It is very important to note that all my clients who are on my weekly watch list will receive priority attention during those times after a large snowfall or storm. I will manage my clients' situations — managing snow removal and plowing, and assisting if there are problems such as broken windows, fallen trees, or hazardous situations — before accepting calls for help from additional Seldovia homeowners. You and your property/investment are my priority!</p>
+      <p>I generally send invoices out every quarter and appreciate your prompt payment, as the work and service has already been performed. Outstanding service is what separates Winter Watch from the rest.</p>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="section wrap" style="padding-top:0">
+    <div class="section-head"><span class="eyebrow">Why Winter Watch</span><h2 class="ww-h">Benefits of our services</h2></div>
+    <ul class="ww-benefits">
+      <li>Peace of mind while you are away from home</li>
+      <li>Regular visits, so your home doesn't appear left or abandoned</li>
+      <li>24-hour emergency maintenance available</li>
+      <li>Temperature monitoring — vital in cold months, when freeze-ups can occur</li>
+      <li>Exterior checks to secure the building and watch for activity around it</li>
+      <li>Interior checks to run the water and check the electricity and temperature</li>
+      <li>Fuel and propane level checks</li>
+      <li>Electric meter checks for unusual usage</li>
+      <li>After-storm checks for potential storm damage</li>
+      <li>Service from Seldovia to Jakolof Bay</li>
+      <li>A running log of conditions found, reported to you every quarter (unless there's an emergency)</li>
+      <li>Contact and billing by email or text message</li>
+      <li>Special quotes for homes beyond Barabara Creek or off the road system (boat only)</li>
+      <li>Special rates for commercial properties</li>
+    </ul>
+  </section>
+
+  <!-- REQUEST SERVICE FORM -->
+  <section class="section wrap" style="padding-top:0">
+    <div class="info-block" style="max-width:var(--maxw)">
+      <h2 class="ww-h">Request Winter Watch service</h2>
+      <p style="color:var(--text-soft); margin-bottom:1rem">Fill out the form below to get started, and Sonny will follow up to review your property's needs and create a custom plan through the Application for Service. Prefer to talk it through? Call <a href="tel:+19074060775" style="color:var(--accent-ink); font-weight:700; text-decoration:none">907-406-0775</a>.</p>
+      <form class="ww-form" id="wwForm" novalidate>
+        <div class="row-2">
+          <div><label for="wwName">Your name</label><input id="wwName" name="name" required></div>
+          <div><label for="wwEmail">Email</label><input id="wwEmail" name="email" type="email" required></div>
+        </div>
+        <div class="row-2">
+          <div><label for="wwPhone">Phone</label><input id="wwPhone" name="phone" type="tel"></div>
+          <div><label for="wwAddr">Property address in Seldovia</label><input id="wwAddr" name="address"></div>
+        </div>
+        <div><label for="wwMsg">Tell Sonny about your property and what you need</label><textarea id="wwMsg" name="message" rows="4" placeholder="Home or boat? In town or out the road? Weekly checks, winterization, snow removal, a repair…"></textarea></div>
+        <div style="display:flex; align-items:center; gap:1rem; flex-wrap:wrap"><button class="btn btn-primary" type="submit">Send my request</button><span class="form-note" id="wwFormMsg"></span></div>
+      </form>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section class="section wrap" style="padding-top:0">
     <div class="info-block" style="max-width:var(--maxw)">
-      <h3 style="margin:0 0 .3rem">Get in touch with Winter Watch</h3>
-      <p style="color:var(--text-soft); margin-bottom:.4rem">Ready to have your Seldovia home and property looked after? Reach out to Sonny.</p>
+      <h3 style="margin:0 0 .3rem">Winter Watch</h3>
       <div class="ww-contact">
         <div><b>Phone</b><a href="tel:+19074060775">907-406-0775</a></div>
         <div><b>Email</b><a href="mailto:Sonny.Chissus@gmail.com">Sonny.Chissus@gmail.com</a></div>
         <div><b>Mail</b><span style="color:var(--text-soft)">PO Box 263, Seldovia, AK 99663</span></div>
-        <div><b>Service area</b><span style="color:var(--text-soft)">Seldovia to Jakolof Bay</span></div>
       </div>
-      <p style="margin-top:1.2rem"><a class="btn btn-primary" href="https://www.SeldoviaWinterWatch.com" target="_blank" rel="noopener">Visit SeldoviaWinterWatch.com ↗</a></p>
     </div>
   </section>
 </main>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="db.js?v=6"></script>
 <script src="app.js?v=73"></script>
+<script>
+/* Request-service form → saves to the Seldovia.com admin inbox (Supabase "messages"),
+   tagged so Sonny/Jenny can spot Winter Watch requests. Works now; direct email to Sonny
+   turns on with the site's contact-form email at domain cutover. */
+(function(){
+  var f=document.getElementById("wwForm"); if(!f) return;
+  f.addEventListener("submit", function(e){
+    e.preventDefault();
+    var out=document.getElementById("wwFormMsg");
+    var g=function(id){ var el=document.getElementById(id); return el?(el.value||"").trim():""; };
+    var name=g("wwName"), email=g("wwEmail"), phone=g("wwPhone"), addr=g("wwAddr"), details=g("wwMsg");
+    if(!name||!email){ out.style.color="var(--accent-ink)"; out.textContent="Please add your name and email."; return; }
+    var btn=f.querySelector('button[type=submit]'); if(btn) btn.disabled=true;
+    out.style.color="var(--text-soft)"; out.textContent="Sending…";
+    var body="Winter Watch service request\nPhone: "+(phone||"—")+"\nProperty: "+(addr||"—")+"\n\n"+details;
+    function done(ok){ if(btn) btn.disabled=false;
+      if(ok){ f.reset(); out.style.color="#1f9d55"; out.textContent="Thanks! Your request has been sent to Sonny."; }
+      else { out.style.color="var(--accent-ink)"; out.textContent="Couldn't send just now — please call 907-406-0775 or email Sonny.Chissus@gmail.com."; } }
+    try{
+      if(window.db){
+        window.db.from("messages").insert({name:name, email:email, topic:"Winter Watch service request", message:body})
+          .then(function(r){ done(!r.error); }).catch(function(){ done(false); });
+      } else { done(false); }
+    }catch(_){ done(false); }
+  });
+})();
+</script>
 </body>
 </html>
