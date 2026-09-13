@@ -122,6 +122,9 @@ body:not([data-page="realestate"]) .cel-card{border-color:transparent; box-shado
 .wrap{max-width:var(--maxw); margin-inline:auto; padding-inline:var(--gutter);}
 /* Keep long-form reading columns comfortable even on the wider layout */
 #postDetail .listing-desc{max-width:74ch;}
+/* Custom hero banner (title baked into Qwynny's watercolor art). Replaces the old text-over-photo hero. */
+.page-banner{margin:0 auto; max-width:var(--maxw); padding:clamp(8px,1.6vw,16px) var(--gutter) 0;}
+.page-banner img{display:block; width:100%; height:auto; border-radius:var(--radius); box-shadow:var(--shadow);}
 .section{padding-block:clamp(22px,3.2vw,42px);} /* tightened vertical rhythm — less scrolling (Jenny) */
 .section-head{text-align:center; max-width:56ch; margin:0 auto clamp(20px,3vw,34px);}
 #trails{scroll-margin-top:90px;} /* so a #trails jump link isn't hidden under the sticky header */
@@ -311,6 +314,8 @@ body:not([data-page="realestate"]) .page-hero h1{font-size:clamp(2.7rem,6.2vw,4.
 .hero-results{position:fixed; z-index:200; background:var(--sheet); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-lg); max-height:min(58vh,420px); overflow-y:auto; overflow-x:hidden; display:none; text-align:left;}
 .hero-results.show{display:block;}
 @media (max-width:680px){ .hero-search-card{grid-template-columns:1fr;} .hs-field + .hs-field{border-left:0; border-top:1px solid var(--line);} .hero-search .btn-primary{width:100%;} }
+/* Home search now sits below the custom banner (not overlaying a dark hero): reset the pull-up, center it. */
+.home-search{transform:none; margin:clamp(14px,2vw,22px) auto 0; max-width:660px;}
 .quickcats{position:relative; z-index:1; display:flex; flex-wrap:wrap; justify-content:center; gap:.5rem; margin:clamp(46px,6vw,64px) auto clamp(18px,5vw,28px); max-width:900px; padding-top:clamp(8px,2vw,14px);}
 .quickcat{display:inline-flex; align-items:center; gap:.5rem; background:rgba(255,255,255,.92); border:1px solid rgba(255,255,255,.55); border-radius:var(--radius-pill); padding:.6rem 1rem; font-size:.9rem; font-weight:700; color:var(--accent-ink); text-decoration:none; box-shadow:var(--shadow); cursor:pointer; transition:background .15s,color .15s,transform .12s;}
 .quickcat:hover{background:var(--accent); border-color:var(--accent); color:#fff; transform:translateY(-1px);}
