@@ -6,7 +6,7 @@
 <meta name="description" content="Seldovia.com — discover everything about the little town of Seldovia, Alaska, on Kachemak Bay. Directory, events, gallery, news, and real estate.">
 <meta name="theme-color" content="#F8E6DD">
 <title>Seldovia.com — Discover Everything Seldovia, Alaska</title>
-<link rel="stylesheet" href="styles.css?v=79">
+<link rel="stylesheet" href="styles.css?v=80">
 </head>
 <body data-page="home">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -15,10 +15,10 @@
   <!-- SELDOVIA TODAY — live temp + next tide + ferry (seldovia-today.js) -->
   <div class="today-bar" id="seldoviaToday" aria-label="Seldovia today — live conditions"></div>
 
-  <!-- HERO — Qwynny's custom watercolor banner (title baked in) + the search bar below it -->
-  <div class="page-banner"><img src="images/headers/banner-home.jpg" alt="Discover Everything Seldovia" width="2172" height="724"></div>
-  <section class="section wrap" style="padding-bottom:0">
-    <div class="hero-search home-search" role="search">
+  <!-- HERO — Qwynny's custom watercolor banner (title baked in), search bar over the image (Jenny) -->
+  <div class="page-banner home-banner">
+    <img src="images/headers/banner-home.jpg" alt="Discover Everything Seldovia" width="2172" height="724">
+    <div class="hero-search home-search-over" role="search">
       <div class="hero-search-card">
         <div class="hs-field">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
@@ -28,7 +28,7 @@
       </div>
       <div class="hero-results" id="heroResults" role="listbox" aria-label="Search results"></div>
     </div>
-  </section>
+  </div>
 
   <!-- Combined home box (Jenny): "of the day" widget + this week's schedule, side by side -->
   <section class="section wrap" style="padding-bottom:0">

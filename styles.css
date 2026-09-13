@@ -314,8 +314,12 @@ body:not([data-page="realestate"]) .page-hero h1{font-size:clamp(2.7rem,6.2vw,4.
 .hero-results{position:fixed; z-index:200; background:var(--sheet); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-lg); max-height:min(58vh,420px); overflow-y:auto; overflow-x:hidden; display:none; text-align:left;}
 .hero-results.show{display:block;}
 @media (max-width:680px){ .hero-search-card{grid-template-columns:1fr;} .hs-field + .hs-field{border-left:0; border-top:1px solid var(--line);} .hero-search .btn-primary{width:100%;} }
-/* Home search now sits below the custom banner (not overlaying a dark hero): reset the pull-up, center it. */
-.home-search{transform:none; margin:clamp(14px,2vw,22px) auto 0; max-width:660px;}
+/* Home search bar overlaid on the banner image (over the water, below the baked-in title). */
+.home-banner{position:relative;}
+.home-search-over{transform:none; margin:clamp(12px,2vw,18px) auto 0; max-width:660px;} /* mobile default: just below the banner */
+@media (min-width:720px){
+  .home-search-over{position:absolute; left:50%; bottom:9%; transform:translateX(-50%); margin:0; width:min(620px,74%); z-index:3;}
+}
 .quickcats{position:relative; z-index:1; display:flex; flex-wrap:wrap; justify-content:center; gap:.5rem; margin:clamp(46px,6vw,64px) auto clamp(18px,5vw,28px); max-width:900px; padding-top:clamp(8px,2vw,14px);}
 .quickcat{display:inline-flex; align-items:center; gap:.5rem; background:rgba(255,255,255,.92); border:1px solid rgba(255,255,255,.55); border-radius:var(--radius-pill); padding:.6rem 1rem; font-size:.9rem; font-weight:700; color:var(--accent-ink); text-decoration:none; box-shadow:var(--shadow); cursor:pointer; transition:background .15s,color .15s,transform .12s;}
 .quickcat:hover{background:var(--accent); border-color:var(--accent); color:#fff; transform:translateY(-1px);}
