@@ -19,22 +19,19 @@
   // slow/hanging) proxy loads. Events replace it if/when they arrive.
   fallback("Meetings, markets, music and more — see the community calendar.");
 
-  const now=Date.now(), end=now+14*24*60*60*1000;
-  const tock=`https://tockify.com/api/ngevent?max=20&longForm=false&calname=seldovia&startms=${now}&endms=${end}`;
-  const url=`https://api.allorigins.win/raw?url=${encodeURIComponent(tock)}`;
-
-  // The proxy can hang without ever erroring, so time-box it — otherwise the .catch never fires.
-  const withTimeout=(p,ms)=>Promise.race([p,new Promise((_,rej)=>setTimeout(()=>rej(new Error("timeout")),ms))]);
-  withTimeout(fetch(url).then(r=>r.ok?r.json():Promise.reject()),6000).then(data=>{
+  // Read the calendar from a SAME-ORIGIN JSON file (refreshed server-side every few hours by the
+  // .github/workflows/refresh-calendar.yml GitHub Action). This replaces the public CORS proxy,
+  // which was slow/unreliable and made this widget intermittently fall back to the generic card.
+  const nowMs=Date.now(), horizon=nowMs+14*24*60*60*1000;
+  fetch("data/calendar.json?t="+nowMs).then(r=>r.ok?r.json():Promise.reject()).then(data=>{
     const items=(data.events||[])
-      .filter(e=>e && e.when && e.when.start && e.when.start.millis)
-      .sort((a,b)=>a.when.start.millis-b.when.start.millis);
+      .filter(e=>e && e.start && e.start>=nowMs-60*60*1000 && e.start<=horizon) // upcoming ~2 weeks
+      .sort((a,b)=>a.start-b.start);
     if(!items.length){ fallback("Nothing scheduled in the next couple weeks — see the full calendar."); return; }
     const rows=items.slice(0,6).map(e=>{
-      const m=e.when.start.millis, allDay=e.when.allDay;
-      const title=(e.content&&e.content.summary&&e.content.summary.text)||"Community event";
-      return `<li class="ts-item"><span class="ts-when"><b>${esc(akDay(m))}</b><small>${esc(allDay?"All day":akTime(m))}</small></span>
-        <span class="ts-title">${esc(title)}</span></li>`;
+      const m=e.start;
+      return `<li class="ts-item"><span class="ts-when"><b>${esc(akDay(m))}</b><small>${esc(e.allDay?"All day":akTime(m))}</small></span>
+        <span class="ts-title">${esc(e.title||"Community event")}</span></li>`;
     }).join("");
     box.innerHTML=shell(`<ul class="ts-list">${rows}</ul>${calLink}`);
   }).catch(()=>{ /* default fallback already shown above */ });

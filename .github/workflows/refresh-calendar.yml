@@ -1,0 +1,57 @@
+name: Refresh calendar cache
+
+# Keeps data/calendar.json fresh so the home "What's on this week" widget reads a reliable
+# same-origin file instead of a flaky public CORS proxy. Fetches Tockify server-side (no CORS).
+on:
+  schedule:
+    - cron: '23 */6 * * *'   # every 6 hours
+  workflow_dispatch:          # allow manual "Run workflow" from the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-calendar
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch Tockify and write data/calendar.json
+        run: |
+          python3 - <<'PY'
+          import json, time, datetime, urllib.request
+          now = int(time.time() * 1000)
+          end = now + 45 * 24 * 3600 * 1000  # ~45 days ahead
+          url = ("https://tockify.com/api/ngevent?max=60&longForm=false"
+                 f"&calname=seldovia&startms={now}&endms={end}")
+          req = urllib.request.Request(url, headers={"User-Agent": "seldovia-calendar-refresh"})
+          data = json.load(urllib.request.urlopen(req, timeout=30))
+          events = []
+          for e in data.get("events", []):
+              w = (e.get("when") or {}).get("start") or {}
+              m = w.get("millis")
+              if not m:
+                  continue
+              title = (((e.get("content") or {}).get("summary") or {}).get("text")) or "Community event"
+              events.append({"start": m, "allDay": bool((e.get("when") or {}).get("allDay")), "title": title})
+          events.sort(key=lambda x: x["start"])
+          updated = datetime.datetime.now(datetime.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+          out = {"updated": updated, "calname": "seldovia", "events": events}
+          import os
+          os.makedirs("data", exist_ok=True)
+          with open("data/calendar.json", "w", encoding="utf-8") as f:
+              f.write(json.dumps(out, ensure_ascii=False, indent=1))
+          print(f"wrote {len(events)} events")
+          PY
+
+      - name: Commit if changed
+        run: |
+          git config user.name "seldovia-calendar-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/calendar.json
+          git diff --staged --quiet || git commit -m "chore: refresh calendar cache [skip ci]"
+          git push

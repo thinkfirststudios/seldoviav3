@@ -1,0 +1,306 @@
+{
+ "updated": "2026-09-14T01:17:17Z",
+ "calname": "seldovia",
+ "events": [
+  {
+   "start": 1789401600000,
+   "allDay": false,
+   "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1789401600000,
+   "allDay": false,
+   "title": "SBE - Lap Swim"
+  },
+  {
+   "start": 1789405200000,
+   "allDay": false,
+   "title": "Seldovia Bay Ferry - Departs Seldovia for Homer"
+  },
+  {
+   "start": 1789417800000,
+   "allDay": false,
+   "title": "Food Bank Drop off Time"
+  },
+  {
+   "start": 1789419600000,
+   "allDay": false,
+   "title": "SOCC - Tots Pottery Class"
+  },
+  {
+   "start": 1789432200000,
+   "allDay": false,
+   "title": "Seldovia Bay Ferry - Departs Seldovia for Homer"
+  },
+  {
+   "start": 1789437600000,
+   "allDay": false,
+   "title": "CITY - Council Regular Meeting"
+  },
+  {
+   "start": 1789488000000,
+   "allDay": false,
+   "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1789491600000,
+   "allDay": false,
+   "title": "SBE Late Start"
+  },
+  {
+   "start": 1789495200000,
+   "allDay": false,
+   "title": "SOCC - Yoga"
+  },
+  {
+   "start": 1789506000000,
+   "allDay": false,
+   "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1789506900000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
+  },
+  {
+   "start": 1789514100000,
+   "allDay": false,
+   "title": "SVT - Open Swim"
+  },
+  {
+   "start": 1789517700000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Departs to Homer"
+  },
+  {
+   "start": 1789520400000,
+   "allDay": false,
+   "title": "SBE - Lap Swim"
+  },
+  {
+   "start": 1789524000000,
+   "allDay": false,
+   "title": "SOCC - Teen & Adult Volleyball"
+  },
+  {
+   "start": 1789545600000,
+   "allDay": true,
+   "title": "SBE Picture Day"
+  },
+  {
+   "start": 1789574400000,
+   "allDay": false,
+   "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1789574400000,
+   "allDay": false,
+   "title": "SBE - Lap Swim"
+  },
+  {
+   "start": 1789592400000,
+   "allDay": false,
+   "title": "SOCC - Tots Pottery Class"
+  },
+  {
+   "start": 1789594200000,
+   "allDay": false,
+   "title": "SBE Picture Day"
+  },
+  {
+   "start": 1789617600000,
+   "allDay": false,
+   "title": "SOCC - Teen Night"
+  },
+  {
+   "start": 1789660800000,
+   "allDay": false,
+   "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1789668000000,
+   "allDay": false,
+   "title": "SOCC - Yoga"
+  },
+  {
+   "start": 1789678800000,
+   "allDay": false,
+   "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1789679700000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
+  },
+  {
+   "start": 1789689600000,
+   "allDay": false,
+   "title": "SBE - Tot Swim"
+  },
+  {
+   "start": 1789690500000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Departs to Homer"
+  },
+  {
+   "start": 1789693200000,
+   "allDay": false,
+   "title": "SBE - Lap Swim"
+  },
+  {
+   "start": 1789695000000,
+   "allDay": false,
+   "title": "SOCC - Mahjong Game Night"
+  },
+  {
+   "start": 1789747200000,
+   "allDay": false,
+   "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1789747200000,
+   "allDay": false,
+   "title": "SBE - Lap Swim"
+  },
+  {
+   "start": 1789763400000,
+   "allDay": false,
+   "title": "Food Bank Drop off Time"
+  },
+  {
+   "start": 1789783200000,
+   "allDay": false,
+   "title": "SVT - Open Gym"
+  },
+  {
+   "start": 1789783200000,
+   "allDay": false,
+   "title": "SVT - Open Swim"
+  },
+  {
+   "start": 1789790400000,
+   "allDay": false,
+   "title": "SBC Teen Nights!"
+  },
+  {
+   "start": 1789858800000,
+   "allDay": false,
+   "title": "SOCC - Adult Pickleball"
+  },
+  {
+   "start": 1789866000000,
+   "allDay": false,
+   "title": "St. Nicholas Russian Orthodox Church Vespers Service"
+  },
+  {
+   "start": 1789927200000,
+   "allDay": false,
+   "title": "Grace Haven Fellowship Sunday Worship"
+  },
+  {
+   "start": 1789927200000,
+   "allDay": false,
+   "title": "St. Nicholas Russian Orthodox Church Sunday Service"
+  },
+  {
+   "start": 1789930800000,
+   "allDay": false,
+   "title": "SBC - Sunday Worship Service"
+  },
+  {
+   "start": 1789938900000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
+  },
+  {
+   "start": 1789949700000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Departs to Homer"
+  },
+  {
+   "start": 1790006400000,
+   "allDay": false,
+   "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1790006400000,
+   "allDay": false,
+   "title": "SBE - Lap Swim"
+  },
+  {
+   "start": 1790022600000,
+   "allDay": false,
+   "title": "Food Bank Drop off Time"
+  },
+  {
+   "start": 1790024400000,
+   "allDay": false,
+   "title": "SOCC - Tots Pottery Class"
+  },
+  {
+   "start": 1790092800000,
+   "allDay": false,
+   "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1790100000000,
+   "allDay": false,
+   "title": "SOCC - Yoga"
+  },
+  {
+   "start": 1790110800000,
+   "allDay": false,
+   "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1790111700000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
+  },
+  {
+   "start": 1790118900000,
+   "allDay": false,
+   "title": "SVT - Open Swim"
+  },
+  {
+   "start": 1790122500000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Departs to Homer"
+  },
+  {
+   "start": 1790125200000,
+   "allDay": false,
+   "title": "SBE - Lap Swim"
+  },
+  {
+   "start": 1790128800000,
+   "allDay": false,
+   "title": "SOCC - Teen & Adult Volleyball"
+  },
+  {
+   "start": 1790179200000,
+   "allDay": false,
+   "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1790179200000,
+   "allDay": false,
+   "title": "SBE - Lap Swim"
+  },
+  {
+   "start": 1790197200000,
+   "allDay": false,
+   "title": "SOCC - Tots Pottery Class"
+  },
+  {
+   "start": 1790222400000,
+   "allDay": false,
+   "title": "SOCC - Teen Night"
+  },
+  {
+   "start": 1790265600000,
+   "allDay": false,
+   "title": "SVT - Fitness Center"
+  }
+ ]
+}
