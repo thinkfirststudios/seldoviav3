@@ -1,32 +1,7 @@
 {
- "updated": "2026-09-14T12:55:56Z",
+ "updated": "2026-09-14T21:52:40Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1789401600000,
-   "allDay": false,
-   "title": "SVT - Fitness Center"
-  },
-  {
-   "start": 1789401600000,
-   "allDay": false,
-   "title": "SBE - Lap Swim"
-  },
-  {
-   "start": 1789405200000,
-   "allDay": false,
-   "title": "Seldovia Bay Ferry - Departs Seldovia for Homer"
-  },
-  {
-   "start": 1789417800000,
-   "allDay": false,
-   "title": "Food Bank Drop off Time"
-  },
-  {
-   "start": 1789419600000,
-   "allDay": false,
-   "title": "SOCC - Tots Pottery Class"
-  },
   {
    "start": 1789432200000,
    "allDay": false,
@@ -301,6 +276,31 @@
    "start": 1790265600000,
    "allDay": false,
    "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1790271000000,
+   "allDay": false,
+   "title": "SVT – Dr. Marlowe Veterinary Services"
+  },
+  {
+   "start": 1790272800000,
+   "allDay": false,
+   "title": "SOCC - Yoga"
+  },
+  {
+   "start": 1790283600000,
+   "allDay": false,
+   "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1790294400000,
+   "allDay": false,
+   "title": "SBE - Tot Swim"
+  },
+  {
+   "start": 1790298000000,
+   "allDay": false,
+   "title": "SBE - Lap Swim"
   }
  ]
 }
