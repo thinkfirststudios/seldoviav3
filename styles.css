@@ -125,7 +125,9 @@ body:not([data-page="realestate"]) .cel-card{border-color:transparent; box-shado
 /* Custom hero banner (title baked into Qwynny's watercolor art). Replaces the old text-over-photo hero. */
 .page-banner{margin:0 auto; max-width:var(--maxw); padding:clamp(8px,1.6vw,16px) var(--gutter) 0;}
 .page-banner img{display:block; width:100%; height:auto; border-radius:var(--radius); box-shadow:var(--shadow);}
-.section{padding-block:clamp(22px,3.2vw,42px);} /* tightened vertical rhythm — less scrolling (Jenny) */
+/* On phones the wide banner is a thin strip; crop to center so the baked-in title reads bigger (Jenny). */
+@media (max-width:640px){ .page-banner img{height:clamp(118px,31vw,180px); object-fit:cover; object-position:center;} }
+.section{padding-block:clamp(18px,2.7vw,34px);} /* tightened vertical rhythm — less scrolling (Jenny) */
 .section-head{text-align:center; max-width:56ch; margin:0 auto clamp(20px,3vw,34px);}
 #trails{scroll-margin-top:90px;} /* so a #trails jump link isn't hidden under the sticky header */
 /* Section-heading watercolor swash removed site-wide (Jenny #7/#24). */
@@ -137,7 +139,7 @@ body .section-head::before{ display:none !important; }
 .eyebrow::before,.eyebrow::after{content:""; width:24px; height:2px; background:color-mix(in srgb,var(--accent) 45%, transparent); border-radius:2px;}
 h2.title{font-size:clamp(1.9rem,4vw,2.9rem);}
 .section-head p{color:var(--text-soft); margin-top:.7rem; font-size:1.02rem;}
-.center-link{display:block; text-align:center; margin-top:clamp(22px,3vw,34px);}
+.center-link{display:block; text-align:center; margin-top:clamp(14px,2.2vw,24px);}
 .center-link a{font-weight:700; text-decoration:underline; text-decoration-color:var(--accent);}
 .tint{background:var(--surface-2);}
 
@@ -441,10 +443,10 @@ body:not([data-page="realestate"]) .howband::before{content:""; position:absolut
 @media (max-width:680px){ .jenny-card{grid-template-columns:1fr; text-align:center; justify-items:center;} }
 .jenny-card img{border-radius:var(--radius); box-shadow:var(--shadow-lg); width:100%; max-width:300px; aspect-ratio:4/5; object-fit:cover; object-position:top; transform:scaleX(-1);} /* flipped per Jenny #12 */
 /* Jenny's full bio (#13) — verbatim from her homes.com profile */
-/* Jenny's "Read more" bio opens full width in readable columns (part of the main story, not a skinny center column). */
-.re-bio{max-width:none; margin:1.6rem 0 0; color:var(--text); font-size:1.02rem; line-height:1.72; columns:2 26rem; column-gap:clamp(30px,4vw,58px);}
-.re-bio p{margin:0 0 1rem; break-inside:avoid;}
-.re-bio-h{font-family:var(--serif); color:var(--heading); font-size:clamp(1.35rem,2.6vw,1.75rem); margin:2.1rem 0 .7rem; column-span:all;}
+/* Jenny's "Read more" bio expands INSIDE the Meet-Jenny card (part of the same box, single column). */
+.re-bio{margin:1rem 0 0; color:var(--text); font-size:1.02rem; line-height:1.72;}
+.re-bio p{margin:0 0 1rem;}
+.re-bio-h{font-family:var(--serif); color:var(--heading); font-size:clamp(1.3rem,2.4vw,1.65rem); margin:1.6rem 0 .6rem;}
 .re-more-btn{background:none; border:0; padding:0; margin:.2rem 0 1rem; color:var(--accent-ink); font-weight:800; font-size:.95rem; cursor:pointer; font-family:inherit;}
 .re-more-btn:hover{text-decoration:underline;}
 .jenny-card h3{font-size:clamp(1.5rem,3vw,2rem);}
@@ -823,7 +825,7 @@ footer.site a{color:rgba(255,255,255,.82); text-decoration:none;} footer.site a:
 .journal-section{margin-bottom:2.6rem;}
 /* Month titles in Jenny's brushstroke font, centered (Jenny #5b) */
 .journal-month{margin:0 0 1.2rem; padding-bottom:.4rem; text-align:center;}
-.journal-month h3{font-family:var(--script); font-weight:400; font-size:clamp(1.9rem,4.5vw,2.7rem); color:var(--heading); line-height:1.05;}
+.journal-month h3{font-family:var(--script); font-weight:400; font-size:clamp(2.4rem,5.5vw,3.4rem); color:var(--heading); line-height:1.05;}
 .journal-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:clamp(16px,2.4vw,28px);}
 .jphoto{margin:0; display:flex; flex-direction:column; gap:.55rem;}
 .jphoto img{width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:16px;
