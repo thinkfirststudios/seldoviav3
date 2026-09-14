@@ -34,13 +34,15 @@
               ${l.listed_on?`<div class="listing-date">${isSold(l)?"":"Listed "}${esc(fmt(l.listed_on))}</div>`:""}
             </div>
           </a>`;
-    db.from("listings").select("*").eq("published",true).order("listed_on",{ascending:false,nullsFirst:false})
-      .then(({data,error})=>{
+    // Jenny's manual order (admin ▲▼ -> settings.listings_order) wins; default is available-before-pending.
+    const orderP=db.from("settings").select("value").eq("key","listings_order").maybeSingle()
+      .then(r=>{ try{ return JSON.parse((r.data&&r.data.value)||"[]"); }catch(e){ return []; } }).catch(()=>[]);
+    Promise.all([db.from("listings").select("*").eq("published",true).order("listed_on",{ascending:false,nullsFirst:false}), orderP])
+      .then(([{data,error}, order])=>{
         if(error || !data || !data.length) return;
-        // Available first, Pending last (Jenny: don't lead with pendings that aren't buyable).
-        // Stable sort keeps the DB's newest-first order within each group.
         const pending=l=>/pending/i.test(l.status||"");
-        const active=data.filter(l=>!isSold(l)).sort((a,b)=>(pending(a)?1:0)-(pending(b)?1:0));
+        const oi=id=>{ const i=order.indexOf(id); return i<0?1e9:i; };
+        const active=data.filter(l=>!isSold(l)).sort((a,b)=> oi(a.id)-oi(b.id) || (pending(a)?1:0)-(pending(b)?1:0));
         const sold=data.filter(isSold);
         grid.insertAdjacentHTML("afterbegin", active.map(card).join(""));
         grid.dispatchEvent(new Event("scroll")); // nudge carousel arrows to recompute

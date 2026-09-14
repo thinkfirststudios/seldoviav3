@@ -501,13 +501,32 @@
   }
   async function loadListings(){
     const list=$("#lstList");
-    const {data,error}=await db.from("listings").select("*").order("listed_on",{ascending:false,nullsFirst:false});
+    const [{data,error}, order]=await Promise.all([
+      db.from("listings").select("*"),
+      db.from("settings").select("value").eq("key","listings_order").maybeSingle()
+        .then(r=>{ try{ return JSON.parse((r.data&&r.data.value)||"[]"); }catch(e){ return []; } }).catch(()=>[])
+    ]);
     if(error){ list.innerHTML=`<p style="color:var(--accent-ink)">${esc(error.message)}</p>`; return; }
-    if(!data.length){ list.innerHTML='<p style="color:var(--text-soft)">No listings yet.</p>'; return; }
-    list.innerHTML=data.map(l=>`<div class="dir-item" style="align-items:center">
+    if(!data||!data.length){ list.innerHTML='<p style="color:var(--text-soft)">No listings yet.</p>'; return; }
+    // Active homes ordered by Jenny's saved order first (▲▼), then available-before-pending, then newest.
+    const isSold=l=>String(l.status||"").toLowerCase()==="sold";
+    const pending=l=>/pending/i.test(l.status||"");
+    const oi=id=>{ const i=order.indexOf(id); return i<0?1e9:i; };
+    const active=data.filter(l=>!isSold(l)).sort((a,b)=> oi(a.id)-oi(b.id) || (pending(a)?1:0)-(pending(b)?1:0) || (new Date(b.listed_on||0)-new Date(a.listed_on||0)));
+    const sold=data.filter(isSold).sort((a,b)=> new Date(b.listed_on||0)-new Date(a.listed_on||0));
+    const row=(l,i,n)=>`<div class="dir-item" style="align-items:center">
       ${l.image_url?`<img class="d-photo" src="${esc(l.image_url)}" alt="" style="border-radius:8px">`:'<div class="d-ico">🏡</div>'}
       <div class="d-main"><div class="d-cat">${esc(l.status||'')} · ${esc(fmtDate(l.listed_on))}${Array.isArray(l.photos)&&l.photos.length?` · ${l.photos.length+1} photos`:''}</div><h4>${esc(l.address)} — ${esc(l.price||'')}</h4></div>
-      <div class="admin-row-btns"><button class="btn btn-ghost" data-edit="${l.id}" type="button">Edit</button><button class="btn btn-ghost" data-del="${l.id}" type="button">Delete</button></div></div>`).join("");
+      <div class="admin-row-btns">${i!=null?`<button class="btn btn-ghost lst-up" data-i="${i}" type="button" title="Move up"${i===0?" disabled":""}>▲</button><button class="btn btn-ghost lst-down" data-i="${i}" type="button" title="Move down"${i===n-1?" disabled":""}>▼</button>`:""}<button class="btn btn-ghost" data-edit="${l.id}" type="button">Edit</button><button class="btn btn-ghost" data-del="${l.id}" type="button">Delete</button></div></div>`;
+    const note=active.length>1?`<p style="color:var(--text-soft);margin:.2rem 0 .6rem;font-size:.9rem">Use ▲ ▼ to set the order homes appear on the Real Estate page.</p>`:"";
+    const soldHtml=sold.length?`<h4 class="listing-h" style="margin-top:1.6rem">Recently sold</h4>`+sold.map(l=>row(l,null)).join(""):"";
+    list.innerHTML=note+active.map((l,i)=>row(l,i,active.length)).join("")+soldHtml;
+    // ▲▼ persist the full active order to settings.listings_order (the public page reads it).
+    const ids=active.map(l=>l.id);
+    const move=(i,dir)=>{ const j=i+dir; if(j<0||j>=ids.length) return; [ids[i],ids[j]]=[ids[j],ids[i]];
+      db.from("settings").upsert({key:"listings_order",value:JSON.stringify(ids)},{onConflict:"key"}).then(()=>loadListings()); };
+    list.querySelectorAll(".lst-up").forEach(b=>b.addEventListener("click",()=>move(+b.dataset.i,-1)));
+    list.querySelectorAll(".lst-down").forEach(b=>b.addEventListener("click",()=>move(+b.dataset.i,1)));
     bindEdit(list,data,fillLst); bindDelete(list,"listings",loadListings);
   }
 
