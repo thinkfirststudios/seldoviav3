@@ -56,7 +56,6 @@ const HEADER=`
       <img class="brand-logo" src="images/logo-mark.png" alt="Seldovia.com" width="620" height="365">
     </a>
     <span class="brand-tag">Alaska&rsquo;s Best Kept Secret</span>
-    <nav class="mainnav" aria-label="Primary">${navLinks()}</nav>
     <div class="head-actions">
       <div class="navsearch" role="search">
         <span class="s-icon" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span>
@@ -68,6 +67,7 @@ const HEADER=`
       </button>
     </div>
   </div>
+  <div class="masthead-nav"><nav class="mainnav" aria-label="Primary">${navLinks()}</nav></div>
 </header>
 <div class="drawer" id="drawer" aria-hidden="true">
   <div class="drawer-scrim" data-close></div>
