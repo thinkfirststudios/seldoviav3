@@ -100,6 +100,17 @@ const FOOTER=`
 
 document.body.insertAdjacentHTML("afterbegin", HEADER);
 document.body.insertAdjacentHTML("beforeend", FOOTER);
+// Publish the sticky header's real height as --head-h so the "Seldovia Today" bar can pin
+// directly beneath it (otherwise the two-row header eats the top of the bar as you scroll,
+// leaving its tide text half-clipped under the nav). Re-measure on resize / font load.
+(function(){
+  const hdr=document.querySelector(".masthead"); if(!hdr) return;
+  const setH=()=>document.documentElement.style.setProperty("--head-h", hdr.offsetHeight+"px");
+  setH();
+  window.addEventListener("resize", setH, {passive:true});
+  window.addEventListener("load", setH);
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(setH).catch(()=>{});
+})();
 // From the admin, every link to the public site opens the ONE reusable preview
 // tab, so the admin stays put and you never back-arrow home (Qwynny).
 if(PAGE==="admin") document.querySelectorAll('a[href]').forEach(a=>{ const h=a.getAttribute("href")||"";

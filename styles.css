@@ -860,7 +860,9 @@ footer.site a{color:rgba(255,255,255,.82); text-decoration:none;} footer.site a:
 @media (max-width:720px){ .today-feature{grid-template-columns:1fr;} }
 
 /* ============ SELDOVIA TODAY BAR ============ */
-.today-bar{background:linear-gradient(90deg,var(--band) 0%,#35564444 100%),var(--band); color:#fff; min-height:3rem;} /* reserve height so the top doesn't jump as it loads (Jenny #21) */
+/* Pinned right beneath the sticky header (top = measured header height, --head-h) so the
+   two-row header never scrolls over the tide text. z-index sits just under the header. */
+.today-bar{position:sticky; top:var(--head-h,0px); z-index:55; background:linear-gradient(90deg,var(--band) 0%,#35564444 100%),var(--band); color:#fff; min-height:3rem;} /* reserve height so the top doesn't jump as it loads (Jenny #21) */
 body[data-page="realestate"] .today-bar{background:var(--accent-ink);}
 .today-inner{max-width:var(--maxw); margin-inline:auto; padding:.6rem clamp(16px,4vw,56px);
   display:flex; align-items:center; gap:clamp(14px,2.4vw,32px); flex-wrap:wrap;}
