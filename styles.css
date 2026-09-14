@@ -177,9 +177,13 @@ body[data-page="realestate"] nav.mainnav a.active{background:var(--accent-soft);
 /* Brushstroke tagline (Jenny) — "Alaska's Best Kept Secret" in the Lovestory script,
    pushed to the right of the nav. margin-left:auto sends it (and the search) to the right edge.
    Hidden once the header tightens so it never crowds the nav/search on smaller screens. */
-.brand-tag{font-family:var(--script); font-weight:400; font-size:clamp(1.5rem,2.5vw,2.4rem); line-height:1; color:var(--heading); white-space:nowrap; margin-left:auto; padding:0 clamp(.6rem,2vw,1.6rem); align-self:center;}
+.brand-tag{font-family:var(--script); font-weight:400; font-size:clamp(1.1rem,1.9vw,1.9rem); line-height:1; color:var(--heading); white-space:nowrap; margin-left:clamp(.4rem,1vw,1rem); padding:0; align-self:center;}
 .head-actions{display:flex; align-items:center; gap:.5rem; margin-left:auto;}
-@media (max-width:1300px){ .brand-tag{display:none;} }
+/* The tagline sits beside the (now tagline-free) logo as a lockup. It shows on wide desktops
+   and on phones (where the nav is a hamburger, leaving room). It hides only in the middle
+   "laptop" band, where the full nav + search already fill the row, and on tiny screens. */
+@media (max-width:1300px) and (min-width:1121px){ .brand-tag{display:none;} }
+@media (max-width:560px){ .brand-tag{display:none;} }
 .icon-btn{width:42px; height:42px; border-radius:50%; border:1px solid var(--line); background:var(--sheet); color:var(--text); display:grid; place-items:center; cursor:pointer;}
 .icon-btn:hover{border-color:var(--accent); color:var(--accent-ink);}
 .add-listing{display:inline-flex;}
@@ -321,6 +325,22 @@ body:not([data-page="realestate"]) .page-hero h1{font-size:clamp(2.7rem,6.2vw,4.
 .home-search-over{transform:none; margin:clamp(12px,2vw,18px) auto 0; max-width:660px;} /* mobile default: just below the banner */
 @media (min-width:720px){
   .home-search-over{position:absolute; left:50%; bottom:9%; transform:translateX(-50%); margin:0; width:min(620px,74%); z-index:3;}
+}
+/* Watercolor soft-bleed edges on the home banner (Jenny: "watercolor effect on the edges").
+   Feathers the photo into the page instead of a hard rectangle + drop shadow. The TOP edge
+   stays solid so the baked-in title never fades; the sides and bottom bleed away softly.
+   Reversible: remove the wc-edges class on .home-banner to get the plain framed banner back. */
+.home-banner.wc-edges{box-shadow:none; background:transparent;}
+.home-banner.wc-edges img{
+  border-radius:0; box-shadow:none;
+  -webkit-mask:
+    linear-gradient(to right, transparent 0, #000 4.5%, #000 95.5%, transparent 100%),
+    linear-gradient(to bottom, #000 0, #000 88%, transparent 100%);
+  -webkit-mask-composite:source-in;
+  mask:
+    linear-gradient(to right, transparent 0, #000 4.5%, #000 95.5%, transparent 100%),
+    linear-gradient(to bottom, #000 0, #000 88%, transparent 100%);
+  mask-composite:intersect;
 }
 .quickcats{position:relative; z-index:1; display:flex; flex-wrap:wrap; justify-content:center; gap:.5rem; margin:clamp(46px,6vw,64px) auto clamp(18px,5vw,28px); max-width:900px; padding-top:clamp(8px,2vw,14px);}
 .quickcat{display:inline-flex; align-items:center; gap:.5rem; background:rgba(255,255,255,.92); border:1px solid rgba(255,255,255,.55); border-radius:var(--radius-pill); padding:.6rem 1rem; font-size:.9rem; font-weight:700; color:var(--accent-ink); text-decoration:none; box-shadow:var(--shadow); cursor:pointer; transition:background .15s,color .15s,transform .12s;}

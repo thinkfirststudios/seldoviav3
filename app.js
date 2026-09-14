@@ -53,10 +53,10 @@ const HEADER=`
 <header class="masthead">
   <div class="masthead-inner">
     <a class="brand" href="index.html"${_preview} aria-label="Seldovia.com home">
-      <img class="brand-logo" src="images/logo-header.png" alt="Seldovia.com — Alaska's Best Kept Secret" width="620" height="413">
+      <img class="brand-logo" src="images/logo-mark.png" alt="Seldovia.com" width="620" height="365">
     </a>
-    <nav class="mainnav" aria-label="Primary">${navLinks()}</nav>
     <span class="brand-tag">Alaska&rsquo;s Best Kept Secret</span>
+    <nav class="mainnav" aria-label="Primary">${navLinks()}</nav>
     <div class="head-actions">
       <div class="navsearch" role="search">
         <span class="s-icon" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span>
@@ -4522,9 +4522,11 @@ if($("#dirList")){
     {label:"Shopping",        test:r=>r.k==="shop"},
     {label:"Activities",      test:r=>r.k==="activities"},
     // "Life in Seldovia" chip removed per Jenny — those service entries are just businesses (show under Businesses/All).
-    {label:"Organization",    test:r=>r.k==="life" && !GOVT_BIZ.has(r.name)},
-    {label:"Government",       test:r=>r.k==="life" && GOVT_BIZ.has(r.name)},
+    {label:"Organization",    test:r=>r.k==="life" && !isGovt(r)},
+    {label:"Government",       test:r=>r.k==="life" && isGovt(r)},
   ];
+  // A DB row can carry its own govt flag (Jenny's admin toggle); otherwise fall back to the built-in list.
+  const isGovt=r=>r._govt!==undefined?r._govt:GOVT_BIZ.has(r.name);
   const CHIPS=["All","People","Businesses",...CATL.map(c=>c.label)];
   let dirCat="All", dirQuery="";
   $("#dirChips").innerHTML=CHIPS.map((c,i)=>`<button class="chip" aria-pressed="${i===0}" data-cat="${esc(c)}">${esc(c)}</button>`).join("");
@@ -4556,18 +4558,29 @@ if($("#dirList")){
       : `<div class="dir-empty">No matches — try another word or category.</div>`;
     $("#dirList").innerHTML=rows.length?rows.map(r=>r.type==="person"?personCard(r):bizCard(r)).join(""):empty;};
   renderDir();
-  // Jenny #29: fold approved neighbor/business submissions into the phone book (respecting each person's privacy choices).
-  if(window.db){ db.from("directory_submissions").select("*").eq("status","approved").then(({data})=>{
-    if(!data||!data.length) return;
-    const subs=data.map(s=>{ const d=s.data||{};
-      return s.listing_type==="business"
-        ? {type:"biz", name:s.display_name||d.business_name, cat:d.business_category||"Business", phone:d.business_phone||"", spon:false}
-        : {type:"person", name:s.display_name||d.name, photo:s.photo_url||"", addr:(d.address_privacy==="public"&&d.address)?d.address:"", phone:(d.phone_privacy==="public"&&d.phone)?d.phone:""};
-    }).filter(x=>x.name);
-    const sp=subs.filter(x=>x.type==="person"), sb=subs.filter(x=>x.type==="biz");
-    ALL=[...PEOPLE, ...sp, ...[...BIZ, ...sb].sort((a,b)=>a.name.localeCompare(b.name))];
-    renderDir();
-  }).catch(()=>{}); }
+  // The curated business list now lives in the DB (Jenny edits it in the admin Phone Book tab);
+  // the static DIRECTORY above is only an offline fallback. Approved neighbor/business submissions
+  // (from the public add form) fold in on top, respecting each person's privacy choices (Jenny #29).
+  if(window.db){ Promise.all([
+      db.from("directory").select("*").eq("published",true),
+      db.from("directory_submissions").select("*").eq("status","approved")
+    ]).then(([dir,subs])=>{
+      let biz=BIZ;
+      if(dir&&dir.data&&dir.data.length){
+        biz=dir.data.map(d=>({type:"biz", name:d.name, cat:d.cat||"Business", k:d.section||"", phone:d.phone||"", url:d.url||"", spon:!!d.sponsor, _govt:!!d.govt}));
+      }
+      let sp=[], sb=[];
+      if(subs&&subs.data&&subs.data.length){
+        const mapped=subs.data.map(s=>{ const d=s.data||{};
+          return s.listing_type==="business"
+            ? {type:"biz", name:s.display_name||d.business_name, cat:d.business_category||"Business", phone:d.business_phone||"", spon:false}
+            : {type:"person", name:s.display_name||d.name, photo:s.photo_url||"", addr:(d.address_privacy==="public"&&d.address)?d.address:"", phone:(d.phone_privacy==="public"&&d.phone)?d.phone:""};
+        }).filter(x=>x.name);
+        sp=mapped.filter(x=>x.type==="person"); sb=mapped.filter(x=>x.type==="biz");
+      }
+      ALL=[...PEOPLE, ...sp, ...[...biz, ...sb].sort((a,b)=>a.name.localeCompare(b.name))];
+      renderDir();
+    }).catch(()=>{}); }
   requestAnimationFrame(()=>scrollToFind("#dirList"));
   $("#dirChips").addEventListener("click",e=>{const b=e.target.closest(".chip"); if(!b)return; dirCat=b.dataset.cat; $$("#dirChips .chip").forEach(c=>c.setAttribute("aria-pressed",c===b)); renderDir();});
   $("#dirSearch").addEventListener("input",e=>{dirQuery=e.target.value; renderDir();});

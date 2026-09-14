@@ -102,12 +102,105 @@
     TABS.forEach(t=>t.render());
   }
 
-  /* ---------------- PHONE BOOK SUBMISSIONS (Jenny #29) ---------------- */
+  /* ---------------- PHONE BOOK (Jenny #29) ---------------- */
+  // Two parts: (1) the curated Business listings Jenny manages directly (directory table),
+  // and (2) neighbor/business submissions from the public add form (directory_submissions).
+  const DIR_SECTIONS=[
+    ["Lodging","stay"],["Eating","eat"],["Travel","travel"],["Shopping","shop"],
+    ["Activities","activities"],["Organization / Government","life"],
+    ["Services","services"],["Out of town","outoftown"]
+  ];
+  let editDir=null; // the business row being edited, or null when adding
   function renderSubmissionsTab(){
-    $("#tab-submissions").innerHTML=`<h4>Phone book submissions</h4>
+    $("#tab-submissions").innerHTML=`
+      <h4>Business listings</h4>
+      <p style="color:var(--text-soft);font-size:.92rem;margin:.3rem 0 1rem">The businesses and organizations in the Phone Book. Add a new one, or edit / remove any of them. Changes go live right away.</p>
+      <form class="info-block" id="dirForm" style="max-width:680px;margin-bottom:1.4rem">
+        <h4 id="dir-head" style="margin:0 0 .8rem">Add a business</h4>
+        <div class="row-2" style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem">
+          <div class="field"><label for="dName">Name</label><input id="dName" type="text" required></div>
+          <div class="field"><label for="dCat">Category label</label><input id="dCat" type="text" placeholder="e.g. Restaurant, Lodging, Church"></div>
+        </div>
+        <div class="row-2" style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem">
+          <div class="field"><label for="dSection">Phone-book section</label>
+            <select id="dSection">${DIR_SECTIONS.map(([l,v])=>`<option value="${v}">${esc(l)}</option>`).join("")}</select></div>
+          <div class="field"><label for="dPhone">Phone</label><input id="dPhone" type="text" placeholder="(907) 234-0000"></div>
+        </div>
+        <div class="field"><label for="dUrl">Website (optional)</label><input id="dUrl" type="text" placeholder="https://…"></div>
+        <div style="display:flex;gap:1.4rem;flex-wrap:wrap;margin:.4rem 0 1rem">
+          <label style="display:flex;align-items:center;gap:.4rem;font-size:.92rem"><input id="dSpon" type="checkbox"> ★ Featured / sponsor</label>
+          <label style="display:flex;align-items:center;gap:.4rem;font-size:.92rem"><input id="dGovt" type="checkbox"> Government office (shows under Government)</label>
+        </div>
+        <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+          <button class="btn btn-primary" type="submit" id="dSave">Add business</button>
+          <button class="btn btn-ghost" type="button" id="dCancel" hidden>Cancel</button>
+          <span id="dMsg" class="form-note" style="align-self:center;color:var(--accent-ink)"></span>
+        </div>
+      </form>
+      <div id="dirList"><p style="color:var(--text-soft)">Loading…</p></div>
+
+      <h4 style="margin-top:2.2rem">Submissions from the site</h4>
       <p style="color:var(--text-soft);font-size:.92rem;margin:.3rem 0 1rem">Neighbors and businesses who added themselves through the site. Approve to publish them to the phone book, or delete. Individuals' privacy choices (public/private per field) are shown in parentheses.</p>
       <div id="subList"><p style="color:var(--text-soft)">Loading…</p></div>`;
+    $("#dirForm").addEventListener("submit",saveDir);
+    $("#dCancel").addEventListener("click",()=>resetDirForm());
+    loadDirectory();
     loadSubmissions();
+  }
+  function resetDirForm(){
+    editDir=null;
+    const f=$("#dirForm"); if(f) f.reset();
+    $("#dir-head").textContent="Add a business";
+    $("#dSave").textContent="Add business";
+    $("#dCancel").hidden=true; $("#dMsg").textContent="";
+  }
+  async function loadDirectory(){
+    const list=$("#dirList");
+    const {data,error}=await db.from("directory").select("*").order("name",{ascending:true});
+    if(error){ list.innerHTML=`<p style="color:var(--accent-ink)">${esc(error.message)}</p><p style="color:var(--text-soft);font-size:.9rem">If this says the table is missing, run <b>seed-directory.sql</b> in Supabase first.</p>`; return; }
+    if(!data.length){ list.innerHTML=`<p style="color:var(--text-soft)">No businesses yet — add the first one above, or run <b>seed-directory.sql</b> to load the current list.</p>`; return; }
+    const secLabel=v=>{ const m=DIR_SECTIONS.find(s=>s[1]===v); return m?m[0]:(v||""); };
+    list.innerHTML=`<p style="color:var(--text-soft);font-size:.85rem;margin-bottom:.6rem">${data.length} listings</p>`+data.map(d=>`
+      <div class="info-block" style="margin-bottom:.6rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center">
+        <div style="font-size:.92rem;line-height:1.5">
+          <b style="color:var(--heading)">${esc(d.name)}</b>${d.sponsor?' <span style="color:var(--accent-ink)">★</span>':""}${d.govt?' <span style="font-size:.78rem;color:var(--text-soft)">· Gov</span>':""}
+          <div style="color:var(--text-soft)">${esc(d.cat||"")} · ${esc(secLabel(d.section))}${d.phone?` · ${esc(d.phone)}`:""}${d.url?` · <a href="${esc(d.url)}" target="_blank" rel="noopener">site ↗</a>`:""}</div>
+        </div>
+        <div style="display:flex;gap:.5rem">
+          <button class="btn btn-ghost" type="button" data-dedit="${d.id}">Edit</button>
+          <button class="btn btn-ghost" type="button" data-ddel="${d.id}">Delete</button>
+        </div></div>`).join("");
+    list.querySelectorAll("[data-dedit]").forEach(b=>b.addEventListener("click",()=>startEditDir(data.find(x=>x.id===b.dataset.dedit))));
+    list.querySelectorAll("[data-ddel]").forEach(b=>b.addEventListener("click",()=>delDir(b.dataset.ddel,data.find(x=>x.id===b.dataset.ddel))));
+  }
+  function startEditDir(d){
+    if(!d) return;
+    editDir=d;
+    $("#dName").value=d.name||""; $("#dCat").value=d.cat||""; $("#dSection").value=d.section||"life";
+    $("#dPhone").value=d.phone||""; $("#dUrl").value=d.url||""; $("#dSpon").checked=!!d.sponsor; $("#dGovt").checked=!!d.govt;
+    $("#dir-head").textContent="Edit business";
+    $("#dSave").textContent="Save changes";
+    $("#dCancel").hidden=false; $("#dMsg").textContent="";
+    $("#dirForm").scrollIntoView({behavior:"smooth",block:"start"});
+  }
+  async function saveDir(e){
+    e.preventDefault();
+    const name=$("#dName").value.trim();
+    if(!name){ $("#dMsg").textContent="Name is required."; return; }
+    const row={ name, cat:$("#dCat").value.trim(), section:$("#dSection").value,
+      phone:$("#dPhone").value.trim(), url:$("#dUrl").value.trim(),
+      sponsor:$("#dSpon").checked, govt:$("#dGovt").checked, published:true };
+    $("#dMsg").textContent="Saving…";
+    const res=editDir ? await db.from("directory").update(row).eq("id",editDir.id)
+                       : await db.from("directory").insert(row);
+    if(res.error){ $("#dMsg").textContent=res.error.message; return; }
+    resetDirForm(); loadDirectory();
+  }
+  async function delDir(id,d){
+    if(!confirm(`Remove "${d?d.name:"this business"}" from the phone book? This can't be undone.`)) return;
+    const {error}=await db.from("directory").delete().eq("id",id);
+    if(error){ alert(error.message); return; }
+    loadDirectory();
   }
   async function loadSubmissions(){
     const list=$("#subList");
