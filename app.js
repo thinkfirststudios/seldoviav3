@@ -302,6 +302,83 @@ function applyExploreOverrides(map){
 window.EXPLORE={ get PLACES(){return PLACES;}, EXPLORE_CATS, CAT_BY_TOKEN, baseToken, bizPhoto };
 // Jenny's Seldovia Blog — recovered posts (original titles, dates, images preserved). PROD: managed via admin.
 const GAZETTE=[
+ {title:"Two available Seldovia land listings",excerpt:"Ready to take the next step? Reach out to Jenny to schedule a showing, ask questions, or learn more about these available land listings.",date:"Sep 14, 2026",read:"1 min",cat:"Real Estate",img:"images/gazette/2026-09-15.jpg",body:`Ready to take the next step? Reach out to Jenny to schedule a showing, ask questions, or learn more about these available land listings. Want to take a closer look? [Click here to explore the properties](real-estate.html)!`},
+ {title:"Happy Grandparents Day!",excerpt:"Today, we're celebrating the grandparents who help make a house feel like home and a community feel like family.",date:"Sep 13, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-09-14_1.jpg",body:`Grandparents are more than just grandparents. 🥰
+
+They're the ones who have time for one more story.
+
+The ones who teach you how to do things their way. The ones who cheer you on, share their wisdom, and somehow always have a snack nearby. 😉
+
+Today, we're celebrating the grandparents who help make a house feel like home and a community feel like family.
+
+Happy Grandparents Day!`},
+ {title:"Sunny Hill Retreat",excerpt:"Welcome to Sunny Hill Retreat, a beautifully updated log home perched high on one of Seldovia's sunniest hillsides, with sweeping views across Seldovia Bay and the surrounding mountains.",date:"Sep 13, 2026",read:"1 min",cat:"Real Estate",img:"images/gazette/2026-09-13.jpg",body:`Welcome to Sunny Hill Retreat, a beautifully updated log home perched high on one of Seldovia's sunniest hillsides, with sweeping views across Seldovia Bay and the surrounding mountains.
+
+🌿 3 bedrooms | 2 three-quarter baths
+☀️ All-day sunshine
+🌊 Views of Seldovia Slough & the mountains surrounding Seldovia Bay
+🪵 Beautifully restored log construction
+🔥 2 heating stoves
+🛠️ Detached workshop with electricity
+🚗 Covered two-vehicle carport
+🌹 Wild roses & mature raspberry bushes
+📍 Convenient walk everywhere in town location
+
+[Contact Jenny to schedule a showing](contact.html?topic=Real%20Estate) — call or text (907) 406-0044`},
+ {title:"Patriot Day: Never Forget",excerpt:"On Patriot Day, we take a moment to remember those we lost on September 11, 2001, and honor the heroes who answered the call.",date:"Sep 11, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-09-11_1.jpg",body:`On Patriot Day, we take a moment to remember those we lost on September 11, 2001, and honor the heroes who answered the call.
+
+Twenty-five years later, their lives and stories remain part of our history.
+
+September 11 — Never Forget. ❤️`},
+ {title:"What's your favorite month in Seldovia?",excerpt:"Every time I think I've picked a favorite, another season gives me a reason to change my mind.",date:"Sep 11, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-09-11_2.jpg",body:`I used to think I'd have an easy answer to this question!
+
+Every time I think I've picked a favorite, another season gives me a reason to change my mind. 😂
+
+Maybe that's the problem with Seldovia, you don't really get one favorite month. You get a new reason to love the place all year long.`},
+ {title:"5-acre waterfront under contract in just 5 days",excerpt:"This beautiful 5-acre waterfront property on Kachemak Bay is officially UNDER CONTRACT, after just 5 days on the market!",date:"Sep 10, 2026",read:"1 min",cat:"Real Estate",img:"images/gazette/2026-09-10.jpg",body:`🌊🏡 JUST 5 DAYS ON THE MARKET!
+
+This beautiful 5-acre waterfront property on Kachemak Bay is officially UNDER CONTRACT! 🏡💙
+
+A huge congratulations to the seller and buyers of this truly special piece of Alaska! Five acres of waterfront on Kachemak Bay is a rare opportunity, and this one clearly didn't last long. So happy for everyone involved! Here's to an exciting next chapter!`},
+ {title:"Heart-of-town home under contract",excerpt:"A huge congratulations to the sellers and buyers of this wonderful heart-of-town property!",date:"Sep 7, 2026",read:"1 min",cat:"Real Estate",img:"images/gazette/2026-09-07_2.jpg",body:`A huge congratulations to the sellers and buyers of this wonderful heart-of-town property!
+
+Just steps from Susan B. English School and within walking distance of town, it was a special opportunity for convenient Seldovia living. Wishing everyone involved all the best in what comes next! 😄`},
+ {title:"Happy Labor Day, Seldovia!",excerpt:"Here's to the people who keep Seldovia moving whether you're working hard, lending a hand, running a local business, building something, or simply keeping the coffee pot full.",date:"Sep 7, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-09-07_1.jpg",body:`Happy Labor Day, Seldovia! 💙
+
+Here's to the people who keep Seldovia moving whether you're working hard, lending a hand, running a local business, building something, or simply keeping the coffee pot full. 😉☕
+
+Today is a good excuse to slow down, enjoy the long weekend, and appreciate the people who make this little community such a special place to call home.`},
+ {title:"A family's Alaska cabin dream come true",excerpt:"It was such a joy to help this family explore properties, find the right piece of land, and eventually see their vision come to life in the form of their beautiful Alaska cabin.",date:"Sep 6, 2026",read:"1 min",cat:"Kind Words",img:"images/gazette/2026-09-06.jpg",body:`It was such a joy to help this family explore properties, find the right piece of land, and eventually see their vision come to life in the form of their beautiful Alaska cabin.
+
+Thank you for trusting me to be part of your journey and for sharing such incredibly kind words! 😄`},
+ {title:"Inside Beach or Outside Beach?",excerpt:"If you know Seldovia, you know this is a serious question. Are you an Inside Beach person, or an Outside Beach person?",date:"Sep 5, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-09-05.jpg",body:`If you know Seldovia, you know this is a serious question. 😂
+
+Are you choosing Inside Beach for the calm water, easy strolls, and peaceful views?
+
+Or are you an Outside Beach person who'd rather have the open ocean, big views, and a little more adventure?
+
+If you only had one day, which beach are you choosing? 🤔😄`},
+ {title:"What do you do on a slow Sunday?",excerpt:"Honestly? Sometimes… absolutely nothing. And that's the beauty of it!",date:"Sep 4, 2026",read:"1 min",cat:"Living Here",img:"images/gazette/2026-09-04.jpg",body:`Honestly? Sometimes… absolutely nothing. And that's the beauty of it! ✨
+
+☕ A slow morning with coffee.
+🌱 A little extra time in the garden.
+🥾 Walking a trail without checking the clock.
+⛪ Meeting up with friends at church, or
+🏡 catching up with a neighbor.
+📖 Reading a book you've been meaning to finish.
+🍳 Making a good meal and actually sitting down to enjoy it.
+🔨 Maybe working on a little project around the house.
+🌤️ And if the weather is right, simply finding a spot to sit outside and watch the day go by.
+
+What's your favorite way to spend a slow Sunday? 💛`},
+ {title:"Another special property is under contract!",excerpt:"A huge congratulations to the buyer and seller of this one-of-a-kind Seldovia property!",date:"Sep 2, 2026",read:"1 min",cat:"Real Estate",img:"images/gazette/2026-09-02.jpg",body:`ANOTHER SPECIAL PROPERTY IS UNDER CONTRACT! 🎊
+
+A huge congratulations to the buyer and seller of this one-of-a-kind Seldovia property!
+
+This was one of those rare Seldovia opportunities that had a little bit of everything, from the waterfront cabin and nearly 90 feet of slough frontage to the spacious home, B&B, greenhouse, shop, and incredible potential.
+
+Congratulations to everyone involved, and here's to all the exciting things ahead!`},
+ {title:"How did you end up in Seldovia?",excerpt:"Was it a carefully thought-out life decision… or did you visit once and accidentally start calling it home?",date:"Aug 31, 2026",read:"1 min",cat:"Community",img:"images/gazette/2026-08-31.jpg",body:`Was it a carefully thought-out life decision… or did you visit once and accidentally start calling it home? 🤔😊`},
  {title:"Thank you, Jennifer!",excerpt:"Jennifer, thank you so much for your kind words! It makes me so happy to hear how pleased you are with your Seldovia investment and my service.",date:"Jul 17, 2026",read:"1 min",cat:"Kind Words",img:"images/gazette/2026-07-17.jpg",body:`Jennifer, thank you so much for your kind words! It makes me so happy to hear how pleased you are with your Seldovia investment and my service.
 
 Your thoughtful review truly means a lot to me. It is nice getting to know you better with each visit, and I loved sharing coffee together on the boat that morning. Looking forward to seeing your Seldovia getaway come to life! I think a picnic on your beach is definitely in order when you're back this summer! See you both soon!`},
