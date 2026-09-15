@@ -1,17 +1,7 @@
 {
- "updated": "2026-09-15T11:50:24Z",
+ "updated": "2026-09-15T17:04:19Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1789488000000,
-   "allDay": false,
-   "title": "SVT - Fitness Center"
-  },
-  {
-   "start": 1789491600000,
-   "allDay": false,
-   "title": "SBE Late Start"
-  },
   {
    "start": 1789495200000,
    "allDay": false,
@@ -301,6 +291,16 @@
    "start": 1790352000000,
    "allDay": false,
    "title": "SBE - Lap Swim"
+  },
+  {
+   "start": 1790368200000,
+   "allDay": false,
+   "title": "Food Bank Drop off Time"
+  },
+  {
+   "start": 1790388000000,
+   "allDay": false,
+   "title": "SVT - Open Gym"
   }
  ]
 }
