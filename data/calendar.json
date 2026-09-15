@@ -1,17 +1,7 @@
 {
- "updated": "2026-09-14T21:52:40Z",
+ "updated": "2026-09-15T04:59:08Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1789432200000,
-   "allDay": false,
-   "title": "Seldovia Bay Ferry - Departs Seldovia for Homer"
-  },
-  {
-   "start": 1789437600000,
-   "allDay": false,
-   "title": "CITY - Council Regular Meeting"
-  },
   {
    "start": 1789488000000,
    "allDay": false,
@@ -299,6 +289,16 @@
   },
   {
    "start": 1790298000000,
+   "allDay": false,
+   "title": "SBE - Lap Swim"
+  },
+  {
+   "start": 1790352000000,
+   "allDay": false,
+   "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1790352000000,
    "allDay": false,
    "title": "SBE - Lap Swim"
   }
