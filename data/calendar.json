@@ -1,27 +1,7 @@
 {
- "updated": "2026-09-15T21:25:30Z",
+ "updated": "2026-09-16T04:54:44Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1789514100000,
-   "allDay": false,
-   "title": "SVT - Open Swim"
-  },
-  {
-   "start": 1789517700000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Departs to Homer"
-  },
-  {
-   "start": 1789520400000,
-   "allDay": false,
-   "title": "SBE - Lap Swim"
-  },
-  {
-   "start": 1789524000000,
-   "allDay": false,
-   "title": "SOCC - Teen & Adult Volleyball"
-  },
   {
    "start": 1789545600000,
    "allDay": true,
@@ -301,6 +281,26 @@
    "start": 1790463600000,
    "allDay": false,
    "title": "SOCC - Adult Pickleball"
+  },
+  {
+   "start": 1790470800000,
+   "allDay": false,
+   "title": "St. Nicholas Russian Orthodox Church Vespers Service"
+  },
+  {
+   "start": 1790532000000,
+   "allDay": false,
+   "title": "Grace Haven Fellowship Sunday Worship"
+  },
+  {
+   "start": 1790532000000,
+   "allDay": false,
+   "title": "St. Nicholas Russian Orthodox Church Sunday Service"
+  },
+  {
+   "start": 1790535600000,
+   "allDay": false,
+   "title": "SBC - Sunday Worship Service"
   }
  ]
 }
