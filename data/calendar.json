@@ -1,17 +1,7 @@
 {
- "updated": "2026-09-16T21:22:10Z",
+ "updated": "2026-09-17T04:58:01Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1789594200000,
-   "allDay": false,
-   "title": "SBE Picture Day"
-  },
-  {
-   "start": 1789617600000,
-   "allDay": false,
-   "title": "SOCC - Teen Night"
-  },
   {
    "start": 1789660800000,
    "allDay": false,
@@ -299,6 +289,16 @@
   },
   {
    "start": 1790697600000,
+   "allDay": false,
+   "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1790704800000,
+   "allDay": false,
+   "title": "SOCC - Yoga"
+  },
+  {
+   "start": 1790715600000,
    "allDay": false,
    "title": "SVT - Fitness Center"
   }
