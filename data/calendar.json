@@ -1,12 +1,7 @@
 {
- "updated": "2026-09-17T11:47:51Z",
+ "updated": "2026-09-17T17:04:26Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1789660800000,
-   "allDay": false,
-   "title": "SVT - Fitness Center"
-  },
   {
    "start": 1789668000000,
    "allDay": false,
@@ -301,6 +296,11 @@
    "start": 1790715600000,
    "allDay": false,
    "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1790723700000,
+   "allDay": false,
+   "title": "SVT - Open Swim"
   }
  ]
 }
