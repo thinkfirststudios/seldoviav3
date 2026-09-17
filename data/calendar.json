@@ -1,22 +1,7 @@
 {
- "updated": "2026-09-17T17:04:26Z",
+ "updated": "2026-09-17T21:26:42Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1789668000000,
-   "allDay": false,
-   "title": "SOCC - Yoga"
-  },
-  {
-   "start": 1789678800000,
-   "allDay": false,
-   "title": "SVT - Fitness Center"
-  },
-  {
-   "start": 1789679700000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
-  },
   {
    "start": 1789689600000,
    "allDay": false,
@@ -301,6 +286,21 @@
    "start": 1790723700000,
    "allDay": false,
    "title": "SVT - Open Swim"
+  },
+  {
+   "start": 1790730000000,
+   "allDay": false,
+   "title": "SBE - Lap Swim"
+  },
+  {
+   "start": 1790733600000,
+   "allDay": false,
+   "title": "SOCC - Teen & Adult Volleyball"
+  },
+  {
+   "start": 1790784000000,
+   "allDay": false,
+   "title": "SVT - Fitness Center"
   }
  ]
 }
