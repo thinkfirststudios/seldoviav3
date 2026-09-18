@@ -1,17 +1,7 @@
 {
- "updated": "2026-09-18T11:22:16Z",
+ "updated": "2026-09-18T16:28:57Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1789747200000,
-   "allDay": false,
-   "title": "SVT - Fitness Center"
-  },
-  {
-   "start": 1789747200000,
-   "allDay": false,
-   "title": "SBE - Lap Swim"
-  },
   {
    "start": 1789763400000,
    "allDay": false,
@@ -301,6 +291,16 @@
    "start": 1790900100000,
    "allDay": false,
    "title": "AMHS - Tustumena Departs"
+  },
+  {
+   "start": 1790900100000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Departs to Homer"
+  },
+  {
+   "start": 1790973000000,
+   "allDay": false,
+   "title": "Food Bank Shopping Day"
   }
  ]
 }
