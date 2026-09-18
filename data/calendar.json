@@ -1,27 +1,7 @@
 {
- "updated": "2026-09-17T21:26:42Z",
+ "updated": "2026-09-18T04:49:37Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1789689600000,
-   "allDay": false,
-   "title": "SBE - Tot Swim"
-  },
-  {
-   "start": 1789690500000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Departs to Homer"
-  },
-  {
-   "start": 1789693200000,
-   "allDay": false,
-   "title": "SBE - Lap Swim"
-  },
-  {
-   "start": 1789695000000,
-   "allDay": false,
-   "title": "SOCC - Mahjong Game Night"
-  },
   {
    "start": 1789747200000,
    "allDay": false,
@@ -35,7 +15,7 @@
   {
    "start": 1789763400000,
    "allDay": false,
-   "title": "Food Bank Drop off Time"
+   "title": "Food Bank Shopping Day"
   },
   {
    "start": 1789783200000,
@@ -75,7 +55,7 @@
   {
    "start": 1789930800000,
    "allDay": false,
-   "title": "SBC - Sunday Worship Service"
+   "title": "Seldovia Bible Chapel - Sunday Worship Service"
   },
   {
    "start": 1789938900000,
@@ -96,11 +76,6 @@
    "start": 1790006400000,
    "allDay": false,
    "title": "SBE - Lap Swim"
-  },
-  {
-   "start": 1790022600000,
-   "allDay": false,
-   "title": "Food Bank Drop off Time"
   },
   {
    "start": 1790024400000,
@@ -210,7 +185,7 @@
   {
    "start": 1790368200000,
    "allDay": false,
-   "title": "Food Bank Drop off Time"
+   "title": "Food Bank Shopping Day"
   },
   {
    "start": 1790388000000,
@@ -250,7 +225,12 @@
   {
    "start": 1790535600000,
    "allDay": false,
-   "title": "SBC - Sunday Worship Service"
+   "title": "Seldovia Bible Chapel - Sunday Worship Service"
+  },
+  {
+   "start": 1790553600000,
+   "allDay": false,
+   "title": "SOCC - Chris Murphy The Fiddle & Forest Tour"
   },
   {
    "start": 1790611200000,
@@ -261,11 +241,6 @@
    "start": 1790611200000,
    "allDay": false,
    "title": "SBE - Lap Swim"
-  },
-  {
-   "start": 1790627400000,
-   "allDay": false,
-   "title": "Food Bank Drop off Time"
   },
   {
    "start": 1790697600000,
@@ -301,6 +276,31 @@
    "start": 1790784000000,
    "allDay": false,
    "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1790784000000,
+   "allDay": false,
+   "title": "SBE - Lap Swim"
+  },
+  {
+   "start": 1790827200000,
+   "allDay": false,
+   "title": "SOCC - Teen Night"
+  },
+  {
+   "start": 1790889300000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Arrives from Homer"
+  },
+  {
+   "start": 1790889300000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
+  },
+  {
+   "start": 1790900100000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Departs"
   }
  ]
 }
