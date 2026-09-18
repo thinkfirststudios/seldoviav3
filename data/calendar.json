@@ -1,12 +1,7 @@
 {
- "updated": "2026-09-18T16:28:57Z",
+ "updated": "2026-09-18T20:57:27Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1789763400000,
-   "allDay": false,
-   "title": "Food Bank Shopping Day"
-  },
   {
    "start": 1789783200000,
    "allDay": false,
@@ -81,6 +76,11 @@
    "start": 1790100000000,
    "allDay": false,
    "title": "SOCC - Yoga"
+  },
+  {
+   "start": 1790107200000,
+   "allDay": false,
+   "title": "SVT - Thrive 'Technology Made Easier'"
   },
   {
    "start": 1790110800000,
@@ -193,6 +193,11 @@
    "title": "SBC Teen Nights!"
   },
   {
+   "start": 1790445600000,
+   "allDay": false,
+   "title": "The Seldovia 1.5 Cross Country Fundraiser Race"
+  },
+  {
    "start": 1790463600000,
    "allDay": false,
    "title": "SOCC - Adult Pickleball"
@@ -296,11 +301,6 @@
    "start": 1790900100000,
    "allDay": false,
    "title": "AMHS - Tustumena Departs to Homer"
-  },
-  {
-   "start": 1790973000000,
-   "allDay": false,
-   "title": "Food Bank Shopping Day"
   }
  ]
 }
