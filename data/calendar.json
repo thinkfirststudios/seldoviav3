@@ -1,22 +1,7 @@
 {
- "updated": "2026-09-18T20:57:27Z",
+ "updated": "2026-09-19T04:42:27Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1789783200000,
-   "allDay": false,
-   "title": "SVT - Open Gym"
-  },
-  {
-   "start": 1789783200000,
-   "allDay": false,
-   "title": "SVT - Open Swim"
-  },
-  {
-   "start": 1789790400000,
-   "allDay": false,
-   "title": "SBC Teen Nights!"
-  },
   {
    "start": 1789858800000,
    "allDay": false,
@@ -301,6 +286,21 @@
    "start": 1790900100000,
    "allDay": false,
    "title": "AMHS - Tustumena Departs to Homer"
+  },
+  {
+   "start": 1790973000000,
+   "allDay": false,
+   "title": "Food Bank Shopping Day"
+  },
+  {
+   "start": 1791000000000,
+   "allDay": false,
+   "title": "SBC Teen Nights!"
+  },
+  {
+   "start": 1791068400000,
+   "allDay": false,
+   "title": "SOCC - Adult Pickleball"
   }
  ]
 }
