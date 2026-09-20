@@ -299,6 +299,13 @@ function applyExploreOverrides(map){
   if(!map) return;
   PLACES.forEach(p=>{ const t=map[p.name], c=t&&CAT_BY_TOKEN[t]; if(c){ p.key=c.key; p._govt=c.govt; } });
 }
+// Businesses Jenny hides (deleted from Explore) and adds (new to Explore), from the admin.
+let EXPLORE_HIDDEN=new Set();
+function applyExploreAdded(arr){
+  if(!Array.isArray(arr)) return;
+  arr.forEach(a=>{ if(!a||!a.name||PLACES.some(p=>p.name===a.name)) return;
+    PLACES.push({name:a.name, cat:a.cat||"", key:a.key||"services", _govt:!!a.govt, url:a.url||"", phone:a.phone||"", _added:true}); });
+}
 // Exposed so the admin panel can list businesses and edit their categories.
 window.EXPLORE={ get PLACES(){return PLACES;}, EXPLORE_CATS, CAT_BY_TOKEN, baseToken, bizPhoto };
 // Jenny's Seldovia Blog — recovered posts (original titles, dates, images preserved). PROD: managed via admin.
@@ -4334,7 +4341,7 @@ function renderPlaces(){
   }
   // Businesses first (alphabetical); trails & beaches sink to the bottom (Jenny #3).
   const isTrail=p=>p.cat==="Trail"||p.cat==="Beach & Park";
-  const rows=PLACES.filter(p=>placeTab==="all"||p.key===placeTab).sort((a,b)=>{const ta=isTrail(a),tb=isTrail(b); return ta!==tb?(ta?1:-1):a.name.localeCompare(b.name);});
+  const rows=PLACES.filter(p=>(placeTab==="all"||p.key===placeTab) && !EXPLORE_HIDDEN.has(p.name)).sort((a,b)=>{const ta=isTrail(a),tb=isTrail(b); return ta!==tb?(ta?1:-1):a.name.localeCompare(b.name);});
   const pin=`<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.3-7-11a7 7 0 0 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>`;
   // Placeholder photo until Qwynny's square B&W watercolor images land (set p.img; p.imgColor for the sponsor color version).
   const placeCard=p=>{
@@ -4365,12 +4372,14 @@ if($("#placeTabs")){
 }
 // Explore page: apply Jenny's saved category overrides (if any) before the first paint.
 if($("#placeGrid") && window.db){
-  db.from("settings").select("key,value").in("key",["explore_overrides","explore_photos","explore_meta"])
-    .then(({data})=>{ (data||[]).forEach(r=>{ try{
-        if(r.key==="explore_overrides" && r.value) applyExploreOverrides(JSON.parse(r.value));
-        if(r.key==="explore_photos" && r.value) Object.assign(EXPLORE_PHOTOS, JSON.parse(r.value));
-        if(r.key==="explore_meta" && r.value) Object.assign(EXPLORE_META, JSON.parse(r.value));
-      }catch(e){} }); renderPlaces(); })
+  db.from("settings").select("key,value").in("key",["explore_overrides","explore_photos","explore_meta","explore_added","explore_hidden"])
+    .then(({data})=>{ const S={}; (data||[]).forEach(r=>{ try{ S[r.key]=r.value?JSON.parse(r.value):null; }catch(e){} });
+      applyExploreAdded(S.explore_added);                              // add Jenny's new businesses first…
+      applyExploreOverrides(S.explore_overrides);                      // …so category overrides can apply to them too
+      if(S.explore_photos) Object.assign(EXPLORE_PHOTOS, S.explore_photos);
+      if(S.explore_meta) Object.assign(EXPLORE_META, S.explore_meta);
+      if(Array.isArray(S.explore_hidden)) EXPLORE_HIDDEN=new Set(S.explore_hidden);
+      renderPlaces(); })
     .catch(()=>renderPlaces());
 } else { renderPlaces(); }
 

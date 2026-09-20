@@ -763,33 +763,52 @@
   }
 
   /* ---------------- EXPLORE CATEGORIES (fix business badges) ---------------- */
+  // Categories offered when ADDING a new Explore business (value = "<key>|<govt>").
+  const ADD_CATS=[["travel|0","Travel"],["stay|0","Lodging + Camping"],["eat|0","Eat"],["shop|0","Shop + Gifts"],["activities|0","Activities"],["services|0","Services / Business"],["life|0","Organization + Public Services"],["life|1","Government"],["outoftown|0","Out of Town"]];
   function renderExploreCatsTab(){
     const EX=window.EXPLORE, host=$("#tab-bizcat");
     if(!EX||!EX.PLACES){ host.innerHTML=`<p class="form-note">Couldn't load the business list. Try reloading the page.</p>`; return; }
     const cats=EX.EXPLORE_CATS;
     const optsFor=sel=>cats.map(c=>`<option value="${c.token}"${c.token===sel?" selected":""}>${esc(c.label)}</option>`).join("");
-    const biz=[...EX.PLACES].sort((a,b)=>a.name.localeCompare(b.name));
+    let overrides={}, photos={}, meta={}, added=[], hidden=new Set();
     host.innerHTML=`
       <div class="info-block" style="max-width:720px">
+        <h4>Add a business to Explore</h4>
+        <p style="color:var(--text-soft);font-size:.92rem;margin:.3rem 0 1rem">Add a business that isn't in the list yet. After adding, you can set its photo, sign, and description below like any other.</p>
+        <div class="row-2" style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem">
+          <div class="field"><label for="bc-newname">Name</label><input id="bc-newname" type="text"></div>
+          <div class="field"><label for="bc-newcat">Category</label><select id="bc-newcat">${ADD_CATS.map(c=>`<option value="${c[0]}">${esc(c[1])}</option>`).join("")}</select></div>
+        </div>
+        <div class="row-2" style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem">
+          <div class="field"><label for="bc-newurl">Website (optional)</label><input id="bc-newurl" type="text" placeholder="https://…"></div>
+          <div class="field"><label for="bc-newphone">Phone (optional)</label><input id="bc-newphone" type="text" placeholder="(907) …"></div>
+        </div>
+        <div style="display:flex;gap:.8rem;align-items:center;margin-top:.4rem"><button class="btn btn-primary" id="bc-add" type="button">Add business</button><span id="bc-addmsg" class="form-note"></span></div>
+      </div>
+      <div class="info-block" style="max-width:720px;margin-top:1.2rem">
         <h4>Explore businesses</h4>
-        <p style="color:var(--text-soft);font-size:.92rem;margin:.3rem 0 1rem">For each business you can set the category (the filter tab and corner letter), edit the small <strong>text above the name</strong>, add an Open or Closed <strong>seasonal sign</strong> to its card corner, and upload a photo with the 📷 button. Set the Sign to None to remove it. Click Save changes and it goes live on Explore.</p>
+        <p style="color:var(--text-soft);font-size:.92rem;margin:.3rem 0 1rem">For each business you can set the category (the filter tab and corner letter), edit the small <strong>text above the name</strong>, add an Open or Closed <strong>seasonal sign</strong>, upload a photo with the 📷 button, or <strong>Delete</strong> it from Explore. Set the Sign to None to remove it. Click Save changes and it goes live on Explore.</p>
         <input id="bc-search" type="search" placeholder="Search businesses…" style="width:100%;padding:.6rem .8rem;border:1px solid var(--line);border-radius:10px;margin-bottom:1rem">
         <div id="bc-list" style="display:flex;flex-direction:column;gap:.5rem;max-height:60vh;overflow:auto"></div>
+        <div id="bc-hidden" style="margin-top:.8rem"></div>
         <div style="display:flex;gap:.8rem;align-items:center;margin-top:1rem">
           <button class="btn btn-primary" id="bc-save" type="button">Save changes</button>
           <p id="bc-msg" class="form-note"></p>
         </div>
       </div>`;
-    let overrides={}, photos={}, meta={};
+    // Effective business list = built-in PLACES + Jenny's added ones (added objects carry key/_govt for baseToken).
+    const listAll=()=>{ const addObjs=added.map(a=>({name:a.name,cat:a.cat||"",key:a.key||"services",_govt:!!a.govt,url:a.url||"",phone:a.phone||"",_added:true}));
+      return [...EX.PLACES, ...addObjs].sort((a,b)=>a.name.localeCompare(b.name)); };
     const rowHtml=p=>{ const eff=overrides[p.name]||EX.baseToken(p); const src=photos[p.name]||EX.bizPhoto(p);
       const m=meta[p.name]||{}; const lbl=(m.label!=null?m.label:(p.cat||"")); const st=m.status||"";
       const desc=(m.desc!=null?m.desc:((EX.BIZ_BLURB&&EX.BIZ_BLURB[p.name])||""));
       return `<div class="dir-item bc-row" style="flex-direction:column;align-items:stretch;gap:.5rem">
         <div style="display:flex;align-items:center;gap:.7rem">
           <div class="bc-thumb" data-name="${esc(p.name)}" style="width:52px;height:52px;flex:none;border-radius:8px;overflow:hidden;background:var(--surface-2);border:1px solid var(--line)"><img src="${esc(src)}" alt="" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'"></div>
-          <div class="d-main" style="min-width:0;flex:1"><h4 style="margin:0;font-size:.95rem">${esc(p.name)}</h4></div>
-          <select class="bc-sel" data-name="${esc(p.name)}" style="flex:none;padding:.4rem .5rem;border:1px solid var(--line);border-radius:8px;max-width:160px">${optsFor(eff)}</select>
+          <div class="d-main" style="min-width:0;flex:1"><h4 style="margin:0;font-size:.95rem">${esc(p.name)}${p._added?' <span style="font-size:.72rem;color:var(--accent-ink);font-weight:400">· added</span>':""}</h4></div>
+          <select class="bc-sel" data-name="${esc(p.name)}" style="flex:none;padding:.4rem .5rem;border:1px solid var(--line);border-radius:8px;max-width:150px">${optsFor(eff)}</select>
           <label class="btn btn-ghost" style="flex:none;cursor:pointer;padding:.4rem .55rem" title="Upload a photo">📷<input type="file" class="bc-photo" data-name="${esc(p.name)}" accept="image/*" hidden></label>
+          <button class="btn btn-ghost bc-del" type="button" data-name="${esc(p.name)}" data-added="${p._added?1:0}" style="flex:none;padding:.4rem .55rem;color:var(--accent-ink)">Delete</button>
         </div>
         <div style="display:flex;gap:.7rem;align-items:center;flex-wrap:wrap;padding-left:60px">
           <label style="font-size:.8rem;color:var(--text-soft);display:flex;align-items:center;gap:.35rem">Text above name <input class="bc-label" data-name="${esc(p.name)}" value="${esc(lbl)}" placeholder="e.g. Restaurant" style="padding:.35rem .5rem;border:1px solid var(--line);border-radius:8px;width:170px"></label>
@@ -797,12 +816,41 @@
         </div>
         <div style="padding-left:60px"><label style="font-size:.8rem;color:var(--text-soft);display:block">Description <textarea class="bc-desc" data-name="${esc(p.name)}" rows="2" placeholder="Short description shown on the card" style="width:100%;margin-top:.25rem;padding:.45rem .55rem;border:1px solid var(--line);border-radius:8px;font:inherit;resize:vertical">${esc(desc)}</textarea></label></div>
       </div>`; };
+    const drawHidden=()=>{ const h=$("#bc-hidden"); if(!hidden.size){ h.innerHTML=""; return; }
+      h.innerHTML=`<p style="font-size:.82rem;color:var(--text-soft);margin:0 0 .3rem">Hidden from Explore (click to restore):</p>`+[...hidden].map(n=>`<button class="btn btn-ghost bc-restore" type="button" data-name="${esc(n)}" style="margin:.15rem .3rem .15rem 0;font-size:.8rem;padding:.3rem .55rem">↺ ${esc(n)}</button>`).join(""); };
     const draw=f=>{ const q=(f||"").toLowerCase();
-      $("#bc-list").innerHTML=biz.filter(p=>!q||p.name.toLowerCase().includes(q)||(p.cat||"").toLowerCase().includes(q)).map(rowHtml).join("")||`<p class="form-note">No matches.</p>`; };
-    db.from("settings").select("key,value").in("key",["explore_overrides","explore_photos","explore_meta"])
-      .then(({data})=>{ (data||[]).forEach(r=>{ try{ if(r.key==="explore_overrides"&&r.value) overrides=JSON.parse(r.value)||{}; if(r.key==="explore_photos"&&r.value) photos=JSON.parse(r.value)||{}; if(r.key==="explore_meta"&&r.value) meta=JSON.parse(r.value)||{}; }catch(e){} }); draw(""); })
+      $("#bc-list").innerHTML=listAll().filter(p=>!hidden.has(p.name)).filter(p=>!q||p.name.toLowerCase().includes(q)||(p.cat||"").toLowerCase().includes(q)).map(rowHtml).join("")||`<p class="form-note">No matches.</p>`; drawHidden(); };
+    async function saveKey(key,val){ const {error}=await db.from("settings").upsert({key,value:JSON.stringify(val)},{onConflict:"key"}); if(error) throw error; }
+    db.from("settings").select("key,value").in("key",["explore_overrides","explore_photos","explore_meta","explore_added","explore_hidden"])
+      .then(({data})=>{ (data||[]).forEach(r=>{ try{ if(r.key==="explore_overrides"&&r.value) overrides=JSON.parse(r.value)||{}; if(r.key==="explore_photos"&&r.value) photos=JSON.parse(r.value)||{}; if(r.key==="explore_meta"&&r.value) meta=JSON.parse(r.value)||{}; if(r.key==="explore_added"&&r.value){ const a=JSON.parse(r.value); if(Array.isArray(a)) added=a; } if(r.key==="explore_hidden"&&r.value){ const h=JSON.parse(r.value); if(Array.isArray(h)) hidden=new Set(h); } }catch(e){} }); draw(""); })
       .catch(()=>draw(""));
+    // Add a new business
+    $("#bc-add").addEventListener("click",async()=>{
+      const name=$("#bc-newname").value.trim(), msg=$("#bc-addmsg");
+      if(!name){ msg.style.color="var(--accent-ink)"; msg.textContent="Enter a name."; return; }
+      if(listAll().some(p=>p.name.toLowerCase()===name.toLowerCase())){ msg.style.color="var(--accent-ink)"; msg.textContent="That business is already listed."; return; }
+      const [key,govt]=$("#bc-newcat").value.split("|"); const catLabel=(ADD_CATS.find(c=>c[0]===$("#bc-newcat").value)||[,""])[1];
+      added.push({name, key, govt:govt==="1", cat:catLabel, url:$("#bc-newurl").value.trim(), phone:$("#bc-newphone").value.trim()});
+      hidden.delete(name);
+      try{ await saveKey("explore_added",added); msg.style.color="var(--open)"; msg.textContent=`${name} added — it's live on Explore.`;
+        $("#bc-newname").value=""; $("#bc-newurl").value=""; $("#bc-newphone").value=""; draw($("#bc-search").value); }
+      catch(err){ msg.style.color="var(--accent-ink)"; msg.textContent="Error: "+(err.message||err); }
+    });
     $("#bc-search").addEventListener("input",e=>draw(e.target.value));
+    // Delete (hide static, or drop an added one) + restore
+    $("#bc-list").addEventListener("click",async e=>{
+      const del=e.target.closest(".bc-del"); if(!del) return;
+      const name=del.dataset.name; if(!confirm(`Remove "${name}" from Explore?`)) return;
+      const msg=$("#bc-msg"); msg.style.color="var(--text-soft)"; msg.textContent="Saving…";
+      try{ if(del.dataset.added==="1"){ added=added.filter(a=>a.name!==name); await saveKey("explore_added",added); }
+        else { hidden.add(name); await saveKey("explore_hidden",[...hidden]); }
+        msg.style.color="var(--open)"; msg.textContent=`${name} removed from Explore.`; draw($("#bc-search").value); }
+      catch(err){ msg.style.color="var(--accent-ink)"; msg.textContent="Error: "+(err.message||err); }
+    });
+    $("#bc-hidden").addEventListener("click",async e=>{
+      const r=e.target.closest(".bc-restore"); if(!r) return; const name=r.dataset.name; hidden.delete(name);
+      try{ await saveKey("explore_hidden",[...hidden]); draw($("#bc-search").value); }catch(err){ alert(err.message||err); }
+    });
     $("#bc-list").addEventListener("change",async e=>{
       const f=e.target.closest(".bc-photo");
       if(f){ const file=f.files[0]; if(!file) return; const name=f.dataset.name, msg=$("#bc-msg");
@@ -817,11 +865,11 @@
       const stSel=e.target.closest(".bc-status");
       if(stSel){ const name=stSel.dataset.name; meta[name]=meta[name]||{}; if(stSel.value) meta[name].status=stSel.value; else delete meta[name].status; clean(name); return; }
       const lb=e.target.closest(".bc-label");
-      if(lb){ const name=lb.dataset.name, pp=biz.find(x=>x.name===name); const v=lb.value.trim(); meta[name]=meta[name]||{}; if(v && v!==(pp&&pp.cat)) meta[name].label=v; else delete meta[name].label; clean(name); return; }
+      if(lb){ const name=lb.dataset.name, pp=listAll().find(x=>x.name===name); const v=lb.value.trim(); meta[name]=meta[name]||{}; if(v && v!==(pp&&pp.cat)) meta[name].label=v; else delete meta[name].label; clean(name); return; }
       const dq=e.target.closest(".bc-desc");
       if(dq){ const name=dq.dataset.name; const base=(EX.BIZ_BLURB&&EX.BIZ_BLURB[name])||""; const v=dq.value.trim(); meta[name]=meta[name]||{}; if(v && v!==base) meta[name].desc=v; else delete meta[name].desc; clean(name); return; }
       const s=e.target.closest(".bc-sel"); if(!s) return;
-      const name=s.dataset.name, p=biz.find(x=>x.name===name); if(!p) return;
+      const name=s.dataset.name, p=listAll().find(x=>x.name===name); if(!p) return;
       if(s.value===EX.baseToken(p)) delete overrides[name]; else overrides[name]=s.value; });
     $("#bc-save").addEventListener("click",async()=>{
       const msg=$("#bc-msg"), btn=$("#bc-save"); btn.disabled=true; msg.style.color="var(--text-soft)"; msg.textContent="Saving…";
