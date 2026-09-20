@@ -107,6 +107,7 @@ from (values
 ('Cole''s Vending', 'Vending', 'services', '', '', false, false, 71),
 ('SVT Gift Shop', 'Gift Shop', 'shop', '', '', false, false, 72),
 ('HBL Kayak Rental', 'Kayak Rental', 'activities', '', '', false, false, 73),
-('Tutka Bay Lodge', 'Lodge · Kachemak Bay', 'outoftown', '', '', false, false, 74)
+('Tutka Bay Lodge', 'Lodge · Kachemak Bay', 'outoftown', '', '', false, false, 74),
+('AK Bus Company', 'Bus Service', 'outoftown', '', '', false, false, 75)
 ) as v(name, cat, section, phone, url, sponsor, govt, sort_order)
 where not exists (select 1 from public.directory d where d.name = v.name);

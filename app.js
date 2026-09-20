@@ -245,7 +245,8 @@ const PLACES=[
  {name:"SVT Gift Shop",cat:"Gift Shop",key:"shop"},
  {name:"HBL Kayak Rental",cat:"Kayak Rental",key:"activities"},
  // Out of Town
- {name:"Tutka Bay Lodge",cat:"Lodge · Kachemak Bay",key:"outoftown"}
+ {name:"Tutka Bay Lodge",cat:"Lodge · Kachemak Bay",key:"outoftown"},
+ {name:"AK Bus Company",cat:"Bus Service",key:"outoftown"}
 ];
 // Business photos from Qwynny's Canva set. Default shows the B&W version;
 // <slug>-color.jpg is the color upgrade for sponsors (future admin swap).
@@ -4201,7 +4202,8 @@ const DIRECTORY=[
  {name:"Cole's Vending",cat:"Vending",k:"services",spon:false},
  {name:"SVT Gift Shop",cat:"Gift Shop",k:"shop",spon:false},
  {name:"HBL Kayak Rental",cat:"Kayak Rental",k:"activities",spon:false},
- {name:"Tutka Bay Lodge",cat:"Lodge · Kachemak Bay",k:"outoftown",spon:false}
+ {name:"Tutka Bay Lodge",cat:"Lodge · Kachemak Bay",k:"outoftown",spon:false},
+ {name:"AK Bus Company",cat:"Bus Service",k:"outoftown",spon:false}
 ];
 // REAL community announcements — sourced from the seldovia.com community news feed.
 const NOTES=[] /* migrated to Supabase (seed-bulletin.sql) — all bulletin notices now managed + editable in the admin, rendered by bulletin-public.js */;
