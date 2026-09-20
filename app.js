@@ -213,8 +213,8 @@ const PLACES=[
  {name:"Kenai Airport Inn",cat:"Lodging · Kenai",key:"outoftown"},
  // === Added 2026-09-12 — Jenny's "missing from the old site" list (categories to confirm) ===
  // Organizations
- {name:"Seldovia Arts Council",cat:"Arts Organization",key:"life"},
- {name:"Seldovia House",cat:"Senior Housing",key:"life"},
+ {name:"Seldovia Arts Council",cat:"Arts Organization",key:"life",url:"arts-council.html"},
+ {name:"Seldovia House",cat:"Senior Housing",key:"life",url:"seldovia-house.html"},
  {name:"Seldovia Bible Chapel",cat:"Church",key:"life"},
  {name:"Grace Haven Fellowship",cat:"Church",key:"life"},
  {name:"Russian Orthodox Church",cat:"Church",key:"life"},
@@ -4173,8 +4173,8 @@ const DIRECTORY=[
  {name:"Schooner Beach Studio",cat:"Cut-Paper Art",k:"shop",phone:"(541) 520-7331",spon:false},
  {name:"Make it Reality",cat:"3D Printing & Laser",k:"services",phone:"(414) 367-9570",spon:false},
  // === Added 2026-09-12 — Jenny's "missing from the old site" list (details to confirm) ===
- {name:"Seldovia Arts Council",cat:"Arts Organization",k:"life",spon:false},
- {name:"Seldovia House",cat:"Senior Housing",k:"life",spon:false},
+ {name:"Seldovia Arts Council",cat:"Arts Organization",k:"life",url:"arts-council.html",spon:false},
+ {name:"Seldovia House",cat:"Senior Housing",k:"life",url:"seldovia-house.html",spon:false},
  {name:"Seldovia Bible Chapel",cat:"Church",k:"life",spon:false},
  {name:"Grace Haven Fellowship",cat:"Church",k:"life",spon:false},
  {name:"Russian Orthodox Church",cat:"Church",k:"life",spon:false},
