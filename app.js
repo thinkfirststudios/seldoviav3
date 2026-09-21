@@ -4563,9 +4563,11 @@ if($("#dirList")){
       ${p.featured?'<span class="spon-flag">★ Featured</span>':''}</div>`;};
   const bizCard=d=>{
     const bits=[]; if(d.phone)bits.push(`<a href="tel:${d.phone.replace(/[^\d]/g,"")}">${esc(d.phone)}</a>`); bits.push("Seldovia, AK");
-    const site=d.url?`<div class="d-site"><a href="${esc(d.url)}" target="_blank" rel="noopener">Visit website ↗</a></div>`:"";
+    const ext=/^https?:/i.test(d.url||"");   // external site opens a new tab; an internal page stays in the tab
+    const nm=d.url?`<a href="${esc(d.url)}"${ext?' target="_blank" rel="noopener"':''}>${esc(d.name)}</a>`:esc(d.name);
+    const site=d.url?`<div class="d-site"><a href="${esc(d.url)}"${ext?' target="_blank" rel="noopener"':''}>${ext?"Visit website ↗":"View page →"}</a></div>`:"";
     return `<div class="dir-item ${d.spon?'featured':''}"><div class="d-ico">${esc(d.name[0])}</div>
-      <div class="d-main"><div class="d-cat">${esc(d.cat)}</div><h4>${esc(d.name)}</h4><div class="d-contact">${bits.join(" · ")}</div>${site}</div>
+      <div class="d-main"><div class="d-cat">${esc(d.cat)}</div><h4>${nm}</h4><div class="d-contact">${bits.join(" · ")}</div>${site}</div>
       ${d.spon?'<span class="spon-flag">★ Sponsor</span>':''}</div>`;};
 
   const renderDir=()=>{const q=dirQuery.trim().toLowerCase(); const qd=q.replace(/\D/g,"");
@@ -4589,7 +4591,10 @@ if($("#dirList")){
     ]).then(([dir,subs])=>{
       let biz=BIZ;
       if(dir&&dir.data&&dir.data.length){
-        biz=dir.data.map(d=>({type:"biz", name:d.name, cat:d.cat||"Business", k:d.section||"", phone:d.phone||"", url:d.url||"", spon:!!d.sponsor, _govt:!!d.govt}));
+        // If a DB row has no url yet (e.g. seeded before its page existed), fall back to the
+        // static DIRECTORY's url so internal pages (Arts Council, Seldovia House, …) still link.
+        const DIR_URL=Object.fromEntries(DIRECTORY.filter(x=>x.url).map(x=>[x.name,x.url]));
+        biz=dir.data.map(d=>({type:"biz", name:d.name, cat:d.cat||"Business", k:d.section||"", phone:d.phone||"", url:d.url||DIR_URL[d.name]||"", spon:!!d.sponsor, _govt:!!d.govt}));
       }
       let sp=[], sb=[];
       if(subs&&subs.data&&subs.data.length){
