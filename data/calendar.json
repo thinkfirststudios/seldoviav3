@@ -1,17 +1,7 @@
 {
- "updated": "2026-09-20T20:53:05Z",
+ "updated": "2026-09-21T05:02:55Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1789938900000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
-  },
-  {
-   "start": 1789949700000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Departs to Homer"
-  },
   {
    "start": 1790006400000,
    "allDay": false,
@@ -301,6 +291,16 @@
    "start": 1791140400000,
    "allDay": false,
    "title": "Seldovia Bible Chapel - Sunday Worship Service"
+  },
+  {
+   "start": 1791148500000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Arrives from Homer"
+  },
+  {
+   "start": 1791148500000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
   }
  ]
 }
