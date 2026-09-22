@@ -900,7 +900,7 @@ body[data-page="realestate"] .today-bar{background:var(--accent-ink);}
 .webcam-card{display:flex; flex-direction:column; text-decoration:none; background:var(--sheet); border:1px solid var(--line); border-radius:var(--radius); overflow:clip; box-shadow:var(--shadow);}
 .wc-player{position:relative; aspect-ratio:16/9; background:#0c1418;}
 .wc-video{width:100%; height:100%; object-fit:cover; display:block;}
-.wc-badge{position:absolute; top:.6rem; left:.6rem; background:rgba(200,13,50,.92); color:#fff; font-size:.72rem; font-weight:800; letter-spacing:.03em; padding:.22rem .55rem; border-radius:999px; text-transform:uppercase;}
+.wc-badge{position:absolute; top:.6rem; right:.6rem; background:rgba(200,13,50,.92); color:#fff; font-size:.72rem; font-weight:800; letter-spacing:.03em; padding:.22rem .55rem; border-radius:999px; text-transform:uppercase;}
 .wc-offline .wc-badge{background:rgba(90,90,90,.9);}
 .wc-offline .wc-badge::after{content:" — offline";}
 .wc-offline .wc-player::after{content:"This camera is temporarily offline"; position:absolute; inset:0; display:grid; place-items:center; color:#cbd5db; font-size:.9rem; text-align:center; padding:1rem;}
