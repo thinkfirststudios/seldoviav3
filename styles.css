@@ -161,9 +161,9 @@ h2.title{font-size:clamp(1.9rem,4vw,2.9rem);}
    floating mid-height next to the tall logo). They line up just above the Seldovia Today bar. */
 .masthead-inner{max-width:var(--maxw); margin-inline:auto; display:flex; align-items:flex-end; gap:1rem; padding:.4rem var(--gutter) .6rem; min-height:76px;}
 .brand{display:flex; align-items:center; gap:.55rem; text-decoration:none; flex-shrink:0;}
-.brand .brand-logo{height:132px; width:auto; display:block; object-fit:contain;}
-@media (max-width:900px){ .brand .brand-logo{height:104px;} }
-@media (max-width:520px){ .brand .brand-logo{height:80px;} .masthead-inner{min-height:78px;} }
+.brand .brand-logo{height:152px; width:auto; display:block; object-fit:contain;}
+@media (max-width:900px){ .brand .brand-logo{height:118px;} }
+@media (max-width:520px){ .brand .brand-logo{height:92px;} .masthead-inner{min-height:78px;} }
 /* Seldovia Property logo atop the Real Estate page hero */
 /* Jenny's colored brokerage logo, directly on the hero photo (no card). */
 .re-brand-logo{display:block; height:auto; width:min(320px,72vw); margin:0 auto 1rem;}
@@ -181,7 +181,7 @@ body[data-page="realestate"] nav.mainnav a.active{background:var(--accent-soft);
 /* Brushstroke tagline (Jenny) — "Alaska's Best Kept Secret" in the Lovestory script,
    pushed to the right of the nav. margin-left:auto sends it (and the search) to the right edge.
    Hidden once the header tightens so it never crowds the nav/search on smaller screens. */
-.brand-tag{font-family:var(--script); font-weight:400; font-size:clamp(1.1rem,1.9vw,1.9rem); line-height:1; color:var(--heading); white-space:nowrap; margin-left:clamp(.4rem,1vw,1rem); padding:0 0 .35rem;}
+.brand-tag{font-family:var(--script); font-weight:400; font-size:clamp(1.4rem,2.6vw,2.6rem); line-height:1; color:var(--heading); white-space:nowrap; margin-left:clamp(.6rem,1.4vw,1.4rem); padding:0 0 .5rem; display:inline-block; transform:rotate(-7deg); transform-origin:left bottom;}
 .head-actions{display:flex; align-items:center; gap:.5rem; margin-left:auto;}
 /* Tagline sits beside the logo. On one line with the full nav + search it only fits on wide
    screens, so hide it in the crowded laptop band; it returns on phones (nav is a hamburger). */
