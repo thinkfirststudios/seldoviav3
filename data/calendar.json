@@ -1,12 +1,7 @@
 {
- "updated": "2026-09-22T11:45:01Z",
+ "updated": "2026-09-22T17:01:00Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1790092800000,
-   "allDay": false,
-   "title": "SVT - Fitness Center"
-  },
   {
    "start": 1790100000000,
    "allDay": false,
@@ -301,6 +296,11 @@
    "start": 1791321300000,
    "allDay": false,
    "title": "AMHS - Tustumena Arrives from Homer"
+  },
+  {
+   "start": 1791321300000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
   }
  ]
 }
