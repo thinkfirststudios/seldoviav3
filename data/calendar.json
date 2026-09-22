@@ -1,26 +1,11 @@
 {
- "updated": "2026-09-22T17:01:00Z",
+ "updated": "2026-09-22T21:23:27Z",
  "calname": "seldovia",
  "events": [
   {
-   "start": 1790100000000,
+   "start": 1790114400000,
    "allDay": false,
-   "title": "SOCC - Yoga"
-  },
-  {
-   "start": 1790107200000,
-   "allDay": false,
-   "title": "SVT - Thrive 'Technology Made Easier'"
-  },
-  {
-   "start": 1790110800000,
-   "allDay": false,
-   "title": "SVT - Fitness Center"
-  },
-  {
-   "start": 1790111700000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
+   "title": "Seldovia Public Library Hours"
   },
   {
    "start": 1790118900000,
@@ -58,6 +43,11 @@
    "title": "SOCC - Tots Pottery Class"
   },
   {
+   "start": 1790200800000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
+  },
+  {
    "start": 1790222400000,
    "allDay": false,
    "title": "SOCC - Teen Night"
@@ -81,6 +71,11 @@
    "start": 1790283600000,
    "allDay": false,
    "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1790287200000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
   },
   {
    "start": 1790294400000,
@@ -108,6 +103,11 @@
    "title": "Food Bank Shopping Day"
   },
   {
+   "start": 1790368200000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
+  },
+  {
    "start": 1790388000000,
    "allDay": false,
    "title": "SVT - Open Gym"
@@ -126,6 +126,11 @@
    "start": 1790445600000,
    "allDay": false,
    "title": "The Seldovia 1.5 Cross Country Fundraiser Race"
+  },
+  {
+   "start": 1790460000000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
   },
   {
    "start": 1790463600000,
@@ -168,6 +173,11 @@
    "title": "SBE - Lap Swim"
   },
   {
+   "start": 1790632800000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
+  },
+  {
    "start": 1790697600000,
    "allDay": false,
    "title": "SVT - Fitness Center"
@@ -181,6 +191,11 @@
    "start": 1790715600000,
    "allDay": false,
    "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1790719200000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
   },
   {
    "start": 1790723700000,
@@ -208,9 +223,19 @@
    "title": "SBE - Lap Swim"
   },
   {
+   "start": 1790805600000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
+  },
+  {
    "start": 1790827200000,
    "allDay": false,
    "title": "SOCC - Teen Night"
+  },
+  {
+   "start": 1790877600000,
+   "allDay": false,
+   "title": "SOCC - Yoga"
   },
   {
    "start": 1790889300000,
@@ -221,6 +246,11 @@
    "start": 1790889300000,
    "allDay": false,
    "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
+  },
+  {
+   "start": 1790892000000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
   },
   {
    "start": 1790900100000,
@@ -238,9 +268,19 @@
    "title": "Food Bank Shopping Day"
   },
   {
+   "start": 1790973000000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
+  },
+  {
    "start": 1791000000000,
    "allDay": false,
    "title": "SBC Teen Nights!"
+  },
+  {
+   "start": 1791064800000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
   },
   {
    "start": 1791068400000,
@@ -261,46 +301,6 @@
    "start": 1791136800000,
    "allDay": false,
    "title": "Grace Haven Fellowship Sunday Worship"
-  },
-  {
-   "start": 1791136800000,
-   "allDay": false,
-   "title": "St. Nicholas Russian Orthodox Church Sunday Service"
-  },
-  {
-   "start": 1791140400000,
-   "allDay": false,
-   "title": "Seldovia Bible Chapel - Sunday Worship Service"
-  },
-  {
-   "start": 1791148500000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Arrives from Homer"
-  },
-  {
-   "start": 1791148500000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
-  },
-  {
-   "start": 1791159300000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Departs"
-  },
-  {
-   "start": 1791159300000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Departs to Homer"
-  },
-  {
-   "start": 1791321300000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Arrives from Homer"
-  },
-  {
-   "start": 1791321300000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
   }
  ]
 }
