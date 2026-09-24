@@ -4348,27 +4348,46 @@ function renderPlaces(){
     const bdg=placeBadge(p);
     const meta=EXPLORE_META[p.name]||{};
     const catLabel=meta.label||p.cat;                       // Jenny can edit the small text above the name
+    const dispName=meta.name||p.name;                        // Jenny can correct the business name (display) in the admin
+    const phone=(meta.phone!=null)?meta.phone:p.phone;  // and the phone number (blank override allowed)
+    const loc=(meta.loc!=null)?meta.loc:(p.key==="outoftown"?"":"Seldovia, AK"); // out-of-town: no "Seldovia" unless Jenny sets a location
     const st=meta.status;                                    // "open" / "closed" seasonal sign (Jenny toggles)
     const sign=(st==="open"||st==="closed")?`<span class="place-sign place-sign-${st}">${st==="open"?"Open all year":"Summer only"}</span>`:"";
-    const media=`<div class="place-media"><img class="place-photo" src="${bizPhoto(p)}" alt="" loading="lazy" width="600" height="600" onerror="this.src='images/placeholder-business.png'">${sign}${bdg?`<span class="place-badge" title="${esc(BADGE_LABEL[bdg]||"")}">${bdg}</span>`:""}</div>`;
+    const media=`<div class="place-media"><img class="place-photo" src="${bizPhoto(p)}" alt="${esc(dispName)}" loading="lazy" width="600" height="600" onerror="this.src='images/placeholder-business.png'">${sign}${bdg?`<span class="place-badge" title="${esc(BADGE_LABEL[bdg]||"")}">${bdg}</span>`:""}</div>`;
     const owner=(p.key!=="life") ? BIZ_OWNER[p.name] : "";
     const blurb=meta.desc||BIZ_BLURB[p.name];   // Jenny can edit the description in the admin (explore_meta.desc)
-    const body=`<div class="place-body"><div class="rating"><span class="cat">${esc(catLabel)}</span></div><h4>${esc(p.name)}</h4>
-        <div class="place-loc">${pin} Seldovia, AK</div>${owner?`<div class="place-owner">👤 ${esc(owner)}</div>`:""}${blurb?`<p class="place-blurb">${esc(blurb)}</p>`:""}`;
+    // Blurb clamps to 3 lines for uniform card height; "Read more" reveals only when it's actually clipped (Jenny).
+    const body=`<div class="place-body"><div class="rating"><span class="cat">${esc(catLabel)}</span></div><h4>${esc(dispName)}</h4>
+        ${loc?`<div class="place-loc">${pin} ${esc(loc)}</div>`:""}${owner?`<div class="place-owner">👤 ${esc(owner)}</div>`:""}${blurb?`<p class="place-blurb clamp">${esc(blurb)}</p><button type="button" class="place-more" hidden>Read more</button>`:""}`;
     if(p.url){ // whole card links to the business website
       return `<a class="place" href="${esc(p.url)}" target="_blank" rel="noopener">${media}${body}
-        <div class="place-contact">${p.phone?esc(p.phone)+" · ":""}<span class="place-web">Visit website ↗</span></div></div></a>`;
+        <div class="place-contact">${phone?esc(phone)+" · ":""}<span class="place-web">Visit website ↗</span></div></div></a>`;
     }
     // no website → not a link; show a tappable phone (or nothing for trails/beaches)
-    const contact=p.phone?`<div class="place-contact"><a href="tel:${p.phone.replace(/[^\d]/g,"")}">📞 ${esc(p.phone)}</a></div>`:"";
+    const contact=phone?`<div class="place-contact"><a href="tel:${String(phone).replace(/[^\d]/g,"")}">📞 ${esc(phone)}</a></div>`:"";
     return `<div class="place place-static">${media}${body}${contact}</div></div>`;
   };
   $("#placeGrid").innerHTML=rows.map(placeCard).join("");
+  // Reveal "Read more" only on cards whose 3-line blurb is actually clipped.
+  requestAnimationFrame(()=>{ $$("#placeGrid .place-blurb").forEach(b=>{ const btn=b.nextElementSibling; if(btn&&btn.classList.contains("place-more")&&b.scrollHeight>b.clientHeight+2) btn.hidden=false; }); });
   if(!_findScrolled) requestAnimationFrame(()=>{ if(scrollToFind("#placeGrid")) _findScrolled=true; });
 }
 if($("#placeTabs")){
   $("#placeTabs").innerHTML=PLACE_TABS.map(([k,l])=>`<button class="tab" data-key="${k}" aria-pressed="${k===placeTab}">${esc(l)}</button>`).join("");
   $("#placeTabs").addEventListener("click",e=>{const b=e.target.closest(".tab"); if(!b)return; placeTab=b.dataset.key; $$("#placeTabs .tab").forEach(t=>t.setAttribute("aria-pressed",t===b)); renderPlaces();});
+}
+// "Read more" on a business card expands its blurb in place (works even though the card is a link).
+if($("#placeGrid")){
+  $("#placeGrid").addEventListener("click",e=>{ const btn=e.target.closest(".place-more"); if(!btn) return;
+    e.preventDefault(); e.stopPropagation(); const b=btn.previousElementSibling;
+    if(b){ b.classList.toggle("clamp"); btn.textContent=b.classList.contains("clamp")?"Read more":"Show less"; } });
+  // Floating "go to top" button (Jenny) — appears once you scroll down the Explore page.
+  const toTop=document.createElement("button");
+  toTop.id="toTop"; toTop.type="button"; toTop.setAttribute("aria-label","Go to top");
+  toTop.innerHTML="&#8593;"; document.body.appendChild(toTop);
+  toTop.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
+  const onScroll=()=>toTop.classList.toggle("show", window.scrollY>500);
+  window.addEventListener("scroll",onScroll,{passive:true}); onScroll();
 }
 // Explore page: apply Jenny's saved category overrides (if any) before the first paint.
 if($("#placeGrid") && window.db){

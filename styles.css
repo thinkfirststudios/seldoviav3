@@ -438,6 +438,14 @@ body[data-page="realestate"] .re-track{grid-auto-columns:calc((100% - 2.3*var(--
 .place-loc{display:flex; align-items:center; gap:.35rem; font-size:.85rem; color:var(--muted);}
 .place-owner{font-size:.82rem; color:var(--text-soft); font-weight:600;}
 .place-blurb{font-size:.86rem; color:var(--text-soft); line-height:1.42; margin-top:.1rem;}
+/* Uniform business cards (Jenny): clamp the blurb to 3 lines, with a Read more toggle. */
+.place-blurb.clamp{display:-webkit-box; -webkit-line-clamp:3; line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;}
+.place-more{align-self:flex-start; background:none; border:0; padding:0; margin-top:.15rem; color:var(--accent-ink); font-weight:700; font-size:.82rem; cursor:pointer;}
+.place-more:hover{text-decoration:underline;}
+/* Floating "go to top" button (Jenny) */
+#toTop{position:fixed; right:clamp(14px,3vw,28px); bottom:clamp(14px,3vw,28px); z-index:70; width:46px; height:46px; border-radius:50%; border:1px solid var(--line); background:var(--sheet); color:var(--accent-ink); font-size:1.35rem; line-height:1; cursor:pointer; box-shadow:var(--shadow-lg); opacity:0; visibility:hidden; transform:translateY(8px); transition:opacity .2s, transform .2s, visibility .2s;}
+#toTop.show{opacity:1; visibility:visible; transform:none;}
+#toTop:hover{border-color:var(--accent);}
 /* flash a card when arriving from a search suggestion (?find=) */
 .search-hit{outline:3px solid var(--accent-ink); outline-offset:3px; border-radius:var(--radius-s); animation:searchHit 2.4s ease forwards;}
 @keyframes searchHit{0%,55%{outline-color:var(--accent-ink);} 100%{outline-color:transparent;}}

@@ -814,6 +814,11 @@
           <label style="font-size:.8rem;color:var(--text-soft);display:flex;align-items:center;gap:.35rem">Text above name <input class="bc-label" data-name="${esc(p.name)}" value="${esc(lbl)}" placeholder="e.g. Restaurant" style="padding:.35rem .5rem;border:1px solid var(--line);border-radius:8px;width:170px"></label>
           <label style="font-size:.8rem;color:var(--text-soft);display:flex;align-items:center;gap:.35rem">Sign <select class="bc-status" data-name="${esc(p.name)}" style="padding:.35rem .5rem;border:1px solid var(--line);border-radius:8px"><option value=""${st===""?" selected":""}>None</option><option value="open"${st==="open"?" selected":""}>Open all year</option><option value="closed"${st==="closed"?" selected":""}>Summer only</option></select></label>
         </div>
+        <div style="display:flex;gap:.7rem;align-items:center;flex-wrap:wrap;padding-left:60px">
+          <label style="font-size:.8rem;color:var(--text-soft);display:flex;align-items:center;gap:.35rem">Name <input class="bc-name" data-name="${esc(p.name)}" value="${esc(m.name!=null?m.name:p.name)}" style="padding:.35rem .5rem;border:1px solid var(--line);border-radius:8px;width:190px"></label>
+          <label style="font-size:.8rem;color:var(--text-soft);display:flex;align-items:center;gap:.35rem">Phone <input class="bc-phone" data-name="${esc(p.name)}" value="${esc(m.phone!=null?m.phone:(p.phone||''))}" placeholder="(907) …" style="padding:.35rem .5rem;border:1px solid var(--line);border-radius:8px;width:140px"></label>
+          <label style="font-size:.8rem;color:var(--text-soft);display:flex;align-items:center;gap:.35rem">Location <input class="bc-loc" data-name="${esc(p.name)}" value="${esc(m.loc!=null?m.loc:'')}" placeholder="${p.key==='outoftown'?'e.g. Homer, AK':'Seldovia, AK'}" style="padding:.35rem .5rem;border:1px solid var(--line);border-radius:8px;width:150px"></label>
+        </div>
         <div style="padding-left:60px"><label style="font-size:.8rem;color:var(--text-soft);display:block">Description <textarea class="bc-desc" data-name="${esc(p.name)}" rows="2" placeholder="Short description shown on the card" style="width:100%;margin-top:.25rem;padding:.45rem .55rem;border:1px solid var(--line);border-radius:8px;font:inherit;resize:vertical">${esc(desc)}</textarea></label></div>
       </div>`; };
     const drawHidden=()=>{ const h=$("#bc-hidden"); if(!hidden.size){ h.innerHTML=""; return; }
@@ -861,13 +866,19 @@
           msg.style.color="var(--open)"; msg.textContent=`${name} photo saved. It's live on Explore.`;
         }catch(err){ msg.style.color="var(--accent-ink)"; msg.textContent="Error: "+(err.message||err); }
         return; }
-      const clean=n=>{ if(meta[n] && !meta[n].status && meta[n].label==null && meta[n].desc==null) delete meta[n]; };
+      const clean=n=>{ if(meta[n] && !meta[n].status && meta[n].label==null && meta[n].desc==null && meta[n].name==null && meta[n].phone==null && meta[n].loc==null) delete meta[n]; };
       const stSel=e.target.closest(".bc-status");
       if(stSel){ const name=stSel.dataset.name; meta[name]=meta[name]||{}; if(stSel.value) meta[name].status=stSel.value; else delete meta[name].status; clean(name); return; }
       const lb=e.target.closest(".bc-label");
       if(lb){ const name=lb.dataset.name, pp=listAll().find(x=>x.name===name); const v=lb.value.trim(); meta[name]=meta[name]||{}; if(v && v!==(pp&&pp.cat)) meta[name].label=v; else delete meta[name].label; clean(name); return; }
       const dq=e.target.closest(".bc-desc");
       if(dq){ const name=dq.dataset.name; const base=(EX.BIZ_BLURB&&EX.BIZ_BLURB[name])||""; const v=dq.value.trim(); meta[name]=meta[name]||{}; if(v && v!==base) meta[name].desc=v; else delete meta[name].desc; clean(name); return; }
+      const nm=e.target.closest(".bc-name");
+      if(nm){ const name=nm.dataset.name; const v=nm.value.trim(); meta[name]=meta[name]||{}; if(v && v!==name) meta[name].name=v; else delete meta[name].name; clean(name); return; }
+      const ph=e.target.closest(".bc-phone");
+      if(ph){ const name=ph.dataset.name, pp=listAll().find(x=>x.name===name); const v=ph.value.trim(); meta[name]=meta[name]||{}; if(v!==((pp&&pp.phone)||"")) meta[name].phone=v; else delete meta[name].phone; clean(name); return; }
+      const lc=e.target.closest(".bc-loc");
+      if(lc){ const name=lc.dataset.name; const v=lc.value.trim(); meta[name]=meta[name]||{}; if(v) meta[name].loc=v; else delete meta[name].loc; clean(name); return; }
       const s=e.target.closest(".bc-sel"); if(!s) return;
       const name=s.dataset.name, p=listAll().find(x=>x.name===name); if(!p) return;
       if(s.value===EX.baseToken(p)) delete overrides[name]; else overrides[name]=s.value; });
