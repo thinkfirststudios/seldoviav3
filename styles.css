@@ -684,7 +684,7 @@ a.show-more{text-decoration:none; display:inline-block;}
 .quote-row .quote{flex:0 0 min(430px,82vw); scroll-snap-align:start;}
 .quote-row .quote-text{max-height:12em; overflow:hidden; position:relative;}
 .quote-row .quote.expanded .quote-text{max-height:none;}
-.quote-row .quote:not(.expanded) .quote-text::after{content:""; position:absolute; left:0; right:0; bottom:0; height:2.4em; background:linear-gradient(transparent,var(--sheet)); pointer-events:none;}
+.quote-row .quote.clamped:not(.expanded) .quote-text::after{content:""; position:absolute; left:0; right:0; bottom:0; height:2.4em; background:linear-gradient(transparent,var(--sheet)); pointer-events:none;}
 .quote-more{margin-top:.5rem; background:none; border:0; color:var(--accent-ink); font-weight:700; cursor:pointer; padding:.1rem 0; font:inherit;}
 .quote-more:hover{text-decoration:underline;}
 

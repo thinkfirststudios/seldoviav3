@@ -4724,7 +4724,7 @@ if($("#quoteGrid")){
     requestAnimationFrame(()=>{
       // Reveal "Read more" only on cards whose text is actually clamped; it expands that card.
       $$("#quoteGrid .quote").forEach(q=>{ const txt=q.querySelector(".quote-text"), btn=q.querySelector(".quote-more");
-        if(txt && btn && txt.scrollHeight>txt.clientHeight+4){ btn.hidden=false;
+        if(txt && btn && txt.scrollHeight>txt.clientHeight+4){ btn.hidden=false; q.classList.add("clamped");
           btn.addEventListener("click",()=>{ const open=q.classList.toggle("expanded"); btn.textContent=open?"Read less":"Read more"; }); } });
       if(window.initReCarousel) window.initReCarousel($("#quoteGrid"), {autoplay:true});
     });
