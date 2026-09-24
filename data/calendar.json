@@ -1,22 +1,7 @@
 {
- "updated": "2026-09-24T17:16:05Z",
+ "updated": "2026-09-24T21:34:21Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1790271000000,
-   "allDay": false,
-   "title": "SVT – Dr. Marlowe Veterinary Services"
-  },
-  {
-   "start": 1790272800000,
-   "allDay": false,
-   "title": "SOCC - Yoga"
-  },
-  {
-   "start": 1790283600000,
-   "allDay": false,
-   "title": "SVT - Fitness Center"
-  },
   {
    "start": 1790287200000,
    "allDay": false,
@@ -299,6 +284,21 @@
   },
   {
    "start": 1791324000000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
+  },
+  {
+   "start": 1791332100000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Departs"
+  },
+  {
+   "start": 1791332100000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Departs to Homer"
+  },
+  {
+   "start": 1791410400000,
    "allDay": false,
    "title": "Seldovia Public Library Hours"
   }
