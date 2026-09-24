@@ -1,12 +1,7 @@
 {
- "updated": "2026-09-24T11:53:15Z",
+ "updated": "2026-09-24T17:16:05Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1790265600000,
-   "allDay": false,
-   "title": "SVT - Fitness Center"
-  },
   {
    "start": 1790271000000,
    "allDay": false,
@@ -301,6 +296,11 @@
    "start": 1791321300000,
    "allDay": false,
    "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
+  },
+  {
+   "start": 1791324000000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
   }
  ]
 }
