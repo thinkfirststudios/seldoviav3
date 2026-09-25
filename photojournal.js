@@ -28,10 +28,9 @@
       // Scheduling (Qwynny): a photo dated in the future stays hidden until that day arrives.
       data=data.filter(p=>!p.taken_on || p.taken_on<=akToday);
       if(!data.length) return; // all upcoming -> keep the static gallery
-      const newest=data[0];
-      // Only feature a photo in "Seldovia Today" if it was actually posted TODAY. Otherwise
-      // the hero is skipped and every photo simply lives in the gallery below (nothing stale up top).
-      const featured=(newest.taken_on===akToday)?newest:null;
+      // Always feature the most recent photo big at the top (Jenny wants the Photo of the Day
+      // there every day, not only when a photo happens to be dated exactly today).
+      const featured=data[0];
       const [curY,curMo]=akToday.split("-").map(Number); const curMonth=curMo-1; // 0-11, Alaska time
       const curKey=`${akToday.split("-")[0]}-${akToday.split("-")[1]}`; // e.g. 2026-08
       const notFeat=p=>!featured||p.id!==featured.id;
@@ -74,9 +73,10 @@
       // Then every other month, newest first
       html+=keys.map(k=>{
         const [y,m]=k.split("-");
+        const gp=groups[k].filter(notFeat); if(!gp.length) return "";  // don't repeat the featured photo
         return `<section class="journal-section">
           <div class="journal-month"><h3>${MON[+m-1]} ${y}</h3></div>
-          <div class="journal-grid">${groups[k].map(fig).join("")}</div></section>`;
+          <div class="journal-grid">${gp.map(fig).join("")}</div></section>`;
       }).join("");
 
       const searchBox=`<div class="journal-search"><input type="search" id="journalSearch" placeholder="Search photos — day, month, year, caption, or tag…" aria-label="Search photos"><span class="jsearch-count" id="journalSearchCount"></span></div>`;
