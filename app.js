@@ -4659,7 +4659,7 @@ if($("#dirList")){
       ${celebrations(p)}</div>
       ${p.featured?'<span class="spon-flag">★ Featured</span>':''}</div>`;};
   const bizCard=d=>{
-    const bits=[]; if(d.phone)bits.push(`<a href="tel:${d.phone.replace(/[^\d]/g,"")}">${esc(d.phone)}</a>`); bits.push("Seldovia, AK");
+    const bits=[]; if(d.phone)bits.push(`<a href="tel:${d.phone.replace(/[^\d]/g,"")}">${esc(d.phone)}</a>`); if(d.k!=="outoftown") bits.push("Seldovia, AK");
     const ext=/^https?:/i.test(d.url||"");   // external site opens a new tab; an internal page stays in the tab
     const nm=d.url?`<a href="${esc(d.url)}"${ext?' target="_blank" rel="noopener"':''}>${esc(d.name)}</a>`:esc(d.name);
     const site=d.url?`<div class="d-site"><a href="${esc(d.url)}"${ext?' target="_blank" rel="noopener"':''}>${ext?"Visit website ↗":"View page →"}</a></div>`:"";
