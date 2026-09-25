@@ -1,22 +1,7 @@
 {
- "updated": "2026-09-24T21:34:21Z",
+ "updated": "2026-09-25T05:02:49Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1790287200000,
-   "allDay": false,
-   "title": "Seldovia Public Library Hours"
-  },
-  {
-   "start": 1790294400000,
-   "allDay": false,
-   "title": "SBE - Tot Swim"
-  },
-  {
-   "start": 1790298000000,
-   "allDay": false,
-   "title": "SBE - Lap Swim"
-  },
   {
    "start": 1790352000000,
    "allDay": false,
@@ -301,6 +286,21 @@
    "start": 1791410400000,
    "allDay": false,
    "title": "Seldovia Public Library Hours"
+  },
+  {
+   "start": 1791424800000,
+   "allDay": false,
+   "title": "CITY - Seldovia Planning Commission Regular Meeting"
+  },
+  {
+   "start": 1791494100000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Arrives from Homer"
+  },
+  {
+   "start": 1791494100000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
   }
  ]
 }
