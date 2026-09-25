@@ -858,7 +858,8 @@ footer.site a{color:rgba(255,255,255,.82); text-decoration:none;} footer.site a:
 .journal-section{margin-bottom:2.6rem;}
 /* Month titles in Jenny's brushstroke font, centered (Jenny #5b) */
 .journal-month{margin:0 0 1.2rem; padding-bottom:.4rem; text-align:center;}
-.journal-month h3{font-family:var(--script); font-weight:400; font-size:clamp(2.4rem,5.5vw,3.4rem); color:var(--heading); line-height:1.05;}
+.journal-month h3,.journal-h{font-family:var(--script); font-weight:400; font-size:clamp(2.4rem,5.5vw,3.4rem); color:var(--heading); line-height:1.05;}
+.journal-h{margin:0;}
 .journal-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:clamp(16px,2.4vw,28px);}
 .jphoto{margin:0; display:flex; flex-direction:column; gap:.55rem;}
 .jphoto img{width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:16px;
