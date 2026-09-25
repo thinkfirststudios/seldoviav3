@@ -4629,7 +4629,9 @@ if($("#celebrations")){
 
 // directory / phone book — community members + businesses, privacy-first
 if($("#dirList")){
-  const byName=(a,b)=>a.name.localeCompare(b.name);
+  // Sort by the name ignoring leading quotes/punctuation, so e.g. "Ziggy" Elzig files under Z, not the top.
+  const sortKey=s=>String(s||"").replace(/^[^\p{L}\p{N}]+/u,"").toLowerCase();
+  const byName=(a,b)=>sortKey(a.name).localeCompare(sortKey(b.name));
   const PEOPLE=MEMBERS.map(m=>({...m,type:"person"}));
   const BIZ=DIRECTORY.map(d=>({...d,type:"biz"})).sort(byName);
   let ALL=[...PEOPLE,...BIZ].sort(byName);  // one alphabetical list — people and businesses together (Jenny)
