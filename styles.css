@@ -188,7 +188,14 @@ body[data-page="realestate"] nav.mainnav a.active{background:var(--accent-soft);
 /* Tagline sits beside the logo. On one line with the full nav + search it only fits on wide
    screens, so hide it in the crowded laptop band; it returns on phones (nav is a hamburger). */
 @media (max-width:1300px) and (min-width:1121px){ .brand-tag{display:none;} }
-@media (max-width:560px){ .brand-tag{display:none;} }
+/* Phones: nav is a hamburger, so there is room. Drop the tagline onto its own line
+   under the logo (logo + search/menu stay on the top row) instead of hiding it. */
+@media (max-width:560px){
+  .masthead-inner{flex-wrap:wrap;}
+  .brand{order:0;}
+  .head-actions{order:1;}
+  .brand-tag{order:2; display:inline-block; flex-basis:100%; margin-left:.2rem; margin-top:.15rem; padding-bottom:.15rem; font-size:clamp(1.6rem,6.8vw,2.3rem); transform:rotate(-6deg); transform-origin:left center;}
+}
 .icon-btn{width:42px; height:42px; border-radius:50%; border:1px solid var(--line); background:var(--sheet); color:var(--text); display:grid; place-items:center; cursor:pointer;}
 .icon-btn:hover{border-color:var(--accent); color:var(--accent-ink);}
 .add-listing{display:inline-flex;}
