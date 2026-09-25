@@ -4629,9 +4629,10 @@ if($("#celebrations")){
 
 // directory / phone book — community members + businesses, privacy-first
 if($("#dirList")){
+  const byName=(a,b)=>a.name.localeCompare(b.name);
   const PEOPLE=MEMBERS.map(m=>({...m,type:"person"}));
-  const BIZ=DIRECTORY.map(d=>({...d,type:"biz"})).sort((a,b)=>a.name.localeCompare(b.name));
-  let ALL=[...PEOPLE,...BIZ];
+  const BIZ=DIRECTORY.map(d=>({...d,type:"biz"})).sort(byName);
+  let ALL=[...PEOPLE,...BIZ].sort(byName);  // one alphabetical list — people and businesses together (Jenny)
   // Phone-book category chips (Jenny's order/labels). Organization vs Government split the "life" key.
   const CATL=[
     {label:"Lodging",         test:r=>r.k==="stay"},
@@ -4701,7 +4702,7 @@ if($("#dirList")){
         }).filter(x=>x.name);
         sp=mapped.filter(x=>x.type==="person"); sb=mapped.filter(x=>x.type==="biz");
       }
-      ALL=[...PEOPLE, ...sp, ...[...biz, ...sb].sort((a,b)=>a.name.localeCompare(b.name))];
+      ALL=[...PEOPLE, ...sp, ...biz, ...sb].sort(byName);  // people + businesses interleaved alphabetically
       renderDir();
     }).catch(()=>{}); }
   requestAnimationFrame(()=>scrollToFind("#dirList"));
