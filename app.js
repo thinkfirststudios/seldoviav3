@@ -4767,7 +4767,7 @@ if($("#sponsorTrack")){
 }
 
 // home photo gallery (auto-scroll)
-const galFig=(g,i)=>`<figure class="gallery-photo" tabindex="0" data-idx="${i}"><img src="${g.img}" alt="${esc(g.cap)}" loading="lazy" width="600" height="450"><figcaption>${esc(g.cap)}</figcaption></figure>`;
+const galFig=(g,i)=>`<figure class="gallery-photo" tabindex="0" data-idx="${i}"><img src="${g.img}" alt="${esc(g.cap)}" loading="eager" decoding="async" width="600" height="450"><figcaption>${esc(g.cap)}</figcaption></figure>`;
 if($("#galleryTrack")){const gHTML=GALLERY.map((g,i)=>galFig(g,i)).join(""); $("#galleryTrack").innerHTML=gHTML+gHTML;}
 if($("#galleryTrack2")){const gHTML=GALLERY.map((g,i)=>galFig(g,i)).reverse().join(""); $("#galleryTrack2").innerHTML=gHTML+gHTML;}
 window.GALLERY=GALLERY; window.galFig=galFig; // home-gallery.js swaps in real photos from the DB
