@@ -4338,7 +4338,7 @@ if($("#catGrid")) $("#catGrid").innerHTML=CATEGORIES.map((c,i)=>{
 if($("#featureMedia")) $("#featureMedia").innerHTML=`<img class="feature-photo" src="images/photos/220627_SeldoviaHarbor_Melody.jpg" alt="Seldovia Harbor at first light" loading="lazy" width="1200" height="1200">`;
 
 // places (directory highlights) with tabs — reads ?cat= from URL for deep-links
-const PLACE_TABS=[["all","All"],["travel","Travel"],["stay","Lodging + Camping"],["eat","Eat"],["shop","Shop + Gifts"],["activities","Activities"],["services","Services"],["life","Public Services"],["outoftown","Out of Town"]];
+const PLACE_TABS=[["all","All"],["travel","Travel"],["stay","Lodging + Camping"],["eat","Eat"],["shop","Shop + Gifts"],["activities","Activities"],["services","Businesses"],["life","Govt/Organizations"],["outoftown","Out of Town"]];
 let placeTab=(new URLSearchParams(location.search).get("cat"))||"all";
 if(!PLACE_TABS.some(([k])=>k===placeTab) && placeTab!=="about") placeTab="all";
 // Business owners + blurbs pulled from Jenny's old Seldovia.com directory (Connections).
@@ -4416,8 +4416,8 @@ function renderPlaces(){
     return;
   }
   // Businesses first (alphabetical); trails & beaches sink to the bottom (Jenny #3).
-  const isTrail=p=>p.cat==="Trail"||p.cat==="Beach & Park";
-  const rows=PLACES.filter(p=>(placeTab==="all"||p.key===placeTab) && !EXPLORE_HIDDEN.has(p.name)).sort((a,b)=>{const ta=isTrail(a),tb=isTrail(b); return ta!==tb?(ta?1:-1):a.name.localeCompare(b.name);});
+  // Everything alphabetical, trails included (Jenny: keep continuity, no separate group at the bottom).
+  const rows=PLACES.filter(p=>(placeTab==="all"||p.key===placeTab) && !EXPLORE_HIDDEN.has(p.name)).sort((a,b)=>a.name.localeCompare(b.name));
   const pin=`<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.3-7-11a7 7 0 0 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>`;
   // Placeholder photo until Qwynny's square B&W watercolor images land (set p.img; p.imgColor for the sponsor color version).
   const placeCard=p=>{
@@ -4426,6 +4426,7 @@ function renderPlaces(){
     const catLabel=meta.label||p.cat;                       // Jenny can edit the small text above the name
     const dispName=meta.name||p.name;                        // Jenny can correct the business name (display) in the admin
     const phone=(meta.phone!=null)?meta.phone:p.phone;  // and the phone number (blank override allowed)
+    const url=(meta.url!=null)?meta.url:(p.url||"");    // and the website (blank override allowed)
     const loc=(meta.loc!=null)?meta.loc:(p.key==="outoftown"?"":"Seldovia, AK"); // out-of-town: no "Seldovia" unless Jenny sets a location
     const st=meta.status;                                    // "open" / "closed" seasonal sign (Jenny toggles)
     const sign=(st==="open"||st==="closed")?`<span class="place-sign place-sign-${st}">${st==="open"?"Open all year":"Summer only"}</span>`:"";
@@ -4435,8 +4436,8 @@ function renderPlaces(){
     // Blurb clamps to 3 lines for uniform card height; "Read more" reveals only when it's actually clipped (Jenny).
     const body=`<div class="place-body"><div class="rating"><span class="cat">${esc(catLabel)}</span></div><h4>${esc(dispName)}</h4>
         ${loc?`<div class="place-loc">${pin} ${esc(loc)}</div>`:""}${owner?`<div class="place-owner">👤 ${esc(owner)}</div>`:""}${blurb?`<p class="place-blurb clamp">${esc(blurb)}</p><button type="button" class="place-more" hidden>Read more</button>`:""}`;
-    if(p.url){ // whole card links to the business website
-      return `<a class="place" href="${esc(p.url)}" target="_blank" rel="noopener">${media}${body}
+    if(url){ // whole card links to the business website
+      return `<a class="place" href="${esc(url)}" target="_blank" rel="noopener">${media}${body}
         <div class="place-contact">${phone?esc(phone)+" · ":""}<span class="place-web">Visit website ↗</span></div></div></a>`;
     }
     // no website → not a link; show a tappable phone (or nothing for trails/beaches)

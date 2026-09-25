@@ -818,6 +818,7 @@
           <label style="font-size:.8rem;color:var(--text-soft);display:flex;align-items:center;gap:.35rem">Name <input class="bc-name" data-name="${esc(p.name)}" value="${esc(m.name!=null?m.name:p.name)}" style="padding:.35rem .5rem;border:1px solid var(--line);border-radius:8px;width:190px"></label>
           <label style="font-size:.8rem;color:var(--text-soft);display:flex;align-items:center;gap:.35rem">Phone <input class="bc-phone" data-name="${esc(p.name)}" value="${esc(m.phone!=null?m.phone:(p.phone||''))}" placeholder="(907) …" style="padding:.35rem .5rem;border:1px solid var(--line);border-radius:8px;width:140px"></label>
           <label style="font-size:.8rem;color:var(--text-soft);display:flex;align-items:center;gap:.35rem">Location <input class="bc-loc" data-name="${esc(p.name)}" value="${esc(m.loc!=null?m.loc:'')}" placeholder="${p.key==='outoftown'?'e.g. Homer, AK':'Seldovia, AK'}" style="padding:.35rem .5rem;border:1px solid var(--line);border-radius:8px;width:150px"></label>
+          <label style="font-size:.8rem;color:var(--text-soft);display:flex;align-items:center;gap:.35rem">Website <input class="bc-url" data-name="${esc(p.name)}" value="${esc(m.url!=null?m.url:(p.url||''))}" placeholder="https://…" style="padding:.35rem .5rem;border:1px solid var(--line);border-radius:8px;width:200px"></label>
         </div>
         <div style="padding-left:60px"><label style="font-size:.8rem;color:var(--text-soft);display:block">Description <textarea class="bc-desc" data-name="${esc(p.name)}" rows="2" placeholder="Short description shown on the card" style="width:100%;margin-top:.25rem;padding:.45rem .55rem;border:1px solid var(--line);border-radius:8px;font:inherit;resize:vertical">${esc(desc)}</textarea></label></div>
       </div>`; };
@@ -866,7 +867,7 @@
           msg.style.color="var(--open)"; msg.textContent=`${name} photo saved. It's live on Explore.`;
         }catch(err){ msg.style.color="var(--accent-ink)"; msg.textContent="Error: "+(err.message||err); }
         return; }
-      const clean=n=>{ if(meta[n] && !meta[n].status && meta[n].label==null && meta[n].desc==null && meta[n].name==null && meta[n].phone==null && meta[n].loc==null) delete meta[n]; };
+      const clean=n=>{ if(meta[n] && !meta[n].status && meta[n].label==null && meta[n].desc==null && meta[n].name==null && meta[n].phone==null && meta[n].loc==null && meta[n].url==null) delete meta[n]; };
       const stSel=e.target.closest(".bc-status");
       if(stSel){ const name=stSel.dataset.name; meta[name]=meta[name]||{}; if(stSel.value) meta[name].status=stSel.value; else delete meta[name].status; clean(name); return; }
       const lb=e.target.closest(".bc-label");
@@ -879,6 +880,8 @@
       if(ph){ const name=ph.dataset.name, pp=listAll().find(x=>x.name===name); const v=ph.value.trim(); meta[name]=meta[name]||{}; if(v!==((pp&&pp.phone)||"")) meta[name].phone=v; else delete meta[name].phone; clean(name); return; }
       const lc=e.target.closest(".bc-loc");
       if(lc){ const name=lc.dataset.name; const v=lc.value.trim(); meta[name]=meta[name]||{}; if(v) meta[name].loc=v; else delete meta[name].loc; clean(name); return; }
+      const uu=e.target.closest(".bc-url");
+      if(uu){ const name=uu.dataset.name, pp=listAll().find(x=>x.name===name); const v=uu.value.trim(); meta[name]=meta[name]||{}; if(v!==((pp&&pp.url)||"")) meta[name].url=v; else delete meta[name].url; clean(name); return; }
       const s=e.target.closest(".bc-sel"); if(!s) return;
       const name=s.dataset.name, p=listAll().find(x=>x.name===name); if(!p) return;
       if(s.value===EX.baseToken(p)) delete overrides[name]; else overrides[name]=s.value; });
