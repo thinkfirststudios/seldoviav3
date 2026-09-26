@@ -1,12 +1,7 @@
 {
- "updated": "2026-09-26T16:27:46Z",
+ "updated": "2026-09-26T21:14:35Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1790445600000,
-   "allDay": false,
-   "title": "The Seldovia 1.5 Cross Country Fundraiser Race"
-  },
   {
    "start": 1790460000000,
    "allDay": false,
@@ -301,6 +296,11 @@
    "start": 1791669600000,
    "allDay": false,
    "title": "Seldovia Public Library Hours"
+  },
+  {
+   "start": 1791680400000,
+   "allDay": false,
+   "title": "St. Nicholas Russian Orthodox Church Vespers Service"
   }
  ]
 }
