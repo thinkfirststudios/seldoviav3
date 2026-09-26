@@ -51,21 +51,25 @@ const navLinks=(cls="")=>NAV.map(([href,label,key])=>`<a class="${cls} ${key===P
 
 const HEADER=`
 <header class="masthead">
-  <div class="masthead-inner">
+  <div class="masthead-top">
     <a class="brand" href="index.html"${_preview} aria-label="Seldovia.com home">
       <img class="brand-logo" src="images/logo-seldovia.png?v=2" alt="Seldovia.com" width="1000" height="574">
     </a>
     <span class="brand-tag">Alaska&rsquo;s Best Kept Secret</span>
-    <nav class="mainnav" aria-label="Primary">${navLinks()}</nav>
-    <div class="head-actions">
-      <div class="navsearch" role="search">
-        <span class="s-icon" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span>
-        <input type="search" id="navSearch" placeholder="Search…" aria-label="Search the whole site" autocomplete="off">
-        <div class="results" id="navResults" role="listbox" style="left:0; right:0; top:calc(100% + 8px);"></div>
+  </div>
+  <div class="navband">
+    <div class="navband-inner">
+      <nav class="mainnav" aria-label="Primary">${navLinks()}</nav>
+      <div class="head-actions">
+        <div class="navsearch" role="search">
+          <span class="s-icon" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span>
+          <input type="search" id="navSearch" placeholder="Search…" aria-label="Search the whole site" autocomplete="off">
+          <div class="results" id="navResults" role="listbox" style="left:0; right:0; top:calc(100% + 8px);"></div>
+        </div>
+        <button class="icon-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
       </div>
-      <button class="icon-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-      </button>
     </div>
   </div>
 </header>

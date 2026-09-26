@@ -6,15 +6,12 @@
 <meta name="description" content="Seldovia.com — discover everything about the little town of Seldovia, Alaska, on Kachemak Bay. Directory, events, gallery, news, and real estate.">
 <meta name="theme-color" content="#F8E6DD">
 <title>Seldovia.com — Discover Everything Seldovia, Alaska</title>
-<link rel="stylesheet" href="styles.css?v=94">
+<link rel="stylesheet" href="styles.css?v=95">
 </head>
 <body data-page="home">
 <a class="skip-link" href="#main">Skip to content</a>
 
 <main id="main">
-  <!-- SELDOVIA TODAY — live temp + next tide + ferry (seldovia-today.js) -->
-  <div class="today-bar" id="seldoviaToday" aria-label="Seldovia today — live conditions"></div>
-
   <!-- HERO — Qwynny's custom watercolor banner (title baked in), search bar over the image (Jenny) -->
   <div class="page-banner home-banner wc-edges">
     <img src="images/headers/banner-home.jpg?v=2" alt="Discover Everything Seldovia" width="2400" height="625">
@@ -30,8 +27,11 @@
     </div>
   </div>
 
-  <!-- Combined home box (Jenny): "of the day" widget + this week's schedule, side by side -->
+  <!-- Combined home box (Jenny): "of the day" widget + this week's schedule, side by side.
+       SELDOVIA TODAY (live temp + next tide + ferry) now sits here with the conditions,
+       moved down from the top of the page per Jenny (Sep 24). -->
   <section class="section wrap" style="padding-bottom:0">
+    <div class="today-bar" id="seldoviaToday" aria-label="Seldovia today — live conditions"></div>
     <div class="home-duo">
       <div id="todayExtra"></div>
       <div id="todaySchedule"></div>
@@ -76,7 +76,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="db.js?v=6"></script>
-<script src="app.js?v=94"></script>
+<script src="app.js?v=95"></script>
 <script src="seldovia-today.js?v=7"></script>
 <script src="extras-data.js?v=1"></script>
 <script src="home-extra.js?v=2"></script>
