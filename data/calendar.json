@@ -1,22 +1,7 @@
 {
- "updated": "2026-09-25T21:38:33Z",
+ "updated": "2026-09-26T05:05:30Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1790388000000,
-   "allDay": false,
-   "title": "SVT - Open Gym"
-  },
-  {
-   "start": 1790388000000,
-   "allDay": false,
-   "title": "SVT - Open Swim"
-  },
-  {
-   "start": 1790395200000,
-   "allDay": false,
-   "title": "SBC Teen Nights tonight at the SOC!!!"
-  },
   {
    "start": 1790445600000,
    "allDay": false,
@@ -301,6 +286,21 @@
    "start": 1791577800000,
    "allDay": false,
    "title": "Food Bank Shopping Day"
+  },
+  {
+   "start": 1791577800000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
+  },
+  {
+   "start": 1791604800000,
+   "allDay": false,
+   "title": "SBC Teen Nights!"
+  },
+  {
+   "start": 1791669600000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
   }
  ]
 }
