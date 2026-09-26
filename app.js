@@ -4700,7 +4700,7 @@ if($("#dirList")){
         const mapped=subs.data.map(s=>{ const d=s.data||{};
           return s.listing_type==="business"
             ? {type:"biz", name:s.display_name||d.business_name, cat:d.business_category||"Business", phone:d.business_phone||"", spon:false}
-            : {type:"person", name:s.display_name||d.name, photo:s.photo_url||"", addr:(d.address_privacy==="public"&&d.address)?d.address:"", phone:(d.phone_privacy==="public"&&d.phone)?d.phone:""};
+            : {type:"person", name:s.display_name||d.name, photo:s.photo_url||"", featured:!!d.featured, bday:d.bday||"", anniv:d.anniv||"", addr:(d.address_privacy==="public"&&d.address)?d.address:"", phone:(d.phone_privacy==="public"&&d.phone)?d.phone:""};
         }).filter(x=>x.name);
         sp=mapped.filter(x=>x.type==="person"); sb=mapped.filter(x=>x.type==="biz");
       }

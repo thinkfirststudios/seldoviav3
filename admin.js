@@ -139,13 +139,113 @@
       </form>
       <div id="dirList"><p style="color:var(--text-soft)">Loading…</p></div>
 
-      <h4 style="margin-top:2.2rem">Submissions from the site</h4>
-      <p style="color:var(--text-soft);font-size:.92rem;margin:.3rem 0 1rem">Neighbors and businesses who added themselves through the site. Approve to publish them to the phone book, or delete. Individuals' privacy choices (public/private per field) are shown in parentheses.</p>
+      <h4 style="margin-top:2.2rem">Neighbors &amp; people</h4>
+      <p style="color:var(--text-soft);font-size:.92rem;margin:.3rem 0 1rem">Everyone listed in the phone book. Add a neighbor, edit their details, or choose what shows publicly. Anything set to <b>Private</b> is still listed by name but shows "details private". Changes go live right away.</p>
+      <form class="info-block" id="personForm" style="max-width:680px;margin-bottom:1.4rem">
+        <h4 id="person-head" style="margin:0 0 .8rem">Add a neighbor</h4>
+        <div class="field"><label for="pName">Name</label><input id="pName" type="text" required></div>
+        <div class="row-2" style="display:grid;grid-template-columns:1fr 160px;gap:.6rem">
+          <div class="field"><label for="pPhone">Phone</label><input id="pPhone" type="text" placeholder="(907) 234-0000"></div>
+          <div class="field"><label for="pPhonePriv">Show phone?</label><select id="pPhonePriv"><option value="private">Private</option><option value="public">Public</option></select></div>
+        </div>
+        <div class="row-2" style="display:grid;grid-template-columns:1fr 160px;gap:.6rem">
+          <div class="field"><label for="pAddr">Address</label><input id="pAddr" type="text" placeholder="Street, Seldovia"></div>
+          <div class="field"><label for="pAddrPriv">Show address?</label><select id="pAddrPriv"><option value="private">Private</option><option value="public">Public</option></select></div>
+        </div>
+        <div class="row-2" style="display:grid;grid-template-columns:1fr 160px;gap:.6rem">
+          <div class="field"><label for="pEmail">Email</label><input id="pEmail" type="text" placeholder="name@email.com"></div>
+          <div class="field"><label for="pEmailPriv">Show email?</label><select id="pEmailPriv"><option value="private">Private</option><option value="public">Public</option></select></div>
+        </div>
+        <div class="row-2" style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem">
+          <div class="field"><label for="pBday">Birthday <span class="opt">(optional)</span></label><input id="pBday" type="text" placeholder="e.g. Mar 14"></div>
+          <div class="field"><label for="pAnniv">Anniversary <span class="opt">(optional)</span></label><input id="pAnniv" type="text" placeholder="e.g. Jun 2"></div>
+        </div>
+        <div class="field"><label for="pPhoto">Photo URL <span class="opt">(optional)</span></label><input id="pPhoto" type="text" placeholder="https://…"></div>
+        <div style="display:flex;gap:1.4rem;flex-wrap:wrap;margin:.4rem 0 1rem">
+          <label style="display:flex;align-items:center;gap:.4rem;font-size:.92rem"><input id="pFeat" type="checkbox"> ★ Featured</label>
+        </div>
+        <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+          <button class="btn btn-primary" type="submit" id="pSave">Add neighbor</button>
+          <button class="btn btn-ghost" type="button" id="pCancel" hidden>Cancel</button>
+          <span id="pMsg" class="form-note" style="align-self:center;color:var(--accent-ink)"></span>
+        </div>
+      </form>
+      <div id="peopleList"><p style="color:var(--text-soft)">Loading…</p></div>
+
+      <h4 style="margin-top:2.2rem">Submissions awaiting review</h4>
+      <p style="color:var(--text-soft);font-size:.92rem;margin:.3rem 0 1rem">Neighbors and businesses who added themselves through the site. Approve to publish them to the phone book, or delete. Approved neighbors then appear in <b>Neighbors &amp; people</b> above, where you can edit them; approved businesses show in the public phone book. Individuals' privacy choices are shown in parentheses.</p>
       <div id="subList"><p style="color:var(--text-soft)">Loading…</p></div>`;
     $("#dirForm").addEventListener("submit",saveDir);
     $("#dCancel").addEventListener("click",()=>resetDirForm());
+    $("#personForm").addEventListener("submit",savePerson);
+    $("#pCancel").addEventListener("click",()=>resetPersonForm());
     loadDirectory();
+    loadPeople();
     loadSubmissions();
+  }
+  /* ---- Neighbors / people (directory_submissions, listing_type=person) ---- */
+  let editPerson=null;
+  function resetPersonForm(){
+    editPerson=null;
+    const f=$("#personForm"); if(f) f.reset();
+    $("#person-head").textContent="Add a neighbor";
+    $("#pSave").textContent="Add neighbor";
+    $("#pCancel").hidden=true; $("#pMsg").textContent="";
+  }
+  async function loadPeople(){
+    const list=$("#peopleList");
+    const {data,error}=await db.from("directory_submissions").select("*").eq("listing_type","person").order("display_name",{ascending:true});
+    if(error){ list.innerHTML=`<p style="color:var(--accent-ink)">${esc(error.message)}</p>`; return; }
+    if(!data.length){ list.innerHTML=`<p style="color:var(--text-soft)">No neighbors listed yet — add the first one above.</p>`; return; }
+    const pc=v=>v==="public"?'<span style="color:var(--open)">public</span>':'<span style="color:var(--text-soft)">private</span>';
+    list.innerHTML=`<p style="color:var(--text-soft);font-size:.85rem;margin-bottom:.6rem">${data.length} people</p>`+data.map(s=>{const d=s.data||{}; const pend=s.status!=="approved";
+      return `<div class="info-block" style="margin-bottom:.6rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center">
+        <div style="font-size:.92rem;line-height:1.5">
+          <b style="color:var(--heading)">${esc(s.display_name||d.name||"(no name)")}</b>${d.featured?' <span style="color:var(--accent-ink)">★</span>':""}${pend?' <span style="font-size:.78rem;color:var(--accent-ink)">● pending</span>':""}
+          <div style="color:var(--text-soft)">${d.phone?`${esc(d.phone)} (${pc(d.phone_privacy)})`:'no phone'}${d.address?` · ${esc(d.address)} (${pc(d.address_privacy)})`:""}</div>
+        </div>
+        <div style="display:flex;gap:.5rem">
+          <button class="btn btn-ghost" type="button" data-pedit="${s.id}">Edit</button>
+          <button class="btn btn-ghost" type="button" data-pdel="${s.id}">Delete</button>
+        </div></div>`;}).join("");
+    list.querySelectorAll("[data-pedit]").forEach(b=>b.addEventListener("click",()=>startEditPerson(data.find(x=>x.id===b.dataset.pedit))));
+    list.querySelectorAll("[data-pdel]").forEach(b=>b.addEventListener("click",()=>delPerson(b.dataset.pdel,data.find(x=>x.id===b.dataset.pdel))));
+  }
+  function startEditPerson(s){
+    if(!s) return;
+    editPerson=s; const d=s.data||{};
+    $("#pName").value=s.display_name||d.name||"";
+    $("#pPhone").value=d.phone||""; $("#pPhonePriv").value=d.phone_privacy==="public"?"public":"private";
+    $("#pAddr").value=d.address||""; $("#pAddrPriv").value=d.address_privacy==="public"?"public":"private";
+    $("#pEmail").value=d.email||""; $("#pEmailPriv").value=d.email_privacy==="public"?"public":"private";
+    $("#pBday").value=d.bday||""; $("#pAnniv").value=d.anniv||"";
+    $("#pPhoto").value=s.photo_url||""; $("#pFeat").checked=!!d.featured;
+    $("#person-head").textContent="Edit neighbor";
+    $("#pSave").textContent="Save changes";
+    $("#pCancel").hidden=false; $("#pMsg").textContent="";
+    $("#personForm").scrollIntoView({behavior:"smooth",block:"start"});
+  }
+  async function savePerson(e){
+    e.preventDefault();
+    const name=$("#pName").value.trim();
+    if(!name){ $("#pMsg").textContent="Name is required."; return; }
+    const data={ name, phone:$("#pPhone").value.trim(), phone_privacy:$("#pPhonePriv").value,
+      address:$("#pAddr").value.trim(), address_privacy:$("#pAddrPriv").value,
+      email:$("#pEmail").value.trim(), email_privacy:$("#pEmailPriv").value,
+      bday:$("#pBday").value.trim(), anniv:$("#pAnniv").value.trim(), featured:$("#pFeat").checked };
+    const base={ display_name:name, photo_url:$("#pPhoto").value.trim(), listing_type:"person", data };
+    $("#pMsg").textContent="Saving…";
+    // Editing keeps the row's current status; a brand-new neighbor is published straight away.
+    const res=editPerson ? await db.from("directory_submissions").update(base).eq("id",editPerson.id)
+                         : await db.from("directory_submissions").insert({...base, status:"approved"});
+    if(res.error){ $("#pMsg").textContent=res.error.message; return; }
+    resetPersonForm(); loadPeople(); loadSubmissions();
+  }
+  async function delPerson(id,s){
+    if(!confirm(`Remove "${s?(s.display_name||"this person"):"this person"}" from the phone book? This can't be undone.`)) return;
+    const {error}=await db.from("directory_submissions").delete().eq("id",id);
+    if(error){ alert(error.message); return; }
+    loadPeople(); loadSubmissions();
   }
   function resetDirForm(){
     editDir=null;
@@ -206,9 +306,10 @@
     const list=$("#subList");
     const {data,error}=await db.from("directory_submissions").select("*").order("created_at",{ascending:false});
     if(error){ list.innerHTML=`<p style="color:var(--accent-ink)">${esc(error.message)}</p>`; return; }
-    if(!data.length){ list.innerHTML=`<p style="color:var(--text-soft)">No submissions yet.</p>`; return; }
-    const pending=data.filter(s=>s.status!=="approved").length;
-    list.innerHTML=(pending?`<p style="color:var(--accent-ink);font-weight:700;margin-bottom:.8rem">${pending} awaiting review</p>`:"")+data.map(subCard).join("");
+    // Only the ones still awaiting review show here; approved people move to "Neighbors & people" above.
+    const pending=data.filter(s=>s.status!=="approved");
+    if(!pending.length){ list.innerHTML=`<p style="color:var(--text-soft)">Nothing awaiting review right now.</p>`; return; }
+    list.innerHTML=`<p style="color:var(--accent-ink);font-weight:700;margin-bottom:.8rem">${pending.length} awaiting review</p>`+pending.map(subCard).join("");
     list.querySelectorAll("[data-approve]").forEach(b=>b.addEventListener("click",()=>setSubStatus(b.dataset.approve,"approved")));
     list.querySelectorAll("[data-del]").forEach(b=>b.addEventListener("click",()=>delSub(b.dataset.del)));
   }
@@ -229,8 +330,8 @@
         ${s.status!=="approved"?`<button class="btn btn-primary" type="button" data-approve="${s.id}">Approve</button>`:`<button class="btn btn-ghost" type="button" data-approve="${s.id}" disabled>Approved</button>`}
         <button class="btn btn-ghost" type="button" data-del="${s.id}">Delete</button></div></div>`;
   }
-  async function setSubStatus(id,status){ const {error}=await db.from("directory_submissions").update({status}).eq("id",id); if(error){alert(error.message);return;} loadSubmissions(); }
-  async function delSub(id){ if(!confirm("Delete this submission? This can't be undone."))return; const {error}=await db.from("directory_submissions").delete().eq("id",id); if(error){alert(error.message);return;} loadSubmissions(); }
+  async function setSubStatus(id,status){ const {error}=await db.from("directory_submissions").update({status}).eq("id",id); if(error){alert(error.message);return;} loadSubmissions(); loadPeople(); }
+  async function delSub(id){ if(!confirm("Delete this submission? This can't be undone."))return; const {error}=await db.from("directory_submissions").delete().eq("id",id); if(error){alert(error.message);return;} loadSubmissions(); loadPeople(); }
 
   /* ---------------- DAILY PHOTO ---------------- */
   let editPhoto=null;
