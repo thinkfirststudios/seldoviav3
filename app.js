@@ -96,6 +96,7 @@ const FOOTER=`
     </div>
     <div class="foot-bottom">
       <p class="disclaimer">&copy; <span id="year">2026</span> Seldovia.com — a community project. Real estate services provided by Seldovia Property, a licensed Alaska real estate brokerage (Jenny Chissus, Broker/Owner). Listing information believed reliable but not guaranteed; Alaska is a non-disclosure state. Equal Housing Opportunity.</p>
+      <p><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a></p>
       <p>Made with care on Kachemak Bay 🏔️</p>
     </div>
   </div>
