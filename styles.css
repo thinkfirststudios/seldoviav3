@@ -187,6 +187,10 @@ nav.mainnav{display:flex; gap:.15rem; align-items:center;}
 nav.mainnav a{font-size:.94rem; font-weight:700; color:#fff; text-decoration:none; padding:.55rem .72rem; border-radius:var(--radius-pill); white-space:nowrap; transition:background .15s,color .15s;}
 nav.mainnav a:hover{background:rgba(255,255,255,.18); color:#fff;}
 nav.mainnav a.active{background:#fff; color:var(--band);}
+/* Real Estate: black nav text on the pink band, as Jenny asked (Sep 24). */
+body[data-page="realestate"] nav.mainnav a{color:#111;}
+body[data-page="realestate"] nav.mainnav a:hover{background:rgba(0,0,0,.12); color:#111;}
+body[data-page="realestate"] nav.mainnav a.active{background:#fff; color:var(--band);}
 .head-actions{display:flex; align-items:center; gap:.5rem; margin-left:auto;}
 .icon-btn{width:42px; height:42px; border-radius:50%; border:1px solid rgba(255,255,255,.6); background:rgba(255,255,255,.14); color:#fff; display:grid; place-items:center; cursor:pointer;}
 .icon-btn:hover{border-color:#fff; background:rgba(255,255,255,.24); color:#fff;}
