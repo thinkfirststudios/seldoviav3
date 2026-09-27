@@ -1,22 +1,7 @@
 {
- "updated": "2026-09-27T17:01:30Z",
+ "updated": "2026-09-27T21:24:05Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1790532000000,
-   "allDay": false,
-   "title": "Grace Haven Fellowship Sunday Worship"
-  },
-  {
-   "start": 1790532000000,
-   "allDay": false,
-   "title": "St. Nicholas Russian Orthodox Church Sunday Service"
-  },
-  {
-   "start": 1790535600000,
-   "allDay": false,
-   "title": "Seldovia Bible Chapel - Sunday Worship Service"
-  },
   {
    "start": 1790553600000,
    "allDay": false,
@@ -301,6 +286,21 @@
    "start": 1791745200000,
    "allDay": false,
    "title": "Seldovia Bible Chapel - Sunday Worship Service"
+  },
+  {
+   "start": 1791753300000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Arrives from Homer"
+  },
+  {
+   "start": 1791753300000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
+  },
+  {
+   "start": 1791764100000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Departs"
   }
  ]
 }
