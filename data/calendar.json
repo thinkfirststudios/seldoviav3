@@ -1,12 +1,7 @@
 {
- "updated": "2026-09-27T21:24:05Z",
+ "updated": "2026-09-28T05:30:13Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1790553600000,
-   "allDay": false,
-   "title": "SOCC - Chris Murphy The Fiddle & Forest Tour"
-  },
   {
    "start": 1790611200000,
    "allDay": false,
@@ -301,6 +296,11 @@
    "start": 1791764100000,
    "allDay": false,
    "title": "AMHS - Tustumena Departs"
+  },
+  {
+   "start": 1791764100000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Departs to Homer"
   }
  ]
 }
