@@ -1,27 +1,7 @@
 {
- "updated": "2026-09-29T12:59:25Z",
+ "updated": "2026-09-29T22:20:33Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1790697600000,
-   "allDay": false,
-   "title": "SVT - Fitness Center"
-  },
-  {
-   "start": 1790704800000,
-   "allDay": false,
-   "title": "SOCC - Yoga"
-  },
-  {
-   "start": 1790715600000,
-   "allDay": false,
-   "title": "SVT - Fitness Center"
-  },
-  {
-   "start": 1790719200000,
-   "allDay": false,
-   "title": "Seldovia Public Library Hours"
-  },
   {
    "start": 1790723700000,
    "allDay": false,
@@ -301,6 +281,26 @@
    "start": 1791764100000,
    "allDay": false,
    "title": "AMHS - Tustumena Departs"
+  },
+  {
+   "start": 1791764100000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Departs to Homer"
+  },
+  {
+   "start": 1791842400000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
+  },
+  {
+   "start": 1791849600000,
+   "allDay": false,
+   "title": "Public Library - Story Time"
+  },
+  {
+   "start": 1791856800000,
+   "allDay": false,
+   "title": "CITY - Council Regular Meeting"
   }
  ]
 }
