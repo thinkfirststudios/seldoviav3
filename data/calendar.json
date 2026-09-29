@@ -1,12 +1,7 @@
 {
- "updated": "2026-09-28T23:19:55Z",
+ "updated": "2026-09-29T05:48:43Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1790640000000,
-   "allDay": false,
-   "title": "Public Library - Story Time"
-  },
   {
    "start": 1790697600000,
    "allDay": false,
@@ -63,9 +58,19 @@
    "title": "SOCC - Teen Night"
   },
   {
+   "start": 1790876700000,
+   "allDay": false,
+   "title": "SVT - Science Thursday Middle/High School"
+  },
+  {
    "start": 1790877600000,
    "allDay": false,
    "title": "SOCC - Yoga"
+  },
+  {
+   "start": 1790887500000,
+   "allDay": false,
+   "title": "SVT - Science Thursday SBE Elementary"
   },
   {
    "start": 1790888400000,
@@ -86,6 +91,11 @@
    "start": 1790892000000,
    "allDay": false,
    "title": "Seldovia Public Library Hours"
+  },
+  {
+   "start": 1790893800000,
+   "allDay": false,
+   "title": "SVT - Science Thursday Homeschool"
   },
   {
    "start": 1790900100000,
@@ -291,16 +301,6 @@
    "start": 1791764100000,
    "allDay": false,
    "title": "AMHS - Tustumena Departs"
-  },
-  {
-   "start": 1791764100000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Departs to Homer"
-  },
-  {
-   "start": 1791842400000,
-   "allDay": false,
-   "title": "Seldovia Public Library Hours"
   }
  ]
 }
