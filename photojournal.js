@@ -50,7 +50,7 @@
         <section class="today-feature">
           <div class="today-media"><img src="${esc(featured.image_url)}" alt="${esc(featured.caption||"Seldovia today")}"></div>
           <div class="today-cap">
-            <span class="eyebrow">Seldovia Today</span>
+            <span class="eyebrow">Photo of the Day</span>
             <h2>${esc(featured.caption||"A moment from around the bay")}</h2>
             <div class="today-date">${esc(fmt(featured.taken_on))}</div>
           </div>

@@ -163,9 +163,10 @@ h2.title{font-size:clamp(1.9rem,4vw,2.9rem);}
    "Seldovia Today" conditions bar moved down into the page content, beside the Marine Weather. */
 .masthead-top{max-width:var(--maxw); margin-inline:auto; display:flex; align-items:flex-end; gap:1rem; padding:.35rem var(--gutter) .3rem;}
 .brand{display:flex; align-items:center; gap:.55rem; text-decoration:none; flex-shrink:0;}
-.brand .brand-logo{height:132px; width:auto; display:block; object-fit:contain;}
-/* Tagline owns the top row beside the logo: large, angled, right-aligned to the far edge. */
-.brand-tag{flex:1 1 auto; min-width:0; text-align:right; font-family:var(--script); font-weight:400; font-size:clamp(2rem,4.6vw,4rem); line-height:1; color:var(--heading); white-space:nowrap; transform:rotate(-5deg); transform-origin:right bottom; padding-bottom:.4rem;}
+.brand .brand-logo{height:150px; width:auto; display:block; object-fit:contain;}
+/* Tagline owns the top row beside the logo: large, angled, right-aligned to the far edge.
+   pointer-events:none so this decorative text never sits over the nav band and eats clicks. */
+.brand-tag{flex:1 1 auto; min-width:0; text-align:right; font-family:var(--script); font-weight:400; font-size:clamp(2.2rem,5vw,4.6rem); line-height:1; color:var(--heading); white-space:nowrap; transform:rotate(-5deg); transform-origin:right bottom; padding-bottom:.4rem; pointer-events:none;}
 @media (max-width:900px){ .brand .brand-logo{height:104px;} .brand-tag{font-size:clamp(1.8rem,5vw,2.8rem);} }
 /* Phones: stack the tagline under the logo so it never crowds it (nav is a hamburger below). */
 @media (max-width:560px){
@@ -181,15 +182,16 @@ h2.title{font-size:clamp(1.9rem,4vw,2.9rem);}
 .brand .word b{color:var(--accent-ink);}
 .brand .tagline{font-size:.58rem; letter-spacing:.2em; text-transform:uppercase; color:var(--sage); margin-top:2px;}
 /* Colored nav band. --band is spruce green everywhere and pink on the RE page (see :root). */
-.navband{background:var(--band);}
+.navband{background:var(--band); position:relative; z-index:2;}
 .navband-inner{max-width:var(--maxw); margin-inline:auto; display:flex; align-items:center; gap:1rem; padding:.1rem var(--gutter); min-height:52px;}
 nav.mainnav{display:flex; gap:.15rem; align-items:center;}
 nav.mainnav a{font-size:.94rem; font-weight:700; color:#fff; text-decoration:none; padding:.55rem .72rem; border-radius:var(--radius-pill); white-space:nowrap; transition:background .15s,color .15s;}
 nav.mainnav a:hover{background:rgba(255,255,255,.18); color:#fff;}
 nav.mainnav a.active{background:#fff; color:var(--band);}
-/* Real Estate: black nav text on the pink band, as Jenny asked (Sep 24). */
-body[data-page="realestate"] nav.mainnav a{color:#111;}
-body[data-page="realestate"] nav.mainnav a:hover{background:rgba(0,0,0,.12); color:#111;}
+/* Real Estate: white nav text on the pink band. Jenny tried black (Sep 24) but it was
+   unreadable, so back to white (Sep 29). */
+body[data-page="realestate"] nav.mainnav a{color:#fff;}
+body[data-page="realestate"] nav.mainnav a:hover{background:rgba(255,255,255,.18); color:#fff;}
 body[data-page="realestate"] nav.mainnav a.active{background:#fff; color:var(--band);}
 .head-actions{display:flex; align-items:center; gap:.5rem; margin-left:auto;}
 .icon-btn{width:42px; height:42px; border-radius:50%; border:1px solid rgba(255,255,255,.6); background:rgba(255,255,255,.14); color:#fff; display:grid; place-items:center; cursor:pointer;}
@@ -324,6 +326,9 @@ body:not([data-page="realestate"]) .page-hero h1{font-size:clamp(2.7rem,6.2vw,4.
 .hs-field input{border:0; background:transparent; font-size:1rem; color:var(--text); width:100%; padding:.5rem 0; min-height:40px;}
 .hs-field input:focus{outline:none;}
 .hs-field input::placeholder{color:var(--muted);}
+/* Hero search button in a logo-matching blue (Jenny: the turquoise didn't tie in). */
+.hero-search .btn-primary{background:#2b6cb0; border-color:#2b6cb0; color:#fff;}
+.hero-search .btn-primary:hover{background:#245e99; border-color:#245e99;}
 .hero-search .btn-primary{border-radius:var(--radius-s); padding-inline:1.6rem;}
 .hero-results{position:fixed; z-index:200; background:var(--sheet); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-lg); max-height:min(58vh,420px); overflow-y:auto; overflow-x:hidden; display:none; text-align:left;}
 .hero-results.show{display:block;}

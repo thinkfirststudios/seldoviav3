@@ -208,8 +208,8 @@
           <button class="btn btn-ghost" type="button" data-pedit="${s.id}">Edit</button>
           <button class="btn btn-ghost" type="button" data-pdel="${s.id}">Delete</button>
         </div></div>`;}).join("");
-    list.querySelectorAll("[data-pedit]").forEach(b=>b.addEventListener("click",()=>startEditPerson(data.find(x=>x.id===b.dataset.pedit))));
-    list.querySelectorAll("[data-pdel]").forEach(b=>b.addEventListener("click",()=>delPerson(b.dataset.pdel,data.find(x=>x.id===b.dataset.pdel))));
+    list.querySelectorAll("[data-pedit]").forEach(b=>b.addEventListener("click",()=>startEditPerson(data.find(x=>String(x.id)===b.dataset.pedit))));
+    list.querySelectorAll("[data-pdel]").forEach(b=>b.addEventListener("click",()=>delPerson(b.dataset.pdel,data.find(x=>String(x.id)===b.dataset.pdel))));
   }
   function startEditPerson(s){
     if(!s) return;
@@ -270,8 +270,8 @@
           <button class="btn btn-ghost" type="button" data-dedit="${d.id}">Edit</button>
           <button class="btn btn-ghost" type="button" data-ddel="${d.id}">Delete</button>
         </div></div>`).join("");
-    list.querySelectorAll("[data-dedit]").forEach(b=>b.addEventListener("click",()=>startEditDir(data.find(x=>x.id===b.dataset.dedit))));
-    list.querySelectorAll("[data-ddel]").forEach(b=>b.addEventListener("click",()=>delDir(b.dataset.ddel,data.find(x=>x.id===b.dataset.ddel))));
+    list.querySelectorAll("[data-dedit]").forEach(b=>b.addEventListener("click",()=>startEditDir(data.find(x=>String(x.id)===b.dataset.dedit))));
+    list.querySelectorAll("[data-ddel]").forEach(b=>b.addEventListener("click",()=>delDir(b.dataset.ddel,data.find(x=>String(x.id)===b.dataset.ddel))));
   }
   function startEditDir(d){
     if(!d) return;
