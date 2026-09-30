@@ -166,7 +166,7 @@ h2.title{font-size:clamp(1.9rem,4vw,2.9rem);}
 .brand .brand-logo{height:150px; width:auto; display:block; object-fit:contain;}
 /* Tagline owns the top row beside the logo: large, angled, right-aligned to the far edge.
    pointer-events:none so this decorative text never sits over the nav band and eats clicks. */
-.brand-tag{flex:1 1 auto; min-width:0; text-align:right; font-family:var(--script); font-weight:400; font-size:clamp(2.2rem,5vw,4.6rem); line-height:1; color:var(--heading); white-space:nowrap; transform:rotate(-5deg); transform-origin:right bottom; padding-bottom:.4rem; pointer-events:none;}
+.brand-tag{flex:1 1 auto; min-width:0; text-align:right; font-family:var(--script); font-weight:400; font-size:clamp(1.9rem,3.6vw,3.7rem); line-height:1.05; color:var(--heading); white-space:nowrap; overflow:visible; transform:rotate(-4deg); transform-origin:right bottom; padding:0 .2rem .5rem 0; pointer-events:none;}
 @media (max-width:900px){ .brand .brand-logo{height:104px;} .brand-tag{font-size:clamp(1.8rem,5vw,2.8rem);} }
 /* Phones: stack the tagline under the logo so it never crowds it (nav is a hamburger below). */
 @media (max-width:560px){

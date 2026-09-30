@@ -4421,7 +4421,7 @@ function scrollToFind(containerSel){
 function renderPlaces(){
   if(!$("#placeGrid")) return;
   if(placeTab==="about"){
-    $("#placeGrid").innerHTML=`<div class="about-card">
+    $("#placeGrid").innerHTML=`<div class="about-card" style="grid-column:1/-1;max-width:820px">
       <h3>About Seldovia</h3>
       <p>Seldovia is a small town on the south shore of Kachemak Bay, across the water from Homer, Alaska. There is no road in — you arrive by ferry, small plane, or water taxi — which is a big part of what keeps it quiet, close-knit, and genuinely off the beaten path.</p>
       <p>The name comes from the Russian "Seldevoy," meaning "herring bay," a nod to the fishing heritage that still runs deep here. Wander the historic boardwalk, watch the boats in the harbor, hike the Otterbahn, and settle into the slower rhythm of one of Alaska's best kept secrets.</p>

@@ -111,6 +111,7 @@
     ["Services","services"],["Out of town","outoftown"]
   ];
   let editDir=null; // the business row being edited, or null when adding
+  let _dirRows=[], _peopleRows=[]; // last-loaded rows, for delegated Edit/Delete handlers
   function renderSubmissionsTab(){
     $("#tab-submissions").innerHTML=`
       <h4>Business listings</h4>
@@ -179,6 +180,16 @@
     $("#dCancel").addEventListener("click",()=>resetDirForm());
     $("#personForm").addEventListener("submit",savePerson);
     $("#pCancel").addEventListener("click",()=>resetPersonForm());
+    // Delegated Edit/Delete — bound once on the stable containers so they always work,
+    // even after the lists re-render.
+    $("#dirList").addEventListener("click",e=>{
+      const ed=e.target.closest("[data-dedit]"); if(ed){ startEditDir(_dirRows.find(x=>String(x.id)===ed.dataset.dedit)); return; }
+      const dl=e.target.closest("[data-ddel]"); if(dl){ delDir(dl.dataset.ddel,_dirRows.find(x=>String(x.id)===dl.dataset.ddel)); return; }
+    });
+    $("#peopleList").addEventListener("click",e=>{
+      const ed=e.target.closest("[data-pedit]"); if(ed){ startEditPerson(_peopleRows.find(x=>String(x.id)===ed.dataset.pedit)); return; }
+      const dl=e.target.closest("[data-pdel]"); if(dl){ delPerson(dl.dataset.pdel,_peopleRows.find(x=>String(x.id)===dl.dataset.pdel)); return; }
+    });
     loadDirectory();
     loadPeople();
     loadSubmissions();
@@ -196,6 +207,7 @@
     const list=$("#peopleList");
     const {data,error}=await db.from("directory_submissions").select("*").eq("listing_type","person").order("display_name",{ascending:true});
     if(error){ list.innerHTML=`<p style="color:var(--accent-ink)">${esc(error.message)}</p>`; return; }
+    _peopleRows=data;
     if(!data.length){ list.innerHTML=`<p style="color:var(--text-soft)">No neighbors listed yet — add the first one above.</p>`; return; }
     const pc=v=>v==="public"?'<span style="color:var(--open)">public</span>':'<span style="color:var(--text-soft)">private</span>';
     list.innerHTML=`<p style="color:var(--text-soft);font-size:.85rem;margin-bottom:.6rem">${data.length} people</p>`+data.map(s=>{const d=s.data||{}; const pend=s.status!=="approved";
@@ -208,8 +220,6 @@
           <button class="btn btn-ghost" type="button" data-pedit="${s.id}">Edit</button>
           <button class="btn btn-ghost" type="button" data-pdel="${s.id}">Delete</button>
         </div></div>`;}).join("");
-    list.querySelectorAll("[data-pedit]").forEach(b=>b.addEventListener("click",()=>startEditPerson(data.find(x=>String(x.id)===b.dataset.pedit))));
-    list.querySelectorAll("[data-pdel]").forEach(b=>b.addEventListener("click",()=>delPerson(b.dataset.pdel,data.find(x=>String(x.id)===b.dataset.pdel))));
   }
   function startEditPerson(s){
     if(!s) return;
@@ -223,7 +233,7 @@
     $("#person-head").textContent="Edit neighbor";
     $("#pSave").textContent="Save changes";
     $("#pCancel").hidden=false; $("#pMsg").textContent="";
-    $("#personForm").scrollIntoView({behavior:"smooth",block:"start"});
+    $("#personForm").scrollIntoView({behavior:"smooth",block:"start"}); $("#pName").focus();
   }
   async function savePerson(e){
     e.preventDefault();
@@ -258,6 +268,7 @@
     const list=$("#dirList");
     const {data,error}=await db.from("directory").select("*").order("name",{ascending:true});
     if(error){ list.innerHTML=`<p style="color:var(--accent-ink)">${esc(error.message)}</p><p style="color:var(--text-soft);font-size:.9rem">If this says the table is missing, run <b>seed-directory.sql</b> in Supabase first.</p>`; return; }
+    _dirRows=data;
     if(!data.length){ list.innerHTML=`<p style="color:var(--text-soft)">No businesses yet — add the first one above, or run <b>seed-directory.sql</b> to load the current list.</p>`; return; }
     const secLabel=v=>{ const m=DIR_SECTIONS.find(s=>s[1]===v); return m?m[0]:(v||""); };
     list.innerHTML=`<p style="color:var(--text-soft);font-size:.85rem;margin-bottom:.6rem">${data.length} listings</p>`+data.map(d=>`
@@ -270,8 +281,6 @@
           <button class="btn btn-ghost" type="button" data-dedit="${d.id}">Edit</button>
           <button class="btn btn-ghost" type="button" data-ddel="${d.id}">Delete</button>
         </div></div>`).join("");
-    list.querySelectorAll("[data-dedit]").forEach(b=>b.addEventListener("click",()=>startEditDir(data.find(x=>String(x.id)===b.dataset.dedit))));
-    list.querySelectorAll("[data-ddel]").forEach(b=>b.addEventListener("click",()=>delDir(b.dataset.ddel,data.find(x=>String(x.id)===b.dataset.ddel))));
   }
   function startEditDir(d){
     if(!d) return;
@@ -281,7 +290,7 @@
     $("#dir-head").textContent="Edit business";
     $("#dSave").textContent="Save changes";
     $("#dCancel").hidden=false; $("#dMsg").textContent="";
-    $("#dirForm").scrollIntoView({behavior:"smooth",block:"start"});
+    $("#dirForm").scrollIntoView({behavior:"smooth",block:"start"}); $("#dName").focus();
   }
   async function saveDir(e){
     e.preventDefault();
