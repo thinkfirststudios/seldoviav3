@@ -6,7 +6,7 @@
 <meta name="description" content="Seldovia.com — discover everything about the little town of Seldovia, Alaska, on Kachemak Bay. Directory, events, gallery, news, and real estate.">
 <meta name="theme-color" content="#F8E6DD">
 <title>Seldovia.com — Discover Everything Seldovia, Alaska</title>
-<link rel="stylesheet" href="styles.css?v=97">
+<link rel="stylesheet" href="styles.css?v=98">
 </head>
 <body data-page="home">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -27,13 +27,12 @@
     </div>
   </div>
 
-  <!-- Combined home box (Jenny): "of the day" widget + this week's schedule, side by side.
-       SELDOVIA TODAY (live temp + next tide + ferry) now sits here with the conditions,
-       moved down from the top of the page per Jenny (Sep 24). -->
+  <!-- Combined home box (Jenny, Sep 29): LEFT column = "Seldovia Today" with ALL the day's
+       live stats together (time, weather, tides, daylight, marine), not a green bar.
+       RIGHT column = "Around Town" this-week schedule. -->
   <section class="section wrap" style="padding-bottom:0">
-    <div class="today-bar" id="seldoviaToday" aria-label="Seldovia today — live conditions"></div>
     <div class="home-duo">
-      <div id="todayExtra"></div>
+      <div id="seldoviaToday" class="today-bar" aria-label="Seldovia today — live conditions"></div>
       <div id="todaySchedule"></div>
     </div>
   </section>
@@ -77,7 +76,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="db.js?v=6"></script>
 <script src="app.js?v=96"></script>
-<script src="seldovia-today.js?v=7"></script>
+<script src="seldovia-today.js?v=8"></script>
 <script src="extras-data.js?v=1"></script>
 <script src="home-extra.js?v=2"></script>
 <script src="home-gallery.js?v=2"></script>

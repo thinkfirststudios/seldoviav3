@@ -56,6 +56,7 @@
       ${item("ti-temp","🌡️","Right now","…")}
       ${item("ti-tide","🌊","Tides today","…")}
       ${item("ti-sun","🌅","Daylight",dayVal)}
+      ${item("ti-marine","🌊","Marine weather","…")}
     </div>`;
 
     // Live clock
@@ -91,6 +92,19 @@
         if(lows.length)  rows.push(`<span class="ti-tide-row">▼ ${fmtSet(lows)}</span>`);
         box.querySelector(".ti-value").innerHTML=rows.join("");
       }).catch(()=>{ const b=el.querySelector("#ti-tide"); if(b) b.remove(); });
+
+    // Marine weather — seas + wind, with the NWS link (folded into Seldovia Today per Jenny Sep 29)
+    const compass=d=>["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSW","SW","WSW","W","WNW","NW","NNW"][Math.round(d/22.5)%16];
+    Promise.all([
+      fetch(`https://marine-api.open-meteo.com/v1/marine?latitude=${LAT}&longitude=${LON}&current=wave_height`).then(r=>r.json()).catch(()=>({})),
+      fetch(`https://api.open-meteo.com/v1/forecast?latitude=${LAT}&longitude=${LON}&current=wind_speed_10m,wind_direction_10m&wind_speed_unit=mph&timezone=America%2FAnchorage`).then(r=>r.json()).catch(()=>({}))
+    ]).then(([m,w])=>{
+      const box=el.querySelector("#ti-marine"); if(!box) return;
+      const bits=[]; const wave=m.current&&m.current.wave_height;
+      if(wave!=null) bits.push(`Seas ~${Math.round(wave*3.28084*10)/10} ft`);
+      if(w.current&&w.current.wind_speed_10m!=null) bits.push(`Wind ${Math.round(w.current.wind_speed_10m)} mph ${compass(w.current.wind_direction_10m)}`);
+      box.querySelector(".ti-value").innerHTML=`${bits.length?bits.join(" · "):"Conditions on Kachemak Bay"} <a href="https://marine.weather.gov/MapClick.php?zoneid=pkz741" target="_blank" rel="noopener">Full forecast →</a>`;
+    }).catch(()=>{ const b=el.querySelector("#ti-marine"); if(b) b.remove(); });
   }
 
   /* ---------- Home-page ferry widget ---------- */

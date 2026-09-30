@@ -885,20 +885,20 @@ footer.site a{color:rgba(255,255,255,.82); text-decoration:none;} footer.site a:
    two-row header never scrolls over the tide text. z-index sits just under the header. */
 /* Seldovia Today moved out of the sticky top into page content, beside the Marine Weather
    (Jenny, Sep 24). Now a rounded band in the flow rather than a full-bleed sticky strip. */
-.today-bar{position:static; z-index:55; background:linear-gradient(90deg,var(--band) 0%,#35564444 100%),var(--band); color:#fff; min-height:3rem; border-radius:var(--radius-s); overflow:hidden; margin-bottom:1rem;} /* reserve height so it doesn't jump as it loads (Jenny #21) */
-body[data-page="realestate"] .today-bar{background:var(--accent-ink);}
-.today-inner{max-width:var(--maxw); margin-inline:auto; padding:.6rem clamp(16px,4vw,56px);
-  display:flex; align-items:center; gap:clamp(14px,2.4vw,32px); flex-wrap:wrap;}
-.today-title{font-family:var(--serif); font-weight:700; font-size:1.02rem; letter-spacing:.01em; opacity:.95; padding-right:.4rem; border-right:1px solid rgba(255,255,255,.25);}
-.today-item{display:flex; align-items:center; gap:.5rem;}
-.ti-ico{font-size:1.15rem; line-height:1;}
-.ti-body{display:flex; flex-direction:column; line-height:1.15;}
-.ti-label{font-size:.66rem; text-transform:uppercase; letter-spacing:.08em; opacity:.9; font-weight:700;}
-.ti-value{font-size:.9rem; font-weight:700;}
-.ti-value .ti-sub{font-weight:700; opacity:.92; font-size:.82em;}
-.ti-tide-row{display:block; white-space:nowrap;} /* highs on one line, lows on the next */
-.today-item a{color:#fff; text-decoration:underline; text-underline-offset:2px; font-weight:700;}
-@media (max-width:560px){ .today-title{border-right:0; width:100%;} .today-inner{gap:12px 20px;} }
+/* "Seldovia Today" is now a light card stacked in the left home column (Jenny, Sep 29):
+   all the day's live stats together (time, weather, tides, daylight, marine), not a green bar. */
+.today-bar{background:var(--sheet); color:var(--text); border-radius:var(--radius); overflow:hidden; height:100%;}
+.home-duo .today-bar{background:transparent; border:0; box-shadow:none; border-radius:0;}
+.today-inner{padding:clamp(1.1rem,2.4vw,1.6rem); display:flex; flex-direction:column; gap:1rem; align-items:stretch;}
+.today-title{font-family:var(--serif); font-weight:700; font-size:1.5rem; color:var(--heading); letter-spacing:.01em; line-height:1.1;}
+.today-item{display:flex; align-items:flex-start; gap:.7rem;}
+.ti-ico{font-size:1.3rem; line-height:1.15;}
+.ti-body{display:flex; flex-direction:column; line-height:1.28; min-width:0;}
+.ti-label{font-size:.68rem; text-transform:uppercase; letter-spacing:.08em; color:var(--text-soft); font-weight:800;}
+.ti-value{font-size:1rem; font-weight:700; color:var(--heading);}
+.ti-value .ti-sub{font-weight:600; color:var(--text-soft); font-size:.85em;}
+.ti-tide-row{display:block;} /* highs on one line, lows on the next */
+.today-item a{color:var(--accent-ink); text-decoration:underline; text-underline-offset:2px; font-weight:700; white-space:nowrap;}
 
 /* ============ TODAY'S FERRY WIDGET ============ */
 .ferry-card{background:var(--sheet); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:clamp(1.1rem,2.4vw,1.6rem);}
