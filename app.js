@@ -139,7 +139,7 @@ document.body.insertAdjacentHTML("beforeend", `
 
 /* ============================================================ MOCK DATA ============================================================ */
 // 8 home categories (Jenny's groupings). Order maps to images/categories/cat-0..7.jpg.
-const CATEGORIES=[{b:"About",s:"Location & history",key:"about"},{b:"Travel",s:"Getting to Seldovia",key:"travel"},{b:"Lodging + Camping",s:"Places to stay",key:"stay"},{b:"Eat",s:"Restaurants, bar & stores",key:"eat"},{b:"Shop + Gifts",s:"Shops, gifts & nursery",key:"shop"},{b:"Activities",s:"Tours, charters & trails",key:"activities"},{b:"Businesses",s:"Local trades & services",key:"services"},{b:"Organizations",s:"Public & Govt.",key:"life"}];
+const CATEGORIES=[{b:"About",s:"Location & history",key:"about"},{b:"Travel",s:"Getting to Seldovia",key:"travel"},{b:"Lodging & Camping",s:"Places to stay",key:"stay"},{b:"Eat",s:"Restaurants, bar & stores",key:"eat"},{b:"Shop & Gifts",s:"Shops, gifts & nursery",key:"shop"},{b:"Activities & Hikes",s:"Tours, charters & trails",key:"activities"},{b:"Businesses",s:"Local trades & services",key:"services"},{b:"Organizations & Govt.",s:"Public & Govt.",key:"life"},{b:"Gardens, Parks & Beaches",s:"Green spaces & shoreline",key:"gardens"},{b:"Landmarks",s:"Notable spots",key:"landmarks"}];
 // REAL Seldovia places — sourced from the existing seldovia.com business directory.
 // No star ratings or review counts: we don't have real review data, so we don't invent it.
 // Explore directory — all Seldovia businesses, grouped into the 8 categories (key).
@@ -286,15 +286,18 @@ const placeBadge=p=>{ let b=CAT_BADGE[p.key]||""; if(p.key==="life"){ const g=(p
 // Category tokens Jenny can pick from in the admin ("🏷️ Explore Categories").
 // Government is a flavor of "life" (Public Services) that shows a G badge.
 const EXPLORE_CATS=[
-  {token:"about",     label:"Location + History",              key:"about",      govt:false},
-  {token:"travel",    label:"Travel",                          key:"travel",     govt:false},
-  {token:"stay",      label:"Lodging + Camping",               key:"stay",       govt:false},
-  {token:"eat",       label:"Eat",                             key:"eat",        govt:false},
-  {token:"shop",      label:"Shop + Gifts",                    key:"shop",       govt:false},
-  {token:"activities",label:"Activities",                      key:"activities", govt:false},
-  {token:"services",  label:"Services / Business",             key:"services",   govt:false},
-  {token:"life",      label:"Organization + Public Services",  key:"life",       govt:false},
-  {token:"govt",      label:"Government",                       key:"life",       govt:true},
+  {token:"about",     label:"About (Location & History)",  key:"about",      govt:false},
+  {token:"travel",    label:"Travel",                      key:"travel",     govt:false},
+  {token:"stay",      label:"Lodging & Camping",           key:"stay",       govt:false},
+  {token:"eat",       label:"Eat",                         key:"eat",        govt:false},
+  {token:"shop",      label:"Shop & Gifts",                key:"shop",       govt:false},
+  {token:"activities",label:"Activities & Hikes",          key:"activities", govt:false},
+  {token:"gardens",   label:"Gardens, Parks & Beaches",    key:"gardens",    govt:false},
+  {token:"landmarks", label:"Landmarks",                   key:"landmarks",  govt:false},
+  {token:"services",  label:"Businesses",                  key:"services",   govt:false},
+  {token:"life",      label:"Organizations & Govt.",       key:"life",       govt:false},
+  {token:"govt",      label:"Government",                   key:"life",       govt:true},
+  {token:"outoftown", label:"Out of Town",                 key:"outoftown",  govt:false},
 ];
 const CAT_BY_TOKEN=Object.fromEntries(EXPLORE_CATS.map(c=>[c.token,c]));
 // The business's category token from the built-in data (before any admin override).
@@ -4337,13 +4340,13 @@ if($("#quickcats")) $("#quickcats").innerHTML=[["Eat","eat"],["Stay","stay"],["A
 if($("#catGrid")) $("#catGrid").innerHTML=CATEGORIES.map((c,i)=>{
   const img=`images/categories/cat-${i}.jpg?v=3`;
   const href = c.key==="about" ? "about.html" : `explore.html?cat=${c.key}`;
-  return `<a class="cat-tile" href="${href}" aria-label="${esc(c.b)}"><img class="cat-photo" src="${img}" alt="" loading="lazy" width="600" height="600"><span class="cap"><b>${esc(c.b)}</b><span>${esc(c.s)}</span></span></a>`;}).join("");
+  return `<a class="cat-tile" href="${href}" aria-label="${esc(c.b)}"><img class="cat-photo" src="${img}" alt="" loading="lazy" width="600" height="600" onerror="this.onerror=null;this.src='images/placeholder-business.png'"><span class="cap"><b>${esc(c.b)}</b><span>${esc(c.s)}</span></span></a>`;}).join("");
 
 // feature media
 if($("#featureMedia")) $("#featureMedia").innerHTML=`<img class="feature-photo" src="images/photos/220627_SeldoviaHarbor_Melody.jpg" alt="Seldovia Harbor at first light" loading="lazy" width="1200" height="1200">`;
 
 // places (directory highlights) with tabs — reads ?cat= from URL for deep-links
-const PLACE_TABS=[["all","All"],["travel","Travel"],["stay","Lodging + Camping"],["eat","Eat"],["shop","Shop + Gifts"],["activities","Activities"],["services","Businesses"],["life","Govt/Organizations"],["outoftown","Out of Town"]];
+const PLACE_TABS=[["all","All"],["about","About"],["travel","Travel"],["stay","Lodging & Camping"],["eat","Eat"],["shop","Shop & Gifts"],["activities","Activities & Hikes"],["gardens","Gardens, Parks & Beaches"],["landmarks","Landmarks"],["services","Businesses"],["life","Organizations & Govt."],["outoftown","Out of Town"]];
 let placeTab=(new URLSearchParams(location.search).get("cat"))||"all";
 if(!PLACE_TABS.some(([k])=>k===placeTab) && placeTab!=="about") placeTab="all";
 // Business owners + blurbs pulled from Jenny's old Seldovia.com directory (Connections).
@@ -4395,7 +4398,7 @@ const BIZ_BLURB={
   "Make it Reality":"3D printing and laser creations — bringing imagination to life.",
   "Thyme on the Boardwalk":"Boutique and garden nursery — veggies & flowers, tools, yard decor, soil, and many beautiful, quality gift items."
 };
-if(window.EXPLORE) window.EXPLORE.BIZ_BLURB=BIZ_BLURB; // so the admin can pre-fill the description editor
+if(window.EXPLORE){ window.EXPLORE.BIZ_BLURB=BIZ_BLURB; window.EXPLORE.BIZ_OWNER=BIZ_OWNER; } // so the admin can pre-fill the description + owner editors
 // When arriving from a search suggestion (?find=Name), scroll to that card and flash it.
 let _findScrolled=false;
 function scrollToFind(containerSel){
@@ -4436,7 +4439,7 @@ function renderPlaces(){
     const st=meta.status;                                    // "open" / "closed" seasonal sign (Jenny toggles)
     const sign=(st==="open"||st==="closed")?`<span class="place-sign place-sign-${st}">${st==="open"?"Open all year":"Summer only"}</span>`:"";
     const media=`<div class="place-media"><img class="place-photo" src="${bizPhoto(p)}" alt="${esc(dispName)}" loading="lazy" width="600" height="600" onerror="this.src='images/placeholder-business.png'">${sign}${bdg?`<span class="place-badge" title="${esc(BADGE_LABEL[bdg]||"")}">${bdg}</span>`:""}</div>`;
-    const owner=(p.key!=="life") ? BIZ_OWNER[p.name] : "";
+    const owner=(meta.owner!=null)?meta.owner:((p.key!=="life")?BIZ_OWNER[p.name]:""); // Jenny can set/clear the owner per listing (explore_meta.owner)
     const blurb=meta.desc||BIZ_BLURB[p.name];   // Jenny can edit the description in the admin (explore_meta.desc)
     // Blurb clamps to 3 lines for uniform card height; "Read more" reveals only when it's actually clipped (Jenny).
     const body=`<div class="place-body"><div class="rating"><span class="cat">${esc(catLabel)}</span></div><h4>${esc(dispName)}</h4>
@@ -4449,7 +4452,7 @@ function renderPlaces(){
     const contact=phone?`<div class="place-contact"><a href="tel:${String(phone).replace(/[^\d]/g,"")}">📞 ${esc(phone)}</a></div>`:"";
     return `<div class="place place-static">${media}${body}${contact}</div></div>`;
   };
-  $("#placeGrid").innerHTML=rows.map(placeCard).join("");
+  $("#placeGrid").innerHTML=rows.length?rows.map(placeCard).join(""):`<p class="form-note" style="grid-column:1/-1;color:var(--text-soft)">Nothing in this category yet — it is being sorted in. Check back soon.</p>`;
   // Reveal "Read more" only on cards whose 3-line blurb is actually clipped.
   requestAnimationFrame(()=>{ $$("#placeGrid .place-blurb").forEach(b=>{ const btn=b.nextElementSibling; if(btn&&btn.classList.contains("place-more")&&b.scrollHeight>b.clientHeight+2) btn.hidden=false; }); });
   if(!_findScrolled) requestAnimationFrame(()=>{ if(scrollToFind("#placeGrid")) _findScrolled=true; });

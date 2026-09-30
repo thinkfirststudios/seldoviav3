@@ -865,7 +865,7 @@
 
   /* ---------------- EXPLORE CATEGORIES (fix business badges) ---------------- */
   // Categories offered when ADDING a new Explore business (value = "<key>|<govt>").
-  const ADD_CATS=[["travel|0","Travel"],["stay|0","Lodging + Camping"],["eat|0","Eat"],["shop|0","Shop + Gifts"],["activities|0","Activities"],["services|0","Services / Business"],["life|0","Organization + Public Services"],["life|1","Government"],["outoftown|0","Out of Town"]];
+  const ADD_CATS=[["travel|0","Travel"],["stay|0","Lodging & Camping"],["eat|0","Eat"],["shop|0","Shop & Gifts"],["activities|0","Activities & Hikes"],["gardens|0","Gardens, Parks & Beaches"],["landmarks|0","Landmarks"],["services|0","Businesses"],["life|0","Organizations & Govt."],["life|1","Government"],["outoftown|0","Out of Town"]];
   function renderExploreCatsTab(){
     const EX=window.EXPLORE, host=$("#tab-bizcat");
     if(!EX||!EX.PLACES){ host.innerHTML=`<p class="form-note">Couldn't load the business list. Try reloading the page.</p>`; return; }
@@ -917,6 +917,7 @@
         </div>
         <div style="display:flex;gap:.7rem;align-items:center;flex-wrap:wrap;padding-left:60px">
           <label style="font-size:.8rem;color:var(--text-soft);display:flex;align-items:center;gap:.35rem">Name <input class="bc-name" data-name="${esc(p.name)}" value="${esc(m.name!=null?m.name:p.name)}" style="padding:.35rem .5rem;border:1px solid var(--line);border-radius:8px;width:190px"></label>
+          <label style="font-size:.8rem;color:var(--text-soft);display:flex;align-items:center;gap:.35rem">Owner <input class="bc-owner" data-name="${esc(p.name)}" value="${esc(m.owner!=null?m.owner:((EX.BIZ_OWNER&&EX.BIZ_OWNER[p.name])||''))}" placeholder="Owner name" style="padding:.35rem .5rem;border:1px solid var(--line);border-radius:8px;width:170px"></label>
           <label style="font-size:.8rem;color:var(--text-soft);display:flex;align-items:center;gap:.35rem">Phone <input class="bc-phone" data-name="${esc(p.name)}" value="${esc(m.phone!=null?m.phone:(p.phone||''))}" placeholder="(907) …" style="padding:.35rem .5rem;border:1px solid var(--line);border-radius:8px;width:140px"></label>
           <label style="font-size:.8rem;color:var(--text-soft);display:flex;align-items:center;gap:.35rem">Location <input class="bc-loc" data-name="${esc(p.name)}" value="${esc(m.loc!=null?m.loc:'')}" placeholder="${p.key==='outoftown'?'e.g. Homer, AK':'Seldovia, AK'}" style="padding:.35rem .5rem;border:1px solid var(--line);border-radius:8px;width:150px"></label>
           <label style="font-size:.8rem;color:var(--text-soft);display:flex;align-items:center;gap:.35rem">Website <input class="bc-url" data-name="${esc(p.name)}" value="${esc(m.url!=null?m.url:(p.url||''))}" placeholder="https://…" style="padding:.35rem .5rem;border:1px solid var(--line);border-radius:8px;width:200px"></label>
@@ -968,7 +969,7 @@
           msg.style.color="var(--open)"; msg.textContent=`${name} photo saved. It's live on Explore.`;
         }catch(err){ msg.style.color="var(--accent-ink)"; msg.textContent="Error: "+(err.message||err); }
         return; }
-      const clean=n=>{ if(meta[n] && !meta[n].status && meta[n].label==null && meta[n].desc==null && meta[n].name==null && meta[n].phone==null && meta[n].loc==null && meta[n].url==null) delete meta[n]; };
+      const clean=n=>{ if(meta[n] && !meta[n].status && meta[n].label==null && meta[n].desc==null && meta[n].name==null && meta[n].phone==null && meta[n].loc==null && meta[n].url==null && meta[n].owner==null) delete meta[n]; };
       const stSel=e.target.closest(".bc-status");
       if(stSel){ const name=stSel.dataset.name; meta[name]=meta[name]||{}; if(stSel.value) meta[name].status=stSel.value; else delete meta[name].status; clean(name); return; }
       const lb=e.target.closest(".bc-label");
@@ -977,6 +978,12 @@
       if(dq){ const name=dq.dataset.name; const base=(EX.BIZ_BLURB&&EX.BIZ_BLURB[name])||""; const v=dq.value.trim(); meta[name]=meta[name]||{}; if(v && v!==base) meta[name].desc=v; else delete meta[name].desc; clean(name); return; }
       const nm=e.target.closest(".bc-name");
       if(nm){ const name=nm.dataset.name; const v=nm.value.trim(); meta[name]=meta[name]||{}; if(v && v!==name) meta[name].name=v; else delete meta[name].name; clean(name); return; }
+      const ow=e.target.closest(".bc-owner");
+      if(ow){ const name=ow.dataset.name; const base=(EX.BIZ_OWNER&&EX.BIZ_OWNER[name])||""; const v=ow.value.trim(); meta[name]=meta[name]||{};
+        if(v && v!==base) meta[name].owner=v;           // custom owner
+        else if(!v && base) meta[name].owner="";        // explicitly cleared a default owner
+        else delete meta[name].owner;                    // matches default (or nothing) → no override
+        clean(name); return; }
       const ph=e.target.closest(".bc-phone");
       if(ph){ const name=ph.dataset.name, pp=listAll().find(x=>x.name===name); const v=ph.value.trim(); meta[name]=meta[name]||{}; if(v!==((pp&&pp.phone)||"")) meta[name].phone=v; else delete meta[name].phone; clean(name); return; }
       const lc=e.target.closest(".bc-loc");
