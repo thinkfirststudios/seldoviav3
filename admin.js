@@ -44,6 +44,24 @@
     return db.storage.from(bucket).getPublicUrl(path).data.publicUrl;
   }
 
+  /* ---------------- ACTIVITY LOG + UNDO (safety net, Alex) ----------------
+     Both live in the existing `settings` table (no new SQL): admin_log is a capped
+     list of recent actions; admin_trash holds recently deleted rows so they can be
+     restored. Best-effort — a logging failure never blocks the real action. */
+  async function logAdmin(action, detail){ try{
+    const {data}=await db.from("settings").select("value").eq("key","admin_log").maybeSingle();
+    let log=[]; try{ log=data&&data.value?JSON.parse(data.value):[]; }catch(e){}
+    log.unshift({at:new Date().toISOString(), action, detail:detail||""}); log=log.slice(0,80);
+    await db.from("settings").upsert({key:"admin_log",value:JSON.stringify(log)},{onConflict:"key"});
+  }catch(e){} }
+  async function trashPush(entry){ try{
+    const {data}=await db.from("settings").select("value").eq("key","admin_trash").maybeSingle();
+    let t=[]; try{ t=data&&data.value?JSON.parse(data.value):[]; }catch(e){}
+    t.unshift({at:new Date().toISOString(), id:"t"+Date.now()+Math.round(Math.random()*999), ...entry}); t=t.slice(0,40);
+    await db.from("settings").upsert({key:"admin_trash",value:JSON.stringify(t)},{onConflict:"key"});
+  }catch(e){} }
+  const stripId=o=>{ const {id, created_at, ...rest}=o||{}; return rest; }; // for clean re-insert on restore
+
   function boot(){
     if(!window.db){
       app.innerHTML=`<div class="info-block" style="max-width:640px">
@@ -175,7 +193,15 @@
 
       <h4 style="margin-top:2.2rem">Submissions awaiting review</h4>
       <p style="color:var(--text-soft);font-size:.92rem;margin:.3rem 0 1rem">Neighbors and businesses who added themselves through the site. Approve to publish them to the phone book, or delete. Approved neighbors then appear in <b>Neighbors &amp; people</b> above, where you can edit them; approved businesses show in the public phone book. Individuals' privacy choices are shown in parentheses.</p>
-      <div id="subList"><p style="color:var(--text-soft)">Loading…</p></div>`;
+      <div id="subList"><p style="color:var(--text-soft)">Loading…</p></div>
+
+      <h4 style="margin-top:2.2rem">↩︎ Recently deleted</h4>
+      <p style="color:var(--text-soft);font-size:.92rem;margin:.3rem 0 1rem">Deleted a business, neighbor, or Explore listing by accident? Restore it here. The last 40 deletions are kept.</p>
+      <div id="trashList"><p style="color:var(--text-soft)">Loading…</p></div>
+
+      <h4 style="margin-top:2.2rem">🕐 Recent activity</h4>
+      <p style="color:var(--text-soft);font-size:.92rem;margin:.3rem 0 1rem">A log of recent admin changes, newest first.</p>
+      <div id="adminLog"><p style="color:var(--text-soft)">Loading…</p></div>`;
     $("#dirForm").addEventListener("submit",saveDir);
     $("#dCancel").addEventListener("click",()=>resetDirForm());
     $("#personForm").addEventListener("submit",savePerson);
@@ -193,6 +219,50 @@
     loadDirectory();
     loadPeople();
     loadSubmissions();
+    loadTrash();
+    loadLog();
+  }
+  async function loadTrash(){
+    const list=$("#trashList"); if(!list) return;
+    const {data}=await db.from("settings").select("value").eq("key","admin_trash").maybeSingle();
+    let t=[]; try{ t=data&&data.value?JSON.parse(data.value):[]; }catch(e){}
+    if(!t.length){ list.innerHTML=`<p style="color:var(--text-soft)">Nothing deleted recently.</p>`; return; }
+    const kind={directory:"Business",submission:"Neighbor / submission",explore_added:"Explore listing"};
+    const when=iso=>{ try{ return new Date(iso).toLocaleString(); }catch(e){ return ""; } };
+    list.innerHTML=t.map(x=>`<div class="info-block" style="margin-bottom:.5rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center">
+        <div style="font-size:.92rem"><b style="color:var(--heading)">${esc(x.label||"(item)")}</b>
+          <div style="color:var(--text-soft);font-size:.82rem">${esc(kind[x.type]||x.type)} · deleted ${esc(when(x.at))}</div></div>
+        <button class="btn btn-primary" type="button" data-restore="${esc(x.id)}">Restore</button>
+      </div>`).join("");
+    list.querySelectorAll("[data-restore]").forEach(b=>b.addEventListener("click",()=>restoreTrash(b.dataset.restore)));
+  }
+  async function restoreTrash(tid){
+    const {data}=await db.from("settings").select("value").eq("key","admin_trash").maybeSingle();
+    let t=[]; try{ t=data&&data.value?JSON.parse(data.value):[]; }catch(e){}
+    const x=t.find(i=>i.id===tid); if(!x){ loadTrash(); return; }
+    try{
+      if(x.type==="directory"){ const {error}=await db.from("directory").insert(x.row); if(error) throw error; }
+      else if(x.type==="submission"){ const {error}=await db.from("directory_submissions").insert(x.row); if(error) throw error; }
+      else if(x.type==="explore_added"){
+        const {data:d2}=await db.from("settings").select("value").eq("key","explore_added").maybeSingle();
+        let arr=[]; try{ arr=d2&&d2.value?JSON.parse(d2.value):[]; }catch(e){}
+        if(!arr.some(a=>a.name===x.row.name)) arr.push(x.row);
+        const {error}=await db.from("settings").upsert({key:"explore_added",value:JSON.stringify(arr)},{onConflict:"key"}); if(error) throw error;
+      }
+    }catch(err){ alert("Could not restore: "+(err.message||err)); return; }
+    const rest=t.filter(i=>i.id!==tid);
+    await db.from("settings").upsert({key:"admin_trash",value:JSON.stringify(rest)},{onConflict:"key"});
+    await logAdmin("Restored", x.label||"");
+    loadTrash(); loadLog(); loadDirectory(); loadPeople(); loadSubmissions();
+  }
+  async function loadLog(){
+    const list=$("#adminLog"); if(!list) return;
+    const {data}=await db.from("settings").select("value").eq("key","admin_log").maybeSingle();
+    let log=[]; try{ log=data&&data.value?JSON.parse(data.value):[]; }catch(e){}
+    if(!log.length){ list.innerHTML=`<p style="color:var(--text-soft)">No activity logged yet.</p>`; return; }
+    const when=iso=>{ try{ return new Date(iso).toLocaleString(); }catch(e){ return ""; } };
+    list.innerHTML=`<div style="max-height:260px;overflow:auto;font-size:.88rem;line-height:1.7">`+log.map(e=>
+      `<div style="border-bottom:1px solid var(--line);padding:.25rem 0"><span style="color:var(--text-soft)">${esc(when(e.at))}</span> — ${esc(e.action)}${e.detail?`: <b>${esc(e.detail)}</b>`:""}</div>`).join("")+`</div>`;
   }
   /* ---- Neighbors / people (directory_submissions, listing_type=person) ---- */
   let editPerson=null;
@@ -249,13 +319,15 @@
     const res=editPerson ? await db.from("directory_submissions").update(base).eq("id",editPerson.id)
                          : await db.from("directory_submissions").insert({...base, status:"approved"});
     if(res.error){ $("#pMsg").textContent=res.error.message; return; }
-    resetPersonForm(); loadPeople(); loadSubmissions();
+    await logAdmin(editPerson?"Edited neighbor":"Added neighbor", name);
+    resetPersonForm(); loadPeople(); loadSubmissions(); loadLog();
   }
   async function delPerson(id,s){
-    if(!confirm(`Remove "${s?(s.display_name||"this person"):"this person"}" from the phone book? This can't be undone.`)) return;
+    if(!confirm(`Remove "${s?(s.display_name||"this person"):"this person"}" from the phone book? You can restore it from "Recently deleted" below.`)) return;
     const {error}=await db.from("directory_submissions").delete().eq("id",id);
     if(error){ alert(error.message); return; }
-    loadPeople(); loadSubmissions();
+    if(s){ await trashPush({type:"submission", label:s.display_name||"person", row:stripId(s)}); await logAdmin("Deleted neighbor", s.display_name||""); }
+    loadPeople(); loadSubmissions(); loadTrash(); loadLog();
   }
   function resetDirForm(){
     editDir=null;
@@ -303,13 +375,15 @@
     const res=editDir ? await db.from("directory").update(row).eq("id",editDir.id)
                        : await db.from("directory").insert(row);
     if(res.error){ $("#dMsg").textContent=res.error.message; return; }
-    resetDirForm(); loadDirectory();
+    await logAdmin(editDir?"Edited business":"Added business", name);
+    resetDirForm(); loadDirectory(); loadLog();
   }
   async function delDir(id,d){
-    if(!confirm(`Remove "${d?d.name:"this business"}" from the phone book? This can't be undone.`)) return;
+    if(!confirm(`Remove "${d?d.name:"this business"}" from the phone book? You can restore it from "Recently deleted" below.`)) return;
     const {error}=await db.from("directory").delete().eq("id",id);
     if(error){ alert(error.message); return; }
-    loadDirectory();
+    if(d){ await trashPush({type:"directory", label:d.name, row:stripId(d)}); await logAdmin("Deleted business", d.name); }
+    loadDirectory(); loadTrash(); loadLog();
   }
   async function loadSubmissions(){
     const list=$("#subList");
@@ -339,8 +413,13 @@
         ${s.status!=="approved"?`<button class="btn btn-primary" type="button" data-approve="${s.id}">Approve</button>`:`<button class="btn btn-ghost" type="button" data-approve="${s.id}" disabled>Approved</button>`}
         <button class="btn btn-ghost" type="button" data-del="${s.id}">Delete</button></div></div>`;
   }
-  async function setSubStatus(id,status){ const {error}=await db.from("directory_submissions").update({status}).eq("id",id); if(error){alert(error.message);return;} loadSubmissions(); loadPeople(); }
-  async function delSub(id){ if(!confirm("Delete this submission? This can't be undone."))return; const {error}=await db.from("directory_submissions").delete().eq("id",id); if(error){alert(error.message);return;} loadSubmissions(); loadPeople(); }
+  async function setSubStatus(id,status){ const {error}=await db.from("directory_submissions").update({status}).eq("id",id); if(error){alert(error.message);return;} await logAdmin(status==="approved"?"Approved submission":"Changed submission status"); loadSubmissions(); loadPeople(); loadLog(); }
+  async function delSub(id){ if(!confirm("Delete this submission? You can restore it from \"Recently deleted\" below."))return;
+    const s=(_peopleRows.find(x=>String(x.id)===id))||null;
+    const {error}=await db.from("directory_submissions").delete().eq("id",id); if(error){alert(error.message);return;}
+    if(s){ await trashPush({type:"submission", label:s.display_name||"submission", row:stripId(s)}); }
+    await logAdmin("Deleted submission", (s&&s.display_name)||"");
+    loadSubmissions(); loadPeople(); loadTrash(); loadLog(); }
 
   /* ---------------- DAILY PHOTO ---------------- */
   let editPhoto=null;
@@ -958,7 +1037,7 @@
       const [key,govt]=$("#bc-newcat").value.split("|"); const catLabel=(ADD_CATS.find(c=>c[0]===$("#bc-newcat").value)||[,""])[1];
       added.push({name, key, govt:govt==="1", cat:catLabel, url:$("#bc-newurl").value.trim(), phone:$("#bc-newphone").value.trim()});
       hidden.delete(name);
-      try{ await saveKey("explore_added",added); msg.style.color="var(--open)"; msg.textContent=`${name} added — it's live on Explore.`;
+      try{ await saveKey("explore_added",added); await logAdmin("Added business (Explore)", name); msg.style.color="var(--open)"; msg.textContent=`${name} added — it's live on Explore.`;
         $("#bc-newname").value=""; $("#bc-newurl").value=""; $("#bc-newphone").value=""; draw($("#bc-search").value); }
       catch(err){ msg.style.color="var(--accent-ink)"; msg.textContent="Error: "+(err.message||err); }
     });
@@ -969,10 +1048,10 @@
       if(xc){ const name=xc.dataset.name, k=xc.dataset.key; extra[name]=(extra[name]||[]).filter(x=>x!==k); if(!extra[name].length) delete extra[name];
         const wrap=[...$("#bc-list").querySelectorAll(".bc-xwrap")].find(w=>w.dataset.name===name); if(wrap) wrap.innerHTML=xChips(name); return; }
       const del=e.target.closest(".bc-del"); if(!del) return;
-      const name=del.dataset.name; if(!confirm(`Remove "${name}" from Explore?`)) return;
+      const name=del.dataset.name; if(!confirm(`Remove "${name}" from Explore? An added business can be restored from "Recently deleted" in the Phone Book tab; a built-in one can be restored from the list below.`)) return;
       const msg=$("#bc-msg"); msg.style.color="var(--text-soft)"; msg.textContent="Saving…";
-      try{ if(del.dataset.added==="1"){ added=added.filter(a=>a.name!==name); await saveKey("explore_added",added); }
-        else { hidden.add(name); await saveKey("explore_hidden",[...hidden]); }
+      try{ if(del.dataset.added==="1"){ const obj=added.find(a=>a.name===name); added=added.filter(a=>a.name!==name); await saveKey("explore_added",added); if(obj) await trashPush({type:"explore_added", label:name, row:obj}); await logAdmin("Removed added business (Explore)", name); }
+        else { hidden.add(name); await saveKey("explore_hidden",[...hidden]); await logAdmin("Hid business (Explore)", name); }
         msg.style.color="var(--open)"; msg.textContent=`${name} removed from Explore.`; draw($("#bc-search").value); }
       catch(err){ msg.style.color="var(--accent-ink)"; msg.textContent="Error: "+(err.message||err); }
     });
@@ -1024,6 +1103,7 @@
       try{ const {error}=await db.from("settings").upsert({key:"explore_overrides",value:JSON.stringify(overrides)},{onConflict:"key"}); if(error) throw error;
         const {error:e2}=await db.from("settings").upsert({key:"explore_meta",value:JSON.stringify(meta)},{onConflict:"key"}); if(e2) throw e2;
         const {error:e3}=await db.from("settings").upsert({key:"explore_extra",value:JSON.stringify(extra)},{onConflict:"key"}); if(e3) throw e3;
+        await logAdmin("Saved Explore category changes");
         msg.style.color="var(--open)"; msg.textContent="Saved! It's live on the Explore page."; }
       catch(err){ msg.style.color="var(--accent-ink)"; msg.textContent="Error: "+(err.message||err); }
       finally{ btn.disabled=false; }
