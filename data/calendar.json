@@ -1,22 +1,7 @@
 {
- "updated": "2026-09-29T22:20:33Z",
+ "updated": "2026-09-30T05:38:21Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1790723700000,
-   "allDay": false,
-   "title": "SVT - Open Swim"
-  },
-  {
-   "start": 1790730000000,
-   "allDay": false,
-   "title": "SBE - Lap Swim"
-  },
-  {
-   "start": 1790733600000,
-   "allDay": false,
-   "title": "SOCC - Teen & Adult Volleyball"
-  },
   {
    "start": 1790784000000,
    "allDay": false,
@@ -100,7 +85,7 @@
   {
    "start": 1791000000000,
    "allDay": false,
-   "title": "SBC Teen Nights!"
+   "title": "Seldovia Bible Chapel - Teen Nights at the Sea Otter Community Center!"
   },
   {
    "start": 1791064800000,
@@ -240,7 +225,7 @@
   {
    "start": 1791604800000,
    "allDay": false,
-   "title": "SBC Teen Nights!"
+   "title": "Seldovia Bible Chapel - Teen Nights at the Sea Otter Community Center!"
   },
   {
    "start": 1791669600000,
@@ -301,6 +286,21 @@
    "start": 1791856800000,
    "allDay": false,
    "title": "CITY - Council Regular Meeting"
+  },
+  {
+   "start": 1791926100000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Arrives from Homer"
+  },
+  {
+   "start": 1791926100000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
+  },
+  {
+   "start": 1791928800000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
   }
  ]
 }
