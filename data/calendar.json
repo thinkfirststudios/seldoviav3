@@ -1,21 +1,11 @@
 {
- "updated": "2026-09-30T12:41:42Z",
+ "updated": "2026-09-30T22:20:40Z",
  "calname": "seldovia",
  "events": [
   {
-   "start": 1790784000000,
+   "start": 1790810100000,
    "allDay": false,
-   "title": "SVT - Fitness Center"
-  },
-  {
-   "start": 1790784000000,
-   "allDay": false,
-   "title": "SBE - Lap Swim"
-  },
-  {
-   "start": 1790805600000,
-   "allDay": false,
-   "title": "Seldovia Public Library Hours"
+   "title": "SVT - Kids After School Time"
   },
   {
    "start": 1790827200000,
@@ -63,6 +53,11 @@
    "title": "SVT - Science Thursday Homeschool"
   },
   {
+   "start": 1790896500000,
+   "allDay": false,
+   "title": "SVT - Kids After School Time"
+  },
+  {
    "start": 1790900100000,
    "allDay": false,
    "title": "AMHS - Tustumena Departs"
@@ -81,6 +76,21 @@
    "start": 1790973000000,
    "allDay": false,
    "title": "Seldovia Public Library Hours"
+  },
+  {
+   "start": 1790982900000,
+   "allDay": false,
+   "title": "SVT - Kids After School Time"
+  },
+  {
+   "start": 1790982900000,
+   "allDay": false,
+   "title": "SVT - Open Swim"
+  },
+  {
+   "start": 1790992800000,
+   "allDay": false,
+   "title": "SVT - Open Swim"
   },
   {
    "start": 1791000000000,
@@ -148,6 +158,11 @@
    "title": "Seldovia Public Library Hours"
   },
   {
+   "start": 1791242100000,
+   "allDay": false,
+   "title": "SVT - Kids After School Time"
+  },
+  {
    "start": 1791244800000,
    "allDay": false,
    "title": "Public Library - Story Time"
@@ -168,6 +183,11 @@
    "title": "Seldovia Public Library Hours"
   },
   {
+   "start": 1791328500000,
+   "allDay": false,
+   "title": "SVT - Kids After School Time"
+  },
+  {
    "start": 1791332100000,
    "allDay": false,
    "title": "AMHS - Tustumena Departs"
@@ -181,6 +201,11 @@
    "start": 1791410400000,
    "allDay": false,
    "title": "Seldovia Public Library Hours"
+  },
+  {
+   "start": 1791414900000,
+   "allDay": false,
+   "title": "SVT - Kids After School Time"
   },
   {
    "start": 1791424800000,
@@ -203,6 +228,11 @@
    "title": "Seldovia Public Library Hours"
   },
   {
+   "start": 1791501300000,
+   "allDay": false,
+   "title": "SVT - Kids After School Time"
+  },
+  {
    "start": 1791504900000,
    "allDay": false,
    "title": "AMHS - Tustumena Departs"
@@ -221,6 +251,21 @@
    "start": 1791577800000,
    "allDay": false,
    "title": "Seldovia Public Library Hours"
+  },
+  {
+   "start": 1791587700000,
+   "allDay": false,
+   "title": "SVT - Kids After School Time"
+  },
+  {
+   "start": 1791587700000,
+   "allDay": false,
+   "title": "SVT - Open Swim"
+  },
+  {
+   "start": 1791597600000,
+   "allDay": false,
+   "title": "SVT - Open Swim"
   },
   {
    "start": 1791604800000,
@@ -256,51 +301,6 @@
    "start": 1791753300000,
    "allDay": false,
    "title": "AMHS - Tustumena Arrives from Homer"
-  },
-  {
-   "start": 1791753300000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
-  },
-  {
-   "start": 1791764100000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Departs"
-  },
-  {
-   "start": 1791764100000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Departs to Homer"
-  },
-  {
-   "start": 1791842400000,
-   "allDay": false,
-   "title": "Seldovia Public Library Hours"
-  },
-  {
-   "start": 1791849600000,
-   "allDay": false,
-   "title": "Public Library - Story Time"
-  },
-  {
-   "start": 1791856800000,
-   "allDay": false,
-   "title": "CITY - Council Regular Meeting"
-  },
-  {
-   "start": 1791926100000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Arrives from Homer"
-  },
-  {
-   "start": 1791926100000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
-  },
-  {
-   "start": 1791928800000,
-   "allDay": false,
-   "title": "Seldovia Public Library Hours"
   }
  ]
 }
