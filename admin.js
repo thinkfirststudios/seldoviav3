@@ -871,7 +871,11 @@
     if(!EX||!EX.PLACES){ host.innerHTML=`<p class="form-note">Couldn't load the business list. Try reloading the page.</p>`; return; }
     const cats=EX.EXPLORE_CATS;
     const optsFor=sel=>cats.map(c=>`<option value="${c.token}"${c.token===sel?" selected":""}>${esc(c.label)}</option>`).join("");
-    let overrides={}, photos={}, meta={}, added=[], hidden=new Set();
+    // Category keys a listing can ALSO be shown under (Jenny #11 — one listing in several tabs).
+    const XCATS=[["travel","Travel"],["stay","Lodging & Camping"],["eat","Eat"],["shop","Shop & Gifts"],["activities","Activities & Hikes"],["gardens","Gardens, Parks & Beaches"],["landmarks","Landmarks"],["services","Businesses"],["life","Organizations & Govt."],["outoftown","Out of Town"]];
+    const xLabel=k=>{ const m=XCATS.find(c=>c[0]===k); return m?m[1]:k; };
+    const xChips=name=>((extra[name]||[]).map(k=>`<button type="button" class="bc-xchip" data-name="${esc(name)}" data-key="${esc(k)}" style="border:1px solid var(--line);background:var(--surface-2);border-radius:999px;padding:.18rem .5rem;cursor:pointer">${esc(xLabel(k))} ✕</button>`).join("")||`<span style="opacity:.6">just its main category</span>`);
+    let overrides={}, photos={}, meta={}, added=[], hidden=new Set(), extra={};
     host.innerHTML=`
       <div class="info-block" style="max-width:720px">
         <h4>Add a business to Explore</h4>
@@ -923,14 +927,19 @@
           <label style="font-size:.8rem;color:var(--text-soft);display:flex;align-items:center;gap:.35rem">Website <input class="bc-url" data-name="${esc(p.name)}" value="${esc(m.url!=null?m.url:(p.url||''))}" placeholder="https://…" style="padding:.35rem .5rem;border:1px solid var(--line);border-radius:8px;width:200px"></label>
         </div>
         <div style="padding-left:60px"><label style="font-size:.8rem;color:var(--text-soft);display:block">Description <textarea class="bc-desc" data-name="${esc(p.name)}" rows="2" placeholder="Short description shown on the card" style="width:100%;margin-top:.25rem;padding:.45rem .55rem;border:1px solid var(--line);border-radius:8px;font:inherit;resize:vertical">${esc(desc)}</textarea></label></div>
+        <div style="padding-left:60px;display:flex;gap:.4rem;align-items:center;flex-wrap:wrap;font-size:.8rem;color:var(--text-soft)">
+          <span>Also show under:</span>
+          <span class="bc-xwrap" data-name="${esc(p.name)}">${xChips(p.name)}</span>
+          <select class="bc-xadd" data-name="${esc(p.name)}" style="padding:.3rem .45rem;border:1px solid var(--line);border-radius:8px"><option value="">+ add category…</option>${XCATS.map(c=>`<option value="${c[0]}">${esc(c[1])}</option>`).join("")}</select>
+        </div>
       </div>`; };
     const drawHidden=()=>{ const h=$("#bc-hidden"); if(!hidden.size){ h.innerHTML=""; return; }
       h.innerHTML=`<p style="font-size:.82rem;color:var(--text-soft);margin:0 0 .3rem">Hidden from Explore (click to restore):</p>`+[...hidden].map(n=>`<button class="btn btn-ghost bc-restore" type="button" data-name="${esc(n)}" style="margin:.15rem .3rem .15rem 0;font-size:.8rem;padding:.3rem .55rem">↺ ${esc(n)}</button>`).join(""); };
     const draw=f=>{ const q=(f||"").toLowerCase();
       $("#bc-list").innerHTML=listAll().filter(p=>!hidden.has(p.name)).filter(p=>!q||p.name.toLowerCase().includes(q)||(p.cat||"").toLowerCase().includes(q)).map(rowHtml).join("")||`<p class="form-note">No matches.</p>`; drawHidden(); };
     async function saveKey(key,val){ const {error}=await db.from("settings").upsert({key,value:JSON.stringify(val)},{onConflict:"key"}); if(error) throw error; }
-    db.from("settings").select("key,value").in("key",["explore_overrides","explore_photos","explore_meta","explore_added","explore_hidden"])
-      .then(({data})=>{ (data||[]).forEach(r=>{ try{ if(r.key==="explore_overrides"&&r.value) overrides=JSON.parse(r.value)||{}; if(r.key==="explore_photos"&&r.value) photos=JSON.parse(r.value)||{}; if(r.key==="explore_meta"&&r.value) meta=JSON.parse(r.value)||{}; if(r.key==="explore_added"&&r.value){ const a=JSON.parse(r.value); if(Array.isArray(a)) added=a; } if(r.key==="explore_hidden"&&r.value){ const h=JSON.parse(r.value); if(Array.isArray(h)) hidden=new Set(h); } }catch(e){} }); draw(""); })
+    db.from("settings").select("key,value").in("key",["explore_overrides","explore_photos","explore_meta","explore_added","explore_hidden","explore_extra"])
+      .then(({data})=>{ (data||[]).forEach(r=>{ try{ if(r.key==="explore_overrides"&&r.value) overrides=JSON.parse(r.value)||{}; if(r.key==="explore_photos"&&r.value) photos=JSON.parse(r.value)||{}; if(r.key==="explore_meta"&&r.value) meta=JSON.parse(r.value)||{}; if(r.key==="explore_added"&&r.value){ const a=JSON.parse(r.value); if(Array.isArray(a)) added=a; } if(r.key==="explore_hidden"&&r.value){ const h=JSON.parse(r.value); if(Array.isArray(h)) hidden=new Set(h); } if(r.key==="explore_extra"&&r.value){ const x=JSON.parse(r.value); if(x&&typeof x==="object") extra=x; } }catch(e){} }); draw(""); })
       .catch(()=>draw(""));
     // Add a new business
     $("#bc-add").addEventListener("click",async()=>{
@@ -947,6 +956,9 @@
     $("#bc-search").addEventListener("input",e=>draw(e.target.value));
     // Delete (hide static, or drop an added one) + restore
     $("#bc-list").addEventListener("click",async e=>{
+      const xc=e.target.closest(".bc-xchip");
+      if(xc){ const name=xc.dataset.name, k=xc.dataset.key; extra[name]=(extra[name]||[]).filter(x=>x!==k); if(!extra[name].length) delete extra[name];
+        const wrap=[...$("#bc-list").querySelectorAll(".bc-xwrap")].find(w=>w.dataset.name===name); if(wrap) wrap.innerHTML=xChips(name); return; }
       const del=e.target.closest(".bc-del"); if(!del) return;
       const name=del.dataset.name; if(!confirm(`Remove "${name}" from Explore?`)) return;
       const msg=$("#bc-msg"); msg.style.color="var(--text-soft)"; msg.textContent="Saving…";
@@ -984,6 +996,11 @@
         else if(!v && base) meta[name].owner="";        // explicitly cleared a default owner
         else delete meta[name].owner;                    // matches default (or nothing) → no override
         clean(name); return; }
+      const xa=e.target.closest(".bc-xadd");
+      if(xa){ const name=xa.dataset.name, k=xa.value; xa.value=""; if(!k) return;
+        extra[name]=extra[name]||[]; if(!extra[name].includes(k)) extra[name].push(k);
+        const wrap=[...$("#bc-list").querySelectorAll(".bc-xwrap")].find(w=>w.dataset.name===name); if(wrap) wrap.innerHTML=xChips(name);
+        return; }
       const ph=e.target.closest(".bc-phone");
       if(ph){ const name=ph.dataset.name, pp=listAll().find(x=>x.name===name); const v=ph.value.trim(); meta[name]=meta[name]||{}; if(v!==((pp&&pp.phone)||"")) meta[name].phone=v; else delete meta[name].phone; clean(name); return; }
       const lc=e.target.closest(".bc-loc");
@@ -997,6 +1014,7 @@
       const msg=$("#bc-msg"), btn=$("#bc-save"); btn.disabled=true; msg.style.color="var(--text-soft)"; msg.textContent="Saving…";
       try{ const {error}=await db.from("settings").upsert({key:"explore_overrides",value:JSON.stringify(overrides)},{onConflict:"key"}); if(error) throw error;
         const {error:e2}=await db.from("settings").upsert({key:"explore_meta",value:JSON.stringify(meta)},{onConflict:"key"}); if(e2) throw e2;
+        const {error:e3}=await db.from("settings").upsert({key:"explore_extra",value:JSON.stringify(extra)},{onConflict:"key"}); if(e3) throw e3;
         msg.style.color="var(--open)"; msg.textContent="Saved! It's live on the Explore page."; }
       catch(err){ msg.style.color="var(--accent-ink)"; msg.textContent="Error: "+(err.message||err); }
       finally{ btn.disabled=false; }

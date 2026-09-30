@@ -307,6 +307,12 @@ function applyExploreOverrides(map){
   if(!map) return;
   PLACES.forEach(p=>{ const t=map[p.name], c=t&&CAT_BY_TOKEN[t]; if(c){ p.key=c.key; p._govt=c.govt; } });
 }
+// Extra categories a listing also appears under (Jenny #11: "copy" a listing into more tabs
+// without recreating it). Shape: { "<business name>": ["eat","travel", …] }.
+function applyExploreExtra(map){
+  if(!map||typeof map!=="object") return;
+  PLACES.forEach(p=>{ const a=map[p.name]; if(Array.isArray(a)&&a.length) p._extra=a; });
+}
 // Businesses Jenny hides (deleted from Explore) and adds (new to Explore), from the admin.
 let EXPLORE_HIDDEN=new Set();
 function applyExploreAdded(arr){
@@ -4425,7 +4431,7 @@ function renderPlaces(){
   }
   // Businesses first (alphabetical); trails & beaches sink to the bottom (Jenny #3).
   // Everything alphabetical, trails included (Jenny: keep continuity, no separate group at the bottom).
-  const rows=PLACES.filter(p=>(placeTab==="all"||p.key===placeTab) && !EXPLORE_HIDDEN.has(p.name)).sort((a,b)=>a.name.localeCompare(b.name));
+  const rows=PLACES.filter(p=>(placeTab==="all"||p.key===placeTab||(p._extra&&p._extra.includes(placeTab))) && !EXPLORE_HIDDEN.has(p.name)).sort((a,b)=>a.name.localeCompare(b.name));
   const pin=`<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.3-7-11a7 7 0 0 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>`;
   // Placeholder photo until Qwynny's square B&W watercolor images land (set p.img; p.imgColor for the sponsor color version).
   const placeCard=p=>{
@@ -4476,10 +4482,11 @@ if($("#placeGrid")){
 }
 // Explore page: apply Jenny's saved category overrides (if any) before the first paint.
 if($("#placeGrid") && window.db){
-  db.from("settings").select("key,value").in("key",["explore_overrides","explore_photos","explore_meta","explore_added","explore_hidden"])
+  db.from("settings").select("key,value").in("key",["explore_overrides","explore_photos","explore_meta","explore_added","explore_hidden","explore_extra"])
     .then(({data})=>{ const S={}; (data||[]).forEach(r=>{ try{ S[r.key]=r.value?JSON.parse(r.value):null; }catch(e){} });
       applyExploreAdded(S.explore_added);                              // add Jenny's new businesses first…
       applyExploreOverrides(S.explore_overrides);                      // …so category overrides can apply to them too
+      applyExploreExtra(S.explore_extra);                              // …and let a listing show in extra categories too (Jenny #11)
       if(S.explore_photos) Object.assign(EXPLORE_PHOTOS, S.explore_photos);
       if(S.explore_meta) Object.assign(EXPLORE_META, S.explore_meta);
       if(Array.isArray(S.explore_hidden)) EXPLORE_HIDDEN=new Set(S.explore_hidden);
