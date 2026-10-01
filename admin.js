@@ -227,7 +227,7 @@
     const {data}=await db.from("settings").select("value").eq("key","admin_trash").maybeSingle();
     let t=[]; try{ t=data&&data.value?JSON.parse(data.value):[]; }catch(e){}
     if(!t.length){ list.innerHTML=`<p style="color:var(--text-soft)">Nothing deleted recently.</p>`; return; }
-    const kind={directory:"Business",submission:"Neighbor / submission",explore_added:"Explore listing"};
+    const kind={directory:"Business",submission:"Neighbor / submission",explore_added:"Explore listing",photos:"Photo",posts:"Blog post",bulletin:"Bulletin note",listings:"Listing"};
     const when=iso=>{ try{ return new Date(iso).toLocaleString(); }catch(e){ return ""; } };
     list.innerHTML=t.map(x=>`<div class="info-block" style="margin-bottom:.5rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center">
         <div style="font-size:.92rem"><b style="color:var(--heading)">${esc(x.label||"(item)")}</b>
@@ -241,13 +241,14 @@
     let t=[]; try{ t=data&&data.value?JSON.parse(data.value):[]; }catch(e){}
     const x=t.find(i=>i.id===tid); if(!x){ loadTrash(); return; }
     try{
-      if(x.type==="directory"){ const {error}=await db.from("directory").insert(x.row); if(error) throw error; }
-      else if(x.type==="submission"){ const {error}=await db.from("directory_submissions").insert(x.row); if(error) throw error; }
-      else if(x.type==="explore_added"){
+      if(x.type==="explore_added"){
         const {data:d2}=await db.from("settings").select("value").eq("key","explore_added").maybeSingle();
         let arr=[]; try{ arr=d2&&d2.value?JSON.parse(d2.value):[]; }catch(e){}
         if(!arr.some(a=>a.name===x.row.name)) arr.push(x.row);
         const {error}=await db.from("settings").upsert({key:"explore_added",value:JSON.stringify(arr)},{onConflict:"key"}); if(error) throw error;
+      } else {
+        const tbl = x.table || (x.type==="submission"?"directory_submissions":x.type);
+        const {error}=await db.from(tbl).insert(x.row); if(error) throw error;
       }
     }catch(err){ alert("Could not restore: "+(err.message||err)); return; }
     const rest=t.filter(i=>i.id!==tid);
@@ -440,13 +441,19 @@
         </div>
         <p id="ph-msg" class="form-note"></p>
       </form>
-      <h3 class="listing-h" style="margin-top:2rem">Recent photos</h3>
-      <div id="photoList"><p style="color:var(--text-soft)">Loading…</p></div>`;
+      <h3 class="listing-h" style="margin-top:2rem">All photos</h3>
+      <p style="color:var(--text-soft);font-size:.92rem;margin:.3rem 0 .8rem">Search by caption or tag, or use Load more to reach older photos. A <b>Duplicate</b> tag marks a photo whose image is already used by another entry, so you can delete the extra.</p>
+      <input id="ph-search" type="search" placeholder="Search photos by caption or tag…" style="width:100%;padding:.6rem .8rem;border:1px solid var(--line);border-radius:10px;margin-bottom:1rem">
+      <div id="photoList"><p style="color:var(--text-soft)">Loading…</p></div>
+      <div id="ph-more-wrap" style="text-align:center;margin-top:1rem"></div>`;
     $("#ph-date").value=todayISO();
     $("#photoForm").addEventListener("submit",onPostPhoto);
     $("#ph-cancel").addEventListener("click",resetPhoto);
-    loadPhotos();
+    let phT=null; $("#ph-search").addEventListener("input",()=>{ clearTimeout(phT); phT=setTimeout(()=>{ photoQuery=$("#ph-search").value.trim(); loadPhotos(true); },300); });
+    loadPhotos(true);
   }
+  let photoOffset=0, photoQuery="", photoSeenUrls=new Set();
+  const PH_PAGE=48;
   function resetPhoto(){ editPhoto=null; $("#photoForm").reset(); $("#ph-date").value=todayISO();
     $("#ph-img").required=true; $("#ph-imghint").textContent="Auto-resized on upload.";
     $("#ph-head").textContent="Add today's photo"; $("#ph-btn").textContent="Post photo"; $("#ph-cancel").hidden=true; }
@@ -474,16 +481,27 @@
     }catch(err){ msg.style.color="var(--accent-ink)"; msg.textContent="Error: "+(err.message||err); }
     finally{ btn.disabled=false; }
   }
-  async function loadPhotos(){
-    const list=$("#photoList");
-    const {data,error}=await db.from("photos").select("*").order("taken_on",{ascending:false}).limit(48);
+  async function loadPhotos(reset){
+    const list=$("#photoList"), moreWrap=$("#ph-more-wrap");
+    if(reset){ photoOffset=0; photoSeenUrls=new Set(); list.innerHTML=`<div class="admin-photo-grid"></div>`; if(moreWrap) moreWrap.innerHTML=""; }
+    const grid=list.querySelector(".admin-photo-grid")||list;
+    let q=db.from("photos").select("*").order("taken_on",{ascending:false}).range(photoOffset, photoOffset+PH_PAGE-1);
+    if(photoQuery){ const s=photoQuery.replace(/[%,]/g," ").trim(); q=db.from("photos").select("*").or(`caption.ilike.%${s}%,tags.ilike.%${s}%`).order("taken_on",{ascending:false}).range(photoOffset, photoOffset+PH_PAGE-1); }
+    const {data,error}=await q;
     if(error){ list.innerHTML=`<p style="color:var(--accent-ink)">${esc(error.message)}</p>`; return; }
-    if(!data.length){ list.innerHTML='<p style="color:var(--text-soft)">No photos yet.</p>'; return; }
-    list.innerHTML=`<div class="admin-photo-grid">`+data.map(p=>`<figure class="admin-photo">
+    if(!data.length && photoOffset===0){ grid.innerHTML=`<p style="color:var(--text-soft)">${photoQuery?"No photos match that search.":"No photos yet."}</p>`; if(moreWrap) moreWrap.innerHTML=""; return; }
+    const cards=data.map(p=>{ const dup=photoSeenUrls.has(p.image_url); photoSeenUrls.add(p.image_url);
+      return `<figure class="admin-photo">
       <img src="${esc(p.image_url)}" alt="${esc(p.caption||"")}" loading="lazy">
-      <figcaption>${esc(fmtDate(p.taken_on))}${p.taken_on>todayISO()?` · <span style="color:var(--accent-ink);font-weight:700">Scheduled</span>`:""}${p.caption?" · "+esc(p.caption):""}</figcaption>
-      <div class="admin-row-btns"><button class="btn btn-ghost" data-edit="${p.id}" type="button">Edit</button><button class="btn btn-ghost" data-del="${p.id}" type="button">Delete</button></div></figure>`).join("")+`</div>`;
-    bindEdit(list,data,fillPhoto); bindDelete(list,"photos",loadPhotos);
+      <figcaption>${esc(fmtDate(p.taken_on))}${p.taken_on>todayISO()?` · <span style="color:var(--accent-ink);font-weight:700">Scheduled</span>`:""}${dup?` · <span style="color:#7a1020;font-weight:700">Duplicate</span>`:""}${p.caption?" · "+esc(p.caption):""}</figcaption>
+      <div class="admin-row-btns"><button class="btn btn-ghost" data-edit="${p.id}" type="button">Edit</button><button class="btn btn-ghost" data-del="${p.id}" type="button">Delete</button></div></figure>`; }).join("");
+    grid.insertAdjacentHTML("beforeend", cards);
+    photoOffset += data.length;
+    bindEdit(grid,data,fillPhoto); bindDelete(grid,"photos",()=>loadPhotos(true),data);
+    if(moreWrap){ moreWrap.innerHTML = (data.length===PH_PAGE)
+      ? `<button class="btn btn-ghost" id="ph-more" type="button">Load more photos</button>`
+      : `<p style="color:var(--text-soft);font-size:.85rem">That's all ${photoQuery?"matches":"photos"}.</p>`;
+      if($("#ph-more")) $("#ph-more").addEventListener("click",()=>loadPhotos(false)); }
   }
 
   /* ---------------- BLOG POST ---------------- */
@@ -586,7 +604,7 @@
       ${p.image_url?`<img class="d-photo" src="${esc(p.image_url)}" alt="" style="border-radius:8px">`:'<div class="d-ico">✎</div>'}
       <div class="d-main"><div class="d-cat">${esc(fmtDate(p.post_date))} · ${esc(p.category||'')}</div><h4>${esc(p.title)}</h4></div>
       <div class="admin-row-btns"><button class="btn btn-ghost" data-edit="${p.id}" type="button">Edit</button><button class="btn btn-ghost" data-del="${p.id}" type="button">Delete</button></div></div>`).join("");
-    bindEdit(list,data,fillPost); bindDelete(list,"posts",loadPosts);
+    bindEdit(list,data,fillPost); bindDelete(list,"posts",loadPosts,data);
   }
 
   /* ---------------- BULLETIN ---------------- */
@@ -657,7 +675,7 @@
       ${n.image_url?`<img class="d-photo" src="${esc(n.image_url)}" alt="" style="border-radius:8px">`:'<div class="d-ico">📌</div>'}
       <div class="d-main"><div class="d-cat">${esc(n.category||'')}${n.starts_on?" · "+esc(fmtDate(n.starts_on)):""}${n.event_url?' · 📅 event':''}${n.link?' · 🔗 link':''}</div><h4>${esc(n.title)}</h4></div>
       <div class="admin-row-btns"><button class="btn btn-ghost" data-edit="${n.id}" type="button">Edit</button><button class="btn btn-ghost" data-del="${n.id}" type="button">Delete</button></div></div>`).join("");
-    bindEdit(list,data,fillBul); bindDelete(list,"bulletin",loadBulletin);
+    bindEdit(list,data,fillBul); bindDelete(list,"bulletin",loadBulletin,data);
   }
 
   /* ---------------- LISTINGS ---------------- */
@@ -809,7 +827,7 @@
       db.from("settings").upsert({key:"listings_order",value:JSON.stringify(ids)},{onConflict:"key"}).then(()=>loadListings()); };
     list.querySelectorAll(".lst-up").forEach(b=>b.addEventListener("click",()=>move(+b.dataset.i,-1)));
     list.querySelectorAll(".lst-down").forEach(b=>b.addEventListener("click",()=>move(+b.dataset.i,1)));
-    bindEdit(list,data,fillLst); bindDelete(list,"listings",loadListings);
+    bindEdit(list,data,fillLst); bindDelete(list,"listings",loadListings,data);
   }
 
   /* ---------------- MESSAGES (contact-form inbox) ---------------- */
@@ -1158,14 +1176,20 @@
   /* ---------------- shared ---------------- */
   function bindEdit(scope, data, fill){
     scope.querySelectorAll("[data-edit]").forEach(b=>b.addEventListener("click",()=>{
-      const row=data.find(r=>r.id===b.dataset.edit); if(row) fill(row);
+      const row=data.find(r=>String(r.id)===b.dataset.edit); if(row) fill(row);
     }));
   }
-  function bindDelete(scope, table, reload){
+  // Human labels for the activity log / trash, per table.
+  const ROW_LABEL=r=>r&&(r.caption||r.title||r.name||r.display_name||r.addr||r.address||"item");
+  function bindDelete(scope, table, reload, data){
     scope.querySelectorAll("[data-del]").forEach(b=>b.addEventListener("click",async()=>{
-      if(!confirm("Delete this?")) return;
+      if(!confirm("Delete this? You can restore it from \"Recently deleted\" in the Phone Book tab.")) return;
+      const row=data?data.find(r=>String(r.id)===b.dataset.del):null;
       const {error}=await db.from(table).delete().eq("id",b.dataset.del);
-      if(error) alert(error.message); else reload();
+      if(error){ alert(error.message); return; }
+      if(row){ await trashPush({type:table, table, label:ROW_LABEL(row), row:stripId(row)}); }
+      await logAdmin("Deleted "+table.replace(/_/g," "), row?ROW_LABEL(row):"");
+      reload(); loadTrash(); loadLog();
     }));
   }
 

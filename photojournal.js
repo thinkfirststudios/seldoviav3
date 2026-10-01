@@ -27,6 +27,8 @@
       const akToday=new Date().toLocaleDateString("en-CA",{timeZone:"America/Anchorage"}); // YYYY-MM-DD in Alaska
       // Scheduling (Qwynny): a photo dated in the future stays hidden until that day arrives.
       data=data.filter(p=>!p.taken_on || p.taken_on<=akToday);
+      // Drop duplicate images so the same photo never shows twice (Jenny: "doubles"). Keeps the first (newest).
+      { const seen=new Set(); data=data.filter(p=>{ if(!p.image_url) return true; if(seen.has(p.image_url)) return false; seen.add(p.image_url); return true; }); }
       if(!data.length) return; // all upcoming -> keep the static gallery
       // Always feature the most recent photo big at the top (Jenny wants the Photo of the Day
       // there every day, not only when a photo happens to be dated exactly today).
