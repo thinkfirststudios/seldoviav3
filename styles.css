@@ -161,19 +161,12 @@ h2.title{font-size:clamp(1.9rem,4vw,2.9rem);}
    Secret" tagline stretching to the far right. BELOW it, a colored nav band (green via --band on
    every page, pink on the Real Estate page) with white nav text so the menu stands out. The
    "Seldovia Today" conditions bar moved down into the page content, beside the Marine Weather. */
-.masthead-top{max-width:var(--maxw); margin-inline:auto; display:flex; align-items:flex-end; gap:1rem; padding:.35rem var(--gutter) .3rem;}
+.masthead-top{max-width:var(--maxw); margin-inline:auto; display:flex; align-items:flex-end; gap:1rem; padding:.3rem var(--gutter);}
 .brand{display:flex; align-items:center; gap:.55rem; text-decoration:none; flex-shrink:0;}
-.brand .brand-logo{height:150px; width:auto; display:block; object-fit:contain;}
-/* Tagline owns the top row beside the logo: large, angled, right-aligned to the far edge.
-   pointer-events:none so this decorative text never sits over the nav band and eats clicks. */
-.brand-tag{flex:1 1 auto; min-width:0; text-align:right; font-family:var(--script); font-weight:400; font-size:clamp(1.9rem,3.6vw,3.7rem); line-height:1.05; color:var(--heading); white-space:nowrap; overflow:visible; transform:rotate(-4deg); transform-origin:right bottom; padding:0 .2rem .5rem 0; pointer-events:none;}
-@media (max-width:900px){ .brand .brand-logo{height:104px;} .brand-tag{font-size:clamp(1.8rem,5vw,2.8rem);} }
-/* Phones: stack the tagline under the logo so it never crowds it (nav is a hamburger below). */
-@media (max-width:560px){
-  .masthead-top{flex-wrap:wrap; gap:.3rem; padding:.3rem var(--gutter) .3rem;}
-  .brand .brand-logo{height:84px;}
-  .brand-tag{flex-basis:100%; text-align:left; white-space:normal; font-size:clamp(1.6rem,7vw,2.3rem); transform:rotate(-5deg); transform-origin:left center; padding:.1rem 0 .2rem;}
-}
+/* Single combined logo + "Alaska's Best Kept Secret" lockup image (Jenny, Oct 1): one asset so it
+   stays identical in proportion on mobile and desktop. Sized by width, prominent on phones, capped wide. */
+.brand .brand-lockup{width:clamp(230px,26vw,300px); height:auto; display:block;}
+@media (max-width:560px){ .masthead-top{padding:.25rem var(--gutter);} }
 /* Seldovia Property logo atop the Real Estate page hero */
 /* Jenny's colored brokerage logo, directly on the hero photo (no card). */
 .re-brand-logo{display:block; height:auto; width:min(320px,72vw); margin:0 auto 1rem;}

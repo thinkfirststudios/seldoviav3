@@ -52,10 +52,9 @@ const navLinks=(cls="")=>NAV.map(([href,label,key])=>`<a class="${cls} ${key===P
 const HEADER=`
 <header class="masthead">
   <div class="masthead-top">
-    <a class="brand" href="index.html"${_preview} aria-label="Seldovia.com home">
-      <img class="brand-logo" src="images/logo-seldovia.png?v=2" alt="Seldovia.com" width="1000" height="574">
+    <a class="brand" href="index.html"${_preview} aria-label="Seldovia.com — Alaska's Best Kept Secret, home">
+      <img class="brand-lockup" src="images/brand-lockup.png?v=1" alt="Seldovia.com — Alaska's Best Kept Secret" width="1000" height="728">
     </a>
-    <span class="brand-tag">Alaska&rsquo;s Best Kept Secret</span>
   </div>
   <div class="navband">
     <div class="navband-inner">
@@ -4353,6 +4352,13 @@ if($("#featureMedia")) $("#featureMedia").innerHTML=`<img class="feature-photo" 
 
 // places (directory highlights) with tabs — reads ?cat= from URL for deep-links
 const PLACE_TABS=[["all","All"],["about","About"],["travel","Travel"],["stay","Lodging & Camping"],["eat","Eat"],["shop","Shop & Gifts"],["activities","Activities & Hikes"],["gardens","Gardens, Parks & Beaches"],["landmarks","Landmarks"],["services","Businesses"],["life","Organizations & Govt."],["outoftown","Out of Town"]];
+// Jenny (Oct 1): link out to these organizations' own sites instead of hosting a page.
+// Applied at render so it works whether the link comes from static data or the DB.
+const ORG_LINK={
+  "arts-council.html":"https://www.seldoviaartscouncil.org",
+  "seldovia-house.html":"https://www.cookinlethousing.org",
+  "kasitsna-bay.html":"https://www.uaf.edu/cfos/about-us/locations/kasitsna-bay/"
+};
 let placeTab=(new URLSearchParams(location.search).get("cat"))||"all";
 if(!PLACE_TABS.some(([k])=>k===placeTab) && placeTab!=="about") placeTab="all";
 // Business owners + blurbs pulled from Jenny's old Seldovia.com directory (Connections).
@@ -4440,7 +4446,7 @@ function renderPlaces(){
     const catLabel=meta.label||p.cat;                       // Jenny can edit the small text above the name
     const dispName=meta.name||p.name;                        // Jenny can correct the business name (display) in the admin
     const phone=(meta.phone!=null)?meta.phone:p.phone;  // and the phone number (blank override allowed)
-    const url=(meta.url!=null)?meta.url:(p.url||"");    // and the website (blank override allowed)
+    const url0=(meta.url!=null)?meta.url:(p.url||""); const url=ORG_LINK[url0]||url0;  // website (blank override allowed); org pages link out (Jenny)
     const loc=(meta.loc!=null)?meta.loc:(p.key==="outoftown"?"":"Seldovia, AK"); // out-of-town: no "Seldovia" unless Jenny sets a location
     const st=meta.status;                                    // "open" / "closed" seasonal sign (Jenny toggles)
     const sign=(st==="open"||st==="closed")?`<span class="place-sign place-sign-${st}">${st==="open"?"Open all year":"Summer only"}</span>`:"";
@@ -4677,9 +4683,10 @@ if($("#dirList")){
       ${p.featured?'<span class="spon-flag">★ Featured</span>':''}</div>`;};
   const bizCard=d=>{
     const bits=[]; if(d.phone)bits.push(`<a href="tel:${d.phone.replace(/[^\d]/g,"")}">${esc(d.phone)}</a>`); if(d.k!=="outoftown") bits.push("Seldovia, AK");
-    const ext=/^https?:/i.test(d.url||"");   // external site opens a new tab; an internal page stays in the tab
-    const nm=d.url?`<a href="${esc(d.url)}"${ext?' target="_blank" rel="noopener"':''}>${esc(d.name)}</a>`:esc(d.name);
-    const site=d.url?`<div class="d-site"><a href="${esc(d.url)}"${ext?' target="_blank" rel="noopener"':''}>${ext?"Visit website ↗":"View page →"}</a></div>`:"";
+    const url=ORG_LINK[d.url]||d.url||"";     // org pages link out to their own sites (Jenny)
+    const ext=/^https?:/i.test(url);         // external site opens a new tab; an internal page stays in the tab
+    const nm=url?`<a href="${esc(url)}"${ext?' target="_blank" rel="noopener"':''}>${esc(d.name)}</a>`:esc(d.name);
+    const site=url?`<div class="d-site"><a href="${esc(url)}"${ext?' target="_blank" rel="noopener"':''}>${ext?"Visit website ↗":"View page →"}</a></div>`:"";
     return `<div class="dir-item ${d.spon?'featured':''}"><div class="d-ico">${esc(d.name[0])}</div>
       <div class="d-main"><div class="d-cat">${esc(d.cat)}</div><h4>${nm}</h4><div class="d-contact">${bits.join(" · ")}</div>${site}</div>
       ${d.spon?'<span class="spon-flag">★ Sponsor</span>':''}</div>`;};

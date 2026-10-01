@@ -6,7 +6,7 @@
 <meta name="description" content="About Seldovia, Alaska — the natural beauty, a town tour, demographics and weather, and the rich history of our boardwalk town on Kachemak Bay.">
 <meta name="theme-color" content="#F8E6DD">
 <title>About Seldovia — History, Town Tour & Map</title>
-<link rel="stylesheet" href="styles.css?v=99">
+<link rel="stylesheet" href="styles.css?v=100">
 <style>
   .about-prose{max-width:74ch; margin-inline:auto; font-size:1.05rem; line-height:1.72;}
   /* Section headings in the Lovestory brushstroke, consistent with the rest of the site (Jenny). */
@@ -17,6 +17,8 @@
   .about-full{max-width:var(--maxw); columns:2 24rem; column-gap:clamp(30px,4vw,58px);}
   .about-full h2{column-span:all; margin-bottom:.7rem;}
   .about-full p{margin:0 0 1rem; break-inside:avoid;}
+  /* iOS Safari can drop multi-column content; force a single column on phones so the text always shows. */
+  @media (max-width:760px){ .about-full{columns:1 !important; column-gap:0;} }
   .about-prose p{margin:0 0 1rem;}
   /* Two-column map block ("Where is Seldovia?" beside the map), like the original site. */
   .about-map-two{display:grid; grid-template-columns:1.02fr .98fr; gap:clamp(26px,4vw,54px); align-items:center; max-width:var(--maxw); margin-inline:auto;}
@@ -128,6 +130,6 @@
     </div>
   </section>
 </main>
-<script src="app.js?v=99"></script>
+<script src="app.js?v=100"></script>
 </body>
 </html>
