@@ -1,61 +1,11 @@
 {
- "updated": "2026-10-01T13:25:43Z",
+ "updated": "2026-10-01T22:44:27Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1790876700000,
-   "allDay": false,
-   "title": "SVT - Science Thursday Middle/High School"
-  },
-  {
-   "start": 1790877600000,
-   "allDay": false,
-   "title": "SOCC - Yoga"
-  },
-  {
-   "start": 1790887500000,
-   "allDay": false,
-   "title": "SVT - Science Thursday SBE Elementary"
-  },
-  {
-   "start": 1790888400000,
-   "allDay": false,
-   "title": "Chamber of Commerce Membership Meeting"
-  },
-  {
-   "start": 1790889300000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Arrives from Homer"
-  },
-  {
-   "start": 1790889300000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
-  },
-  {
-   "start": 1790892000000,
-   "allDay": false,
-   "title": "Seldovia Public Library Hours"
-  },
-  {
-   "start": 1790893800000,
-   "allDay": false,
-   "title": "SVT - Science Thursday Homeschool"
-  },
   {
    "start": 1790896500000,
    "allDay": false,
    "title": "SVT - Kids After School Time"
-  },
-  {
-   "start": 1790900100000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Departs"
-  },
-  {
-   "start": 1790900100000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Departs to Homer"
   },
   {
    "start": 1790904600000,
@@ -301,6 +251,56 @@
    "start": 1791753300000,
    "allDay": false,
    "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
+  },
+  {
+   "start": 1791764100000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Departs"
+  },
+  {
+   "start": 1791764100000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Departs to Homer"
+  },
+  {
+   "start": 1791842400000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
+  },
+  {
+   "start": 1791846900000,
+   "allDay": false,
+   "title": "SVT - Kids After School Time"
+  },
+  {
+   "start": 1791849600000,
+   "allDay": false,
+   "title": "Public Library - Story Time"
+  },
+  {
+   "start": 1791856800000,
+   "allDay": false,
+   "title": "CITY - Council Regular Meeting"
+  },
+  {
+   "start": 1791926100000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Arrives from Homer"
+  },
+  {
+   "start": 1791926100000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
+  },
+  {
+   "start": 1791928800000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
+  },
+  {
+   "start": 1791933300000,
+   "allDay": false,
+   "title": "SVT - Kids After School Time"
   }
  ]
 }
