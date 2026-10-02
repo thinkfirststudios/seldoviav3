@@ -110,7 +110,7 @@
           ${TABS.map((t,i)=>`<button class="admin-tab ${i===0?"is-active":""}" data-tab="${t.key}" type="button">${t.label}</button>`).join("")}
         </div>
         <div style="display:flex;align-items:center;gap:.8rem">
-          <span style="font-size:.72rem;color:var(--text-soft)" title="If this number is old after refreshing, your browser cached the admin — clear site data / hard refresh.">admin build 47</span>
+          <span style="font-size:.72rem;color:var(--text-soft)" title="If this number is old after refreshing, your browser cached the admin — clear site data / hard refresh.">admin build 48</span>
           <button class="btn btn-ghost" id="logoutBtn" type="button">Sign out</button>
         </div>
       </div>
@@ -307,7 +307,8 @@
     $("#person-head").textContent="Edit neighbor";
     $("#pSave").textContent="Save changes";
     $("#pCancel").hidden=false; $("#pMsg").textContent="";
-    $("#personForm").scrollIntoView({behavior:"smooth",block:"start"}); $("#pName").focus();
+    const f=$("#personForm"); f.scrollIntoView({behavior:"smooth",block:"center"}); $("#pName").focus();
+    f.style.transition="box-shadow .25s"; f.style.boxShadow="0 0 0 3px var(--accent)"; setTimeout(()=>{ f.style.boxShadow=""; },1300);
   }
   async function savePerson(e){
     e.preventDefault();
@@ -366,7 +367,8 @@
     $("#dir-head").textContent="Edit business";
     $("#dSave").textContent="Save changes";
     $("#dCancel").hidden=false; $("#dMsg").textContent="";
-    $("#dirForm").scrollIntoView({behavior:"smooth",block:"start"}); $("#dName").focus();
+    const f=$("#dirForm"); f.scrollIntoView({behavior:"smooth",block:"center"}); $("#dName").focus();
+    f.style.transition="box-shadow .25s"; f.style.boxShadow="0 0 0 3px var(--accent)"; setTimeout(()=>{ f.style.boxShadow=""; },1300);
   }
   async function saveDir(e){
     e.preventDefault();
