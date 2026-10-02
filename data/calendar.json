@@ -1,17 +1,7 @@
 {
- "updated": "2026-10-01T22:44:27Z",
+ "updated": "2026-10-02T05:45:48Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1790896500000,
-   "allDay": false,
-   "title": "SVT - Kids After School Time"
-  },
-  {
-   "start": 1790904600000,
-   "allDay": false,
-   "title": "SBE Middle School Basketball Parent Meeting"
-  },
   {
    "start": 1790973000000,
    "allDay": false,
@@ -301,6 +291,16 @@
    "start": 1791933300000,
    "allDay": false,
    "title": "SVT - Kids After School Time"
+  },
+  {
+   "start": 1791936900000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Departs"
+  },
+  {
+   "start": 1791936900000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Departs to Homer"
   }
  ]
 }
