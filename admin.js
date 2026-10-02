@@ -109,7 +109,10 @@
         <div class="admin-tabs" role="tablist">
           ${TABS.map((t,i)=>`<button class="admin-tab ${i===0?"is-active":""}" data-tab="${t.key}" type="button">${t.label}</button>`).join("")}
         </div>
-        <button class="btn btn-ghost" id="logoutBtn" type="button">Sign out</button>
+        <div style="display:flex;align-items:center;gap:.8rem">
+          <span style="font-size:.72rem;color:var(--text-soft)" title="If this number is old after refreshing, your browser cached the admin — clear site data / hard refresh.">admin build 47</span>
+          <button class="btn btn-ghost" id="logoutBtn" type="button">Sign out</button>
+        </div>
       </div>
       ${TABS.map((t,i)=>`<div id="tab-${t.key}" ${i===0?"":"hidden"}></div>`).join("")}`;
     $("#logoutBtn").addEventListener("click",()=>db.auth.signOut());
