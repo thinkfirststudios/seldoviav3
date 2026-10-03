@@ -61,6 +61,9 @@ body[data-page="realestate"]{
 html{scroll-behavior:smooth;}
 @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
 body{margin:0; background:var(--page); color:var(--text); font-family:var(--sans); font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;}
+/* Phones: slightly larger reading size site-wide (Alex). Root 107.5% ≈ 17.2px, so body paragraphs
+   (1.05rem) land around 18px and everything scales together instead of section-by-section. */
+@media (max-width:640px){ html{font-size:107.5%;} body{font-size:1rem;} }
 /* Watercolor page washes removed site-wide — clean solid ground (Jenny #7/#24). */
 body:not([data-page="realestate"]){ background:var(--page); }
 /* Paper grain / watercolor texture removed site-wide (Jenny) — clean flat background */
