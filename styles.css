@@ -161,11 +161,11 @@ h2.title{font-size:clamp(1.9rem,4vw,2.9rem);}
    Secret" tagline stretching to the far right. BELOW it, a colored nav band (green via --band on
    every page, pink on the Real Estate page) with white nav text so the menu stands out. The
    "Seldovia Today" conditions bar moved down into the page content, beside the Marine Weather. */
-.masthead-top{max-width:var(--maxw); margin-inline:auto; display:flex; align-items:flex-end; justify-content:center; gap:1rem; padding:.3rem var(--gutter);}
+.masthead-top{max-width:var(--maxw); margin-inline:auto; display:flex; align-items:flex-end; gap:1rem; padding:.25rem var(--gutter);}
 .brand{display:flex; align-items:center; gap:.55rem; text-decoration:none; flex-shrink:0;}
 /* Single combined logo + "Alaska's Best Kept Secret" lockup image (Jenny, Oct 1): one asset so it
    stays identical in proportion on mobile and desktop. Sized by width, prominent on phones, capped wide. */
-.brand .brand-lockup{width:clamp(220px,24vw,330px); height:auto; display:block;}
+.brand .brand-lockup{width:clamp(190px,18vw,260px); height:auto; display:block;}
 @media (max-width:560px){ .masthead-top{padding:.25rem var(--gutter);} }
 /* Seldovia Property logo atop the Real Estate page hero */
 /* Jenny's colored brokerage logo, directly on the hero photo (no card). */
