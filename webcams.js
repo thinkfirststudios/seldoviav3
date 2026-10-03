@@ -67,10 +67,37 @@
     var r = el.requestFullscreen || el.webkitRequestFullscreen || el.webkitEnterFullscreen || el.msRequestFullscreen;
     if(r){ try { r.call(el); } catch(e){} }
   }
+  /* Phones: native fullscreen takes over the screen with no visible way out (the Harbor still image
+     has no controls at all), so older visitors got stuck (Alex). On phones we open our own full-screen
+     view instead, with a big Close button, tap-anywhere-to-close, and the phone's Back button closing it.
+     Desktop keeps native fullscreen (Esc exits). */
+  var isPhone = window.matchMedia("(max-width: 760px), (pointer: coarse)").matches;
+  function openView(player){
+    player.classList.add("wc-expanded");
+    document.body.style.overflow = "hidden";
+    var x = document.createElement("button");
+    x.type = "button"; x.className = "wc-close"; x.setAttribute("aria-label", "Close full screen");
+    x.textContent = "✕ Close";
+    player.appendChild(x);
+    x.addEventListener("click", function(e){ e.stopPropagation(); history.back(); });
+    history.pushState({ wcView: 1 }, "");
+    function onPop(){
+      player.classList.remove("wc-expanded");
+      document.body.style.overflow = "";
+      x.remove();
+      window.removeEventListener("popstate", onPop);
+    }
+    window.addEventListener("popstate", onPop);
+  }
   Array.prototype.slice.call(document.querySelectorAll(".wc-video, .wc-snap")).forEach(function(el){
     el.style.cursor = "zoom-in";
-    el.title = "Click to view full screen";
-    el.addEventListener("click", function(){ goFullscreen(el); });
+    el.title = isPhone ? "Tap to view full screen" : "Click to view full screen";
+    el.addEventListener("click", function(){
+      if(!isPhone){ goFullscreen(el); return; }
+      var player = el.closest(".wc-player") || el.parentElement;
+      if(player.classList.contains("wc-expanded")) history.back();   // tap anywhere to close
+      else openView(player);
+    });
   });
 
 })();

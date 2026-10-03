@@ -940,6 +940,12 @@ footer.site a{color:rgba(255,255,255,.82); text-decoration:none;} footer.site a:
 .wc-offline .wc-badge{background:rgba(90,90,90,.9);}
 .wc-offline .wc-badge::after{content:" — offline";}
 .wc-offline .wc-player::after{content:"This camera is temporarily offline"; position:absolute; inset:0; display:grid; place-items:center; color:#cbd5db; font-size:.9rem; text-align:center; padding:1rem;}
+/* Phone full-screen webcam view (webcams.js): fills the screen, big obvious Close, tap anywhere to close. */
+.wc-player.wc-expanded{position:fixed; inset:0; z-index:200; aspect-ratio:auto; border-radius:0; background:#000;}
+.wc-player.wc-expanded .wc-video,.wc-player.wc-expanded .wc-snap{width:100% !important; height:100% !important; object-fit:contain !important;}
+.wc-player.wc-expanded .wc-badge{right:auto; left:.8rem; top:max(.8rem, env(safe-area-inset-top));}
+.wc-close{position:absolute; top:max(.8rem, env(safe-area-inset-top)); right:.8rem; z-index:3; background:#fff; color:#111; border:0; border-radius:999px; padding:.75rem 1.2rem; font:inherit; font-weight:800; font-size:1.05rem; box-shadow:0 4px 16px rgba(0,0,0,.45); cursor:pointer;}
+.wc-player.wc-expanded::before{content:"Tap anywhere to close"; position:absolute; left:0; right:0; bottom:max(1.2rem, env(safe-area-inset-bottom)); z-index:3; text-align:center; color:#fff; font-size:.95rem; opacity:.85; pointer-events:none;}
 .wc-body{padding:1rem 1.1rem 1.2rem;}
 .wc-body h4{font-family:var(--serif); font-size:1.15rem; color:var(--heading);}
 .wc-body p{font-size:.9rem; color:var(--text-soft); margin:.3rem 0 0; line-height:1.4;}

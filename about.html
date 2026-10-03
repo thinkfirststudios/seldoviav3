@@ -6,7 +6,7 @@
 <meta name="description" content="About Seldovia, Alaska — the natural beauty, a town tour, demographics and weather, and the rich history of our boardwalk town on Kachemak Bay.">
 <meta name="theme-color" content="#F8E6DD">
 <title>About Seldovia — History, Town Tour & Map</title>
-<link rel="stylesheet" href="styles.css?v=107">
+<link rel="stylesheet" href="styles.css?v=108">
 <style>
   .about-prose{max-width:74ch; margin-inline:auto; font-size:1.05rem; line-height:1.72;}
   /* Section headings in the Lovestory brushstroke, consistent with the rest of the site (Jenny). */
@@ -41,11 +41,17 @@
   .about-map-fig img{width:100%; max-width:720px; height:auto; border-radius:var(--radius); box-shadow:var(--shadow-lg); cursor:zoom-in; margin-inline:auto;}
   .about-map-fig figcaption{color:var(--text-soft); font-size:.92rem; margin-top:.9rem; max-width:60ch; margin-inline:auto;}
   @media (max-width:520px){ .tl-row{grid-template-columns:64px 1fr; gap:.7rem;} }
-  /* Phones: larger Town Tour + History text so it's comfortable to read (Alex). */
+  /* Phones: Town Tour + History noticeably larger and a touch darker so they read strongly (Alex). */
   @media (max-width:640px){
-    .fact b{font-size:1.12rem;} .fact span{font-size:1.04rem;}
-    .tour-item h4{font-size:1.28rem;} .tour-item p{font-size:1.07rem; line-height:1.65;}
-    .tl-year{font-size:1.1rem;} .tl-text{font-size:1.07rem; line-height:1.65;}
+    .fact b{font-size:1.25rem;} .fact span{font-size:1.15rem; color:var(--text);}
+    .tour-item h4{font-size:1.38rem;} .tour-item p{font-size:1.15rem; line-height:1.65; color:var(--text);}
+    .tl-year{font-size:1.2rem;} .tl-text{font-size:1.15rem; line-height:1.65;}
+  }
+  /* Phones (single column): center every section heading so they all line up the same way. */
+  @media (max-width:760px){
+    .about-map-two .map-text{text-align:center;}
+    .about-map-two .map-text p{text-align:left; margin-inline:auto;}
+    .about-full h2{text-align:center;}
   }
 </style>
 </head>
