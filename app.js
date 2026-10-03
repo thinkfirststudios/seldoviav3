@@ -4470,6 +4470,10 @@ function renderPlaces(){
 }
 if($("#placeTabs")){
   $("#placeTabs").innerHTML=PLACE_TABS.map(([k,l])=>`<button class="tab" data-key="${k}" aria-pressed="${k===placeTab}">${esc(l)}</button>`).join("");
+  // On phones the tabs are one swipeable row; bring the selected tab into view (e.g. arriving from a home card).
+  { const row=$("#placeTabs"), act=row.querySelector('.tab[aria-pressed="true"]');
+    if(act && row.scrollWidth>row.clientWidth){ const a=act.getBoundingClientRect(), r=row.getBoundingClientRect();
+      row.scrollLeft += (a.left-r.left) - (row.clientWidth-a.width)/2; } }
   $("#placeTabs").addEventListener("click",e=>{const b=e.target.closest(".tab"); if(!b)return; placeTab=b.dataset.key; $$("#placeTabs .tab").forEach(t=>t.setAttribute("aria-pressed",t===b)); renderPlaces();});
 }
 // "Read more" on a business card expands its blurb in place (works even though the card is a link).

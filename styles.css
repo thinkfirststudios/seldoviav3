@@ -399,6 +399,14 @@ body:not([data-page="realestate"]) .page-hero h1{font-size:clamp(2.7rem,6.2vw,4.
 
 .tabs{display:flex; gap:.15rem .25rem; justify-content:center; flex-wrap:wrap; margin-bottom:clamp(22px,3vw,32px); border-bottom:1px solid var(--line); padding-bottom:.2rem;}
 .tab{border:0; background:transparent; font-weight:700; font-size:.9rem; color:var(--text-soft); padding:.5rem .6rem; cursor:pointer; border-bottom:2.5px solid transparent; margin-bottom:-1px; white-space:nowrap;}
+/* Phones: one swipeable row instead of 5 wrapped rows that push the listings down. The right-edge
+   fade hints that there are more tabs to swipe to. */
+@media (max-width:640px){
+  .tabs{flex-wrap:nowrap; justify-content:flex-start; overflow-x:auto; overflow-y:hidden; scrollbar-width:none; -webkit-overflow-scrolling:touch;
+    -webkit-mask-image:linear-gradient(90deg,#000 85%,transparent); mask-image:linear-gradient(90deg,#000 85%,transparent); padding-right:2rem;}
+  .tabs::-webkit-scrollbar{display:none;}
+  .tab{margin-bottom:0;}
+}
 .tab[aria-pressed="true"]{color:var(--accent-ink); border-bottom-color:var(--accent);}
 .place-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(16px,2.2vw,24px);}
 @media (max-width:900px){ .place-grid{grid-template-columns:repeat(2,1fr);} }
@@ -423,7 +431,9 @@ body[data-page="realestate"] .re-track{grid-auto-columns:calc((100% - 2.3*var(--
 @media (max-width:600px){ body[data-page="realestate"] .re-track{grid-auto-columns:86%;} }
 .car-prev{left:-14px;} .car-next{right:-14px;}
 /* Phones: keep the arrows (smaller, tucked inside the edges) so people can tell the listings scroll (Alex). */
-@media (max-width:520px){ .car-arrow{width:42px; height:42px; top:30%;} .car-arrow svg{width:20px; height:20px;} .car-prev{left:4px;} .car-next{right:4px;} }
+/* Both arrows sit just inside the left/right edges of the card in view (the card is ~86% wide, so the
+   right arrow is inset by the ~14% "peek" of the next card) — symmetric over the photo. */
+@media (max-width:520px){ .car-arrow{width:42px; height:42px; top:30%;} .car-arrow svg{width:20px; height:20px;} .car-prev{left:8px;} .car-next{right:calc(14% + 8px);} }
 .place{background:var(--sheet); border:1px solid var(--line); border-radius:var(--radius); overflow:clip; box-shadow:var(--shadow); text-decoration:none; color:inherit; display:flex; flex-direction:column; transition:transform .16s, box-shadow .2s, border-color .2s;}
 .place:hover{transform:translateY(-3px); box-shadow:var(--shadow-lg); border-color:var(--line-2);}
 @media (prefers-reduced-motion: reduce){ .place:hover{transform:none;} }
@@ -838,9 +848,9 @@ footer.site a{color:rgba(255,255,255,.82); text-decoration:none;} footer.site a:
 /* ============ ADMIN PANEL ============ */
 .admin-tabs{display:inline-flex; flex-wrap:wrap; gap:.35rem; background:var(--surface-2); padding:.3rem; border-radius:var(--radius-pill);}
 /* Phones: the tab bar wraps onto several rows so every tab is reachable (was locked off-screen). */
-@media (max-width:760px){ .admin-tabs{border-radius:var(--radius-s);} }
 .admin-tab{border:0; background:transparent; padding:.55rem 1.1rem; border-radius:var(--radius-pill); font:inherit; font-weight:700; color:var(--text-soft); cursor:pointer; transition:background .15s,color .15s;}
 .admin-tab.is-active{background:var(--sheet); color:var(--heading); box-shadow:var(--shadow);}
+@media (max-width:760px){ .admin-tabs{border-radius:var(--radius-s);} .admin-tab{font-size:.85rem; padding:.42rem .7rem;} }
 .admin-photo-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:14px;}
 .admin-photo{margin:0; display:flex; flex-direction:column; gap:.4rem;}
 .admin-photo img{width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:var(--radius-s); box-shadow:var(--shadow);}
