@@ -6,7 +6,7 @@
 <meta name="description" content="About Seldovia, Alaska — the natural beauty, a town tour, demographics and weather, and the rich history of our boardwalk town on Kachemak Bay.">
 <meta name="theme-color" content="#F8E6DD">
 <title>About Seldovia — History, Town Tour & Map</title>
-<link rel="stylesheet" href="styles.css?v=108">
+<link rel="stylesheet" href="styles.css?v=109">
 <style>
   .about-prose{max-width:74ch; margin-inline:auto; font-size:1.05rem; line-height:1.72;}
   /* Section headings in the Lovestory brushstroke, consistent with the rest of the site (Jenny). */
@@ -21,7 +21,10 @@
   @media (max-width:760px){ .about-full{columns:1 !important; column-gap:0;} }
   .about-prose p{margin:0 0 1rem;}
   /* Two-column map block ("Where is Seldovia?" beside the map), like the original site. */
-  .about-map-two{display:grid; grid-template-columns:1.02fr .98fr; gap:clamp(26px,4vw,54px); align-items:center; max-width:var(--maxw); margin-inline:auto;}
+  /* Text sits at the TOP beside the map (was vertically centered against a tall map, which left an empty
+     block at first glance on desktop — Alex). */
+  .about-map-two{display:grid; grid-template-columns:1.02fr .98fr; gap:clamp(26px,4vw,54px); align-items:start; max-width:var(--maxw); margin-inline:auto;}
+  .about-map-two .map-text{padding-top:clamp(0px,2vw,24px);}
   .about-map-two .map-text p{color:var(--text-soft); font-size:1.05rem; line-height:1.7; margin:.4rem 0 0; max-width:48ch;}
   @media (max-width:760px){ .about-map-two{grid-template-columns:1fr; gap:1.4rem;} }
   .about-wide{max-width:var(--maxw); margin-inline:auto;}
@@ -38,7 +41,7 @@
   .tl-year{font-family:var(--serif); font-weight:700; color:var(--accent-ink); font-size:1.05rem;}
   .tl-text{color:var(--text); font-size:.98rem; line-height:1.6;}
   .about-map-fig{margin:0; text-align:center;}
-  .about-map-fig img{width:100%; max-width:720px; height:auto; border-radius:var(--radius); box-shadow:var(--shadow-lg); cursor:zoom-in; margin-inline:auto;}
+  .about-map-fig img{width:100%; max-width:560px; height:auto; border-radius:var(--radius); box-shadow:var(--shadow-lg); cursor:zoom-in; margin-inline:auto;}
   .about-map-fig figcaption{color:var(--text-soft); font-size:.92rem; margin-top:.9rem; max-width:60ch; margin-inline:auto;}
   @media (max-width:520px){ .tl-row{grid-template-columns:64px 1fr; gap:.7rem;} }
   /* Phones: Town Tour + History noticeably larger and a touch darker so they read strongly (Alex). */
@@ -142,6 +145,6 @@
     </div>
   </section>
 </main>
-<script src="app.js?v=105"></script>
+<script src="app.js?v=106"></script>
 </body>
 </html>

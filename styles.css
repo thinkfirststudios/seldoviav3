@@ -410,6 +410,10 @@ body:not([data-page="realestate"]) .page-hero h1{font-size:clamp(2.7rem,6.2vw,4.
   .tabs::-webkit-scrollbar{display:none;}
   .tab{margin-bottom:0;}
 }
+/* Left/right arrows over the tab row (shown by app.js only when the row actually scrolls). */
+.tabs-wrap{position:relative;}
+.tabs-arrow{position:absolute; top:50%; transform:translateY(-50%); z-index:2; width:36px; height:36px; padding:0; border-radius:50%; display:grid; place-items:center; background:var(--sheet); color:var(--accent-ink); border:1px solid var(--line-2); box-shadow:var(--shadow); cursor:pointer;}
+.tabs-prev{left:-6px;} .tabs-next{right:-6px;}
 .tab[aria-pressed="true"]{color:var(--accent-ink); border-bottom-color:var(--accent);}
 .place-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(16px,2.2vw,24px);}
 @media (max-width:900px){ .place-grid{grid-template-columns:repeat(2,1fr);} }
@@ -1024,3 +1028,10 @@ footer.site a{color:rgba(255,255,255,.82); text-decoration:none;} footer.site a:
 .admin-row-btns{display:flex; gap:.4rem; flex-shrink:0;}
 .admin-row-btns .btn{min-height:36px; padding:.35rem .75rem; font-size:.82rem;}
 .admin-photo .admin-row-btns{margin-top:.1rem;}
+/* Phones: admin list rows (e.g. Published listings) put the buttons on their own line under the text,
+   so the text isn't squeezed into a one-word-wide column beneath the buttons (Alex). */
+@media (max-width:640px){
+  .dir-item:has(> .admin-row-btns){flex-wrap:wrap;}
+  .dir-item:has(> .admin-row-btns) > .d-main{flex:1 1 0;}
+  .dir-item > .admin-row-btns{flex-basis:100%; flex-wrap:wrap;}
+}

@@ -4474,6 +4474,20 @@ if($("#placeTabs")){
   { const row=$("#placeTabs"), act=row.querySelector('.tab[aria-pressed="true"]');
     if(act && row.scrollWidth>row.clientWidth){ const a=act.getBoundingClientRect(), r=row.getBoundingClientRect();
       row.scrollLeft += (a.left-r.left) - (row.clientWidth-a.width)/2; } }
+  // Arrows on the swipeable tab row (phones), like the Real Estate arrows, so it's obvious there are
+  // more categories to the side — older visitors may not think to swipe (Alex). Hidden when not needed.
+  { const row=$("#placeTabs"), wrap=document.createElement("div");
+    wrap.className="tabs-wrap"; row.parentNode.insertBefore(wrap,row); wrap.appendChild(row);
+    const mk=(dir,label,path)=>{ const b=document.createElement("button"); b.type="button"; b.className="tabs-arrow tabs-"+dir;
+      b.setAttribute("aria-label",label);
+      b.innerHTML=`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="${path}"/></svg>`;
+      wrap.appendChild(b); return b; };
+    const prev=mk("prev","More categories to the left","M15 18l-6-6 6-6"), next=mk("next","More categories to the right","M9 18l6-6-6-6");
+    const upd=()=>{ const over=row.scrollWidth>row.clientWidth+2;
+      prev.hidden=!over||row.scrollLeft<4; next.hidden=!over||row.scrollLeft+row.clientWidth>=row.scrollWidth-4; };
+    prev.addEventListener("click",()=>row.scrollBy({left:-row.clientWidth*0.7,behavior:"smooth"}));
+    next.addEventListener("click",()=>row.scrollBy({left:row.clientWidth*0.7,behavior:"smooth"}));
+    row.addEventListener("scroll",upd,{passive:true}); window.addEventListener("resize",upd); upd(); }
   $("#placeTabs").addEventListener("click",e=>{const b=e.target.closest(".tab"); if(!b)return; placeTab=b.dataset.key; $$("#placeTabs .tab").forEach(t=>t.setAttribute("aria-pressed",t===b)); renderPlaces();});
 }
 // "Read more" on a business card expands its blurb in place (works even though the card is a link).
