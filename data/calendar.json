@@ -1,27 +1,7 @@
 {
- "updated": "2026-10-02T22:18:16Z",
+ "updated": "2026-10-03T05:23:45Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1790982900000,
-   "allDay": false,
-   "title": "SVT - Kids After School Time"
-  },
-  {
-   "start": 1790982900000,
-   "allDay": false,
-   "title": "SVT - Open Swim"
-  },
-  {
-   "start": 1790992800000,
-   "allDay": false,
-   "title": "SVT - Open Swim"
-  },
-  {
-   "start": 1791000000000,
-   "allDay": false,
-   "title": "Seldovia Bible Chapel - Teen Nights at the Sea Otter Community Center!"
-  },
   {
    "start": 1791064800000,
    "allDay": false,
@@ -60,17 +40,7 @@
   {
    "start": 1791148500000,
    "allDay": false,
-   "title": "AMHS - Tustumena Arrives from Homer"
-  },
-  {
-   "start": 1791148500000,
-   "allDay": false,
    "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
-  },
-  {
-   "start": 1791159300000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Departs"
   },
   {
    "start": 1791159300000,
@@ -105,11 +75,6 @@
   {
    "start": 1791321300000,
    "allDay": false,
-   "title": "AMHS - Tustumena Arrives from Homer"
-  },
-  {
-   "start": 1791321300000,
-   "allDay": false,
    "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
   },
   {
@@ -121,11 +86,6 @@
    "start": 1791328500000,
    "allDay": false,
    "title": "SVT - Kids After School Time"
-  },
-  {
-   "start": 1791332100000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Departs"
   },
   {
    "start": 1791332100000,
@@ -160,11 +120,6 @@
   {
    "start": 1791494100000,
    "allDay": false,
-   "title": "AMHS - Tustumena Arrives from Homer"
-  },
-  {
-   "start": 1791494100000,
-   "allDay": false,
    "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
   },
   {
@@ -176,11 +131,6 @@
    "start": 1791501300000,
    "allDay": false,
    "title": "SVT - Kids After School Time"
-  },
-  {
-   "start": 1791504900000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Departs"
   },
   {
    "start": 1791504900000,
@@ -250,17 +200,7 @@
   {
    "start": 1791753300000,
    "allDay": false,
-   "title": "AMHS - Tustumena Arrives from Homer"
-  },
-  {
-   "start": 1791753300000,
-   "allDay": false,
    "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
-  },
-  {
-   "start": 1791764100000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Departs"
   },
   {
    "start": 1791764100000,
@@ -300,7 +240,67 @@
   {
    "start": 1791926100000,
    "allDay": false,
-   "title": "AMHS - Tustumena Arrives from Homer"
+   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
+  },
+  {
+   "start": 1791928800000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
+  },
+  {
+   "start": 1791933300000,
+   "allDay": false,
+   "title": "SVT - Kids After School Time"
+  },
+  {
+   "start": 1791936900000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Departs to Homer"
+  },
+  {
+   "start": 1791993600000,
+   "allDay": false,
+   "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1792015200000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
+  },
+  {
+   "start": 1792019700000,
+   "allDay": false,
+   "title": "SVT - Kids After School Time"
+  },
+  {
+   "start": 1792098000000,
+   "allDay": false,
+   "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1792098900000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
+  },
+  {
+   "start": 1792101600000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
+  },
+  {
+   "start": 1792106100000,
+   "allDay": false,
+   "title": "SVT - Kids After School Time"
+  },
+  {
+   "start": 1792109700000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Departs to Homer"
+  },
+  {
+   "start": 1792166400000,
+   "allDay": false,
+   "title": "SVT - Fitness Center"
   }
  ]
 }
