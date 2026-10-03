@@ -110,8 +110,12 @@ document.body.insertAdjacentHTML("beforeend", FOOTER);
 // leaving its tide text half-clipped under the nav). Re-measure on resize / font load.
 (function(){
   const hdr=document.querySelector(".masthead"); if(!hdr) return;
-  const setH=()=>document.documentElement.style.setProperty("--head-h", hdr.offsetHeight+"px");
+  const top=hdr.querySelector(".masthead-top");
+  const setH=()=>{ const r=document.documentElement.style;
+    r.setProperty("--head-h", hdr.offsetHeight+"px");
+    r.setProperty("--brand-h", (top?top.offsetHeight:0)+"px"); };   // logo row scrolls away; nav band stays pinned
   setH();
+  const logo=hdr.querySelector(".brand-lockup"); if(logo && !logo.complete) logo.addEventListener("load", setH);
   window.addEventListener("resize", setH, {passive:true});
   window.addEventListener("load", setH);
   if(document.fonts&&document.fonts.ready) document.fonts.ready.then(setH).catch(()=>{});

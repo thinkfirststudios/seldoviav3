@@ -156,7 +156,9 @@ h2.title{font-size:clamp(1.9rem,4vw,2.9rem);}
 @media (prefers-reduced-motion: reduce){ .btn:hover{transform:none;} }
 
 /* ============================================================ HEADER */
-.masthead{position:sticky; top:0; z-index:60; background:var(--sheet); border-bottom:0; box-shadow:0 2px 10px -6px rgba(60,50,32,.18);}
+/* Sticky with a negative top equal to the logo row's height (--brand-h, set in app.js): the logo
+   scrolls away and only the nav band stays pinned, so the header stops eating the screen (Alex). */
+.masthead{position:sticky; top:calc(-1 * var(--brand-h, 0px)); z-index:60; background:var(--sheet); border-bottom:0; box-shadow:0 2px 10px -6px rgba(60,50,32,.18);}
 /* NEW header layout (Jenny, Sep 24): TOP row is the logo + a large angled "Alaska's Best Kept
    Secret" tagline stretching to the far right. BELOW it, a colored nav band (green via --band on
    every page, pink on the Real Estate page) with white nav text so the menu stands out. The
@@ -420,7 +422,8 @@ body[data-page="realestate"] .re-track{grid-auto-columns:calc((100% - 2.3*var(--
 @media (max-width:900px){ body[data-page="realestate"] .re-track{grid-auto-columns:calc((100% - 1.3*var(--gap))/2.2);} }
 @media (max-width:600px){ body[data-page="realestate"] .re-track{grid-auto-columns:86%;} }
 .car-prev{left:-14px;} .car-next{right:-14px;}
-@media (max-width:520px){ .car-arrow{display:none;} }
+/* Phones: keep the arrows (smaller, tucked inside the edges) so people can tell the listings scroll (Alex). */
+@media (max-width:520px){ .car-arrow{width:42px; height:42px; top:30%;} .car-arrow svg{width:20px; height:20px;} .car-prev{left:4px;} .car-next{right:4px;} }
 .place{background:var(--sheet); border:1px solid var(--line); border-radius:var(--radius); overflow:clip; box-shadow:var(--shadow); text-decoration:none; color:inherit; display:flex; flex-direction:column; transition:transform .16s, box-shadow .2s, border-color .2s;}
 .place:hover{transform:translateY(-3px); box-shadow:var(--shadow-lg); border-color:var(--line-2);}
 @media (prefers-reduced-motion: reduce){ .place:hover{transform:none;} }
@@ -833,7 +836,9 @@ footer.site a{color:rgba(255,255,255,.82); text-decoration:none;} footer.site a:
 @media (prefers-reduced-motion: reduce){ .gallery-track{animation:none;} .gallery-strip{overflow-x:auto; -webkit-overflow-scrolling:touch;} }
 
 /* ============ ADMIN PANEL ============ */
-.admin-tabs{display:inline-flex; gap:.35rem; background:var(--surface-2); padding:.3rem; border-radius:var(--radius-pill);}
+.admin-tabs{display:inline-flex; flex-wrap:wrap; gap:.35rem; background:var(--surface-2); padding:.3rem; border-radius:var(--radius-pill);}
+/* Phones: the tab bar wraps onto several rows so every tab is reachable (was locked off-screen). */
+@media (max-width:760px){ .admin-tabs{border-radius:var(--radius-s);} }
 .admin-tab{border:0; background:transparent; padding:.55rem 1.1rem; border-radius:var(--radius-pill); font:inherit; font-weight:700; color:var(--text-soft); cursor:pointer; transition:background .15s,color .15s;}
 .admin-tab.is-active{background:var(--sheet); color:var(--heading); box-shadow:var(--shadow);}
 .admin-photo-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:14px;}
