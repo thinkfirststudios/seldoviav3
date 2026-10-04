@@ -450,7 +450,12 @@ body[data-page="realestate"] .re-track{grid-auto-columns:calc((100% - 2.3*var(--
 }
 /* Testimonials have no photo, so arrows over the cards covered the words (a half-visible review could slide
    under them at some widths). Arrows sit UNDER the reviews, side by side, at every screen size. */
-.re-carousel:has(.quote-row){padding-bottom:72px;}
+.re-carousel:has(.quote-row){padding-bottom:72px; margin-bottom:clamp(36px,5vw,56px);}
+/* At the first/last review only one arrow shows: center it instead of leaving it off to one side. */
+.re-carousel:has(.quote-row):has(.car-prev[hidden]) .car-next{right:auto; left:50%; transform:translateX(-50%);}
+.re-carousel:has(.quote-row):has(.car-next[hidden]) .car-prev{left:50%; transform:translateX(-50%);}
+/* A divider under the arrows so they read as part of the reviews, not the section below (Alex). */
+.re-carousel:has(.quote-row)::after{content:""; position:absolute; left:50%; transform:translateX(-50%); bottom:calc(-1 * clamp(20px,3vw,30px)); width:min(320px,70%); height:1px; background:var(--line-2);}
 .re-carousel:has(.quote-row) .car-arrow{top:auto; bottom:0; transform:none;}
 .re-carousel:has(.quote-row) .car-prev{left:calc(50% - 68px);}
 .re-carousel:has(.quote-row) .car-next{right:calc(50% - 68px);}

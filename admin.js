@@ -110,7 +110,7 @@
           ${TABS.map((t,i)=>`<button class="admin-tab ${i===0?"is-active":""}" data-tab="${t.key}" type="button">${t.label}</button>`).join("")}
         </div>
         <div style="display:flex;align-items:center;gap:.8rem">
-          <span style="font-size:.72rem;color:var(--text-soft)" title="If this number is old after refreshing, your browser cached the admin — clear site data / hard refresh.">admin build 48</span>
+          <span style="font-size:.72rem;color:var(--text-soft)" title="If this number is old after refreshing, your browser cached the admin — clear site data / hard refresh.">admin build 49</span>
           <button class="btn btn-ghost" id="logoutBtn" type="button">Sign out</button>
         </div>
       </div>
@@ -1046,8 +1046,12 @@
       </div>`; };
     const drawHidden=()=>{ const h=$("#bc-hidden"); if(!hidden.size){ h.innerHTML=""; return; }
       h.innerHTML=`<p style="font-size:.82rem;color:var(--text-soft);margin:0 0 .3rem">Hidden from Explore (click to restore):</p>`+[...hidden].map(n=>`<button class="btn btn-ghost bc-restore" type="button" data-name="${esc(n)}" style="margin:.15rem .3rem .15rem 0;font-size:.8rem;padding:.3rem .55rem">↺ ${esc(n)}</button>`).join(""); };
-    const draw=f=>{ const q=(f||"").toLowerCase();
-      $("#bc-list").innerHTML=listAll().filter(p=>!hidden.has(p.name)).filter(p=>!q||p.name.toLowerCase().includes(q)||(p.cat||"").toLowerCase().includes(q)).map(rowHtml).join("")||`<p class="form-note">No matches.</p>`; drawHidden(); };
+    // Search ignores apostrophes, dashes and accents, and also matches the edited name, label and owner,
+    // so "chanik" finds "Ch'anik'na" (Alex).
+    const norm=s=>String(s||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^a-z0-9]+/g,"");
+    const draw=f=>{ const q=norm(f);
+      $("#bc-list").innerHTML=listAll().filter(p=>!hidden.has(p.name)).filter(p=>{ if(!q) return true; const m=meta[p.name]||{};
+        return [p.name,p.cat,m.name,m.label,m.owner].some(v=>norm(v).includes(q)); }).map(rowHtml).join("")||`<p class="form-note">No matches.</p>`; drawHidden(); };
     async function saveKey(key,val){ const {error}=await db.from("settings").upsert({key,value:JSON.stringify(val)},{onConflict:"key"}); if(error) throw error; }
     db.from("settings").select("key,value").in("key",["explore_overrides","explore_photos","explore_meta","explore_added","explore_hidden","explore_extra"])
       .then(({data})=>{ (data||[]).forEach(r=>{ try{ if(r.key==="explore_overrides"&&r.value) overrides=JSON.parse(r.value)||{}; if(r.key==="explore_photos"&&r.value) photos=JSON.parse(r.value)||{}; if(r.key==="explore_meta"&&r.value) meta=JSON.parse(r.value)||{}; if(r.key==="explore_added"&&r.value){ const a=JSON.parse(r.value); if(Array.isArray(a)) added=a; } if(r.key==="explore_hidden"&&r.value){ const h=JSON.parse(r.value); if(Array.isArray(h)) hidden=new Set(h); } if(r.key==="explore_extra"&&r.value){ const x=JSON.parse(r.value); if(x&&typeof x==="object") extra=x; } }catch(e){} }); draw(""); })
