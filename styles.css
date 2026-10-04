@@ -462,8 +462,9 @@ body[data-page="realestate"] .re-track{grid-auto-columns:calc((100% - 2.3*var(--
 }
 @media (min-width:601px) and (max-width:760px){ .car-prev{left:-10px;} .car-next{right:-10px;} }  /* narrow side margins: keep arrows on screen */
 /* Phones only: testimonial arrows sit UNDER the reviews (no photo to sit on, so over the card they covered
-   the words), with a divider below so they read as part of the reviews (Alex). */
-@media (max-width:600px){
+   the words), with a divider below so they read as part of the reviews (Alex). Also used up to 760px (small
+   tablets / phones turned sideways), where there isn't room for side arrows. */
+@media (max-width:760px){
   .re-carousel:has(.quote-row){padding-bottom:72px; margin-bottom:clamp(36px,5vw,56px);}
   .re-carousel:has(.quote-row)::after{content:""; position:absolute; left:50%; transform:translateX(-50%); bottom:calc(-1 * clamp(20px,3vw,30px)); width:min(320px,70%); height:1px; background:var(--line-2);}
   .re-carousel:has(.quote-row) .car-arrow{top:auto; bottom:0; transform:none;}
