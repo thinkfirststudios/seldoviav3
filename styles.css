@@ -448,21 +448,35 @@ body[data-page="realestate"] .re-track{grid-auto-columns:calc((100% - 2.3*var(--
   .re-track>*, .quote-row .quote{scroll-snap-align:center; scroll-snap-stop:always;}
   .quote-row.re-track .quote{flex:0 0 100%;}
 }
-/* Testimonials have no photo, so arrows over the cards covered the words (a half-visible review could slide
-   under them at some widths). Arrows sit UNDER the reviews, side by side, at every screen size. */
-.re-carousel:has(.quote-row){padding-bottom:72px; margin-bottom:clamp(36px,5vw,56px);}
-/* At the first/last review only one arrow shows: center it instead of leaving it off to one side. */
-.re-carousel:has(.quote-row):has(.car-prev[hidden]) .car-next{right:auto; left:50%; transform:translateX(-50%);}
-.re-carousel:has(.quote-row):has(.car-next[hidden]) .car-prev{left:50%; transform:translateX(-50%);}
-/* A divider under the arrows so they read as part of the reviews, not the section below (Alex). */
-.re-carousel:has(.quote-row)::after{content:""; position:absolute; left:50%; transform:translateX(-50%); bottom:calc(-1 * clamp(20px,3vw,30px)); width:min(320px,70%); height:1px; background:var(--line-2);}
-.re-carousel:has(.quote-row) .car-arrow{top:auto; bottom:0; transform:none;}
-.re-carousel:has(.quote-row) .car-prev{left:calc(50% - 68px);}
-.re-carousel:has(.quote-row) .car-next{right:calc(50% - 68px);}
-@media (max-width:520px){
+/* Computers/tablets: arrows sit centered ON the outer card edges (Alex: they were ~15px inside the edge).
+   Listings: app.js also centers them on the photo's height. */
+@media (min-width:601px){
+  .car-prev{left:-29px;} .car-next{right:-29px;}
+  /* Testimonials: whole cards only (no half-visible review sliding under an arrow), arrows at the sides,
+     vertically centered, and a little extra side padding so an arrow never touches the words. */
+  .quote-row.re-track .quote{flex:0 0 calc((100% - 2 * clamp(16px,2.2vw,24px)) / 3); padding-inline:2.4rem; scroll-snap-align:start;}
+  .re-carousel:has(.quote-row) .car-arrow{top:50%;}
+}
+@media (min-width:601px) and (max-width:900px){
+  .quote-row.re-track .quote{flex-basis:calc((100% - clamp(16px,2.2vw,24px)) / 2);}
+}
+@media (min-width:601px) and (max-width:760px){ .car-prev{left:-10px;} .car-next{right:-10px;} }  /* narrow side margins: keep arrows on screen */
+/* Phones only: testimonial arrows sit UNDER the reviews (no photo to sit on, so over the card they covered
+   the words), with a divider below so they read as part of the reviews (Alex). */
+@media (max-width:600px){
+  .re-carousel:has(.quote-row){padding-bottom:72px; margin-bottom:clamp(36px,5vw,56px);}
+  .re-carousel:has(.quote-row)::after{content:""; position:absolute; left:50%; transform:translateX(-50%); bottom:calc(-1 * clamp(20px,3vw,30px)); width:min(320px,70%); height:1px; background:var(--line-2);}
+  .re-carousel:has(.quote-row) .car-arrow{top:auto; bottom:0; transform:none;}
+  .re-carousel:has(.quote-row) .car-prev{left:calc(50% - 68px);}
+  .re-carousel:has(.quote-row) .car-next{right:calc(50% - 68px);}
+  /* At the first/last review only one arrow shows: center it instead of leaving it off to one side. */
+  .re-carousel:has(.quote-row):has(.car-prev[hidden]) .car-next{right:auto; left:50%; transform:translateX(-50%);}
+  .re-carousel:has(.quote-row):has(.car-next[hidden]) .car-prev{left:50%; transform:translateX(-50%);}
+}
+@media (max-width:520px){   /* smaller phone arrows (42px) sit closer together */
   .re-carousel:has(.quote-row){padding-bottom:58px;}
-  .re-carousel:has(.quote-row) .car-prev{left:calc(50% - 52px);}
-  .re-carousel:has(.quote-row) .car-next{right:calc(50% - 52px);}
+  .re-carousel:has(.quote-row):not(:has(.car-arrow[hidden])) .car-prev{left:calc(50% - 52px);}
+  .re-carousel:has(.quote-row):not(:has(.car-arrow[hidden])) .car-next{right:calc(50% - 52px);}
 }
 .place{background:var(--sheet); border:1px solid var(--line); border-radius:var(--radius); overflow:clip; box-shadow:var(--shadow); text-decoration:none; color:inherit; display:flex; flex-direction:column; transition:transform .16s, box-shadow .2s, border-color .2s;}
 .place:hover{transform:translateY(-3px); box-shadow:var(--shadow-lg); border-color:var(--line-2);}

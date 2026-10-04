@@ -4595,7 +4595,12 @@ window.initReCarousel=function(track, opts){
   const car=track.closest(".re-carousel"); if(!car || car.dataset.carInit) return;
   const prev=car.querySelector(".car-prev"), next=car.querySelector(".car-next"); if(!prev||!next) return;
   car.dataset.carInit="1";
-  const update=()=>{const max=track.scrollWidth-track.clientWidth-2; prev.hidden=track.scrollLeft<=2; next.hidden=track.scrollLeft>=max;};
+  // Wider screens: put the arrows level with the middle of the listing photo (Alex). Phones keep the CSS spot.
+  const placeArrows=()=>{ const m=track.querySelector(".place-media");
+    if(!m || window.matchMedia("(max-width:600px)").matches){ prev.style.top=next.style.top=""; return; }
+    const y=m.getBoundingClientRect().top-car.getBoundingClientRect().top+m.offsetHeight/2;
+    prev.style.top=next.style.top=Math.round(y)+"px"; };
+  const update=()=>{const max=track.scrollWidth-track.clientWidth-2; prev.hidden=track.scrollLeft<=2; next.hidden=track.scrollLeft>=max; placeArrows();};
   let paused=false, resumeT;
   const nudge=()=>{ paused=true; clearTimeout(resumeT); resumeT=setTimeout(()=>paused=false,6000); };
   // Step card-by-card to exact positions (scrolling by the track width drifted off-center on phones,
