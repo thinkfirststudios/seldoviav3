@@ -4598,8 +4598,21 @@ window.initReCarousel=function(track, opts){
   const update=()=>{const max=track.scrollWidth-track.clientWidth-2; prev.hidden=track.scrollLeft<=2; next.hidden=track.scrollLeft>=max;};
   let paused=false, resumeT;
   const nudge=()=>{ paused=true; clearTimeout(resumeT); resumeT=setTimeout(()=>paused=false,6000); };
-  prev.addEventListener("click",()=>{ nudge(); track.scrollBy({left:-track.clientWidth,behavior:"smooth"}); });
-  next.addEventListener("click",()=>{ nudge(); track.scrollBy({left:track.clientWidth,behavior:"smooth"}); });
+  // Step card-by-card to exact positions (scrolling by the track width drifted off-center on phones,
+  // where a card is narrower than the screen — Jason). Phones: one card, centered. Wider: one full view.
+  const phone=()=>window.matchMedia("(max-width:600px)").matches;
+  const cards=()=>Array.prototype.filter.call(track.children,c=>c.offsetWidth>0);
+  const posOf=c=>c.getBoundingClientRect().left-track.getBoundingClientRect().left+track.scrollLeft;
+  const targetOf=c=>phone()? posOf(c)-(track.clientWidth-c.offsetWidth)/2 : posOf(c)-(parseFloat(getComputedStyle(track).paddingLeft)||0);
+  const go=dir=>{ const cs=cards(); if(!cs.length) return;
+    const max=track.scrollWidth-track.clientWidth;
+    let idx=0, best=Infinity; cs.forEach((c,i)=>{ const d=Math.abs(Math.max(0,Math.min(max,targetOf(c)))-track.scrollLeft); if(d<best){best=d; idx=i;} });
+    const step=cs[1]? posOf(cs[1])-posOf(cs[0]) : track.clientWidth;
+    const per=phone()? 1 : Math.max(1, Math.floor((track.clientWidth+2)/step));
+    const t=Math.max(0, Math.min(cs.length-1, idx+dir*per));
+    track.scrollTo({left:Math.max(0,Math.min(max,targetOf(cs[t]))), behavior:"smooth"}); };
+  prev.addEventListener("click",()=>{ nudge(); go(-1); });
+  next.addEventListener("click",()=>{ nudge(); go(1); });
   track.addEventListener("scroll",update,{passive:true});
   track.addEventListener("pointerenter",()=>paused=true); track.addEventListener("pointerleave",()=>paused=false);
   track.addEventListener("wheel",nudge,{passive:true}); track.addEventListener("pointerdown",nudge);
@@ -4608,7 +4621,7 @@ window.initReCarousel=function(track, opts){
   // Rolling: auto-advance through the listings, looping back to the start (Jenny).
   const reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if(opts.autoplay && !reduce) setInterval(()=>{ if(paused) return; const max=track.scrollWidth-track.clientWidth-2; if(max<4) return;
-    if(track.scrollLeft>=max-2) track.scrollTo({left:0,behavior:"smooth"}); else track.scrollBy({left:track.clientWidth*0.9,behavior:"smooth"}); }, 4500);
+    if(track.scrollLeft>=max-2) track.scrollTo({left:0,behavior:"smooth"}); else go(1); }, 4500);
 };
 if($("#reGrid")) window.initReCarousel($("#reGrid"), {autoplay:true});
 

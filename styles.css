@@ -440,7 +440,25 @@ body[data-page="realestate"] .re-track{grid-auto-columns:calc((100% - 2.3*var(--
 /* Phones: keep the arrows (smaller, tucked inside the edges) so people can tell the listings scroll (Alex). */
 /* Both arrows sit just inside the left/right edges of the card in view (the card is ~86% wide, so the
    right arrow is inset by the ~14% "peek" of the next card) — symmetric over the photo. */
-@media (max-width:520px){ .car-arrow{width:42px; height:42px; top:30%;} .car-arrow svg{width:20px; height:20px;} .car-prev{left:8px;} .car-next{right:calc(14% + 8px);} }
+@media (max-width:520px){ .car-arrow{width:42px; height:42px; top:30%;} .car-arrow svg{width:20px; height:20px;} .car-prev{left:calc(9% + 8px);} .car-next{right:calc(9% + 8px);} }
+/* Phones: every card sits CENTERED with a sliver of its neighbours on both sides, whether you swipe or tap
+   the arrows (Jason: cards drifted off-center). Side padding lets the first and last cards center too. */
+@media (max-width:600px){
+  .re-track, body[data-page="realestate"] .re-track, .quote-row.re-track{grid-auto-columns:100%; padding-inline:9%; scroll-padding-inline:9%; scroll-snap-type:x mandatory;}
+  .re-track>*, .quote-row .quote{scroll-snap-align:center; scroll-snap-stop:always;}
+  .quote-row.re-track .quote{flex:0 0 100%;}
+}
+/* Testimonials have no photo, so arrows over the cards covered the words (a half-visible review could slide
+   under them at some widths). Arrows sit UNDER the reviews, side by side, at every screen size. */
+.re-carousel:has(.quote-row){padding-bottom:72px;}
+.re-carousel:has(.quote-row) .car-arrow{top:auto; bottom:0; transform:none;}
+.re-carousel:has(.quote-row) .car-prev{left:calc(50% - 68px);}
+.re-carousel:has(.quote-row) .car-next{right:calc(50% - 68px);}
+@media (max-width:520px){
+  .re-carousel:has(.quote-row){padding-bottom:58px;}
+  .re-carousel:has(.quote-row) .car-prev{left:calc(50% - 52px);}
+  .re-carousel:has(.quote-row) .car-next{right:calc(50% - 52px);}
+}
 .place{background:var(--sheet); border:1px solid var(--line); border-radius:var(--radius); overflow:clip; box-shadow:var(--shadow); text-decoration:none; color:inherit; display:flex; flex-direction:column; transition:transform .16s, box-shadow .2s, border-color .2s;}
 .place:hover{transform:translateY(-3px); box-shadow:var(--shadow-lg); border-color:var(--line-2);}
 @media (prefers-reduced-motion: reduce){ .place:hover{transform:none;} }
