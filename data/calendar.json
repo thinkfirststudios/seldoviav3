@@ -1,22 +1,7 @@
 {
- "updated": "2026-10-03T21:22:03Z",
+ "updated": "2026-10-04T06:00:22Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1791064800000,
-   "allDay": false,
-   "title": "Seldovia Public Library Hours"
-  },
-  {
-   "start": 1791068400000,
-   "allDay": false,
-   "title": "SOCC - Adult Pickleball"
-  },
-  {
-   "start": 1791075600000,
-   "allDay": false,
-   "title": "St. Nicholas Russian Orthodox Church Vespers Service"
-  },
   {
    "start": 1791100800000,
    "allDay": true,
@@ -301,6 +286,21 @@
    "start": 1792166400000,
    "allDay": false,
    "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1792182600000,
+   "allDay": false,
+   "title": "Food Bank Shopping Day"
+  },
+  {
+   "start": 1792182600000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
+  },
+  {
+   "start": 1792209600000,
+   "allDay": false,
+   "title": "Seldovia Bible Chapel - Teen Nights at the Sea Otter Community Center!"
   }
  ]
 }
