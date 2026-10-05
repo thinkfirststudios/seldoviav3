@@ -1,12 +1,7 @@
 {
- "updated": "2026-10-04T21:33:24Z",
+ "updated": "2026-10-05T05:48:08Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1791159300000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Departs to Homer"
-  },
   {
    "start": 1791216000000,
    "allDay": false,
@@ -301,6 +296,11 @@
    "start": 1792346400000,
    "allDay": false,
    "title": "St. Nicholas Russian Orthodox Church Sunday Service"
+  },
+  {
+   "start": 1792350000000,
+   "allDay": false,
+   "title": "Seldovia Bible Chapel - Sunday Worship Service"
   }
  ]
 }
