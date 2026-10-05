@@ -127,6 +127,10 @@ body:not([data-page="realestate"]) .cel-card{border-color:transparent; box-shado
 #postDetail .listing-desc{max-width:74ch;}
 /* Custom hero banner (title baked into Qwynny's watercolor art). Replaces the old text-over-photo hero. */
 .page-banner{margin:0 auto; max-width:var(--maxw); padding:clamp(8px,1.6vw,16px) var(--gutter) 0;}
+.visually-hidden{position:absolute !important; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0;}
+/* The short line that used to sit over a photo header now sits just under a watercolor banner (About, Winter Watch). */
+.banner-sub{max-width:var(--maxw); margin:clamp(14px,2vw,22px) auto 0; padding:0 var(--gutter); text-align:center;}
+.banner-sub p{color:var(--text-soft); font-size:1.08rem; margin:.2rem auto 0; max-width:62ch;}
 .page-banner img{display:block; width:100%; height:auto; border-radius:var(--radius); box-shadow:var(--shadow);}
 /* On phones the wide banner is a thin strip; crop to center so the baked-in title reads bigger (Jenny). */
 /* Mobile: show the FULL banner (these wide banners have edge content like the RE logo/name —
@@ -171,6 +175,15 @@ h2.title{font-size:clamp(1.9rem,4vw,2.9rem);}
 /* Single combined logo + "Alaska's Best Kept Secret" lockup image (Jenny, Oct 1): one asset so it
    stays identical in proportion on mobile and desktop. Sized by width, prominent on phones, capped wide. */
 .brand .brand-lockup{width:clamp(190px,18vw,260px); height:auto; display:block;}
+/* Wider screens (Jenny Oct 5): "Alaska's Best Kept Secret" sits in the white space BESIDE the logo instead of under it,
+   so the header is shorter. Phones keep the stacked logo above. */
+.brand .brand-wide{display:none;}
+@media (min-width:761px){
+  .brand .brand-lockup{display:none;}
+  .brand .brand-wide{display:flex; align-items:center; gap:clamp(18px,2.4vw,40px);}
+  .brand .brand-logo{width:clamp(170px,16vw,240px); height:auto; display:block;}
+  .brand .brand-tagimg{width:clamp(300px,38vw,640px); height:auto; display:block;}
+}
 @media (max-width:560px){ .masthead-top{padding:.25rem var(--gutter);} }
 /* Seldovia Property logo atop the Real Estate page hero */
 /* Jenny's colored brokerage logo, directly on the hero photo (no card). */
@@ -509,6 +522,11 @@ body[data-page="realestate"] .re-track{grid-auto-columns:calc((100% - 2.3*var(--
 #toTop{position:fixed; right:clamp(14px,3vw,28px); bottom:clamp(14px,3vw,28px); z-index:70; width:46px; height:46px; border-radius:50%; border:1px solid var(--line); background:var(--sheet); color:var(--accent-ink); font-size:1.35rem; line-height:1; cursor:pointer; box-shadow:var(--shadow-lg); opacity:0; visibility:hidden; transform:translateY(8px); transition:opacity .2s, transform .2s, visibility .2s;}
 #toTop.show{opacity:1; visibility:visible; transform:none;}
 #toTop:hover{border-color:var(--accent);}
+/* Jenny Oct 5: the Explore category arrows and the "scroll to top" button are GREEN like the menu bar, so they stand out. */
+.tabs-arrow, #toTop{background:var(--band); color:#fff; border-color:var(--band); box-shadow:0 3px 10px rgba(0,0,0,.22);}
+.tabs-arrow:hover, #toTop:hover{filter:brightness(1.12); border-color:var(--band);}
+/* "Search" in the phone menu (Jenny Oct 5): icon sits beside the word. */
+.drawer-panel .drawer-search{display:flex; align-items:center; gap:.55rem;}
 /* flash a card when arriving from a search suggestion (?find=) */
 .search-hit{outline:3px solid var(--accent-ink); outline-offset:3px; border-radius:var(--radius-s); animation:searchHit 2.4s ease forwards;}
 @keyframes searchHit{0%,55%{outline-color:var(--accent-ink);} 100%{outline-color:transparent;}}

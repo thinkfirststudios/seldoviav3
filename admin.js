@@ -110,7 +110,7 @@
           ${TABS.map((t,i)=>`<button class="admin-tab ${i===0?"is-active":""}" data-tab="${t.key}" type="button">${t.label}</button>`).join("")}
         </div>
         <div style="display:flex;align-items:center;gap:.8rem">
-          <span style="font-size:.72rem;color:var(--text-soft)" title="If this number is old after refreshing, your browser cached the admin — clear site data / hard refresh.">admin build 49</span>
+          <span style="font-size:.72rem;color:var(--text-soft)" title="If this number is old after refreshing, your browser cached the admin — clear site data / hard refresh.">admin build 50</span>
           <button class="btn btn-ghost" id="logoutBtn" type="button">Sign out</button>
         </div>
       </div>
@@ -135,7 +135,12 @@
   let _dirRows=[], _peopleRows=[]; // last-loaded rows, for delegated Edit/Delete handlers
   function renderSubmissionsTab(){
     $("#tab-submissions").innerHTML=`
-      <h4>Business listings</h4>
+      <p class="pb-jump" style="display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;margin:0 0 1.2rem;font-size:.9rem"><b style="color:var(--text-soft);font-weight:600">Jump to:</b>
+        <a class="btn btn-ghost" href="#pb-biz" style="padding:.3rem .7rem">Businesses</a>
+        <a class="btn btn-ghost" href="#pb-people" style="padding:.3rem .7rem">People</a>
+        <a class="btn btn-ghost" href="#pb-subs" style="padding:.3rem .7rem">Submissions</a>
+        <a class="btn btn-ghost" href="#pb-trash" style="padding:.3rem .7rem">Recently deleted</a></p>
+      <h4 id="pb-biz">Business listings</h4>
       <p style="color:var(--text-soft);font-size:.92rem;margin:.3rem 0 1rem">The businesses and organizations in the Phone Book. Add a new one, or edit / remove any of them. Changes go live right away.</p>
       <form class="info-block" id="dirForm" style="max-width:680px;margin-bottom:1.4rem">
         <h4 id="dir-head" style="margin:0 0 .8rem">Add a business</h4>
@@ -161,7 +166,7 @@
       </form>
       <div id="dirList"><p style="color:var(--text-soft)">Loading…</p></div>
 
-      <h4 style="margin-top:2.2rem">Neighbors &amp; people</h4>
+      <h4 id="pb-people" style="margin-top:2.2rem;scroll-margin-top:90px">Neighbors &amp; people</h4>
       <p style="color:var(--text-soft);font-size:.92rem;margin:.3rem 0 1rem">Everyone listed in the phone book. Add a neighbor, edit their details, or choose what shows publicly. Anything set to <b>Private</b> is still listed by name but shows "details private". Changes go live right away.</p>
       <form class="info-block" id="personForm" style="max-width:680px;margin-bottom:1.4rem">
         <h4 id="person-head" style="margin:0 0 .8rem">Add a neighbor</h4>
@@ -194,11 +199,11 @@
       </form>
       <div id="peopleList"><p style="color:var(--text-soft)">Loading…</p></div>
 
-      <h4 style="margin-top:2.2rem">Submissions awaiting review</h4>
+      <h4 id="pb-subs" style="margin-top:2.2rem;scroll-margin-top:90px">Submissions awaiting review</h4>
       <p style="color:var(--text-soft);font-size:.92rem;margin:.3rem 0 1rem">Neighbors and businesses who added themselves through the site. Approve to publish them to the phone book, or delete. Approved neighbors then appear in <b>Neighbors &amp; people</b> above, where you can edit them; approved businesses show in the public phone book. Individuals' privacy choices are shown in parentheses.</p>
       <div id="subList"><p style="color:var(--text-soft)">Loading…</p></div>
 
-      <h4 style="margin-top:2.2rem">↩︎ Recently deleted</h4>
+      <h4 id="pb-trash" style="margin-top:2.2rem;scroll-margin-top:90px">↩︎ Recently deleted</h4>
       <p style="color:var(--text-soft);font-size:.92rem;margin:.3rem 0 1rem">Deleted a business, neighbor, or Explore listing by accident? Restore it here. The last 40 deletions are kept.</p>
       <div id="trashList"><p style="color:var(--text-soft)">Loading…</p></div>
 
@@ -268,7 +273,7 @@
     list.innerHTML=`<div style="max-height:260px;overflow:auto;font-size:.88rem;line-height:1.7">`+log.map(e=>
       `<div style="border-bottom:1px solid var(--line);padding:.25rem 0"><span style="color:var(--text-soft)">${esc(when(e.at))}</span> — ${esc(e.action)}${e.detail?`: <b>${esc(e.detail)}</b>`:""}</div>`).join("")+`</div>`;
   }
-  /* ---- Neighbors / people (directory_submissions, listing_type=person) ---- */
+  /* ---- Neighbors / people (directory_submissions, any listing_type other than "business") ---- */
   let editPerson=null;
   function resetPersonForm(){
     editPerson=null;
@@ -279,7 +284,9 @@
   }
   async function loadPeople(){
     const list=$("#peopleList");
-    const {data,error}=await db.from("directory_submissions").select("*").eq("listing_type","person").order("display_name",{ascending:true});
+    // Imported neighbors are saved as listing_type "individual" (older admin adds used "person"), so list every
+    // non-business entry. Only matching "person" is why Jenny saw no people to edit (Oct 5).
+    const {data,error}=await db.from("directory_submissions").select("*").neq("listing_type","business").order("display_name",{ascending:true});
     if(error){ list.innerHTML=`<p style="color:var(--accent-ink)">${esc(error.message)}</p>`; return; }
     _peopleRows=data;
     if(!data.length){ list.innerHTML=`<p style="color:var(--text-soft)">No neighbors listed yet — add the first one above.</p>`; return; }
@@ -318,7 +325,9 @@
       address:$("#pAddr").value.trim(), address_privacy:$("#pAddrPriv").value,
       email:$("#pEmail").value.trim(), email_privacy:$("#pEmailPriv").value,
       bday:$("#pBday").value.trim(), anniv:$("#pAnniv").value.trim(), featured:$("#pFeat").checked };
-    const base={ display_name:name, photo_url:$("#pPhoto").value.trim(), listing_type:"person", data };
+    // Keep the row's own type and any extra stored fields (e.g. "imported") when editing.
+    const base={ display_name:name, photo_url:$("#pPhoto").value.trim(),
+      listing_type:(editPerson&&editPerson.listing_type)||"individual", data:{...((editPerson&&editPerson.data)||{}), ...data} };
     $("#pMsg").textContent="Saving…";
     // Editing keeps the row's current status; a brand-new neighbor is published straight away.
     const res=editPerson ? await db.from("directory_submissions").update(base).eq("id",editPerson.id)

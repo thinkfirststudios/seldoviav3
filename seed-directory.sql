@@ -79,7 +79,7 @@ from (values
 ('Schooner Beach Studio', 'Cut-Paper Art', 'shop', '(541) 520-7331', '', false, false, 43),
 ('Make it Reality', '3D Printing & Laser', 'services', '(414) 367-9570', '', false, false, 44),
 ('Seldovia Arts Council', 'Arts Organization', 'life', '', 'https://www.seldoviaartscouncil.org', false, false, 45),
-('Seldovia House', 'Senior Housing', 'life', '', 'https://www.cookinlethousing.org', false, false, 46),
+('Seldovia House', 'Senior Housing', 'life', '', 'https://www.cookinlethousing.org/properties/58-Apartment-350-Alder-Street-Seldovia-Alaska-99663-1-Bedroom-1-Bathroom-USD949/', false, false, 46),
 ('Seldovia Bible Chapel', 'Church', 'life', '', '', false, false, 47),
 ('Grace Haven Fellowship', 'Church', 'life', '', '', false, false, 48),
 ('Russian Orthodox Church', 'Church', 'life', '', '', false, false, 49),

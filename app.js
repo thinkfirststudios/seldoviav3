@@ -55,11 +55,12 @@ const HEADER=`
   <div class="masthead-top">
     <a class="brand" href="index.html"${_preview} aria-label="Seldovia.com — Alaska's Best Kept Secret, home">
       <img class="brand-lockup" src="images/brand-lockup.png?v=1" alt="Seldovia.com — Alaska's Best Kept Secret" width="1000" height="728">
+      <span class="brand-wide"><img class="brand-logo" src="images/brand-logo.png?v=1" alt="Seldovia.com" width="1000" height="574"><img class="brand-tagimg" src="images/brand-tagline.png?v=1" alt="Alaska's Best Kept Secret" width="860" height="112"></span>
     </a>
   </div>
   <div class="navband">
     <div class="navband-inner">
-      <nav class="mainnav" aria-label="Primary">${navLinks()}</nav>
+      <nav class="mainnav" aria-label="Primary"><a class="${PAGE==='home'?'active':''}"${_preview} href="index.html">Home</a>${navLinks()}</nav>
       <div class="head-actions">
         <div class="navsearch" role="search">
           <span class="s-icon" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span>
@@ -77,6 +78,7 @@ const HEADER=`
   <div class="drawer-scrim" data-close></div>
   <nav class="drawer-panel" aria-label="Mobile">
     <a class="${PAGE==='home'?'active':''}"${_preview} href="index.html" data-close>Home</a>
+    <a class="drawer-search ${PAGE==='search'?'active':''}"${_preview} href="search.html?focus=1" data-close><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg> Search</a>
     ${navLinks("").replace(/<a /g,'<a data-close ')}
   </nav>
 </div>`;
@@ -115,7 +117,7 @@ document.body.insertAdjacentHTML("beforeend", FOOTER);
     r.setProperty("--head-h", hdr.offsetHeight+"px");
     r.setProperty("--brand-h", (top?top.offsetHeight:0)+"px"); };   // logo row scrolls away; nav band stays pinned
   setH();
-  const logo=hdr.querySelector(".brand-lockup"); if(logo && !logo.complete) logo.addEventListener("load", setH);
+  hdr.querySelectorAll(".brand img").forEach(img=>{ if(!img.complete) img.addEventListener("load", setH); });
   window.addEventListener("resize", setH, {passive:true});
   window.addEventListener("load", setH);
   if(document.fonts&&document.fonts.ready) document.fonts.ready.then(setH).catch(()=>{});
@@ -4348,7 +4350,7 @@ if($("#quickcats")) $("#quickcats").innerHTML=[["Eat","eat"],["Stay","stay"],["A
 
 // category tiles
 if($("#catGrid")) $("#catGrid").innerHTML=CATEGORIES.map((c,i)=>{
-  const img=`images/categories/cat-${i}.jpg?v=6`;
+  const img=`images/categories/cat-${i}.jpg?v=7`;
   const href = c.key==="about" ? "about.html" : `explore.html?cat=${c.key}`;
   return `<a class="cat-tile" href="${href}" aria-label="${esc(c.b)}"><img class="cat-photo" src="${img}" alt="" loading="lazy" width="600" height="600" onerror="this.onerror=null;this.src='images/placeholder-business.png'"><span class="cap"><b>${esc(c.b)}</b><span>${esc(c.s)}</span></span></a>`;}).join("");
 
@@ -4361,7 +4363,7 @@ const PLACE_TABS=[["all","All"],["about","About"],["travel","Travel"],["stay","L
 // Applied at render so it works whether the link comes from static data or the DB.
 const ORG_LINK={
   "arts-council.html":"https://www.seldoviaartscouncil.org",
-  "seldovia-house.html":"https://www.cookinlethousing.org",
+  "seldovia-house.html":"https://www.cookinlethousing.org/properties/58-Apartment-350-Alder-Street-Seldovia-Alaska-99663-1-Bedroom-1-Bathroom-USD949/",   // Jenny's link, Oct 5 (a single-unit listing page; may change when it's rented)
   "kasitsna-bay.html":"https://www.uaf.edu/cfos/about-us/locations/kasitsna-bay/"
 };
 let placeTab=(new URLSearchParams(location.search).get("cat"))||"all";
@@ -4434,6 +4436,12 @@ function renderPlaces(){
   // The "About" tab opens the full About page (map, town tour, history) instead of a short
   // duplicate blurb (Jenny Oct 2 — one About, no empty space).
   if(placeTab==="about"){ location.href="about.html"; return; }
+  // Category banners (Jenny Oct 5): tabs with their own watercolor banner swap it in; the rest show the main Explore one.
+  const bn=$("#exploreBanner");
+  if(bn){ const TAB_BANNERS={travel:["banner-cat-travel.jpg","Travel"],gardens:["banner-cat-gardens.jpg","Gardens, Parks & Beaches"],
+            activities:["banner-cat-activities.jpg","Activities & Hikes"],life:["banner-cat-life.jpg","Organizations and Government"]};
+    const t=TAB_BANNERS[placeTab]||["banner-explore.jpg","Explore"], src="images/headers/"+t[0]+"?v=3";
+    if(bn.getAttribute("src")!==src){ bn.setAttribute("src",src); bn.alt=t[1]; } }
   // Businesses first (alphabetical); trails & beaches sink to the bottom (Jenny #3).
   // Everything alphabetical, trails included (Jenny: keep continuity, no separate group at the bottom).
   const rows=PLACES.filter(p=>(placeTab==="all"||p.key===placeTab||(p._extra&&p._extra.includes(placeTab))) && !EXPLORE_HIDDEN.has(p.name)).sort((a,b)=>a.name.localeCompare(b.name));
@@ -4704,7 +4712,9 @@ if($("#dirList")){
   ];
   // A DB row can carry its own govt flag (Jenny's admin toggle); otherwise fall back to the built-in list.
   const isGovt=r=>r._govt!==undefined?r._govt:GOVT_BIZ.has(r.name);
-  const CHIPS=["All","People","Businesses",...CATL.map(c=>c.label)];
+  // Jenny Oct 5: just FOUR tabs, opening on All: "Keeping it simple is important so that we can keep up with it."
+  // (The finer CATL categories above are no longer shown as buttons; search still matches category words.)
+  const CHIPS=["All","Individuals","Businesses/Organizations","Out of Town"];
   let dirCat="All", dirQuery="";
   $("#dirChips").innerHTML=CHIPS.map((c,i)=>`<button class="chip" aria-pressed="${i===0}" data-cat="${esc(c)}">${esc(c)}</button>`).join("");
 
@@ -4727,13 +4737,13 @@ if($("#dirList")){
       ${d.spon?'<span class="spon-flag">★ Sponsor</span>':''}</div>`;};
 
   const renderDir=()=>{const q=dirQuery.trim().toLowerCase(); const qd=q.replace(/\D/g,"");
-    const catDef=CATL.find(c=>c.label===dirCat);
     const rows=ALL.filter(r=>{
-      const inCat = dirCat==="All" || (dirCat==="People"&&r.type==="person") || (dirCat==="Businesses"&&r.type==="biz") || (r.type==="biz"&&catDef&&catDef.test(r));
+      const inCat = dirCat==="All" || (dirCat==="Individuals"&&r.type==="person")
+        || (dirCat==="Businesses/Organizations"&&r.type==="biz"&&r.k!=="outoftown") || (dirCat==="Out of Town"&&r.type==="biz"&&r.k==="outoftown");
       const inQ = !q || r.name.toLowerCase().includes(q) || (r.cat||"").toLowerCase().includes(q) || (r.addr||"").toLowerCase().includes(q) || (qd.length>=3 && (r.phone||"").replace(/\D/g,"").includes(qd));
       return inCat && inQ;
     });
-    const empty = (!q && (dirCat==="People"||(dirCat==="All"&&!PEOPLE.length)) && !PEOPLE.length)
+    const empty = (!q && (dirCat==="Individuals"||(dirCat==="All"&&!PEOPLE.length)) && !PEOPLE.length)
       ? `<div class="dir-empty">The neighbor listings are just getting started — <a href="directory-add.html">add your household</a> and share only what you're comfortable with.</div>`
       : `<div class="dir-empty">No matches — try another word or category.</div>`;
     $("#dirList").innerHTML=rows.length?rows.map(r=>r.type==="person"?personCard(r):bizCard(r)).join(""):empty;};
@@ -4918,6 +4928,7 @@ if($("#searchResults")){
   const q=(params.get("q")||"").trim();
   const input=$("#searchPageInput"), summary=$("#searchSummary"), box=$("#searchResults");
   if(input) input.value=q;
+  if(input && !q && params.get("focus")) input.focus();   // opened from the menu's "Search" (Jenny Oct 5): ready to type
   document.title = q ? `“${q}” — Search Seldovia.com` : "Search — Seldovia.com";
   const MON3=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
   const srDate=d=>{ if(!d)return""; const [y,m,day]=String(d).split("-"); return `${MON3[+m-1]} ${+day}, ${y}`; };
