@@ -53,10 +53,15 @@ const navLinks=(cls="")=>NAV.map(([href,label,key])=>`<a class="${cls} ${key===P
 const HEADER=`
 <header class="masthead">
   <div class="masthead-top">
-    <a class="brand" href="index.html"${_preview} aria-label="Seldovia.com — Alaska's Best Kept Secret, home">
-      <img class="brand-lockup" src="images/brand-lockup.png?v=1" alt="Seldovia.com — Alaska's Best Kept Secret" width="1000" height="728">
-      <span class="brand-wide"><img class="brand-logo" src="images/brand-logo.png?v=1" alt="Seldovia.com" width="1000" height="574"><img class="brand-tagimg" src="images/brand-tagline.png?v=1" alt="Alaska's Best Kept Secret" width="860" height="112"></span>
-    </a>
+    ${PAGE==="realestate"
+      ? /* Real Estate shows Jenny's own Seldovia Property logo at the top (Jenny, Oct 6). */
+        `<a class="brand brand-sp" href="real-estate.html"${_preview} aria-label="Seldovia Property, real estate with Jenny Chissus">
+           <img class="brand-sp-img" src="images/seldovia-property-logo.png?v=1" alt="Seldovia Property" width="828" height="445"></a>`
+      : /* Logo with "Alaska's Best Kept Secret" beside it: one line on computers, two lines on phones so it
+           fills the white space and stays readable (Jenny, Oct 5-6). */
+        `<a class="brand" href="index.html"${_preview} aria-label="Seldovia.com — Alaska's Best Kept Secret, home">
+           <span class="brand-wide"><img class="brand-logo" src="images/brand-logo.png?v=1" alt="Seldovia.com" width="1000" height="574"><img class="brand-tagimg" src="images/brand-tagline.png?v=1" alt="Alaska's Best Kept Secret" width="860" height="112"><img class="brand-tag2" src="images/brand-tagline-2line.png?v=1" alt="" aria-hidden="true" width="455" height="214"></span>
+         </a>`}
   </div>
   <div class="navband">
     <div class="navband-inner">
@@ -4648,7 +4653,7 @@ if($("#listingDetail") && LISTINGS.length){
   const heroImg=lPhotos?lPhotos[0]:l.img;
   const chips=a=>a&&a.length?`<div class="spec-chips">${a.map(x=>`<span class="spec-chip">${esc(x)}</span>`).join("")}</div>`:"";
   const dl=(label,val)=>val?`<div class="dl-row"><dt>${esc(label)}</dt><dd>${esc(val)}</dd></div>`:"";
-  const descHtml=(l.desc||"").split(/\n\n+/).map(p=>`<p>${esc(p.trim())}</p>`).join("");
+  const descHtml=(l.desc||"").replace(/\r\n?/g,"\n").split(/\n\s*\n+/).filter(p=>p.trim()).map(p=>`<p>${esc(p.trim()).replace(/\n/g,"<br>")}</p>`).join("");
   document.title=`${l.addr} — Seldovia Property`;
   $("#listingDetail").innerHTML=`
     <a class="back-link" href="real-estate.html">← All listings</a>

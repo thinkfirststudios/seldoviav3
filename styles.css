@@ -177,9 +177,15 @@ h2.title{font-size:clamp(1.9rem,4vw,2.9rem);}
 .brand .brand-lockup{width:clamp(190px,18vw,260px); height:auto; display:block;}
 /* Wider screens (Jenny Oct 5): "Alaska's Best Kept Secret" sits in the white space BESIDE the logo instead of under it,
    so the header is shorter. Phones keep the stacked logo above. */
-.brand .brand-wide{display:none;}
+.brand .brand-wide{display:flex; align-items:center; gap:clamp(12px,3.5vw,22px);}
+.brand .brand-tagimg{display:none;}
+.brand .brand-logo{width:clamp(112px,33vw,170px); height:auto; display:block;}
+.brand .brand-tag2{width:clamp(140px,44vw,240px); height:auto; display:block;}
+.brand-sp .brand-sp-img{width:clamp(180px,52vw,260px); height:auto; display:block;}
 @media (min-width:761px){
-  .brand .brand-lockup{display:none;}
+  .brand .brand-tag2{display:none;}
+  .brand .brand-tagimg{display:block;}
+  .brand-sp .brand-sp-img{width:clamp(220px,20vw,320px);}
   .brand .brand-wide{display:flex; align-items:center; gap:clamp(18px,2.4vw,40px);}
   .brand .brand-logo{width:clamp(170px,16vw,240px); height:auto; display:block;}
   .brand .brand-tagimg{width:clamp(300px,38vw,640px); height:auto; display:block;}
@@ -1092,3 +1098,8 @@ footer.site a{color:rgba(255,255,255,.82); text-decoration:none;} footer.site a:
   .dir-item:has(> .admin-row-btns) > .d-main{flex:1 1 0;}
   .dir-item > .admin-row-btns{flex-basis:100%; flex-wrap:wrap;}
 }
+/* Listing page: nudge that photos open full size (Jenny Oct 6). "Tap" on phones, "Click" with a mouse. */
+.lc-hint{display:flex; align-items:center; justify-content:center; gap:.4rem; color:var(--text-soft); font-size:.95rem; margin:.65rem 0 0; text-align:center;}
+.lc-hint svg{flex:0 0 auto; color:var(--accent-ink);}
+.lc-hint-touch{display:none;}
+@media (hover:none){ .lc-hint-touch{display:inline;} .lc-hint-mouse{display:none;} }

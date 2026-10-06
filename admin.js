@@ -110,7 +110,7 @@
           ${TABS.map((t,i)=>`<button class="admin-tab ${i===0?"is-active":""}" data-tab="${t.key}" type="button">${t.label}</button>`).join("")}
         </div>
         <div style="display:flex;align-items:center;gap:.8rem">
-          <span style="font-size:.72rem;color:var(--text-soft)" title="If this number is old after refreshing, your browser cached the admin — clear site data / hard refresh.">admin build 50</span>
+          <span style="font-size:.72rem;color:var(--text-soft)" title="If this number is old after refreshing, your browser cached the admin — clear site data / hard refresh.">admin build 51</span>
           <button class="btn btn-ghost" id="logoutBtn" type="button">Sign out</button>
         </div>
       </div>
@@ -133,14 +133,27 @@
   ];
   let editDir=null; // the business row being edited, or null when adding
   let _dirRows=[], _peopleRows=[]; // last-loaded rows, for delegated Edit/Delete handlers
+  // Search boxes for the long Phone Book lists (Qwynny, Oct 6). Ignores case, accents, apostrophes and spaces.
+  const normQ=s=>String(s||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"");
+  function applyFilter(listSel,inputSel){
+    const q=normQ(($(inputSel)||{}).value); const items=document.querySelectorAll(listSel+" [data-q]"); let n=0;
+    items.forEach(el=>{ const show=!q||el.dataset.q.includes(q); el.style.display=show?"":"none"; if(show) n++; });
+    const c=document.querySelector(listSel+" .list-count"); if(c) c.textContent=q?`${n} of ${items.length} shown`:`${items.length} ${c.dataset.noun}`;
+  }
   function renderSubmissionsTab(){
     $("#tab-submissions").innerHTML=`
       <p class="pb-jump" style="display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;margin:0 0 1.2rem;font-size:.9rem"><b style="color:var(--text-soft);font-weight:600">Jump to:</b>
+        <a class="btn btn-ghost" href="#pb-subs" style="padding:.3rem .7rem">📥 New requests</a>
         <a class="btn btn-ghost" href="#pb-biz" style="padding:.3rem .7rem">Businesses</a>
         <a class="btn btn-ghost" href="#pb-people" style="padding:.3rem .7rem">People</a>
-        <a class="btn btn-ghost" href="#pb-subs" style="padding:.3rem .7rem">Submissions</a>
         <a class="btn btn-ghost" href="#pb-trash" style="padding:.3rem .7rem">Recently deleted</a></p>
-      <h4 id="pb-biz">Business listings</h4>
+
+      <!-- Inbox first (Jenny, Oct 6): people who ask to be added through the site land here for approval. -->
+      <h4 id="pb-subs" style="scroll-margin-top:90px">📥 New Phone Book requests</h4>
+      <p style="color:var(--text-soft);font-size:.92rem;margin:.3rem 0 1rem">Neighbors and businesses who asked to be added through the site's "Add yourself to the phone book" form. Nothing shows publicly until you approve it. Approve to publish, or delete. Approved neighbors then appear under <b>Neighbors &amp; people</b> below, where you can edit them. Individuals' privacy choices are shown in parentheses.</p>
+      <div id="subList"><p style="color:var(--text-soft)">Loading…</p></div>
+
+      <h4 id="pb-biz" style="margin-top:2.2rem;scroll-margin-top:90px">Business listings</h4>
       <p style="color:var(--text-soft);font-size:.92rem;margin:.3rem 0 1rem">The businesses and organizations in the Phone Book. Add a new one, or edit / remove any of them. Changes go live right away.</p>
       <form class="info-block" id="dirForm" style="max-width:680px;margin-bottom:1.4rem">
         <h4 id="dir-head" style="margin:0 0 .8rem">Add a business</h4>
@@ -164,10 +177,17 @@
           <span id="dMsg" class="form-note" style="align-self:center;color:var(--accent-ink)"></span>
         </div>
       </form>
+      <input id="dirSearch" type="search" placeholder="Search businesses by name, category or phone…" aria-label="Search business listings" style="width:100%;max-width:680px;padding:.6rem .8rem;border:1px solid var(--line);border-radius:10px;margin:0 0 .8rem">
       <div id="dirList"><p style="color:var(--text-soft)">Loading…</p></div>
 
       <h4 id="pb-people" style="margin-top:2.2rem;scroll-margin-top:90px">Neighbors &amp; people</h4>
       <p style="color:var(--text-soft);font-size:.92rem;margin:.3rem 0 1rem">Everyone listed in the phone book. Add a neighbor, edit their details, or choose what shows publicly. Anything set to <b>Private</b> is still listed by name but shows "details private". Changes go live right away.</p>
+      <details class="info-block" id="pbImport" style="max-width:680px;margin-bottom:1.4rem">
+        <summary style="cursor:pointer;font-weight:700;color:var(--heading)">📄 Import phone numbers from a spreadsheet (CSV)</summary>
+        <p style="color:var(--text-soft);font-size:.9rem;margin:.7rem 0">Choose a CSV file with names and phone numbers (for example an export from the old Seldovia.com phone book). Only <b>individuals</b> are used; businesses and organizations are skipped. Names are matched to the people below, and numbers are only added where the phone is <b>empty</b>, so nothing you've already updated is replaced. Fax numbers are skipped. You'll see a report first, and nothing is saved until you press <b>Apply</b>.</p>
+        <input id="pbCsv" type="file" accept=".csv,text/csv" style="margin:.2rem 0 .8rem">
+        <div id="pbImportOut"></div>
+      </details>
       <form class="info-block" id="personForm" style="max-width:680px;margin-bottom:1.4rem">
         <h4 id="person-head" style="margin:0 0 .8rem">Add a neighbor</h4>
         <div class="field"><label for="pName">Name</label><input id="pName" type="text" required></div>
@@ -197,11 +217,8 @@
           <span id="pMsg" class="form-note" style="align-self:center;color:var(--accent-ink)"></span>
         </div>
       </form>
+      <input id="peopleSearch" type="search" placeholder="Search people by name, phone or address…" aria-label="Search people" style="width:100%;max-width:680px;padding:.6rem .8rem;border:1px solid var(--line);border-radius:10px;margin:0 0 .8rem">
       <div id="peopleList"><p style="color:var(--text-soft)">Loading…</p></div>
-
-      <h4 id="pb-subs" style="margin-top:2.2rem;scroll-margin-top:90px">Submissions awaiting review</h4>
-      <p style="color:var(--text-soft);font-size:.92rem;margin:.3rem 0 1rem">Neighbors and businesses who added themselves through the site. Approve to publish them to the phone book, or delete. Approved neighbors then appear in <b>Neighbors &amp; people</b> above, where you can edit them; approved businesses show in the public phone book. Individuals' privacy choices are shown in parentheses.</p>
-      <div id="subList"><p style="color:var(--text-soft)">Loading…</p></div>
 
       <h4 id="pb-trash" style="margin-top:2.2rem;scroll-margin-top:90px">↩︎ Recently deleted</h4>
       <p style="color:var(--text-soft);font-size:.92rem;margin:.3rem 0 1rem">Deleted a business, neighbor, or Explore listing by accident? Restore it here. The last 40 deletions are kept.</p>
@@ -214,6 +231,9 @@
     $("#dCancel").addEventListener("click",()=>resetDirForm());
     $("#personForm").addEventListener("submit",savePerson);
     $("#pCancel").addEventListener("click",()=>resetPersonForm());
+    $("#dirSearch").addEventListener("input",()=>applyFilter("#dirList","#dirSearch"));
+    $("#peopleSearch").addEventListener("input",()=>applyFilter("#peopleList","#peopleSearch"));
+    $("#pbCsv").addEventListener("change",e=>{ const f=e.target.files&&e.target.files[0]; if(f) previewCsvImport(f); });
     // Delegated Edit/Delete — bound once on the stable containers so they always work,
     // even after the lists re-render.
     $("#dirList").addEventListener("click",e=>{
@@ -291,8 +311,8 @@
     _peopleRows=data;
     if(!data.length){ list.innerHTML=`<p style="color:var(--text-soft)">No neighbors listed yet — add the first one above.</p>`; return; }
     const pc=v=>v==="public"?'<span style="color:var(--open)">public</span>':'<span style="color:var(--text-soft)">private</span>';
-    list.innerHTML=`<p style="color:var(--text-soft);font-size:.85rem;margin-bottom:.6rem">${data.length} people</p>`+data.map(s=>{const d=s.data||{}; const pend=s.status!=="approved";
-      return `<div class="info-block" style="margin-bottom:.6rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center">
+    list.innerHTML=`<p class="list-count" data-noun="people" style="color:var(--text-soft);font-size:.85rem;margin-bottom:.6rem">${data.length} people</p>`+data.map(s=>{const d=s.data||{}; const pend=s.status!=="approved";
+      return `<div class="info-block" data-q="${esc(normQ([s.display_name,d.name,d.phone,d.address].join(" ")))}" style="margin-bottom:.6rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center">
         <div style="font-size:.92rem;line-height:1.5">
           <b style="color:var(--heading)">${esc(s.display_name||d.name||"(no name)")}</b>${d.featured?' <span style="color:var(--accent-ink)">★</span>':""}${pend?' <span style="font-size:.78rem;color:var(--accent-ink)">● pending</span>':""}
           <div style="color:var(--text-soft)">${d.phone?`${esc(d.phone)} (${pc(d.phone_privacy)})`:'no phone'}${d.address?` · ${esc(d.address)} (${pc(d.address_privacy)})`:""}</div>
@@ -301,6 +321,78 @@
           <button class="btn btn-ghost" type="button" data-pedit="${s.id}">Edit</button>
           <button class="btn btn-ghost" type="button" data-pdel="${s.id}">Delete</button>
         </div></div>`;}).join("");
+    applyFilter("#peopleList","#peopleSearch");
+  }
+  /* ---- CSV import of phone numbers for individuals (Jenny, Oct 6) ----
+     Reads the file in the browser, matches names to the people above, fills ONLY empty phones,
+     skips businesses/organizations and fax lines, and saves nothing until "Apply". */
+  function parseCsv(text){
+    const rows=[]; let row=[], cur="", q=false;
+    text=String(text).replace(/^\uFEFF/,"");
+    for(let i=0;i<text.length;i++){ const ch=text[i];
+      if(q){ if(ch==='"'){ if(text[i+1]==='"'){ cur+='"'; i++; } else q=false; } else cur+=ch; }
+      else if(ch==='"') q=true;
+      else if(ch===','){ row.push(cur); cur=""; }
+      else if(ch==='\n'||ch==='\r'){ if(ch==='\r'&&text[i+1]==='\n') i++; row.push(cur); rows.push(row); row=[]; cur=""; }
+      else cur+=ch; }
+    if(cur!==""||row.length){ row.push(cur); rows.push(row); }
+    return rows.filter(r=>r.some(c=>c.trim()));
+  }
+  let _csvPlan=null;
+  // Name keys ignore case/punctuation and a trailing Jr/Sr, so "Paul "Sonny" Chissus Jr." finds "Paul "Sonny" Chissus".
+  const nameKeys=n=>{ const k=normQ(n); const k2=normQ(String(n||"").replace(/\b(jr|sr|ii|iii)\.?\s*$/i,"")); return k2&&k2!==k?[k,k2]:[k]; };
+  async function previewCsvImport(file){
+    const out=$("#pbImportOut"); out.innerHTML=`<p style="color:var(--text-soft)">Reading…</p>`;
+    const rows=parseCsv(await file.text());
+    if(rows.length<2){ out.innerHTML=`<p style="color:var(--accent-ink)">That file looks empty.</p>`; return; }
+    const H=rows[0].map(h=>h.trim().toLowerCase()); const col=(...names)=>H.findIndex(h=>names.includes(h));
+    const cFirst=col("first","first name"), cMid=col("middle"), cLast=col("last","last name"), cPre=col("prefix"), cSuf=col("suffix"), cName=col("name","full name");
+    const cNum=col("number","phone","phone number"), cType=col("type","phone type"), cEntry=col("entry type"), cVis=col("visibility"), cPref=col("preferred");
+    if(cNum<0 || (cName<0 && cLast<0 && cFirst<0)){ out.innerHTML=`<p style="color:var(--accent-ink)">I couldn't find name and phone columns in this file. It needs a Name (or First/Last) column and a Number (or Phone) column.</p>`; return; }
+    const g=(r,c)=>c>=0?String(r[c]||"").trim():"";
+    const byKey=new Map(); _peopleRows.forEach(p=>nameKeys(p.display_name||(p.data||{}).name).forEach(k=>{ if(k&&!byKey.has(k)) byKey.set(k,p); }));
+    const label={homephone:"home",cellphone:"cell",workphone:"work",mobile:"cell",cell:"cell",home:"home",work:"work"};
+    const found=new Map(), unmatched=new Set(); let skippedOrg=0, skippedFax=0;
+    rows.slice(1).forEach(r=>{
+      if(cEntry>=0 && g(r,cEntry).toLowerCase()!=="individual"){ skippedOrg++; return; }
+      const num=g(r,cNum), type=g(r,cType).toLowerCase(); if(!num) return;
+      if(type.includes("fax")){ skippedFax++; return; }
+      const name=cName>=0?g(r,cName):[g(r,cPre),g(r,cFirst),g(r,cMid),g(r,cLast),g(r,cSuf)].filter(Boolean).join(" ");
+      const p=nameKeys(name).map(k=>byKey.get(k)).find(Boolean);
+      if(!p){ if(name) unmatched.add(name); return; }
+      const e=found.get(p.id)||{p,nums:[],pub:true};
+      if(!e.nums.some(x=>x.num.replace(/\D/g,"")===num.replace(/\D/g,""))) e.nums.push({num,lab:label[type]||"",pref:g(r,cPref).toLowerCase()==="yes"});
+      if(cVis>=0 && g(r,cVis).toLowerCase()!=="public") e.pub=false;
+      found.set(p.id,e);
+    });
+    const plan=[], already=[];
+    found.forEach(e=>{ const d=e.p.data||{};
+      e.nums.sort((a,b)=>b.pref-a.pref);
+      const phone=e.nums.length===1?e.nums[0].num:e.nums.map(x=>x.num+(x.lab?` (${x.lab})`:"")).join(" · ");
+      if(String(d.phone||"").trim()) already.push(e.p.display_name||d.name||""); else plan.push({p:e.p,phone,priv:e.pub?"public":"private"}); });
+    _csvPlan=plan;
+    const list=a=>a.length?`<ul style="margin:.3rem 0 0 1.1rem;font-size:.86rem;columns:2 14rem">${[...a].sort().map(n=>`<li>${esc(n)}</li>`).join("")}</ul>`:"";
+    out.innerHTML=`<div style="font-size:.92rem;line-height:1.7">
+      <div>✅ <b>${plan.length}</b> people will get a phone number (${plan.filter(x=>x.priv==="public").length} shown publicly, as on the old site)</div>
+      ${already.length?`<div>↷ <b>${already.length}</b> already have a phone, so they're left as is${list(already)}</div>`:""}
+      <div style="color:var(--text-soft)">Skipped: ${skippedOrg} businesses/organizations, ${skippedFax} fax numbers</div>
+      ${unmatched.size?`<div style="margin-top:.4rem">⚠️ <b>${unmatched.size}</b> names in the file aren't in the phone book, so they were not added:${list(unmatched)}</div>`:""}
+      </div>
+      ${plan.length?`<button class="btn btn-primary" type="button" id="pbApply" style="margin-top:.9rem">Apply: add ${plan.length} phone numbers</button>`:`<p style="margin-top:.8rem">Nothing to add.</p>`}
+      <span id="pbApplyMsg" class="form-note" style="margin-left:.6rem"></span>`;
+    if(plan.length) $("#pbApply").addEventListener("click",applyCsvImport);
+  }
+  async function applyCsvImport(){
+    const plan=_csvPlan||[]; const btn=$("#pbApply"), msg=$("#pbApplyMsg"); btn.disabled=true; let ok=0; const fail=[];
+    for(const x of plan){
+      const data={...(x.p.data||{}), phone:x.phone, phone_privacy:x.priv};
+      const {error}=await db.from("directory_submissions").update({data}).eq("id",x.p.id);
+      if(error) fail.push(x.p.display_name); else ok++;
+      msg.textContent=`Saving… ${ok+fail.length} of ${plan.length}`;
+    }
+    await logAdmin("Imported phone numbers from CSV", `${ok} people`);
+    msg.textContent=fail.length?`Added ${ok}. ${fail.length} could not be saved: ${fail.slice(0,5).join(", ")}`:`Done! Added ${ok} phone numbers.`;
+    _csvPlan=null; loadPeople(); loadLog();
   }
   function startEditPerson(s){
     if(!s) return;
@@ -357,8 +449,8 @@
     _dirRows=data;
     if(!data.length){ list.innerHTML=`<p style="color:var(--text-soft)">No businesses yet — add the first one above, or run <b>seed-directory.sql</b> to load the current list.</p>`; return; }
     const secLabel=v=>{ const m=DIR_SECTIONS.find(s=>s[1]===v); return m?m[0]:(v||""); };
-    list.innerHTML=`<p style="color:var(--text-soft);font-size:.85rem;margin-bottom:.6rem">${data.length} listings</p>`+data.map(d=>`
-      <div class="info-block" style="margin-bottom:.6rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center">
+    list.innerHTML=`<p class="list-count" data-noun="listings" style="color:var(--text-soft);font-size:.85rem;margin-bottom:.6rem">${data.length} listings</p>`+data.map(d=>`
+      <div class="info-block" data-q="${esc(normQ([d.name,d.cat,d.phone,secLabel(d.section)].join(" ")))}" style="margin-bottom:.6rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center">
         <div style="font-size:.92rem;line-height:1.5">
           <b style="color:var(--heading)">${esc(d.name)}</b>${d.sponsor?' <span style="color:var(--accent-ink)">★</span>':""}${d.govt?' <span style="font-size:.78rem;color:var(--text-soft)">· Gov</span>':""}
           <div style="color:var(--text-soft)">${esc(d.cat||"")} · ${esc(secLabel(d.section))}${d.phone?` · ${esc(d.phone)}`:""}${d.url?` · <a href="${esc(d.url)}" target="_blank" rel="noopener">site ↗</a>`:""}</div>
@@ -367,6 +459,7 @@
           <button class="btn btn-ghost" type="button" data-dedit="${d.id}">Edit</button>
           <button class="btn btn-ghost" type="button" data-ddel="${d.id}">Delete</button>
         </div></div>`).join("");
+    applyFilter("#dirList","#dirSearch");
   }
   function startEditDir(d){
     if(!d) return;
@@ -406,6 +499,8 @@
     if(error){ list.innerHTML=`<p style="color:var(--accent-ink)">${esc(error.message)}</p>`; return; }
     // Only the ones still awaiting review show here; approved people move to "Neighbors & people" above.
     const pending=data.filter(s=>s.status!=="approved");
+    const tabBtn=document.querySelector('.admin-tab[data-tab="submissions"]');   // "📇 Phone Book (2 new)" so requests get noticed
+    if(tabBtn) tabBtn.textContent="📇 Phone Book"+(pending.length?` (${pending.length} new)`:"");
     if(!pending.length){ list.innerHTML=`<p style="color:var(--text-soft)">Nothing awaiting review right now.</p>`; return; }
     list.innerHTML=`<p style="color:var(--accent-ink);font-weight:700;margin-bottom:.8rem">${pending.length} awaiting review</p>`+pending.map(subCard).join("");
     list.querySelectorAll("[data-approve]").forEach(b=>b.addEventListener("click",()=>setSubStatus(b.dataset.approve,"approved")));
