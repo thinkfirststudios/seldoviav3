@@ -183,6 +183,7 @@ h2.title{font-size:clamp(1.9rem,4vw,2.9rem);}
   .brand .brand-wide{display:flex; align-items:center; gap:clamp(18px,2.4vw,40px);}
   .brand .brand-logo{width:clamp(170px,16vw,240px); height:auto; display:block;}
   .brand .brand-tagimg{width:clamp(300px,38vw,640px); height:auto; display:block;}
+  .masthead-top{padding-top:.5rem; padding-bottom:clamp(10px,1.1vw,16px);}   /* breathing room above the green bar (Alex) */
 }
 @media (max-width:560px){ .masthead-top{padding:.25rem var(--gutter);} }
 /* Seldovia Property logo atop the Real Estate page hero */
