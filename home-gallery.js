@@ -18,7 +18,8 @@
     .then(({data,error})=>{
       if(error || !data || data.length<4) return;
       const seen=new Set();
-      const pool=data.filter(d=>d.image_url && !seen.has(d.image_url) && seen.add(d.image_url))
+      // Leave out real-estate listing shots that live in the photo library (Alex, Oct 6: "listing photos showed up").
+      const pool=data.filter(d=>d.image_url && !/listing/i.test(d.caption||"") && !seen.has(d.image_url) && seen.add(d.image_url))
                      .map(d=>({img:d.image_url, cap:d.caption||"Seldovia"}));
       for(let i=pool.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [pool[i],pool[j]]=[pool[j],pool[i]]; }
       let ptr=0;

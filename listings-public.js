@@ -84,7 +84,7 @@
         box.innerHTML=`
           <a class="back-link" href="real-estate.html">← All listings</a>
           ${heroBlock}
-          ${allImgs.length?`<p class="lc-hint"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg> <span class="lc-hint-touch">Tap</span><span class="lc-hint-mouse">Click</span> any photo to see it full size${allImgs.length>1?" and flip through them all":""}</p>`:""}
+          ${allImgs.length?`<p class="lc-hint"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg> <span class="lc-hint-text"><span class="lc-hint-touch">Tap</span><span class="lc-hint-mouse">Click</span> any photo to see it full size${allImgs.length>1?" and flip through them all":""}</span></p>`:""}
           <div class="listing-top">
             <div><div class="price" style="font-size:1.9rem">${esc(l.price||"")}</div><h1 style="margin:.15rem 0 0">${esc(l.address)}</h1><div class="listing-city">${esc(l.city||"Seldovia, AK")}</div>${l.listed_on?`<div class="listing-date">Listed ${esc(fmt(l.listed_on))}</div>`:""}</div>
             <a class="btn btn-primary" href="contact.html">${isLand?"Ask about this property":"Ask about this home"}</a>

@@ -181,11 +181,11 @@ h2.title{font-size:clamp(1.9rem,4vw,2.9rem);}
 .brand .brand-tagimg{display:none;}
 .brand .brand-logo{width:clamp(112px,33vw,170px); height:auto; display:block;}
 .brand .brand-tag2{width:clamp(140px,44vw,240px); height:auto; display:block;}
-.brand-sp .brand-sp-img{width:clamp(180px,52vw,260px); height:auto; display:block;}
+.brand-sp .brand-sp-img{width:clamp(120px,38vw,200px); height:auto; display:block;}
 @media (min-width:761px){
   .brand .brand-tag2{display:none;}
   .brand .brand-tagimg{display:block;}
-  .brand-sp .brand-sp-img{width:clamp(220px,20vw,320px);}
+  .brand-sp .brand-sp-img{width:clamp(200px,18vw,290px);}
   .brand .brand-wide{display:flex; align-items:center; gap:clamp(18px,2.4vw,40px);}
   .brand .brand-logo{width:clamp(170px,16vw,240px); height:auto; display:block;}
   .brand .brand-tagimg{width:clamp(300px,38vw,640px); height:auto; display:block;}
@@ -558,7 +558,7 @@ body:not([data-page="realestate"]) .howband::before{content:""; position:absolut
 .how-step p{color:rgba(255,255,255,.8); font-size:.92rem; margin-top:.5rem; max-width:32ch; margin-inline:auto;}
 
 /* ============================================================ MEET JENNY (real photos) */
-.jenny-card{display:grid; grid-template-columns:minmax(200px,300px) 1fr; gap:clamp(20px,3vw,40px); align-items:center; background:var(--surface-2); border:1px solid var(--line); border-radius:clamp(18px,2.6vw,26px); overflow:clip; padding:clamp(18px,3vw,32px);}
+.jenny-card{display:grid; grid-template-columns:minmax(200px,300px) 1fr; gap:clamp(20px,3vw,40px); align-items:start; background:var(--surface-2); border:1px solid var(--line); border-radius:clamp(18px,2.6vw,26px); overflow:clip; padding:clamp(18px,3vw,32px);}
 @media (max-width:680px){ .jenny-card{grid-template-columns:1fr; text-align:center; justify-items:center;} }
 .jenny-card img{border-radius:var(--radius); box-shadow:var(--shadow-lg); width:100%; max-width:300px; aspect-ratio:4/5; object-fit:cover; object-position:top; transform:scaleX(-1);} /* flipped per Jenny #12 */
 /* Jenny's full bio (#13) — verbatim from her homes.com profile */
@@ -952,7 +952,7 @@ footer.site a{color:rgba(255,255,255,.82); text-decoration:none;} footer.site a:
 .journal-month{margin:0 0 1.2rem; padding-bottom:.4rem; text-align:center;}
 .journal-month h3,.journal-h{font-family:var(--script); font-weight:400; font-size:clamp(2.4rem,5.5vw,3.4rem); color:var(--heading); line-height:1.05;}
 /* Month + year headings on the Photos page, same size as the About page's script headings (Jenny/Alex, Oct 6: "they look so tiny"). */
-.journal-month h3{font-size:clamp(3.6rem,7vw,5.6rem); line-height:1.1;}
+.journal-month h3, h2.journal-h{font-size:clamp(3.6rem,7vw,5.6rem); line-height:1.1;}
 .journal-h{margin:0;}
 .journal-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:clamp(16px,2.4vw,28px);}
 .jphoto{margin:0; display:flex; flex-direction:column; gap:.55rem;}
@@ -1126,3 +1126,16 @@ body.has-support #toTop{bottom:calc(clamp(14px,3vw,28px) + 58px);}
 .support-card h3{margin:0 0 .4rem;} .support-card p{color:var(--text-soft); margin:0 0 1rem;}
 .today-support{display:block; margin-top:.9rem; padding-top:.8rem; border-top:1px solid var(--line); color:var(--text-soft); text-decoration:none; font-size:.92rem;}
 .today-support b{color:var(--accent-ink);}
+
+/* Admin Phone Book search: make the "4 of 67 shown" count easy to spot (Alex, Oct 6) */
+.list-count{font-weight:700 !important; color:var(--accent-ink) !important; font-size:.92rem !important;}
+/* Listing photo hint: keep the sentence together (it split into two columns on phones) */
+.lc-hint-text{display:inline;}
+/* Sponsor arrows: solid teal so they stand out (Alex, Oct 6) */
+.sp-arrow{background:var(--accent); color:#fff; border-color:var(--accent);}
+.sp-arrow:hover{background:var(--accent); color:#fff; filter:brightness(1.12);}
+/* About quote: on phones break before "for our" so the two lines read naturally (Alex, Oct 6) */
+.q-br{display:none;}
+@media (max-width:760px){ .q-br{display:inline;} }
+/* Neighbor phone numbers are tappable to call (Alex, Oct 6) */
+.dir-item.person .d-contact a{color:inherit; text-decoration:underline; text-decoration-color:var(--line-2); text-underline-offset:3px;}

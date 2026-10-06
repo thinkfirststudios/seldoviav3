@@ -67,7 +67,7 @@ const HEADER=`
     ${PAGE==="realestate"
       ? /* Real Estate shows Jenny's own Seldovia Property logo at the top (Jenny, Oct 6). */
         `<a class="brand brand-sp" href="real-estate.html"${_preview} aria-label="Seldovia Property, real estate with Jenny Chissus">
-           <img class="brand-sp-img" src="images/seldovia-property-logo.png?v=1" alt="Seldovia Property" width="828" height="445"></a>`
+           <span class="brand-wide"><img class="brand-sp-img" src="images/seldovia-property-logo.png?v=1" alt="Seldovia Property" width="828" height="445"><img class="brand-tagimg" src="images/brand-tagline.png?v=1" alt="Alaska's Best Kept Secret" width="860" height="112"><img class="brand-tag2" src="images/brand-tagline-2line.png?v=1" alt="" aria-hidden="true" width="455" height="214"></span></a>`
       : /* Logo with "Alaska's Best Kept Secret" beside it: one line on computers, two lines on phones so it
            fills the white space and stays readable (Jenny, Oct 5-6). */
         `<a class="brand" href="index.html"${_preview} aria-label="Seldovia.com — Alaska's Best Kept Secret, home">
@@ -4767,7 +4767,9 @@ if($("#dirList")){
 
   const avatar=r=>r.photo?`<img class="d-photo" src="${r.photo}" alt="${esc(r.name)}" loading="lazy">`:`<div class="d-ico">${esc(r.name[0])}</div>`;
   const celebrations=r=>{const b=[]; if(r.bday)b.push(`<span class="cel">🎂 ${esc(r.bday)}</span>`); if(r.anniv)b.push(`<span class="cel">💍 ${esc(r.anniv)}</span>`); return b.length?`<div class="d-cel">${b.join("")}</div>`:"";};
-  const personCard=p=>{const feat=p.featured?'featured':''; const bits=[]; if(p.addr)bits.push(esc(p.addr)); if(p.phone)bits.push(esc(p.phone));
+  // Each phone number in a neighbor's listing is a tap-to-call link (Alex, Oct 6).
+  const telLinks=t=>esc(t).replace(/(\+?1[\s.-]?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}/g,m=>`<a href="tel:${m.replace(/\D/g,"")}">${m}</a>`);
+  const personCard=p=>{const feat=p.featured?'featured':''; const bits=[]; if(p.addr)bits.push(esc(p.addr)); if(p.phone)bits.push(telLinks(p.phone));
     return `<div class="dir-item person ${feat}">${avatar(p)}
       <div class="d-main"><div class="d-cat">Neighbor</div><h4>${esc(p.name)}</h4>
       ${bits.length?`<div class="d-contact">${bits.join(" · ")}</div>`:'<div class="d-contact d-muted">Listed — details private</div>'}
