@@ -110,7 +110,7 @@
           ${TABS.map((t,i)=>`<button class="admin-tab ${i===0?"is-active":""}" data-tab="${t.key}" type="button">${t.label}</button>`).join("")}
         </div>
         <div style="display:flex;align-items:center;gap:.8rem">
-          <span style="font-size:.72rem;color:var(--text-soft)" title="If this number is old after refreshing, your browser cached the admin — clear site data / hard refresh.">admin build 53</span>
+          <span style="font-size:.72rem;color:var(--text-soft)" title="If this number is old after refreshing, your browser cached the admin — clear site data / hard refresh.">admin build 54</span>
           <button class="btn btn-ghost" id="logoutBtn" type="button">Sign out</button>
         </div>
       </div>
@@ -1125,7 +1125,8 @@
       <div class="info-block" style="max-width:720px;margin-top:1.2rem">
         <h4>Explore businesses</h4>
         <p style="color:var(--text-soft);font-size:.92rem;margin:.3rem 0 1rem">For each business you can set the category (the filter tab and corner letter), edit the small <strong>text above the name</strong>, add an Open or Closed <strong>seasonal sign</strong>, upload a photo with the 📷 button, or <strong>Delete</strong> it from Explore. Set the Sign to None to remove it. Click Save changes and it goes live on Explore.</p>
-        <input id="bc-search" type="search" placeholder="Search businesses…" style="width:100%;padding:.6rem .8rem;border:1px solid var(--line);border-radius:10px;margin-bottom:1rem">
+        <input id="bc-search" type="search" placeholder="Search businesses…" style="width:100%;padding:.6rem .8rem;border:1px solid var(--line);border-radius:10px;margin-bottom:.4rem">
+        <p id="bc-count" class="list-count" style="margin:0 0 .9rem"></p>
         <div id="bc-list" style="display:flex;flex-direction:column;gap:.5rem;max-height:60vh;overflow:auto"></div>
         <div id="bc-hidden" style="margin-top:.8rem"></div>
         <div style="display:flex;gap:.8rem;align-items:center;margin-top:1rem">
@@ -1171,8 +1172,12 @@
     // so "chanik" finds "Ch'anik'na" (Alex).
     const norm=s=>String(s||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^a-z0-9]+/g,"");
     const draw=f=>{ const q=norm(f);
-      $("#bc-list").innerHTML=listAll().filter(p=>!hidden.has(p.name)).filter(p=>{ if(!q) return true; const m=meta[p.name]||{};
-        return [p.name,p.cat,m.name,m.label,m.owner].some(v=>norm(v).includes(q)); }).map(rowHtml).join("")||`<p class="form-note">No matches.</p>`; drawHidden(); };
+      const all=listAll().filter(p=>!hidden.has(p.name));
+      const shown=all.filter(p=>{ if(!q) return true; const m=meta[p.name]||{};
+        return [p.name,p.cat,m.name,m.label,m.owner].some(v=>norm(v).includes(q)); });
+      $("#bc-list").innerHTML=shown.map(rowHtml).join("")||`<p class="form-note">No matches.</p>`;
+      const c=$("#bc-count"); if(c) c.textContent=q?`${shown.length} of ${all.length} shown`:`${all.length} businesses`;   // (Alex, Oct 6)
+      drawHidden(); };
     async function saveKey(key,val){ const {error}=await db.from("settings").upsert({key,value:JSON.stringify(val)},{onConflict:"key"}); if(error) throw error; }
     db.from("settings").select("key,value").in("key",["explore_overrides","explore_photos","explore_meta","explore_added","explore_hidden","explore_extra"])
       .then(({data})=>{ (data||[]).forEach(r=>{ try{ if(r.key==="explore_overrides"&&r.value) overrides=JSON.parse(r.value)||{}; if(r.key==="explore_photos"&&r.value) photos=JSON.parse(r.value)||{}; if(r.key==="explore_meta"&&r.value) meta=JSON.parse(r.value)||{}; if(r.key==="explore_added"&&r.value){ const a=JSON.parse(r.value); if(Array.isArray(a)) added=a; } if(r.key==="explore_hidden"&&r.value){ const h=JSON.parse(r.value); if(Array.isArray(h)) hidden=new Set(h); } if(r.key==="explore_extra"&&r.value){ const x=JSON.parse(r.value); if(x&&typeof x==="object") extra=x; } }catch(e){} }); draw(""); })

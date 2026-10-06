@@ -67,7 +67,7 @@
       // Then the same month in prior years (2025 and earlier)
       if(seasonal.length){
         html+=`<section class="journal-section">
-          <div class="section-head"><span class="eyebrow">This month over the years</span>
+          <div class="section-head"><span class="eyebrow"><span>This month over <br class="eb-br">the years</span></span>
           <h2 class="journal-h">${esc(MON[curMonth])} in Seldovia</h2>
           <p>The same season, remembered across the years.</p></div>
           <div class="journal-grid">${seasonal.map(fig).join("")}</div></section>`;

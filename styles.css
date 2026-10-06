@@ -1139,3 +1139,17 @@ body.has-support #toTop{bottom:calc(clamp(14px,3vw,28px) + 58px);}
 @media (max-width:760px){ .q-br{display:inline;} }
 /* Neighbor phone numbers are tappable to call (Alex, Oct 6) */
 .dir-item.person .d-contact a{color:inherit; text-decoration:underline; text-decoration-color:var(--line-2); text-underline-offset:3px;}
+
+/* Admin > Businesses rows on phones (Alex, Oct 6) */
+@media (max-width:640px){
+  .bc-row > div:first-child{flex-wrap:wrap;}
+  .bc-row > div:first-child .d-main{flex:1 1 calc(100% - 70px) !important;}
+  .bc-row > div:first-child .d-main h4{font-size:1rem !important;}
+  .bc-row > div:first-child .bc-sel{max-width:none !important; flex:1 1 auto !important;}
+  .bc-row > div:not(:first-child){padding-left:0 !important;}
+  .bc-row > div:not(:first-child) label{width:100%;}
+  .bc-row > div:not(:first-child) label > input, .bc-row > div:not(:first-child) label > select{flex:1 1 auto; width:auto !important; min-width:0;}
+}
+/* Photos page eyebrow: on phones, "This month over / the years" instead of leaving "YEARS" alone (Alex) */
+.eb-br{display:none;}
+@media (max-width:640px){ .eb-br{display:inline;} }
