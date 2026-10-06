@@ -1,31 +1,16 @@
 {
- "updated": "2026-10-05T14:49:06Z",
+ "updated": "2026-10-06T00:06:40Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1791216000000,
-   "allDay": false,
-   "title": "SVT - Fitness Center"
-  },
-  {
-   "start": 1791237600000,
-   "allDay": false,
-   "title": "Seldovia Public Library Hours"
-  },
-  {
-   "start": 1791242100000,
-   "allDay": false,
-   "title": "SVT - Kids After School Time"
-  },
-  {
-   "start": 1791244800000,
-   "allDay": false,
-   "title": "Public Library - Story Time"
-  },
   {
    "start": 1791302400000,
    "allDay": false,
    "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1791309600000,
+   "allDay": false,
+   "title": "SOCC - Yoga"
   },
   {
    "start": 1791321300000,
@@ -48,6 +33,11 @@
    "title": "AMHS - Tustumena Departs to Homer"
   },
   {
+   "start": 1791338400000,
+   "allDay": false,
+   "title": "SOCC - Adult Pottery Class"
+  },
+  {
    "start": 1791388800000,
    "allDay": false,
    "title": "SVT - Fitness Center"
@@ -68,6 +58,16 @@
    "title": "CITY - Seldovia Planning Commission Regular Meeting"
   },
   {
+   "start": 1791428400000,
+   "allDay": false,
+   "title": "SOCC - Teen Night"
+  },
+  {
+   "start": 1791482400000,
+   "allDay": false,
+   "title": "SOCC - Yoga"
+  },
+  {
    "start": 1791493200000,
    "allDay": false,
    "title": "SVT - Fitness Center"
@@ -83,6 +83,11 @@
    "title": "Seldovia Public Library Hours"
   },
   {
+   "start": 1791498600000,
+   "allDay": false,
+   "title": "SVT - Science Thursday"
+  },
+  {
    "start": 1791501300000,
    "allDay": false,
    "title": "SVT - Kids After School Time"
@@ -91,6 +96,11 @@
    "start": 1791504900000,
    "allDay": false,
    "title": "AMHS - Tustumena Departs to Homer"
+  },
+  {
+   "start": 1791509400000,
+   "allDay": false,
+   "title": "SOCC - Mahjong Game Night"
   },
   {
    "start": 1791561600000,
@@ -125,12 +135,22 @@
   {
    "start": 1791604800000,
    "allDay": false,
+   "title": "SBC - Teen Night"
+  },
+  {
+   "start": 1791604800000,
+   "allDay": false,
    "title": "Seldovia Bible Chapel - Teen Nights at the Sea Otter Community Center!"
   },
   {
    "start": 1791669600000,
    "allDay": false,
    "title": "Seldovia Public Library Hours"
+  },
+  {
+   "start": 1791673200000,
+   "allDay": false,
+   "title": "SOCC - Adult Pickleball"
   },
   {
    "start": 1791680400000,
@@ -141,6 +161,11 @@
    "start": 1791741600000,
    "allDay": false,
    "title": "Grace Haven Fellowship Sunday Worship"
+  },
+  {
+   "start": 1791741600000,
+   "allDay": false,
+   "title": "SOCC - Yoga"
   },
   {
    "start": 1791741600000,
@@ -178,6 +203,11 @@
    "title": "SVT - Kids After School Time"
   },
   {
+   "start": 1791847800000,
+   "allDay": false,
+   "title": "SOCC - Kids Pottery Class"
+  },
+  {
    "start": 1791849600000,
    "allDay": false,
    "title": "Public Library - Story Time"
@@ -191,6 +221,11 @@
    "start": 1791907200000,
    "allDay": false,
    "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1791914400000,
+   "allDay": false,
+   "title": "SOCC - Yoga"
   },
   {
    "start": 1791926100000,
@@ -213,6 +248,16 @@
    "title": "AMHS - Tustumena Departs to Homer"
   },
   {
+   "start": 1791940500000,
+   "allDay": false,
+   "title": "SRSA Board Special Meeting"
+  },
+  {
+   "start": 1791943200000,
+   "allDay": false,
+   "title": "SOCC - Adult Pottery Class"
+  },
+  {
    "start": 1791993600000,
    "allDay": false,
    "title": "SVT - Fitness Center"
@@ -228,6 +273,21 @@
    "title": "SVT - Kids After School Time"
   },
   {
+   "start": 1792020600000,
+   "allDay": false,
+   "title": "SOCC - Kids Pottery Class"
+  },
+  {
+   "start": 1792033200000,
+   "allDay": false,
+   "title": "SOCC - Teen Night"
+  },
+  {
+   "start": 1792087200000,
+   "allDay": false,
+   "title": "SOCC - Yoga"
+  },
+  {
    "start": 1792098000000,
    "allDay": false,
    "title": "SVT - Fitness Center"
@@ -241,66 +301,6 @@
    "start": 1792101600000,
    "allDay": false,
    "title": "Seldovia Public Library Hours"
-  },
-  {
-   "start": 1792106100000,
-   "allDay": false,
-   "title": "SVT - Kids After School Time"
-  },
-  {
-   "start": 1792109700000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Departs to Homer"
-  },
-  {
-   "start": 1792166400000,
-   "allDay": false,
-   "title": "SVT - Fitness Center"
-  },
-  {
-   "start": 1792182600000,
-   "allDay": false,
-   "title": "Food Bank Shopping Day"
-  },
-  {
-   "start": 1792182600000,
-   "allDay": false,
-   "title": "Seldovia Public Library Hours"
-  },
-  {
-   "start": 1792209600000,
-   "allDay": false,
-   "title": "Seldovia Bible Chapel - Teen Nights at the Sea Otter Community Center!"
-  },
-  {
-   "start": 1792274400000,
-   "allDay": false,
-   "title": "Seldovia Public Library Hours"
-  },
-  {
-   "start": 1792285200000,
-   "allDay": false,
-   "title": "St. Nicholas Russian Orthodox Church Vespers Service"
-  },
-  {
-   "start": 1792310400000,
-   "allDay": true,
-   "title": "Alaska Day 🏔️🐻"
-  },
-  {
-   "start": 1792346400000,
-   "allDay": false,
-   "title": "Grace Haven Fellowship Sunday Worship"
-  },
-  {
-   "start": 1792346400000,
-   "allDay": false,
-   "title": "St. Nicholas Russian Orthodox Church Sunday Service"
-  },
-  {
-   "start": 1792350000000,
-   "allDay": false,
-   "title": "Seldovia Bible Chapel - Sunday Worship Service"
   }
  ]
 }
