@@ -110,7 +110,7 @@
           ${TABS.map((t,i)=>`<button class="admin-tab ${i===0?"is-active":""}" data-tab="${t.key}" type="button">${t.label}</button>`).join("")}
         </div>
         <div style="display:flex;align-items:center;gap:.8rem">
-          <span style="font-size:.72rem;color:var(--text-soft)" title="If this number is old after refreshing, your browser cached the admin — clear site data / hard refresh.">admin build 51</span>
+          <span style="font-size:.72rem;color:var(--text-soft)" title="If this number is old after refreshing, your browser cached the admin — clear site data / hard refresh.">admin build 52</span>
           <button class="btn btn-ghost" id="logoutBtn" type="button">Sign out</button>
         </div>
       </div>
@@ -637,7 +637,12 @@
         <p id="postMsg" class="form-note"></p>
       </form>
       <h3 class="listing-h" style="margin-top:2rem">Published posts</h3>
-      <div id="postList"><p style="color:var(--text-soft)">Loading…</p></div>`;
+      <input id="postSearch" type="search" placeholder="Search posts by title or any words in the post…" aria-label="Search posts" style="width:100%;max-width:680px;padding:.6rem .8rem;border:1px solid var(--line);border-radius:10px;margin:0 0 .5rem">
+      <p id="postCount" style="color:var(--text-soft);font-size:.85rem;margin:0 0 .6rem"></p>
+      <div id="postList"><p style="color:var(--text-soft)">Loading…</p></div>
+      <p style="margin-top:1rem"><button class="btn btn-ghost" type="button" id="postMore" hidden>Load more posts</button></p>`;
+    { let t=null; $("#postSearch").addEventListener("input",()=>{ clearTimeout(t); t=setTimeout(()=>{ _postQ=$("#postSearch").value.trim(); loadPosts(); },300); }); }
+    $("#postMore").addEventListener("click",()=>loadPosts(true));
     $("#p-date").value=todayISO(); wireCat("p-cat");
     $("#postForm").addEventListener("submit",onPublish);
     $("#p-cancel").addEventListener("click",resetPost);
@@ -704,16 +709,28 @@
     }catch(err){ msg.style.color="var(--accent-ink)"; msg.textContent="Error: "+(err.message||err); }
     finally{ btn.disabled=false; }
   }
-  async function loadPosts(){
-    const list=$("#postList");
-    const {data,error}=await db.from("posts").select("*").order("post_date",{ascending:false});
+  // Search + "Load more" (Qwynny, Oct 6). Loading every post at once meant a very long scroll, and the database
+  // only returns 1,000 rows, so older posts (of ~2,800) couldn't be reached here at all.
+  let _postQ="", _postOff=0, _postRows=[]; const POST_PAGE=50;
+  async function loadPosts(more){
+    const list=$("#postList"), moreBtn=$("#postMore"), countEl=$("#postCount"); if(!list) return;
+    if(!more){ _postOff=0; _postRows=[]; list.innerHTML='<p style="color:var(--text-soft)">Loading…</p>'; }
+    let q=db.from("posts").select("*",{count:"exact"});
+    if(_postQ){ const like="%"+_postQ.replace(/[%,()]/g," ")+"%"; q=q.or(`title.ilike.${like},body.ilike.${like}`); }
+    const {data,error,count}=await q.order("post_date",{ascending:false}).range(_postOff,_postOff+POST_PAGE-1);
     if(error){ list.innerHTML=`<p style="color:var(--accent-ink)">${esc(error.message)}</p>`; return; }
-    if(!data.length){ list.innerHTML='<p style="color:var(--text-soft)">No posts yet.</p>'; return; }
-    list.innerHTML=data.map(p=>`<div class="dir-item" style="align-items:center">
-      ${p.image_url?`<img class="d-photo" src="${esc(p.image_url)}" alt="" style="border-radius:8px">`:'<div class="d-ico">✎</div>'}
+    if(!more) list.innerHTML="";
+    if(!data.length && !_postRows.length){ list.innerHTML=`<p style="color:var(--text-soft)">${_postQ?"No posts match that search.":"No posts yet."}</p>`; if(moreBtn) moreBtn.hidden=true; if(countEl) countEl.textContent=""; return; }
+    _postRows=_postRows.concat(data); _postOff+=data.length;
+    const chunk=document.createElement("div");
+    chunk.innerHTML=data.map(p=>`<div class="dir-item" style="align-items:center">
+      ${p.image_url?`<img class="d-photo" src="${esc(p.image_url)}" alt="" style="border-radius:8px" loading="lazy">`:'<div class="d-ico">✎</div>'}
       <div class="d-main"><div class="d-cat">${esc(fmtDate(p.post_date))} · ${esc(p.category||'')}</div><h4>${esc(p.title)}</h4></div>
       <div class="admin-row-btns"><button class="btn btn-ghost" data-edit="${p.id}" type="button">Edit</button><button class="btn btn-ghost" data-del="${p.id}" type="button">Delete</button></div></div>`).join("");
-    bindEdit(list,data,fillPost); bindDelete(list,"posts",loadPosts,data);
+    list.appendChild(chunk);
+    bindEdit(chunk,_postRows,fillPost); bindDelete(chunk,"posts",()=>loadPosts(),_postRows);
+    if(countEl) countEl.textContent=`Showing ${_postRows.length} of ${count??_postRows.length}${_postQ?" matching posts":" posts"}`;
+    if(moreBtn) moreBtn.hidden=_postRows.length>=(count??0);
   }
 
   /* ---------------- BULLETIN ---------------- */

@@ -19,7 +19,8 @@
 
   function card(it){
     const linkAttr = ` href="${esc(it.href)}"`;
-    const media = it.img ? `<a class="post-media"${linkAttr}><img class="post-photo" src="${esc(it.img)}" alt="${esc(it.title)}" loading="lazy" onerror="this.closest('.post-media').style.display='none'"></a>` : "";
+    const isVid = !!(window.videoInfo && window.videoInfo(it.link));   // tag video posts; the video plays on the post page
+    const media = it.img ? `<a class="post-media"${linkAttr}><img class="post-photo" src="${esc(it.img)}" alt="${esc(it.title)}" loading="lazy" onerror="this.closest('.post-media').style.display='none'">${isVid?'<span class="video-tag">▶ Video</span>':""}</a>` : "";
     const body = mdExcerpt(it.excerpt);
     return `<article class="post">${media}<div class="post-body"><span class="kicker">${esc(it.cat||"Blog")}</span>`
       + `<h4><a${linkAttr}>${esc(it.title)}</a></h4>`
@@ -28,7 +29,7 @@
       + `<a class="show-more"${linkAttr}>Read more →</a></div></article>`;
   }
   const item = p => ({ cat:p.category||"Blog", title:p.title, date:fmtDB(p.post_date),
-    img:p.image_url, excerpt:p.body||p.excerpt||"", href:"post.html?id="+p.id });
+    img:p.image_url, excerpt:p.body||p.excerpt||"", href:"post.html?id="+p.id, link:p.link||"" });
 
   // --- build search box + "load more" around the grid ---
   const section = grid.closest("section") || grid.parentElement;

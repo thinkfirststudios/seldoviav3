@@ -57,6 +57,7 @@
       ${item("ti-tide","🌊","Tides today","…")}
       ${item("ti-sun","🌅","Daylight",dayVal)}
       ${item("ti-marine","🌊","Marine weather","…")}
+      ${window.SUPPORT_URL?`<a class="today-support" href="${window.SUPPORT_URL}" target="_blank" rel="noopener">☕ Enjoying Seldovia Today? <b>Support the site</b></a>`:""}
     </div>`;
 
     // Live clock

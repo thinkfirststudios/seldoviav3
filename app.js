@@ -34,6 +34,17 @@ window.addEventListener("error", e=>{
 }, true);
 
 /* ============================================================ SHARED CHROME (header / drawer / footer) ============================================================ */
+// Recognize a video link and return how to play it on our own page (YouTube, Vimeo, public Facebook videos/reels).
+// Returns null for ordinary website links. Used by the blog post page and the blog cards.
+window.videoInfo=function(url){
+  if(!url) return null; const u=String(url).trim(); let m;
+  if((m=u.match(/(?:youtube\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/)|youtu\.be\/)([\w-]{11})/i)))
+    return {site:"YouTube", embed:`https://www.youtube.com/embed/${m[1]}`, vertical:/\/shorts\//i.test(u)};
+  if((m=u.match(/vimeo\.com\/(?:video\/)?(\d+)/i))) return {site:"Vimeo", embed:`https://player.vimeo.com/video/${m[1]}`, vertical:false};
+  if(/(facebook\.com\/(?:[^?#]*\/)?(?:videos\/|reel\/|watch|video\.php|share\/[vr]\/)|fb\.watch\/)/i.test(u))
+    return {site:"Facebook", embed:`https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(u)}&show_text=false&width=560`, vertical:false};   // reels can be wide or tall: a widescreen frame never leaves a big black gap
+  return null;
+};
 const NAV=[
   ["explore.html","Explore","explore"],
   ["about.html","About","about"],
@@ -112,6 +123,30 @@ const FOOTER=`
 
 document.body.insertAdjacentHTML("afterbegin", HEADER);
 document.body.insertAdjacentHTML("beforeend", FOOTER);
+
+/* Buy Me a Coffee (Jenny, Oct 6). Paste her Buy Me a Coffee page link between the quotes when she has it,
+   e.g. "https://buymeacoffee.com/seldovia". While it's empty, NONE of the support spots show anywhere.
+   Spots: floating button (bottom-right), footer, end of the About page, bottom of the Seldovia Today card. */
+const SUPPORT_URL="";
+window.SUPPORT_URL=SUPPORT_URL;
+
+/* Google Analytics (Jenny, Oct 6). Paste her Measurement ID between the quotes, e.g. "G-ABC123XYZ".
+   While it's empty nothing is loaded. The admin pages are never tracked, so editing doesn't skew the numbers. */
+const GA_ID="";
+if(GA_ID && PAGE!=="admin"){
+  const g=document.createElement("script"); g.async=true; g.src="https://www.googletagmanager.com/gtag/js?id="+encodeURIComponent(GA_ID); document.head.appendChild(g);
+  window.dataLayer=window.dataLayer||[]; window.gtag=function(){ dataLayer.push(arguments); };
+  gtag("js",new Date()); gtag("config",GA_ID);
+}
+if(SUPPORT_URL && PAGE!=="admin"){
+  const sLink=(cls,html)=>`<a class="${cls}" href="${esc(SUPPORT_URL)}" target="_blank" rel="noopener">${html}</a>`;
+  const fb=document.querySelector(".foot-brand");
+  if(fb) fb.insertAdjacentHTML("beforeend", `<p class="foot-support">${sLink("support-link","☕ Support Seldovia.com: buy us a coffee")}</p>`);
+  document.body.insertAdjacentHTML("beforeend", sLink("support-float",`<span aria-hidden="true">☕</span><span class="sf-text">Support the site</span>`));
+  document.body.classList.add("has-support");
+  const slot=document.querySelector("#supportSlot");
+  if(slot) slot.innerHTML=`<div class="support-card"><h3>Enjoying Seldovia.com?</h3><p>This site is a community project. If you find it useful, you can help keep it running.</p>${sLink("btn btn-primary","☕ Buy us a coffee")}</div>`;
+}
 // Publish the sticky header's real height as --head-h so the "Seldovia Today" bar can pin
 // directly beneath it (otherwise the two-row header eats the top of the bar as you scroll,
 // leaving its tide text half-clipped under the nav). Re-measure on resize / font load.
@@ -4562,9 +4597,14 @@ if($("#postDetail")){
       return /^(?:<img\b[^>]*>\s*)+$/.test(withImg.trim()) ? html : `<p>${html}</p>`; // image-only block: no <p> wrapper
     }).join("");
   const showPost=o=>{ // {title,cat,date,img,body,link}
+    // Video links play right in the post instead of sending people off the site (Jenny, Oct 6).
+    const vid=window.videoInfo(o.link);
     document.title=`${o.title} — Seldovia Blog`;
-    const media=o.img?`<div class="post-detail-media"><a href="${esc(o.img)}" target="_blank" rel="noopener" title="View full size"><img src="${esc(o.img)}" alt="${esc(o.title)}" onerror="this.closest('.post-detail-media').style.display='none'"></a></div>`:"";
-    const linkBtn=o.link?`<p style="margin-top:1.6rem"><a class="btn btn-primary" href="${esc(o.link)}" target="_blank" rel="noopener">Visit website ↗</a></p>`:"";
+    const media=vid
+      ? `<div class="post-video${vid.vertical?" is-vertical":""}"><iframe src="${esc(vid.embed)}" title="${esc(o.title)} (video)" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+         <p class="post-video-note">Video not playing? <a href="${esc(o.link)}" target="_blank" rel="noopener">Watch it on ${esc(vid.site)} ↗</a></p>`
+      : (o.img?`<div class="post-detail-media"><a href="${esc(o.img)}" target="_blank" rel="noopener" title="View full size"><img src="${esc(o.img)}" alt="${esc(o.title)}" onerror="this.closest('.post-detail-media').style.display='none'"></a></div>`:"");
+    const linkBtn=o.link?`<p style="margin-top:1.6rem"><a class="btn btn-primary" href="${esc(o.link)}" target="_blank" rel="noopener">${vid?`Watch on ${esc(vid.site)} ↗`:(/facebook.com/i.test(o.link)?"View on Facebook ↗":"Visit website ↗")}</a></p>`:"";
     $("#postDetail").innerHTML=`
       <a class="back-link" href="gazette.html">← All posts</a>
       ${media}
@@ -4829,15 +4869,30 @@ if($("#sponsorTrack")){
     const reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let paused=reduce, resumeT;
     const nudge=()=>{ paused=true; clearTimeout(resumeT); resumeT=setTimeout(()=>{ if(!reduce) paused=false; },3000); };
-    strip.addEventListener("pointerenter",()=>{ if(!reduce) paused=true; });
-    strip.addEventListener("pointerleave",()=>{ if(!reduce) paused=false; });
+    // Mouse pauses while pointing at the strip; a touch only pauses briefly (a tap used to "stick" as hover
+    // on phones and could leave the strip frozen).
+    strip.addEventListener("pointerenter",e=>{ if(!reduce && e.pointerType==="mouse") paused=true; });
+    strip.addEventListener("pointerleave",e=>{ if(!reduce && e.pointerType==="mouse") paused=false; });
     strip.addEventListener("wheel",nudge,{passive:true}); strip.addEventListener("pointerdown",nudge);
-    const step=()=>{ if(!paused && strip.scrollWidth>strip.clientWidth+4){ strip.scrollLeft+=0.5; const half=strip.scrollWidth/2; if(strip.scrollLeft>=half) strip.scrollLeft-=half; } requestAnimationFrame(step); };
+    // Keep our own fractional position: iPhones round scrollLeft to whole pixels, so adding 0.5 each frame
+    // never moved the strip at all on iOS (found Oct 6).
+    let pos=strip.scrollLeft;
+    const step=()=>{ if(!paused && strip.scrollWidth>strip.clientWidth+4){ pos+=0.5; const half=strip.scrollWidth/2; if(pos>=half) pos-=half; strip.scrollLeft=pos; }
+      else pos=strip.scrollLeft;   // follow any swipe / arrow scroll while paused
+      requestAnimationFrame(step); };
     requestAnimationFrame(step);
-    if(car){ const by=()=>Math.max(240, strip.clientWidth*0.7);
+    if(car){
+      // Arrows move exactly one ad and line it up (Alex, Oct 6): flush left on wider screens, centered on phones,
+      // so no ad is left cut in half the way a fixed scroll distance did.
+      const phone=()=>window.matchMedia("(max-width:600px)").matches;
+      const go=dir=>{ nudge(); const ads=[...track.children].filter(a=>a.offsetWidth>0); if(!ads.length) return;
+        const pad=phone()?(strip.clientWidth-ads[0].offsetWidth)/2:0;
+        let i=0, best=Infinity; ads.forEach((a,k)=>{ const d=Math.abs(a.offsetLeft-pad-strip.scrollLeft); if(d<best){ best=d; i=k; } });
+        const t=ads[Math.max(0,Math.min(ads.length-1,i+dir))];
+        strip.scrollTo({left:Math.max(0,t.offsetLeft-pad),behavior:"smooth"}); };
       const prev=car.querySelector(".sp-prev"), next=car.querySelector(".sp-next");
-      if(prev) prev.addEventListener("click",()=>{ nudge(); strip.scrollBy({left:-by(),behavior:"smooth"}); });
-      if(next) next.addEventListener("click",()=>{ nudge(); strip.scrollBy({left:by(),behavior:"smooth"}); });
+      if(prev) prev.addEventListener("click",()=>go(-1));
+      if(next) next.addEventListener("click",()=>go(1));
     }
   }
 }
