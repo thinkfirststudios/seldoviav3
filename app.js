@@ -4439,7 +4439,8 @@ function renderPlaces(){
   // Category banners (Jenny Oct 5): tabs with their own watercolor banner swap it in; the rest show the main Explore one.
   const bn=$("#exploreBanner");
   if(bn){ const TAB_BANNERS={travel:["banner-cat-travel.jpg","Travel"],gardens:["banner-cat-gardens.jpg","Gardens, Parks & Beaches"],
-            activities:["banner-cat-activities.jpg","Activities & Hikes"],life:["banner-cat-life.jpg","Organizations and Government"]};
+            activities:["banner-cat-activities.jpg","Activities & Hikes"],life:["banner-cat-life.jpg","Organizations and Government"],
+            services:["banner-cat-services.jpg","Businesses"],shop:["banner-cat-shop.jpg","Shops & Gifts"]};
     const t=TAB_BANNERS[placeTab]||["banner-explore.jpg","Explore"], src="images/headers/"+t[0]+"?v=3";
     if(bn.getAttribute("src")!==src){ bn.setAttribute("src",src); bn.alt=t[1]; } }
   // Businesses first (alphabetical); trails & beaches sink to the bottom (Jenny #3).
