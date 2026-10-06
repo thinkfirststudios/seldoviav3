@@ -110,7 +110,7 @@
           ${TABS.map((t,i)=>`<button class="admin-tab ${i===0?"is-active":""}" data-tab="${t.key}" type="button">${t.label}</button>`).join("")}
         </div>
         <div style="display:flex;align-items:center;gap:.8rem">
-          <span style="font-size:.72rem;color:var(--text-soft)" title="If this number is old after refreshing, your browser cached the admin — clear site data / hard refresh.">admin build 52</span>
+          <span style="font-size:.72rem;color:var(--text-soft)" title="If this number is old after refreshing, your browser cached the admin — clear site data / hard refresh.">admin build 53</span>
           <button class="btn btn-ghost" id="logoutBtn" type="button">Sign out</button>
         </div>
       </div>
@@ -376,7 +376,7 @@
       <div>✅ <b>${plan.length}</b> people will get a phone number (${plan.filter(x=>x.priv==="public").length} shown publicly, as on the old site)</div>
       ${already.length?`<div>↷ <b>${already.length}</b> already have a phone, so they're left as is${list(already)}</div>`:""}
       <div style="color:var(--text-soft)">Skipped: ${skippedOrg} businesses/organizations, ${skippedFax} fax numbers</div>
-      ${unmatched.size?`<div style="margin-top:.4rem">⚠️ <b>${unmatched.size}</b> names in the file aren't in the phone book, so they were not added:${list(unmatched)}</div>`:""}
+      ${unmatched.size?`<div style="margin-top:.4rem">⚠️ <b>${unmatched.size}</b> names in the file aren't in the phone book, so they were not added:${list([...unmatched])}</div>`:""}
       </div>
       ${plan.length?`<button class="btn btn-primary" type="button" id="pbApply" style="margin-top:.9rem">Apply: add ${plan.length} phone numbers</button>`:`<p style="margin-top:.8rem">Nothing to add.</p>`}
       <span id="pbApplyMsg" class="form-note" style="margin-left:.6rem"></span>`;
