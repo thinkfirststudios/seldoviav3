@@ -181,7 +181,7 @@ h2.title{font-size:clamp(1.9rem,4vw,2.9rem);}
 .brand .brand-tagimg{display:none;}
 .brand .brand-logo{width:clamp(112px,33vw,170px); height:auto; display:block;}
 .brand .brand-tag2{width:clamp(140px,44vw,240px); height:auto; display:block;}
-.brand-sp .brand-sp-img{width:clamp(120px,38vw,200px); height:auto; display:block;}
+.brand-sp .brand-sp-img{width:clamp(150px,46vw,230px); height:auto; display:block;}
 @media (min-width:761px){
   .brand .brand-tag2{display:none;}
   .brand .brand-tagimg{display:block;}
@@ -1153,3 +1153,8 @@ body.has-support #toTop{bottom:calc(clamp(14px,3vw,28px) + 58px);}
 /* Photos page eyebrow: on phones, "This month over / the years" instead of leaving "YEARS" alone (Alex) */
 .eb-br{display:none;}
 @media (max-width:640px){ .eb-br{display:inline;} }
+
+/* Buy Me a Coffee widget sits bottom-right; lift the green "scroll to top" button above it (Oct 6) */
+body.has-support #toTop{bottom:calc(18px + 76px) !important;}
+/* Jenny's license line on the Real Estate page (Oct 6) */
+.re-license{font-size:.88rem !important; color:var(--text-soft) !important; margin-top:.9rem !important;}

@@ -65,9 +65,10 @@ const HEADER=`
 <header class="masthead">
   <div class="masthead-top">
     ${PAGE==="realestate"
-      ? /* Real Estate shows Jenny's own Seldovia Property logo at the top (Jenny, Oct 6). */
+      ? /* Real Estate shows Jenny's own Seldovia Property logo at the top, WITHOUT "Alaska's Best Kept Secret",
+           which belongs to Seldovia.com, not the real estate page (Jenny, Oct 6). */
         `<a class="brand brand-sp" href="real-estate.html"${_preview} aria-label="Seldovia Property, real estate with Jenny Chissus">
-           <span class="brand-wide"><img class="brand-sp-img" src="images/seldovia-property-logo.png?v=1" alt="Seldovia Property" width="828" height="445"><img class="brand-tagimg" src="images/brand-tagline.png?v=1" alt="Alaska's Best Kept Secret" width="860" height="112"><img class="brand-tag2" src="images/brand-tagline-2line.png?v=1" alt="" aria-hidden="true" width="455" height="214"></span></a>`
+           <img class="brand-sp-img" src="images/seldovia-property-logo.png?v=1" alt="Seldovia Property" width="828" height="445"></a>`
       : /* Logo with "Alaska's Best Kept Secret" beside it: one line on computers, two lines on phones so it
            fills the white space and stays readable (Jenny, Oct 5-6). */
         `<a class="brand" href="index.html"${_preview} aria-label="Seldovia.com — Alaska's Best Kept Secret, home">
@@ -113,7 +114,7 @@ const FOOTER=`
       <div class="foot-col"><h4>Real Estate</h4><ul><li><a href="real-estate.html">Featured listings</a></li><li><a href="contact.html?topic=real%20estate">Home valuation</a></li></ul></div>
     </div>
     <div class="foot-bottom">
-      <p class="disclaimer">&copy; <span id="year">2026</span> Seldovia.com — a community project. Real estate services provided by Seldovia Property, a licensed Alaska real estate brokerage (Jenny Chissus, Broker/Owner). Listing information believed reliable but not guaranteed; Alaska is a non-disclosure state. Equal Housing Opportunity.</p>
+      <p class="disclaimer">&copy; <span id="year">2026</span> Seldovia.com — a community project. Real estate services provided by Seldovia Property, a licensed Alaska real estate brokerage (Jenny Chissus, Broker/Owner; Alaska Real Estate License RECB16495). Listing information believed reliable but not guaranteed; Alaska is a non-disclosure state. Equal Housing Opportunity.</p>
       <p><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a></p>
       <p>Made with care on Kachemak Bay 🏔️</p>
     </div>
@@ -127,7 +128,7 @@ document.body.insertAdjacentHTML("beforeend", FOOTER);
 /* Buy Me a Coffee (Jenny, Oct 6). Paste her Buy Me a Coffee page link between the quotes when she has it,
    e.g. "https://buymeacoffee.com/seldovia". While it's empty, NONE of the support spots show anywhere.
    Spots: floating button (bottom-right), footer, end of the About page, bottom of the Seldovia Today card. */
-const SUPPORT_URL="";
+const SUPPORT_URL="https://buymeacoffee.com/seldovia";
 window.SUPPORT_URL=SUPPORT_URL;
 
 /* Google Analytics (Jenny, Oct 6). Paste her Measurement ID between the quotes, e.g. "G-ABC123XYZ".
@@ -142,7 +143,15 @@ if(SUPPORT_URL && PAGE!=="admin"){
   const sLink=(cls,html)=>`<a class="${cls}" href="${esc(SUPPORT_URL)}" target="_blank" rel="noopener">${html}</a>`;
   const fb=document.querySelector(".foot-brand");
   if(fb) fb.insertAdjacentHTML("beforeend", `<p class="foot-support">${sLink("support-link","☕ Support Seldovia.com: buy us a coffee")}</p>`);
-  document.body.insertAdjacentHTML("beforeend", sLink("support-float",`<span aria-hidden="true">☕</span><span class="sf-text">Support the site</span>`));
+  // Jenny's official Buy Me a Coffee widget (settings copied from her Oct 6 email). The widget waits for the page's
+  // DOMContentLoaded event, which has already happened by the time we add it, so we re-send that event once it loads.
+  const bmc=document.createElement("script");
+  Object.entries({"data-name":"BMC-Widget","data-cfasync":"false","data-id":"Seldovia","data-description":"Support me on Buy me a coffee!",
+    "data-message":"Thanks so much for your support!  We appreciate you stopping by and we love that you LOVE Seldovia!  :)  Thanks for the coffee (or tea)!  ",
+    "data-color":"#5F7FFF","data-position":"Right","data-x_margin":"18","data-y_margin":"18"}).forEach(([k,v])=>bmc.setAttribute(k,v));
+  bmc.src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js";
+  bmc.onload=()=>{ const ev=document.createEvent("Event"); ev.initEvent("DOMContentLoaded",false,false); window.dispatchEvent(ev); };
+  document.body.appendChild(bmc);
   document.body.classList.add("has-support");
   const slot=document.querySelector("#supportSlot");
   if(slot) slot.innerHTML=`<div class="support-card"><h3>Enjoying Seldovia.com?</h3><p>This site is a community project. If you find it useful, you can help keep it running.</p>${sLink("btn btn-primary","☕ Buy us a coffee")}</div>`;
