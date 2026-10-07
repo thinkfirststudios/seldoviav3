@@ -1,32 +1,7 @@
 {
- "updated": "2026-10-06T18:26:04Z",
+ "updated": "2026-10-07T06:06:22Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1791321300000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
-  },
-  {
-   "start": 1791324000000,
-   "allDay": false,
-   "title": "Seldovia Public Library Hours"
-  },
-  {
-   "start": 1791328500000,
-   "allDay": false,
-   "title": "SVT - Kids After School Time"
-  },
-  {
-   "start": 1791332100000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Departs to Homer"
-  },
-  {
-   "start": 1791338400000,
-   "allDay": false,
-   "title": "SOCC - Adult Pottery Class"
-  },
   {
    "start": 1791388800000,
    "allDay": false,
@@ -238,6 +213,11 @@
    "title": "AMHS - Tustumena Departs to Homer"
   },
   {
+   "start": 1791939600000,
+   "allDay": false,
+   "title": "SVT - Community Assistance Program Meeting"
+  },
+  {
    "start": 1791940500000,
    "allDay": false,
    "title": "SRSA Board Special Meeting"
@@ -273,6 +253,11 @@
    "title": "SOCC - Teen Night"
   },
   {
+   "start": 1792085400000,
+   "allDay": false,
+   "title": "SVT – Dr. Marlowe Veterinary Services"
+  },
+  {
    "start": 1792087200000,
    "allDay": false,
    "title": "SOCC - Yoga"
@@ -301,6 +286,21 @@
    "start": 1792106100000,
    "allDay": false,
    "title": "SVT - Kids After School Time"
+  },
+  {
+   "start": 1792109700000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Departs to Homer"
+  },
+  {
+   "start": 1792114200000,
+   "allDay": false,
+   "title": "SOCC - Mahjong Game Night"
+  },
+  {
+   "start": 1792166400000,
+   "allDay": false,
+   "title": "SVT - Fitness Center"
   }
  ]
 }
