@@ -6,7 +6,7 @@
 <meta name="description" content="About Seldovia, Alaska — the natural beauty, a town tour, demographics and weather, and the rich history of our boardwalk town on Kachemak Bay.">
 <meta name="theme-color" content="#F8E6DD">
 <title>About Seldovia — History, Town Tour & Map</title>
-<link rel="stylesheet" href="styles.css?v=121">
+<link rel="stylesheet" href="styles.css?v=122">
 <style>
   .about-prose{max-width:74ch; margin-inline:auto; font-size:1.05rem; line-height:1.72;}
   /* Section headings in the Lovestory brushstroke, consistent with the rest of the site (Jenny). */
@@ -21,6 +21,9 @@
   .about-full{max-width:var(--maxw); columns:auto;}
   .about-full h2{margin-bottom:.9rem; text-align:center;}
   /* Jenny's quote under the About banner, in the Lovestory script (Oct 6). */
+  .about-intro{text-align:center; padding-bottom:0;}
+  .about-intro .about-h{font-size:clamp(2.6rem,5.4vw,4.2rem); max-width:22ch; margin:0 auto .8rem;}
+  .about-intro p{max-width:72ch; margin:0 auto 1rem; font-size:1.08rem; line-height:1.75; color:var(--text);}
   main p.about-quote{font-family:var(--script); font-weight:400; color:var(--heading); text-align:center; font-size:clamp(2rem,4.2vw,3.2rem); line-height:1.15; max-width:960px; margin:clamp(16px,2.4vw,28px) auto 0; padding:0 var(--gutter); -webkit-text-stroke:0;}
   .about-full p{margin:0 0 1rem; break-inside:avoid;}
   /* iOS Safari can drop multi-column content; force a single column on phones so the text always shows. */
@@ -73,6 +76,13 @@
   <h1 class="visually-hidden">About Seldovia</h1>
   <p class="about-quote">&ldquo;We chose Seldovia as it was a great place <br class="q-br">for our kids to grow up!&rdquo;</p>
 
+  <!-- Seldovia.com intro — Jenny's own words (Oct 6), from the old site's welcome -->
+  <section class="section wrap about-intro">
+    <h2 class="about-h">Thank you for stopping by our Seldovia portal!</h2>
+    <p>Our hope is that this website will serve as an avenue to &ldquo;see&rdquo; Seldovia &ndash; either for the first time, as you plan a trip to Alaska, or to catch up and touch base with your hometown and favorite Alaskan community!</p>
+    <p>In Seldovia, you will experience gorgeous views of majestic mountains sitting over sparkling waters, long stretches of sandy shores and plentiful and towering spruce forests reaching from the tree line to the water&rsquo;s edge. We believe Seldovia is one of Alaska&rsquo;s most beautifully situated seaside towns where visitors will always find the beauty they are looking for, inseparable from our welcoming people. The authenticity of Seldovia&rsquo;s citizens will make you feel at home, and give you cause to remember your journey to The True Alaska with fondness! Shhhh&hellip; We are Alaska&rsquo;s Best Kept Secret!</p>
+  </section>
+
   <!-- MAP (two columns) — at the top: bright and cheery is the first thing you see (Jenny) -->
   <section class="section wrap">
     <div class="about-map-two">
@@ -117,7 +127,7 @@
         <div class="tour-item"><h4>Arriving in Seldovia</h4><p>You'll arrive through the SOV Airport, the Seldovia Harbor, the AMHS Ferry Dock, or the Jakolof Bay Dock. Although there are no highways to Seldovia, you can bring your car to town on the M/V Tustumena ferry.</p></div>
         <div class="tour-item"><h4>The Harbor</h4><p>Seldovia's harbor is a vital link between work, recreation, and local access. Transient space is usually available for visitors — call the Harbor Master.</p></div>
         <div class="tour-item"><h4>Main Street</h4><p>Main Street parallels the waterfront and runs the full north-south length of town. We're very pleased to inform you there are no traffic lights in Seldovia!</p></div>
-        <div class="tour-item"><h4>Business Community</h4><p>Seldovia has a nice mix of businesses supporting both the local community and the tourist trade. That said, we don't have banks, auto dealers, attorneys, movie theaters, or super stores.</p></div>
+        <div class="tour-item"><h4>Business Community</h4><p>Seldovia has a nice mix of businesses supporting both the local community and the tourist trade. That said, we don't have banks, auto dealers, tattoo parlors, movie theaters, or super stores.</p></div>
         <div class="tour-item"><h4>Community Services</h4><p>Seldovia is fortunate to have virtually all the basic services — water, sewer, power, phone, and internet — that a small community needs.</p></div>
       </div>
     </div>
@@ -157,6 +167,6 @@
   <!-- Buy Me a Coffee card: filled in by app.js only once SUPPORT_URL is set (Jenny, Oct 6) -->
   <section class="section wrap" id="supportSlot" style="padding-top:0"></section>
 </main>
-<script src="app.js?v=117"></script>
+<script src="app.js?v=118"></script>
 </body>
 </html>

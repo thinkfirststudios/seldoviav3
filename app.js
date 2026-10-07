@@ -125,6 +125,44 @@ const FOOTER=`
 document.body.insertAdjacentHTML("afterbegin", HEADER);
 document.body.insertAdjacentHTML("beforeend", FOOTER);
 
+/* "Add to your phone" / "Make us your home page" helper (Jenny, Oct 6). Browsers don't allow a website to set
+   itself as someone's home page (a security rule), so this shows short steps for the browser they're using. */
+if(document.querySelector(".keep-handy")){
+  let installEvt=null; window.addEventListener("beforeinstallprompt",e=>{ e.preventDefault(); installEvt=e; });
+  const ua=navigator.userAgent, isIOS=/iPhone|iPad|iPod/.test(ua)||(/Macintosh/.test(ua)&&"ontouchend" in document), isAndroid=/Android/.test(ua);
+  const browser=/Edg\//.test(ua)?"edge":/Firefox\//.test(ua)?"firefox":/Chrome\//.test(ua)?"chrome":/Safari\//.test(ua)?"safari":"other";
+  const url=location.origin+location.pathname.replace(/[^/]*$/,"");
+  const STEPS={
+    phone: isIOS ? ["On your iPhone or iPad, open Seldovia.com in <b>Safari</b>.","Tap the <b>Share</b> button (the square with an arrow pointing up).","Scroll down and tap <b>Add to Home Screen</b>, then <b>Add</b>.","Seldovia.com now has its own icon on your home screen."]
+         : ["Open Seldovia.com in <b>Chrome</b> on your phone.","Tap the <b>⋮</b> menu in the top corner.","Tap <b>Add to Home screen</b> (or <b>Install app</b>), then <b>Add</b>.","Seldovia.com now has its own icon on your home screen."],
+    chrome:["Click the <b>⋮</b> menu at the top right, then <b>Settings</b>.","Choose <b>On startup</b>, then <b>Open a specific page or set of pages</b>.","Click <b>Add a new page</b> and paste: <code>"+url+"</code>"],
+    edge:["Click the <b>⋯</b> menu at the top right, then <b>Settings</b>.","Choose <b>Start, home, and new tabs</b>.","Under <b>When Edge starts</b>, pick <b>Open these pages</b>, then <b>Add a new page</b> and paste: <code>"+url+"</code>"],
+    safari:["With Seldovia.com open, click <b>Safari</b> in the menu bar, then <b>Settings</b>.","Choose the <b>General</b> tab.","Next to <b>Homepage</b>, click <b>Set to Current Page</b>."],
+    firefox:["Click the <b>☰</b> menu at the top right, then <b>Settings</b>.","Choose <b>Home</b>.","Next to <b>Homepage and new windows</b>, pick <b>Custom URLs</b>, then <b>Use Current Page</b>."]
+  };
+  const NAMES={chrome:"Chrome",edge:"Microsoft Edge",safari:"Safari",firefox:"Firefox"};
+  const modal=document.createElement("div"); modal.className="kh-modal"; modal.hidden=true; modal.setAttribute("role","dialog"); modal.setAttribute("aria-modal","true");
+  modal.innerHTML=`<div class="kh-card"><button type="button" class="kh-close" aria-label="Close">✕</button><div class="kh-body"></div></div>`;
+  document.body.appendChild(modal);
+  const list=a=>"<ol>"+a.map(x=>"<li>"+x+"</li>").join("")+"</ol>";
+  const open=kind=>{ const b=modal.querySelector(".kh-body"); let h;
+    if(kind==="phone") h=`<h3>Add Seldovia.com to your phone</h3><p>Put Seldovia.com on your home screen like an app, one tap away.</p>${list(STEPS.phone)}`;
+    else { const k=NAMES[browser]?browser:"chrome";
+      h=`<h3>Make Seldovia.com your home page</h3><p>Browsers don't let websites change this for you, but it only takes a moment. In <b>${NAMES[k]}</b>:</p>${list(STEPS[k])}`
+       +`<details><summary>Using a different browser?</summary>${Object.keys(NAMES).filter(x=>x!==k).map(x=>`<p><b>${NAMES[x]}</b></p>${list(STEPS[x])}`).join("")}</details>`; }
+    b.innerHTML=h; modal.hidden=false; document.body.style.overflow="hidden"; modal.querySelector(".kh-close").focus(); };
+  const close=()=>{ modal.hidden=true; document.body.style.overflow=""; };
+  modal.addEventListener("click",e=>{ if(e.target===modal||e.target.closest(".kh-close")) close(); });
+  document.addEventListener("keydown",e=>{ if(e.key==="Escape"&&!modal.hidden) close(); });
+  document.querySelectorAll(".kh-btn").forEach(btn=>btn.addEventListener("click",async()=>{
+    const kind=btn.dataset.kh;
+    if(kind==="phone" && installEvt){ installEvt.prompt(); try{ await installEvt.userChoice; }catch(e){} installEvt=null; return; }   // Android: the browser's own install box
+    open(kind);
+  }));
+  // Phones show the phone option first; computers show the home page option first.
+  if(isIOS||isAndroid) document.querySelector(".keep-handy").classList.add("is-phone");
+}
+
 /* Buy Me a Coffee (Jenny, Oct 6). Paste her Buy Me a Coffee page link between the quotes when she has it,
    e.g. "https://buymeacoffee.com/seldovia". While it's empty, NONE of the support spots show anywhere.
    Spots: floating button (bottom-right), footer, end of the About page, bottom of the Seldovia Today card. */
@@ -133,7 +171,7 @@ window.SUPPORT_URL=SUPPORT_URL;
 
 /* Google Analytics (Jenny, Oct 6). Paste her Measurement ID between the quotes, e.g. "G-ABC123XYZ".
    While it's empty nothing is loaded. The admin pages are never tracked, so editing doesn't skew the numbers. */
-const GA_ID="";
+const GA_ID="G-21Z7EEMDYQ";
 if(GA_ID && PAGE!=="admin"){
   const g=document.createElement("script"); g.async=true; g.src="https://www.googletagmanager.com/gtag/js?id="+encodeURIComponent(GA_ID); document.head.appendChild(g);
   window.dataLayer=window.dataLayer||[]; window.gtag=function(){ dataLayer.push(arguments); };
@@ -194,7 +232,7 @@ document.body.insertAdjacentHTML("beforeend", `
 
 /* ============================================================ MOCK DATA ============================================================ */
 // 8 home categories (Jenny's groupings). Order maps to images/categories/cat-0..7.jpg.
-const CATEGORIES=[{b:"About",s:"Location & history",key:"about"},{b:"Travel",s:"Getting to Seldovia",key:"travel"},{b:"Lodging & Camping",s:"Places to stay",key:"stay"},{b:"Eat",s:"Restaurants, bar & stores",key:"eat"},{b:"Shop & Gifts",s:"Shops, gifts & nursery",key:"shop"},{b:"Activities & Hikes",s:"Tours, charters & trails",key:"activities"},{b:"Businesses",s:"Local trades & services",key:"services"},{b:"Organizations & Govt.",s:"Public & Govt.",key:"life"},{b:"Gardens, Parks & Beaches",s:"Green spaces & shoreline",key:"gardens"},{b:"Landmarks",s:"Notable spots",key:"landmarks"}];
+const CATEGORIES=[{b:"About",s:"Location & history",key:"about"},{b:"Come On Over",s:"Getting to Seldovia",key:"travel"},{b:"Stay a While",s:"Places to stay",key:"stay"},{b:"Grab a Bite",s:"Restaurants, bar & stores",key:"eat"},{b:"Shop & Gifts",s:"Shops, gifts & nursery",key:"shop"},{b:"Activities & Hikes",s:"Tours, charters & trails",key:"activities"},{b:"Businesses",s:"Local trades & services",key:"services"},{b:"Organizations & Govt.",s:"Public & Govt.",key:"life"},{b:"Gardens, Parks & Beaches",s:"Green spaces & shoreline",key:"gardens"},{b:"Landmarks",s:"Notable spots",key:"landmarks"}];
 // REAL Seldovia places — sourced from the existing seldovia.com business directory.
 // No star ratings or review counts: we don't have real review data, so we don't invent it.
 // Explore directory — all Seldovia businesses, grouped into the 8 categories (key).
@@ -342,9 +380,9 @@ const placeBadge=p=>{ let b=CAT_BADGE[p.key]||""; if(p.key==="life"){ const g=(p
 // Government is a flavor of "life" (Public Services) that shows a G badge.
 const EXPLORE_CATS=[
   {token:"about",     label:"About (Location & History)",  key:"about",      govt:false},
-  {token:"travel",    label:"Travel",                      key:"travel",     govt:false},
-  {token:"stay",      label:"Lodging & Camping",           key:"stay",       govt:false},
-  {token:"eat",       label:"Eat",                         key:"eat",        govt:false},
+  {token:"travel",    label:"Come On Over",                key:"travel",     govt:false},
+  {token:"stay",      label:"Stay a While",                key:"stay",       govt:false},
+  {token:"eat",       label:"Grab a Bite",                 key:"eat",        govt:false},
   {token:"shop",      label:"Shop & Gifts",                key:"shop",       govt:false},
   {token:"activities",label:"Activities & Hikes",          key:"activities", govt:false},
   {token:"gardens",   label:"Gardens, Parks & Beaches",    key:"gardens",    govt:false},
@@ -4407,7 +4445,14 @@ if($("#catGrid")) $("#catGrid").innerHTML=CATEGORIES.map((c,i)=>{
 if($("#featureMedia")) $("#featureMedia").innerHTML=`<img class="feature-photo" src="images/photos/220627_SeldoviaHarbor_Melody.jpg" alt="Seldovia Harbor at first light" loading="lazy" width="1200" height="1200">`;
 
 // places (directory highlights) with tabs — reads ?cat= from URL for deep-links
-const PLACE_TABS=[["all","All"],["about","About"],["travel","Travel"],["stay","Lodging & Camping"],["eat","Eat"],["shop","Shop & Gifts"],["activities","Activities & Hikes"],["gardens","Gardens, Parks & Beaches"],["landmarks","Landmarks"],["services","Businesses"],["life","Organizations & Govt."],["outoftown","Out of Town"]];
+// Text normalizer for searching: ignores case, accents, apostrophes and punctuation ("chanik" finds "Ch'anik'na").
+const normS=t=>String(t||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/['\u2019`]/g,"").replace(/[^a-z0-9]+/g," ").trim();
+let placeQuery="";
+if($("#placeGrid") && $("#placeTabs")){
+  $("#placeTabs").insertAdjacentHTML("beforebegin",`<div class="place-search"><span aria-hidden="true">🔍</span><input id="placeSearch" type="search" placeholder="Search businesses &amp; places on Explore…" aria-label="Search Explore" autocomplete="off"><span id="placeCount" class="place-count"></span></div>`);
+  let t=null; $("#placeSearch").addEventListener("input",e=>{ clearTimeout(t); t=setTimeout(()=>{ placeQuery=e.target.value.trim(); renderPlaces(); },150); });
+}
+const PLACE_TABS=[["all","All"],["about","About"],["travel","Come On Over"],["stay","Stay a While"],["eat","Grab a Bite"],["shop","Shop & Gifts"],["activities","Activities & Hikes"],["gardens","Gardens, Parks & Beaches"],["landmarks","Landmarks"],["services","Businesses"],["life","Organizations & Govt."],["outoftown","Out of Town"]];
 // Jenny (Oct 1): link out to these organizations' own sites instead of hosting a page.
 // Applied at render so it works whether the link comes from static data or the DB.
 const ORG_LINK={
@@ -4473,7 +4518,11 @@ function scrollToFind(containerSel){
   const find=new URLSearchParams(location.search).get("find"); if(!find) return false;
   const name=decodeURIComponent(find).trim().toLowerCase();
   const cont=document.querySelector(containerSel); if(!cont) return false;
-  const h=[...cont.querySelectorAll("h4")].find(x=>x.textContent.trim().toLowerCase()===name);
+  // A card Jenny renamed in the admin shows its new name, so accept the old or the new one.
+  const names=new Set([name]);
+  Object.entries(EXPLORE_META).forEach(([orig,m])=>{ const nn=String((m&&m.name)||"").trim().toLowerCase();
+    if(orig.toLowerCase()===name && nn) names.add(nn); if(nn===name) names.add(orig.toLowerCase()); });
+  const h=[...cont.querySelectorAll("h4")].find(x=>names.has(x.textContent.trim().toLowerCase()));
   if(!h) return false;
   const card=h.closest("article,.place,.dir-item,li")||h.parentElement;
   card.scrollIntoView({behavior:"smooth",block:"center"}); card.classList.add("search-hit");
@@ -4495,7 +4544,10 @@ function renderPlaces(){
     if(bn.getAttribute("src")!==src){ bn.setAttribute("src",src); bn.alt=t[1]; } }
   // Businesses first (alphabetical); trails & beaches sink to the bottom (Jenny #3).
   // Everything alphabetical, trails included (Jenny: keep continuity, no separate group at the bottom).
-  const rows=PLACES.filter(p=>(placeTab==="all"||p.key===placeTab||(p._extra&&p._extra.includes(placeTab))) && !EXPLORE_HIDDEN.has(p.name)).sort((a,b)=>a.name.localeCompare(b.name));
+  const pq=normS(placeQuery);
+  const placeText=p=>{ const m=EXPLORE_META[p.name]||{}; return normS([p.name,m.name,m.label,p.cat,m.owner,m.desc||BIZ_BLURB[p.name],m.loc].join(" ")); };
+  const rows=PLACES.filter(p=>(pq ? true : (placeTab==="all"||p.key===placeTab||(p._extra&&p._extra.includes(placeTab)))) && !EXPLORE_HIDDEN.has(p.name)
+      && (!pq || pq.split(" ").every(w=>placeText(p).includes(w)))).sort((a,b)=>a.name.localeCompare(b.name));
   const pin=`<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.3-7-11a7 7 0 0 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>`;
   // Placeholder photo until Qwynny's square B&W watercolor images land (set p.img; p.imgColor for the sponsor color version).
   const placeCard=p=>{
@@ -4522,7 +4574,8 @@ function renderPlaces(){
     const contact=phone?`<div class="place-contact"><a href="tel:${String(phone).replace(/[^\d]/g,"")}">📞 ${esc(phone)}</a></div>`:"";
     return `<div class="place place-static">${media}${body}${contact}</div></div>`;
   };
-  $("#placeGrid").innerHTML=rows.length?rows.map(placeCard).join(""):`<p class="form-note" style="grid-column:1/-1;color:var(--text-soft)">Nothing in this category yet — it is being sorted in. Check back soon.</p>`;
+  $("#placeGrid").innerHTML=rows.length?rows.map(placeCard).join(""):`<p class="form-note" style="grid-column:1/-1;color:var(--text-soft)">${pq?`Nothing on Explore matches “${esc(placeQuery)}”. Try a shorter word, or the <a href="search.html?q=${encodeURIComponent(placeQuery)}">full site search</a>.`:"Nothing in this category yet — it is being sorted in. Check back soon."}</p>`;
+  const pc=$("#placeCount"); if(pc) pc.textContent=pq?`${rows.length} found`:"";
   // Reveal "Read more" only on cards whose 3-line blurb is actually clipped.
   requestAnimationFrame(()=>{ $$("#placeGrid .place-blurb").forEach(b=>{ const btn=b.nextElementSibling; if(btn&&btn.classList.contains("place-more")&&b.scrollHeight>b.clientHeight+2) btn.hidden=false; }); });
   if(!_findScrolled) requestAnimationFrame(()=>{ if(scrollToFind("#placeGrid")) _findScrolled=true; });
@@ -4948,21 +5001,66 @@ document.addEventListener("click",e=>{const b=e.target.closest(".add-cal"); if(b
 
 /* ============================================================ GLOBAL SEARCH ============================================================ */
 const INDEX=[
-  ...PLACES.map(p=>({type:"Place",title:p.name,desc:p.phone?`${p.cat} · ${p.phone}`:p.cat,href:"explore.html?cat="+p.key+"&find="+encodeURIComponent(p.name),kw:p.cat+" "+p.key})),
+  ...PLACES.map(p=>({type:"Place",title:p.name,desc:p.phone?`${p.cat} · ${p.phone}`:p.cat,href:"explore.html?find="+encodeURIComponent(p.name),kw:p.cat+" "+p.key})),
   ...LISTINGS.map(l=>({type:"Real Estate",title:l.name,desc:l.cat,href:"real-estate.html",kw:l.cat})),
   ...CATEGORIES.map(c=>({type:"Category",title:c.b,desc:c.s,href:"explore.html?cat="+c.key,kw:c.key+" "+({about:"about history location story seldovia town kachemak bay herring",travel:"travel ferry air taxi water taxi plane amhs smokey bay mako halibut cove get to seldovia transportation",stay:"stay sleep lodging hotel inn cabin lodge rental bnb bed suites vacation",eat:"food eat restaurant cafe bar grill grocery store meal dine breakfast lunch dinner drinks",shop:"shop store gift gifts nursery plants boutique sea glass grocery",activities:"activities tour charter fishing diving kayak trail hike beach rentals things to do outdoors",services:"services construction salon marine fuel real estate property care trades help",life:"life community organization tribe city church school library clinic emergency police post office chamber"}[c.key]||"")})),
   ...EVENTS.map(e=>({type:"Event",title:e.title,desc:`${fmtDayLabel(e.d)} · ${e.where}`,href:"calendar.html",kw:e.cat+" "+e.where})),
-  ...DIRECTORY.map(d=>({type:"Directory",title:d.name,desc:`${d.cat} · ${d.phone}`,href:"phone-book.html?find="+encodeURIComponent(d.name),kw:d.cat})),
+  ...DIRECTORY.map(d=>({type:"Phone Book",title:d.name,desc:`${d.cat} · ${d.phone}`,href:"phone-book.html?find="+encodeURIComponent(d.name),kw:d.cat})),
   ...NOTES.map(n=>({type:"News",title:n.title,desc:n.body,href:"gazette.html",kw:n.cat})),
   {type:"Guide",title:"Getting to Seldovia",desc:"Ferry, floatplane, and water-taxi options from Homer.",href:"explore.html",kw:"ferry floatplane water taxi homer travel arrive"},
   {type:"Info",title:"Ferry schedule (AMHS)",desc:"Alaska Marine Highway sailings to and from Homer.",href:"calendar.html",kw:"ferry amhs tustumena schedule boat"},
 ];
-function scoreMatch(it,q){const hay=(it.title+" "+it.desc+" "+it.kw+" "+it.type).toLowerCase(); let s=0;
-  q.forEach(tok=>{if(!tok)return; const t=it.title.toLowerCase(); if(t.startsWith(tok))s+=6; else if(t.includes(tok))s+=4; if(hay.includes(tok))s+=2; else if(hay.split(/\W+/).some(w=>w.startsWith(tok)))s+=1;});
-  // Surface categories/places/listings above blog posts for the same query (e.g. "food" -> Where to Eat).
-  if(s>0)s+=({Category:5,Place:3,"Real Estate":3,Directory:1,Info:2,Guide:2}[it.type]||0); return s;}
-function runSearch(raw){const q=raw.toLowerCase().trim().split(/\s+/).filter(Boolean); if(!q.length)return[]; return INDEX.map(it=>({it,s:scoreMatch(it,q)})).filter(x=>x.s>0).sort((a,b)=>b.s-a.s).slice(0,8).map(x=>x.it);}
-function hl(text,raw){const q=raw.trim().split(/\s+/).filter(Boolean).map(t=>t.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")); if(!q.length)return esc(text); return esc(text).replace(new RegExp("("+q.join("|")+")","ig"),"<mark>$1</mark>");}
+// Live search data (Jenny Oct 6: "volunteer" found nothing, "Russian Orthodox Church" landed on the wrong card).
+// The built-in index only knew the site's original businesses; this adds everything Jenny and Qwynny manage in
+// the admin: added and renamed Explore cards, the Phone Book (businesses + neighbors) and the real estate listings.
+let _liveSearch=null, _liveReady=false;
+window.loadLiveSearch=function(){
+  if(_liveSearch) return _liveSearch;
+  if(!window.db){ _liveReady=true; return (_liveSearch=Promise.resolve()); }
+  const J=v=>{ try{ return v?JSON.parse(v):null; }catch(e){ return null; } };
+  _liveSearch=Promise.all([
+    db.from("settings").select("key,value").in("key",["explore_added","explore_meta","explore_hidden","explore_overrides"]),
+    db.from("directory").select("name,cat,phone,section").eq("published",true),
+    db.from("directory_submissions").select("display_name,data,listing_type,status").eq("status","approved").neq("listing_type","business"),
+    db.from("listings").select("address,price,status,slug,published").eq("published",true)
+  ]).then(([st,dir,ppl,lst])=>{
+    const S={}; ((st&&st.data)||[]).forEach(r=>S[r.key]=J(r.value));
+    const meta=S.explore_meta||{}, hidden=new Set(S.explore_hidden||[]), over=S.explore_overrides||{};
+    const all=PLACES.slice(); (S.explore_added||[]).forEach(a=>{ if(a&&a.name&&!all.some(p=>p.name===a.name)) all.push({name:a.name,cat:a.cat||"",key:a.key||"services",phone:a.phone||""}); });
+    const catName=k=>{ const t=PLACE_TABS.find(x=>x[0]===k); return t?t[1]:""; };
+    const places=all.filter(p=>!hidden.has(p.name)).map(p=>{ const m=meta[p.name]||{}; const key=(over[p.name]&&CAT_BY_TOKEN[over[p.name]]?CAT_BY_TOKEN[over[p.name]].key:p.key);
+      const shown=m.name||p.name, label=m.label||p.cat||catName(key), phone=m.phone||p.phone||"";
+      return {type:"Explore",title:shown,desc:[label,phone].filter(Boolean).join(" · "),href:"explore.html?find="+encodeURIComponent(p.name),
+              kw:[p.name,p.cat,label,catName(key),m.owner,m.loc,m.desc||BIZ_BLURB[p.name]].filter(Boolean).join(" ")}; });
+    const pb=((dir&&dir.data)||[]).map(d=>({type:"Phone Book",title:d.name,desc:[d.cat,d.phone].filter(Boolean).join(" · "),href:"phone-book.html?find="+encodeURIComponent(d.name),kw:[d.cat,d.section].join(" ")}));
+    const people=((ppl&&ppl.data)||[]).map(s=>({type:"Phone Book",title:s.display_name||(s.data||{}).name||"",desc:"Neighbor",href:"phone-book.html?find="+encodeURIComponent(s.display_name||""),kw:"neighbor resident"})).filter(x=>x.title);
+    const homes=((lst&&lst.data)||[]).map(l=>({type:"Real Estate",title:l.address,desc:[l.status,l.price].filter(Boolean).join(" · "),href:"listing.html?id="+encodeURIComponent(l.slug||""),kw:"real estate home house land property for sale listing "+(l.status||"")}));
+    // Swap the built-in Place / Directory / Real Estate entries for the live ones (keep the built-ins if a source failed).
+    const drop=new Set(["Place"]); if(pb.length) drop.add("Phone Book"); if(homes.length) drop.add("Real Estate");
+    for(let i=INDEX.length-1;i>=0;i--) if(drop.has(INDEX[i].type)) INDEX.splice(i,1);
+    INDEX.push(...places,...pb,...people,...homes);
+  }).catch(()=>{}).then(()=>{ _liveReady=true; });
+  return _liveSearch;
+};
+// Every word typed has to match (so "russian orthodox church" finds the church, not anything with "church").
+// Falls back to "any word" only when nothing matches all of them.
+function scoreMatch(it,q){const t=normS(it.title), hay=normS(it.title+" "+it.desc+" "+it.kw+" "+it.type); const words=hay.split(" "); let s=0, hits=0;
+  q.forEach(tok=>{ tok=normS(tok); if(!tok)return; let h=0;
+    if(t===tok)h+=10; else if(t.startsWith(tok))h+=6; else if(t.includes(tok))h+=4;
+    if(hay.includes(tok))h+=2; else if(words.some(w=>w.startsWith(tok)))h+=1;
+    if(h){ s+=h; hits++; } });
+  if(!s) return 0;
+  if(normS(q.join(" ")) && t.includes(normS(q.join(" "))))s+=8;            // the whole phrase is in the name
+  s+=({Category:5,Explore:4,Place:3,"Real Estate":3,"Phone Book":2,Info:2,Guide:2}[it.type]||0);
+  return {s,all:hits===q.filter(x=>normS(x)).length};}
+function rankSearch(raw){const q=raw.trim().split(/\s+/).filter(Boolean); if(!q.length)return[];
+  const scored=INDEX.map(it=>({it,r:scoreMatch(it,q)})).filter(x=>x.r);
+  const strict=scored.filter(x=>x.r.all); const use=strict.length?strict:scored;
+  return use.sort((a,b)=>b.r.s-a.r.s).map(x=>x.it);}
+function runSearch(raw){ return rankSearch(raw).slice(0,8); }
+function hl(text,raw){const q=raw.trim().split(/\s+/).filter(t=>t.length>1).map(t=>t.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")); const str=String(text??"");
+  if(!q.length)return esc(str);   // highlight on the plain text, THEN escape each piece (was breaking "&" into "&amp;" when "a" was searched)
+  return str.split(new RegExp("("+q.join("|")+")","ig")).map((part,k)=>k%2?"<mark>"+esc(part)+"</mark>":esc(part)).join("");}
 // The hero results box is position:fixed so it escapes the hero's overflow:clip (was hidden
 // on mobile / clipped on desktop). Anchor it under the search card each time it shows.
 function placeBox(box){ if(!box) return;
@@ -4971,7 +5069,9 @@ function placeBox(box){ if(!box) return;
   const w = box.id==="navResults" ? Math.max(r.width, 300) : r.width;
   box.style.position="fixed"; box.style.top=(r.bottom+8)+"px"; box.style.width=w+"px";
   box.style.left = (box.id==="navResults" ? Math.max(8, r.right - w) : r.left) + "px"; }
-function renderResults(box,raw){const res=runSearch(raw);
+function renderResults(box,raw){
+  if(!_liveReady){ window.loadLiveSearch().then(()=>{ const inp=box.id==="navResults"?$("#navSearch"):$("#heroSearch"); if(inp&&inp.value.trim()&&document.activeElement===inp) renderResults(box,inp.value); }); }
+  const res=runSearch(raw);
   if(!raw.trim()){box.classList.remove("show"); box.innerHTML=""; return;}
   const allLink=`<a class="r-item r-all" href="search.html?q=${encodeURIComponent(raw.trim())}" role="option"><span class="r-type">All</span><span><span class="r-title">See all results for “${esc(raw.trim())}” →</span></span></a>`;
   if(!res.length){box.innerHTML=`<div class="r-empty">No quick matches for "${esc(raw)}".</div>`+allLink;}
@@ -5005,22 +5105,26 @@ if($("#searchResults")){
   document.title = q ? `“${q}” — Search Seldovia.com` : "Search — Seldovia.com";
   const MON3=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
   const srDate=d=>{ if(!d)return""; const [y,m,day]=String(d).split("-"); return `${MON3[+m-1]} ${+day}, ${y}`; };
-  const allStatic=raw=>{const qq=raw.toLowerCase().trim().split(/\s+/).filter(Boolean); if(!qq.length)return[]; return INDEX.map(it=>({it,s:scoreMatch(it,qq)})).filter(x=>x.s>0).sort((a,b)=>b.s-a.s).map(x=>x.it);};
+  const allStatic=raw=>rankSearch(raw);
   const groupHTML=(type,items,raw)=>`<section class="sr-group"><h2 class="sr-h">${esc(type)}<span class="sr-count">${items.length}</span></h2>`
     + items.map(r=>`<a class="sr-item" href="${esc(r.href)}"><span class="r-type">${esc(r.type)}</span><span class="sr-main"><span class="r-title">${hl(r.title,raw)}</span>${r.desc?`<span class="r-desc">${hl(String(r.desc),raw)}</span>`:""}</span>${r.date?`<span class="sr-date">${esc(srDate(r.date))}</span>`:""}</a>`).join("")
     + `</section>`;
   if($("#searchPageForm")) $("#searchPageForm").addEventListener("submit",e=>{e.preventDefault(); const v=(input.value||"").trim(); location.href="search.html?q="+encodeURIComponent(v);});
   if(!q){ summary.innerHTML=`<span class="sr-hint">Search for a place, business, event, trail, or anything in Seldovia’s story — including the full news archive.</span>`; }
   else {
+    const ORDER=["Category","Explore","Place","Phone Book","Real Estate","Event","Guide","Info"];
+    box.innerHTML=`<div id="srStatic"><p class="sr-hint">Searching…</p></div><div id="srCal"></div><div id="srBlog"></div>`;
+    window.loadLiveSearch().then(()=>{
     const stat=allStatic(q).filter(r=>r.type!=="News"); // blog/news comes from the DB below
-    const ORDER=["Category","Place","Real Estate","Directory","Event","Guide","Info"];
     const groups={}; stat.forEach(r=>{ (groups[r.type]=groups[r.type]||[]).push(r); });
 
     // Render the INSTANT (static) results immediately so the page never sits on "Searching…"
     // while the DB and (slow, proxied) calendar feed load. Each source fills its slot as it returns.
     let statHtml=""; ORDER.forEach(t=>{ if(groups[t]&&groups[t].length) statHtml+=groupHTML(t,groups[t],q); });
-    box.innerHTML=`<div id="srStatic">${statHtml}</div><div id="srCal"></div><div id="srBlog"></div>`;
-    let nStat=stat.length, nBlog=0, nEv=0, done=0;
+    $("#srStatic").innerHTML=statHtml;
+    nStat=stat.length; setCount();
+    });
+    let nStat=0, nBlog=0, nEv=0, done=0;
     const setCount=()=>{ const total=nStat+nBlog+nEv;
       if(total) summary.innerHTML=`<b>${total.toLocaleString()}</b> result${total===1?"":"s"} for <span class="sr-q">“${esc(q)}”</span>`;
       else if(done>=2) summary.innerHTML=`No results for <span class="sr-q">“${esc(q)}”</span>. Try “ferry”, “cabin”, or “market”.`;

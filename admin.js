@@ -110,7 +110,7 @@
           ${TABS.map((t,i)=>`<button class="admin-tab ${i===0?"is-active":""}" data-tab="${t.key}" type="button">${t.label}</button>`).join("")}
         </div>
         <div style="display:flex;align-items:center;gap:.8rem">
-          <span style="font-size:.72rem;color:var(--text-soft)" title="If this number is old after refreshing, your browser cached the admin — clear site data / hard refresh.">admin build 54</span>
+          <span style="font-size:.72rem;color:var(--text-soft)" title="If this number is old after refreshing, your browser cached the admin — clear site data / hard refresh.">admin build 55</span>
           <button class="btn btn-ghost" id="logoutBtn" type="button">Sign out</button>
         </div>
       </div>
@@ -1097,14 +1097,14 @@
 
   /* ---------------- EXPLORE CATEGORIES (fix business badges) ---------------- */
   // Categories offered when ADDING a new Explore business (value = "<key>|<govt>").
-  const ADD_CATS=[["travel|0","Travel"],["stay|0","Lodging & Camping"],["eat|0","Eat"],["shop|0","Shop & Gifts"],["activities|0","Activities & Hikes"],["gardens|0","Gardens, Parks & Beaches"],["landmarks|0","Landmarks"],["services|0","Businesses"],["life|0","Organizations & Govt."],["life|1","Government"],["outoftown|0","Out of Town"]];
+  const ADD_CATS=[["travel|0","Come On Over (Travel)"],["stay|0","Stay a While (Lodging)"],["eat|0","Grab a Bite (Eat)"],["shop|0","Shop & Gifts"],["activities|0","Activities & Hikes"],["gardens|0","Gardens, Parks & Beaches"],["landmarks|0","Landmarks"],["services|0","Businesses"],["life|0","Organizations & Govt."],["life|1","Government"],["outoftown|0","Out of Town"]];
   function renderExploreCatsTab(){
     const EX=window.EXPLORE, host=$("#tab-bizcat");
     if(!EX||!EX.PLACES){ host.innerHTML=`<p class="form-note">Couldn't load the business list. Try reloading the page.</p>`; return; }
     const cats=EX.EXPLORE_CATS;
     const optsFor=sel=>cats.map(c=>`<option value="${c.token}"${c.token===sel?" selected":""}>${esc(c.label)}</option>`).join("");
     // Category keys a listing can ALSO be shown under (Jenny #11 — one listing in several tabs).
-    const XCATS=[["travel","Travel"],["stay","Lodging & Camping"],["eat","Eat"],["shop","Shop & Gifts"],["activities","Activities & Hikes"],["gardens","Gardens, Parks & Beaches"],["landmarks","Landmarks"],["services","Businesses"],["life","Organizations & Govt."],["outoftown","Out of Town"]];
+    const XCATS=[["travel","Come On Over (Travel)"],["stay","Stay a While (Lodging)"],["eat","Grab a Bite (Eat)"],["shop","Shop & Gifts"],["activities","Activities & Hikes"],["gardens","Gardens, Parks & Beaches"],["landmarks","Landmarks"],["services","Businesses"],["life","Organizations & Govt."],["outoftown","Out of Town"]];
     const xLabel=k=>{ const m=XCATS.find(c=>c[0]===k); return m?m[1]:k; };
     const xChips=name=>((extra[name]||[]).map(k=>`<button type="button" class="bc-xchip" data-name="${esc(name)}" data-key="${esc(k)}" style="border:1px solid var(--line);background:var(--surface-2);border-radius:999px;padding:.18rem .5rem;cursor:pointer">${esc(xLabel(k))} ✕</button>`).join("")||`<span style="opacity:.6">just its main category</span>`);
     let overrides={}, photos={}, meta={}, added=[], hidden=new Set(), extra={};
