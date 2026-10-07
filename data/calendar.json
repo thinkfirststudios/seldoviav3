@@ -1,17 +1,7 @@
 {
- "updated": "2026-10-07T13:31:17Z",
+ "updated": "2026-10-07T23:08:49Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1791388800000,
-   "allDay": false,
-   "title": "SVT - Fitness Center"
-  },
-  {
-   "start": 1791410400000,
-   "allDay": false,
-   "title": "Seldovia Public Library Hours"
-  },
   {
    "start": 1791414900000,
    "allDay": false,
@@ -121,6 +111,11 @@
    "start": 1791680400000,
    "allDay": false,
    "title": "St. Nicholas Russian Orthodox Church Vespers Service"
+  },
+  {
+   "start": 1791684000000,
+   "allDay": false,
+   "title": "SBE - Booster Club Meeting"
   },
   {
    "start": 1791741600000,
@@ -301,6 +296,11 @@
    "start": 1792166400000,
    "allDay": false,
    "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1792173600000,
+   "allDay": false,
+   "title": "Seldovia Bible Chapel - Kids Club"
   }
  ]
 }
