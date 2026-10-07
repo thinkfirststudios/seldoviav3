@@ -5071,9 +5071,12 @@ function placeBox(box){ if(!box) return;
   box.style.position="fixed"; box.style.top=(r.bottom+8)+"px"; box.style.width=w+"px";
   box.style.left = (box.id==="navResults" ? Math.max(8, r.right - w) : r.left) + "px"; }
 function renderResults(box,raw){
-  if(!_liveReady){ window.loadLiveSearch().then(()=>{ const inp=box.id==="navResults"?$("#navSearch"):$("#heroSearch"); if(inp&&inp.value.trim()&&document.activeElement===inp) renderResults(box,inp.value); }); }
+  // Jenny Oct 7: it briefly said "No quick matches" while the business list was still loading. Now it says
+  // "Searching…" until the list arrives, then always refreshes (even if the phone's focus moved away).
+  if(!_liveReady){ window.loadLiveSearch().then(()=>{ const inp=box.id==="navResults"?$("#navSearch"):$("#heroSearch"); if(inp&&inp.value.trim()&&box.classList.contains("show")) renderResults(box,inp.value); }); }
   const res=runSearch(raw);
   if(!raw.trim()){box.classList.remove("show"); box.innerHTML=""; return;}
+  if(!res.length && !_liveReady){ box.innerHTML=`<div class="r-empty">Searching…</div>`; box.classList.add("show"); placeBox(box); return; }
   const allLink=`<a class="r-item r-all" href="search.html?q=${encodeURIComponent(raw.trim())}" role="option"><span class="r-type">All</span><span><span class="r-title">See all results for “${esc(raw.trim())}” →</span></span></a>`;
   if(!res.length){box.innerHTML=`<div class="r-empty">No quick matches for "${esc(raw)}".</div>`+allLink;}
   else box.innerHTML=res.map((r,i)=>`<a class="r-item ${i===0?'active':''}" href="${r.href}" role="option"><span class="r-type">${esc(r.type)}</span><span><span class="r-title">${hl(r.title,raw)}</span><span class="r-desc">${hl(r.desc,raw)}</span></span></a>`).join("")+allLink;
@@ -5093,6 +5096,12 @@ function wireSearch(inputId,boxId){const input=document.getElementById(inputId),
 // and the hero search alike.
 ["heroResults","navResults"].forEach(id=>{ const b=document.getElementById(id); if(b && b.parentElement!==document.body) document.body.appendChild(b); });
 wireSearch("navSearch","navResults");
+// Start loading the full business list as soon as the page is ready, so search is instant when someone types.
+if(document.getElementById("navSearch")||document.getElementById("heroSearch")){
+  const pre=()=>{ try{ window.loadLiveSearch(); }catch(e){} };
+  if(document.readyState==="complete") setTimeout(pre,300); else window.addEventListener("load",()=>setTimeout(pre,300));
+  ["navSearch","heroSearch"].forEach(id=>{ const el=document.getElementById(id); if(el) el.addEventListener("focus",pre,{once:true}); });
+}
 wireSearch("heroSearch","heroResults");
 if($("#heroSearchBtn")) $("#heroSearchBtn").addEventListener("click",()=>{const v=$("#heroSearch").value.trim(); if(v) location.href="search.html?q="+encodeURIComponent(v); else $("#heroSearch").focus();});
 
