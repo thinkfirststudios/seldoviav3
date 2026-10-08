@@ -1,22 +1,7 @@
 {
- "updated": "2026-10-07T23:08:49Z",
+ "updated": "2026-10-08T06:12:08Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1791414900000,
-   "allDay": false,
-   "title": "SVT - Kids After School Time"
-  },
-  {
-   "start": 1791424800000,
-   "allDay": false,
-   "title": "CITY - Seldovia Planning Commission Regular Meeting"
-  },
-  {
-   "start": 1791428400000,
-   "allDay": false,
-   "title": "SOCC - Teen Night"
-  },
   {
    "start": 1791482400000,
    "allDay": false,
@@ -301,6 +286,21 @@
    "start": 1792173600000,
    "allDay": false,
    "title": "Seldovia Bible Chapel - Kids Club"
+  },
+  {
+   "start": 1792182600000,
+   "allDay": false,
+   "title": "Food Bank Shopping Day"
+  },
+  {
+   "start": 1792182600000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
+  },
+  {
+   "start": 1792202400000,
+   "allDay": false,
+   "title": "SOCC - Adult Pottery Class"
   }
  ]
 }
