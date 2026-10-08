@@ -184,9 +184,15 @@ if(SUPPORT_URL && PAGE!=="admin"){
   // Jenny's official Buy Me a Coffee widget (settings copied from her Oct 6 email). The widget waits for the page's
   // DOMContentLoaded event, which has already happened by the time we add it, so we re-send that event once it loads.
   const bmc=document.createElement("script");
-  Object.entries({"data-name":"BMC-Widget","data-cfasync":"false","data-id":"Seldovia","data-description":"Support me on Buy me a coffee!",
-    "data-message":"Thanks so much for your support!  We appreciate you stopping by and we love that you LOVE Seldovia!  :)  Thanks for the coffee (or tea)!  ",
-    "data-color":"#5F7FFF","data-position":"Right","data-x_margin":"18","data-y_margin":"18"}).forEach(([k,v])=>bmc.setAttribute(k,v));
+  // Jenny Oct 7: the automatic thank-you pop-up is "WAY too pushy". It now shows only ONCE per visit, and only on
+  // computers (never on phones). Leaving out data-message is what stops the widget from popping it up.
+  let showMsg=false;
+  try{ const phone=window.matchMedia("(max-width:760px), (pointer:coarse)").matches;
+       if(!phone && !sessionStorage.getItem("bmcShown")){ showMsg=true; sessionStorage.setItem("bmcShown","1"); } }catch(e){}
+  const bmcAttrs={"data-name":"BMC-Widget","data-cfasync":"false","data-id":"Seldovia","data-description":"Support me on Buy me a coffee!",
+    "data-color":"#5F7FFF","data-position":"Right","data-x_margin":"18","data-y_margin":"18"};
+  if(showMsg) bmcAttrs["data-message"]="Thanks so much for your support!  We appreciate you stopping by and we love that you LOVE Seldovia!  :)  Thanks for the coffee (or tea)!  ";
+  Object.entries(bmcAttrs).forEach(([k,v])=>bmc.setAttribute(k,v));
   bmc.src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js";
   bmc.onload=()=>{ const ev=document.createEvent("Event"); ev.initEvent("DOMContentLoaded",false,false); window.dispatchEvent(ev); };
   document.body.appendChild(bmc);
