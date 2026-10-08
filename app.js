@@ -110,7 +110,7 @@ const FOOTER=`
         <div class="foot-util"><span id="footTime">&mdash;:&mdash;</span></div>
       </div>
       <div class="foot-col"><h4>Explore</h4><ul><li><a href="explore.html">Directory</a></li><li><a href="explore.html#trails">Trails</a></li><li><a href="gazette.html">Seldovia Blog</a></li><li><a href="gallery.html">Photos</a></li><li><a href="calendar.html">Calendar</a></li></ul></div>
-      <div class="foot-col"><h4>Community</h4><ul><li><a href="phone-book.html">Phone Book</a></li><li><a href="index.html#sponsors">Sponsors</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="foot-col"><h4>Community</h4><ul><li><a href="phone-book.html">Phone Book</a></li><li><a href="index.html#sponsors">Sponsors</a></li><li><a href="contact.html">Contact</a></li><li><a href="mailto:info@seldovia.com">info@seldovia.com</a></li></ul></div>
       <div class="foot-col"><h4>Real Estate</h4><ul><li><a href="real-estate.html">Featured listings</a></li><li><a href="contact.html?topic=real%20estate">Home valuation</a></li></ul></div>
     </div>
     <div class="foot-bottom">
@@ -124,6 +124,10 @@ const FOOTER=`
 
 document.body.insertAdjacentHTML("afterbegin", HEADER);
 document.body.insertAdjacentHTML("beforeend", FOOTER);
+// Real Estate page: the brokerage's full details at the bottom (Jenny Oct 7: name, brokerage, physical + mailing
+// address, phone).
+if(PAGE==="realestate"){ const fb=document.querySelector("footer.site .foot-bottom");
+  if(fb) fb.insertAdjacentHTML("afterbegin",`<p class="re-foot-details"><b>Seldovia Property</b> · Jenny Chissus, Broker/Owner<br>320 Main Street, Seldovia, Alaska · Mailing: PO Box 263, Seldovia, AK 99663<br><a href="tel:+19074060044">907-406-0044</a> · <a href="mailto:jenny@seldoviaproperty.com">jenny@seldoviaproperty.com</a> · Alaska Real Estate License RECB16495</p>`); }
 
 /* "Add to your phone" / "Make us your home page" helper (Jenny, Oct 6). Browsers don't allow a website to set
    itself as someone's home page (a security rule), so this shows short steps for the browser they're using. */
@@ -4588,7 +4592,9 @@ function renderPlaces(){
   if(!_findScrolled) requestAnimationFrame(()=>{ if(scrollToFind("#placeGrid")) _findScrolled=true; });
 }
 if($("#placeTabs")){
-  $("#placeTabs").innerHTML=PLACE_TABS.map(([k,l])=>`<button class="tab" data-key="${k}" aria-pressed="${k===placeTab}">${esc(l)}</button>`).join("");
+  // Small descriptor under the playful tab names so first-time visitors know what they mean (Jenny Oct 7).
+  const TAB_SUB={travel:"travel & getting here",stay:"lodging & camping",eat:"food & dining"};
+  $("#placeTabs").innerHTML=PLACE_TABS.map(([k,l])=>`<button class="tab" data-key="${k}" aria-pressed="${k===placeTab}">${esc(l)}${TAB_SUB[k]?`<small class="tab-sub">${TAB_SUB[k]}</small>`:""}</button>`).join("");
   // On phones the tabs are one swipeable row; bring the selected tab into view (e.g. arriving from a home card).
   { const row=$("#placeTabs"), act=row.querySelector('.tab[aria-pressed="true"]');
     if(act && row.scrollWidth>row.clientWidth){ const a=act.getBoundingClientRect(), r=row.getBoundingClientRect();

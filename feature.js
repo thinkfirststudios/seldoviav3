@@ -11,7 +11,7 @@
       let f; try{ f=JSON.parse(data.value); }catch(e){ return; }
       const set=(id,txt)=>{ const el=document.getElementById(id); if(el && txt!=null && txt!=="") el.textContent=txt; };
       set("featEyebrow", f.eyebrow);
-      set("featTitle",   f.title);
+      // Title is now Jenny's logo image (Oct 7); the admin's title field no longer changes the heading.
       set("featBody",    f.body);
       const btn=document.getElementById("featBtn");
       if(btn){

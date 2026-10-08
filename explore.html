@@ -6,7 +6,7 @@
 <meta name="description" content="Explore Seldovia — the most popular things to do, filtered by dining, lodging, charters, outdoors, and arts.">
 <meta name="theme-color" content="#F8E6DD">
 <title>Explore Seldovia — Directory of Places</title>
-<link rel="stylesheet" href="styles.css?v=122">
+<link rel="stylesheet" href="styles.css?v=123">
 </head>
 <body data-page="explore">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -31,8 +31,11 @@
   <section class="section wrap" style="padding-top:0">
     <div class="feature">
       <div class="feature-body">
-        <span class="eyebrow" id="featEyebrow" style="margin-bottom:.5rem">Local Favorite</span>
-        <h3 id="featTitle">Best of the Boardwalk</h3>
+        <!-- Jenny (Oct 7): her "You know you're in Seldovia when..." logo heads this box; she changes the words below
+             any time in the admin (Explore Card tab). -->
+        <img class="ykyis-logo" src="images/you-know-youre-in-seldovia-when.jpg?v=1" alt="You know you're in Seldovia when..." width="900" height="600">
+        <span class="eyebrow visually-hidden" id="featEyebrow">Local Favorite</span>
+        <h3 id="featTitle" class="visually-hidden">You know you're in Seldovia when...</h3>
         <p id="featBody">The historic boardwalk is the heart of Seldovia — homes on stilts above the tide, little galleries, and the best cinnamon rolls in town. Stroll it once and you’ll understand why folks never leave.</p>
         <a class="btn btn-primary" id="featBtn" href="phone-book.html">Browse the phone book</a>
       </div>
@@ -44,7 +47,7 @@
 </main>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="db.js?v=6"></script>
-<script src="app.js?v=121"></script>
-<script src="feature.js?v=1"></script>
+<script src="app.js?v=122"></script>
+<script src="feature.js?v=2"></script>
 </body>
 </html>
