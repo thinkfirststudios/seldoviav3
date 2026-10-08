@@ -69,7 +69,8 @@
         // Prefer photos from a matching images/listings/<slug>/ folder; else use the admin-uploaded ones.
         const fp=(window.LISTING_PHOTOS&&LISTING_PHOTOS[l.slug])||null;
         const heroImg=fp?fp[0]:(l.image_url||"");
-        const photos=fp?fp.slice(1):(Array.isArray(l.photos)?l.photos:[]);
+        const sold=String(l.status||"").toLowerCase()==="sold";
+        const photos=sold?[]:(fp?fp.slice(1):(Array.isArray(l.photos)?l.photos:[]));   // sold: one photo only (Jenny Oct 8)
         const allImgs=[heroImg, ...photos].filter(Boolean);
         // Main image becomes a swipe-right carousel of ALL photos (no need to scroll down).
         const heroBlock = allImgs.length>1

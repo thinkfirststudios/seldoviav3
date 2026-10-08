@@ -109,8 +109,8 @@ const FOOTER=`
         <p>A warm, community-first guide to our little town on Kachemak Bay.</p>
         <div class="foot-util"><span id="footTime">&mdash;:&mdash;</span></div>
       </div>
-      <div class="foot-col"><h4>Explore</h4><ul><li><a href="explore.html">Directory</a></li><li><a href="explore.html#trails">Trails</a></li><li><a href="gazette.html">Seldovia Blog</a></li><li><a href="gallery.html">Photos</a></li><li><a href="calendar.html">Calendar</a></li></ul></div>
-      <div class="foot-col"><h4>Community</h4><ul><li><a href="phone-book.html">Phone Book</a></li><li><a href="index.html#sponsors">Sponsors</a></li><li><a href="contact.html">Contact</a></li><li><a href="mailto:info@seldovia.com">info@seldovia.com</a></li></ul></div>
+      <div class="foot-col"><h4>Explore</h4><ul><li><a href="explore.html">Explore</a></li><li><a href="phone-book.html">Phone Book</a></li><li><a href="gazette.html">Seldovia Blog</a></li><li><a href="gallery.html">Photos</a></li><li><a href="calendar.html">Calendar</a></li></ul></div>
+      <div class="foot-col"><h4>Community</h4><ul><li><a href="index.html#sponsors">Sponsors</a></li><li><a href="contact.html">Contact</a></li><li><a href="mailto:info@seldovia.com">info@seldovia.com</a></li></ul></div>
       <div class="foot-col"><h4>Real Estate</h4><ul><li><a href="real-estate.html">Featured listings</a></li><li><a href="contact.html?topic=real%20estate">Home valuation</a></li></ul></div>
     </div>
     <div class="foot-bottom">
@@ -131,7 +131,8 @@ if(PAGE==="realestate"){ const fb=document.querySelector("footer.site .foot-bott
 
 /* "Add to your phone" / "Make us your home page" helper (Jenny, Oct 6). Browsers don't allow a website to set
    itself as someone's home page (a security rule), so this shows short steps for the browser they're using. */
-if(document.querySelector(".keep-handy")){
+// The buttons now live in the footer, added further down this file, so wait until this script has finished.
+setTimeout(()=>{ if(document.querySelector(".keep-handy")){
   let installEvt=null; window.addEventListener("beforeinstallprompt",e=>{ e.preventDefault(); installEvt=e; });
   const ua=navigator.userAgent, isIOS=/iPhone|iPad|iPod/.test(ua)||(/Macintosh/.test(ua)&&"ontouchend" in document), isAndroid=/Android/.test(ua);
   const browser=/Edg\//.test(ua)?"edge":/Firefox\//.test(ua)?"firefox":/Chrome\//.test(ua)?"chrome":/Safari\//.test(ua)?"safari":"other";
@@ -165,7 +166,7 @@ if(document.querySelector(".keep-handy")){
   }));
   // Phones show the phone option first; computers show the home page option first.
   if(isIOS||isAndroid) document.querySelector(".keep-handy").classList.add("is-phone");
-}
+} },0);
 
 /* Buy Me a Coffee (Jenny, Oct 6). Paste her Buy Me a Coffee page link between the quotes when she has it,
    e.g. "https://buymeacoffee.com/seldovia". While it's empty, NONE of the support spots show anywhere.
@@ -185,21 +186,11 @@ if(SUPPORT_URL && PAGE!=="admin"){
   const sLink=(cls,html)=>`<a class="${cls}" href="${esc(SUPPORT_URL)}" target="_blank" rel="noopener">${html}</a>`;
   const fb=document.querySelector(".foot-brand");
   if(fb) fb.insertAdjacentHTML("beforeend", `<p class="foot-support">${sLink("support-link","☕ Support Seldovia.com: buy us a coffee")}</p>`);
-  // Jenny's official Buy Me a Coffee widget (settings copied from her Oct 6 email). The widget waits for the page's
-  // DOMContentLoaded event, which has already happened by the time we add it, so we re-send that event once it loads.
-  const bmc=document.createElement("script");
-  // Jenny Oct 7: the automatic thank-you pop-up is "WAY too pushy". It now shows only ONCE per visit, and only on
-  // computers (never on phones). Leaving out data-message is what stops the widget from popping it up.
-  let showMsg=false;
-  try{ const phone=window.matchMedia("(max-width:760px), (pointer:coarse)").matches;
-       if(!phone && !sessionStorage.getItem("bmcShown")){ showMsg=true; sessionStorage.setItem("bmcShown","1"); } }catch(e){}
-  const bmcAttrs={"data-name":"BMC-Widget","data-cfasync":"false","data-id":"Seldovia","data-description":"Support me on Buy me a coffee!",
-    "data-color":"#5F7FFF","data-position":"Right","data-x_margin":"18","data-y_margin":"18"};
-  if(showMsg) bmcAttrs["data-message"]="Thanks so much for your support!  We appreciate you stopping by and we love that you LOVE Seldovia!  :)  Thanks for the coffee (or tea)!  ";
-  Object.entries(bmcAttrs).forEach(([k,v])=>bmc.setAttribute(k,v));
-  bmc.src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js";
-  bmc.onload=()=>{ const ev=document.createEvent("Event"); ev.initEvent("DOMContentLoaded",false,false); window.dispatchEvent(ev); };
-  document.body.appendChild(bmc);
+  // Jenny Oct 8: keep these handy but quiet, in the footer under the coffee link.
+  if(fb) fb.insertAdjacentHTML("beforeend", `<div class="keep-handy"><button type="button" class="kh-btn" data-kh="phone">📱 Add Seldovia.com to your phone</button><button type="button" class="kh-btn" data-kh="home">🏠 Make Seldovia.com your home page</button></div>`);
+  // Jenny Oct 8: the widget's pop-up was too pushy and its panel had none of her story, so this is our own floating
+  // coffee cup that opens her full Buy Me a Coffee page (Seldovia Slough photo + story) in a new tab.
+  document.body.insertAdjacentHTML("beforeend", `<a class="bmc-cup" href="${esc(SUPPORT_URL)}" target="_blank" rel="noopener" aria-label="Buy Seldovia.com a coffee (opens Buy Me a Coffee)" title="Buy us a coffee"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 8h11l-1.3 11.2a2 2 0 0 1-2 1.8H9.8a2 2 0 0 1-2-1.8z"/><path d="M5.5 5.5h13l-.6 2.5h-11.8z"/><path d="M8.2 12.5h7.6"/></svg></a>`);
   document.body.classList.add("has-support");
   const slot=document.querySelector("#supportSlot");
   if(slot) slot.innerHTML=`<div class="support-card"><h3>Enjoying Seldovia.com?</h3><p>This site is a community project. If you find it useful, you can help keep it running.</p>${sLink("btn btn-primary","☕ Buy us a coffee")}</div>`;

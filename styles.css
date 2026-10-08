@@ -355,7 +355,10 @@ body:not([data-page="realestate"]) .page-hero h1{font-size:clamp(2.7rem,6.2vw,4.
 .home-banner{position:relative;}
 .home-search-over{transform:none; margin:clamp(12px,2vw,18px) auto 0; max-width:660px;} /* mobile default: just below the banner */
 @media (min-width:720px){
-  .home-search-over{position:absolute; left:50%; bottom:9%; transform:translateX(-50%); margin:0; width:min(620px,74%); z-index:3;}
+  .home-search-over{position:absolute; left:50%; bottom:4%; transform:translateX(-50%); margin:0; width:min(460px,52%); z-index:3;}   /* smaller + lower (Jenny Oct 8) */
+  .home-search-over .hero-search-card{padding:.35rem;}
+  .home-search-over input{font-size:.95rem;}
+  .home-search-over .btn-primary{padding:.5rem 1rem;}
 }
 /* Watercolor soft-bleed edges on the home banner (Jenny: "watercolor effect on the edges").
    Feathers the photo into the page instead of a hard rectangle + drop shadow. The TOP edge
@@ -1189,3 +1192,28 @@ body.has-support #toTop{bottom:calc(18px + 76px) !important;}
 .contact-address{margin:.8rem 0 0; font-weight:600; color:var(--heading); line-height:1.6;}
 .contact-address span{font-weight:400; color:var(--text-soft);}
 .contact-license{margin-top:.6rem; font-size:.88rem; color:var(--text-soft);}
+
+/* Home: 3 columns — Seldovia Today · Photo of the Day · What's on this week (Jenny Oct 8) */
+.home-trio{grid-template-columns:1fr 1fr 1fr;}
+.home-trio > div{border-right:1px solid var(--line);} .home-trio > div:last-child{border-right:0;}
+.home-potd .potd-card{padding:clamp(16px,2vw,22px); display:flex; flex-direction:column; gap:.5rem; width:100%;}
+.home-potd .ts-head h3{margin:0;}
+.potd-link{display:flex; flex-direction:column; gap:.35rem; text-decoration:none; color:inherit;}
+.potd-media{display:block; aspect-ratio:4/3; border-radius:12px; overflow:hidden; background:var(--surface-2);}
+.potd-media img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .3s;}
+.potd-link:hover .potd-media img{transform:scale(1.03);}
+.potd-cap{font-weight:700; color:var(--heading); line-height:1.35;}
+.potd-date{font-size:.85rem; color:var(--text-soft);}
+@media (max-width:980px){ .home-trio{grid-template-columns:1fr 1fr;} .home-trio > #todaySchedule{grid-column:1/-1; border-top:1px solid var(--line);} .home-trio > div:nth-child(2){border-right:0;} }
+@media (max-width:640px){ .home-trio{grid-template-columns:1fr;} .home-trio > div{border-right:0; border-bottom:1px solid var(--line);} .home-trio > div:last-child{border-bottom:0;} }
+/* Meet Jenny: family photo on the right (Jenny Oct 8) */
+.jenny-card.jenny-card-family{grid-template-columns:1fr minmax(220px,340px);}
+.jenny-card .jenny-family{transform:none !important; aspect-ratio:auto !important; width:100%; max-width:340px; height:auto; object-fit:cover; border-radius:var(--radius); box-shadow:var(--shadow-lg);}
+@media (max-width:680px){ .jenny-card.jenny-card-family{grid-template-columns:1fr;} .jenny-card .jenny-family{order:-1; max-width:300px;} }
+.jenny-signature{display:block; width:min(240px,60%); height:auto; margin:1.2rem 0 .4rem;}
+/* Our own floating coffee cup (Jenny Oct 8) */
+.bmc-cup{position:fixed; right:18px; bottom:18px; z-index:69; width:60px; height:60px; border-radius:50%; display:grid; place-items:center; background:#5F7FFF; color:#fff; box-shadow:0 6px 18px rgba(0,0,0,.25); transition:transform .15s;}
+.bmc-cup:hover{transform:scale(1.07);}
+/* Footer: phone / home-page buttons under the coffee link (Jenny Oct 8) */
+footer.site .keep-handy{justify-content:flex-start; margin:.6rem 0 0; padding:0; flex-direction:column; align-items:flex-start; gap:.4rem;}
+footer.site .kh-btn{font-size:.85rem; padding:.4rem .8rem; box-shadow:none;}

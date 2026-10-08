@@ -6,7 +6,7 @@
 <meta name="description" content="Seldovia.com — discover everything about the little town of Seldovia, Alaska, on Kachemak Bay. Directory, events, gallery, news, and real estate.">
 <meta name="theme-color" content="#F8E6DD">
 <title>Seldovia.com — Discover Everything Seldovia, Alaska</title>
-<link rel="stylesheet" href="styles.css?v=123">
+<link rel="stylesheet" href="styles.css?v=124">
 </head>
 <body data-page="home">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -28,17 +28,15 @@
   </div>
   <!-- Jenny (Oct 6): an easy way to keep Seldovia.com handy. Browsers don't let a site set itself as the home page,
        so these open short, simple steps (and the phone one uses the browser's own "install" prompt when it can). -->
-  <div class="keep-handy">
-    <button type="button" class="kh-btn" data-kh="phone">📱 Add Seldovia.com to your phone</button>
-    <button type="button" class="kh-btn" data-kh="home">🏠 Make Seldovia.com your home page</button>
-  </div>
+
 
   <!-- Combined home box (Jenny, Sep 29): LEFT column = "Seldovia Today" with ALL the day's
        live stats together (time, weather, tides, daylight, marine), not a green bar.
        RIGHT column = "Around Town" this-week schedule. -->
   <section class="section wrap" style="padding-bottom:0">
-    <div class="home-duo">
+    <div class="home-duo home-trio">
       <div id="seldoviaToday" class="today-bar" aria-label="Seldovia today — live conditions"></div>
+      <div id="homePotd" class="home-potd" aria-label="Photo of the Day"></div>
       <div id="todaySchedule"></div>
     </div>
   </section>
@@ -81,11 +79,12 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="db.js?v=6"></script>
-<script src="app.js?v=122"></script>
+<script src="app.js?v=123"></script>
 <script src="seldovia-today.js?v=9"></script>
 <script src="extras-data.js?v=1"></script>
 <script src="home-extra.js?v=2"></script>
 <script src="home-gallery.js?v=5"></script>
-<script src="home-schedule.js?v=4"></script>
+<script src="home-schedule.js?v=5"></script>
+<script src="home-potd.js?v=1"></script>
 </body>
 </html>

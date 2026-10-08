@@ -11,7 +11,7 @@
   const akTime=m=>new Intl.DateTimeFormat("en-US",{timeZone:AKZ,hour:"numeric",minute:"2-digit"}).format(new Date(m));
   const calLink=`<a class="ts-all" href="calendar.html">Full community calendar →</a>`;
   const shell=inner=>`<div class="today-sched">
-      <div class="ts-head"><span class="eyebrow">Around Town</span><h3>What’s on this week</h3></div>
+      <div class="ts-head"><h3>What’s on this week</h3></div>
       ${inner}</div>`;
   const fallback=msg=>{ box.innerHTML=shell(`<p class="ts-empty">${esc(msg)}</p>${calLink}`); };
 
