@@ -100,6 +100,8 @@ const HEADER=`
   </nav>
 </div>`;
 
+// Explore tabs for the footer (same names/order as the tabs on the Explore page; PLACE_TABS is defined later).
+const FOOT_TABS=[["about","About"],["travel","Come On Over"],["stay","Stay a While"],["eat","Grab a Bite"],["shop","Shop & Gifts"],["activities","Activities & Hikes"],["gardens","Gardens, Parks & Beaches"],["landmarks","Landmarks"],["services","Businesses"],["life","Organizations & Govt."],["outoftown","Out of Town"]];
 const FOOTER=`
 <footer class="site">
   <div class="wrap">
@@ -108,10 +110,10 @@ const FOOTER=`
         <span class="word">Seldovia.com</span>
         <p>A warm, community-first guide to our little town on Kachemak Bay.</p>
         <div class="foot-util"><span id="footTime">&mdash;:&mdash;</span></div>
+        <p class="foot-email"><a href="mailto:info@seldovia.com">info@seldovia.com</a></p>
       </div>
-      <div class="foot-col"><h4>Explore</h4><ul><li><a href="explore.html">Explore</a></li><li><a href="phone-book.html">Phone Book</a></li><li><a href="gazette.html">Seldovia Blog</a></li><li><a href="gallery.html">Photos</a></li><li><a href="calendar.html">Calendar</a></li></ul></div>
-      <div class="foot-col"><h4>Community</h4><ul><li><a href="index.html#sponsors">Sponsors</a></li><li><a href="contact.html">Contact</a></li><li><a href="mailto:info@seldovia.com">info@seldovia.com</a></li></ul></div>
-      <div class="foot-col"><h4>Real Estate</h4><ul><li><a href="real-estate.html">Featured listings</a></li><li><a href="contact.html?topic=real%20estate">Home valuation</a></li></ul></div>
+      <div class="foot-col"><h4>Menu</h4><ul><li><a href="index.html">Home</a></li>${NAV.map(([h,l])=>`<li><a href="${h}">${l}</a></li>`).join("")}</ul></div>
+      <div class="foot-col foot-explore"><h4>Explore</h4><ul>${FOOT_TABS.map(([k,l])=>`<li><a href="${k==="about"?"about.html":"explore.html?cat="+k}">${l}</a></li>`).join("")}</ul></div>
     </div>
     <div class="foot-bottom">
       <p class="disclaimer">&copy; <span id="year">2026</span> Seldovia.com — a community project. Real estate services provided by Seldovia Property, a licensed Alaska real estate brokerage (Jenny Chissus, Broker/Owner; Alaska Real Estate License RECB16495). Listing information believed reliable but not guaranteed; Alaska is a non-disclosure state. Equal Housing Opportunity.</p>
@@ -190,7 +192,9 @@ if(SUPPORT_URL && PAGE!=="admin"){
   if(fb) fb.insertAdjacentHTML("beforeend", `<div class="keep-handy"><button type="button" class="kh-btn" data-kh="phone">📱 Add Seldovia.com to your phone</button><button type="button" class="kh-btn" data-kh="home">🏠 Make Seldovia.com your home page</button></div>`);
   // Jenny Oct 8: the widget's pop-up was too pushy and its panel had none of her story, so this is our own floating
   // coffee cup that opens her full Buy Me a Coffee page (Seldovia Slough photo + story) in a new tab.
-  document.body.insertAdjacentHTML("beforeend", `<a class="bmc-cup" href="${esc(SUPPORT_URL)}" target="_blank" rel="noopener" aria-label="Buy Seldovia.com a coffee (opens Buy Me a Coffee)" title="Buy us a coffee"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 8h11l-1.3 11.2a2 2 0 0 1-2 1.8H9.8a2 2 0 0 1-2-1.8z"/><path d="M5.5 5.5h13l-.6 2.5h-11.8z"/><path d="M8.2 12.5h7.6"/></svg></a>`);
+  // Jenny Oct 9: the official Buy Me a Coffee logo is more recognizable than our cup icon, and testers never noticed
+  // it. Computers get the official "Buy me a coffee" button (logo + words); phones get the round logo only.
+  document.body.insertAdjacentHTML("beforeend", `<a class="bmc-cup" href="${esc(SUPPORT_URL)}" target="_blank" rel="noopener" aria-label="Buy Seldovia.com a coffee (opens Buy Me a Coffee)" title="Buy us a coffee"><img class="bmc-btn-img" src="images/bmc-button.png?v=1" alt="" width="240" height="68"><img class="bmc-circle-img" src="images/bmc-circle.png?v=1" alt="" width="60" height="60"></a>`);
   document.body.classList.add("has-support");
   const slot=document.querySelector("#supportSlot");
   if(slot) slot.innerHTML=`<div class="support-card"><h3>Enjoying Seldovia.com?</h3><p>This site is a community project. If you find it useful, you can help keep it running.</p>${sLink("btn btn-primary","☕ Buy us a coffee")}</div>`;

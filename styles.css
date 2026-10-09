@@ -889,7 +889,7 @@ form.stack{display:grid; gap:.85rem;}
 
 footer.site{background:var(--band); color:rgba(255,255,255,.82); margin-top:clamp(24px,4vw,44px); padding:clamp(40px,6vw,64px) 0 1.5rem;}
 footer.site a{color:rgba(255,255,255,.82); text-decoration:none;} footer.site a:hover{color:#fff; text-decoration:underline;}
-.foot-grid{display:grid; grid-template-columns:1.5fr repeat(3,1fr); gap:clamp(24px,4vw,40px);}
+.foot-grid{display:grid; grid-template-columns:1.4fr 1fr 1.6fr; gap:clamp(24px,4vw,40px);}
 @media (max-width:780px){ .foot-grid{grid-template-columns:1fr 1fr;} }
 @media (max-width:480px){ .foot-grid{grid-template-columns:1fr;} }
 .foot-col h4{font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.62); margin-bottom:.8rem;}
@@ -1212,7 +1212,9 @@ body.has-support #toTop{bottom:calc(18px + 76px) !important;}
 @media (max-width:680px){ .jenny-card.jenny-card-family{grid-template-columns:1fr;} .jenny-card .jenny-family{order:-1; max-width:300px;} }
 .jenny-card img.jenny-signature{display:block; width:min(240px,60%); max-width:240px; height:auto; aspect-ratio:auto; object-fit:contain; transform:none; box-shadow:none; border-radius:0; margin:1.2rem 0 .4rem;} /* not a photo: no crop/flip/shadow */
 /* Our own floating coffee cup (Jenny Oct 8) */
-.bmc-cup{position:fixed; right:18px; bottom:18px; z-index:69; width:60px; height:60px; border-radius:50%; display:grid; place-items:center; background:#5F7FFF; color:#fff; box-shadow:0 6px 18px rgba(0,0,0,.25); transition:transform .15s;}
+.bmc-cup{position:fixed; right:18px; bottom:18px; z-index:69; display:block; line-height:0; border-radius:14px; box-shadow:0 6px 18px rgba(0,0,0,.25); transition:transform .15s;}
+.bmc-cup img{display:block; height:auto;} .bmc-cup .bmc-btn-img{width:170px; border-radius:12px;} .bmc-cup .bmc-circle-img{display:none; width:60px; border-radius:50%;}
+@media (max-width:760px){ .bmc-cup{border-radius:50%;} .bmc-cup .bmc-btn-img{display:none;} .bmc-cup .bmc-circle-img{display:block;} }
 .bmc-cup:hover{transform:scale(1.07);}
 /* Footer: phone / home-page buttons under the coffee link (Jenny Oct 8) */
 footer.site .keep-handy{justify-content:flex-start; margin:.6rem 0 0; padding:0; flex-direction:column; align-items:flex-start; gap:.4rem;}
@@ -1234,3 +1236,8 @@ footer.site .kh-btn{font-size:.85rem; padding:.4rem .8rem; box-shadow:none;}
 .contest-rules{margin-top:.8rem; font-size:.9rem;}
 /* Blog opening line in the script font, like the About page's "Thank you for stopping by" (Oct 8) */
 .page-intro.page-intro-script{font-family:var(--script); font-weight:400; color:var(--heading); font-size:clamp(2.4rem,5.2vw,4.2rem); line-height:1.2; text-wrap:balance; max-width:1200px;}
+
+/* Footer (Jenny Oct 9): Menu + every Explore tab; the long Explore list splits into two columns on wide screens */
+@media (min-width:781px){ .foot-explore ul{display:block; columns:2; column-gap:1.4rem;} .foot-explore li{break-inside:avoid; margin-bottom:.5rem;} }
+@media (max-width:480px){ .foot-grid{grid-template-columns:1fr 1fr; column-gap:16px;} .foot-grid .foot-brand{grid-column:1/-1;} }
+.foot-email{margin-top:.6rem;} .foot-email a{color:inherit; font-weight:700;}
