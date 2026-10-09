@@ -4924,7 +4924,8 @@ if($("#sponsorTrack")){
   const cardHtml=s=>{ const inner=`<img src="${esc(spImg(s))}" alt="${esc(s.name||"")}" loading="lazy" onerror="this.closest('.sponsor').style.display='none'">`;
     // Every sponsor is clickable: its own website if Jenny set one (admin), otherwise an
     // on-site search for the business name so the click always lands somewhere useful.
-    const href=s.url||("search.html?q="+encodeURIComponent(s.name||""));
+    // Links saved with the preview address keep working after launch (Jenny Oct 8: "will links change automatically?")
+    const href=String(s.url||("search.html?q="+encodeURIComponent(s.name||""))).replace(/^https?:\/\/thinkfirststudios\.github\.io\/seldoviav3\//i,"");
     const ext=/^https?:/i.test(href);
     return `<a class="sponsor sponsor-ad" href="${esc(href)}"${ext?' target="_blank" rel="noopener"':''} aria-label="${esc(s.name||"Sponsor")}">${inner}</a>`; };
   const paint=list=>{ const html=list.map(cardHtml).join(""); track.innerHTML=html+html; }; // duplicated for seamless auto-loop

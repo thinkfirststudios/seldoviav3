@@ -99,6 +99,7 @@
     {key:"messages", label:"📨 Messages",    render:renderMessagesTab},
     {key:"submissions", label:"📇 Phone Book", render:renderSubmissionsTab},
     {key:"settings", label:"⚙️ Home Extra",  render:renderSettingsTab},
+    {key:"contest",  label:"🏆 Photo Contest", render:renderContestTab},
     {key:"feature",  label:"⭐ Explore Card", render:renderFeatureTab},
     {key:"bizcat",   label:"🏪 Businesses",    render:renderExploreCatsTab},
     {key:"sponsors", label:"🎟️ Sponsors",     render:renderSponsorsTab},
@@ -110,7 +111,7 @@
           ${TABS.map((t,i)=>`<button class="admin-tab ${i===0?"is-active":""}" data-tab="${t.key}" type="button">${t.label}</button>`).join("")}
         </div>
         <div style="display:flex;align-items:center;gap:.8rem">
-          <span style="font-size:.72rem;color:var(--text-soft)" title="If this number is old after refreshing, your browser cached the admin — clear site data / hard refresh.">admin build 55</span>
+          <span style="font-size:.72rem;color:var(--text-soft)" title="If this number is old after refreshing, your browser cached the admin — clear site data / hard refresh.">admin build 56</span>
           <button class="btn btn-ghost" id="logoutBtn" type="button">Sign out</button>
         </div>
       </div>
@@ -984,6 +985,30 @@
   }
 
   /* ---------------- HOME EXTRA (which "of the day" shows + editable text) ---------------- */
+  /* ---- Photo Contest box on the Photos page (Jenny/Qwynny Oct 8) ---- */
+  async function renderContestTab(){
+    const FORM="https://docs.google.com/forms/d/e/1FAIpQLSe3yoaoP8YIABN2t6jbiVz0RlxcCf1an2e8DdoVQ5RAfLpJXQ/viewform";
+    $("#tab-contest").innerHTML=`
+      <form class="info-block" id="contestForm" style="max-width:680px">
+        <h4 style="margin:0 0 .4rem">This month's photo contest</h4>
+        <p style="color:var(--text-soft);font-size:.92rem;margin:0 0 1rem">Shows in a box at the top of the Photos page. Update it each month. The form link is also used for the "Send it our way!" link on the Photos page.</p>
+        <label style="display:flex;gap:.5rem;align-items:center;margin-bottom:.8rem;font-weight:700"><input type="checkbox" id="ctShow"> Show the contest box on the Photos page</label>
+        <div class="field"><label for="ctTitle">Title</label><input id="ctTitle" type="text" placeholder="e.g. October Photo Contest"></div>
+        <div class="field"><label for="ctDeadline">Deadline</label><input id="ctDeadline" type="text" placeholder="e.g. 9:00am November 1st"></div>
+        <div class="field"><label for="ctPrize">Prize (optional)</label><input id="ctPrize" type="text" placeholder="e.g. A special prize from our sponsors!"></div>
+        <div class="field"><label for="ctBlurb">How to enter</label><textarea id="ctBlurb" rows="6" placeholder="Tell people what to photograph and what to include. Leave a blank line between paragraphs."></textarea></div>
+        <div class="field"><label for="ctLink">Entry form link</label><input id="ctLink" type="url" placeholder="https://docs.google.com/forms/…"></div>
+        <button class="btn btn-primary" type="submit">Save</button> <span id="ctMsg" class="form-note"></span>
+      </form>`;
+    const {data}=await db.from("settings").select("value").eq("key","photo_contest").maybeSingle();
+    let c={}; try{ c=data&&data.value?JSON.parse(data.value):{}; }catch(e){}
+    $("#ctShow").checked=c.show!==false && !!data; $("#ctTitle").value=c.title||""; $("#ctDeadline").value=c.deadline||"";
+    $("#ctPrize").value=c.prize||""; $("#ctBlurb").value=c.blurb||""; $("#ctLink").value=c.link||FORM;
+    $("#contestForm").addEventListener("submit",async e=>{ e.preventDefault(); const msg=$("#ctMsg"); msg.textContent="Saving…";
+      const val={show:$("#ctShow").checked, title:$("#ctTitle").value.trim(), deadline:$("#ctDeadline").value.trim(), prize:$("#ctPrize").value.trim(), blurb:$("#ctBlurb").value.trim(), link:$("#ctLink").value.trim()};
+      const {error}=await db.from("settings").upsert({key:"photo_contest",value:JSON.stringify(val)},{onConflict:"key"});
+      if(error){ msg.textContent=error.message; return; } await logAdmin("Updated photo contest", val.title||""); msg.style.color="var(--open)"; msg.textContent="Saved — it's live on the Photos page."; });
+  }
   function renderSettingsTab(){
     const D=window.EXTRA_DEFAULTS||{facts:"",words:"",fundays:""};
     // modes whose text is editable -> settings key + label/hint for the textarea

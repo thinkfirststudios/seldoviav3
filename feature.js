@@ -16,12 +16,12 @@
       const btn=document.getElementById("featBtn");
       if(btn){
         if(f.btnLabel!=null && f.btnLabel!=="") btn.textContent=f.btnLabel;
-        if(f.btnLink) btn.setAttribute("href", f.btnLink);
+        // Jenny Oct 8: the button goes to the Blog. Older saved settings still point at the phone book, so map those.
+        const link=(f.btnLink==="phone-book.html"||!f.btnLink)?"gazette.html":f.btnLink;
+        btn.setAttribute("href", link);
+        if(link==="gazette.html" && /phone book/i.test(btn.textContent)) btn.textContent="Read the Seldovia Blog";
         if(f.btnLabel==="") btn.style.display="none"; // empty label hides the button
       }
-      if(f.image){
-        const m=document.getElementById("featureMedia");
-        if(m) m.innerHTML=`<img class="feature-photo" src="${f.image}" alt="${(f.title||"").replace(/"/g,"&quot;")}" loading="lazy">`;
-      }
+      // Jenny Oct 8: her "You know you're in Seldovia when..." logo is always the picture here (no photo).
     }).catch(()=>{});
 })();
