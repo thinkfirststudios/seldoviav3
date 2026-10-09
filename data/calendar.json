@@ -1,22 +1,7 @@
 {
- "updated": "2026-10-09T13:23:48Z",
+ "updated": "2026-10-09T22:42:27Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1791561600000,
-   "allDay": false,
-   "title": "SVT - Fitness Center"
-  },
-  {
-   "start": 1791577800000,
-   "allDay": false,
-   "title": "SBC Food Bank Day"
-  },
-  {
-   "start": 1791577800000,
-   "allDay": false,
-   "title": "Seldovia Public Library Hours"
-  },
   {
    "start": 1791587700000,
    "allDay": false,
@@ -31,11 +16,6 @@
    "start": 1791597600000,
    "allDay": false,
    "title": "SVT - Open Swim"
-  },
-  {
-   "start": 1791604800000,
-   "allDay": false,
-   "title": "SBC - Teen Night"
   },
   {
    "start": 1791604800000,
@@ -178,6 +158,11 @@
    "title": "SOCC - Adult Pottery Class"
   },
   {
+   "start": 1791945000000,
+   "allDay": false,
+   "title": "SVT - Kinusaiga Adult Class"
+  },
+  {
    "start": 1791993600000,
    "allDay": false,
    "title": "SVT - Fitness Center"
@@ -248,6 +233,11 @@
    "title": "SOCC - Mahjong Game Night"
   },
   {
+   "start": 1792117800000,
+   "allDay": false,
+   "title": "SVT - Kinusaiga Kid + Parent Class"
+  },
+  {
    "start": 1792166400000,
    "allDay": false,
    "title": "SVT - Fitness Center"
@@ -275,11 +265,6 @@
   {
    "start": 1792209600000,
    "allDay": false,
-   "title": "SBC - Teen Night"
-  },
-  {
-   "start": 1792209600000,
-   "allDay": false,
    "title": "Seldovia Bible Chapel - Teen Nights at the Sea Otter Community Center!"
   },
   {
@@ -301,6 +286,21 @@
    "start": 1792285200000,
    "allDay": false,
    "title": "St. Nicholas Russian Orthodox Church Vespers Service"
+  },
+  {
+   "start": 1792310400000,
+   "allDay": true,
+   "title": "Alaska Day 🏔️🐻"
+  },
+  {
+   "start": 1792346400000,
+   "allDay": false,
+   "title": "Grace Haven Fellowship Sunday Worship"
+  },
+  {
+   "start": 1792346400000,
+   "allDay": false,
+   "title": "SOCC - Yoga"
   }
  ]
 }
