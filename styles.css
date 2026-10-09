@@ -1210,7 +1210,7 @@ body.has-support #toTop{bottom:calc(18px + 76px) !important;}
 .jenny-card.jenny-card-family{grid-template-columns:1fr minmax(220px,340px);}
 .jenny-card .jenny-family{transform:none !important; aspect-ratio:auto !important; width:100%; max-width:340px; height:auto; object-fit:cover; border-radius:var(--radius); box-shadow:var(--shadow-lg);}
 @media (max-width:680px){ .jenny-card.jenny-card-family{grid-template-columns:1fr;} .jenny-card .jenny-family{order:-1; max-width:300px;} }
-.jenny-signature{display:block; width:min(240px,60%); height:auto; margin:1.2rem 0 .4rem;}
+.jenny-card img.jenny-signature{display:block; width:min(240px,60%); max-width:240px; height:auto; aspect-ratio:auto; object-fit:contain; transform:none; box-shadow:none; border-radius:0; margin:1.2rem 0 .4rem;} /* not a photo: no crop/flip/shadow */
 /* Our own floating coffee cup (Jenny Oct 8) */
 .bmc-cup{position:fixed; right:18px; bottom:18px; z-index:69; width:60px; height:60px; border-radius:50%; display:grid; place-items:center; background:#5F7FFF; color:#fff; box-shadow:0 6px 18px rgba(0,0,0,.25); transition:transform .15s;}
 .bmc-cup:hover{transform:scale(1.07);}
@@ -1232,3 +1232,5 @@ footer.site .kh-btn{font-size:.85rem; padding:.4rem .8rem; box-shadow:none;}
 .contest-card h2{margin:.2rem 0 .6rem;} .contest-deadline,.contest-prize{margin:.3rem 0; font-size:1.05rem;}
 .contest-blurb{text-align:left; margin:1rem auto; max-width:62ch; color:var(--text);} .contest-blurb p{margin:0 0 .7rem;}
 .contest-rules{margin-top:.8rem; font-size:.9rem;}
+/* Blog opening line in the script font, like the About page's "Thank you for stopping by" (Oct 8) */
+.page-intro.page-intro-script{font-family:var(--script); font-weight:400; color:var(--heading); font-size:clamp(1.9rem,3.6vw,2.9rem); line-height:1.25; text-wrap:balance; max-width:1100px;}
