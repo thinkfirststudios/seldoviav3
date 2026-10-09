@@ -1,17 +1,7 @@
 {
- "updated": "2026-10-08T23:24:23Z",
+ "updated": "2026-10-09T06:15:31Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1791504900000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Departs to Homer"
-  },
-  {
-   "start": 1791509400000,
-   "allDay": false,
-   "title": "SOCC - Mahjong Game Night"
-  },
   {
    "start": 1791561600000,
    "allDay": false,
@@ -20,7 +10,7 @@
   {
    "start": 1791577800000,
    "allDay": false,
-   "title": "Food Bank Shopping Day"
+   "title": "SBC Food Bank Day"
   },
   {
    "start": 1791577800000,
@@ -51,6 +41,11 @@
    "start": 1791604800000,
    "allDay": false,
    "title": "Seldovia Bible Chapel - Teen Nights at the Sea Otter Community Center!"
+  },
+  {
+   "start": 1791662400000,
+   "allDay": false,
+   "title": "SBC - Kids Club Solid Rock Bible Camp"
   },
   {
    "start": 1791669600000,
@@ -265,7 +260,7 @@
   {
    "start": 1792182600000,
    "allDay": false,
-   "title": "Food Bank Shopping Day"
+   "title": "SBC Food Bank Day"
   },
   {
    "start": 1792182600000,
@@ -301,6 +296,11 @@
    "start": 1792278000000,
    "allDay": false,
    "title": "SOCC - Adult Pickleball"
+  },
+  {
+   "start": 1792285200000,
+   "allDay": false,
+   "title": "St. Nicholas Russian Orthodox Church Vespers Service"
   }
  ]
 }
