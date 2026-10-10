@@ -1,12 +1,7 @@
 {
- "updated": "2026-10-10T12:38:37Z",
+ "updated": "2026-10-10T21:48:37Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1791662400000,
-   "allDay": false,
-   "title": "SBC - Kids Club Solid Rock Bible Camp"
-  },
   {
    "start": 1791669600000,
    "allDay": false,
@@ -301,6 +296,11 @@
    "start": 1792350000000,
    "allDay": false,
    "title": "Seldovia Bible Chapel - Kids Club"
+  },
+  {
+   "start": 1792350000000,
+   "allDay": false,
+   "title": "Seldovia Bible Chapel - Sunday Worship Service"
   }
  ]
 }
