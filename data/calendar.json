@@ -1,27 +1,7 @@
 {
- "updated": "2026-10-09T22:42:27Z",
+ "updated": "2026-10-10T05:58:45Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1791587700000,
-   "allDay": false,
-   "title": "SVT - Kids After School Time"
-  },
-  {
-   "start": 1791587700000,
-   "allDay": false,
-   "title": "SVT - Open Swim"
-  },
-  {
-   "start": 1791597600000,
-   "allDay": false,
-   "title": "SVT - Open Swim"
-  },
-  {
-   "start": 1791604800000,
-   "allDay": false,
-   "title": "Seldovia Bible Chapel - Teen Nights at the Sea Otter Community Center!"
-  },
   {
    "start": 1791662400000,
    "allDay": false,
@@ -136,6 +116,11 @@
    "start": 1791933300000,
    "allDay": false,
    "title": "SVT - Kids After School Time"
+  },
+  {
+   "start": 1791933300000,
+   "allDay": false,
+   "title": "SVT's Open Swim"
   },
   {
    "start": 1791936900000,
@@ -263,6 +248,11 @@
    "title": "SOCC - Adult Pottery Class"
   },
   {
+   "start": 1792204200000,
+   "allDay": false,
+   "title": "Linwood Bar & Grill - Free Bingo"
+  },
+  {
    "start": 1792209600000,
    "allDay": false,
    "title": "Seldovia Bible Chapel - Teen Nights at the Sea Otter Community Center!"
@@ -301,6 +291,16 @@
    "start": 1792346400000,
    "allDay": false,
    "title": "SOCC - Yoga"
+  },
+  {
+   "start": 1792346400000,
+   "allDay": false,
+   "title": "St. Nicholas Russian Orthodox Church Sunday Service"
+  },
+  {
+   "start": 1792350000000,
+   "allDay": false,
+   "title": "Seldovia Bible Chapel - Kids Club"
   }
  ]
 }
