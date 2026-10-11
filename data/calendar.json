@@ -1,27 +1,7 @@
 {
- "updated": "2026-10-10T21:48:37Z",
+ "updated": "2026-10-11T05:53:59Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1791669600000,
-   "allDay": false,
-   "title": "Seldovia Public Library Hours"
-  },
-  {
-   "start": 1791673200000,
-   "allDay": false,
-   "title": "SOCC - Adult Pickleball"
-  },
-  {
-   "start": 1791680400000,
-   "allDay": false,
-   "title": "St. Nicholas Russian Orthodox Church Vespers Service"
-  },
-  {
-   "start": 1791684000000,
-   "allDay": false,
-   "title": "SBE - Booster Club Meeting"
-  },
   {
    "start": 1791741600000,
    "allDay": false,
@@ -301,6 +281,26 @@
    "start": 1792350000000,
    "allDay": false,
    "title": "Seldovia Bible Chapel - Sunday Worship Service"
+  },
+  {
+   "start": 1792358100000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
+  },
+  {
+   "start": 1792368900000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Departs to Homer"
+  },
+  {
+   "start": 1792425600000,
+   "allDay": false,
+   "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1792429200000,
+   "allDay": false,
+   "title": "Absentee In Person Voting"
   }
  ]
 }
