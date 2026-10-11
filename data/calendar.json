@@ -1,32 +1,7 @@
 {
- "updated": "2026-10-11T12:57:46Z",
+ "updated": "2026-10-11T22:02:28Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1791741600000,
-   "allDay": false,
-   "title": "Grace Haven Fellowship Sunday Worship"
-  },
-  {
-   "start": 1791741600000,
-   "allDay": false,
-   "title": "SOCC - Yoga"
-  },
-  {
-   "start": 1791741600000,
-   "allDay": false,
-   "title": "St. Nicholas Russian Orthodox Church Sunday Service"
-  },
-  {
-   "start": 1791745200000,
-   "allDay": false,
-   "title": "Seldovia Bible Chapel - Sunday Worship Service"
-  },
-  {
-   "start": 1791753300000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
-  },
   {
    "start": 1791764100000,
    "allDay": false,
@@ -301,6 +276,31 @@
    "start": 1792429200000,
    "allDay": false,
    "title": "Absentee In Person Voting"
+  },
+  {
+   "start": 1792447200000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
+  },
+  {
+   "start": 1792451700000,
+   "allDay": false,
+   "title": "SVT - Kids After School Time"
+  },
+  {
+   "start": 1792452600000,
+   "allDay": false,
+   "title": "SOCC - Kids Pottery Class"
+  },
+  {
+   "start": 1792454400000,
+   "allDay": false,
+   "title": "Public Library - Story Time"
+  },
+  {
+   "start": 1792512000000,
+   "allDay": false,
+   "title": "SVT - Fitness Center"
   }
  ]
 }
