@@ -47,6 +47,7 @@ window.videoInfo=function(url){
 };
 const NAV=[
   ["explore.html","Explore","explore"],
+  ["map.html","Map","map"],
   ["about.html","About","about"],
   ["calendar.html","Calendar","calendar"],
   ["gazette.html","Seldovia Blog","gazette"],
@@ -85,7 +86,7 @@ const HEADER=`
           <div class="results" id="navResults" role="listbox" style="left:0; right:0; top:calc(100% + 8px);"></div>
         </div>
         <button class="icon-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg><span class="menu-word">MENU</span>
         </button>
       </div>
     </div>
@@ -108,9 +109,10 @@ const FOOTER=`
     <div class="foot-grid">
       <div class="foot-col foot-brand">
         <span class="word">Seldovia.com</span>
-        <p>A warm, community-first guide to our little town on Kachemak Bay.</p>
+        <p>A warm community-first guide to our small city of Seldovia, beautifully situated on the south side of Kachemak Bay</p>
         <div class="foot-util"><span id="footTime">&mdash;:&mdash;</span></div>
-        <p class="foot-email"><a href="mailto:info@seldovia.com">info@seldovia.com</a></p>
+        <p class="foot-email"><a href="mailto:info@seldovia.com">Info@Seldovia.com</a></p>
+        <p class="foot-sponsor"><a href="contact.html?topic=sponsor">Become a sponsor of Seldovia.com</a></p>
       </div>
       <div class="foot-col"><h4>Menu</h4><ul><li><a href="index.html">Home</a></li>${NAV.map(([h,l])=>`<li><a href="${h}">${l}</a></li>`).join("")}</ul></div>
       <div class="foot-col foot-explore"><h4>Explore</h4><ul>${FOOT_TABS.map(([k,l])=>`<li><a href="${k==="about"?"about.html":"explore.html?cat="+k}">${l}</a></li>`).join("")}</ul></div>
@@ -129,7 +131,7 @@ document.body.insertAdjacentHTML("beforeend", FOOTER);
 // Real Estate page: the brokerage's full details at the bottom (Jenny Oct 7: name, brokerage, physical + mailing
 // address, phone).
 if(PAGE==="realestate"){ const fb=document.querySelector("footer.site .foot-bottom");
-  if(fb) fb.insertAdjacentHTML("afterbegin",`<p class="re-foot-details"><b>Seldovia Property</b> · Jenny Chissus, Broker/Owner<br>320 Main Street, Seldovia, Alaska · Mailing: PO Box 263, Seldovia, AK 99663<br><a href="tel:+19074060044">907-406-0044</a> · <a href="mailto:jenny@seldoviaproperty.com">jenny@seldoviaproperty.com</a> · Alaska Real Estate License RECB16495</p>`); }
+  if(fb) fb.insertAdjacentHTML("afterbegin",`<p class="re-foot-details"><b>Seldovia Property</b> · Jenny Chissus, Broker/Owner<br>320 Main Street, Seldovia, Alaska · Mailing: PO Box 263, Seldovia, AK 99663<br><a href="tel:+19074060044">907-406-0044</a> · <a href="mailto:jenny@seldoviaproperty.com">Jenny@SeldoviaProperty.com</a> · Alaska Real Estate License RECB16495</p>`); }
 
 /* "Add to your phone" / "Make us your home page" helper (Jenny, Oct 6). Browsers don't allow a website to set
    itself as someone's home page (a security rule), so this shows short steps for the browser they're using. */
@@ -4454,7 +4456,7 @@ if($("#featureMedia")) $("#featureMedia").innerHTML=`<img class="feature-photo" 
 const normS=t=>String(t||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/['\u2019`]/g,"").replace(/[^a-z0-9]+/g," ").trim();
 let placeQuery="";
 if($("#placeGrid") && $("#placeTabs")){
-  $("#placeTabs").insertAdjacentHTML("beforebegin",`<div class="place-search"><span aria-hidden="true">🔍</span><input id="placeSearch" type="search" placeholder="Search businesses &amp; places on Explore…" aria-label="Search Explore" autocomplete="off"><span id="placeCount" class="place-count"></span></div>`);
+  $("#placeTabs").insertAdjacentHTML("beforebegin",`<div class="place-search"><span aria-hidden="true">🔍</span><input id="placeSearch" type="search" placeholder="Search businesses &amp; places on Explore…" aria-label="Search Explore" autocomplete="off"><span id="placeCount" class="place-count"></span></div><p class="place-map-link"><a href="map.html">🗺️ Find Me Map: see where everything is</a></p>`);
   let t=null; $("#placeSearch").addEventListener("input",e=>{ clearTimeout(t); t=setTimeout(()=>{ placeQuery=e.target.value.trim(); renderPlaces(); },150); });
 }
 const PLACE_TABS=[["all","All"],["about","About"],["travel","Come On Over"],["stay","Stay a While"],["eat","Grab a Bite"],["shop","Shop & Gifts"],["activities","Activities & Hikes"],["gardens","Gardens, Parks & Beaches"],["landmarks","Landmarks"],["services","Businesses"],["life","Organizations & Govt."],["outoftown","Out of Town"]];
@@ -5041,6 +5043,8 @@ window.loadLiveSearch=function(){
       const shown=m.name||p.name, label=m.label||p.cat||catName(key), phone=m.phone||p.phone||"";
       return {type:"Explore",title:shown,desc:[label,phone].filter(Boolean).join(" · "),href:"explore.html?find="+encodeURIComponent(p.name),
               kw:[p.name,p.cat,label,catName(key),m.owner,m.loc,m.desc||BIZ_BLURB[p.name]].filter(Boolean).join(" ")}; });
+    window.EXPLORE_LIVE=all.filter(p=>!hidden.has(p.name)).map(p=>{ const m=meta[p.name]||{}; const key=(over[p.name]&&CAT_BY_TOKEN[over[p.name]]?CAT_BY_TOKEN[over[p.name]].key:p.key);
+      return {name:p.name, shown:m.name||p.name, key, label:m.label||p.cat||catName(key)}; });
     const pb=((dir&&dir.data)||[]).map(d=>({type:"Phone Book",title:d.name,desc:[d.cat,d.phone].filter(Boolean).join(" · "),href:"phone-book.html?find="+encodeURIComponent(d.name),kw:[d.cat,d.section].join(" ")}));
     const people=((ppl&&ppl.data)||[]).map(s=>({type:"Phone Book",title:s.display_name||(s.data||{}).name||"",desc:"Neighbor",href:"phone-book.html?find="+encodeURIComponent(s.display_name||""),kw:"neighbor resident"})).filter(x=>x.title);
     const homes=((lst&&lst.data)||[]).map(l=>({type:"Real Estate",title:l.address,desc:[l.status,l.price].filter(Boolean).join(" · "),href:"listing.html?id="+encodeURIComponent(l.slug||""),kw:"real estate home house land property for sale listing "+(l.status||"")}));

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="The Seldovia Find Me Map: see where Seldovia's businesses, trails, parks and landmarks are, and where you are.">
+<meta name="theme-color" content="#F8E6DD">
+<title>Find Me Map — Seldovia</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="styles.css?v=131">
+</head>
+<body data-page="map">
+<a class="skip-link" href="#main">Skip to content</a>
+<main id="main">
+  <section class="section wrap fm-wrap">
+    <div class="section-head" style="text-align:center">
+      <span class="eyebrow">Find your way around town</span>
+      <h1 class="fm-title">Find Me Map</h1>
+      <p class="page-intro" style="margin-top:.4rem">Tap a pin to see what's there. Tap <b>Find me</b> to see where you are. Your location stays on your phone and is never saved.</p>
+    </div>
+    <div class="fm-bar">
+      <button type="button" class="btn btn-primary" id="findMeBtn">📍 Find me</button>
+      <span id="findMeMsg" class="fm-msg" role="status" aria-live="polite"></span>
+    </div>
+    <div class="tabs fm-chips" id="mapChips" role="group" aria-label="Show only one kind of place"></div>
+    <div id="findMap" class="fm-map" role="region" aria-label="Map of Seldovia"></div>
+    <p class="fm-count"><span id="mapCount"></span> · More places are being added.</p>
+  </section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="db.js?v=6"></script>
+<script src="app.js?v=126"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="map-pins.js?v=1"></script>
+<script src="map.js?v=1"></script>
+</body>
+</html>

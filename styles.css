@@ -1241,3 +1241,37 @@ footer.site .kh-btn{font-size:.85rem; padding:.4rem .8rem; box-shadow:none;}
 @media (min-width:781px){ .foot-explore ul{display:block; columns:2; column-gap:1.4rem;} .foot-explore li{break-inside:avoid; margin-bottom:.5rem;} }
 @media (max-width:480px){ .foot-grid{grid-template-columns:1fr 1fr; column-gap:16px;} .foot-grid .foot-brand{grid-column:1/-1;} }
 .foot-email{margin-top:.6rem;} .foot-email a{color:inherit; font-weight:700;}
+
+/* ===== Oct 10 batch (Jenny) ===== */
+/* Intro lines under the Blog / Photos / Phone Book banners: storybook serif, tighter lines, full banner width */
+.page-intro{font-family:"Lovestory Serif", Georgia, serif; font-weight:400; font-size:clamp(1.3rem,2.2vw,1.8rem); line-height:1.32; color:var(--heading); text-align:center; text-wrap:pretty;}
+.page-intro a{font-family:inherit;}
+.page-intro-cta{text-align:center; margin:1rem 0 0;}
+/* Seldovia.com intro on Home (moved from About) */
+.home-intro{text-align:center; padding-bottom:0;}
+.home-intro .home-intro-h{font-family:"Lovestory Serif", Georgia, serif; font-weight:400; color:var(--band); font-size:clamp(2rem,4.2vw,3.2rem); line-height:1.15; text-wrap:balance; margin:0 auto .7rem;}
+.home-intro p{font-family:"Lovestory Serif", Georgia, serif; font-size:clamp(1.2rem,1.9vw,1.55rem); line-height:1.4; color:var(--text); max-width:none; margin:0 auto; text-wrap:pretty;}
+/* Footer sponsor link */
+.foot-sponsor{margin-top:.35rem;} .foot-sponsor a{color:inherit; font-weight:700; text-decoration:underline; text-underline-offset:3px;}
+/* Mobile menu button: 3 lines + MENU */
+@media (max-width:1120px){ #menuBtn{display:inline-flex; align-items:center; gap:7px; width:auto; height:44px; padding:0 15px 0 12px; border-radius:999px; border:2px solid #fff; background:rgba(255,255,255,.18);} }
+#menuBtn .menu-word{font-family:var(--sans); font-weight:800; font-size:.85rem; letter-spacing:.1em; line-height:1;}
+/* Explore -> map link */
+.place-map-link{text-align:center; margin:.6rem 0 0; font-weight:700;} .place-map-link a{color:var(--accent-ink);}
+/* Find Me Map page */
+.fm-title{font-family:var(--script); font-weight:400; font-size:clamp(3rem,7vw,5rem); color:var(--heading); margin:.1rem 0 0; line-height:1;}
+.fm-bar{display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:.6rem 1rem; margin:1rem 0 .6rem;}
+.fm-msg{font-weight:600; color:var(--heading);}
+.fm-chips{justify-content:center; flex-wrap:wrap; margin-bottom:.8rem;}
+.fm-dot{display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:6px; vertical-align:middle;}
+.fm-map{height:min(72vh,680px); min-height:380px; border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden; z-index:0;}
+.fm-count{text-align:center; color:var(--text-soft); font-size:.92rem; margin-top:.6rem;}
+.fm-pop b{font-size:1rem;} .fm-pop span{color:#666;} .fm-pop-links{margin-top:.4rem; font-weight:700;}
+/* Admin Map Pins tab */
+.mp-wrap{display:grid; grid-template-columns:minmax(240px,320px) 1fr; gap:16px;}
+.mp-tools{display:flex; gap:6px; margin-bottom:6px;} .mp-tools select,.mp-tools input{flex:1; min-width:0; padding:.45rem .5rem; border-radius:8px; border:1px solid #ccc;}
+.mp-list{max-height:560px; overflow:auto; display:grid; gap:4px;}
+.mp-row{display:block; text-align:left; width:100%; padding:.45rem .6rem; border:1px solid #e3ddd2; border-radius:8px; background:#fff; cursor:pointer;}
+.mp-row small{display:block; color:#777;} .mp-row.on{border-color:var(--band); background:#eef4ef;}
+.mp-sel{margin-bottom:6px;} .mp-map{height:520px; border-radius:10px; overflow:hidden;} .mp-actions{margin-top:8px;}
+@media (max-width:760px){ .mp-wrap{grid-template-columns:1fr;} .mp-map{height:380px;} .mp-list{max-height:260px;} }
