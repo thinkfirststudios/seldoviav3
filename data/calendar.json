@@ -1,12 +1,7 @@
 {
- "updated": "2026-10-11T22:02:28Z",
+ "updated": "2026-10-12T06:05:00Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1791764100000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Departs to Homer"
-  },
   {
    "start": 1791820800000,
    "allDay": false,
@@ -301,6 +296,11 @@
    "start": 1792512000000,
    "allDay": false,
    "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1792515600000,
+   "allDay": false,
+   "title": "Absentee In Person Voting"
   }
  ]
 }
