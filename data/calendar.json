@@ -1,27 +1,7 @@
 {
- "updated": "2026-10-13T14:18:10Z",
+ "updated": "2026-10-13T22:49:52Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1791907200000,
-   "allDay": false,
-   "title": "SVT - Fitness Center"
-  },
-  {
-   "start": 1791914400000,
-   "allDay": false,
-   "title": "SOCC - Yoga"
-  },
-  {
-   "start": 1791926100000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
-  },
-  {
-   "start": 1791928800000,
-   "allDay": false,
-   "title": "Seldovia Public Library Hours"
-  },
   {
    "start": 1791933300000,
    "allDay": false,
@@ -61,6 +41,11 @@
    "start": 1791993600000,
    "allDay": false,
    "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1792000800000,
+   "allDay": false,
+   "title": "SBE - Lifetouch School Pictures"
   },
   {
    "start": 1792015200000,
@@ -131,6 +116,11 @@
    "start": 1792117800000,
    "allDay": false,
    "title": "SVT - Kinusaiga Kid + Parent Class"
+  },
+  {
+   "start": 1792137600000,
+   "allDay": true,
+   "title": "SBE - End of Quarter"
   },
   {
    "start": 1792166400000,
@@ -301,6 +291,16 @@
    "start": 1792548000000,
    "allDay": false,
    "title": "SOCC - Adult Pottery Class"
+  },
+  {
+   "start": 1792549800000,
+   "allDay": false,
+   "title": "SVT - Kinusaiga Adult Class"
+  },
+  {
+   "start": 1792598400000,
+   "allDay": false,
+   "title": "SVT - Fitness Center"
   }
  ]
 }
