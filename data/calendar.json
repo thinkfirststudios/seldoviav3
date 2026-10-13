@@ -1,12 +1,7 @@
 {
- "updated": "2026-10-13T00:46:21Z",
+ "updated": "2026-10-13T14:18:10Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1791856800000,
-   "allDay": false,
-   "title": "CITY - Council Regular Meeting"
-  },
   {
    "start": 1791907200000,
    "allDay": false,
@@ -301,6 +296,11 @@
    "start": 1792541700000,
    "allDay": false,
    "title": "AMHS - Tustumena Departs to Homer"
+  },
+  {
+   "start": 1792548000000,
+   "allDay": false,
+   "title": "SOCC - Adult Pottery Class"
   }
  ]
 }
