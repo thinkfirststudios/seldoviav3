@@ -1,37 +1,7 @@
 {
- "updated": "2026-10-12T15:35:31Z",
+ "updated": "2026-10-13T00:46:21Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1791820800000,
-   "allDay": false,
-   "title": "SVT - Fitness Center"
-  },
-  {
-   "start": 1791842400000,
-   "allDay": false,
-   "title": "Seldovia Public Library Hours"
-  },
-  {
-   "start": 1791846900000,
-   "allDay": false,
-   "title": "SVT - Kids After School Time"
-  },
-  {
-   "start": 1791847800000,
-   "allDay": false,
-   "title": "SOCC - Kids Pottery Class"
-  },
-  {
-   "start": 1791849600000,
-   "allDay": false,
-   "title": "Public Library - Story Time"
-  },
-  {
-   "start": 1791851400000,
-   "allDay": false,
-   "title": "CITY - Council Worksession"
-  },
   {
    "start": 1791856800000,
    "allDay": false,
@@ -301,6 +271,36 @@
    "start": 1792515600000,
    "allDay": false,
    "title": "Absentee In Person Voting"
+  },
+  {
+   "start": 1792519200000,
+   "allDay": false,
+   "title": "SOCC - Yoga"
+  },
+  {
+   "start": 1792530900000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
+  },
+  {
+   "start": 1792533600000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
+  },
+  {
+   "start": 1792538100000,
+   "allDay": false,
+   "title": "SVT - Kids After School Time"
+  },
+  {
+   "start": 1792538100000,
+   "allDay": false,
+   "title": "SVT's Open Swim"
+  },
+  {
+   "start": 1792541700000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Departs to Homer"
   }
  ]
 }
