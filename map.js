@@ -6,6 +6,7 @@
   const COLORS={travel:"#2f6f9f",stay:"#8a4fb0",eat:"#d0632b",shop:"#c2185b",activities:"#2e8b57",gardens:"#5a9e2f",landmarks:"#8d6e3f",services:"#455a64",life:"#b8860b"};
   const tabName=k=>{ const t=(typeof PLACE_TABS!=="undefined"?PLACE_TABS:[]).find(x=>x[0]===k); return t?t[1]:""; };
   const map=L.map(el,{scrollWheelZoom:false}).setView(SELDOVIA_CENTER,15);
+  if(window.ResizeObserver) new ResizeObserver(()=>map.invalidateSize()).observe(el);
   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors'}).addTo(map);
   map.on("focus",()=>map.scrollWheelZoom.enable()); map.on("blur",()=>map.scrollWheelZoom.disable());
 
@@ -23,7 +24,10 @@
     if(chips){ chips.innerHTML=[["all","All"]].concat(keys.map(k=>[k,tabName(k)||k])).map(([k,l])=>`<button type="button" class="tab" data-k="${k}" aria-pressed="${k==="all"}">${k!=="all"?`<i class="fm-dot" style="background:${COLORS[k]||"#2c4a3a"}"></i>`:""}${esc(l)}</button>`).join("");
       chips.addEventListener("click",e=>{ const b=e.target.closest("button"); if(!b) return; active=b.dataset.k;
         chips.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));
-        keys.forEach(k=>{ (active==="all"||active===k)?map.addLayer(layers[k]):map.removeLayer(layers[k]); }); }); }
+        keys.forEach(k=>{ (active==="all"||active===k)?map.addLayer(layers[k]):map.removeLayer(layers[k]); });
+        // zoom to fit the pins being shown (some are out of town, e.g. Kasitsna Bay Lab)
+        const shown=places.filter(p=>active==="all"||p.key===active).map(p=>markers[p.name].getLatLng());
+        if(shown.length===1) map.setView(shown[0],15); else if(shown.length) map.fitBounds(L.latLngBounds(shown),{padding:[40,40],maxZoom:17}); }); }
     const cnt=document.getElementById("mapCount"); if(cnt) cnt.textContent=places.length+" places on the map so far";
     const want=new URLSearchParams(location.search).get("place");
     if(want && markers[want]){ map.setView(markers[want].getLatLng(),17); markers[want].openPopup(); }

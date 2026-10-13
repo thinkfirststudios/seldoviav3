@@ -112,7 +112,7 @@
           ${TABS.map((t,i)=>`<button class="admin-tab ${i===0?"is-active":""}" data-tab="${t.key}" type="button">${t.label}</button>`).join("")}
         </div>
         <div style="display:flex;align-items:center;gap:.8rem">
-          <span style="font-size:.72rem;color:var(--text-soft)" title="If this number is old after refreshing, your browser cached the admin — clear site data / hard refresh.">admin build 57</span>
+          <span style="font-size:.72rem;color:var(--text-soft)" title="If this number is old after refreshing, your browser cached the admin — clear site data / hard refresh.">admin build 58</span>
           <button class="btn btn-ghost" id="logoutBtn" type="button">Sign out</button>
         </div>
       </div>
@@ -1031,7 +1031,9 @@
     $("#mpList").addEventListener("click",e=>{ const b=e.target.closest(".mp-row"); if(b) pick(b.dataset.n); });
     $("#mpFilter").addEventListener("change",list); $("#mpSearch").addEventListener("input",list);
     if(!places.some(p=>st(p.name)==="need")) $("#mpFilter").value="all";
-    drawOthers(); list(); setTimeout(()=>map.invalidateSize(),200);
+    drawOthers(); list();
+    // The tab is hidden when the map is built, so redraw whenever its box changes size (otherwise only a corner loads)
+    if(window.ResizeObserver) new ResizeObserver(()=>map.invalidateSize()).observe($("#mpMap")); setTimeout(()=>map.invalidateSize(),300);
   }
   /* ---- Photo Contest box on the Photos page (Jenny/Qwynny Oct 8) ---- */
   async function renderContestTab(){

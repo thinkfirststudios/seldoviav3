@@ -1275,3 +1275,4 @@ footer.site .kh-btn{font-size:.85rem; padding:.4rem .8rem; box-shadow:none;}
 .mp-row small{display:block; color:#777;} .mp-row.on{border-color:var(--band); background:#eef4ef;}
 .mp-sel{margin-bottom:6px;} .mp-map{height:520px; border-radius:10px; overflow:hidden;} .mp-actions{margin-top:8px;}
 @media (max-width:760px){ .mp-wrap{grid-template-columns:1fr;} .mp-map{height:380px;} .mp-list{max-height:260px;} }
+.about-map-fig figcaption a{white-space:nowrap;} /* keep "Find Me Map" on one line */
