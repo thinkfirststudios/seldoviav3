@@ -1,42 +1,7 @@
 {
- "updated": "2026-10-13T22:49:52Z",
+ "updated": "2026-10-14T04:59:34Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1791933300000,
-   "allDay": false,
-   "title": "SVT - Kids After School Time"
-  },
-  {
-   "start": 1791933300000,
-   "allDay": false,
-   "title": "SVT's Open Swim"
-  },
-  {
-   "start": 1791936900000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Departs to Homer"
-  },
-  {
-   "start": 1791939600000,
-   "allDay": false,
-   "title": "SVT - Community Assistance Program Meeting"
-  },
-  {
-   "start": 1791940500000,
-   "allDay": false,
-   "title": "SRSA Board Special Meeting"
-  },
-  {
-   "start": 1791943200000,
-   "allDay": false,
-   "title": "SOCC - Adult Pottery Class"
-  },
-  {
-   "start": 1791945000000,
-   "allDay": false,
-   "title": "SVT - Kinusaiga Adult Class"
-  },
   {
    "start": 1791993600000,
    "allDay": false,
@@ -301,6 +266,41 @@
    "start": 1792598400000,
    "allDay": false,
    "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1792602000000,
+   "allDay": false,
+   "title": "Absentee In Person Voting"
+  },
+  {
+   "start": 1792620000000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
+  },
+  {
+   "start": 1792624500000,
+   "allDay": false,
+   "title": "SVT's Pumpkin Patch"
+  },
+  {
+   "start": 1792625400000,
+   "allDay": false,
+   "title": "SOCC - Kids Pottery Class"
+  },
+  {
+   "start": 1792638000000,
+   "allDay": false,
+   "title": "SOCC - Teen Night"
+  },
+  {
+   "start": 1792688400000,
+   "allDay": false,
+   "title": "Absentee In Person Voting"
+  },
+  {
+   "start": 1792692000000,
+   "allDay": false,
+   "title": "SOCC - Yoga"
   }
  ]
 }
