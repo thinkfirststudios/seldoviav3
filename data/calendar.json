@@ -1,12 +1,7 @@
 {
- "updated": "2026-10-14T12:00:05Z",
+ "updated": "2026-10-14T17:16:57Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1791993600000,
-   "allDay": false,
-   "title": "SVT - Fitness Center"
-  },
   {
    "start": 1792000800000,
    "allDay": false,
@@ -301,6 +296,11 @@
    "start": 1792692000000,
    "allDay": false,
    "title": "SOCC - Yoga"
+  },
+  {
+   "start": 1792695600000,
+   "allDay": false,
+   "title": "SVT - Flu Shot Clinic"
   }
  ]
 }
