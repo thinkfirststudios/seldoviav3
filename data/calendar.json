@@ -1,12 +1,7 @@
 {
- "updated": "2026-10-14T17:16:57Z",
+ "updated": "2026-10-14T21:45:36Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1792000800000,
-   "allDay": false,
-   "title": "SBE - Lifetouch School Pictures"
-  },
   {
    "start": 1792015200000,
    "allDay": false,
@@ -38,14 +33,14 @@
    "title": "SOCC - Yoga"
   },
   {
+   "start": 1792094400000,
+   "allDay": false,
+   "title": "City - Surplus Equipment Sale Open House"
+  },
+  {
    "start": 1792098000000,
    "allDay": false,
    "title": "SVT - Fitness Center"
-  },
-  {
-   "start": 1792098900000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
   },
   {
    "start": 1792101600000,
@@ -61,11 +56,6 @@
    "start": 1792106100000,
    "allDay": false,
    "title": "SVT - Kids After School Time"
-  },
-  {
-   "start": 1792109700000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Departs to Homer"
   },
   {
    "start": 1792114200000,
@@ -101,6 +91,16 @@
    "start": 1792182600000,
    "allDay": false,
    "title": "Seldovia Public Library Hours"
+  },
+  {
+   "start": 1792185300000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
+  },
+  {
+   "start": 1792196100000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Departs to Homer"
   },
   {
    "start": 1792202400000,
