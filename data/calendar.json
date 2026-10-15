@@ -1,27 +1,7 @@
 {
- "updated": "2026-10-14T21:45:36Z",
+ "updated": "2026-10-15T04:48:04Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1792015200000,
-   "allDay": false,
-   "title": "Seldovia Public Library Hours"
-  },
-  {
-   "start": 1792019700000,
-   "allDay": false,
-   "title": "SVT - Kids After School Time"
-  },
-  {
-   "start": 1792020600000,
-   "allDay": false,
-   "title": "SOCC - Kids Pottery Class"
-  },
-  {
-   "start": 1792033200000,
-   "allDay": false,
-   "title": "SOCC - Teen Night"
-  },
   {
    "start": 1792085400000,
    "allDay": false,
@@ -301,6 +281,26 @@
    "start": 1792695600000,
    "allDay": false,
    "title": "SVT - Flu Shot Clinic"
+  },
+  {
+   "start": 1792702800000,
+   "allDay": false,
+   "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1792703700000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
+  },
+  {
+   "start": 1792708200000,
+   "allDay": false,
+   "title": "SVT - Science Thursday"
+  },
+  {
+   "start": 1792710900000,
+   "allDay": false,
+   "title": "SBC - Joy Club"
   }
  ]
 }
