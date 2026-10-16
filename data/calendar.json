@@ -1,12 +1,7 @@
 {
- "updated": "2026-10-16T04:37:52Z",
+ "updated": "2026-10-16T11:30:43Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1792137600000,
-   "allDay": true,
-   "title": "SBE - End of Quarter"
-  },
   {
    "start": 1792166400000,
    "allDay": false,
@@ -301,6 +296,11 @@
    "start": 1792807200000,
    "allDay": false,
    "title": "SOCC - Adult Pottery Class"
+  },
+  {
+   "start": 1792809000000,
+   "allDay": false,
+   "title": "Linwood Bar & Grill - Free Bingo"
   }
  ]
 }
