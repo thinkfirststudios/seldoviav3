@@ -1,32 +1,7 @@
 {
- "updated": "2026-10-15T21:27:58Z",
+ "updated": "2026-10-16T04:37:52Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1792101600000,
-   "allDay": false,
-   "title": "Seldovia Public Library Hours"
-  },
-  {
-   "start": 1792103400000,
-   "allDay": false,
-   "title": "SVT - Science Thursday"
-  },
-  {
-   "start": 1792106100000,
-   "allDay": false,
-   "title": "SVT - Kids After School Time"
-  },
-  {
-   "start": 1792114200000,
-   "allDay": false,
-   "title": "SOCC - Mahjong Game Night"
-  },
-  {
-   "start": 1792117800000,
-   "allDay": false,
-   "title": "SVT - Kinusaiga Kid + Parent Class"
-  },
   {
    "start": 1792137600000,
    "allDay": true,
@@ -36,11 +11,6 @@
    "start": 1792166400000,
    "allDay": false,
    "title": "SVT - Fitness Center"
-  },
-  {
-   "start": 1792173600000,
-   "allDay": false,
-   "title": "Seldovia Bible Chapel - Kids Club"
   },
   {
    "start": 1792182600000,
@@ -56,6 +26,11 @@
    "start": 1792185300000,
    "allDay": false,
    "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
+  },
+  {
+   "start": 1792188000000,
+   "allDay": false,
+   "title": "Seldovia Bible Chapel - Kids Club"
   },
   {
    "start": 1792196100000,
@@ -301,6 +276,31 @@
    "start": 1792771200000,
    "allDay": false,
    "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1792774800000,
+   "allDay": false,
+   "title": "Absentee In Person Voting"
+  },
+  {
+   "start": 1792787400000,
+   "allDay": false,
+   "title": "SBC Food Bank Day"
+  },
+  {
+   "start": 1792791600000,
+   "allDay": false,
+   "title": "SVT - Early Release Family BINGO"
+  },
+  {
+   "start": 1792797300000,
+   "allDay": false,
+   "title": "SVT - Kids After School Time"
+  },
+  {
+   "start": 1792807200000,
+   "allDay": false,
+   "title": "SOCC - Adult Pottery Class"
   }
  ]
 }
