@@ -1,12 +1,7 @@
 {
- "updated": "2026-10-17T15:39:57Z",
+ "updated": "2026-10-17T20:40:14Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1792260000000,
-   "allDay": false,
-   "title": "Seldovia Bible Chapel - Kids Club"
-  },
   {
    "start": 1792274400000,
    "allDay": false,
@@ -301,6 +296,11 @@
    "start": 1792973700000,
    "allDay": false,
    "title": "AMHS - Tustumena Departs to Homer"
+  },
+  {
+   "start": 1793030400000,
+   "allDay": false,
+   "title": "SVT - Fitness Center"
   }
  ]
 }
