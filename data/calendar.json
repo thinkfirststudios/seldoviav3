@@ -1,32 +1,7 @@
 {
- "updated": "2026-10-16T21:16:04Z",
+ "updated": "2026-10-17T04:34:46Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1792188000000,
-   "allDay": false,
-   "title": "Seldovia Bible Chapel - Kids Club"
-  },
-  {
-   "start": 1792196100000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Departs to Homer"
-  },
-  {
-   "start": 1792202400000,
-   "allDay": false,
-   "title": "SOCC - Adult Pottery Class"
-  },
-  {
-   "start": 1792204200000,
-   "allDay": false,
-   "title": "Linwood Bar & Grill - Free Bingo"
-  },
-  {
-   "start": 1792209600000,
-   "allDay": false,
-   "title": "Seldovia Bible Chapel - Teen Nights at the Sea Otter Community Center!"
-  },
   {
    "start": 1792260000000,
    "allDay": false,
@@ -301,6 +276,31 @@
    "start": 1792951200000,
    "allDay": false,
    "title": "Grace Haven Fellowship Sunday Worship"
+  },
+  {
+   "start": 1792951200000,
+   "allDay": false,
+   "title": "SOCC - Yoga"
+  },
+  {
+   "start": 1792951200000,
+   "allDay": false,
+   "title": "St. Nicholas Russian Orthodox Church Sunday Service"
+  },
+  {
+   "start": 1792954800000,
+   "allDay": false,
+   "title": "Seldovia Bible Chapel - Sunday Worship Service"
+  },
+  {
+   "start": 1792962900000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
+  },
+  {
+   "start": 1792973700000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Departs to Homer"
   }
  ]
 }
