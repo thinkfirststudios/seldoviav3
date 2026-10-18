@@ -1,22 +1,7 @@
 {
- "updated": "2026-10-17T20:40:14Z",
+ "updated": "2026-10-18T04:40:14Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1792274400000,
-   "allDay": false,
-   "title": "Seldovia Public Library Hours"
-  },
-  {
-   "start": 1792278000000,
-   "allDay": false,
-   "title": "SOCC - Adult Pickleball"
-  },
-  {
-   "start": 1792285200000,
-   "allDay": false,
-   "title": "St. Nicholas Russian Orthodox Church Vespers Service"
-  },
   {
    "start": 1792310400000,
    "allDay": true,
@@ -301,6 +286,21 @@
    "start": 1793030400000,
    "allDay": false,
    "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1793034000000,
+   "allDay": false,
+   "title": "Absentee In Person Voting"
+  },
+  {
+   "start": 1793056500000,
+   "allDay": false,
+   "title": "SVT - Kids After School Time"
+  },
+  {
+   "start": 1793057400000,
+   "allDay": false,
+   "title": "SOCC - Kids Pottery Class"
   }
  ]
 }
