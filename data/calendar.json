@@ -1,12 +1,7 @@
 {
- "updated": "2026-10-18T04:40:14Z",
+ "updated": "2026-10-18T11:15:02Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1792310400000,
-   "allDay": true,
-   "title": "Alaska Day 🏔️🐻"
-  },
   {
    "start": 1792346400000,
    "allDay": false,
@@ -301,6 +296,11 @@
    "start": 1793057400000,
    "allDay": false,
    "title": "SOCC - Kids Pottery Class"
+  },
+  {
+   "start": 1793059200000,
+   "allDay": false,
+   "title": "Public Library - Story Time"
   }
  ]
 }
