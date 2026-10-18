@@ -112,7 +112,7 @@
           ${TABS.map((t,i)=>`<button class="admin-tab ${i===0?"is-active":""}" data-tab="${t.key}" type="button">${t.label}</button>`).join("")}
         </div>
         <div style="display:flex;align-items:center;gap:.8rem">
-          <span style="font-size:.72rem;color:var(--text-soft)" title="If this number is old after refreshing, your browser cached the admin — clear site data / hard refresh.">admin build 58</span>
+          <span style="font-size:.72rem;color:var(--text-soft)" title="If this number is old after refreshing, your browser cached the admin — clear site data / hard refresh.">admin build 59</span>
           <button class="btn btn-ghost" id="logoutBtn" type="button">Sign out</button>
         </div>
       </div>
@@ -1006,25 +1006,33 @@
     const TAG={need:"⬜ Needs a pin",starter:"🟡 Please confirm",pinned:"✅ Pinned",skip:"➖ Not on map"};
     const map=L.map("mpMap").setView(SELDOVIA_CENTER,15);
     L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:"&copy; OpenStreetMap contributors"}).addTo(map);
-    const others=L.layerGroup().addTo(map); let sel=null, pend=null, mk=null;
+    const others=L.layerGroup().addTo(map); let sel=null, pend=null, mk=null, dirty=false;
+    const notSaved=()=>{ dirty=true; const msg=$("#mpMsg"); msg.style.color="#b45309"; msg.textContent="Pin placed, not saved yet. Hit Save pin."; $("#mpSave").disabled=false; };
+    // Jenny lost 30-40 pins by moving on without Save (Oct 13): warn before an unsaved pin is thrown away
+    window.addEventListener("beforeunload",e=>{ if(dirty){ e.preventDefault(); e.returnValue=""; } });
     const drawOthers=()=>{ others.clearLayers(); places.forEach(p=>{ const q=pins[p.name]; if(q&&!q.skip&&p.name!==sel) L.circleMarker([q.lat,q.lng],{radius:5,color:"#fff",weight:1,fillColor:q.starter?"#e0a800":"#2c4a3a",fillOpacity:.85}).bindTooltip(p.shown).addTo(others); }); };
     const btns=on=>["#mpSave","#mpSkip","#mpClear"].forEach(b=>$(b).disabled=!on);
     const list=()=>{ const f=$("#mpFilter").value, q=$("#mpSearch").value.trim().toLowerCase();
       const rows=places.filter(p=>(f==="all"||st(p.name)===f)&&(!q||p.shown.toLowerCase().includes(q)));
       $("#mpCount").textContent=rows.length+" of "+places.length+" places";
       $("#mpList").innerHTML=rows.map(p=>`<button type="button" class="mp-row${p.name===sel?" on":""}" data-n="${esc(p.name)}"><b>${esc(p.shown)}</b><small>${esc(p.label||"")} · ${TAG[st(p.name)]}</small></button>`).join("")||"<p>Nothing here.</p>"; };
-    const pick=n=>{ sel=n; const p=places.find(x=>x.name===n), q=pins[n]; pend=q&&!q.skip?{lat:q.lat,lng:q.lng}:null;
+    const pick=async(n,keepMsg)=>{
+      if(dirty && sel && pend && n!==sel){ const was=(places.find(x=>x.name===sel)||{}).shown||sel;
+        if(confirm(`You haven't saved the pin for "${was}".\n\nOK = save it now\nCancel = don't save it`)) await save({lat:pend.lat,lng:pend.lng},"Map pin saved",true); }
+      dirty=false; sel=n; const p=places.find(x=>x.name===n), q=pins[n]; pend=q&&!q.skip?{lat:q.lat,lng:q.lng}:null;
       if(mk){ map.removeLayer(mk); mk=null; }
-      if(pend){ mk=L.marker([pend.lat,pend.lng],{draggable:true}).addTo(map); mk.on("dragend",()=>{ const ll=mk.getLatLng(); pend={lat:+ll.lat.toFixed(6),lng:+ll.lng.toFixed(6)}; $("#mpSave").disabled=false; }); map.setView([pend.lat,pend.lng],17); }
+      if(pend){ mk=L.marker([pend.lat,pend.lng],{draggable:true}).addTo(map); mk.on("dragend",()=>{ const ll=mk.getLatLng(); pend={lat:+ll.lat.toFixed(6),lng:+ll.lng.toFixed(6)}; notSaved(); }); map.setView([pend.lat,pend.lng],17); }
       $("#mpSel").innerHTML=`<b>${esc(p.shown)}</b> · ${TAG[st(n)]}${pend?"":" · <i>click the map where it is</i>"}`;
-      btns(true); $("#mpSave").disabled=!pend; $("#mpMsg").textContent=""; drawOthers(); list(); };
+      btns(true); $("#mpSave").disabled=!pend; if(!keepMsg) $("#mpMsg").textContent=""; drawOthers(); list(); };
     map.on("click",e=>{ if(!sel) return; pend={lat:+e.latlng.lat.toFixed(6),lng:+e.latlng.lng.toFixed(6)};
-      if(mk) mk.setLatLng(e.latlng); else { mk=L.marker(e.latlng,{draggable:true}).addTo(map); mk.on("dragend",()=>{ const ll=mk.getLatLng(); pend={lat:+ll.lat.toFixed(6),lng:+ll.lng.toFixed(6)}; }); }
+      if(mk) mk.setLatLng(e.latlng); else { mk=L.marker(e.latlng,{draggable:true}).addTo(map); mk.on("dragend",()=>{ const ll=mk.getLatLng(); pend={lat:+ll.lat.toFixed(6),lng:+ll.lng.toFixed(6)}; notSaved(); }); }
+      notSaved();
       $("#mpSave").disabled=false; });
-    const save=async(val,label)=>{ const msg=$("#mpMsg"); msg.style.color=""; msg.textContent="Saving…";
+    const save=async(val,label,quiet)=>{ const msg=$("#mpMsg"); msg.style.color=""; msg.textContent="Saving…";
       saved[sel]=val; const {error}=await db.from("settings").upsert({key:"place_pins",value:JSON.stringify(saved)},{onConflict:"key"});
       if(error){ msg.textContent=error.message; return; }
-      pins[sel]=val; await logAdmin(label, sel); msg.style.color="var(--open)"; msg.textContent="Saved — it's live on the map."; pick(sel); };
+      pins[sel]=val; dirty=false; await logAdmin(label, sel); const nm=(places.find(x=>x.name===sel)||{}).shown||sel;
+      msg.style.color="var(--open)"; msg.textContent=`✓ Saved ${nm}. It's live on the map.`; if(!quiet) pick(sel,true); };
     $("#mpSave").addEventListener("click",()=>pend&&save({lat:pend.lat,lng:pend.lng},"Map pin saved"));
     $("#mpSkip").addEventListener("click",()=>save({skip:true},"Map: not a physical place"));
     $("#mpClear").addEventListener("click",()=>{ if(confirm("Remove this place's pin from the map?")) save(null,"Map pin removed"); });

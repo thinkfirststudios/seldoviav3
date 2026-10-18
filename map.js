@@ -19,9 +19,12 @@
         <div class="fm-pop-links"><a href="explore.html?find=${encodeURIComponent(p.name)}">See it on Explore</a> ·
         <a href="https://www.google.com/maps/dir/?api=1&destination=${q.lat},${q.lng}" target="_blank" rel="noopener">Directions ↗</a></div></div>`);
       (layers[p.key]=layers[p.key]||L.layerGroup().addTo(map)).addLayer(m); markers[p.name]=m; });
-    const keys=Object.keys(layers);
+    // same order as the Explore tabs (Jenny Oct 17)
+    const order=(typeof PLACE_TABS!=="undefined"?PLACE_TABS:[]).map(t=>t[0]);
+    const keys=Object.keys(layers).sort((a,b)=>(order.indexOf(a)+1||99)-(order.indexOf(b)+1||99));
+    const SUB=(typeof TAB_SUB!=="undefined")?TAB_SUB:{};
     const chips=document.getElementById("mapChips");
-    if(chips){ chips.innerHTML=[["all","All"]].concat(keys.map(k=>[k,tabName(k)||k])).map(([k,l])=>`<button type="button" class="tab" data-k="${k}" aria-pressed="${k==="all"}">${k!=="all"?`<i class="fm-dot" style="background:${COLORS[k]||"#2c4a3a"}"></i>`:""}${esc(l)}</button>`).join("");
+    if(chips){ chips.innerHTML=[["all","All"]].concat(keys.map(k=>[k,tabName(k)||k])).map(([k,l])=>`<button type="button" class="tab" data-k="${k}" aria-pressed="${k==="all"}"><span class="fm-lbl">${k!=="all"?`<i class="fm-dot" style="background:${COLORS[k]||"#2c4a3a"}"></i>`:""}${esc(l)}</span>${SUB[k]?`<small class="tab-sub">${esc(SUB[k])}</small>`:""}</button>`).join("");
       chips.addEventListener("click",e=>{ const b=e.target.closest("button"); if(!b) return; active=b.dataset.k;
         chips.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));
         keys.forEach(k=>{ (active==="all"||active===k)?map.addLayer(layers[k]):map.removeLayer(layers[k]); });

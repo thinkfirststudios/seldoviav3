@@ -115,7 +115,7 @@ const FOOTER=`
         <p class="foot-sponsor"><a href="contact.html?topic=sponsor">Become a sponsor of Seldovia.com</a></p>
       </div>
       <div class="foot-col"><h4>Menu</h4><ul><li><a href="index.html">Home</a></li>${NAV.map(([h,l])=>`<li><a href="${h}">${l}</a></li>`).join("")}</ul></div>
-      <div class="foot-col foot-explore"><h4>Explore</h4><ul>${FOOT_TABS.map(([k,l])=>`<li><a href="${k==="about"?"about.html":"explore.html?cat="+k}">${l}</a></li>`).join("")}</ul></div>
+      <div class="foot-col foot-explore"><h4>Explore</h4><ul>${FOOT_TABS.map(([k,l])=>`<li><a href="${k==="about"?"about.html":"explore.html?cat="+k}">${l}</a></li>`).join("")}<li><a href="explore.html#ykyis">You know you're in Seldovia when...</a></li></ul></div>
     </div>
     <div class="foot-bottom">
       <p class="disclaimer">&copy; <span id="year">2026</span> Seldovia.com — a community project. Real estate services provided by Seldovia Property, a licensed Alaska real estate brokerage (Jenny Chissus, Broker/Owner; Alaska Real Estate License RECB16495). Listing information believed reliable but not guaranteed; Alaska is a non-disclosure state. Equal Housing Opportunity.</p>
@@ -415,6 +415,7 @@ function applyExploreExtra(map){
 }
 // Businesses Jenny hides (deleted from Explore) and adds (new to Explore), from the admin.
 let EXPLORE_HIDDEN=new Set();
+let PLACE_PINS={};   // Find Me Map pins (settings.place_pins + starter pins) -> "See on map" link on Explore cards
 function applyExploreAdded(arr){
   if(!Array.isArray(arr)) return;
   arr.forEach(a=>{ if(!a||!a.name||PLACES.some(p=>p.name===a.name)) return;
@@ -4459,6 +4460,8 @@ if($("#placeGrid") && $("#placeTabs")){
   $("#placeTabs").insertAdjacentHTML("beforebegin",`<div class="place-search"><span aria-hidden="true">🔍</span><input id="placeSearch" type="search" placeholder="Search businesses &amp; places on Explore…" aria-label="Search Explore" autocomplete="off"><span id="placeCount" class="place-count"></span></div><p class="place-map-link"><a href="map.html">🗺️ Find Me Map: see where everything is</a></p>`);
   let t=null; $("#placeSearch").addEventListener("input",e=>{ clearTimeout(t); t=setTimeout(()=>{ placeQuery=e.target.value.trim(); renderPlaces(); },150); });
 }
+// Small descriptor under the playful tab names (Jenny Oct 7); also shown on the Find Me Map buttons (Jenny Oct 17).
+const TAB_SUB={travel:"travel & getting here",stay:"lodging & camping",eat:"food & dining"};
 const PLACE_TABS=[["all","All"],["about","About"],["travel","Come On Over"],["stay","Stay a While"],["eat","Grab a Bite"],["shop","Shop & Gifts"],["activities","Activities & Hikes"],["gardens","Gardens, Parks & Beaches"],["landmarks","Landmarks"],["services","Businesses"],["life","Organizations & Govt."],["outoftown","Out of Town"]];
 // Jenny (Oct 1): link out to these organizations' own sites instead of hosting a page.
 // Applied at render so it works whether the link comes from static data or the DB.
@@ -4573,7 +4576,7 @@ function renderPlaces(){
     const blurb=meta.desc||BIZ_BLURB[p.name];   // Jenny can edit the description in the admin (explore_meta.desc)
     // Blurb clamps to 3 lines for uniform card height; "Read more" reveals only when it's actually clipped (Jenny).
     const body=`<div class="place-body"><div class="rating"><span class="cat">${esc(catLabel)}</span></div><h4>${esc(dispName)}</h4>
-        ${loc?`<div class="place-loc">${pin} ${esc(loc)}</div>`:""}${owner?`<div class="place-owner">👤 ${esc(owner)}</div>`:""}${blurb?`<p class="place-blurb clamp">${esc(blurb)}</p><button type="button" class="place-more" hidden>Read more</button>`:""}`;
+        ${loc?`<div class="place-loc">${pin} ${esc(loc)}</div>`:""}${(PLACE_PINS[p.name]&&PLACE_PINS[p.name].lat!=null)?`<span class="place-maplink" role="link" tabindex="0" data-place="${esc(p.name)}">🗺️ See on map</span>`:""}${owner?`<div class="place-owner">👤 ${esc(owner)}</div>`:""}${blurb?`<p class="place-blurb clamp">${esc(blurb)}</p><button type="button" class="place-more" hidden>Read more</button>`:""}`;
     if(url){ // whole card links to the business website
       return `<a class="place" href="${esc(url)}" target="_blank" rel="noopener">${media}${body}
         <div class="place-contact">${phone?esc(phone)+" · ":""}<span class="place-web">Visit website ↗</span></div></div></a>`;
@@ -4587,10 +4590,14 @@ function renderPlaces(){
   // Reveal "Read more" only on cards whose 3-line blurb is actually clipped.
   requestAnimationFrame(()=>{ $$("#placeGrid .place-blurb").forEach(b=>{ const btn=b.nextElementSibling; if(btn&&btn.classList.contains("place-more")&&b.scrollHeight>b.clientHeight+2) btn.hidden=false; }); });
   if(!_findScrolled) requestAnimationFrame(()=>{ if(scrollToFind("#placeGrid")) _findScrolled=true; });
+  // Footer link "You know you're in Seldovia when..." (Jenny Oct 17): jump to that box once the cards above it are in
+  if(location.hash==="#ykyis" && !window._ykyisScrolled){ window._ykyisScrolled=true; setTimeout(()=>{ const f=document.getElementById("ykyis"); if(f) f.scrollIntoView({behavior:"smooth",block:"start"}); },350); }
 }
+// "See on map" on Explore cards opens the Find Me Map on that place (the card itself may link to a website)
+if($("#placeGrid")){ const go=e=>{ const m=e.target.closest(".place-maplink"); if(!m) return false; e.preventDefault(); e.stopPropagation(); location.href="map.html?place="+encodeURIComponent(m.dataset.place); return true; };
+  $("#placeGrid").addEventListener("click",go,true);
+  $("#placeGrid").addEventListener("keydown",e=>{ if(e.key==="Enter"||e.key===" ") go(e); }); }
 if($("#placeTabs")){
-  // Small descriptor under the playful tab names so first-time visitors know what they mean (Jenny Oct 7).
-  const TAB_SUB={travel:"travel & getting here",stay:"lodging & camping",eat:"food & dining"};
   $("#placeTabs").innerHTML=PLACE_TABS.map(([k,l])=>`<button class="tab" data-key="${k}" aria-pressed="${k===placeTab}">${esc(l)}${TAB_SUB[k]?`<small class="tab-sub">${TAB_SUB[k]}</small>`:""}</button>`).join("");
   // On phones the tabs are one swipeable row; bring the selected tab into view (e.g. arriving from a home card).
   { const row=$("#placeTabs"), act=row.querySelector('.tab[aria-pressed="true"]');
@@ -4627,7 +4634,7 @@ if($("#placeGrid")){
 }
 // Explore page: apply Jenny's saved category overrides (if any) before the first paint.
 if($("#placeGrid") && window.db){
-  db.from("settings").select("key,value").in("key",["explore_overrides","explore_photos","explore_meta","explore_added","explore_hidden","explore_extra"])
+  db.from("settings").select("key,value").in("key",["explore_overrides","explore_photos","explore_meta","explore_added","explore_hidden","explore_extra","place_pins"])
     .then(({data})=>{ const S={}; (data||[]).forEach(r=>{ try{ S[r.key]=r.value?JSON.parse(r.value):null; }catch(e){} });
       applyExploreAdded(S.explore_added);                              // add Jenny's new businesses first…
       applyExploreOverrides(S.explore_overrides);                      // …so category overrides can apply to them too
@@ -4635,6 +4642,8 @@ if($("#placeGrid") && window.db){
       if(S.explore_photos) Object.assign(EXPLORE_PHOTOS, S.explore_photos);
       if(S.explore_meta) Object.assign(EXPLORE_META, S.explore_meta);
       if(Array.isArray(S.explore_hidden)) EXPLORE_HIDDEN=new Set(S.explore_hidden);
+      const ST=window.STARTER_PINS||{}; Object.keys(ST).forEach(n=>PLACE_PINS[n]={lat:ST[n][0],lng:ST[n][1]});
+      Object.assign(PLACE_PINS, S.place_pins||{});
       renderPlaces(); })
     .catch(()=>renderPlaces());
 } else { renderPlaces(); }
