@@ -112,7 +112,7 @@
           ${TABS.map((t,i)=>`<button class="admin-tab ${i===0?"is-active":""}" data-tab="${t.key}" type="button">${t.label}</button>`).join("")}
         </div>
         <div style="display:flex;align-items:center;gap:.8rem">
-          <span style="font-size:.72rem;color:var(--text-soft)" title="If this number is old after refreshing, your browser cached the admin — clear site data / hard refresh.">admin build 59</span>
+          <span style="font-size:.72rem;color:var(--text-soft)" title="If this number is old after refreshing, your browser cached the admin — clear site data / hard refresh.">admin build 60</span>
           <button class="btn btn-ghost" id="logoutBtn" type="button">Sign out</button>
         </div>
       </div>
@@ -977,7 +977,9 @@
         <span style="font-size:.8rem;color:var(--muted)">${esc(fmtTs(m.created_at))}</span>
       </div>
       <div style="font-size:.88rem;color:var(--accent-ink);margin:.15rem 0 .5rem">${esc(m.email||"")}</div>
-      <p style="margin:0;white-space:pre-wrap">${esc(m.message||"")}</p>
+      <p style="margin:0;white-space:pre-wrap">${esc(m.message||"").replace(/https?:\/\/[^\s<]+/g,u=>`<a href="${u}" target="_blank" rel="noopener">${u.length>60?u.slice(0,57)+"…":u}</a>`)}</p>
+      ${(()=>{ const ims=(m.message||"").match(/https?:\/\/\S+\/uploads\/(?:contest|contact|dir)\/\S+\.(?:jpe?g|png|webp|gif)/gi)||[];
+        return ims.length?`<div class="msg-thumbs">${ims.map(u=>`<a href="${esc(u)}" target="_blank" rel="noopener"><img src="${esc(u)}" alt="" loading="lazy"></a>`).join("")}</div>`:""; })()}
       <div style="display:flex;gap:.5rem;margin-top:.8rem">
         ${m.email?`<a class="btn btn-ghost" style="min-height:36px;padding:.35rem .75rem" href="mailto:${esc(m.email)}?subject=Re:%20Seldovia.com">Reply</a>`:""}
         <button class="btn btn-ghost" data-del="${m.id}" type="button" style="min-height:36px;padding:.35rem .75rem">Delete</button>
@@ -1049,21 +1051,25 @@
     $("#tab-contest").innerHTML=`
       <form class="info-block" id="contestForm" style="max-width:680px">
         <h4 style="margin:0 0 .4rem">This month's photo contest</h4>
-        <p style="color:var(--text-soft);font-size:.92rem;margin:0 0 1rem">Shows in a box at the top of the Photos page. Update it each month. The form link is also used for the "Send it our way!" link on the Photos page.</p>
+        <p style="color:var(--text-soft);font-size:.92rem;margin:0 0 1rem">Shows in a box at the top of the Photos page, and the flier shows next to the Photo of the Day. Entries come in through the site's own form (Contact page → "Enter the Monthly Photo Contest") and arrive in Messages and by email. Update it each month.</p>
         <label style="display:flex;gap:.5rem;align-items:center;margin-bottom:.8rem;font-weight:700"><input type="checkbox" id="ctShow"> Show the contest box on the Photos page</label>
         <div class="field"><label for="ctTitle">Title</label><input id="ctTitle" type="text" placeholder="e.g. October Photo Contest"></div>
         <div class="field"><label for="ctDeadline">Deadline</label><input id="ctDeadline" type="text" placeholder="e.g. 9:00am November 1st"></div>
         <div class="field"><label for="ctPrize">Prize (optional)</label><input id="ctPrize" type="text" placeholder="e.g. A special prize from our sponsors!"></div>
         <div class="field"><label for="ctBlurb">How to enter</label><textarea id="ctBlurb" rows="6" placeholder="Tell people what to photograph and what to include. Leave a blank line between paragraphs."></textarea></div>
-        <div class="field"><label for="ctLink">Entry form link</label><input id="ctLink" type="url" placeholder="https://docs.google.com/forms/…"></div>
+        <div class="field"><label for="ctFlier">Flier of the Month (image)</label><input id="ctFlier" type="file" accept="image/*"><span class="hint" id="ctFlierHint">Leave empty to keep the current flier.</span><img id="ctFlierPrev" alt="" style="display:none;max-width:220px;margin-top:.5rem;border-radius:8px"></div>
         <button class="btn btn-primary" type="submit">Save</button> <span id="ctMsg" class="form-note"></span>
       </form>`;
     const {data}=await db.from("settings").select("value").eq("key","photo_contest").maybeSingle();
     let c={}; try{ c=data&&data.value?JSON.parse(data.value):{}; }catch(e){}
     $("#ctShow").checked=c.show!==false && !!data; $("#ctTitle").value=c.title||""; $("#ctDeadline").value=c.deadline||"";
-    $("#ctPrize").value=c.prize||""; $("#ctBlurb").value=c.blurb||""; $("#ctLink").value=c.link||FORM;
+    $("#ctPrize").value=c.prize||""; $("#ctBlurb").value=c.blurb||"";
+    const prev=$("#ctFlierPrev"), fsrc=c.flier||"images/contest-flier.jpg?v=1"; prev.src=fsrc; prev.onload=()=>prev.style.display="block"; prev.onerror=()=>{ prev.style.display="none"; $("#ctFlierHint").textContent="No flier yet."; };
     $("#contestForm").addEventListener("submit",async e=>{ e.preventDefault(); const msg=$("#ctMsg"); msg.textContent="Saving…";
-      const val={show:$("#ctShow").checked, title:$("#ctTitle").value.trim(), deadline:$("#ctDeadline").value.trim(), prize:$("#ctPrize").value.trim(), blurb:$("#ctBlurb").value.trim(), link:$("#ctLink").value.trim()};
+      let flier=c.flier||""; const ff=$("#ctFlier").files[0];
+      try{ if(ff){ msg.textContent="Uploading flier…"; flier=await uploadImage("blog", ff, "flier"); } }catch(err){ msg.textContent="Flier upload failed: "+err.message; return; }
+      const val={show:$("#ctShow").checked, title:$("#ctTitle").value.trim(), deadline:$("#ctDeadline").value.trim(), prize:$("#ctPrize").value.trim(), blurb:$("#ctBlurb").value.trim(), flier};
+      c=val; if(flier){ $("#ctFlierPrev").src=flier; } $("#ctFlier").value="";
       const {error}=await db.from("settings").upsert({key:"photo_contest",value:JSON.stringify(val)},{onConflict:"key"});
       if(error){ msg.textContent=error.message; return; } await logAdmin("Updated photo contest", val.title||""); msg.style.color="var(--open)"; msg.textContent="Saved — it's live on the Photos page."; });
   }

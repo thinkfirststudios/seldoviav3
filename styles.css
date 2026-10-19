@@ -1283,3 +1283,14 @@ footer.site .kh-btn{font-size:.85rem; padding:.4rem .8rem; box-shadow:none;}
 .fm-chips .tab{display:inline-flex; flex-direction:column; align-items:center; line-height:1.2;}
 .fm-chips .tab .fm-lbl{display:inline-flex; align-items:center;}
 #ykyis{scroll-margin-top:90px;}
+
+/* Oct 19 (Jenny): contest entry form on Contact + Flier of the Month beside the Photo of the Day */
+.contest-fields{display:grid; gap:.2rem;} .contest-note{margin:0 0 .4rem; font-weight:700; color:var(--heading);}
+.req{color:#c0392b;}
+.ce-preview{display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin-top:.5rem;} .ce-preview img{width:64px; height:64px; object-fit:cover; border-radius:8px;}
+.ce-preview span{font-weight:700; color:var(--text-soft); font-size:.9rem;}
+.pj-flier{display:block; margin-top:1.1rem; text-decoration:none; color:inherit;}
+.pj-flier img{display:block; width:100%; max-width:340px; height:auto; border-radius:12px; box-shadow:var(--shadow); margin:.35rem 0 .5rem; transition:transform .15s;}
+.pj-flier:hover img{transform:scale(1.02);}
+.pj-flier-cta{font-weight:800; color:var(--accent-ink); text-decoration:underline; text-underline-offset:3px;}
+.msg-thumbs{display:flex; flex-wrap:wrap; gap:6px; margin-top:.6rem;} .msg-thumbs img{width:90px; height:90px; object-fit:cover; border-radius:8px;}

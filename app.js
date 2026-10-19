@@ -5206,10 +5206,45 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape")setDrawer(false);});
 if($("#cTopic")){ const t=(new URLSearchParams(location.search).get("topic")||"").toLowerCase();
   if(t){ const sel=$("#cTopic"), opt=[...sel.options].find(o=>o.text.toLowerCase().includes(t));
     if(opt){ sel.value=opt.value; } } }
+// Monthly Photo Contest entry on the Contact page (Jenny Oct 19): her Google Form's questions, no Google sign-in.
+const isContest=()=>/contest/i.test(($("#cTopic")||{}).value||"");
+function syncContestFields(){ const on=isContest(), f=$("#contestFields"); if(!f) return;
+  f.hidden=!on; $("#cMsgField").hidden=on; $("#cFileField").hidden=on;
+  const nl=document.querySelector('label[for="cName"]'); if(nl) nl.innerHTML=on?'Full name <span class="req">*</span>':"Name";
+  const el=document.querySelector('label[for="cEmail"]'); if(el) el.innerHTML=on?'Email address <span class="req">*</span>':"Email";
+  const b=$("#contactForm button[type=submit]"); if(b) b.textContent=on?"Submit my entry":"Send message"; }
+if($("#contestFields")){ $("#cTopic").addEventListener("change",syncContestFields); syncContestFields();
+  $("#cePhotos").addEventListener("change",()=>{ const fs=[...$("#cePhotos").files];
+    $("#cePreview").innerHTML=fs.map(f=>`<img src="${URL.createObjectURL(f)}" alt="">`).join("")+(fs.length?`<span>${fs.length} photo${fs.length>1?"s":""}</span>`:""); }); }
+// Shrink big phone photos before upload (keeps plenty of quality for the contest; falls back to the original file).
+function shrinkPhoto(file,maxW=3000,q=0.9){ return new Promise(res=>{ if(!/^image\/(jpeg|png|webp)$/i.test(file.type)) return res(file);
+  const img=new Image(); img.onload=()=>{ const sc=Math.min(1,maxW/Math.max(img.width,img.height)); if(sc===1&&file.size<4e6) return res(file);
+    const c=document.createElement("canvas"); c.width=Math.round(img.width*sc); c.height=Math.round(img.height*sc); c.getContext("2d").drawImage(img,0,0,c.width,c.height);
+    c.toBlob(b=>res(b||file),"image/jpeg",q); }; img.onerror=()=>res(file); img.src=URL.createObjectURL(file); }); }
 if($("#contactForm")) $("#contactForm").addEventListener("submit",async e=>{
   e.preventDefault();
   const form=e.target;
   if(form.website && form.website.value) return; // honeypot: silently drop bots
+  if(isContest() && $("#contestFields")){
+    const v=id=>($(id).value||"").trim(), name=v("#cName"), email=v("#cEmail"), credit=v("#ceCredit"), phone=v("#cePhone"), where=v("#ceWhere"), desc=v("#ceDesc"), files=[...$("#cePhotos").files];
+    if(!name||!email||!credit||!phone||!where||!desc||!files.length){ toast("Please fill in every question and add at least one photo."); return; }
+    if(!window.db){ toast("Couldn't send just now — please try again in a moment."); return; }
+    const btn=form.querySelector('button[type="submit"]'); btn.disabled=true; const stamp=Date.now(), links=[];
+    try{
+      for(let i=0;i<files.length;i++){ btn.textContent=`Uploading photo ${i+1} of ${files.length}…`;
+        const blob=await shrinkPhoto(files[i]); const ext=blob.type==="image/jpeg"?"jpg":((files[i].name.split(".").pop()||"jpg").toLowerCase().replace(/[^a-z0-9]/g,"")||"jpg");
+        const path=`contest/${stamp}-${Math.round(1e6*Math.random())}-${i+1}.${ext}`;
+        const {error:upErr}=await db.storage.from("uploads").upload(path,blob,{contentType:blob.type||"image/jpeg"});
+        if(upErr) throw upErr; links.push(db.storage.from("uploads").getPublicUrl(path).data.publicUrl); }
+      btn.textContent="Sending…";
+      const message=`MONTHLY PHOTO CONTEST ENTRY\n\nPhoto credit: ${credit}\nPhone: ${phone}\nWhere & when: ${where}\nDescription: ${desc}\n\nPhotos (${links.length}):\n${links.join("\n")}`;
+      const {error}=await db.from("messages").insert({name,email,topic:"Monthly Photo Contest entry",message});
+      if(error) throw error;
+      form.reset(); $("#cePreview").innerHTML=""; syncContestFields(); toast("Thank you! Your contest entry has been received. 📸");
+    }catch(err){ toast("Sorry, your entry couldn't be sent just now. Please try again in a moment."); }
+    finally{ btn.disabled=false; syncContestFields(); }
+    return;
+  }
   const name=$("#cName").value.trim(), email=$("#cEmail").value.trim(); let msg=$("#cMsg").value.trim();
   const topic=$("#cTopic")?$("#cTopic").value:"";
   if(!name||!email||!msg){ toast("Please add your name, email, and a message."); return; }
