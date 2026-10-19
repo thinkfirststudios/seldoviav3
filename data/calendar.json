@@ -1,22 +1,7 @@
 {
- "updated": "2026-10-19T13:26:41Z",
+ "updated": "2026-10-19T22:24:32Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1792425600000,
-   "allDay": false,
-   "title": "SVT - Fitness Center"
-  },
-  {
-   "start": 1792429200000,
-   "allDay": false,
-   "title": "Absentee In Person Voting"
-  },
-  {
-   "start": 1792447200000,
-   "allDay": false,
-   "title": "Seldovia Public Library Hours"
-  },
   {
    "start": 1792451700000,
    "allDay": false,
@@ -151,6 +136,11 @@
    "start": 1792714500000,
    "allDay": false,
    "title": "AMHS - Tustumena Departs to Homer"
+  },
+  {
+   "start": 1792719000000,
+   "allDay": false,
+   "title": "SVFD & EMS Board Meeting"
   },
   {
    "start": 1792719000000,
@@ -301,6 +291,16 @@
    "start": 1793142900000,
    "allDay": false,
    "title": "SVT's Open Swim"
+  },
+  {
+   "start": 1793146500000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Departs to Homer"
+  },
+  {
+   "start": 1793152800000,
+   "allDay": false,
+   "title": "SOCC - Adult Pottery Class"
   }
  ]
 }
