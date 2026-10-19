@@ -8,3 +8,6 @@ images/listings/*.png
 images/canva/
 images/headers/*.png
 LEGAL-REVIEW-SHEET.md
+
+# setup SQL lives in ../sql (outside the published site)
+*.sql

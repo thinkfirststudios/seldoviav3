@@ -4883,7 +4883,7 @@ if($("#dirList")){
   // (from the public add form) fold in on top, respecting each person's privacy choices (Jenny #29).
   if(window.db){ Promise.all([
       db.from("directory").select("*").eq("published",true),
-      db.from("directory_submissions").select("*").eq("status","approved")
+      approvedNeighbors("*")
     ]).then(([dir,subs])=>{
       let biz=BIZ;
       if(dir&&dir.data&&dir.data.length){
@@ -5034,6 +5034,12 @@ const INDEX=[
 // The built-in index only knew the site's original businesses; this adds everything Jenny and Qwynny manage in
 // the admin: added and renamed Explore cards, the Phone Book (businesses + neighbors) and the real estate listings.
 let _liveSearch=null, _liveReady=false;
+// Approved phone book entries for the public: read the privacy-safe view (private phone/email/address removed in the
+// database, Oct 18 security fix). Falls back to the old table read until the SQL has been run.
+function approvedNeighbors(cols){
+  return db.from("directory_public").select(cols).eq("status","approved")
+    .then(r=>r.error ? db.from("directory_submissions").select(cols).eq("status","approved") : r);
+}
 window.loadLiveSearch=function(){
   if(_liveSearch) return _liveSearch;
   if(!window.db){ _liveReady=true; return (_liveSearch=Promise.resolve()); }
@@ -5041,7 +5047,7 @@ window.loadLiveSearch=function(){
   _liveSearch=Promise.all([
     db.from("settings").select("key,value").in("key",["explore_added","explore_meta","explore_hidden","explore_overrides"]),
     db.from("directory").select("name,cat,phone,section").eq("published",true),
-    db.from("directory_submissions").select("display_name,data,listing_type,status").eq("status","approved").neq("listing_type","business"),
+    approvedNeighbors("display_name,data,listing_type,status").then(r=>(r&&r.data)?{...r,data:r.data.filter(x=>x.listing_type!=="business")}:r),
     db.from("listings").select("address,price,status,slug,published").eq("published",true)
   ]).then(([st,dir,ppl,lst])=>{
     const S={}; ((st&&st.data)||[]).forEach(r=>S[r.key]=J(r.value));
