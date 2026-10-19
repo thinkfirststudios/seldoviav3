@@ -1,17 +1,7 @@
 {
- "updated": "2026-10-18T20:49:59Z",
+ "updated": "2026-10-19T04:48:17Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1792358100000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
-  },
-  {
-   "start": 1792368900000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Departs to Homer"
-  },
   {
    "start": 1792425600000,
    "allDay": false,
@@ -301,6 +291,16 @@
    "start": 1793135700000,
    "allDay": false,
    "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
+  },
+  {
+   "start": 1793142900000,
+   "allDay": false,
+   "title": "SVT - Kids After School Time"
+  },
+  {
+   "start": 1793142900000,
+   "allDay": false,
+   "title": "SVT's Open Swim"
   }
  ]
 }
