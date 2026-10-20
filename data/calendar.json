@@ -1,22 +1,7 @@
 {
- "updated": "2026-10-19T22:24:32Z",
+ "updated": "2026-10-20T04:56:50Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1792451700000,
-   "allDay": false,
-   "title": "SVT - Kids After School Time"
-  },
-  {
-   "start": 1792452600000,
-   "allDay": false,
-   "title": "SOCC - Kids Pottery Class"
-  },
-  {
-   "start": 1792454400000,
-   "allDay": false,
-   "title": "Public Library - Story Time"
-  },
   {
    "start": 1792512000000,
    "allDay": false,
@@ -301,6 +286,21 @@
    "start": 1793152800000,
    "allDay": false,
    "title": "SOCC - Adult Pottery Class"
+  },
+  {
+   "start": 1793154600000,
+   "allDay": false,
+   "title": "SVT - Kinusaiga Adult Class"
+  },
+  {
+   "start": 1793203200000,
+   "allDay": false,
+   "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1793206800000,
+   "allDay": false,
+   "title": "Absentee In Person Voting"
   }
  ]
 }
