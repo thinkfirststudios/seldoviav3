@@ -1,17 +1,7 @@
 {
- "updated": "2026-10-20T11:45:31Z",
+ "updated": "2026-10-20T17:14:54Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1792512000000,
-   "allDay": false,
-   "title": "SVT - Fitness Center"
-  },
-  {
-   "start": 1792515600000,
-   "allDay": false,
-   "title": "Absentee In Person Voting"
-  },
   {
    "start": 1792519200000,
    "allDay": false,
@@ -301,6 +291,16 @@
    "start": 1793206800000,
    "allDay": false,
    "title": "Absentee In Person Voting"
+  },
+  {
+   "start": 1793229300000,
+   "allDay": false,
+   "title": "SVT - Kids After School Time"
+  },
+  {
+   "start": 1793230200000,
+   "allDay": false,
+   "title": "SOCC - Kids Pottery Class"
   }
  ]
 }
