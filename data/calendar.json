@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-21T17:17:12Z",
+ "updated": "2026-10-21T21:46:34Z",
  "calname": "seldovia",
  "events": [
   {
@@ -86,6 +86,11 @@
    "start": 1792722600000,
    "allDay": false,
    "title": "SVT - Kinusaiga Kid + Parent Class"
+  },
+  {
+   "start": 1792722600000,
+   "allDay": false,
+   "title": "SOCC - Volleyball"
   },
   {
    "start": 1792771200000,
@@ -296,11 +301,6 @@
    "start": 1793293200000,
    "allDay": false,
    "title": "Absentee In Person Voting"
-  },
-  {
-   "start": 1793296800000,
-   "allDay": false,
-   "title": "SOCC - Yoga"
   }
  ]
 }
