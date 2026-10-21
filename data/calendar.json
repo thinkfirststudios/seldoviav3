@@ -1,17 +1,7 @@
 {
- "updated": "2026-10-21T11:57:20Z",
+ "updated": "2026-10-21T17:17:12Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1792598400000,
-   "allDay": false,
-   "title": "SVT - Fitness Center"
-  },
-  {
-   "start": 1792602000000,
-   "allDay": false,
-   "title": "Absentee In Person Voting"
-  },
   {
    "start": 1792620000000,
    "allDay": false,
@@ -301,6 +291,16 @@
    "start": 1793260800000,
    "allDay": true,
    "title": "SBE - No School"
+  },
+  {
+   "start": 1793293200000,
+   "allDay": false,
+   "title": "Absentee In Person Voting"
+  },
+  {
+   "start": 1793296800000,
+   "allDay": false,
+   "title": "SOCC - Yoga"
   }
  ]
 }
