@@ -1,42 +1,7 @@
 {
- "updated": "2026-10-20T21:41:11Z",
+ "updated": "2026-10-21T04:56:19Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1792533600000,
-   "allDay": false,
-   "title": "Seldovia Public Library Hours"
-  },
-  {
-   "start": 1792538100000,
-   "allDay": false,
-   "title": "SVT - Kids After School Time"
-  },
-  {
-   "start": 1792538100000,
-   "allDay": false,
-   "title": "SVT's Open Swim"
-  },
-  {
-   "start": 1792541700000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Departs to Homer"
-  },
-  {
-   "start": 1792548000000,
-   "allDay": false,
-   "title": "SBE - Volleyball"
-  },
-  {
-   "start": 1792548000000,
-   "allDay": false,
-   "title": "SOCC - Adult Pottery Class"
-  },
-  {
-   "start": 1792549800000,
-   "allDay": false,
-   "title": "SVT - Kinusaiga Adult Class"
-  },
   {
    "start": 1792598400000,
    "allDay": false,
@@ -125,12 +90,12 @@
   {
    "start": 1792722600000,
    "allDay": false,
-   "title": "SVT - Kinusaiga Kid + Parent Class"
+   "title": "Library - Book Club 'Night Magic'"
   },
   {
-   "start": 1792742400000,
-   "allDay": true,
-   "title": "SBE - Early Release"
+   "start": 1792722600000,
+   "allDay": false,
+   "title": "SVT - Kinusaiga Kid + Parent Class"
   },
   {
    "start": 1792771200000,
@@ -146,6 +111,11 @@
    "start": 1792787400000,
    "allDay": false,
    "title": "SBC Food Bank Day"
+  },
+  {
+   "start": 1792791600000,
+   "allDay": false,
+   "title": "SBE - Early Release"
   },
   {
    "start": 1792791600000,
@@ -290,6 +260,11 @@
   {
    "start": 1793154600000,
    "allDay": false,
+   "title": "Seldovia Public Library - BOD Meeting"
+  },
+  {
+   "start": 1793154600000,
+   "allDay": false,
    "title": "SVT - Kinusaiga Adult Class"
   },
   {
@@ -301,6 +276,31 @@
    "start": 1793203200000,
    "allDay": false,
    "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1793206800000,
+   "allDay": false,
+   "title": "Absentee In Person Voting"
+  },
+  {
+   "start": 1793229300000,
+   "allDay": false,
+   "title": "SVT - Kids After School Time"
+  },
+  {
+   "start": 1793230200000,
+   "allDay": false,
+   "title": "SOCC - Kids Pottery Class"
+  },
+  {
+   "start": 1793242800000,
+   "allDay": false,
+   "title": "SOCC - Teen Night"
+  },
+  {
+   "start": 1793260800000,
+   "allDay": true,
+   "title": "SBE - No School"
   }
  ]
 }
