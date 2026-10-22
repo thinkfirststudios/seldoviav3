@@ -1,27 +1,7 @@
 {
- "updated": "2026-10-21T21:46:34Z",
+ "updated": "2026-10-22T04:56:23Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1792620000000,
-   "allDay": false,
-   "title": "Seldovia Public Library Hours"
-  },
-  {
-   "start": 1792624500000,
-   "allDay": false,
-   "title": "SVT's Pumpkin Patch"
-  },
-  {
-   "start": 1792625400000,
-   "allDay": false,
-   "title": "SOCC - Kids Pottery Class"
-  },
-  {
-   "start": 1792638000000,
-   "allDay": false,
-   "title": "SOCC - Teen Night"
-  },
   {
    "start": 1792688400000,
    "allDay": false,
@@ -301,6 +281,26 @@
    "start": 1793293200000,
    "allDay": false,
    "title": "Absentee In Person Voting"
+  },
+  {
+   "start": 1793296800000,
+   "allDay": false,
+   "title": "SOCC - Yoga"
+  },
+  {
+   "start": 1793302200000,
+   "allDay": false,
+   "title": "SBE - K-5 Float Water Safety"
+  },
+  {
+   "start": 1793306700000,
+   "allDay": false,
+   "title": "SBE - Grade 6-12 Coldwater Survival"
+  },
+  {
+   "start": 1793307600000,
+   "allDay": false,
+   "title": "SVT - Fitness Center"
   }
  ]
 }
