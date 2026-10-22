@@ -1,27 +1,7 @@
 {
- "updated": "2026-10-22T17:15:26Z",
+ "updated": "2026-10-22T21:41:19Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1792692000000,
-   "allDay": false,
-   "title": "SOCC - Yoga"
-  },
-  {
-   "start": 1792695600000,
-   "allDay": false,
-   "title": "SVT - Flu Shot Clinic"
-  },
-  {
-   "start": 1792702800000,
-   "allDay": false,
-   "title": "SVT - Fitness Center"
-  },
-  {
-   "start": 1792703700000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
-  },
   {
    "start": 1792708200000,
    "allDay": false,
@@ -113,6 +93,11 @@
    "title": "Seldovia Bible Chapel - Teen Nights at the Sea Otter Community Center!"
   },
   {
+   "start": 1792879200000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
+  },
+  {
    "start": 1792882800000,
    "allDay": false,
    "title": "SOCC - Adult Pickleball"
@@ -168,6 +153,11 @@
    "title": "SBE - Ms. XCR Running End-of-Season Clebration"
   },
   {
+   "start": 1793052000000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
+  },
+  {
    "start": 1793056500000,
    "allDay": false,
    "title": "SVT - Kids After School Time"
@@ -206,6 +196,11 @@
    "start": 1793135700000,
    "allDay": false,
    "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
+  },
+  {
+   "start": 1793138400000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
   },
   {
    "start": 1793142900000,
@@ -251,6 +246,11 @@
    "start": 1793206800000,
    "allDay": false,
    "title": "Absentee In Person Voting"
+  },
+  {
+   "start": 1793224800000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
   },
   {
    "start": 1793229300000,
