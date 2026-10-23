@@ -1,12 +1,7 @@
 {
- "updated": "2026-10-23T17:13:20Z",
+ "updated": "2026-10-23T21:28:09Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1792787400000,
-   "allDay": false,
-   "title": "SBC Food Bank Day"
-  },
   {
    "start": 1792791600000,
    "allDay": false,
@@ -301,6 +296,11 @@
    "start": 1793379600000,
    "allDay": false,
    "title": "Absentee In Person Voting"
+  },
+  {
+   "start": 1793392200000,
+   "allDay": false,
+   "title": "SBC Food Bank Day"
   }
  ]
 }
