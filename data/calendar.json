@@ -1,52 +1,7 @@
 {
- "updated": "2026-10-22T21:41:19Z",
+ "updated": "2026-10-23T04:58:20Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1792708200000,
-   "allDay": false,
-   "title": "SVT - Science Thursday"
-  },
-  {
-   "start": 1792710900000,
-   "allDay": false,
-   "title": "SBC - Joy Club"
-  },
-  {
-   "start": 1792714500000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Departs to Homer"
-  },
-  {
-   "start": 1792719000000,
-   "allDay": false,
-   "title": "SVFD & EMS Board Meeting"
-  },
-  {
-   "start": 1792719000000,
-   "allDay": false,
-   "title": "SOCC - Mahjong Game Night"
-  },
-  {
-   "start": 1792720800000,
-   "allDay": false,
-   "title": "SBE - Volleyball"
-  },
-  {
-   "start": 1792722600000,
-   "allDay": false,
-   "title": "Library - Book Club 'Night Magic'"
-  },
-  {
-   "start": 1792722600000,
-   "allDay": false,
-   "title": "SVT - Kinusaiga Kid + Parent Class"
-  },
-  {
-   "start": 1792722600000,
-   "allDay": false,
-   "title": "SOCC - Volleyball"
-  },
   {
    "start": 1792771200000,
    "allDay": false,
@@ -91,6 +46,11 @@
    "start": 1792814400000,
    "allDay": false,
    "title": "Seldovia Bible Chapel - Teen Nights at the Sea Otter Community Center!"
+  },
+  {
+   "start": 1792861200000,
+   "allDay": false,
+   "title": "SBC - Men's Breakfast"
   },
   {
    "start": 1792879200000,
@@ -301,6 +261,46 @@
    "start": 1793308500000,
    "allDay": false,
    "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
+  },
+  {
+   "start": 1793313000000,
+   "allDay": false,
+   "title": "SVT - Science Thursday"
+  },
+  {
+   "start": 1793315700000,
+   "allDay": false,
+   "title": "SBC - Joy Club"
+  },
+  {
+   "start": 1793315700000,
+   "allDay": false,
+   "title": "SVT - Kids After School Time"
+  },
+  {
+   "start": 1793319300000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Departs to Homer"
+  },
+  {
+   "start": 1793323800000,
+   "allDay": false,
+   "title": "SOCC - Mahjong Game Night"
+  },
+  {
+   "start": 1793325600000,
+   "allDay": false,
+   "title": "SOCC - Adult Pottery Class"
+  },
+  {
+   "start": 1793327400000,
+   "allDay": false,
+   "title": "SVT - Kinusaiga Kid + Parent Class"
+  },
+  {
+   "start": 1793327400000,
+   "allDay": false,
+   "title": "SOCC - Volleyball"
   }
  ]
 }
