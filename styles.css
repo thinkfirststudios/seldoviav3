@@ -1340,3 +1340,9 @@ footer.site .kh-btn{font-size:.85rem; padding:.4rem .8rem; box-shadow:none;}
 .re-cta.re-cta-soft .btn-primary{background:var(--accent); color:#fff;} .re-cta.re-cta-soft .btn-primary:hover{background:var(--accent-ink); color:#fff;}
 .home-duo > .home-col{flex-direction:column;}
 .home-col > .today-bar, .home-col > #todaySchedule{height:auto;}
+/* Oct 23: back-to-top arrow keeps its green (pink on Real Estate) but gets a white ring so it shows on the green footer */
+#toTop{border:3px solid #fff !important; box-shadow:0 4px 14px rgba(0,0,0,.3);}
+/* Oct 23: Meet Jenny bottom — signature and family photo side by side (no big gap) */
+.jenny-bottom{justify-content:flex-start; align-items:center; gap:clamp(1.2rem,4vw,3rem);}
+.jenny-card .jenny-bottom .jenny-family{max-width:170px; width:170px; min-width:0;}
+@media (max-width:680px){ .jenny-bottom{justify-content:center;} .jenny-card .jenny-bottom .jenny-family{width:140px;} }
