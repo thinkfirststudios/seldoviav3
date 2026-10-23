@@ -1,17 +1,7 @@
 {
- "updated": "2026-10-23T11:45:10Z",
+ "updated": "2026-10-23T17:13:20Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1792771200000,
-   "allDay": false,
-   "title": "SVT - Fitness Center"
-  },
-  {
-   "start": 1792774800000,
-   "allDay": false,
-   "title": "Absentee In Person Voting"
-  },
   {
    "start": 1792787400000,
    "allDay": false,
@@ -301,6 +291,16 @@
    "start": 1793327400000,
    "allDay": false,
    "title": "SOCC - Volleyball"
+  },
+  {
+   "start": 1793376000000,
+   "allDay": false,
+   "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1793379600000,
+   "allDay": false,
+   "title": "Absentee In Person Voting"
   }
  ]
 }
