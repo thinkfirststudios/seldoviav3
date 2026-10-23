@@ -4639,11 +4639,13 @@ if($("#placeGrid")){
   $("#placeGrid").addEventListener("click",e=>{ const btn=e.target.closest(".place-more"); if(!btn) return;
     e.preventDefault(); e.stopPropagation(); const b=btn.previousElementSibling;
     if(b){ b.classList.toggle("clamp"); btn.textContent=b.classList.contains("clamp")?"Read more":"Show less"; } });
-  // Floating "go to top" button (Jenny) — appears once you scroll down the Explore page.
+}
+// Floating "go to top" arrow on EVERY page (Jenny Oct 22): menu-bar color, so green site-wide and pink on Real Estate.
+if(PAGE!=="admin"){
   const toTop=document.createElement("button");
   toTop.id="toTop"; toTop.type="button"; toTop.setAttribute("aria-label","Go to top");
   toTop.innerHTML="&#8593;"; document.body.appendChild(toTop);
-  toTop.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
+  toTop.addEventListener("click",()=>window.scrollTo({top:0,behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"}));
   const onScroll=()=>toTop.classList.toggle("show", window.scrollY>500);
   window.addEventListener("scroll",onScroll,{passive:true}); onScroll();
 }
