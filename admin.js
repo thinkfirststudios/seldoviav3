@@ -94,7 +94,7 @@
 
   const TABS=[
     {key:"photo",    label:"📷 Daily Photo", render:renderPhotoTab},
-    {key:"blog",     label:"✍️ Seldovia Blog", render:renderBlogTab},
+    {key:"blog",     label:"✍️ News & Stories", render:renderBlogTab},
     {key:"listing",  label:"🏡 Listings",    render:renderListingTab},
     {key:"messages", label:"📨 Messages",    render:renderMessagesTab},
     {key:"submissions", label:"📇 Phone Book", render:renderSubmissionsTab},
@@ -112,7 +112,7 @@
           ${TABS.map((t,i)=>`<button class="admin-tab ${i===0?"is-active":""}" data-tab="${t.key}" type="button">${t.label}</button>`).join("")}
         </div>
         <div style="display:flex;align-items:center;gap:.8rem">
-          <span style="font-size:.72rem;color:var(--text-soft)" title="If this number is old after refreshing, your browser cached the admin — clear site data / hard refresh.">admin build 60</span>
+          <span style="font-size:.72rem;color:var(--text-soft)" title="If this number is old after refreshing, your browser cached the admin — clear site data / hard refresh.">admin build 61</span>
           <button class="btn btn-ghost" id="logoutBtn" type="button">Sign out</button>
         </div>
       </div>
@@ -991,12 +991,12 @@
   /* ---- Map Pins for the Find Me Map (Jenny Oct 10). Pick a place, click its spot on the map, Save. ---- */
   async function renderMapPinsTab(){
     const box=$("#tab-mappins");
-    box.innerHTML=`<p style="color:var(--text-soft);max-width:760px;margin:0 0 1rem">Every Explore place can have a pin on the public <a href="map.html" target="seldoviaPreview">Find Me Map</a>. Pick a place on the left, then click its spot on the map (you can drag the pin to adjust) and hit <b>Save pin</b>. 🟡 pins came from OpenStreetMap: check they're in the right spot and Save to confirm. For businesses with no storefront (taxis, airlines, online shops) choose <b>Not a physical place</b>.</p>
+    box.innerHTML=`<p style="color:var(--text-soft);max-width:760px;margin:0 0 1rem">Every Explore place can have a pin on the public <a href="map.html" target="seldoviaPreview">Find Me Map</a>. Pick a place on the left, then click its spot on the map (you can drag the pin to adjust) and hit <b>Save pin</b>. 🟡 pins came from OpenStreetMap: check they're in the right spot and Save to confirm. For businesses with no storefront (taxis, airlines, online shops) choose <b>Not a physical place</b>. For things in many spots (chainsaw carvings, fire hydrants) tick <b>Several locations</b>, then click the map once for each one.</p>
       <div class="mp-wrap"><div class="mp-side">
         <div class="mp-tools"><select id="mpFilter"><option value="need">Needs a pin</option><option value="starter">🟡 Please confirm</option><option value="pinned">✅ Pinned</option><option value="skip">➖ Not on map</option><option value="all">All places</option></select>
         <input id="mpSearch" type="search" placeholder="Search places…"></div>
         <div class="list-count" id="mpCount"></div><div id="mpList" class="mp-list"></div></div>
-      <div class="mp-main"><div id="mpSel" class="mp-sel">Pick a place on the left.</div><div id="mpMap" class="mp-map"></div>
+      <div class="mp-main"><div id="mpSel" class="mp-sel">Pick a place on the left.</div><label class="mp-multi" id="mpMultiWrap" hidden><input type="checkbox" id="mpMulti"> Several locations (click the map for each one; click a pin to remove it)</label><div id="mpMap" class="mp-map"></div>
         <div class="mp-actions"><button id="mpSave" class="btn btn-primary" type="button" disabled>Save pin</button> <button id="mpSkip" class="btn" type="button" disabled>Not a physical place</button> <button id="mpClear" class="btn" type="button" disabled>Remove pin</button> <span id="mpMsg" class="form-note"></span></div></div></div>`;
     if(!window.L){ $("#mpSel").textContent="The map didn't load. Please refresh the page."; return; }
     await loadLiveSearch();
@@ -1004,7 +1004,7 @@
     const {data}=await db.from("settings").select("value").eq("key","place_pins").maybeSingle();
     let saved={}; try{ saved=data&&data.value?JSON.parse(data.value):{}; }catch(e){}
     const places=(window.EXPLORE_LIVE||[]).slice().sort((a,b)=>a.shown.localeCompare(b.shown));
-    const st=n=>{ const q=pins[n]; if(!q) return "need"; if(q.skip) return "skip"; return q.starter?"starter":"pinned"; };
+    const st=n=>{ const q=pins[n]; if(!q) return "need"; if(q.skip) return "skip"; if(Array.isArray(q.multi)) return q.multi.length?"pinned":"need"; return q.starter?"starter":"pinned"; };
     const TAG={need:"⬜ Needs a pin",starter:"🟡 Please confirm",pinned:"✅ Pinned",skip:"➖ Not on map"};
     const map=L.map("mpMap").setView(SELDOVIA_CENTER,15);
     L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:"&copy; OpenStreetMap contributors"}).addTo(map);
@@ -1012,21 +1012,39 @@
     const notSaved=()=>{ dirty=true; const msg=$("#mpMsg"); msg.style.color="#b45309"; msg.textContent="Pin placed, not saved yet. Hit Save pin."; $("#mpSave").disabled=false; };
     // Jenny lost 30-40 pins by moving on without Save (Oct 13): warn before an unsaved pin is thrown away
     window.addEventListener("beforeunload",e=>{ if(dirty){ e.preventDefault(); e.returnValue=""; } });
-    const drawOthers=()=>{ others.clearLayers(); places.forEach(p=>{ const q=pins[p.name]; if(q&&!q.skip&&p.name!==sel) L.circleMarker([q.lat,q.lng],{radius:5,color:"#fff",weight:1,fillColor:q.starter?"#e0a800":"#2c4a3a",fillOpacity:.85}).bindTooltip(p.shown).addTo(others); }); };
+    const drawOthers=()=>{ others.clearLayers(); places.forEach(p=>{ const q=pins[p.name]; if(p.name===sel) return; pinPoints(q).forEach(pt=>L.circleMarker([pt.lat,pt.lng],{radius:5,color:"#fff",weight:1,fillColor:q.starter?"#e0a800":"#2c4a3a",fillOpacity:.85}).bindTooltip(p.shown).addTo(others)); }); };
+    // ---- several locations for one listing (Jenny Oct 21) ----
+    let multiMode=false, mpts=[]; const mlayer=L.layerGroup().addTo(map);
+    const drawMulti=()=>{ mlayer.clearLayers(); mpts.forEach((pt,i)=>{ const kind=pinIconKind(sel||"");
+        const mk=L.marker([pt.lat,pt.lng],{draggable:true,icon:kind?L.divIcon({className:"fm-icon",html:pinIconHtml(kind),iconSize:[26,26],iconAnchor:[13,13]}):new L.Icon.Default()}).addTo(mlayer).bindTooltip("#"+(i+1));
+        mk.on("dragend",()=>{ const ll=mk.getLatLng(); mpts[i]={lat:+ll.lat.toFixed(6),lng:+ll.lng.toFixed(6)}; notSaved(); });
+        mk.on("click",()=>{ if(confirm(`Remove location #${i+1}?`)){ mpts.splice(i,1); drawMulti(); notSaved(); } }); });
+      $("#mpSel").innerHTML=`<b>${esc((places.find(x=>x.name===sel)||{}).shown||sel)}</b> · ${mpts.length} location${mpts.length===1?"":"s"} · <i>click the map to add one</i>`; };
     const btns=on=>["#mpSave","#mpSkip","#mpClear"].forEach(b=>$(b).disabled=!on);
     const list=()=>{ const f=$("#mpFilter").value, q=$("#mpSearch").value.trim().toLowerCase();
       const rows=places.filter(p=>(f==="all"||st(p.name)===f)&&(!q||p.shown.toLowerCase().includes(q)));
       $("#mpCount").textContent=rows.length+" of "+places.length+" places";
       $("#mpList").innerHTML=rows.map(p=>`<button type="button" class="mp-row${p.name===sel?" on":""}" data-n="${esc(p.name)}"><b>${esc(p.shown)}</b><small>${esc(p.label||"")} · ${TAG[st(p.name)]}</small></button>`).join("")||"<p>Nothing here.</p>"; };
     const pick=async(n,keepMsg)=>{
-      if(dirty && sel && pend && n!==sel){ const was=(places.find(x=>x.name===sel)||{}).shown||sel;
-        if(confirm(`You haven't saved the pin for "${was}".\n\nOK = save it now\nCancel = don't save it`)) await save({lat:pend.lat,lng:pend.lng},"Map pin saved",true); }
-      dirty=false; sel=n; const p=places.find(x=>x.name===n), q=pins[n]; pend=q&&!q.skip?{lat:q.lat,lng:q.lng}:null;
+      if(dirty && sel && (multiMode||pend) && n!==sel){ const was=(places.find(x=>x.name===sel)||{}).shown||sel;
+        if(confirm(`You haven't saved the pin for "${was}".\n\nOK = save it now\nCancel = don't save it`)) await save(multiMode?{multi:mpts.slice()}:{lat:pend.lat,lng:pend.lng},"Map pin saved",true); }
+      dirty=false; sel=n; const p=places.find(x=>x.name===n), q=pins[n]; pend=q&&!q.skip&&isFinite(q.lat)?{lat:q.lat,lng:q.lng}:null;
       if(mk){ map.removeLayer(mk); mk=null; }
+      multiMode=!!(q&&Array.isArray(q.multi)) || (!pend && !!pinIconKind(n) && !(q&&q.skip&&!pinIconKind(n)));
+      $("#mpMultiWrap").hidden=false; $("#mpMulti").checked=multiMode;
+      mpts=multiMode?(pinPoints(q).length?pinPoints(q).map(x=>({...x})):(pend?[pend]:[])):[]; mlayer.clearLayers();
+      if(multiMode){ btns(true); $("#mpSave").disabled=true; if(!keepMsg) $("#mpMsg").textContent=""; drawMulti(); drawOthers(); list();
+        if(mpts.length) map.fitBounds(L.latLngBounds(mpts.map(x=>[x.lat,x.lng])),{padding:[40,40],maxZoom:17}); return; }
       if(pend){ mk=L.marker([pend.lat,pend.lng],{draggable:true}).addTo(map); mk.on("dragend",()=>{ const ll=mk.getLatLng(); pend={lat:+ll.lat.toFixed(6),lng:+ll.lng.toFixed(6)}; notSaved(); }); map.setView([pend.lat,pend.lng],17); }
       $("#mpSel").innerHTML=`<b>${esc(p.shown)}</b> · ${TAG[st(n)]}${pend?"":" · <i>click the map where it is</i>"}`;
       btns(true); $("#mpSave").disabled=!pend; if(!keepMsg) $("#mpMsg").textContent=""; drawOthers(); list(); };
-    map.on("click",e=>{ if(!sel) return; pend={lat:+e.latlng.lat.toFixed(6),lng:+e.latlng.lng.toFixed(6)};
+    $("#mpMulti").addEventListener("change",()=>{ if(!sel) return; multiMode=$("#mpMulti").checked;
+      if(multiMode){ mpts=pend?[pend]:[]; if(mk){ map.removeLayer(mk); mk=null; } drawMulti(); } else { pend=mpts[0]||null; mpts=[]; mlayer.clearLayers();
+        if(pend){ mk=L.marker([pend.lat,pend.lng],{draggable:true}).addTo(map); } $("#mpSel").innerHTML=`<b>${esc((places.find(x=>x.name===sel)||{}).shown||sel)}</b>`; }
+      notSaved(); });
+    map.on("click",e=>{ if(!sel) return;
+      if(multiMode){ mpts.push({lat:+e.latlng.lat.toFixed(6),lng:+e.latlng.lng.toFixed(6)}); drawMulti(); notSaved(); return; }
+      pend={lat:+e.latlng.lat.toFixed(6),lng:+e.latlng.lng.toFixed(6)};
       if(mk) mk.setLatLng(e.latlng); else { mk=L.marker(e.latlng,{draggable:true}).addTo(map); mk.on("dragend",()=>{ const ll=mk.getLatLng(); pend={lat:+ll.lat.toFixed(6),lng:+ll.lng.toFixed(6)}; notSaved(); }); }
       notSaved();
       $("#mpSave").disabled=false; });
@@ -1034,8 +1052,9 @@
       saved[sel]=val; const {error}=await db.from("settings").upsert({key:"place_pins",value:JSON.stringify(saved)},{onConflict:"key"});
       if(error){ msg.textContent=error.message; return; }
       pins[sel]=val; dirty=false; await logAdmin(label, sel); const nm=(places.find(x=>x.name===sel)||{}).shown||sel;
+      if(val&&Array.isArray(val.multi)){ msg.style.color="var(--open)"; msg.textContent=`✓ Saved ${val.multi.length} locations for ${nm}. They're live on the map.`; if(!quiet){ drawOthers(); list(); } return; }
       msg.style.color="var(--open)"; msg.textContent=`✓ Saved ${nm}. It's live on the map.`; if(!quiet) pick(sel,true); };
-    $("#mpSave").addEventListener("click",()=>pend&&save({lat:pend.lat,lng:pend.lng},"Map pin saved"));
+    $("#mpSave").addEventListener("click",()=>{ if(multiMode) save({multi:mpts.slice()},"Map pins saved"); else if(pend) save({lat:pend.lat,lng:pend.lng},"Map pin saved"); });
     $("#mpSkip").addEventListener("click",()=>save({skip:true},"Map: not a physical place"));
     $("#mpClear").addEventListener("click",()=>{ if(confirm("Remove this place's pin from the map?")) save(null,"Map pin removed"); });
     $("#mpList").addEventListener("click",e=>{ const b=e.target.closest(".mp-row"); if(b) pick(b.dataset.n); });

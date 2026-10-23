@@ -22,13 +22,13 @@
     const isVid = !!(window.videoInfo && window.videoInfo(it.link));   // tag video posts; the video plays on the post page
     const media = it.img ? `<a class="post-media"${linkAttr}><img class="post-photo" src="${esc(it.img)}" alt="${esc(it.title)}" loading="lazy" onerror="this.closest('.post-media').style.display='none'">${isVid?'<span class="video-tag">▶ Video</span>':""}</a>` : "";
     const body = mdExcerpt(it.excerpt);
-    return `<article class="post">${media}<div class="post-body"><span class="kicker">${esc(it.cat||"Blog")}</span>`
+    return `<article class="post">${media}<div class="post-body"><span class="kicker">${esc(it.cat||"News & Stories")}</span>`
       + `<h4><a${linkAttr}>${esc(it.title)}</a></h4>`
       + `<div class="post-meta"><span>${esc(it.date)}</span></div>`
       + `<div class="post-text clamp">${body}</div>`
       + `<a class="show-more"${linkAttr}>Read more →</a></div></article>`;
   }
-  const item = p => ({ cat:p.category||"Blog", title:p.title, date:fmtDB(p.post_date),
+  const item = p => ({ cat:p.category||"News & Stories", title:p.title, date:fmtDB(p.post_date),
     img:p.image_url, excerpt:p.body||p.excerpt||"", href:"post.html?id="+p.id, link:p.link||"" });
 
   // --- build search box + "load more" around the grid ---

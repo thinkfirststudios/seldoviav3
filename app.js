@@ -46,11 +46,10 @@ window.videoInfo=function(url){
   return null;
 };
 const NAV=[
-  ["explore.html","Explore","explore"],
   ["map.html","Map","map"],
   ["about.html","About","about"],
   ["calendar.html","Calendar","calendar"],
-  ["gazette.html","Seldovia Blog","gazette"],
+  ["gazette.html","News & Stories","gazette"],
   ["webcams.html","Webcams","webcams"],
   ["gallery.html","Photos","gallery"],
   ["real-estate.html","Real Estate","realestate"],
@@ -60,24 +59,23 @@ const NAV=[
 // From the admin, open the public site in ONE reusable preview tab so the admin
 // stays open and Jenny/Qwynny never have to back-arrow their way home (Qwynny).
 const _preview = PAGE==="admin" ? ' target="seldoviaPreview" rel="noopener"' : '';
+// Home-screen app mode (Add to phone) has no browser back button (Jenny Oct 21: "no BACK button"), so show our own.
+document.addEventListener("DOMContentLoaded",()=>{ const bb=document.getElementById("backBtn"); if(!bb) return;
+  const app=(window.matchMedia&&matchMedia("(display-mode: standalone)").matches)||navigator.standalone===true;
+  if(app && PAGE!=="home"){ bb.hidden=false; document.body.classList.add("is-app");
+    bb.addEventListener("click",()=>{ if(history.length>1) history.back(); else location.href="index.html"; }); } });
 const navLinks=(cls="")=>NAV.map(([href,label,key])=>`<a class="${cls} ${key===PAGE?'active':''}"${_preview} href="${href}">${label}</a>`).join("");
 
 const HEADER=`
 <header class="masthead">
-  <div class="masthead-top">
-    ${PAGE==="realestate"
-      ? /* Real Estate shows Jenny's own Seldovia Property logo at the top, WITHOUT "Alaska's Best Kept Secret",
-           which belongs to Seldovia.com, not the real estate page (Jenny, Oct 6). */
-        `<a class="brand brand-sp" href="real-estate.html"${_preview} aria-label="Seldovia Property, real estate with Jenny Chissus">
-           <img class="brand-sp-img" src="images/seldovia-property-logo.png?v=1" alt="Seldovia Property" width="828" height="445"></a>`
-      : /* Logo with "Alaska's Best Kept Secret" beside it: one line on computers, two lines on phones so it
-           fills the white space and stays readable (Jenny, Oct 5-6). */
-        `<a class="brand" href="index.html"${_preview} aria-label="Seldovia.com — Alaska's Best Kept Secret, home">
-           <span class="brand-wide"><img class="brand-logo" src="images/brand-logo.png?v=1" alt="Seldovia.com" width="1000" height="574"><img class="brand-tagimg" src="images/brand-tagline.png?v=1" alt="Alaska's Best Kept Secret" width="860" height="112"><img class="brand-tag2" src="images/brand-tagline-2line.png?v=1" alt="" aria-hidden="true" width="455" height="214"></span>
-         </a>`}
-  </div>
+  ${PAGE==="realestate" ? `<div class="masthead-top">
+    ${/* Real Estate keeps Jenny's Seldovia Property logo at the top (Jenny Oct 21); every other page leads with its banner */""}
+        <a class="brand brand-sp" href="real-estate.html"${_preview} aria-label="Seldovia Property, real estate with Jenny Chissus">
+           <img class="brand-sp-img" src="images/seldovia-property-logo.png?v=1" alt="Seldovia Property" width="828" height="445"></a>
+  </div>` : ""}
   <div class="navband">
     <div class="navband-inner">
+      <button type="button" class="back-btn" id="backBtn" hidden aria-label="Go back">‹ Back</button>
       <nav class="mainnav" aria-label="Primary"><a class="${PAGE==='home'?'active':''}"${_preview} href="index.html">Home</a>${navLinks()}</nav>
       <div class="head-actions">
         <div class="navsearch" role="search">
@@ -108,14 +106,14 @@ const FOOTER=`
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-col foot-brand">
-        <span class="word">Seldovia.com</span>
+        <a class="foot-logo-card" href="index.html" aria-label="Seldovia.com home"><img class="foot-logo" src="images/brand-logo.png?v=1" alt="Seldovia.com" width="1000" height="574" loading="lazy"><img class="foot-tagline" src="images/brand-tagline.png?v=1" alt="Alaska's Best Kept Secret" width="860" height="112" loading="lazy"></a>
         <p>A warm community-first guide to our small city of Seldovia, beautifully situated on the south side of Kachemak Bay</p>
         <div class="foot-util"><span id="footTime">&mdash;:&mdash;</span></div>
         <p class="foot-email"><a href="mailto:info@seldovia.com">Info@Seldovia.com</a></p>
         <p class="foot-sponsor"><a href="contact.html?topic=sponsor">Become a sponsor of Seldovia.com</a></p>
       </div>
       <div class="foot-col"><h4>Menu</h4><ul><li><a href="index.html">Home</a></li>${NAV.map(([h,l])=>`<li><a href="${h}">${l}</a></li>`).join("")}</ul></div>
-      <div class="foot-col foot-explore"><h4>Explore</h4><ul>${FOOT_TABS.map(([k,l])=>`<li><a href="${k==="about"?"about.html":"explore.html?cat="+k}">${l}</a></li>`).join("")}<li><a href="explore.html#ykyis">You know you're in Seldovia when...</a></li></ul></div>
+      <div class="foot-col foot-explore"><h4>Discover Seldovia</h4><ul>${FOOT_TABS.map(([k,l])=>`<li><a href="${k==="about"?"about.html":"explore.html?cat="+k}">${l}</a></li>`).join("")}<li><a href="index.html#ykyis">You know you're in Seldovia when...</a></li></ul></div>
     </div>
     <div class="foot-bottom">
       <p class="disclaimer">&copy; <span id="year">2026</span> Seldovia.com — a community project. Real estate services provided by Seldovia Property, a licensed Alaska real estate brokerage (Jenny Chissus, Broker/Owner; Alaska Real Estate License RECB16495). Listing information believed reliable but not guaranteed; Alaska is a non-disclosure state. Equal Housing Opportunity.</p>
@@ -4443,11 +4441,23 @@ const PLACE_IMG={about:"images/categories/cat-0.jpg?v=2",travel:"images/categori
 if($("#quickcats")) $("#quickcats").innerHTML=[["Eat","eat"],["Stay","stay"],["Activities","activities"],["Travel","travel"],["Shop","shop"]].map(([label,key])=>
   `<a class="quickcat" href="explore.html?cat=${key}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/></svg>${esc(label)}</a>`).join("");
 
-// category tiles
-if($("#catGrid")) $("#catGrid").innerHTML=CATEGORIES.map((c,i)=>{
-  const img=`images/categories/cat-${i}.jpg?v=7`;
-  const href = c.key==="about" ? "about.html" : `explore.html?cat=${c.key}`;
-  return `<a class="cat-tile" href="${href}" aria-label="${esc(c.b)}"><img class="cat-photo" src="${img}" alt="" loading="lazy" width="600" height="600" onerror="this.onerror=null;this.src='images/placeholder-business.png'"><span class="cap"><b>${esc(c.b)}</b><span>${esc(c.s)}</span></span></a>`;}).join("");
+// category tiles + the menu pages as cards (Jenny Oct 21: Home is the take-off point for everything).
+// Cards whose artwork already has its title painted in ("art") skip the caption box.
+const HOME_PAGE_CARDS=[
+  {b:"Map",s:"Find Me Map",href:"map.html"},
+  {b:"Calendar",s:"What's happening",href:"calendar.html",art:1},
+  {b:"News & Stories",s:"Local news & stories",href:"gazette.html",art:1},
+  {b:"Webcams",s:"Live views",href:"webcams.html"},
+  {b:"Photos",s:"Photo of the Day & gallery",href:"gallery.html"},
+  {b:"Real Estate",s:"Seldovia Property",href:"real-estate.html",art:1},
+  {b:"Phone Book",s:"People, places & community",href:"phone-book.html",art:1},
+  {b:"Contact",s:"Say hello",href:"contact.html",art:1}];
+if($("#catGrid")) $("#catGrid").innerHTML=CATEGORIES.concat(HOME_PAGE_CARDS).map((c,i)=>{
+  const img=`images/categories/cat-${i}.jpg?v=${i>=10?1:7}`;
+  const href = c.href || (c.key==="about" ? "about.html" : `explore.html?cat=${c.key}`);
+  return `<a class="cat-tile${c.art?" cat-art":""}" href="${href}" aria-label="${esc(c.b)}"><img class="cat-photo" src="${img}" alt="" loading="lazy" width="600" height="600" onerror="this.onerror=null;this.src='images/placeholder-business.png'">${c.art?"":`<span class="cap"><b>${esc(c.b)}</b><span>${esc(c.s)}</span></span>`}</a>`;}).join("");
+// Footer link "You know you're in Seldovia when..." lands on that box at the bottom of Home once the page has settled
+if(PAGE==="home" && location.hash==="#ykyis") window.addEventListener("load",()=>setTimeout(()=>{ const f=document.getElementById("ykyis"); if(f) f.scrollIntoView({behavior:"smooth",block:"start"}); },600));
 
 // feature media
 if($("#featureMedia")) $("#featureMedia").innerHTML=`<img class="feature-photo" src="images/photos/220627_SeldoviaHarbor_Melody.jpg" alt="Seldovia Harbor at first light" loading="lazy" width="1200" height="1200">`;
@@ -4577,6 +4587,11 @@ function renderPlaces(){
     // Blurb clamps to 3 lines for uniform card height; "Read more" reveals only when it's actually clipped (Jenny).
     const body=`<div class="place-body"><div class="rating"><span class="cat">${esc(catLabel)}</span></div><h4>${esc(dispName)}</h4>
         ${loc?`<div class="place-loc">${pin} ${esc(loc)}</div>`:""}${(PLACE_PINS[p.name]&&PLACE_PINS[p.name].lat!=null)?`<span class="place-maplink" role="link" tabindex="0" data-place="${esc(p.name)}">🗺️ See on map</span>`:""}${owner?`<div class="place-owner">👤 ${esc(owner)}</div>`:""}${blurb?`<p class="place-blurb clamp">${esc(blurb)}</p><button type="button" class="place-more" hidden>Read more</button>`:""}`;
+    const pp=PLACE_PINS[p.name];
+    if(pp && Array.isArray(pp.multi) && pp.multi.length){ // Jenny Oct 21: these cards just open the map with every location
+      return `<a class="place" href="map.html?place=${encodeURIComponent(p.name)}">${media}${body}
+        <div class="place-contact"><span class="place-web">🗺️ See all ${pp.multi.length} on the map</span></div></div></a>`;
+    }
     if(url){ // whole card links to the business website
       return `<a class="place" href="${esc(url)}" target="_blank" rel="noopener">${media}${body}
         <div class="place-contact">${phone?esc(phone)+" · ":""}<span class="place-web">Visit website ↗</span></div></div></a>`;
@@ -4680,7 +4695,7 @@ if($("#postDetail")){
   const showPost=o=>{ // {title,cat,date,img,body,link}
     // Video links play right in the post instead of sending people off the site (Jenny, Oct 6).
     const vid=window.videoInfo(o.link);
-    document.title=`${o.title} — Seldovia Blog`;
+    document.title=`${o.title} — News & Stories, Seldovia.com`;
     const media=vid
       ? `<div class="post-video${vid.vertical?" is-vertical":""}"><iframe src="${esc(vid.embed)}" title="${esc(o.title)} (video)" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
          <p class="post-video-note">Video not playing? <a href="${esc(o.link)}" target="_blank" rel="noopener">Watch it on ${esc(vid.site)} ↗</a></p>`
@@ -4689,12 +4704,12 @@ if($("#postDetail")){
     $("#postDetail").innerHTML=`
       <a class="back-link" href="gazette.html">← All posts</a>
       ${media}
-      <span class="eyebrow" style="margin-top:1.2rem">${esc(o.cat||"Blog")}</span>
+      <span class="eyebrow" style="margin-top:1.2rem">${esc(o.cat||"News & Stories")}</span>
       <h1 style="margin:.15rem 0;font-family:var(--serif)">${esc(o.title)}</h1>
       <div class="listing-city">${esc(o.date)}</div>
       <div class="listing-desc" style="margin-top:1.3rem">${paras(o.body)}</div>
       ${linkBtn}
-      <p style="margin-top:2rem"><a class="btn btn-ghost" href="gazette.html">← Back to the Seldovia Blog</a></p>`;
+      <p style="margin-top:2rem"><a class="btn btn-ghost" href="gazette.html">← Back to News &amp; Stories</a></p>`;
   };
   if(pid && window.db){
     const MON=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
@@ -5034,6 +5049,10 @@ const INDEX=[
 // The built-in index only knew the site's original businesses; this adds everything Jenny and Qwynny manage in
 // the admin: added and renamed Explore cards, the Phone Book (businesses + neighbors) and the real estate listings.
 let _liveSearch=null, _liveReady=false;
+// Jenny Oct 21: anything linking to SeldoviaProperty.com (phone book, Explore, home card) opens her Real Estate page
+// on Seldovia.com instead (she'll point SeldoviaProperty.com here after launch). Her own page keeps its link.
+if(PAGE!=="realestate" && PAGE!=="admin") document.addEventListener("click",e=>{ const a=e.target.closest&&e.target.closest('a[href*="seldoviaproperty.com" i]');
+  if(a && !/^mailto:/i.test(a.getAttribute("href"))){ e.preventDefault(); location.href="real-estate.html"; } },true);
 // Approved phone book entries for the public: read the privacy-safe view (private phone/email/address removed in the
 // database, Oct 18 security fix). Falls back to the old table read until the SQL has been run.
 function approvedNeighbors(cols){
@@ -5172,7 +5191,7 @@ if($("#searchResults")){
     const like="%"+q.replace(/[%,()]/g," ")+"%";
     const dbP = window.db ? db.from("posts").select("id,title,excerpt,body,post_date").eq("published",true).or(`title.ilike.${like},body.ilike.${like}`).order("post_date",{ascending:false}).limit(60) : Promise.resolve({data:[]});
     Promise.resolve(dbP).then(r=>(r&&r.data)||[]).catch(()=>[]).then(posts=>{
-      const blog=posts.map(p=>({type:"Blog & News",title:p.title,desc:(p.excerpt||String(p.body||"").slice(0,140)),href:"post.html?id="+p.id,date:p.post_date}));
+      const blog=posts.map(p=>({type:"News & Stories",title:p.title,desc:(p.excerpt||String(p.body||"").slice(0,140)),href:"post.html?id="+p.id,date:p.post_date}));
       nBlog=blog.length; const el=$("#srBlog"); if(el) el.innerHTML=blog.length?groupHTML("Blog & News",blog,q):"";
       done++; setCount();
     });
@@ -5206,16 +5225,16 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape")setDrawer(false);});
 if($("#cTopic")){ const t=(new URLSearchParams(location.search).get("topic")||"").toLowerCase();
   if(t){ const sel=$("#cTopic"), opt=[...sel.options].find(o=>o.text.toLowerCase().includes(t));
     if(opt){ sel.value=opt.value; } } }
-// Monthly Photo Contest entry on the Contact page (Jenny Oct 19): her Google Form's questions, no Google sign-in.
+// Monthly Photo Contest entry on the Contact page (Jenny Oct 19/20): name, email, phone at the top, credit once,
+// then up to 4 photos, each with its own "when, where, short description" line so details never get mixed up.
 const isContest=()=>/contest/i.test(($("#cTopic")||{}).value||"");
 function syncContestFields(){ const on=isContest(), f=$("#contestFields"); if(!f) return;
-  f.hidden=!on; $("#cMsgField").hidden=on; $("#cFileField").hidden=on;
+  f.hidden=!on; $("#cMsgField").hidden=on; $("#cFileField").hidden=on; $("#cPhoneField").hidden=!on;
+  const rn=$("#cReplyNote"); if(rn) rn.hidden=on;
   const nl=document.querySelector('label[for="cName"]'); if(nl) nl.innerHTML=on?'Full name <span class="req">*</span>':"Name";
   const el=document.querySelector('label[for="cEmail"]'); if(el) el.innerHTML=on?'Email address <span class="req">*</span>':"Email";
   const b=$("#contactForm button[type=submit]"); if(b) b.textContent=on?"Submit my entry":"Send message"; }
-if($("#contestFields")){ $("#cTopic").addEventListener("change",syncContestFields); syncContestFields();
-  $("#cePhotos").addEventListener("change",()=>{ const fs=[...$("#cePhotos").files];
-    $("#cePreview").innerHTML=fs.map(f=>`<img src="${URL.createObjectURL(f)}" alt="">`).join("")+(fs.length?`<span>${fs.length} photo${fs.length>1?"s":""}</span>`:""); }); }
+if($("#contestFields")){ $("#cTopic").addEventListener("change",syncContestFields); syncContestFields(); }
 // Shrink big phone photos before upload (keeps plenty of quality for the contest; falls back to the original file).
 function shrinkPhoto(file,maxW=3000,q=0.9){ return new Promise(res=>{ if(!/^image\/(jpeg|png|webp)$/i.test(file.type)) return res(file);
   const img=new Image(); img.onload=()=>{ const sc=Math.min(1,maxW/Math.max(img.width,img.height)); if(sc===1&&file.size<4e6) return res(file);
@@ -5226,21 +5245,24 @@ if($("#contactForm")) $("#contactForm").addEventListener("submit",async e=>{
   const form=e.target;
   if(form.website && form.website.value) return; // honeypot: silently drop bots
   if(isContest() && $("#contestFields")){
-    const v=id=>($(id).value||"").trim(), name=v("#cName"), email=v("#cEmail"), credit=v("#ceCredit"), phone=v("#cePhone"), where=v("#ceWhere"), desc=v("#ceDesc"), files=[...$("#cePhotos").files];
-    if(!name||!email||!credit||!phone||!where||!desc||!files.length){ toast("Please fill in every question and add at least one photo."); return; }
+    const v=id=>($(id).value||"").trim(), name=v("#cName"), email=v("#cEmail"), credit=v("#ceCredit"), phone=v("#cePhone");
+    const slots=[1,2,3,4].map(i=>({file:($("#ceP"+i).files||[])[0], desc:v("#ceD"+i)})).filter(x=>x.file);
+    if(!name||!email||!phone||!credit||!slots.length){ toast("Please add your name, email, phone, photo credit, and at least one photo."); return; }
+    if(slots.some(x=>!x.desc)){ toast("Please add when, where, and a short description for each photo."); return; }
     if(!window.db){ toast("Couldn't send just now — please try again in a moment."); return; }
-    const btn=form.querySelector('button[type="submit"]'); btn.disabled=true; const stamp=Date.now(), links=[];
+    const btn=form.querySelector('button[type="submit"]'); btn.disabled=true; const stamp=Date.now(), lines=[];
     try{
-      for(let i=0;i<files.length;i++){ btn.textContent=`Uploading photo ${i+1} of ${files.length}…`;
-        const blob=await shrinkPhoto(files[i]); const ext=blob.type==="image/jpeg"?"jpg":((files[i].name.split(".").pop()||"jpg").toLowerCase().replace(/[^a-z0-9]/g,"")||"jpg");
+      for(let i=0;i<slots.length;i++){ btn.textContent=`Uploading photo ${i+1} of ${slots.length}…`;
+        const f=slots[i].file, blob=await shrinkPhoto(f); const ext=blob.type==="image/jpeg"?"jpg":((f.name.split(".").pop()||"jpg").toLowerCase().replace(/[^a-z0-9]/g,"")||"jpg");
         const path=`contest/${stamp}-${Math.round(1e6*Math.random())}-${i+1}.${ext}`;
         const {error:upErr}=await db.storage.from("uploads").upload(path,blob,{contentType:blob.type||"image/jpeg"});
-        if(upErr) throw upErr; links.push(db.storage.from("uploads").getPublicUrl(path).data.publicUrl); }
+        if(upErr) throw upErr;
+        lines.push(`Photo ${i+1}: ${slots[i].desc}\n${db.storage.from("uploads").getPublicUrl(path).data.publicUrl}`); }
       btn.textContent="Sending…";
-      const message=`MONTHLY PHOTO CONTEST ENTRY\n\nPhoto credit: ${credit}\nPhone: ${phone}\nWhere & when: ${where}\nDescription: ${desc}\n\nPhotos (${links.length}):\n${links.join("\n")}`;
+      const message=`MONTHLY PHOTO CONTEST ENTRY\n\nPhoto credit: ${credit}\nPhone: ${phone}\n\n${lines.join("\n\n")}`;
       const {error}=await db.from("messages").insert({name,email,topic:"Monthly Photo Contest entry",message});
       if(error) throw error;
-      form.reset(); $("#cePreview").innerHTML=""; syncContestFields(); toast("Thank you! Your contest entry has been received. 📸");
+      form.reset(); syncContestFields(); toast("Thank you! Your contest entry has been received. 📸");
     }catch(err){ toast("Sorry, your entry couldn't be sent just now. Please try again in a moment."); }
     finally{ btn.disabled=false; syncContestFields(); }
     return;

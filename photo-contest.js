@@ -12,9 +12,8 @@
     const src=(c&&c.flier)||DEFAULT_FLIER;
     const put=()=>{ const cap=document.querySelector(".today-feature .today-cap"); if(!cap) return false;
       if(cap.querySelector(".pj-flier")) return true;
-      cap.insertAdjacentHTML("beforeend",`<a class="pj-flier" href="${ENTER}" aria-label="Flier of the Month: enter this month's photo contest">
-        <span class="eyebrow">Flier of the Month</span><img src="${esc(src)}" alt="This month's Seldovia.com photo contest flier" onerror="this.closest('.pj-flier').remove()">
-        <span class="pj-flier-cta">Enter this month's photo contest →</span></a>`); return true; };
+      cap.insertAdjacentHTML("beforeend",`<a class="pj-flier" href="${ENTER}" aria-label="Enter our photo contest this month">
+        <span class="pj-flier-top">Enter Our Contest This Month</span><img src="${esc(src)}" alt="This month's Seldovia.com photo contest flier" onerror="this.closest('.pj-flier').remove()"></a>`); return true; };
     if(!put()){ const app=document.getElementById("journalApp"); if(!app) return;
       const mo=new MutationObserver(()=>{ if(put()) mo.disconnect(); }); mo.observe(app,{childList:true,subtree:true}); setTimeout(()=>mo.disconnect(),20000); }
   };

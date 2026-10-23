@@ -12,28 +12,41 @@
 
   const layers={}, markers={}; let active="all";
   Promise.all([window.loadLiveSearch?loadLiveSearch():Promise.resolve(), loadPins()]).then(([,pins])=>{
-    const places=(window.EXPLORE_LIVE||[]).filter(p=>{ const q=pins[p.name]; return q && !q.skip && isFinite(q.lat) && isFinite(q.lng); });
-    places.forEach(p=>{ const q=pins[p.name], c=COLORS[p.key]||"#2c4a3a";
-      const m=L.circleMarker([q.lat,q.lng],{radius:9,color:"#fff",weight:2,fillColor:c,fillOpacity:.95});
-      m.bindPopup(`<div class="fm-pop"><b>${esc(p.shown)}</b><br><span>${esc(p.label||tabName(p.key))}</span>
-        <div class="fm-pop-links"><a href="explore.html?find=${encodeURIComponent(p.name)}">See it on Explore</a> ·
-        <a href="https://www.google.com/maps/dir/?api=1&destination=${q.lat},${q.lng}" target="_blank" rel="noopener">Directions ↗</a></div></div>`);
-      (layers[p.key]=layers[p.key]||L.layerGroup().addTo(map)).addLayer(m); markers[p.name]=m; });
-    // same order as the Explore tabs (Jenny Oct 17)
+    const places=(window.EXPLORE_LIVE||[]).filter(p=>pinPoints(pins[p.name]).length);
+    const bounds={};                 // layer key -> [latlngs]
+    places.forEach(p=>{ const q=pins[p.name], pts=pinPoints(q), kind=pinIconKind(p.name), multi=pts.length>1||Array.isArray(q.multi);
+      markers[p.name]=[];
+      pts.forEach((pt,i)=>{
+        // Out of Town (Jenny Oct 21): pins far from Seldovia get their own button so they don't zoom the map out
+        const key=(milesFromSeldovia(pt.lat,pt.lng)>OUT_OF_TOWN_MILES||p.key==="outoftown")?"outoftown":p.key, c=COLORS[p.key]||"#2c4a3a";
+        const mk=kind ? L.marker([pt.lat,pt.lng],{icon:L.divIcon({className:"fm-icon",html:pinIconHtml(kind),iconSize:[26,26],iconAnchor:[13,13]})})
+                      : L.circleMarker([pt.lat,pt.lng],{radius:9,color:"#fff",weight:2,fillColor:c,fillOpacity:.95});
+        mk.bindPopup(`<div class="fm-pop"><b>${esc(p.shown)}${multi?` #${i+1}`:""}</b><br><span>${esc(p.label||tabName(p.key))}</span>
+          <div class="fm-pop-links"><a href="explore.html?find=${encodeURIComponent(p.name)}">Check it out</a> ·
+          <a href="https://www.google.com/maps/dir/?api=1&destination=${pt.lat},${pt.lng}" target="_blank" rel="noopener">Directions ↗</a></div></div>`);
+        (layers[key]=layers[key]||L.layerGroup()).addLayer(mk); (bounds[key]=bounds[key]||[]).push([pt.lat,pt.lng]); markers[p.name].push(mk); }); });
+    // same order as the Explore tabs (Jenny Oct 17); Out of Town last, and hidden from "All" so Seldovia stays in view
     const order=(typeof PLACE_TABS!=="undefined"?PLACE_TABS:[]).map(t=>t[0]);
-    const keys=Object.keys(layers).sort((a,b)=>(order.indexOf(a)+1||99)-(order.indexOf(b)+1||99));
+    const keys=Object.keys(layers).sort((a,b)=>(a==="outoftown")-(b==="outoftown")||(order.indexOf(a)+1||99)-(order.indexOf(b)+1||99));
     const SUB=(typeof TAB_SUB!=="undefined")?TAB_SUB:{};
+    const fit=pts=>{ if(pts.length===1) map.setView(pts[0],15); else if(pts.length) map.fitBounds(L.latLngBounds(pts),{padding:[40,40],maxZoom:17}); };
+    const show=k=>{ active=k; keys.forEach(x=>{ (k==="all"?x!=="outoftown":k===x)?map.addLayer(layers[x]):map.removeLayer(layers[x]); });
+      document.querySelectorAll("#mapChips button").forEach(x=>x.setAttribute("aria-pressed",x.dataset.k===k));
+      fit(k==="all"?keys.filter(x=>x!=="outoftown").flatMap(x=>bounds[x]):(bounds[k]||[])); };
     const chips=document.getElementById("mapChips");
-    if(chips){ chips.innerHTML=[["all","All"]].concat(keys.map(k=>[k,tabName(k)||k])).map(([k,l])=>`<button type="button" class="tab" data-k="${k}" aria-pressed="${k==="all"}"><span class="fm-lbl">${k!=="all"?`<i class="fm-dot" style="background:${COLORS[k]||"#2c4a3a"}"></i>`:""}${esc(l)}</span>${SUB[k]?`<small class="tab-sub">${esc(SUB[k])}</small>`:""}</button>`).join("");
-      chips.addEventListener("click",e=>{ const b=e.target.closest("button"); if(!b) return; active=b.dataset.k;
-        chips.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));
-        keys.forEach(k=>{ (active==="all"||active===k)?map.addLayer(layers[k]):map.removeLayer(layers[k]); });
-        // zoom to fit the pins being shown (some are out of town, e.g. Kasitsna Bay Lab)
-        const shown=places.filter(p=>active==="all"||p.key===active).map(p=>markers[p.name].getLatLng());
-        if(shown.length===1) map.setView(shown[0],15); else if(shown.length) map.fitBounds(L.latLngBounds(shown),{padding:[40,40],maxZoom:17}); }); }
+    if(chips){ chips.innerHTML=[["all","All"]].concat(keys.map(k=>[k,k==="outoftown"?"Out of Town":(tabName(k)||k)])).map(([k,l])=>`<button type="button" class="tab" data-k="${k}" aria-pressed="${k==="all"}"><span class="fm-lbl">${k!=="all"?`<i class="fm-dot" style="background:${k==="outoftown"?"#7a7a7a":(COLORS[k]||"#2c4a3a")}"></i>`:""}${esc(l)}</span>${SUB[k]?`<small class="tab-sub">${esc(SUB[k])}</small>`:""}</button>`).join("");
+      chips.addEventListener("click",e=>{ const b=e.target.closest("button"); if(b) show(b.dataset.k); }); }
+    keys.forEach(k=>{ if(k!=="outoftown") map.addLayer(layers[k]); });
     const cnt=document.getElementById("mapCount"); if(cnt) cnt.textContent=places.length+" places on the map so far";
     const want=new URLSearchParams(location.search).get("place");
-    if(want && markers[want]){ map.setView(markers[want].getLatLng(),17); markers[want].openPopup(); }
+    if(want && markers[want] && markers[want].length){
+      const ms=markers[want];
+      if(ms.length>1){ // e.g. Chainsaw Carvings: show just those, all of them
+        keys.forEach(k=>map.removeLayer(layers[k])); const g=L.layerGroup(ms).addTo(map); fit(ms.map(x=>x.getLatLng()));
+        document.querySelectorAll("#mapChips button").forEach(x=>x.setAttribute("aria-pressed","false"));
+        if(cnt) cnt.innerHTML=`Showing all ${ms.length} ${esc((places.find(p=>p.name===want)||{}).shown||want)} · <a href="map.html">Show every place</a>`;
+      } else { const ll=ms[0].getLatLng(); if(milesFromSeldovia(ll.lat,ll.lng)>OUT_OF_TOWN_MILES) map.addLayer(layers.outoftown); map.setView(ll,17); ms[0].openPopup(); }
+    }
   });
 
   // ---- Find me ----

@@ -19,7 +19,7 @@
         // Jenny Oct 8: the button goes to the Blog. Older saved settings still point at the phone book, so map those.
         const link=(f.btnLink==="phone-book.html"||!f.btnLink)?"gazette.html":f.btnLink;
         btn.setAttribute("href", link);
-        if(link==="gazette.html" && /phone book/i.test(btn.textContent)) btn.textContent="Read the Seldovia Blog";
+        if(link==="gazette.html" && /phone book|blog/i.test(btn.textContent)) btn.textContent="Read News & Stories";
         if(f.btnLabel==="") btn.style.display="none"; // empty label hides the button
       }
       // Jenny Oct 8: her "You know you're in Seldovia when..." logo is always the picture here (no photo).

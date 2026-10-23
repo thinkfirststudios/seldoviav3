@@ -6,7 +6,7 @@
 <meta name="description" content="Seldovia real estate — featured waterfront cabins, homes, and parcels, plus friendly help buying or selling with Jenny Chissus of Seldovia Property.">
 <meta name="theme-color" content="#F8E6DD">
 <title>Real Estate — Seldovia Property</title>
-<link rel="stylesheet" href="styles.css?v=134">
+<link rel="stylesheet" href="styles.css?v=136">
 </head>
 <body data-page="realestate">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -14,8 +14,9 @@
   <!-- Seldovia Today stats intentionally omitted on the Real Estate page (Jenny, Sep 24). -->
   <div class="page-banner"><img src="images/headers/banner-realestate.jpg?v=3" alt="Jenny Chissus, your Seldovia connection" width="2400" height="625"></div>
 
-  <!-- 1) FEATURED LISTINGS -->
+  <!-- 1) CURRENT LISTINGS — "Seldovia Listings" heading in the same brush lettering as "Recently Sold" (Jenny Oct 21) -->
   <section class="section wrap">
+    <div class="section-head"><h2 class="title wc-h"><img src="images/headings/seldovia-listings.png?v=1" alt="Seldovia Listings"></h2></div>
     <!-- PROD: replace with AK MLS/IDX feed; Alaska is non-disclosure → "Price on request". -->
     <div class="re-carousel">
       <button class="car-arrow car-prev" type="button" aria-label="Previous listings" hidden>
@@ -30,7 +31,7 @@
 
   <!-- 2) MEET JENNY — real photo + Jenny's own bio (verbatim from her homes.com profile) -->
   <section class="section wrap" style="padding-top:0">
-    <div class="jenny-card jenny-card-family">
+    <div class="jenny-card jenny-card-family jenny-card-stack">
       <div>
         <span class="eyebrow">Your Seldovia Connection</span>
         <h3>Meet Jenny!</h3>
@@ -53,8 +54,6 @@
       <p>People don't just come for the scenery, they come because they want a place where neighbors know one another, children still have room to explore, and life feels a little more connected.</p>
       <p>I care deeply about this community because it's home. Every person I help has the potential to become not just another client, but a future neighbor and friend. That perspective guides everything I do. Whether you're buying your first property in Seldovia, looking for a vacation cabin, investing in waterfront land, or preparing to sell, I'd be honored to help you every step of the way.</p>
       <p>Welcome to Seldovia. I look forward to helping you discover whether this little corner of Alaska is the right fit!</p>
-      <!-- Jenny's pink signature (Oct 8): shows once images/jenny-signature.png is added -->
-      <img class="jenny-signature" src="images/jenny-signature.png?v=1" alt="Jenny" onerror="this.remove()">
         </div>
         <button type="button" class="re-more-btn" id="jennyMoreBtn" aria-expanded="false" aria-controls="jennyMore">Read more about Jenny ↓</button>
         <p class="re-license">Broker/Owner, Seldovia Property · Alaska Real Estate License RECB16495</p>
@@ -63,8 +62,12 @@
           <span>🌐 <a href="https://www.seldoviaproperty.com" target="_blank" rel="noopener">SeldoviaProperty.com</a></span>
         </div>
         <a class="btn btn-primary" href="contact.html">Get in touch</a>
+        <!-- Jenny Oct 21: family photo at the bottom, smaller, across from her signature -->
+        <div class="jenny-bottom">
+          <img class="jenny-signature" src="images/jenny-signature.png?v=1" alt="Jenny" onerror="this.remove()">
+          <img class="jenny-family" src="images/chissus-family.jpg?v=1" alt="Jenny Chissus with her family in Seldovia" width="900" height="1200" loading="lazy">
+        </div>
       </div>
-      <img class="jenny-family" src="images/chissus-family.jpg?v=1" alt="Jenny Chissus with her family in Seldovia" width="900" height="1200" loading="lazy">
     </div>
     <script>
     (function(){var b=document.getElementById("jennyMoreBtn"),m=document.getElementById("jennyMore");if(b&&m){b.addEventListener("click",function(){var open=!m.hidden;m.hidden=open;b.setAttribute("aria-expanded",String(!open));b.textContent=open?"Read more about Jenny ↓":"Show less ↑";if(!open)m.scrollIntoView({behavior:"smooth",block:"nearest"});});}})();
@@ -85,14 +88,6 @@
     </div>
   </section>
 
-  <!-- 4 & 5) BUYING + SELLING, then 6) VALUATION CTA. NOTE: Jenny is sending new copy for these three boxes. -->
-  <section class="section wrap" style="padding-top:0">
-    <div class="re-cta">
-      <div><h3>What’s your Seldovia home worth?</h3><p>A friendly, no-pressure valuation prepared by hand for our market.</p></div>
-      <div style="display:flex; gap:.6rem; flex-wrap:wrap"><a class="btn btn-primary" href="contact.html">Request my valuation</a><a class="btn btn-ghost" href="real-estate.html" style="color:#fff; border-color:rgba(255,255,255,.5)">Search all listings</a></div>
-    </div>
-  </section>
-
   <!-- 7) RECENTLY SOLD — realtor track record, kept separate from active listings -->
   <section class="section wrap" id="soldSection" style="padding-top:0; display:none">
     <div class="section-head"><span class="eyebrow">Track Record</span><h2 class="title wc-h"><img src="images/headings/recently-sold.png?v=1" alt="Recently sold"></h2><p>A few of the Seldovia properties Jenny has recently helped close.</p></div>
@@ -106,12 +101,19 @@
       </button>
     </div>
   </section>
+  <!-- VALUATION (Jenny Oct 21): softer like Meet Jenny, smaller, beneath Recently Sold -->
+  <section class="section wrap" style="padding-top:0">
+    <div class="re-cta re-cta-soft">
+      <div><h3>What’s your Seldovia home worth?</h3><p>A friendly, no-pressure valuation prepared by hand for our market.</p></div>
+      <a class="btn btn-primary" href="contact.html?topic=real%20estate">Request Valuation</a>
+    </div>
+  </section>
 </main>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="db.js?v=6"></script>
 <script src="listing-photos.js?v=1"></script>
-<script src="app.js?v=129"></script>
-<script src="seldovia-today.js?v=9"></script>
+<script src="app.js?v=130"></script>
+<script src="seldovia-today.js?v=10"></script>
 <script src="listings-public.js?v=18"></script>
 </body>
 </html>

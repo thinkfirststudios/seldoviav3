@@ -401,7 +401,7 @@ body:not([data-page="realestate"]) .page-hero h1{font-size:clamp(2.7rem,6.2vw,4.
 .dir-controls .navsearch{display:block;} .dir-controls .navsearch input{width:min(320px,80vw);}
 
 /* 10 home cards as 2 rows of 5, a bit smaller (Jenny Oct 1). */
-.cat-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:clamp(10px,1.3vw,16px);}
+.cat-grid{display:grid; grid-template-columns:repeat(6,1fr); gap:clamp(10px,1.3vw,16px);}
 @media (max-width:1100px){ .cat-grid{grid-template-columns:repeat(3,1fr);} }
 @media (max-width:620px){ .cat-grid{grid-template-columns:repeat(2,1fr);} }
 .cat-tile{position:relative; border-radius:var(--radius); overflow:clip; text-decoration:none; box-shadow:var(--shadow); aspect-ratio:1/1.05; display:block; transition:transform .16s, box-shadow .2s;}
@@ -1204,7 +1204,7 @@ body.has-support #toTop{bottom:calc(18px + 76px) !important;}
 .potd-link:hover .potd-media img{transform:scale(1.03);}
 .potd-cap{font-weight:700; color:var(--heading); line-height:1.35;}
 .potd-date{font-size:.85rem; color:var(--text-soft);}
-@media (max-width:980px){ .home-trio{grid-template-columns:1fr 1fr;} .home-trio > #todaySchedule{grid-column:1/-1; border-top:1px solid var(--line);} .home-trio > div:nth-child(2){border-right:0;} }
+@media (max-width:980px){ .home-trio{grid-template-columns:1fr 1fr;} .home-trio > #schedCol{grid-column:1/-1; border-top:1px solid var(--line);} .home-trio > div:nth-child(2){border-right:0;} }
 @media (max-width:640px){ .home-trio{grid-template-columns:1fr;} .home-trio > div{border-right:0; border-bottom:1px solid var(--line);} .home-trio > div:last-child{border-bottom:0;} }
 /* Meet Jenny: family photo on the right (Jenny Oct 8) */
 .jenny-card.jenny-card-family{grid-template-columns:1fr minmax(220px,340px);}
@@ -1294,3 +1294,49 @@ footer.site .kh-btn{font-size:.85rem; padding:.4rem .8rem; box-shadow:none;}
 .pj-flier:hover img{transform:scale(1.02);}
 .pj-flier-cta{font-weight:800; color:var(--accent-ink); text-decoration:underline; text-underline-offset:3px;}
 .msg-thumbs{display:flex; flex-wrap:wrap; gap:6px; margin-top:.6rem;} .msg-thumbs img{width:90px; height:90px; object-fit:cover; border-radius:8px;}
+
+/* ===== Oct 22 batch (Jenny Oct 21-22) ===== */
+/* Home hub: 18 cards = 3 rows of 6 on computers, 2 across on phones */
+@media (max-width:1100px){ .cat-grid{grid-template-columns:repeat(3,1fr);} }
+@media (max-width:620px){ .cat-grid{grid-template-columns:repeat(2,1fr);} }
+.cat-tile.cat-art .cat-photo{object-fit:cover;}
+.home-col{display:flex; flex-direction:column; min-width:0;}
+.home-col > #seldoviaToday, .home-col > #todaySchedule{flex:0 0 auto;}
+.home-news{padding:0 clamp(1rem,2.4vw,1.6rem) clamp(1rem,2.4vw,1.4rem);}
+.home-news h3{font-family:var(--serif); font-size:1.2rem; color:var(--heading); margin:.2rem 0 .5rem; padding-top:.9rem; border-top:1px solid var(--line);}
+.home-news ul{list-style:none; margin:0 0 .7rem; padding:0; display:grid; gap:.45rem;}
+.home-news li a{color:var(--heading); text-decoration:none; font-weight:600; font-size:.95rem; line-height:1.35;}
+.home-news li a:hover{color:var(--accent-ink); text-decoration:underline;}
+#homeSupport .today-support{margin:0 clamp(1rem,2.4vw,1.6rem) clamp(1rem,2.4vw,1.4rem);}
+/* no logo row on top: the banner sits right under the menu bar */
+.masthead{top:0;}
+.back-btn{background:rgba(255,255,255,.16); color:#fff; border:2px solid #fff; border-radius:999px; height:40px; padding:0 14px; font-weight:800; font-size:.9rem; cursor:pointer; flex:0 0 auto;}
+/* footer: Seldovia.com logo + Alaska's Best Kept Secret on a light card */
+.foot-logo-card{display:inline-flex; flex-direction:column; align-items:center; gap:.35rem; background:#fffdf7; border-radius:14px; padding:.8rem 1rem; text-decoration:none; max-width:260px;}
+.foot-logo{width:170px; height:auto; display:block;} .foot-tagline{width:220px; height:auto; display:block;}
+/* intro lines on Phone Book, Photos and News & Stories: same size/style as the Find Me Map text */
+.page-intro, main .page-intro{font-size:1.06rem; line-height:1.5; color:var(--text-soft); max-width:62ch; margin-left:auto; margin-right:auto;}
+.page-intro.page-intro-script{font-size:1.06rem;}
+/* contest flier: centered, "Enter Our Contest This Month" on top */
+.pj-flier{display:flex; flex-direction:column; align-items:center; text-align:center; margin:1.1rem auto 0; max-width:340px;}
+.pj-flier-top{font-weight:800; font-size:1.1rem; color:var(--accent-ink); text-decoration:underline; text-underline-offset:4px; margin-bottom:.4rem;}
+.pj-flier img{margin:.2rem auto 0;}
+/* contest form: 4 photo slots */
+.ce-slot{display:grid; grid-template-columns:auto 1fr; gap:.4rem .8rem; align-items:center; padding:.7rem 0; border-top:1px solid var(--line);}
+.ce-slot label{font-weight:700; grid-column:1/-1;}
+.ce-slot input[type=file]{grid-column:1/-1;} .ce-slot input[type=text]{grid-column:1/-1;}
+.ce-more{font-size:.9rem; color:var(--text-soft); margin:.4rem 0 0;}
+/* map icons + admin multi */
+.fm-icon{background:#fff; border-radius:50%; box-shadow:0 1px 4px rgba(0,0,0,.35); display:grid !important; place-items:center;}
+.mp-multi{display:flex; gap:.5rem; align-items:center; font-weight:700; margin:.2rem 0 .5rem;}
+/* Real Estate (Jenny Oct 21) */
+.jenny-card.jenny-card-stack{grid-template-columns:1fr;}
+.jenny-bottom{display:flex; align-items:flex-end; justify-content:space-between; gap:1rem; margin-top:1.4rem; flex-wrap:wrap;}
+.jenny-card .jenny-bottom .jenny-family{max-width:200px; width:40%; min-width:140px; margin:0;}
+.jenny-card .jenny-bottom img.jenny-signature{margin:0;}
+@media (max-width:680px){ .jenny-bottom{justify-content:center;} }
+.re-cta.re-cta-soft{background:var(--surface-2); color:var(--heading); border:1px solid var(--line); padding:clamp(1rem,2vw,1.4rem) clamp(1.1rem,2.4vw,1.6rem); align-items:center;}
+.re-cta.re-cta-soft h3{color:var(--heading); font-size:clamp(1.1rem,2vw,1.35rem);} .re-cta.re-cta-soft p{color:var(--text-soft); font-size:.9rem;}
+.re-cta.re-cta-soft .btn-primary{background:var(--accent); color:#fff;} .re-cta.re-cta-soft .btn-primary:hover{background:var(--accent-ink); color:#fff;}
+.home-duo > .home-col{flex-direction:column;}
+.home-col > .today-bar, .home-col > #todaySchedule{height:auto;}
