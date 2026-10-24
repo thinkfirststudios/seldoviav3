@@ -2,6 +2,8 @@
 # Netlify auto-detects the phone-book signup form (data-netlify="true") on deploy.
 [build]
   publish = "."
+  # No build step: overrides the old Astro build command still saved in the Netlify project settings.
+  command = "echo Static site, nothing to build"
 
 # Friendly URLs (optional): /add -> the phone book signup form
 [[redirects]]
