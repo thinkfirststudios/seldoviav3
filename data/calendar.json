@@ -1,12 +1,7 @@
 {
- "updated": "2026-10-24T16:00:58Z",
+ "updated": "2026-10-24T20:54:27Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1792861200000,
-   "allDay": false,
-   "title": "SBC - Men's Breakfast"
-  },
   {
    "start": 1792879200000,
    "allDay": false,
@@ -301,6 +296,11 @@
    "start": 1793419200000,
    "allDay": false,
    "title": "Seldovia Bible Chapel - Teen Nights at the Sea Otter Community Center!"
+  },
+  {
+   "start": 1793433600000,
+   "allDay": true,
+   "title": "Halloween 🎃👻"
   }
  ]
 }
