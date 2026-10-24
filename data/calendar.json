@@ -1,37 +1,7 @@
 {
- "updated": "2026-10-23T21:28:09Z",
+ "updated": "2026-10-24T04:43:18Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1792791600000,
-   "allDay": false,
-   "title": "SBE - Early Release"
-  },
-  {
-   "start": 1792791600000,
-   "allDay": false,
-   "title": "SVT - Early Release Family BINGO"
-  },
-  {
-   "start": 1792797300000,
-   "allDay": false,
-   "title": "SVT - Kids After School Time"
-  },
-  {
-   "start": 1792807200000,
-   "allDay": false,
-   "title": "SOCC - Adult Pottery Class"
-  },
-  {
-   "start": 1792809000000,
-   "allDay": false,
-   "title": "Linwood Bar & Grill - Free Bingo"
-  },
-  {
-   "start": 1792814400000,
-   "allDay": false,
-   "title": "Seldovia Bible Chapel - Teen Nights at the Sea Otter Community Center!"
-  },
   {
    "start": 1792861200000,
    "allDay": false,
@@ -301,6 +271,36 @@
    "start": 1793392200000,
    "allDay": false,
    "title": "SBC Food Bank Day"
+  },
+  {
+   "start": 1793402100000,
+   "allDay": false,
+   "title": "SVT - Kids After School Time"
+  },
+  {
+   "start": 1793408400000,
+   "allDay": false,
+   "title": "Seldovia Community Preschool Cake Walk"
+  },
+  {
+   "start": 1793408400000,
+   "allDay": false,
+   "title": "SVT Halloween Carnival"
+  },
+  {
+   "start": 1793412000000,
+   "allDay": false,
+   "title": "SOCC - Adult Pottery Class"
+  },
+  {
+   "start": 1793413800000,
+   "allDay": false,
+   "title": "Linwood Bar & Grill - Free Bingo"
+  },
+  {
+   "start": 1793419200000,
+   "allDay": false,
+   "title": "Seldovia Bible Chapel - Teen Nights at the Sea Otter Community Center!"
   }
  ]
 }
