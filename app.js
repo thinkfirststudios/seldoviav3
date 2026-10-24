@@ -2466,7 +2466,7 @@ Historically, the summer solstice has been celebrated across cultures for millen
 Solstice celebrations range from modern pagan rituals at Stonehenge to secular festivals like Sweden's Midsummer, where communities gather for music, food, and dancing. It's a blend of astronomical wonder and cultural heritage, reflecting humanity's deep connection to seasonal cycles.
 
 In Seldovia, the Summer Solstice is celebrated each year with our Music Festival! This is a great time to visit our community, enjoy amazing music, time with friends, and hopefully beautiful weather on the longest days of the year! 🌞🎻
-https://www.seldovia.com/save-the-dates-june-19-21st-for...`},
+post.html?id=cbc7a64e-5e3e-4bdd-9e8e-7ec2dead425d...`},
  {title:"Today's the Official First Day of Summer!",excerpt:"Longer days, brighter skies, and all the salty, sun-kissed Seldovia adventures await!",date:"Jun 20, 2025",read:"1 min",cat:"Living Here",img:"images/gazette/2025-06-20.jpg",body:`Today's the Official First Day of Summer! Longer days, brighter skies, and all the salty, sun-kissed Seldovia adventures await! Whether you're hiking, fishing, beachcombing, or just soaking in the views, summer starts now. 🌊🌲
 
 How are you celebrating the season's arrival?`},
@@ -3681,7 +3681,7 @@ I am incredibly lucky to work with such amazing clients, and today, I want to gi
 Whether you're building your dream home, navigating the town's unique landscape, or searching for your perfect property, the experts in Seldovia are here to support you every step of the way. 🔨✈️🏡
 
 Check out the full list and connect with the best services Seldovia has to offer.
-https://www.seldovia.com/to-do/professional-services/`},
+explore.html?cat=services`},
  {title:"When it comes to convenience, quality, and exceptional service, Seldovia Fuel & Lube ranks top of the list in Seldovia.",excerpt:"This trusted establishment has everything you need under one roof.",date:"Feb 25, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-02-25.jpg",body:`When it comes to convenience, quality, and exceptional service, Seldovia Fuel & Lube ranks top of the list in Seldovia. Whether you're a local resident, a visiting boater, or an adventurer exploring the beauty of Seldovia, this trusted establishment has everything you need under one roof. 😄
 
 Why Choose Seldovia Fuel & Lube? 👇
@@ -4028,7 +4028,7 @@ Weekly Activities for Seldovia Village Tribe (SVT):
 - Walking Club: Thursdays – All abilities welcome!
 
 Click here for Part 2: https://web.facebook.com/photo/?fbid=1140312237933368&set=a.556376149660316`},
- {title:"Craving something sweet? Explore a few places in Seldovia to grab some delicious ice cream!",excerpt:"Craving something sweet? Explore a few places in Seldovia to grab some delicious ice cream!",date:"Jan 27, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-01-27.jpg",body:`Craving something sweet? 🍦 Explore a few places in Seldovia to grab some delicious ice cream! Check out the options here: https://www.seldovia.com/to-do/restaurants-and-groceries/`},
+ {title:"Craving something sweet? Explore a few places in Seldovia to grab some delicious ice cream!",excerpt:"Craving something sweet? Explore a few places in Seldovia to grab some delicious ice cream!",date:"Jan 27, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-01-27.jpg",body:`Craving something sweet? 🍦 Explore a few places in Seldovia to grab some delicious ice cream! Check out the options here: explore.html?cat=eat`},
  {title:"Seldovia, Alaska, may be a small town, but it holds rich history and culture.",excerpt:"One notable museum in Seldovia is the Seldovia Museum & Visitor Center.",date:"Jan 26, 2025",read:"1 min",cat:"Community",img:"images/gazette/2025-01-26.jpg",body:`Seldovia, Alaska, may be a small town, but it holds rich history and culture. One notable museum in Seldovia is:
 
 Seldovia Museum & Visitor Center
