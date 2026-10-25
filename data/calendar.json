@@ -1,22 +1,7 @@
 {
- "updated": "2026-10-24T20:54:27Z",
+ "updated": "2026-10-25T04:49:17Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1792879200000,
-   "allDay": false,
-   "title": "Seldovia Public Library Hours"
-  },
-  {
-   "start": 1792882800000,
-   "allDay": false,
-   "title": "SOCC - Adult Pickleball"
-  },
-  {
-   "start": 1792890000000,
-   "allDay": false,
-   "title": "St. Nicholas Russian Orthodox Church Vespers Service"
-  },
   {
    "start": 1792951200000,
    "allDay": false,
@@ -301,6 +286,21 @@
    "start": 1793433600000,
    "allDay": true,
    "title": "Halloween 🎃👻"
+  },
+  {
+   "start": 1793484000000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
+  },
+  {
+   "start": 1793487600000,
+   "allDay": false,
+   "title": "SOCC - Adult Pickleball"
+  },
+  {
+   "start": 1793494800000,
+   "allDay": false,
+   "title": "SBC - Children's Harvest Party"
   }
  ]
 }
