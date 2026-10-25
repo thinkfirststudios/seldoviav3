@@ -1,27 +1,7 @@
 {
- "updated": "2026-10-25T16:28:48Z",
+ "updated": "2026-10-25T20:55:26Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1792951200000,
-   "allDay": false,
-   "title": "Grace Haven Fellowship Sunday Worship"
-  },
-  {
-   "start": 1792951200000,
-   "allDay": false,
-   "title": "SOCC - Yoga"
-  },
-  {
-   "start": 1792951200000,
-   "allDay": false,
-   "title": "St. Nicholas Russian Orthodox Church Sunday Service"
-  },
-  {
-   "start": 1792954800000,
-   "allDay": false,
-   "title": "Seldovia Bible Chapel - Sunday Worship Service"
-  },
   {
    "start": 1792962900000,
    "allDay": false,
@@ -301,6 +281,26 @@
    "start": 1793494800000,
    "allDay": false,
    "title": "SBC - Children's Harvest Party"
+  },
+  {
+   "start": 1793494800000,
+   "allDay": false,
+   "title": "St. Nicholas Russian Orthodox Church Vespers Service"
+  },
+  {
+   "start": 1793559600000,
+   "allDay": false,
+   "title": "Grace Haven Fellowship Sunday Worship"
+  },
+  {
+   "start": 1793559600000,
+   "allDay": false,
+   "title": "St. Nicholas Russian Orthodox Church Sunday Service"
+  },
+  {
+   "start": 1793563200000,
+   "allDay": false,
+   "title": "Seldovia Bible Chapel - Sunday Worship Service"
   }
  ]
 }
