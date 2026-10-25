@@ -4536,17 +4536,23 @@ if(window.EXPLORE){ window.EXPLORE.BIZ_BLURB=BIZ_BLURB; window.EXPLORE.BIZ_OWNER
 let _findScrolled=false;
 function scrollToFind(containerSel){
   const find=new URLSearchParams(location.search).get("find"); if(!find) return false;
-  const name=decodeURIComponent(find).trim().toLowerCase();
+  // normS ignores case, accents, apostrophes and punctuation ("Breezy's" = "Breezy’s"), Oct 25 fix
+  const name=normS(decodeURIComponent(find));
   const cont=document.querySelector(containerSel); if(!cont) return false;
   // A card Jenny renamed in the admin shows its new name, so accept the old or the new one.
   const names=new Set([name]);
-  Object.entries(EXPLORE_META).forEach(([orig,m])=>{ const nn=String((m&&m.name)||"").trim().toLowerCase();
-    if(orig.toLowerCase()===name && nn) names.add(nn); if(nn===name) names.add(orig.toLowerCase()); });
-  const h=[...cont.querySelectorAll("h4")].find(x=>names.has(x.textContent.trim().toLowerCase()));
+  Object.entries(EXPLORE_META).forEach(([orig,m])=>{ const nn=normS((m&&m.name)||"");
+    if(normS(orig)===name && nn) names.add(nn); if(nn && nn===name) names.add(normS(orig)); });
+  const h=[...cont.querySelectorAll("h4")].find(x=>names.has(normS(x.textContent)));
   if(!h) return false;
   const card=h.closest("article,.place,.dir-item,li")||h.parentElement;
-  card.scrollIntoView({behavior:"smooth",block:"center"}); card.classList.add("search-hit");
-  setTimeout(()=>card.classList.remove("search-hit"),2400);
+  // Land with the whole card visible BELOW the sticky menu bar, and re-aim while photos above it finish loading
+  // (Jenny Oct 24: "Check it out" on the map looked like it did nothing).
+  const aim=()=>{ if(!card.isConnected) return; const bar=(document.querySelector(".masthead")||{}).offsetHeight||60;
+    window.scrollTo({top:Math.max(0,card.getBoundingClientRect().top+window.scrollY-bar-16),behavior:"auto"}); };
+  aim(); [400,1200,2500].forEach(t=>setTimeout(aim,t));
+  card.classList.add("search-hit","find-hit");
+  setTimeout(()=>card.classList.remove("search-hit"),6000);
   return true;
 }
 function renderPlaces(){
@@ -4604,7 +4610,8 @@ function renderPlaces(){
   const pc=$("#placeCount"); if(pc) pc.textContent=pq?`${rows.length} found`:"";
   // Reveal "Read more" only on cards whose 3-line blurb is actually clipped.
   requestAnimationFrame(()=>{ $$("#placeGrid .place-blurb").forEach(b=>{ const btn=b.nextElementSibling; if(btn&&btn.classList.contains("place-more")&&b.scrollHeight>b.clientHeight+2) btn.hidden=false; }); });
-  if(!_findScrolled) requestAnimationFrame(()=>{ if(scrollToFind("#placeGrid")) _findScrolled=true; });
+  // Re-aim on each render in the first few seconds: the cards are re-drawn once Jenny's saved edits load.
+  if(!_findScrolled || performance.now()<8000) requestAnimationFrame(()=>{ if(scrollToFind("#placeGrid")) _findScrolled=true; });
   // Footer link "You know you're in Seldovia when..." (Jenny Oct 17): jump to that box once the cards above it are in
   if(location.hash==="#ykyis" && !window._ykyisScrolled){ window._ykyisScrolled=true; setTimeout(()=>{ const f=document.getElementById("ykyis"); if(f) f.scrollIntoView({behavior:"smooth",block:"start"}); },350); }
 }
