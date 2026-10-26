@@ -1,27 +1,7 @@
 {
- "updated": "2026-10-26T13:11:40Z",
+ "updated": "2026-10-26T22:43:40Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1793030400000,
-   "allDay": false,
-   "title": "SVT - Fitness Center"
-  },
-  {
-   "start": 1793034000000,
-   "allDay": false,
-   "title": "Absentee In Person Voting"
-  },
-  {
-   "start": 1793044200000,
-   "allDay": false,
-   "title": "SBE - Ms. XCR Running End-of-Season Celebration"
-  },
-  {
-   "start": 1793052000000,
-   "allDay": false,
-   "title": "Seldovia Public Library Hours"
-  },
   {
    "start": 1793056500000,
    "allDay": false,
@@ -61,6 +41,11 @@
    "start": 1793135700000,
    "allDay": false,
    "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
+  },
+  {
+   "start": 1793138400000,
+   "allDay": false,
+   "title": "Home Basketball Games - Sea Otter vs. Aurora Borealis"
   },
   {
    "start": 1793138400000,
@@ -278,6 +263,11 @@
    "title": "St. Nicholas Russian Orthodox Church Vespers Service"
   },
   {
+   "start": 1793498400000,
+   "allDay": false,
+   "title": "Church on the Rock Seldovia - Glow-in-the-dark Fun Night"
+  },
+  {
    "start": 1793559600000,
    "allDay": false,
    "title": "Grace Haven Fellowship Sunday Worship"
@@ -301,6 +291,16 @@
    "start": 1793582100000,
    "allDay": false,
    "title": "AMHS - Tustumena Departs to Homer"
+  },
+  {
+   "start": 1793610000000,
+   "allDay": true,
+   "title": "Seldovia Business or Citizen Nominations Deadline"
+  },
+  {
+   "start": 1793642400000,
+   "allDay": false,
+   "title": "Absentee In Person Voting"
   }
  ]
 }
