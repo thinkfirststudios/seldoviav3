@@ -1360,3 +1360,10 @@ footer.site .kh-btn{font-size:.85rem; padding:.4rem .8rem; box-shadow:none;}
   .tabs .tab .tab-sub{font-size:.6rem; margin-top:.05rem;}
   .fm-chips .tab .fm-dot{width:8px; height:8px; margin-right:4px;}
 }
+/* Oct 26: phone category buttons — text centered top-to-bottom in every button (even spacing), and the
+   colored dot sits right before the first word instead of floating beside wrapped text */
+@media (max-width:640px){
+  .tabs .tab{display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;}
+  .fm-chips .tab .fm-lbl{display:block;}
+  .fm-chips .tab .fm-dot{display:inline-block; vertical-align:middle; position:relative; top:-1px;}
+}
