@@ -1352,3 +1352,11 @@ footer.site .kh-btn{font-size:.85rem; padding:.4rem .8rem; box-shadow:none;}
 .nf-search{display:flex; gap:.5rem; max-width:560px; margin:0 auto 1rem;} .nf-search input{flex:1; min-width:0; padding:.7rem .9rem; border-radius:999px; border:1px solid var(--line);}
 .nf-links{font-weight:700;} .nf-links a{color:var(--accent-ink);}
 .find-hit.search-hit{animation-duration:6s;}
+
+/* Oct 26 (Jenny): smaller category buttons on phones, Explore + Find Me Map: 3 across, compact */
+@media (max-width:640px){
+  .tabs{grid-template-columns:repeat(3,minmax(0,1fr)); gap:.35rem;}
+  .tabs .tab{font-size:.78rem; padding:.38rem .3rem; min-height:0; border-radius:10px; border-width:1.2px; box-shadow:none; line-height:1.15;}
+  .tabs .tab .tab-sub{font-size:.6rem; margin-top:.05rem;}
+  .fm-chips .tab .fm-dot{width:8px; height:8px; margin-right:4px;}
+}

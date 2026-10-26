@@ -4574,7 +4574,7 @@ function renderPlaces(){
   const pq=normS(placeQuery);
   const placeText=p=>{ const m=EXPLORE_META[p.name]||{}; return normS([p.name,m.name,m.label,p.cat,m.owner,m.desc||BIZ_BLURB[p.name],m.loc].join(" ")); };
   const rows=PLACES.filter(p=>(pq ? true : (placeTab==="all"||p.key===placeTab||(p._extra&&p._extra.includes(placeTab)))) && !EXPLORE_HIDDEN.has(p.name)
-      && (!pq || pq.split(" ").every(w=>placeText(p).includes(w)))).sort((a,b)=>a.name.localeCompare(b.name));
+      && (!pq || pq.split(" ").every(w=>placeText(p).includes(w)))).sort((a,b)=>{ const dn=p=>((EXPLORE_META[p.name]||{}).name||p.name).trim(); return dn(a).localeCompare(dn(b),"en",{sensitivity:"base"}); }); // by the name shown on the card (Jenny Oct 26)
   const pin=`<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.3-7-11a7 7 0 0 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>`;
   // Placeholder photo until Qwynny's square B&W watercolor images land (set p.img; p.imgColor for the sponsor color version).
   const placeCard=p=>{
