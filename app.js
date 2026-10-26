@@ -4467,7 +4467,7 @@ if($("#featureMedia")) $("#featureMedia").innerHTML=`<img class="feature-photo" 
 const normS=t=>String(t||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/['\u2019`]/g,"").replace(/[^a-z0-9]+/g," ").trim();
 let placeQuery="";
 if($("#placeGrid") && $("#placeTabs")){
-  $("#placeTabs").insertAdjacentHTML("beforebegin",`<div class="place-search"><span aria-hidden="true">🔍</span><input id="placeSearch" type="search" placeholder="Search businesses &amp; places on Explore…" aria-label="Search Explore" autocomplete="off"><span id="placeCount" class="place-count"></span></div><p class="place-map-link"><a href="map.html">🗺️ Find Me Map: see where everything is</a></p>`);
+  $("#placeTabs").insertAdjacentHTML("beforebegin",`<div class="place-search"><span aria-hidden="true">🔍</span><input id="placeSearch" type="search" placeholder="Search Businesses &amp; Places on Seldovia.com…" aria-label="Search Explore" autocomplete="off"><span id="placeCount" class="place-count"></span></div><p class="place-map-link"><a href="map.html">🗺️ Find Me Map: see where everything is</a></p>`);
   let t=null; $("#placeSearch").addEventListener("input",e=>{ clearTimeout(t); t=setTimeout(()=>{ placeQuery=e.target.value.trim(); renderPlaces(); },150); });
 }
 // Small descriptor under the playful tab names (Jenny Oct 7); also shown on the Find Me Map buttons (Jenny Oct 17).
