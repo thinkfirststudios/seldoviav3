@@ -1,17 +1,7 @@
 {
- "updated": "2026-10-25T20:55:26Z",
+ "updated": "2026-10-26T04:54:23Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1792962900000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
-  },
-  {
-   "start": 1792973700000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Departs to Homer"
-  },
   {
    "start": 1793030400000,
    "allDay": false,
@@ -25,7 +15,7 @@
   {
    "start": 1793044200000,
    "allDay": false,
-   "title": "SBE - Ms. XCR Running End-of-Season Clebration"
+   "title": "SBE - Ms. XCR Running End-of-Season Celebration"
   },
   {
    "start": 1793052000000,
@@ -301,6 +291,16 @@
    "start": 1793563200000,
    "allDay": false,
    "title": "Seldovia Bible Chapel - Sunday Worship Service"
+  },
+  {
+   "start": 1793571300000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
+  },
+  {
+   "start": 1793582100000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Departs to Homer"
   }
  ]
 }
