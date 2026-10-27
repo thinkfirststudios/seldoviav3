@@ -1367,3 +1367,4 @@ footer.site .kh-btn{font-size:.85rem; padding:.4rem .8rem; box-shadow:none;}
   .fm-chips .tab .fm-lbl{display:block;}
   .fm-chips .tab .fm-dot{display:inline-block; vertical-align:middle; position:relative; top:-1px;}
 }
+.page-intro.page-intro-wide{max-width:var(--maxw); padding-left:var(--gutter); padding-right:var(--gutter);} /* Phone Book intro spans the banner width (Jenny Oct 26) */
