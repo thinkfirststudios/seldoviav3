@@ -23,7 +23,11 @@
   // .github/workflows/refresh-calendar.yml GitHub Action). This replaces the public CORS proxy,
   // which was slow/unreliable and made this widget intermittently fall back to the generic card.
   const nowMs=Date.now(), horizon=nowMs+14*24*60*60*1000;
-  fetch("data/calendar.json?t="+nowMs).then(r=>r.ok?r.json():Promise.reject()).then(data=>{
+  // The calendar robot refreshes data/calendar.json every few hours with a "skip deploy" commit, so read the
+  // freshest copy straight from GitHub (no Netlify deploy needed); fall back to the copy deployed with the site.
+  fetch("https://raw.githubusercontent.com/ThinkFirst-Studios/seldoviav3/main/data/calendar.json?t="+Math.floor(nowMs/300000))
+    .then(r=>r.ok?r.json():Promise.reject())
+    .catch(()=>fetch("data/calendar.json?t="+nowMs).then(r=>r.ok?r.json():Promise.reject())).then(data=>{
     const items=(data.events||[])
       .filter(e=>e && e.start && e.start>=nowMs-60*60*1000 && e.start<=horizon) // upcoming ~2 weeks
       .sort((a,b)=>a.start-b.start);
