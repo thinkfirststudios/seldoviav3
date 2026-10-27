@@ -1,22 +1,7 @@
 {
- "updated": "2026-10-27T18:08:36Z",
+ "updated": "2026-10-27T22:19:59Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1793135700000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
-  },
-  {
-   "start": 1793138400000,
-   "allDay": false,
-   "title": "Home Basketball Games - Sea Otter vs. Aurora Borealis"
-  },
-  {
-   "start": 1793138400000,
-   "allDay": false,
-   "title": "Seldovia Public Library Hours"
-  },
   {
    "start": 1793142900000,
    "allDay": false,
@@ -273,6 +258,11 @@
    "title": "Seldovia Public Library Hours"
   },
   {
+   "start": 1793665800000,
+   "allDay": false,
+   "title": "SOCC - Kids Pottery Class"
+  },
+  {
    "start": 1793721600000,
    "allDay": false,
    "title": "City of Seldovia Regular Municipal Election"
@@ -301,6 +291,16 @@
    "start": 1793754900000,
    "allDay": false,
    "title": "AMHS - Tustumena Departs to Homer"
+  },
+  {
+   "start": 1793833200000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
+  },
+  {
+   "start": 1793838600000,
+   "allDay": false,
+   "title": "SOCC - Kids Pottery Class"
   }
  ]
 }
