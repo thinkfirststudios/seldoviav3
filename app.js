@@ -8,6 +8,15 @@
 const $=(s,el=document)=>el.querySelector(s), $$=(s,el=document)=>[...el.querySelectorAll(s)];
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const PAGE=document.body.dataset.page||"home";
+// TEST SITE ONLY (Oct 26): the GitHub Pages preview (thinkfirststudios.github.io) is the staging copy.
+// Hide it from Google and label it, so it never competes with or gets mistaken for seldovia.com.
+// This matches ONLY the github.io address; on seldovia.com it does nothing.
+const IS_TEST_SITE=/\.github\.io$/i.test(location.hostname);
+if(IS_TEST_SITE){
+  const m=document.createElement("meta"); m.name="robots"; m.content="noindex, nofollow"; document.head.appendChild(m);
+  document.addEventListener("DOMContentLoaded",()=>document.body.insertAdjacentHTML("afterbegin",
+    '<div style="background:#b45309;color:#fff;text-align:center;font:700 13px/1.4 system-ui,sans-serif;padding:5px 8px;position:relative;z-index:9999">TEST SITE · changes here are not live yet · the real site is <a href="https://seldovia.com" style="color:#fff">seldovia.com</a></div>'));
+}
 
 /* ============================================================ PWA + cache
    Service worker REMOVED for now — its caching kept serving stale files
