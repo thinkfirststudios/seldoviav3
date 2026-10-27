@@ -10,3 +10,14 @@
   from = "/add"
   to = "/directory-add.html"
   status = 301
+
+# Security headers (Oct 26): stop other sites framing the pages (clickjacking), stop file-type guessing,
+# keep full page addresses private when visitors click out, and allow only what the site uses
+# (location is needed for "Find me" on the map; camera/microphone are never used).
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(self), camera=(), microphone=(), payment=(), usb=()"
