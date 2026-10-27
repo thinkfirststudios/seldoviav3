@@ -1,27 +1,7 @@
 {
- "updated": "2026-10-26T22:43:40Z",
+ "updated": "2026-10-27T05:12:00Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1793056500000,
-   "allDay": false,
-   "title": "SVT - Kids After School Time"
-  },
-  {
-   "start": 1793057400000,
-   "allDay": false,
-   "title": "SOCC - Kids Pottery Class"
-  },
-  {
-   "start": 1793059200000,
-   "allDay": false,
-   "title": "Public Library - Story Time"
-  },
-  {
-   "start": 1793066400000,
-   "allDay": false,
-   "title": "CITY - Council Regular Meeting"
-  },
   {
    "start": 1793116800000,
    "allDay": false,
@@ -301,6 +281,26 @@
    "start": 1793642400000,
    "allDay": false,
    "title": "Absentee In Person Voting"
+  },
+  {
+   "start": 1793660400000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
+  },
+  {
+   "start": 1793721600000,
+   "allDay": false,
+   "title": "City of Seldovia Regular Municipal Election"
+  },
+  {
+   "start": 1793744100000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
+  },
+  {
+   "start": 1793746800000,
+   "allDay": false,
+   "title": "Home Basketball Games - Sea Otter vs. Ninilchik"
   }
  ]
 }
