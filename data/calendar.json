@@ -1,22 +1,7 @@
 {
- "updated": "2026-10-28T13:03:07Z",
+ "updated": "2026-10-28T22:39:13Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1793203200000,
-   "allDay": false,
-   "title": "SVT - Fitness Center"
-  },
-  {
-   "start": 1793206800000,
-   "allDay": false,
-   "title": "Absentee In Person Voting"
-  },
-  {
-   "start": 1793224800000,
-   "allDay": false,
-   "title": "Seldovia Public Library Hours"
-  },
   {
    "start": 1793229300000,
    "allDay": false,
@@ -28,7 +13,17 @@
    "title": "SOCC - Kids Pottery Class"
   },
   {
+   "start": 1793239200000,
+   "allDay": false,
+   "title": "SOCC - Pre-Teen Night"
+  },
+  {
    "start": 1793242800000,
+   "allDay": false,
+   "title": "SOCC - Teen Night"
+  },
+  {
+   "start": 1793246400000,
    "allDay": false,
    "title": "SOCC - Teen Night"
   },
@@ -116,6 +111,11 @@
    "start": 1793379600000,
    "allDay": false,
    "title": "Absentee In Person Voting"
+  },
+  {
+   "start": 1793386800000,
+   "allDay": false,
+   "title": "SVT - Thrive Gentle Exercise + Owl Embroidery Craft"
   },
   {
    "start": 1793392200000,
@@ -273,6 +273,16 @@
    "title": "CITY - Seldovia Planning Commission Regular Meeting"
   },
   {
+   "start": 1793847600000,
+   "allDay": false,
+   "title": "SOCC - Pre-Teen Night"
+  },
+  {
+   "start": 1793854800000,
+   "allDay": false,
+   "title": "SOCC - Teen Night"
+  },
+  {
    "start": 1793916900000,
    "allDay": false,
    "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
@@ -291,16 +301,6 @@
    "start": 1793935800000,
    "allDay": false,
    "title": "SOCC - Volleyball"
-  },
-  {
-   "start": 1794000600000,
-   "allDay": false,
-   "title": "SBC Food Bank Day"
-  },
-  {
-   "start": 1794022200000,
-   "allDay": false,
-   "title": "Linwood Bar & Grill - Free Bingo"
   }
  ]
 }
