@@ -1,12 +1,7 @@
 {
- "updated": "2026-10-28T05:49:32Z",
+ "updated": "2026-10-28T13:03:07Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1793174400000,
-   "allDay": true,
-   "title": "SBE - Champ Wednesday"
-  },
   {
    "start": 1793203200000,
    "allDay": false,
@@ -301,6 +296,11 @@
    "start": 1794000600000,
    "allDay": false,
    "title": "SBC Food Bank Day"
+  },
+  {
+   "start": 1794022200000,
+   "allDay": false,
+   "title": "Linwood Bar & Grill - Free Bingo"
   }
  ]
 }
