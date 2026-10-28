@@ -1,37 +1,7 @@
 {
- "updated": "2026-10-27T22:19:59Z",
+ "updated": "2026-10-28T05:49:32Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1793142900000,
-   "allDay": false,
-   "title": "SVT - Kids After School Time"
-  },
-  {
-   "start": 1793142900000,
-   "allDay": false,
-   "title": "SVT's Open Swim"
-  },
-  {
-   "start": 1793146500000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Departs to Homer"
-  },
-  {
-   "start": 1793152800000,
-   "allDay": false,
-   "title": "SOCC - Adult Pottery Class"
-  },
-  {
-   "start": 1793154600000,
-   "allDay": false,
-   "title": "Seldovia Public Library - BOD Meeting"
-  },
-  {
-   "start": 1793154600000,
-   "allDay": false,
-   "title": "SVT - Kinusaiga Adult Class"
-  },
   {
    "start": 1793174400000,
    "allDay": true,
@@ -301,6 +271,36 @@
    "start": 1793838600000,
    "allDay": false,
    "title": "SOCC - Kids Pottery Class"
+  },
+  {
+   "start": 1793847600000,
+   "allDay": false,
+   "title": "CITY - Seldovia Planning Commission Regular Meeting"
+  },
+  {
+   "start": 1793916900000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
+  },
+  {
+   "start": 1793924100000,
+   "allDay": false,
+   "title": "SBC - Joy Club"
+  },
+  {
+   "start": 1793927700000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Departs to Homer"
+  },
+  {
+   "start": 1793935800000,
+   "allDay": false,
+   "title": "SOCC - Volleyball"
+  },
+  {
+   "start": 1794000600000,
+   "allDay": false,
+   "title": "SBC Food Bank Day"
   }
  ]
 }
