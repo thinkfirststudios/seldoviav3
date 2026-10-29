@@ -1,46 +1,11 @@
 {
- "updated": "2026-10-29T13:10:22Z",
+ "updated": "2026-10-29T22:48:39Z",
  "calname": "seldovia",
  "events": [
   {
-   "start": 1793293200000,
-   "allDay": false,
-   "title": "Absentee In Person Voting"
-  },
-  {
-   "start": 1793296800000,
-   "allDay": false,
-   "title": "SOCC - Yoga"
-  },
-  {
-   "start": 1793302200000,
-   "allDay": false,
-   "title": "SBE - K-5 Float Water Safety"
-  },
-  {
-   "start": 1793306700000,
-   "allDay": false,
-   "title": "SBE - Grade 6-12 Coldwater Survival"
-  },
-  {
-   "start": 1793307600000,
-   "allDay": false,
-   "title": "SVT - Fitness Center"
-  },
-  {
-   "start": 1793308500000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
-  },
-  {
-   "start": 1793313000000,
-   "allDay": false,
-   "title": "SVT - Science Thursday"
-  },
-  {
    "start": 1793315700000,
    "allDay": false,
-   "title": "SBC - Joy Club"
+   "title": "CANCELLED - SBC - Joy Club"
   },
   {
    "start": 1793315700000,
@@ -299,6 +264,41 @@
   },
   {
    "start": 1794092400000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
+  },
+  {
+   "start": 1794103200000,
+   "allDay": false,
+   "title": "St. Nicholas Russian Orthodox Church Vespers Service"
+  },
+  {
+   "start": 1794164400000,
+   "allDay": false,
+   "title": "Grace Haven Fellowship Sunday Worship"
+  },
+  {
+   "start": 1794164400000,
+   "allDay": false,
+   "title": "St. Nicholas Russian Orthodox Church Sunday Service"
+  },
+  {
+   "start": 1794168000000,
+   "allDay": false,
+   "title": "Seldovia Bible Chapel - Sunday Worship Service"
+  },
+  {
+   "start": 1794176100000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
+  },
+  {
+   "start": 1794186900000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Departs to Homer"
+  },
+  {
+   "start": 1794265200000,
    "allDay": false,
    "title": "Seldovia Public Library Hours"
   }
