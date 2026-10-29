@@ -1,12 +1,7 @@
 {
- "updated": "2026-10-29T05:54:07Z",
+ "updated": "2026-10-29T13:10:22Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1793260800000,
-   "allDay": true,
-   "title": "SBE - No School"
-  },
   {
    "start": 1793293200000,
    "allDay": false,
@@ -301,6 +296,11 @@
    "start": 1794027600000,
    "allDay": false,
    "title": "Seldovia Bible Chapel - Teen Nights at the Sea Otter Community Center!"
+  },
+  {
+   "start": 1794092400000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
   }
  ]
 }
