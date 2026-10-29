@@ -1,32 +1,7 @@
 {
- "updated": "2026-10-28T22:39:13Z",
+ "updated": "2026-10-29T05:54:07Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1793229300000,
-   "allDay": false,
-   "title": "SVT - Kids After School Time"
-  },
-  {
-   "start": 1793230200000,
-   "allDay": false,
-   "title": "SOCC - Kids Pottery Class"
-  },
-  {
-   "start": 1793239200000,
-   "allDay": false,
-   "title": "SOCC - Pre-Teen Night"
-  },
-  {
-   "start": 1793242800000,
-   "allDay": false,
-   "title": "SOCC - Teen Night"
-  },
-  {
-   "start": 1793246400000,
-   "allDay": false,
-   "title": "SOCC - Teen Night"
-  },
   {
    "start": 1793260800000,
    "allDay": true,
@@ -183,6 +158,11 @@
    "title": "Church on the Rock Seldovia - Glow-in-the-dark Fun Night"
   },
   {
+   "start": 1793509200000,
+   "allDay": false,
+   "title": "Linwood Halloween Party"
+  },
+  {
    "start": 1793559600000,
    "allDay": false,
    "title": "Grace Haven Fellowship Sunday Worship"
@@ -301,6 +281,26 @@
    "start": 1793935800000,
    "allDay": false,
    "title": "SOCC - Volleyball"
+  },
+  {
+   "start": 1793998800000,
+   "allDay": false,
+   "title": "SVT - Fall Prevention Workshop"
+  },
+  {
+   "start": 1794000600000,
+   "allDay": false,
+   "title": "SBC Food Bank Day"
+  },
+  {
+   "start": 1794022200000,
+   "allDay": false,
+   "title": "Linwood Bar & Grill - Free Bingo"
+  },
+  {
+   "start": 1794027600000,
+   "allDay": false,
+   "title": "Seldovia Bible Chapel - Teen Nights at the Sea Otter Community Center!"
   }
  ]
 }
