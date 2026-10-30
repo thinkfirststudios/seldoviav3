@@ -1,42 +1,7 @@
 {
- "updated": "2026-10-29T22:48:39Z",
+ "updated": "2026-10-30T05:55:42Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1793315700000,
-   "allDay": false,
-   "title": "CANCELLED - SBC - Joy Club"
-  },
-  {
-   "start": 1793315700000,
-   "allDay": false,
-   "title": "SVT - Kids After School Time"
-  },
-  {
-   "start": 1793319300000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Departs to Homer"
-  },
-  {
-   "start": 1793323800000,
-   "allDay": false,
-   "title": "SOCC - Mahjong Game Night"
-  },
-  {
-   "start": 1793325600000,
-   "allDay": false,
-   "title": "SOCC - Adult Pottery Class"
-  },
-  {
-   "start": 1793327400000,
-   "allDay": false,
-   "title": "SVT - Kinusaiga Kid + Parent Class"
-  },
-  {
-   "start": 1793327400000,
-   "allDay": false,
-   "title": "SOCC - Volleyball"
-  },
   {
    "start": 1793376000000,
    "allDay": false,
@@ -301,6 +266,41 @@
    "start": 1794265200000,
    "allDay": false,
    "title": "Seldovia Public Library Hours"
+  },
+  {
+   "start": 1794270600000,
+   "allDay": false,
+   "title": "SOCC - Kids Pottery Class"
+  },
+  {
+   "start": 1794279600000,
+   "allDay": false,
+   "title": "CITY - Council Regular Meeting"
+  },
+  {
+   "start": 1794348900000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
+  },
+  {
+   "start": 1794351600000,
+   "allDay": false,
+   "title": "Home Basketball Games - Sea Otter vs. Cook Inlet Academy"
+  },
+  {
+   "start": 1794351600000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
+  },
+  {
+   "start": 1794356100000,
+   "allDay": false,
+   "title": "SVT's Open Swim"
+  },
+  {
+   "start": 1794359700000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Departs to Homer"
   }
  ]
 }
