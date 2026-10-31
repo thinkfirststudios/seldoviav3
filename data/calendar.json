@@ -1,7 +1,12 @@
 {
- "updated": "2026-10-31T12:41:00Z",
+ "updated": "2026-10-31T21:40:38Z",
  "calname": "seldovia",
  "events": [
+  {
+   "start": 1793433600000,
+   "allDay": true,
+   "title": "Halloween 🎃👻"
+  },
   {
    "start": 1793484000000,
    "allDay": false,
@@ -85,7 +90,7 @@
   {
    "start": 1793744100000,
    "allDay": false,
-   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
+   "title": "AMHS - CANCELLED due to weather"
   },
   {
    "start": 1793746800000,
@@ -105,7 +110,7 @@
   {
    "start": 1793754900000,
    "allDay": false,
-   "title": "AMHS - Tustumena Departs to Homer"
+   "title": "AMHS - CANCELLED due to weather"
   },
   {
    "start": 1793833200000,
@@ -296,11 +301,6 @@
    "start": 1794605400000,
    "allDay": false,
    "title": "SBC Food Bank Day"
-  },
-  {
-   "start": 1794621600000,
-   "allDay": false,
-   "title": "Seldovia Fish and Game Advisory Committee Meeting"
   }
  ]
 }
