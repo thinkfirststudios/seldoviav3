@@ -1,12 +1,7 @@
 {
- "updated": "2026-10-31T05:51:29Z",
+ "updated": "2026-10-31T12:41:00Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1793433600000,
-   "allDay": true,
-   "title": "Halloween 🎃👻"
-  },
   {
    "start": 1793484000000,
    "allDay": false,
@@ -301,6 +296,11 @@
    "start": 1794605400000,
    "allDay": false,
    "title": "SBC Food Bank Day"
+  },
+  {
+   "start": 1794621600000,
+   "allDay": false,
+   "title": "Seldovia Fish and Game Advisory Committee Meeting"
   }
  ]
 }
