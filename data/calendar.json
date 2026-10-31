@@ -1,37 +1,7 @@
 {
- "updated": "2026-10-30T22:25:40Z",
+ "updated": "2026-10-31T05:51:29Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1793402100000,
-   "allDay": false,
-   "title": "SVT - Kids After School Time"
-  },
-  {
-   "start": 1793408400000,
-   "allDay": false,
-   "title": "Seldovia Community Preschool Cake Walk"
-  },
-  {
-   "start": 1793408400000,
-   "allDay": false,
-   "title": "SVT Halloween Carnival"
-  },
-  {
-   "start": 1793412000000,
-   "allDay": false,
-   "title": "SOCC - Adult Pottery Class"
-  },
-  {
-   "start": 1793413800000,
-   "allDay": false,
-   "title": "Linwood Bar & Grill - Free Bingo"
-  },
-  {
-   "start": 1793419200000,
-   "allDay": false,
-   "title": "CANCELLED - Seldovia Bible Chapel - Teen Nights at the Sea Otter Community Center!"
-  },
   {
    "start": 1793433600000,
    "allDay": true,
@@ -301,6 +271,36 @@
    "start": 1794452400000,
    "allDay": false,
    "title": "SOCC - Pre-Teen Night"
+  },
+  {
+   "start": 1794459600000,
+   "allDay": false,
+   "title": "SOCC - Teen Night"
+  },
+  {
+   "start": 1794521700000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
+  },
+  {
+   "start": 1794528900000,
+   "allDay": false,
+   "title": "SBC - Joy Club"
+  },
+  {
+   "start": 1794532500000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Departs to Homer"
+  },
+  {
+   "start": 1794540600000,
+   "allDay": false,
+   "title": "SOCC - Volleyball"
+  },
+  {
+   "start": 1794605400000,
+   "allDay": false,
+   "title": "SBC Food Bank Day"
   }
  ]
 }
