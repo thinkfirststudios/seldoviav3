@@ -1,41 +1,11 @@
 {
- "updated": "2026-10-31T21:40:38Z",
+ "updated": "2026-11-01T06:15:05Z",
  "calname": "seldovia",
  "events": [
   {
    "start": 1793433600000,
    "allDay": true,
    "title": "Halloween 🎃👻"
-  },
-  {
-   "start": 1793484000000,
-   "allDay": false,
-   "title": "Seldovia Public Library Hours"
-  },
-  {
-   "start": 1793487600000,
-   "allDay": false,
-   "title": "SOCC - Adult Pickleball"
-  },
-  {
-   "start": 1793494800000,
-   "allDay": false,
-   "title": "SBC - Children's Harvest Party"
-  },
-  {
-   "start": 1793494800000,
-   "allDay": false,
-   "title": "St. Nicholas Russian Orthodox Church Vespers Service"
-  },
-  {
-   "start": 1793498400000,
-   "allDay": false,
-   "title": "Church on the Rock Seldovia - Glow-in-the-dark Fun Night"
-  },
-  {
-   "start": 1793509200000,
-   "allDay": false,
-   "title": "Linwood Halloween Party"
   },
   {
    "start": 1793559600000,
@@ -301,6 +271,36 @@
    "start": 1794605400000,
    "allDay": false,
    "title": "SBC Food Bank Day"
+  },
+  {
+   "start": 1794621600000,
+   "allDay": false,
+   "title": "Seldovia Fish and Game Advisory Committee Meeting"
+  },
+  {
+   "start": 1794627000000,
+   "allDay": false,
+   "title": "Linwood Bar & Grill - Free Bingo"
+  },
+  {
+   "start": 1794632400000,
+   "allDay": false,
+   "title": "Seldovia Bible Chapel - Teen Nights at the Sea Otter Community Center!"
+  },
+  {
+   "start": 1794697200000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
+  },
+  {
+   "start": 1794708000000,
+   "allDay": false,
+   "title": "St. Nicholas Russian Orthodox Church Vespers Service"
+  },
+  {
+   "start": 1794769200000,
+   "allDay": false,
+   "title": "Grace Haven Fellowship Sunday Worship"
   }
  ]
 }
