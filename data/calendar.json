@@ -1,12 +1,7 @@
 {
- "updated": "2026-11-01T06:15:05Z",
+ "updated": "2026-11-01T13:31:39Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1793433600000,
-   "allDay": true,
-   "title": "Halloween 🎃👻"
-  },
   {
    "start": 1793559600000,
    "allDay": false,
@@ -301,6 +296,11 @@
    "start": 1794769200000,
    "allDay": false,
    "title": "Grace Haven Fellowship Sunday Worship"
+  },
+  {
+   "start": 1794769200000,
+   "allDay": false,
+   "title": "St. Nicholas Russian Orthodox Church Sunday Service"
   }
  ]
 }
