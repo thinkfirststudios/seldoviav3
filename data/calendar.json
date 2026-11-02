@@ -1,17 +1,7 @@
 {
- "updated": "2026-11-01T22:06:41Z",
+ "updated": "2026-11-02T06:17:43Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1793571300000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
-  },
-  {
-   "start": 1793582100000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Departs to Homer"
-  },
   {
    "start": 1793610000000,
    "allDay": true,
@@ -301,6 +291,16 @@
    "start": 1794791700000,
    "allDay": false,
    "title": "AMHS - Tustumena Departs to Homer"
+  },
+  {
+   "start": 1794870000000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
+  },
+  {
+   "start": 1794875400000,
+   "allDay": false,
+   "title": "SOCC - Kids Pottery Class"
   }
  ]
 }
