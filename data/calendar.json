@@ -1,21 +1,16 @@
 {
- "updated": "2026-11-03T01:02:17Z",
+ "updated": "2026-11-03T14:24:07Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1793610000000,
-   "allDay": true,
-   "title": "Seldovia Business or Citizen Nominations Deadline"
-  },
-  {
-   "start": 1793665800000,
-   "allDay": false,
-   "title": "SOCC - Kids Pottery Class"
-  },
   {
    "start": 1793721600000,
    "allDay": false,
    "title": "City of Seldovia Regular Municipal Election"
+  },
+  {
+   "start": 1793732400000,
+   "allDay": false,
+   "title": "SOCC - Yoga"
   },
   {
    "start": 1793744100000,
@@ -43,14 +38,29 @@
    "title": "AMHS - CANCELLED due to weather"
   },
   {
+   "start": 1793761200000,
+   "allDay": false,
+   "title": "SOCC - Adult Pottery Class"
+  },
+  {
    "start": 1793833200000,
    "allDay": false,
    "title": "Seldovia Public Library Hours"
   },
   {
+   "start": 1793837700000,
+   "allDay": false,
+   "title": "SOCC - Ballet Class"
+  },
+  {
    "start": 1793838600000,
    "allDay": false,
    "title": "SOCC - Kids Pottery Class"
+  },
+  {
+   "start": 1793838600000,
+   "allDay": false,
+   "title": "SOCC -11+ Pottery Class"
   },
   {
    "start": 1793847600000,
@@ -68,9 +78,19 @@
    "title": "SOCC - Teen Night"
   },
   {
+   "start": 1793905200000,
+   "allDay": false,
+   "title": "SOCC - Yoga"
+  },
+  {
    "start": 1793916900000,
    "allDay": false,
    "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
+  },
+  {
+   "start": 1793921400000,
+   "allDay": false,
+   "title": "SOCC - Science Thursday"
   },
   {
    "start": 1793924100000,
@@ -78,9 +98,24 @@
    "title": "SBC - Joy Club"
   },
   {
+   "start": 1793926800000,
+   "allDay": false,
+   "title": "SOCC - Battle of the Books"
+  },
+  {
    "start": 1793927700000,
    "allDay": false,
    "title": "AMHS - Tustumena Departs to Homer"
+  },
+  {
+   "start": 1793932200000,
+   "allDay": false,
+   "title": "SOCC - Mahjong Game Night"
+  },
+  {
+   "start": 1793934000000,
+   "allDay": false,
+   "title": "SOCC - Adult Pottery Class"
   },
   {
    "start": 1793935800000,
@@ -98,6 +133,11 @@
    "title": "SBC Food Bank Day"
   },
   {
+   "start": 1794010500000,
+   "allDay": false,
+   "title": "SOCC - After School Club"
+  },
+  {
    "start": 1794022200000,
    "allDay": false,
    "title": "Linwood Bar & Grill - Free Bingo"
@@ -113,6 +153,11 @@
    "title": "Seldovia Public Library Hours"
   },
   {
+   "start": 1794096000000,
+   "allDay": false,
+   "title": "SOCC - Adult Pickleball"
+  },
+  {
    "start": 1794103200000,
    "allDay": false,
    "title": "St. Nicholas Russian Orthodox Church Vespers Service"
@@ -121,6 +166,11 @@
    "start": 1794164400000,
    "allDay": false,
    "title": "Grace Haven Fellowship Sunday Worship"
+  },
+  {
+   "start": 1794164400000,
+   "allDay": false,
+   "title": "SOCC - Yoga"
   },
   {
    "start": 1794164400000,
@@ -153,9 +203,19 @@
    "title": "SOCC - Kids Pottery Class"
   },
   {
+   "start": 1794270600000,
+   "allDay": false,
+   "title": "SOCC -11+ Pottery Class"
+  },
+  {
    "start": 1794279600000,
    "allDay": false,
    "title": "CITY - Council Regular Meeting"
+  },
+  {
+   "start": 1794337200000,
+   "allDay": false,
+   "title": "SOCC - Yoga"
   },
   {
    "start": 1794348900000,
@@ -183,6 +243,11 @@
    "title": "AMHS - Tustumena Departs to Homer"
   },
   {
+   "start": 1794366000000,
+   "allDay": false,
+   "title": "SOCC - Adult Pottery Class"
+  },
+  {
    "start": 1794387600000,
    "allDay": true,
    "title": "Veterans Day"
@@ -193,9 +258,19 @@
    "title": "Seldovia Public Library Hours"
   },
   {
+   "start": 1794442500000,
+   "allDay": false,
+   "title": "SOCC - Ballet Class"
+  },
+  {
    "start": 1794443400000,
    "allDay": false,
    "title": "SOCC - Kids Pottery Class"
+  },
+  {
+   "start": 1794443400000,
+   "allDay": false,
+   "title": "SOCC -11+ Pottery Class"
   },
   {
    "start": 1794452400000,
@@ -208,99 +283,24 @@
    "title": "SOCC - Teen Night"
   },
   {
+   "start": 1794510000000,
+   "allDay": false,
+   "title": "SOCC - Yoga"
+  },
+  {
    "start": 1794521700000,
    "allDay": false,
    "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
   },
   {
+   "start": 1794526200000,
+   "allDay": false,
+   "title": "SOCC - Science Thursday"
+  },
+  {
    "start": 1794528900000,
    "allDay": false,
    "title": "SBC - Joy Club"
-  },
-  {
-   "start": 1794532500000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Departs to Homer"
-  },
-  {
-   "start": 1794540600000,
-   "allDay": false,
-   "title": "SOCC - Volleyball"
-  },
-  {
-   "start": 1794605400000,
-   "allDay": false,
-   "title": "SBC Food Bank Day"
-  },
-  {
-   "start": 1794621600000,
-   "allDay": false,
-   "title": "Seldovia Fish and Game Advisory Committee Meeting"
-  },
-  {
-   "start": 1794627000000,
-   "allDay": false,
-   "title": "Linwood Bar & Grill - Free Bingo"
-  },
-  {
-   "start": 1794632400000,
-   "allDay": false,
-   "title": "Seldovia Bible Chapel - Teen Nights at the Sea Otter Community Center!"
-  },
-  {
-   "start": 1794697200000,
-   "allDay": false,
-   "title": "Seldovia Public Library Hours"
-  },
-  {
-   "start": 1794708000000,
-   "allDay": false,
-   "title": "St. Nicholas Russian Orthodox Church Vespers Service"
-  },
-  {
-   "start": 1794769200000,
-   "allDay": false,
-   "title": "Grace Haven Fellowship Sunday Worship"
-  },
-  {
-   "start": 1794769200000,
-   "allDay": false,
-   "title": "St. Nicholas Russian Orthodox Church Sunday Service"
-  },
-  {
-   "start": 1794772800000,
-   "allDay": false,
-   "title": "Seldovia Bible Chapel - Sunday Worship Service"
-  },
-  {
-   "start": 1794780900000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
-  },
-  {
-   "start": 1794791700000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Departs to Homer"
-  },
-  {
-   "start": 1794870000000,
-   "allDay": false,
-   "title": "Seldovia Public Library Hours"
-  },
-  {
-   "start": 1794875400000,
-   "allDay": false,
-   "title": "SOCC - Kids Pottery Class"
-  },
-  {
-   "start": 1794953700000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
-  },
-  {
-   "start": 1794956400000,
-   "allDay": false,
-   "title": "Home Basketball Games - Sea Otter vs. Chapman"
   }
  ]
 }
