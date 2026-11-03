@@ -1,26 +1,11 @@
 {
- "updated": "2026-11-03T14:24:07Z",
+ "updated": "2026-11-03T23:27:26Z",
  "calname": "seldovia",
  "events": [
   {
    "start": 1793721600000,
    "allDay": false,
    "title": "City of Seldovia Regular Municipal Election"
-  },
-  {
-   "start": 1793732400000,
-   "allDay": false,
-   "title": "SOCC - Yoga"
-  },
-  {
-   "start": 1793744100000,
-   "allDay": false,
-   "title": "AMHS - CANCELLED due to weather"
-  },
-  {
-   "start": 1793746800000,
-   "allDay": false,
-   "title": "Home Basketball Games - Sea Otter vs. Ninilchik"
   },
   {
    "start": 1793746800000,
@@ -55,12 +40,7 @@
   {
    "start": 1793838600000,
    "allDay": false,
-   "title": "SOCC - Kids Pottery Class"
-  },
-  {
-   "start": 1793838600000,
-   "allDay": false,
-   "title": "SOCC -11+ Pottery Class"
+   "title": "SOCC - 11+ Pottery Class"
   },
   {
    "start": 1793847600000,
@@ -200,12 +180,7 @@
   {
    "start": 1794270600000,
    "allDay": false,
-   "title": "SOCC - Kids Pottery Class"
-  },
-  {
-   "start": 1794270600000,
-   "allDay": false,
-   "title": "SOCC -11+ Pottery Class"
+   "title": "SOCC - 11+ Pottery Class"
   },
   {
    "start": 1794279600000,
@@ -265,12 +240,7 @@
   {
    "start": 1794443400000,
    "allDay": false,
-   "title": "SOCC - Kids Pottery Class"
-  },
-  {
-   "start": 1794443400000,
-   "allDay": false,
-   "title": "SOCC -11+ Pottery Class"
+   "title": "SOCC - 11+ Pottery Class"
   },
   {
    "start": 1794452400000,
@@ -301,6 +271,36 @@
    "start": 1794528900000,
    "allDay": false,
    "title": "SBC - Joy Club"
+  },
+  {
+   "start": 1794531600000,
+   "allDay": false,
+   "title": "SOCC - Battle of the Books"
+  },
+  {
+   "start": 1794532500000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Departs to Homer"
+  },
+  {
+   "start": 1794537000000,
+   "allDay": false,
+   "title": "SOCC - Mahjong Game Night"
+  },
+  {
+   "start": 1794538800000,
+   "allDay": false,
+   "title": "SOCC - Adult Pottery Class"
+  },
+  {
+   "start": 1794540600000,
+   "allDay": false,
+   "title": "SOCC - Volleyball"
+  },
+  {
+   "start": 1794605400000,
+   "allDay": false,
+   "title": "SBC Food Bank Day"
   }
  ]
 }
