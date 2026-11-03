@@ -1,21 +1,11 @@
 {
- "updated": "2026-11-02T16:05:37Z",
+ "updated": "2026-11-03T01:02:17Z",
  "calname": "seldovia",
  "events": [
   {
    "start": 1793610000000,
    "allDay": true,
    "title": "Seldovia Business or Citizen Nominations Deadline"
-  },
-  {
-   "start": 1793642400000,
-   "allDay": false,
-   "title": "Absentee In Person Voting"
-  },
-  {
-   "start": 1793660400000,
-   "allDay": false,
-   "title": "Seldovia Public Library Hours"
   },
   {
    "start": 1793665800000,
@@ -301,6 +291,16 @@
    "start": 1794875400000,
    "allDay": false,
    "title": "SOCC - Kids Pottery Class"
+  },
+  {
+   "start": 1794953700000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
+  },
+  {
+   "start": 1794956400000,
+   "allDay": false,
+   "title": "Home Basketball Games - Sea Otter vs. Chapman"
   }
  ]
 }
