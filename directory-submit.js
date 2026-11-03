@@ -8,6 +8,11 @@
 (function(){
   var form = document.getElementById("dirForm");
   if(!form || !window.db) return;
+  if(window.HumanCheck){ // status line right under "Submit for review" (inside the step that appears after picking a type)
+    var hcLine = document.createElement("p"); hcLine.className = "human-check"; hcLine.setAttribute("aria-live", "polite");
+    var sb = form.querySelector('button[type="submit"]'); if(sb) sb.insertAdjacentElement("afterend", hcLine);
+    HumanCheck.attach(form, sb ? hcLine : null);
+  }
 
   form.addEventListener("submit", async function(e){
     e.preventDefault();
@@ -43,10 +48,11 @@
         }catch(_){ /* non-blocking: submit the listing even if the photo upload fails */ }
       }
 
-      var ins = await db.from("directory_submissions").insert({
+      // saved through the "Are you human?" check (human-check.js -> submit-form function); always pending until Jenny approves
+      var sent = await HumanCheck.send(form, "directory", {
         listing_type: listing_type, display_name: display_name, photo_url: photo_url, data: data
       });
-      if(ins.error) throw ins.error;
+      if(!sent) throw new Error("The human check didn't go through. Please refresh the page and try again.");
 
       window.location.href = "thanks.html";
     }catch(err){

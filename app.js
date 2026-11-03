@@ -5258,6 +5258,8 @@ function shrinkPhoto(file,maxW=3000,q=0.9){ return new Promise(res=>{ if(!/^imag
   const img=new Image(); img.onload=()=>{ const sc=Math.min(1,maxW/Math.max(img.width,img.height)); if(sc===1&&file.size<4e6) return res(file);
     const c=document.createElement("canvas"); c.width=Math.round(img.width*sc); c.height=Math.round(img.height*sc); c.getContext("2d").drawImage(img,0,0,c.width,c.height);
     c.toBlob(b=>res(b||file),"image/jpeg",q); }; img.onerror=()=>res(file); img.src=URL.createObjectURL(file); }); }
+// "Are you human?" check (human-check.js): invisible math puzzle, no picture puzzles (Jenny Nov 2)
+if($("#contactForm") && window.HumanCheck) HumanCheck.attach($("#contactForm"));
 if($("#contactForm")) $("#contactForm").addEventListener("submit",async e=>{
   e.preventDefault();
   const form=e.target;
@@ -5278,8 +5280,7 @@ if($("#contactForm")) $("#contactForm").addEventListener("submit",async e=>{
         lines.push(`Photo ${i+1}: ${slots[i].desc}\n${db.storage.from("uploads").getPublicUrl(path).data.publicUrl}`); }
       btn.textContent="Sending…";
       const message=`MONTHLY PHOTO CONTEST ENTRY\n\nPhoto credit: ${credit}\nPhone: ${phone}\n\n${lines.join("\n\n")}`;
-      const {error}=await db.from("messages").insert({name,email,topic:"Monthly Photo Contest entry",message});
-      if(error) throw error;
+      if(!(await HumanCheck.send(form,"message",{name,email,topic:"Monthly Photo Contest entry",message}))) throw new Error("not sent");
       form.reset(); syncContestFields(); toast("Thank you! Your contest entry has been received. 📸");
     }catch(err){ toast("Sorry, your entry couldn't be sent just now. Please try again in a moment."); }
     finally{ btn.disabled=false; syncContestFields(); }
@@ -5302,7 +5303,7 @@ if($("#contactForm")) $("#contactForm").addEventListener("submit",async e=>{
       }catch(_){}
     }
     // 1) save to the admin inbox (Supabase)
-    if(window.db){ const {error}=await db.from("messages").insert({name,email,topic,message:msg}); if(!error) ok=true; }
+    if(await HumanCheck.send(form,"message",{name,email,topic,message:msg})) ok=true;
     // 2) email Jenny via Web3Forms (if configured)
     const key=window.WEB3FORMS_KEY;
     if(key && key.indexOf("PASTE_")!==0){
