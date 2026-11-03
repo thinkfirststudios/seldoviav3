@@ -11,3 +11,7 @@ LEGAL-REVIEW-SHEET.md
 
 # setup SQL lives in ../sql (outside the published site)
 *.sql
+
+# secrets never go in the repo (keys live in Supabase secrets)
+.env
+.env.*
