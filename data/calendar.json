@@ -1,32 +1,7 @@
 {
- "updated": "2026-11-03T23:27:26Z",
+ "updated": "2026-11-04T06:33:25Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1793721600000,
-   "allDay": false,
-   "title": "City of Seldovia Regular Municipal Election"
-  },
-  {
-   "start": 1793746800000,
-   "allDay": false,
-   "title": "Seldovia Public Library Hours"
-  },
-  {
-   "start": 1793751300000,
-   "allDay": false,
-   "title": "SVT's Open Swim"
-  },
-  {
-   "start": 1793754900000,
-   "allDay": false,
-   "title": "AMHS - CANCELLED due to weather"
-  },
-  {
-   "start": 1793761200000,
-   "allDay": false,
-   "title": "SOCC - Adult Pottery Class"
-  },
   {
    "start": 1793833200000,
    "allDay": false,
@@ -301,6 +276,31 @@
    "start": 1794605400000,
    "allDay": false,
    "title": "SBC Food Bank Day"
+  },
+  {
+   "start": 1794615300000,
+   "allDay": false,
+   "title": "SOCC - After School Club"
+  },
+  {
+   "start": 1794621600000,
+   "allDay": false,
+   "title": "Seldovia Fish and Game Advisory Committee Meeting"
+  },
+  {
+   "start": 1794627000000,
+   "allDay": false,
+   "title": "Linwood Bar & Grill - Free Bingo"
+  },
+  {
+   "start": 1794632400000,
+   "allDay": false,
+   "title": "Seldovia Bible Chapel - Teen Nights at the Sea Otter Community Center!"
+  },
+  {
+   "start": 1794697200000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
   }
  ]
 }
