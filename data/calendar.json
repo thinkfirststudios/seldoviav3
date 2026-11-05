@@ -1,22 +1,7 @@
 {
- "updated": "2026-11-05T06:55:03Z",
+ "updated": "2026-11-05T20:00:38Z",
  "calname": "seldovia",
  "events": [
-  {
-   "start": 1793854800000,
-   "allDay": false,
-   "title": "SOCC - Teen Night"
-  },
-  {
-   "start": 1793898000000,
-   "allDay": false,
-   "title": "SVT - Fitness Center"
-  },
-  {
-   "start": 1793905200000,
-   "allDay": false,
-   "title": "SOCC - Yoga"
-  },
   {
    "start": 1793916000000,
    "allDay": false,
@@ -301,6 +286,21 @@
    "start": 1794537000000,
    "allDay": false,
    "title": "SOCC - Mahjong Game Night"
+  },
+  {
+   "start": 1794538800000,
+   "allDay": false,
+   "title": "SOCC - Adult Pottery Class"
+  },
+  {
+   "start": 1794540600000,
+   "allDay": false,
+   "title": "SVT - Kinusaiga Kid + Parent Class"
+  },
+  {
+   "start": 1794540600000,
+   "allDay": false,
+   "title": "SOCC - Volleyball"
   }
  ]
 }
