@@ -1262,6 +1262,10 @@ footer.site .kh-btn{font-size:.85rem; padding:.4rem .8rem; box-shadow:none;}
 .fm-title{font-family:var(--script); font-weight:400; font-size:clamp(3rem,7vw,5rem); color:var(--heading); margin:.1rem 0 0; line-height:1;}
 .fm-bar{display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:.6rem 1rem; margin:1rem 0 .6rem;}
 .fm-msg{font-weight:600; color:var(--heading);}
+.fm-search{position:relative; max-width:560px; margin:0 auto .8rem;}
+.fm-search .place-search{margin:0;}
+.fm-search .results{left:0; right:0; top:calc(100% + 6px); text-align:left;}
+.fm-result{width:100%; background:none; border-width:1px 0 0; border-style:solid; border-color:var(--line); font:inherit; text-align:left; cursor:pointer;}
 .fm-chips{justify-content:center; flex-wrap:wrap; margin-bottom:.8rem;}
 .fm-dot{display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:6px; vertical-align:middle;}
 .fm-map{height:min(72vh,680px); min-height:380px; border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden; z-index:0;}

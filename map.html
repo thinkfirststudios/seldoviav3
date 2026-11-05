@@ -7,7 +7,7 @@
 <meta name="theme-color" content="#F8E6DD">
 <title>Find Me Map — Seldovia</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
-<link rel="stylesheet" href="styles.css?v=144">
+<link rel="stylesheet" href="styles.css?v=145">
 </head>
 <body data-page="map">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -22,6 +22,13 @@
       <button type="button" class="btn btn-primary" id="findMeBtn">📍 Find me</button>
       <span id="findMeMsg" class="fm-msg" role="status" aria-live="polite"></span>
     </div>
+    <div class="fm-search">
+      <div class="place-search">
+        <span aria-hidden="true">🔍</span>
+        <input id="mapSearch" type="search" placeholder="Search for a business or place…" aria-label="Search the map" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="mapResults" autocomplete="off" enterkeyhint="search">
+      </div>
+      <div class="results" id="mapResults" role="listbox" aria-label="Places"></div>
+    </div>
     <div class="tabs fm-chips" id="mapChips" role="group" aria-label="Show only one kind of place"></div>
     <div id="findMap" class="fm-map" role="region" aria-label="Map of Seldovia"></div>
     <p class="fm-count"><span id="mapCount"></span> · More places are being added.</p>
@@ -32,6 +39,6 @@
 <script src="app.js?v=137"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script src="map-pins.js?v=2"></script>
-<script src="map.js?v=4"></script>
+<script src="map.js?v=5"></script>
 </body>
 </html>
