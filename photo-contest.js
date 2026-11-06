@@ -8,12 +8,13 @@
   const ENTER="contact.html?topic=contest";
   const DEFAULT_FLIER="images/contest-flier.jpg?v=1";   // this month's flier from Jenny; the admin upload replaces it
   const placeFlier=(c)=>{
-    if(c && c.show===false) return;
+    if(c && c.flierShow===false) return;   // its own checkbox (Qwynny Nov 6); the contest box's checkbox no longer hides it
     const src=(c&&c.flier)||DEFAULT_FLIER;
+    const details=c&&/^https?:\/\//i.test(c.details||"")?c.details:"";
     const put=()=>{ const cap=document.querySelector(".today-feature .today-cap"); if(!cap) return false;
       if(cap.querySelector(".pj-flier")) return true;
       cap.insertAdjacentHTML("beforeend",`<a class="pj-flier" href="${ENTER}" aria-label="Enter our photo contest this month">
-        <span class="pj-flier-top">Enter Our Contest This Month</span><img src="${esc(src)}" alt="This month's Seldovia.com photo contest flier" onerror="this.closest('.pj-flier').remove()"></a>`); return true; };
+        <span class="pj-flier-top">Enter Our Contest This Month</span><img src="${esc(src)}" alt="This month's Seldovia.com photo contest flier" onerror="this.closest('.pj-flier').remove()"></a>${details?`<a class="pj-flier-more" href="${esc(details)}">See here for more contest details.</a>`:""}`); return true; };
     if(!put()){ const app=document.getElementById("journalApp"); if(!app) return;
       const mo=new MutationObserver(()=>{ if(put()) mo.disconnect(); }); mo.observe(app,{childList:true,subtree:true}); setTimeout(()=>mo.disconnect(),20000); }
   };
