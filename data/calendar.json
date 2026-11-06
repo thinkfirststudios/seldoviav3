@@ -1,16 +1,11 @@
 {
- "updated": "2026-11-06T06:54:44Z",
+ "updated": "2026-11-06T19:28:07Z",
  "calname": "seldovia",
  "events": [
   {
    "start": 1793869200000,
    "allDay": true,
    "title": "SVT - Santas Shop Donations"
-  },
-  {
-   "start": 1793984400000,
-   "allDay": false,
-   "title": "SVT - Fitness Center"
   },
   {
    "start": 1793998800000,
@@ -30,7 +25,7 @@
   {
    "start": 1794022200000,
    "allDay": false,
-   "title": "Linwood Bar & Grill - Free Bingo"
+   "title": "CANCELED - Linwood Bar & Grill - Free Bingo"
   },
   {
    "start": 1794027600000,
@@ -301,6 +296,11 @@
    "start": 1794708000000,
    "allDay": false,
    "title": "St. Nicholas Russian Orthodox Church Vespers Service"
+  },
+  {
+   "start": 1794769200000,
+   "allDay": false,
+   "title": "Grace Haven Fellowship Sunday Worship"
   }
  ]
 }
