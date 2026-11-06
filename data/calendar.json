@@ -1,56 +1,11 @@
 {
- "updated": "2026-11-05T20:00:38Z",
+ "updated": "2026-11-06T06:54:44Z",
  "calname": "seldovia",
  "events": [
   {
-   "start": 1793916000000,
-   "allDay": false,
-   "title": "SVT - Fitness Center"
-  },
-  {
-   "start": 1793916900000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
-  },
-  {
-   "start": 1793921400000,
-   "allDay": false,
-   "title": "SOCC - Science Thursday"
-  },
-  {
-   "start": 1793924100000,
-   "allDay": false,
-   "title": "SBC - Joy Club"
-  },
-  {
-   "start": 1793926800000,
-   "allDay": false,
-   "title": "SOCC - Battle of the Books"
-  },
-  {
-   "start": 1793927700000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Departs to Homer"
-  },
-  {
-   "start": 1793932200000,
-   "allDay": false,
-   "title": "SOCC - Mahjong Game Night"
-  },
-  {
-   "start": 1793934000000,
-   "allDay": false,
-   "title": "SOCC - Adult Pottery Class"
-  },
-  {
-   "start": 1793935800000,
-   "allDay": false,
-   "title": "SVT - Kinusaiga Kid + Parent Class"
-  },
-  {
-   "start": 1793935800000,
-   "allDay": false,
-   "title": "SOCC - Volleyball"
+   "start": 1793869200000,
+   "allDay": true,
+   "title": "SVT - Santas Shop Donations"
   },
   {
    "start": 1793984400000,
@@ -301,6 +256,51 @@
    "start": 1794540600000,
    "allDay": false,
    "title": "SOCC - Volleyball"
+  },
+  {
+   "start": 1794589200000,
+   "allDay": false,
+   "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1794605400000,
+   "allDay": false,
+   "title": "SBC Food Bank Day"
+  },
+  {
+   "start": 1794615300000,
+   "allDay": false,
+   "title": "SOCC - After School Club"
+  },
+  {
+   "start": 1794621600000,
+   "allDay": false,
+   "title": "Seldovia Fish and Game Advisory Committee Meeting"
+  },
+  {
+   "start": 1794627000000,
+   "allDay": false,
+   "title": "Linwood Bar & Grill - Free Bingo"
+  },
+  {
+   "start": 1794632400000,
+   "allDay": false,
+   "title": "Seldovia Bible Chapel - Teen Nights at the Sea Otter Community Center!"
+  },
+  {
+   "start": 1794697200000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
+  },
+  {
+   "start": 1794700800000,
+   "allDay": false,
+   "title": "SOCC - Adult Pickleball"
+  },
+  {
+   "start": 1794708000000,
+   "allDay": false,
+   "title": "St. Nicholas Russian Orthodox Church Vespers Service"
   }
  ]
 }
