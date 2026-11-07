@@ -1,16 +1,11 @@
 {
- "updated": "2026-11-07T06:05:52Z",
+ "updated": "2026-11-07T13:11:20Z",
  "calname": "seldovia",
  "events": [
   {
    "start": 1793869200000,
    "allDay": true,
    "title": "SVT - Santas Shop Donations"
-  },
-  {
-   "start": 1794027600000,
-   "allDay": false,
-   "title": "Seldovia Bible Chapel - Teen Nights at the Sea Otter Community Center!"
   },
   {
    "start": 1794092400000,
@@ -301,6 +296,11 @@
    "start": 1794769200000,
    "allDay": false,
    "title": "St. Nicholas Russian Orthodox Church Sunday Service"
+  },
+  {
+   "start": 1794772800000,
+   "allDay": false,
+   "title": "Seldovia Bible Chapel - Sunday Worship Service"
   }
  ]
 }
