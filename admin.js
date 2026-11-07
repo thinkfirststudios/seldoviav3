@@ -1078,7 +1078,7 @@
         <div class="field"><label for="ctPrize">Prize (optional)</label><input id="ctPrize" type="text" placeholder="e.g. A special prize from our sponsors!"></div>
         <div class="field"><label for="ctBlurb">How to enter</label><textarea id="ctBlurb" rows="6" placeholder="Tell people what to photograph and what to include. Leave a blank line between paragraphs."></textarea></div>
         <div class="field"><label for="ctFlier">Flier of the Month (image)</label><input id="ctFlier" type="file" accept="image/*"><span class="hint" id="ctFlierHint">Leave empty to keep the current flier.</span><img id="ctFlierPrev" alt="" style="display:none;max-width:220px;margin-top:.5rem;border-radius:8px"></div>
-        <div class="field"><label for="ctDetails">Contest details link <span class="opt">(optional)</span></label><input id="ctDetails" type="url" placeholder="https://seldovia.com/post.html?id=…"><span class="hint">Open this month's contest post on the site, copy the address from the top of your browser, and paste it here. Shows "See here for more contest details." under the flier.</span></div>
+        <div class="field"><label for="ctDetails">Contest details link <span class="opt">(optional)</span></label><input id="ctDetails" type="url" placeholder="https://seldovia.com/post.html?id=…"><span class="hint">Open this month's contest post on the site, copy the address from the top of your browser, and paste it here. Clicking the flier then opens that post, and "Click flier for more information" shows under it.</span></div>
         <button class="btn btn-primary" type="submit">Save</button> <span id="ctMsg" class="form-note"></span>
       </form>`;
     const {data}=await db.from("settings").select("value").eq("key","photo_contest").maybeSingle();

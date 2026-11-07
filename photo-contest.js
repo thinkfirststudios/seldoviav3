@@ -1,6 +1,7 @@
 /* Photos page (Jenny Oct 8 + Oct 19):
    - "This Month's Photo Contest" box, edited by Qwynny in the admin (Photo Contest tab -> settings.photo_contest)
-   - "Flier of the Month" beside the Photo of the Day; clicking it opens the site's own contest entry form
+   - "Flier of the Month" beside the Photo of the Day; clicking it opens the details post if one is set in the admin,
+     otherwise the site's own contest entry form
      (Contact page, "Enter the Monthly Photo Contest") — no Google sign-in. */
 (function(){
   const box=document.getElementById("photoContest"); if(!box) return;
@@ -13,8 +14,12 @@
     const details=c&&/^https?:\/\//i.test(c.details||"")?c.details:"";
     const put=()=>{ const cap=document.querySelector(".today-feature .today-cap"); if(!cap) return false;
       if(cap.querySelector(".pj-flier")) return true;
-      cap.insertAdjacentHTML("beforeend",`<a class="pj-flier" href="${ENTER}" aria-label="Enter our photo contest this month">
-        <span class="pj-flier-top">Enter Our Contest This Month</span><img src="${esc(src)}" alt="This month's Seldovia.com photo contest flier" onerror="this.closest('.pj-flier').remove()"></a>${details?`<a class="pj-flier-more" href="${esc(details)}">See here for more contest details.</a>`:""}`); return true; };
+      const img=`<img src="${esc(src)}" alt="This month's Seldovia.com photo contest flier" onerror="this.closest('.pj-flier').remove()">`;
+      // With a details link (Jenny Nov 6) the flier opens the details post; the heading above it still opens the entry form.
+      cap.insertAdjacentHTML("beforeend",details?`<div class="pj-flier"><a class="pj-flier-top" href="${ENTER}">Enter Our Contest This Month</a>
+        <a class="pj-flier-img" href="${esc(details)}" aria-label="More information about this month's photo contest">${img}</a>
+        <a class="pj-flier-more" href="${esc(details)}">Click flier for more information</a></div>`:`<a class="pj-flier" href="${ENTER}" aria-label="Enter our photo contest this month">
+        <span class="pj-flier-top">Enter Our Contest This Month</span>${img}</a>`); return true; };
     if(!put()){ const app=document.getElementById("journalApp"); if(!app) return;
       const mo=new MutationObserver(()=>{ if(put()) mo.disconnect(); }); mo.observe(app,{childList:true,subtree:true}); setTimeout(()=>mo.disconnect(),20000); }
   };
