@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-06T19:28:07Z",
+ "updated": "2026-11-07T06:05:52Z",
  "calname": "seldovia",
  "events": [
   {
@@ -8,29 +8,14 @@
    "title": "SVT - Santas Shop Donations"
   },
   {
-   "start": 1793998800000,
-   "allDay": false,
-   "title": "SVT - Fall Prevention Workshop"
-  },
-  {
-   "start": 1794000600000,
-   "allDay": false,
-   "title": "SBC Food Bank Day"
-  },
-  {
-   "start": 1794010500000,
-   "allDay": false,
-   "title": "SOCC - After School Club"
-  },
-  {
-   "start": 1794022200000,
-   "allDay": false,
-   "title": "CANCELED - Linwood Bar & Grill - Free Bingo"
-  },
-  {
    "start": 1794027600000,
    "allDay": false,
    "title": "Seldovia Bible Chapel - Teen Nights at the Sea Otter Community Center!"
+  },
+  {
+   "start": 1794092400000,
+   "allDay": false,
+   "title": "St. Nicholas Russian Orthodox Church Susan Gruber's Baptism"
   },
   {
    "start": 1794092400000,
@@ -91,6 +76,11 @@
    "start": 1794265200000,
    "allDay": false,
    "title": "Seldovia Public Library Hours"
+  },
+  {
+   "start": 1794269700000,
+   "allDay": false,
+   "title": "SOCC - Kids After School Time"
   },
   {
    "start": 1794270600000,
@@ -176,6 +166,11 @@
    "start": 1794442500000,
    "allDay": false,
    "title": "SOCC - Ballet Class"
+  },
+  {
+   "start": 1794442500000,
+   "allDay": false,
+   "title": "SOCC - Kids After School Time"
   },
   {
    "start": 1794443400000,
@@ -293,14 +288,19 @@
    "title": "SOCC - Adult Pickleball"
   },
   {
-   "start": 1794708000000,
+   "start": 1794769200000,
    "allDay": false,
-   "title": "St. Nicholas Russian Orthodox Church Vespers Service"
+   "title": "Grace Haven Fellowship Sunday Worship"
   },
   {
    "start": 1794769200000,
    "allDay": false,
-   "title": "Grace Haven Fellowship Sunday Worship"
+   "title": "SOCC - Yoga"
+  },
+  {
+   "start": 1794769200000,
+   "allDay": false,
+   "title": "St. Nicholas Russian Orthodox Church Sunday Service"
   }
  ]
 }
