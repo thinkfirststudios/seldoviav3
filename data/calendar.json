@@ -1,31 +1,11 @@
 {
- "updated": "2026-11-07T21:55:57Z",
+ "updated": "2026-11-08T06:10:09Z",
  "calname": "seldovia",
  "events": [
   {
    "start": 1793869200000,
    "allDay": true,
    "title": "SVT - Santas Shop Donations"
-  },
-  {
-   "start": 1794092400000,
-   "allDay": false,
-   "title": "St. Nicholas Russian Orthodox Church Susan Gruber's Baptism"
-  },
-  {
-   "start": 1794092400000,
-   "allDay": false,
-   "title": "Seldovia Public Library Hours"
-  },
-  {
-   "start": 1794096000000,
-   "allDay": false,
-   "title": "SOCC - Adult Pickleball"
-  },
-  {
-   "start": 1794103200000,
-   "allDay": false,
-   "title": "St. Nicholas Russian Orthodox Church Vespers Service"
   },
   {
    "start": 1794164400000,
@@ -301,6 +281,26 @@
    "start": 1794772800000,
    "allDay": false,
    "title": "Seldovia Bible Chapel - Sunday Worship Service"
+  },
+  {
+   "start": 1794780900000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
+  },
+  {
+   "start": 1794791700000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Departs to Homer"
+  },
+  {
+   "start": 1794848400000,
+   "allDay": false,
+   "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1794859200000,
+   "allDay": false,
+   "title": "SVT - Gentle Exercise with Debbie & Jen"
   }
  ]
 }
