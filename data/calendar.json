@@ -1,31 +1,11 @@
 {
- "updated": "2026-11-08T13:31:53Z",
+ "updated": "2026-11-08T22:11:42Z",
  "calname": "seldovia",
  "events": [
   {
    "start": 1793869200000,
    "allDay": true,
    "title": "SVT - Santas Shop Donations"
-  },
-  {
-   "start": 1794164400000,
-   "allDay": false,
-   "title": "Grace Haven Fellowship Sunday Worship"
-  },
-  {
-   "start": 1794164400000,
-   "allDay": false,
-   "title": "SOCC - Yoga"
-  },
-  {
-   "start": 1794164400000,
-   "allDay": false,
-   "title": "St. Nicholas Russian Orthodox Church Sunday Service"
-  },
-  {
-   "start": 1794168000000,
-   "allDay": false,
-   "title": "Seldovia Bible Chapel - Sunday Worship Service"
   },
   {
    "start": 1794176100000,
@@ -301,6 +281,26 @@
    "start": 1794859200000,
    "allDay": false,
    "title": "SVT - Gentle Exercise with Debbie & Jen"
+  },
+  {
+   "start": 1794870000000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
+  },
+  {
+   "start": 1794874500000,
+   "allDay": false,
+   "title": "SOCC - Kids After School Time"
+  },
+  {
+   "start": 1794875400000,
+   "allDay": false,
+   "title": "SOCC - 11+ Pottery Class"
+  },
+  {
+   "start": 1794934800000,
+   "allDay": false,
+   "title": "SVT - Fitness Center"
   }
  ]
 }
