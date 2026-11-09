@@ -1,16 +1,11 @@
 {
- "updated": "2026-11-09T06:44:54Z",
+ "updated": "2026-11-09T22:26:41Z",
  "calname": "seldovia",
  "events": [
   {
    "start": 1793869200000,
    "allDay": true,
    "title": "SVT - Santas Shop Donations"
-  },
-  {
-   "start": 1794243600000,
-   "allDay": false,
-   "title": "SVT - Fitness Center"
   },
   {
    "start": 1794254400000,
@@ -55,7 +50,7 @@
   {
    "start": 1794348900000,
    "allDay": false,
-   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
+   "title": "CANCELED - AMHS - Tustumena Arrives in Seldovia from Homer"
   },
   {
    "start": 1794351600000,
@@ -75,7 +70,12 @@
   {
    "start": 1794359700000,
    "allDay": false,
-   "title": "AMHS - Tustumena Departs to Homer"
+   "title": "CANCELED - AMHS - Tustumena Departs to Homer"
+  },
+  {
+   "start": 1794362400000,
+   "allDay": false,
+   "title": "SBE - Activity Interest Meeting"
   },
   {
    "start": 1794366000000,
@@ -208,6 +208,11 @@
    "title": "SOCC - After School Club"
   },
   {
+   "start": 1794616200000,
+   "allDay": false,
+   "title": "Courtney Collier Memorial Service"
+  },
+  {
    "start": 1794621600000,
    "allDay": false,
    "title": "Seldovia Fish and Game Advisory Committee Meeting"
@@ -221,6 +226,11 @@
    "start": 1794632400000,
    "allDay": false,
    "title": "Seldovia Bible Chapel - Teen Nights at the Sea Otter Community Center!"
+  },
+  {
+   "start": 1794668400000,
+   "allDay": false,
+   "title": "Public Library - Movie Night"
   },
   {
    "start": 1794697200000,
@@ -289,16 +299,6 @@
   },
   {
    "start": 1794934800000,
-   "allDay": false,
-   "title": "SVT - Fitness Center"
-  },
-  {
-   "start": 1794942000000,
-   "allDay": false,
-   "title": "SOCC - Yoga"
-  },
-  {
-   "start": 1794952800000,
    "allDay": false,
    "title": "SVT - Fitness Center"
   }
