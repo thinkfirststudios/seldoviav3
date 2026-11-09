@@ -1,21 +1,11 @@
 {
- "updated": "2026-11-08T22:11:42Z",
+ "updated": "2026-11-09T06:44:54Z",
  "calname": "seldovia",
  "events": [
   {
    "start": 1793869200000,
    "allDay": true,
    "title": "SVT - Santas Shop Donations"
-  },
-  {
-   "start": 1794176100000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
-  },
-  {
-   "start": 1794186900000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Departs to Homer"
   },
   {
    "start": 1794243600000,
@@ -299,6 +289,16 @@
   },
   {
    "start": 1794934800000,
+   "allDay": false,
+   "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1794942000000,
+   "allDay": false,
+   "title": "SOCC - Yoga"
+  },
+  {
+   "start": 1794952800000,
    "allDay": false,
    "title": "SVT - Fitness Center"
   }
