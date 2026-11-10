@@ -1,36 +1,11 @@
 {
- "updated": "2026-11-09T22:26:41Z",
+ "updated": "2026-11-10T07:25:24Z",
  "calname": "seldovia",
  "events": [
   {
    "start": 1793869200000,
    "allDay": true,
    "title": "SVT - Santas Shop Donations"
-  },
-  {
-   "start": 1794254400000,
-   "allDay": false,
-   "title": "SVT - Gentle Exercise with Debbie & Jen"
-  },
-  {
-   "start": 1794265200000,
-   "allDay": false,
-   "title": "Seldovia Public Library Hours"
-  },
-  {
-   "start": 1794269700000,
-   "allDay": false,
-   "title": "SOCC - Kids After School Time"
-  },
-  {
-   "start": 1794270600000,
-   "allDay": false,
-   "title": "SOCC - 11+ Pottery Class"
-  },
-  {
-   "start": 1794279600000,
-   "allDay": false,
-   "title": "CITY - Council Regular Meeting"
   },
   {
    "start": 1794330000000,
@@ -136,6 +111,11 @@
    "start": 1794502800000,
    "allDay": false,
    "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1794508200000,
+   "allDay": false,
+   "title": "SVT – Dr. Marlowe Veterinary Services"
   },
   {
    "start": 1794510000000,
@@ -301,6 +281,26 @@
    "start": 1794934800000,
    "allDay": false,
    "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1794942000000,
+   "allDay": false,
+   "title": "SOCC - Yoga"
+  },
+  {
+   "start": 1794952800000,
+   "allDay": false,
+   "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1794953700000,
+   "allDay": false,
+   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
+  },
+  {
+   "start": 1794956400000,
+   "allDay": false,
+   "title": "Home Basketball Games - Sea Otter vs. Chapman"
   }
  ]
 }
