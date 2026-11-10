@@ -3,7 +3,10 @@
    2011–present), so the blog page pages through the database newest-first
    instead of rendering everything at once, and offers a live search box that
    queries every post server-side. Falls back to whatever app.js rendered
-   (static archive) if the database can't be reached. */
+   (static archive) if the database can't be reached.
+   "Where I left off" (Qwynny Nov 9): opening a post saves how many posts were loaded, the search and
+   where that card sat on screen (sessionStorage, this visit only). The browser back button and the post
+   page's "Go Back to Where I Left Off" (gazette.html?resume=1) reload that many and scroll back to it. */
 (function(){
   const grid = document.querySelector("#gazetteGrid");
   if(!grid || !window.db) return;
@@ -49,7 +52,7 @@
   let offset = 0, total = 0, loading = false, done = false, query = "", token = 0;
 
   const msg = t => `<p class="blog-msg" style="grid-column:1/-1;text-align:center;color:var(--text-soft);padding:1.4rem">${t}</p>`;
-  async function load(reset){
+  async function load(reset, want){
     if(loading) return; loading = true;
     if(reset){ done = false; grid.innerHTML = msg("Loading posts…"); } // take over the grid immediately (no static flash / race)
     if(done){ loading = false; return; }
@@ -58,7 +61,7 @@
 
     let q = db.from("posts").select("*", { count: "exact" }).eq("published", true);
     if(query){ const like = "%" + query.replace(/[%,()]/g, " ") + "%"; q = q.or(`title.ilike.${like},body.ilike.${like}`); }
-    q = q.order("post_date", { ascending: false }).range(start, start + PAGE - 1);
+    q = q.order("post_date", { ascending: false }).range(start, start + (want || PAGE) - 1);
 
     let res; try { res = await q; } catch(e){ console.error("[blogfeed] fetch failed", e); loading = false; if(reset) grid.innerHTML = msg("Couldn't load posts — please refresh."); return; }
     loading = false;
@@ -78,6 +81,19 @@
       : (query ? `No posts match “${query}”` : "");
   }
 
+  const SPOT = "seldoviaNewsSpot";
+  grid.addEventListener("click", e => {
+    const a = e.target.closest('a[href^="post.html?id="]'); if(!a) return;
+    const art = a.closest("article");
+    try { sessionStorage.setItem(SPOT, JSON.stringify({ id: new URLSearchParams(a.getAttribute("href").split("?")[1]).get("id"), count: offset, query,
+      top: art ? art.getBoundingClientRect().top : 0, y: scrollY })); } catch(_){}
+  });
+  function placeSpot(s){
+    const a = grid.querySelector(`a[href="post.html?id=${CSS.escape(s.id||"")}"]`), art = a && a.closest("article");
+    const go = () => scrollTo({ top: art ? art.getBoundingClientRect().top + scrollY - (s.top || 0) : (s.y || 0), behavior: "instant" });   // instant: the site scrolls smoothly otherwise
+    go(); requestAnimationFrame(go); setTimeout(go, 350);   // again once fonts and the header settle
+  }
+
   moreBtn.addEventListener("click", () => load(false));
   let debounce;
   searchEl.addEventListener("input", () => {
@@ -85,5 +101,14 @@
     debounce = setTimeout(() => { query = searchEl.value.trim(); load(true); }, 300);
   });
 
-  load(true);
+  const params = new URLSearchParams(location.search);
+  const navType = ((performance.getEntriesByType && performance.getEntriesByType("navigation")[0]) || {}).type;
+  let spot = null;
+  if(params.has("resume") || navType === "back_forward"){ try { spot = JSON.parse(sessionStorage.getItem(SPOT) || "null"); } catch(_){} }
+  if(params.has("resume")) history.replaceState(null, "", "gazette.html");
+  if(spot){
+    if("scrollRestoration" in history) history.scrollRestoration = "manual";
+    query = String(spot.query || ""); searchEl.value = query;
+    load(true, Math.min(Math.max(+spot.count || 0, PAGE), 1000)).then(() => placeSpot(spot));
+  } else load(true);
 })();

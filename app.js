@@ -4719,15 +4719,23 @@ if($("#postDetail")){
          <p class="post-video-note">Video not playing? <a href="${esc(o.link)}" target="_blank" rel="noopener">Watch it on ${esc(vid.site)} ↗</a></p>`
       : (o.img?`<div class="post-detail-media"><a href="${esc(o.img)}" target="_blank" rel="noopener" title="View full size"><img src="${esc(o.img)}" alt="${esc(o.title)}" onerror="this.closest('.post-detail-media').style.display='none'"></a></div>`:"");
     const linkBtn=o.link?`<p style="margin-top:1.6rem"><a class="btn btn-primary" href="${esc(o.link)}" target="_blank" rel="noopener">${vid?`Watch on ${esc(vid.site)} ↗`:(/facebook.com/i.test(o.link)?"View on Facebook ↗":"Visit website ↗")}</a></p>`:"";
+    // Two ways back (Qwynny Nov 9). "Where I left off" shows only when they opened this post from News & Stories (blogfeed.js saved the spot).
+    let spot=null; try{ spot=JSON.parse(sessionStorage.getItem("seldoviaNewsSpot")||"null"); }catch(_){}
+    const resume=spot&&spot.id===pid?`<a class="btn btn-primary post-resume" href="gazette.html?resume=1">↩ Go Back to Where I Left Off</a>`:"";
+    const nav=`<div class="post-nav"><a class="btn btn-ghost" href="gazette.html">← Back to News &amp; Stories</a>${resume}</div>`;
     $("#postDetail").innerHTML=`
-      <a class="back-link" href="gazette.html">← All posts</a>
+      ${nav.replace('class="post-nav"','class="post-nav post-nav-top"')}
       ${media}
       <span class="eyebrow" style="margin-top:1.2rem">${esc(o.cat||"News & Stories")}</span>
       <h1 style="margin:.15rem 0;font-family:var(--serif)">${esc(o.title)}</h1>
       <div class="listing-city">${esc(o.date)}</div>
       <div class="listing-desc" style="margin-top:1.3rem">${paras(o.body)}</div>
       ${linkBtn}
-      <p style="margin-top:2rem"><a class="btn btn-ghost" href="gazette.html">← Back to News &amp; Stories</a></p>`;
+      ${nav}`;
+    // Came straight from News & Stories? Step back in history so the browser keeps that page exactly as it was.
+    $("#postDetail").querySelectorAll(".post-resume").forEach(a=>a.addEventListener("click",e=>{
+      let ref=null; try{ ref=new URL(document.referrer); }catch(_){}
+      if(ref&&ref.origin===location.origin&&/\/gazette\.html$/.test(ref.pathname)&&history.length>1){ e.preventDefault(); history.back(); } }));
   };
   if(pid && window.db){
     const MON=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
