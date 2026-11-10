@@ -1,21 +1,11 @@
 {
- "updated": "2026-11-10T07:25:24Z",
+ "updated": "2026-11-10T19:48:17Z",
  "calname": "seldovia",
  "events": [
   {
    "start": 1793869200000,
    "allDay": true,
    "title": "SVT - Santas Shop Donations"
-  },
-  {
-   "start": 1794330000000,
-   "allDay": false,
-   "title": "SVT - Fitness Center"
-  },
-  {
-   "start": 1794337200000,
-   "allDay": false,
-   "title": "SOCC - Yoga"
   },
   {
    "start": 1794348000000,
@@ -30,7 +20,7 @@
   {
    "start": 1794351600000,
    "allDay": false,
-   "title": "Home Basketball Games - Sea Otter vs. Cook Inlet Academy"
+   "title": "CANCELED - Home Basketball Games - Sea Otter vs. Cook Inlet Academy"
   },
   {
    "start": 1794351600000,
@@ -295,12 +285,22 @@
   {
    "start": 1794953700000,
    "allDay": false,
-   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
+   "title": "CANCELED - AMHS - Tustumena Arrives in Seldovia from Homer"
   },
   {
    "start": 1794956400000,
    "allDay": false,
    "title": "Home Basketball Games - Sea Otter vs. Chapman"
+  },
+  {
+   "start": 1794956400000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
+  },
+  {
+   "start": 1794960900000,
+   "allDay": false,
+   "title": "SVT's Open Swim"
   }
  ]
 }
