@@ -1,56 +1,11 @@
 {
- "updated": "2026-11-10T19:48:17Z",
+ "updated": "2026-11-11T06:35:04Z",
  "calname": "seldovia",
  "events": [
   {
    "start": 1793869200000,
    "allDay": true,
    "title": "SVT - Santas Shop Donations"
-  },
-  {
-   "start": 1794348000000,
-   "allDay": false,
-   "title": "SVT - Fitness Center"
-  },
-  {
-   "start": 1794348900000,
-   "allDay": false,
-   "title": "CANCELED - AMHS - Tustumena Arrives in Seldovia from Homer"
-  },
-  {
-   "start": 1794351600000,
-   "allDay": false,
-   "title": "CANCELED - Home Basketball Games - Sea Otter vs. Cook Inlet Academy"
-  },
-  {
-   "start": 1794351600000,
-   "allDay": false,
-   "title": "Seldovia Public Library Hours"
-  },
-  {
-   "start": 1794356100000,
-   "allDay": false,
-   "title": "SVT's Open Swim"
-  },
-  {
-   "start": 1794359700000,
-   "allDay": false,
-   "title": "CANCELED - AMHS - Tustumena Departs to Homer"
-  },
-  {
-   "start": 1794362400000,
-   "allDay": false,
-   "title": "SBE - Activity Interest Meeting"
-  },
-  {
-   "start": 1794366000000,
-   "allDay": false,
-   "title": "SOCC - Adult Pottery Class"
-  },
-  {
-   "start": 1794367800000,
-   "allDay": false,
-   "title": "SVT - Kinusaiga Adult Class"
   },
   {
    "start": 1794387600000,
@@ -301,6 +256,51 @@
    "start": 1794960900000,
    "allDay": false,
    "title": "SVT's Open Swim"
+  },
+  {
+   "start": 1794964500000,
+   "allDay": false,
+   "title": "CANCELED - AMHS - Tustumena Departs to Homer"
+  },
+  {
+   "start": 1794970800000,
+   "allDay": false,
+   "title": "SOCC - Adult Pottery Class"
+  },
+  {
+   "start": 1794972600000,
+   "allDay": false,
+   "title": "SVT - Kinusaiga Adult Class"
+  },
+  {
+   "start": 1795021200000,
+   "allDay": false,
+   "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1795032000000,
+   "allDay": false,
+   "title": "SVT - Gentle Exercise with Debbie & Jen"
+  },
+  {
+   "start": 1795042800000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
+  },
+  {
+   "start": 1795047300000,
+   "allDay": false,
+   "title": "SOCC - Ballet Class"
+  },
+  {
+   "start": 1795047300000,
+   "allDay": false,
+   "title": "SOCC - Kids After School Time"
+  },
+  {
+   "start": 1795048200000,
+   "allDay": false,
+   "title": "SOCC - 11+ Pottery Class"
   }
  ]
 }
