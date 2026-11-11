@@ -2,6 +2,9 @@
 // so Safari's "put you back where you were" on reload landed at the very bottom. Only a reload is affected: going
 // Back to this page still returns to where you were (set back to "auto" when leaving).
 (function(){
+  // Scrolling while the photos are still loading used to carry people to the bottom: the browser kept them pinned
+  // near the footer as thousands of photos filled in above. The grid photos have a fixed shape, so nothing shifts without it.
+  document.documentElement.style.overflowAnchor="none";
   if(!("scrollRestoration" in history)) return;
   const nav=((performance.getEntriesByType&&performance.getEntriesByType("navigation")[0])||{}).type;
   if(nav==="reload"){ history.scrollRestoration="manual";
