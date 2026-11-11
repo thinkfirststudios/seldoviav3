@@ -1,3 +1,19 @@
+// Reloading the Photos page starts at the top (Qwynny Nov 10). The page is very long and fills in after it opens,
+// so Safari's "put you back where you were" on reload landed at the very bottom. Only a reload is affected: going
+// Back to this page still returns to where you were (set back to "auto" when leaving).
+(function(){
+  if(!("scrollRestoration" in history)) return;
+  const nav=((performance.getEntriesByType&&performance.getEntriesByType("navigation")[0])||{}).type;
+  if(nav==="reload"){ history.scrollRestoration="manual";
+    // Chrome has already put the scroll back by now, so jump to the top, and again once everything has loaded
+    // unless the visitor has started scrolling themselves.
+    let moved=false; const mine=()=>{ moved=true; };
+    ["wheel","touchstart","keydown"].forEach(t=>addEventListener(t,mine,{once:true,passive:true}));
+    const top=()=>{ if(!moved) scrollTo({top:0,behavior:"instant"}); };
+    top(); addEventListener("DOMContentLoaded",top); addEventListener("load",()=>{ top(); setTimeout(top,300); });
+  }
+  addEventListener("pagehide",()=>{ history.scrollRestoration="auto"; });
+})();
 /* Public Photo Journal — loads Jenny's daily photos from Supabase and renders:
      1. "Seldovia Today"  — the most recent photo, featured big
      2. "This month over the years" — photos taken in the current calendar month (option C, seasonal)
