@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11T19:40:05Z",
+ "updated": "2026-11-12T07:18:06Z",
  "calname": "seldovia",
  "events": [
   {
@@ -11,41 +11,6 @@
    "start": 1794387600000,
    "allDay": true,
    "title": "Veterans Day"
-  },
-  {
-   "start": 1794427200000,
-   "allDay": false,
-   "title": "SVT - Gentle Exercise with Debbie & Jen"
-  },
-  {
-   "start": 1794438000000,
-   "allDay": false,
-   "title": "Seldovia Public Library Hours"
-  },
-  {
-   "start": 1794442500000,
-   "allDay": false,
-   "title": "SOCC - Ballet Class"
-  },
-  {
-   "start": 1794442500000,
-   "allDay": false,
-   "title": "SOCC - Kids After School Time"
-  },
-  {
-   "start": 1794443400000,
-   "allDay": false,
-   "title": "SOCC - 11+ Pottery Class"
-  },
-  {
-   "start": 1794452400000,
-   "allDay": false,
-   "title": "SOCC - Pre-Teen Night"
-  },
-  {
-   "start": 1794459600000,
-   "allDay": false,
-   "title": "SOCC - Teen Night"
   },
   {
    "start": 1794502800000,
@@ -301,6 +266,41 @@
    "start": 1795057200000,
    "allDay": false,
    "title": "SOCC - Pre-Teen Night"
+  },
+  {
+   "start": 1795064400000,
+   "allDay": false,
+   "title": "SOCC - Teen Night"
+  },
+  {
+   "start": 1795107600000,
+   "allDay": false,
+   "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1795114800000,
+   "allDay": false,
+   "title": "SOCC - Yoga"
+  },
+  {
+   "start": 1795125600000,
+   "allDay": false,
+   "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1795126500000,
+   "allDay": false,
+   "title": "CANCELED - AMHS - Tustumena Arrives in Seldovia from Homer"
+  },
+  {
+   "start": 1795131000000,
+   "allDay": false,
+   "title": "SOCC - Science Thursday"
+  },
+  {
+   "start": 1795133700000,
+   "allDay": false,
+   "title": "SBC - Joy Club"
   }
  ]
 }
