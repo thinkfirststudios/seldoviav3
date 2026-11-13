@@ -1,66 +1,11 @@
 {
- "updated": "2026-11-12T19:59:54Z",
+ "updated": "2026-11-13T06:51:50Z",
  "calname": "seldovia",
  "events": [
   {
    "start": 1793869200000,
    "allDay": true,
    "title": "SVT - Santas Shop Donations"
-  },
-  {
-   "start": 1794508200000,
-   "allDay": false,
-   "title": "SVT – Dr. Marlowe Veterinary Services"
-  },
-  {
-   "start": 1794520800000,
-   "allDay": false,
-   "title": "SVT - Fitness Center"
-  },
-  {
-   "start": 1794521700000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Arrives in Seldovia from Homer"
-  },
-  {
-   "start": 1794526200000,
-   "allDay": false,
-   "title": "SOCC - Science Thursday"
-  },
-  {
-   "start": 1794528900000,
-   "allDay": false,
-   "title": "SBC - Joy Club"
-  },
-  {
-   "start": 1794531600000,
-   "allDay": false,
-   "title": "SOCC - Battle of the Books"
-  },
-  {
-   "start": 1794532500000,
-   "allDay": false,
-   "title": "AMHS - Tustumena Departs to Homer"
-  },
-  {
-   "start": 1794537000000,
-   "allDay": false,
-   "title": "SOCC - Mahjong Game Night"
-  },
-  {
-   "start": 1794538800000,
-   "allDay": false,
-   "title": "SOCC - Adult Pottery Class"
-  },
-  {
-   "start": 1794540600000,
-   "allDay": false,
-   "title": "SVT - Kinusaiga Kid + Parent Class"
-  },
-  {
-   "start": 1794540600000,
-   "allDay": false,
-   "title": "SOCC - Volleyball"
   },
   {
    "start": 1794589200000,
@@ -75,7 +20,7 @@
   {
    "start": 1794615300000,
    "allDay": false,
-   "title": "SOCC - After School Club"
+   "title": "CANCELED - SOCC - After School Club"
   },
   {
    "start": 1794616200000,
@@ -301,6 +246,61 @@
    "start": 1795136400000,
    "allDay": false,
    "title": "SOCC - Battle of the Books"
+  },
+  {
+   "start": 1795137300000,
+   "allDay": false,
+   "title": "CANCELED - AMHS - Tustumena Departs to Homer"
+  },
+  {
+   "start": 1795141800000,
+   "allDay": false,
+   "title": "SOCC - Mahjong Game Night"
+  },
+  {
+   "start": 1795143600000,
+   "allDay": false,
+   "title": "SOCC - Adult Pottery Class"
+  },
+  {
+   "start": 1795145400000,
+   "allDay": false,
+   "title": "Library - Final Book Club Meeting of 2026"
+  },
+  {
+   "start": 1795145400000,
+   "allDay": false,
+   "title": "SVT - Kinusaiga Kid + Parent Class"
+  },
+  {
+   "start": 1795145400000,
+   "allDay": false,
+   "title": "SOCC - Volleyball"
+  },
+  {
+   "start": 1795194000000,
+   "allDay": false,
+   "title": "SVT - Fitness Center"
+  },
+  {
+   "start": 1795208400000,
+   "allDay": false,
+   "title": "SVT - Thrive 'Chamomile & Aloe Face Cream'"
+  },
+  {
+   "start": 1795210200000,
+   "allDay": false,
+   "title": "SBC Food Bank Day"
+  },
+  {
+   "start": 1795214400000,
+   "allDay": false,
+   "title": "SOCC - Kids After School Time"
+  },
+  {
+   "start": 1795220100000,
+   "allDay": false,
+   "title": "CANCELED - SOCC - After School Club"
   }
  ]
 }
