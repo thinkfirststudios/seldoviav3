@@ -1,16 +1,11 @@
 {
- "updated": "2026-11-13T06:51:50Z",
+ "updated": "2026-11-13T19:47:18Z",
  "calname": "seldovia",
  "events": [
   {
    "start": 1793869200000,
    "allDay": true,
    "title": "SVT - Santas Shop Donations"
-  },
-  {
-   "start": 1794589200000,
-   "allDay": false,
-   "title": "SVT - Fitness Center"
   },
   {
    "start": 1794605400000,
@@ -43,6 +38,11 @@
    "title": "Linwood Bar & Grill - Free Bingo"
   },
   {
+   "start": 1794628800000,
+   "allDay": false,
+   "title": "SBE - Night of Basketball"
+  },
+  {
    "start": 1794632400000,
    "allDay": false,
    "title": "Seldovia Bible Chapel - Teen Nights at the Sea Otter Community Center!"
@@ -61,6 +61,11 @@
    "start": 1794700800000,
    "allDay": false,
    "title": "SOCC - Adult Pickleball"
+  },
+  {
+   "start": 1794708000000,
+   "allDay": false,
+   "title": "St. Nicholas Russian Orthodox Church Vespers Service"
   },
   {
    "start": 1794769200000,
@@ -296,11 +301,6 @@
    "start": 1795214400000,
    "allDay": false,
    "title": "SOCC - Kids After School Time"
-  },
-  {
-   "start": 1795220100000,
-   "allDay": false,
-   "title": "CANCELED - SOCC - After School Club"
   }
  ]
 }
