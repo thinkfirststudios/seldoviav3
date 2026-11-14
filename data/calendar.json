@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13T19:47:18Z",
+ "updated": "2026-11-14T06:33:27Z",
  "calname": "seldovia",
  "events": [
   {
@@ -8,44 +8,9 @@
    "title": "SVT - Santas Shop Donations"
   },
   {
-   "start": 1794605400000,
-   "allDay": false,
-   "title": "SBC Food Bank Day"
-  },
-  {
-   "start": 1794615300000,
-   "allDay": false,
-   "title": "CANCELED - SOCC - After School Club"
-  },
-  {
-   "start": 1794616200000,
-   "allDay": false,
-   "title": "Courtney Collier Memorial Service"
-  },
-  {
-   "start": 1794621600000,
-   "allDay": false,
-   "title": "Seldovia Fish and Game Advisory Committee Meeting"
-  },
-  {
-   "start": 1794625200000,
-   "allDay": false,
-   "title": "SVT's Open Swim"
-  },
-  {
-   "start": 1794627000000,
-   "allDay": false,
-   "title": "Linwood Bar & Grill - Free Bingo"
-  },
-  {
-   "start": 1794628800000,
-   "allDay": false,
-   "title": "SBE - Night of Basketball"
-  },
-  {
    "start": 1794632400000,
    "allDay": false,
-   "title": "Seldovia Bible Chapel - Teen Nights at the Sea Otter Community Center!"
+   "title": "CANCELED - Seldovia Bible Chapel - Teen Nights at the Sea Otter Community Center!"
   },
   {
    "start": 1794668400000,
@@ -210,6 +175,11 @@
   {
    "start": 1795057200000,
    "allDay": false,
+   "title": "CITY - Seldovia Planning Commission Special Meeting"
+  },
+  {
+   "start": 1795057200000,
+   "allDay": false,
    "title": "SOCC - Pre-Teen Night"
   },
   {
@@ -301,6 +271,36 @@
    "start": 1795214400000,
    "allDay": false,
    "title": "SOCC - Kids After School Time"
+  },
+  {
+   "start": 1795220100000,
+   "allDay": false,
+   "title": "CANCELED - SOCC - After School Club"
+  },
+  {
+   "start": 1795230000000,
+   "allDay": false,
+   "title": "SVT's Open Swim"
+  },
+  {
+   "start": 1795231800000,
+   "allDay": false,
+   "title": "Linwood Bar & Grill - Free Bingo"
+  },
+  {
+   "start": 1795237200000,
+   "allDay": false,
+   "title": "Seldovia Bible Chapel - Teen Nights at the Sea Otter Community Center!"
+  },
+  {
+   "start": 1795302000000,
+   "allDay": false,
+   "title": "Seldovia Public Library Hours"
+  },
+  {
+   "start": 1795305600000,
+   "allDay": false,
+   "title": "SOCC - Adult Pickleball"
   }
  ]
 }
